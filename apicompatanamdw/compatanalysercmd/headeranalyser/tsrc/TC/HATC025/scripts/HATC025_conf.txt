@@ -1,0 +1,10 @@
+-baseline             "..\tsrc\TC\HATC025\baseline_headers\epoc32\include\HATC025.h"
+-current              "..\tsrc\TC\HATC025\current_headers\epoc32\include\HATC025.h"
+-baseplatformheaders     "..\tsrc\TC\HATC025\baseline_headers\epoc32\include"
+-currentplatformheaders  "..\tsrc\TC\HATC025\current_headers\epoc32\include"
+-baselineversion         "BASELINE"
+-currentversion          "CURRENT"
+-reportfile              "..\tsrc\TC\HATC025\results\HATC025_results.xml"
+
+-bundlesize 10
+                 

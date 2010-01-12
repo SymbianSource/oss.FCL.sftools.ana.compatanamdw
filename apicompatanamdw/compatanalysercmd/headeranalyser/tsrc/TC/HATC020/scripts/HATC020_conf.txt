@@ -1,0 +1,10 @@
+-baselinedir             "..\tsrc\TC\HATC020\baseline_headers\epoc32\include"
+-currentdir              "..\tsrc\TC\HATC020\current_headers\epoc32\include"
+-baseplatformheaders     "..\tsrc\TC\HATC020\baseline_headers\epoc32\include"
+-currentplatformheaders  "..\tsrc\TC\HATC020\current_headers\epoc32\include"
+-baselineversion         "BASELINE"
+-currentversion          "CURRENT"
+-reportfile              "..\tsrc\TC\HATC020\results\HATC020_results.xml"
+-recursive
+-bundlesize 10
+-set                     "HA*.h;HA*.rsg;HA*.mbg"

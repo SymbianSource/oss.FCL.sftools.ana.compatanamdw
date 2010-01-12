@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>41</minute>
+      <second>26</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformdata</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\scripts\HATC026_platform_data_base.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>10</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\scripts\HATC026_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformdata</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\scripts\HATC026_platform_data_current.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC026\results\HATC026_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>*.h</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\bselementfactory.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\bselementfactory.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Unknown" name="Unknown"/>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/982639.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/bselementfactory.h:22:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/bselementfactory.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/982639.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:22:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/bselementfactory.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/982639.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:21:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:59,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/bselementfactory.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/982639.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.inl:19:21: e32base.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>zkckQauA2c321</checksum>
+      <shortname>domain\middleware\bselementfactory.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\cbsbitmap.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\cbsbitmap.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Unknown" name="Unknown"/>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/879041.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/cbsbitmap.h:23:20: e32std.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>3ItRu2bA2c321</checksum>
+      <shortname>domain\middleware\cbsbitmap.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\cbsfactory.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\cbsfactory.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Unknown" name="Unknown"/>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/895178.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/cbsfactory.h:22:21: e32base.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>0YLwjOYA2c321</checksum>
+      <shortname>domain\middleware\cbsfactory.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\mbsaccess.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\mbsaccess.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Unknown" name="Unknown"/>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/878914.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsaccess.h:23:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsaccess.h:24,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/878914.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:22:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsaccess.h:24,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/878914.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:21:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:59,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsaccess.h:24,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/878914.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.inl:19:21: e32base.h: No such file or directory
+In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/878914.cpp:1:
+.........</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>EMTdEMsA2c321</checksum>
+      <shortname>domain\middleware\mbsaccess.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\mbselement.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\mbselement.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Unknown" name="Unknown"/>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/894572.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:22:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/894572.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:21:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:59,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/894572.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.inl:19:21: e32base.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>uE28c0VA2c321</checksum>
+      <shortname>domain\middleware\mbselement.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\mbsupdater.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\mbsupdater.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Platform" name="Updater API"/>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/895861.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsupdater.h:23:21: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsupdater.h:24,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/895861.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:22:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsupdater.h:24,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/895861.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:21:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:59,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbsupdater.h:24,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/895861.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.inl:19:21: e32base.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>9koocgoA2c321</checksum>
+      <shortname>domain\middleware\mbsupdater.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\rbsobjowningptrarray.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\rbsobjowningptrarray.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Unknown" name="Unknown"/>
+      <issue>
+        <issueid>10</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/1047318.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:21:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:59,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/1047318.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.inl:19:21: e32base.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>Qms869yA2c321</checksum>
+      <shortname>domain\middleware\rbsobjowningptrarray.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\middleware\tbselementiterator.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\middleware\tbselementiterator.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Platform" name="Elementiterator API"/>
+      <issue>
+        <issueid>9</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/tbselementiterator.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/1014329.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:22:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/tbselementiterator.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/1014329.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:21:20: e32std.h: No such file or directory
+In file included from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.h:59,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/mbselement.h:23,
+                 from c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/tbselementiterator.h:23,
+                 from C:/DOCUME~1/satapal/LOCALS~1/Temp/1014329.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/middleware/rbsobjowningptrarray.inl:19:21: e32base.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>RVKCj5nA2c321</checksum>
+      <shortname>domain\middleware\tbselementiterator.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\osextensions\ch324annexkdefinedencoderconfigdataci.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\osextensions\ch324annexkdefinedencoderconfigdataci.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Domain" name="H324 Annex K Custom API"/>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/1323522.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/ch324annexkdefinedencoderconfigdataci.h:46: error: syntax
+   error before `=` token
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/ch324annexkdefinedencoderconfigdataci.h:63: error: ISO
+   C++ forbids declaration of `TInt` with no type
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/ch324annexkdefinedencoderconfigdataci.h:63: error: `
+   TInt` declared as a `virtual' field
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/ch324annexkdefinedencoderconfigdataci.h:63: error: syntax
+   error before `(` token
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>Vp3zOr2A2c321</checksum>
+      <shortname>domain\osextensions\ch324annexkdefinedencoderconfigdataci.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\osextensions\iclextjpegapi.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\osextensions\iclextjpegapi.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Domain" name="Extended ICL Jpeg API"/>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/972902.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/iclextjpegapi.h:21:29: imageconversion.h: No such file or directory
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/iclextjpegapi.h:22:24: icl_uids.hrh: No such file or directory
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/iclextjpegapi.h:24:31: iclexifimageframe.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>5m1M9ZXA2c321</checksum>
+      <shortname>domain\osextensions\iclextjpegapi.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\baseline_headers\epoc32\include\domain\osextensions\jp2kimagedata.h</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc026\current_headers\epoc32\include\domain\osextensions\jp2kimagedata.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <api category="Domain" name="JPEG2000 ICL plugin API"/>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/962411.cpp:1:
+c:/symbian/carbide/workspace/headeranalyser/trunk/tsrc/tc/hatc026/baseline_headers/epoc32/include/domain/osextensions/jp2kimagedata.h:24:27: icl/imagedata.h: No such file or directory
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>wxQSkhJA2c321</checksum>
+      <shortname>domain\osextensions\jp2kimagedata.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>38</minute>
+      <second>33</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>50</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\scripts\HATC001_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>forcebaseinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\baseline_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>forcecurrentinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\current_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\results\HATC001_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>H*.h</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\baseline_headers\Epoc32\include\HATC001.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC001\current_headers\Epoc32\include\HATC001.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class1</cause>
+        <documentation>Not specified::HATC001_class1</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class2</cause>
+        <documentation>Not specified::HATC001_class2</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>12</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class3::MyProtected</cause>
+        <documentation>Not specified::HATC001_class3::MyProtected</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>11</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class3::MyPublic</cause>
+        <documentation>Not specified::HATC001_class3::MyPublic</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>10</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class4::MyPrivate</cause>
+        <documentation>Not specified::HATC001_class4::MyPrivate</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>9</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class4::MyProtected</cause>
+        <documentation>Not specified::HATC001_class4::MyProtected</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class4::MyPublic</cause>
+        <documentation>Not specified::HATC001_class4::MyPublic</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>0</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC001_class5::MyPublic</cause>
+        <documentation>Not specified::HATC001_class5::MyPublic</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>14</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>could not be analysed</typestring>
+        <cause>::HATC001_class6</cause>
+        <documentation>Not specified::HATC001_class6</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>7</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has more restricted access level</typestring>
+        <cause>::HATC001_class8::myProtected1</cause>
+        <documentation>Not specified::HATC001_class8::myProtected1</documentation>
+        <ignoreinformation>private</ignoreinformation>
+        <linenumber>142</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>7</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has more restricted access level</typestring>
+        <cause>::HATC001_class8::myPublic1</cause>
+        <documentation>Not specified::HATC001_class8::myPublic1</documentation>
+        <ignoreinformation>protected</ignoreinformation>
+        <linenumber>127</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>15</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has virtual bases</typestring>
+        <cause>::HATC001_class9</cause>
+        <documentation>Not specified::HATC001_class9</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>154</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <checksum>Cu5yCMvDksYkQ</checksum>
+      <shortname>hatc001.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

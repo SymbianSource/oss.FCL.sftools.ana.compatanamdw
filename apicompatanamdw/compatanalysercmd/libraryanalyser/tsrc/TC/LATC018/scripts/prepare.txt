@@ -1,0 +1,7 @@
+Baseline platform
+baseplatform\lib
+Product platform
+currentplatform\lib
+results
+RVCT
+TRUE

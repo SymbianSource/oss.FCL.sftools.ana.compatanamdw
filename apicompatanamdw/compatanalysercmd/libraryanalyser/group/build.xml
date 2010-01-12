@@ -1,0 +1,57 @@
+<!-- 
+- Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+- All rights reserved.
+- This component and the accompanying materials are made available
+- under the terms of the License "Eclipse Public License v1.0"
+- which accompanies this distribution, and is available
+- at the URL "http://www.eclipse.org/legal/epl-v10.html".
+- 
+- Initial Contributors:
+- Nokia Corporation - initial contribution.
+- 
+- Contributors:
+- 
+- Description:
+- 
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="OrdinalChecker" default="unixbuild" basedir=".">
+	
+	<path id="text2ccxml.lib" >
+	    	<pathelement path="${ant.home}/lib" />
+  	</path>
+
+	<taskdef name = "text2ccxml" classname = "com.gb.bci.ant.taskdefs.TextToCCXml" classpathref="text2ccxml.lib"/>
+
+	<target name = "unixbuild">
+		<echo message = "*** Building ${ant.project.name} ***" />
+
+		<exec dir = "."
+		      executable = "make"
+      		      failonerror = "false"
+      		      failifexecutionfails = "true"
+      		      resultproperty = "result"
+      		      output = "temp/${ant.project.name}.log">
+			
+			<arg value="BOOSTHOME=/local/cc-sandbox/other_libs/boost_1_33_1"/>
+		</exec>
+
+		<condition property="build.failed">
+			<isfailure code="${result}"/>
+		</condition>
+
+		<text2ccxml srcfile = "temp/${ant.project.name}.log"
+      		          destfile  = "temp/${ant.project.name}_log.xml"
+      		          target    = "${ant.project.name}"
+			  task      = "build"
+			  isError   = "${build.failed}"
+  		/>
+  
+		<delete file = "${out.dir}/${ant.project.name}.log" />
+
+		<concat destfile = "temp/${ant.project.name}.build">${result}</concat>
+
+		<echo message = "*** Built ${ant.project.name}. Result = ${result} ***" />
+	</target>
+</project>

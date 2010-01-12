@@ -1,0 +1,52 @@
+<!-- 
+- Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+- All rights reserved.
+- This component and the accompanying materials are made available
+- under the terms of the License "Eclipse Public License v1.0"
+- which accompanies this distribution, and is available
+- at the URL "http://www.eclipse.org/legal/epl-v10.html".
+- 
+- Initial Contributors:
+- Nokia Corporation - initial contribution.
+- 
+- Contributors:
+- 
+- Description:
+- 
+-->
+
+<project name="CheckBC" default="build" basedir=".">
+                      
+  <description>CheckBC build file</description>
+
+  <target name="compile">
+    <exec dir="../ executable="python" resolveexecutable="true">
+          <arg value="CheckBC.py "/>
+    </exec>
+  </target>
+  
+  <target name="test">
+    <exec dir="../ executable="python" resolveexecutable="true">
+          <arg value="testcheckbc.py "/>
+          <arg value="output.xml"/>
+    </exec>
+  </target>
+  
+  <target name="zip">
+  
+  	<delete dir="../nightly_builds"/>
+  	<mkdir dir="../nightly_builds"/>
+  	
+  	<tstamp>
+		   <format property="timestamp" pattern="dd-MM-yyyy" />
+		</tstamp>
+  
+    <zip destfile="../nightly_builds/BCFilter.${timestamp}.zip">
+      <zipfileset dir="../bin" includes="bcfilter.exe libxerces-c2_7_0.dll"/>
+      <zipfileset dir="../group" includes="ReleaseNotes_BCFilter.txt"/>
+    </zip>
+  </target>
+
+  <target name="build" depends="compile,test,zip"/>
+
+</project>

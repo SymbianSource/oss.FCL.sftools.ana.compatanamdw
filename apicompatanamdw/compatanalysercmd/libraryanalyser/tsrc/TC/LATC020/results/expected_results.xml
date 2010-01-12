@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+	<header>
+		<baselineversion>Baseline platform</baselineversion>
+		<currentversion>Product platform</currentversion>
+		<timestamp>
+			<day>20</day>
+			<month>7</month>
+			<year>2009</year>
+			<hour>14</hour>
+			<minute>38</minute>
+			<second>38</second>
+		</timestamp>
+		<laversion>3.3.0</laversion>
+		<formatversion>1.1</formatversion>
+		<cmdlineparms>
+			<parm>
+				<pname>toolchain</pname>
+				<pvalue>RVCT</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinelibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC020\baseplatform\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>currentlibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC020\currentplatform\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinedlldir</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>currentdlldir</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>warning</pname>
+				<pvalue>Required parameters for checking dll properties not specified. Compatibility Breaks in dll are not checked.</pvalue>
+			</parm>
+			<parm>
+				<pname>baselineversion</pname>
+				<pvalue>Baseline platform</pvalue>
+			</parm>
+			<parm>
+				<pname>currentversion</pname>
+				<pvalue>Product platform</pvalue>
+			</parm>
+			<parm>
+				<pname>reportfile</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC020\results\results.xml</pvalue>
+			</parm>
+			<parm>
+				<pname>tools</pname>
+				<pvalue>C:\APPS\rvct22_593\bin\</pvalue>
+			</parm>
+			<parm>
+				<pname>temp</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\bin\temp\</pvalue>
+			</parm>
+			<parm>
+				<pname>cfilt</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\bin\cfilt.exe</pvalue>
+			</parm>
+			<parm>
+				<pname>set</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC020\scripts\config.txt</pvalue>
+			</parm>
+		</cmdlineparms>
+		<knownissuesversion></knownissuesversion>
+	</header>
+	<issuelist>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC020\baseplatform\lib\OCTC020.lib</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC020\currentplatform\lib\OCTC020.lib</comparefilename>
+			<shortname>OCTC020</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>5</typeid>
+				<newfuncname>COCTC003::Func4()</newfuncname>
+				<newfuncpos>4</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>COCTC003::NewLC(CConsoleBase&amp;, TDesC16 const&amp;)</funcname>
+				<funcpos>4</funcpos>
+				<newfuncpos>5</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+	</issuelist>
+</bbcresults>

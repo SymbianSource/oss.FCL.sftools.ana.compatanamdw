@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>38</minute>
+      <second>43</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>50</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\scripts\HATC008_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>forcebaseinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\baseline_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>forcecurrentinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\current_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\results\HATC008_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>HATC008.h</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\baseline_headers\Epoc32\include\HATC008.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC008\current_headers\Epoc32\include\HATC008.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_PrivateEnums::enum1</cause>
+        <documentation>Not specified::HATC008_PrivateEnums::enum1</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>204</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>0</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_PrivateEnums::enum2</cause>
+        <documentation>Not specified::HATC008_PrivateEnums::enum2</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_ProtectedEnums::HATC008_ProtectedEnums( )</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::HATC008_ProtectedEnums( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>76</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>2</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC008_ProtectedEnums::enum2</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::enum2</documentation>
+        <ignoreinformation>Nonevalue1=1;value2=2;value3=3;value4=4;</ignoreinformation>
+        <linenumber>98</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_ProtectedEnums::enum3</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::enum3</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>106</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>2</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC008_ProtectedEnums::enum4</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::enum4</documentation>
+        <ignoreinformation>NonemondayValue=1;tuesdayValue=2;</ignoreinformation>
+        <linenumber>113</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>2</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC008_ProtectedEnums::enum5</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::enum5</documentation>
+        <ignoreinformation>Nonewednesday=0;thursday=1;friday=2;</ignoreinformation>
+        <linenumber>119</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>9</issueid>
+        <typeid>7</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has more restricted access level</typestring>
+        <cause>::HATC008_ProtectedEnums::enum6</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::enum6</documentation>
+        <ignoreinformation>private</ignoreinformation>
+        <linenumber>128</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>0</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_ProtectedEnums::removeThis</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::removeThis</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_ProtectedEnums::~HATC008_ProtectedEnums( )</cause>
+        <documentation>Not specified::HATC008_ProtectedEnums::~HATC008_ProtectedEnums( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>76</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>11</issueid>
+        <typeid>2</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC008_PublicEnums::enum2</cause>
+        <documentation>Not specified::HATC008_PublicEnums::enum2</documentation>
+        <ignoreinformation>Nonevalue1=1;value2=2;value3=3;value4=4;</ignoreinformation>
+        <linenumber>40</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>12</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_PublicEnums::enum3</cause>
+        <documentation>Not specified::HATC008_PublicEnums::enum3</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>48</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>13</issueid>
+        <typeid>2</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC008_PublicEnums::enum4</cause>
+        <documentation>Not specified::HATC008_PublicEnums::enum4</documentation>
+        <ignoreinformation>NonemondayValue=1;tuesdayValue=2;</ignoreinformation>
+        <linenumber>55</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>14</issueid>
+        <typeid>2</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC008_PublicEnums::enum5</cause>
+        <documentation>Not specified::HATC008_PublicEnums::enum5</documentation>
+        <ignoreinformation>Nonewednesday=0;thursday=1;friday=2;</ignoreinformation>
+        <linenumber>61</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>15</issueid>
+        <typeid>7</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has more restricted access level</typestring>
+        <cause>::HATC008_PublicEnums::enum6</cause>
+        <documentation>Not specified::HATC008_PublicEnums::enum6</documentation>
+        <ignoreinformation>protected</ignoreinformation>
+        <linenumber>70</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>10</issueid>
+        <typeid>0</typeid>
+        <identityid>4</identityid>
+        <identitydescription>Enumeration</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC008_PublicEnums::removeThis</cause>
+        <documentation>Not specified::HATC008_PublicEnums::removeThis</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>UzBagjkDZICPj</checksum>
+      <shortname>hatc008.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

@@ -1,0 +1,93 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the License "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+BCFilter Unit Test instructions
+==============================
+
+The document describes,
+1. The structure of the unit tests
+2. How to run the test cases
+3. Existing test cases
+
+-------------------------------------
+The structure of the unit tests
+-------------------------------------
+\tsrc - Root folder for all test data and code.
+     \doc - contains documents related to the testing
+     \results - contains the final test results from all the unit test cases ( to be implemented )
+     \scripts - contains the test scripts which can be used to run tests.
+     \TC - contains testcases, each as a seperate subfolder.
+
+The structure for each individual testcase is as follows,
+\TC\BCFTCxxx\ - each test case will have one such subdirectory in \TC.
+    \data - contains the xml files to be filtered, and a reference report for comparision.
+    \comment.txt - contains any additional instructions for a particular test, this will be output to console during execution.
+    \BCFTCxxx_conf.txt - contains the input to be passed to bcfilter.exe.
+
+-------------------------------------
+How to run the test cases
+-------------------------------------
+The test_bcfilter.py script in the \scripts directory can be used to execute the test cases, either individually or in sequence.
+
+command:
+
+ 	test_bcfilter.py output.xml // This will execute all the test cases in test/TC directory and write report to results/output.xml file.
+  test_bcfilter.py output.xml testcases.txt // This will execute all the test cases //listed in testcases.txt and write report to results/output.xml.
+
+If no tc-name is provided then all of the testcases in \TC are executed in sequence, else only the individual specified test is executed.
+
+-------------------------------------
+Existing test cases
+-------------------------------------
+
+BCFTC001 : 
+	This testcase invokes bcfilter.exe with relative paths for both the report file and knownissues file.
+
+BCFTC002 : 
+	This testcase invokes bcfilter.exe with absolute paths for both the report file and knownissues file.
+
+BCFTC003 :
+	This testcase invokes bcfilter.exe with paths realtive to the script execution directory.
+
+BCFTC004 :
+	This testcase invokes bcfilter.exe with output path specified.
+
+BCFTC005 :
+	Testcase to check the case insensitive filtering of header and library file names.
+
+BCFTC006 :
+	Testcase to check if bcfilter checks any syntax error in knownissues file.
+
+BCFTC007 :
+	This testcase verifies the global OS information tagging in knownissues.
+
+BCFTC008 :
+	Testcase to check the progress info from bcfilter.
+	
+BCFTC009 :
+	Testcase to check for SAX implementation when the library report has large number of issues(COMPT-622)
+	
+BCFTC010 :
+	Testcase to check the bcfilter support to new OrdinalChecker report format(COMPT-630)
+	
+BCFTC011 :
+	Testcase to check the bug fix COMPT-1028:BC Filter having issue in verifying checksum using DOM parser
+	
+BCFTC012 :
+	Testcase to check the requirement COMPT-1030: If header file content changes, say comments updated, but no change in C++ code or issue text, then show a hint in the report display to end user 
+
+BCFTC013 :
+	Testcase to check for SAX implementation when the header report has large number of issues(COMPT-1729)

@@ -1,0 +1,4 @@
+checkbc=bin;
+ha=bin;
+la=bin;
+bcf=bin;

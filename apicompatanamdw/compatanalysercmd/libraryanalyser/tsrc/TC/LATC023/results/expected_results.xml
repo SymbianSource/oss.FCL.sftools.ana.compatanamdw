@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+	<header>
+		<baselineversion>Baseline platform</baselineversion>
+		<currentversion>Product platform</currentversion>
+		<timestamp>
+			<day>20</day>
+			<month>7</month>
+			<year>2009</year>
+			<hour>14</hour>
+			<minute>38</minute>
+			<second>39</second>
+		</timestamp>
+		<laversion>3.3.0</laversion>
+		<formatversion>1.1</formatversion>
+		<cmdlineparms>
+			<parm>
+				<pname>toolchain</pname>
+				<pvalue>GCC</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinelibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib1;C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib2</pvalue>
+			</parm>
+			<parm>
+				<pname>currentlibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib1;C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib2</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinedlldir</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>currentdlldir</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>warning</pname>
+				<pvalue>Required parameters for checking dll properties not specified. Compatibility Breaks in dll are not checked.</pvalue>
+			</parm>
+			<parm>
+				<pname>baselineversion</pname>
+				<pvalue>Baseline platform</pvalue>
+			</parm>
+			<parm>
+				<pname>currentversion</pname>
+				<pvalue>Product platform</pvalue>
+			</parm>
+			<parm>
+				<pname>reportfile</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\results\results.xml</pvalue>
+			</parm>
+			<parm>
+				<pname>tools</pname>
+				<pvalue>..\tsrc\bin\</pvalue>
+			</parm>
+			<parm>
+				<pname>temp</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\bin\temp\</pvalue>
+			</parm>
+			<parm>
+				<pname>cfilt</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>set</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\scripts\config.txt</pvalue>
+			</parm>
+		</cmdlineparms>
+		<knownissuesversion></knownissuesversion>
+	</header>
+	<issuelist>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib1\agentdialog.lib</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib1\agentdialog.lib</comparefilename>
+			<shortname>agentdialog</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>4</typeid>
+				<funcname>RGenConAgentDialogServer::CancelIspConnection(void)</funcname>
+				<funcpos>5</funcpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>5</typeid>
+				<newfuncname>RGenConAgentDialogServer::CancelModemAndLocationSelection(void)</newfuncname>
+				<newfuncpos>6</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::CancelLogin(void)</funcname>
+				<funcpos>6</funcpos>
+				<newfuncpos>5</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>5</typeid>
+				<newfuncname>RGenConAgentDialogServer::CancelQoSWarning(void)</newfuncname>
+				<newfuncpos>7</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::CancelReadPct(void)</funcname>
+				<funcpos>7</funcpos>
+				<newfuncpos>8</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::CancelReconnect(void)</funcname>
+				<funcpos>8</funcpos>
+				<newfuncpos>9</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::CancelWarnNewIapConnection(void)</funcname>
+				<funcpos>9</funcpos>
+				<newfuncpos>10</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>4</typeid>
+				<funcname>RGenConAgentDialogServer::CancelWarnNewIspConnection(void)</funcname>
+				<funcpos>10</funcpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::Connect(void)</funcname>
+				<funcpos>12</funcpos>
+				<newfuncpos>13</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::DestroyPctNotification(TRequestStatus &amp;)</funcname>
+				<funcpos>13</funcpos>
+				<newfuncpos>14</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::IapConnection(unsigned long &amp;, TConnectionPrefs const &amp;, TRequestStatus &amp;)</funcname>
+				<funcpos>14</funcpos>
+				<newfuncpos>15</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>4</typeid>
+				<funcname>RGenConAgentDialogServer::IspConnection(TIspConnectionIds &amp;, TConnectionPrefs const &amp;, TRequestStatus &amp;)</funcname>
+				<funcpos>15</funcpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::Login(TDes16 &amp;, TDes16 &amp;, int, TRequestStatus &amp;)</funcname>
+				<funcpos>16</funcpos>
+				<newfuncpos>17</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::OpenPct(void)</funcname>
+				<funcpos>17</funcpos>
+				<newfuncpos>19</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>5</typeid>
+				<newfuncname>RGenConAgentDialogServer::ModemAndLocationSelection(unsigned long &amp;, unsigned long &amp;, TRequestStatus &amp;)</newfuncname>
+				<newfuncpos>18</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::ReadPct(TDes16 &amp;, TRequestStatus &amp;)</funcname>
+				<funcpos>18</funcpos>
+				<newfuncpos>21</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::Reconnect(int &amp;, TRequestStatus &amp;)</funcname>
+				<funcpos>19</funcpos>
+				<newfuncpos>22</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>5</typeid>
+				<newfuncname>RGenConAgentDialogServer::QoSWarning(int &amp;, TRequestStatus &amp;)</newfuncname>
+				<newfuncpos>20</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>StartDialogThread(void)</funcname>
+				<funcpos>20</funcpos>
+				<newfuncpos>23</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::Version(void) const</funcname>
+				<funcpos>21</funcpos>
+				<newfuncpos>24</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::WarnNewIapConnection(TConnectionPrefs const &amp;, int, TDesC16 const &amp;, int &amp;, TRequestStatus &amp;)</funcname>
+				<funcpos>22</funcpos>
+				<newfuncpos>25</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>4</typeid>
+				<funcname>RGenConAgentDialogServer::WarnNewIspConnection(TConnectionPrefs const &amp;, int, TIspConnectionNames const &amp;, int &amp;, TRequestStatus &amp;)</funcname>
+				<funcpos>23</funcpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::WritePct(TDesC16 const &amp;)</funcname>
+				<funcpos>24</funcpos>
+				<newfuncpos>26</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::~RGenConAgentDialogServer(void)</funcname>
+				<funcpos>25</funcpos>
+				<newfuncpos>27</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::Authenticate(TDes16 &amp;, TDes16 &amp;, int, TRequestStatus &amp;)</funcname>
+				<funcpos>26</funcpos>
+				<newfuncpos>28</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::IapConnection(unsigned long &amp;, TConnectionPrefs const &amp;, int, TRequestStatus &amp;)</funcname>
+				<funcpos>27</funcpos>
+				<newfuncpos>16</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>4</typeid>
+				<funcname>RGenConAgentDialogServer::IspConnection(TIspConnectionIds &amp;, TConnectionPrefs const &amp;, int, TRequestStatus &amp;)</funcname>
+				<funcpos>28</funcpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>RGenConAgentDialogServer::Close(void)</funcname>
+				<funcpos>29</funcpos>
+				<newfuncpos>12</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib1\agnmodel.lib</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib1\agnmodel.lib</comparefilename>
+			<shortname>agnmodel</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CAgnAlarm::NewL(CAgnModel *, MAgnAlarmServerTerminationCallBack *)</funcname>
+				<newfuncname>CAgnAlarm::NewL(CAgnEntryModel *, MAgnAlarmServerTerminationCallBack *)</newfuncname>
+				<funcpos>364</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>Possible SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CAgnAlarm::SetModel(CAgnModel *)</funcname>
+				<newfuncname>CAgnAlarm::SetModel(CAgnEntryModel *)</newfuncname>
+				<funcpos>525</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>Possible SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntry::EventPriority(void) const</newfuncname>
+				<newfuncpos>708</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntry::NotesTextL(void) const</newfuncname>
+				<newfuncpos>709</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntry::SetEventPriority(unsigned int)</newfuncname>
+				<newfuncpos>710</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntry::SetNotesTextL(HBufC16 *)</newfuncname>
+				<newfuncpos>711</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnBasicEntry::SetStatus(CAgnBasicEntry::TAgnStatus)</newfuncname>
+				<newfuncpos>712</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnBasicEntry::Status(void) const</newfuncname>
+				<newfuncpos>713</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::ExportVCalL(int, RWriteStream &amp;, CAgnEntry *, Versit::TVersitCharSet)</newfuncname>
+				<newfuncpos>714</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::ExportVCalL(int, RWriteStream &amp;, CArrayFixFlat&lt;TAgnEntryId&gt; *, Versit::TVersitCharSet)</newfuncname>
+				<newfuncpos>715</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::ImportVCalL(int, RReadStream &amp;, CArrayPtr&lt;CAgnEntry&gt; *)</newfuncname>
+				<newfuncpos>716</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnExceptionList::ExternalizeL(RWriteStream &amp;) const</newfuncname>
+				<newfuncpos>717</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnExceptionList::InternalizeL(RReadStream &amp;)</newfuncname>
+				<newfuncpos>718</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnExceptionList::CAgnExceptionList(void)</newfuncname>
+				<newfuncpos>719</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::AddCategoryToListL(TDesC16 const &amp;)</newfuncname>
+				<newfuncpos>720</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::CategoryCountL(void) const</newfuncname>
+				<newfuncpos>721</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::CategoryL(int) const</newfuncname>
+				<newfuncpos>722</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::DeleteCategoryL(CAgnCategory const &amp;, MAgnProgressCallBack *, CAgnEntryModel::TCategoryStepSize)</newfuncname>
+				<newfuncpos>723</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::RenameCategoryL(CAgnCategory const &amp;, TDesC16 const &amp;, MAgnProgressCallBack *, CAgnEntryModel::TCategoryStepSize)</newfuncname>
+				<newfuncpos>724</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>CAgnEntryModel::FilterCategoryL(CAgnCategory const &amp;, CArrayFixSeg&lt;TAgnEntryId&gt; &amp;, MAgnProgressCallBack *, CAgnEntryModel::TCategoryStepSize)</newfuncname>
+				<newfuncpos>725</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>MAgnVersit::MAgnVersit_Reserved1(void)</newfuncname>
+				<newfuncpos>726</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>TAgnFilter::SetFoldedOrExactText(int, int)</newfuncname>
+				<newfuncpos>727</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>TAgnReplicationData::SetLastChangedDate(TTime const &amp;)</newfuncname>
+				<newfuncpos>728</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>TAgnWeeklyRpt::FindRptRuleEndDate(unsigned int) const</newfuncname>
+				<newfuncpos>729</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>TAgnMonthlyByDaysRpt::FindRptRuleEndDate(unsigned int) const</newfuncname>
+				<newfuncpos>730</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>7</typeid>
+				<newfuncname>TAgnMonthlyByDatesRpt::FindRptRuleEndDate(unsigned int) const</newfuncname>
+				<newfuncpos>731</newfuncpos>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib1\aknlayout.lib</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib1\aknlayout.lib</comparefilename>
+			<shortname>aknlayout</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, int, int, int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>1</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknTextLineLayout::TAknTextLineLayout(int, TRect const &amp;, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknTextLineLayout::TAknTextLineLayout(int, TRect const &amp;, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>6</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknTextLineLayout::TAknTextLineLayout(int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknTextLineLayout::TAknTextLineLayout(int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>9</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknWindowLineLayout::TAknWindowLineLayout(int, TRect const &amp;, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknWindowLineLayout::TAknWindowLineLayout(int, TRect const &amp;, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>12</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknWindowLineLayout::TAknWindowLineLayout(int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknWindowLineLayout::TAknWindowLineLayout(int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>15</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, TRect const &amp;, int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, TRect const &amp;, int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>16</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>5</typeid>
+				<newfuncname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, int, int, TRect const &amp;, int, int, int, int, int, int, int, int, int)</newfuncname>
+				<newfuncpos>17</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>3</typeid>
+				<funcname>TAknTextLineLayout::BaselineSkip(void) const</funcname>
+				<funcpos>17</funcpos>
+				<newfuncpos>19</newfuncpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, int, int, int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>18</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>4</typeid>
+				<funcname>TAknTextLineLayout::TAknTextLineLayout(int, int, int, TRect const &amp;, int, int, int, int, int, int, int)</funcname>
+				<funcpos>19</funcpos>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknTextLineLayout::TAknTextLineLayout(int, int, int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknTextLineLayout::TAknTextLineLayout(int, int, int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>20</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknWindowLineLayout::TAknWindowLineLayout(int, int, int, TRect const &amp;, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknWindowLineLayout::TAknWindowLineLayout(int, int, int, TRect const &amp;, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>21</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknWindowLineLayout::TAknWindowLineLayout(int, int, int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknWindowLineLayout::TAknWindowLineLayout(int, int, int, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>22</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>TAknMultiLineTextLayout::TAknMultiLineTextLayout(int, int, int, TRect const &amp;, int, int, int, int, int, int, int, int)</funcname>
+				<newfuncname>TAknTextLineLayout::TAknTextLineLayout(int, int, int, TRect const &amp;, int, int, int, int, int, int, int, int)</newfuncname>
+				<funcpos>23</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>Possible SC Break</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib2\apmime.lib</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib2\apmime.lib</comparefilename>
+			<shortname>apmime</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CApaDataRecognizer::PreferredBufSize(void)</funcname>
+				<newfuncname>CApaDataRecognizer::PreferredBufSize(void) const</newfuncname>
+				<funcpos>12</funcpos>
+				<bc_severity>None</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CApaScanningDataRecognizer::SetRecognizersFromList(CArrayFixFlat&lt;CApaScanningDataRecognizer::TRecognizer&gt; const &amp;)</funcname>
+				<newfuncname>CApaScanningDataRecognizer::SetRecognizersFromListL(CArrayFixFlat&lt;CApaScanningDataRecognizer::TRecognizer&gt; const &amp;)</newfuncname>
+				<funcpos>23</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>Possible SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CApaDataRecognizer::AddDataRecognizerType(CApaDataRecognizerType *)</funcname>
+				<newfuncname>CApaDataRecognizer::AddDataRecognizerTypeL(CApaDataRecognizerType *)</newfuncname>
+				<funcpos>38</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>Possible SC Break</sc_severity>
+			</issue>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CApaDataRecognizer::AcceptedConfidence(void)</funcname>
+				<newfuncname>CApaDataRecognizer::AcceptedConfidence(void) const</newfuncname>
+				<funcpos>42</funcpos>
+				<bc_severity>None</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib2\bioutil.lib</name>
+			<comparefilename></comparefilename>
+			<shortname>bioutil</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>1</typeid>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\baseplatform\lib2\biowatcher.lib</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC023\currentplatform\lib2\biowatcher.lib</comparefilename>
+			<shortname>biowatcher</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>CBaseSmsActiveSocketWatcher::CBaseSmsActiveSocketWatcher(CWatcherLog &amp;, int, TUid)</funcname>
+				<newfuncname>CBaseSmsActiveSocketWatcher::CBaseSmsActiveSocketWatcher(CWatcherLog &amp;, int, TUid, RFs &amp;)</newfuncname>
+				<funcpos>1</funcpos>
+				<bc_severity>Possible BBC Break</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+		</library>
+	</issuelist>
+</bbcresults>

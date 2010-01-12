@@ -1,0 +1,80 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the License "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+HeaderAnalyser building instructions
+====================================
+
+Windows platform
+----------------
+
+1) Set up MinGW and MSYS compiling environments
+   - Download MinGW installer 5.1.4 from http://www.mingw.org
+   - Install MinGW including GCC compiler with version number at least 3.4.2
+   - Download and install MSYS environment from http://www.mingw.org with
+     version number at least 1.0.11
+   - Set "bin"-directories of both MinGW and MSYS to your path environment, eg
+        SET PATH=C:\APPS\MinGW\bin;C:\APPS\MSYS\bin;%PATH%  
+
+2) Download Xerces-C 2.7.0 sources from http://xml.apache.org/xerces-c/
+   Install it to any folder.
+
+3) Modify "XERCESHOME"-variable in a file "group/MakeFile" in HeaderAnalyser
+   installation to point to the directory where you installed Xerces-C.
+
+4) Copy libxerces-c2_7_0.dll under lib directory of your Xerces-C installation
+   as libxerces-c.dll. Alternatively you may have to compile Xerces-C yourself,
+   before it can be used. To do that follow these steps:
+     1) Extract Xerces-C sources under MSYS installation
+     2) Start bash by typing "sh" (ie msys\bin\sh.exe)
+     3) Set XERCESCROOT environment variable to the directory where you just
+        extracted the sources, for example
+            export XERCESCROOT=/home/user-id/src/xerces-c-src_2_7_0
+     4) Go to the source directory xerces-c-src_2_7_0/src/xercesc
+     5) Type "runConfigure -p mingw-msys -cgcc -xg++ -nfileonly -tnative -rnone"
+     6) Type Make
+     7) Close bash with "exit" command
+     8) Now you have the compiler Xerces-C environment. Copy it or update
+        XERCESHOME in the Makefile. Make sure that the *.dll files from
+        xerces-c-src_2_7_0/lib are the same as in the HeaderAnalyser/bin folder  
+        
+5) Download Boost v1.33.1 from http://www.boost.org or directly from
+   http://sourceforge.net/project/showfiles.php?group_id=7586. Install it to any
+   folder
+   
+6) Download Boost Jam from http://www.boost.org. This is required to build the 
+   boost libraries. Copy the exe to the "bin" directory of MinGW.
+   
+7) Build the Boost libraries for gcc toolset. To do that folloe these steps:
+     1) With command prompt, go to the Boost Install directory 
+     2) Type the following command
+        bjam.exe -sTOOLS=gcc --with-thread --builddir=C:\Boost install
+     3) Copy the boost_thread-gcc-mt-1_33_1.lib created under C:\Boost\lib to 
+        lib folder under Boost Install directory
+   
+8) Modify "BOOSTHOME"-variable in a file "group/MakeFile" in HeaderAnalyser
+   installation to point to the directory where you installed Boost.
+
+9) With command prompt, go to the same "group" directory and type "make". 
+
+
+
+Any other platform
+------------------
+
+Set up GCC compiling environment as usually and follow steps 2-9 just like in the
+instructions for Windows platform. Modify variables to suit your environment.
+
+

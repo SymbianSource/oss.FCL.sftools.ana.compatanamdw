@@ -1,0 +1,613 @@
+ARM Linker, RVCT2.2 [Build 616]
+
+================================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../../unhosted.s                         0x00000000   Number         0  switch8.o ABSOLUTE
+    M:\\epoc32\\build\\e32\\euser\\edll_lib\\armv5\\urel\\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    M:\\src\\cedar\\generic\\base\\e32\\compsupp\\rvct2_2\\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    M:\epoc32\build\e32\euser\edll_lib\armv5\urel\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    M:\src\cedar\generic\base\e32\compsupp\rvct2_2\dllexp.cpp 0x00000000   Number         0  dllexp.o ABSOLUTE
+    M:\src\cedar\generic\base\e32\compsupp\rvct2_2\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    M:\src\cedar\generic\base\e32\euser\epoc\arm\uc_dll.cpp 0x00000000   Number         0  uc_dll.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\Cafutils.cpp 0x00000000   Number         0  Cafutils.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\Metadata.cpp 0x00000000   Number         0  Metadata.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\Metadataarray.cpp 0x00000000   Number         0  Metadataarray.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\Virtualpathptr.cpp 0x00000000   Number         0  Virtualpathptr.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\attributeset.cpp 0x00000000   Number         0  attributeset.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\bitset.cpp 0x00000000   Number         0  bitset.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\cafmimeheader.cpp 0x00000000   Number         0  cafmimeheader.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\dirstreamable.cpp 0x00000000   Number         0  dirstreamable.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\embeddedobject.cpp 0x00000000   Number         0  embeddedobject.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\mimefieldanddata.cpp 0x00000000   Number         0  mimefieldanddata.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\rightsinfo.cpp 0x00000000   Number         0  rightsinfo.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\stringattribute.cpp 0x00000000   Number         0  stringattribute.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\stringattributeset.cpp 0x00000000   Number         0  stringattributeset.o ABSOLUTE
+    M:\src\common\generic\security\caf2\source\cafutils\virtualpath.cpp 0x00000000   Number         0  virtualpath.o ABSOLUTE
+    .emb_text                                0x00008000   Section       40  uc_dll_.o(.emb_text)
+    .emb_text                                0x00008028   Section       72  ucppinit_aeabi.o(.emb_text)
+    skip                                     0x0000803c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    loop                                     0x0000804c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    fpinit                                   0x00008064   Data           0  ucppinit_aeabi.o(.emb_text)
+    base                                     0x00008068   Data           0  ucppinit_aeabi.o(.emb_text)
+    limit                                    0x0000806c   Data           0  ucppinit_aeabi.o(.emb_text)
+    .text                                    0x00008320   Section      208  Cafutils.o(.text)
+    .text                                    0x000083f0   Section      404  attributeset.o(.text)
+    .text                                    0x00008584   Section      124  stringattribute.o(.text)
+    .text                                    0x00008600   Section      700  stringattributeset.o(.text)
+    .text                                    0x000088bc   Section      480  virtualpath.o(.text)
+    .text                                    0x00008a9c   Section      500  Metadata.o(.text)
+    .text                                    0x00008c90   Section      800  Metadataarray.o(.text)
+    .text                                    0x00008fb0   Section      380  embeddedobject.o(.text)
+    .text                                    0x0000912c   Section      268  rightsinfo.o(.text)
+    .text                                    0x00009238   Section      224  Virtualpathptr.o(.text)
+    .text                                    0x00009318   Section      424  dirstreamable.o(.text)
+    .text                                    0x000094c0   Section      872  bitset.o(.text)
+    .text                                    0x00009828   Section      852  cafmimeheader.o(.text)
+    .text                                    0x00009b7c   Section      122  mimefieldanddata.o(.text)
+    .text                                    0x00009bf8   Section       24  switch8.o(.text)
+    .text                                    0x00009c10   Section       40  uc_dll.o(.text)
+    .text                                    0x00009c38   Section        4  dllexp.o(.text)
+    .text.clean                              0x00009c3c   Section        8  stringattributeset.o(.text.clean)
+    .text.clean                              0x00009c44   Section       10  virtualpath.o(.text.clean)
+    .text.clean                              0x00009c4e   Section       20  Metadataarray.o(.text.clean)
+    .text.clean                              0x00009c62   Section       10  embeddedobject.o(.text.clean)
+    .text.clean                              0x00009c6c   Section       20  cafmimeheader.o(.text.clean)
+    i._ZN13CArrayPakFlatI6TEntryED0Ev        0x00009c80   Section       16  dirstreamable.o(i._ZN13CArrayPakFlatI6TEntryED0Ev)
+    i._ZN13CArrayPakFlatI6TEntryED1Ev        0x00009c90   Section        8  dirstreamable.o(i._ZN13CArrayPakFlatI6TEntryED1Ev)
+    i._ZN3Mem4CopyEPvPKvi                    0x00009c98   Section       12  bitset.o(i._ZN3Mem4CopyEPvPKvi)
+    i._ZN7TPtrC163SetERK7TDesC16             0x00009ca4   Section       28  virtualpath.o(i._ZN7TPtrC163SetERK7TDesC16)
+    i._ZN7TPtrC163SetERK7TDesC16.clean       0x00009cc0   Section       12  virtualpath.o(i._ZN7TPtrC163SetERK7TDesC16.clean)
+    i._ZN9CArrayPakI6TEntryED1Ev             0x00009ccc   Section        8  dirstreamable.o(i._ZN9CArrayPakI6TEntryED1Ev)
+    i._ZNK6TDesC8eqERKS_                     0x00009cd4   Section       18  Metadataarray.o(i._ZNK6TDesC8eqERKS_)
+    i._ZNK7TDesC16eqERKS_                    0x00009ce6   Section       18  Metadataarray.o(i._ZNK7TDesC16eqERKS_)
+    i._ZdlPvS_                               0x00009cf8   Section        2  virtualpath.o(i._ZdlPvS_)
+    i._ZnwjPv                                0x00009cfa   Section        4  virtualpath.o(i._ZnwjPv)
+    t._ZN13CArrayPakFlatI6TEntryEC1Ei        0x00009d00   Section       24  dirstreamable.o(t._ZN13CArrayPakFlatI6TEntryEC1Ei)
+    t._ZN13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEE15ResetAndDestroyEv 0x00009d18   Section       50  cafmimeheader.o(t._ZN13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEE15ResetAndDestroyEv)
+    t._ZNK13RPointerArrayIN13ContentAccess16CStringAttributeEE5CountEv 0x00009d4a   Section        8  stringattributeset.o(t._ZNK13RPointerArrayIN13ContentAccess16CStringAttributeEE5CountEv)
+    t._ZNK13RPointerArrayIN13ContentAccess16CStringAttributeEEixEi 0x00009d52   Section        8  stringattributeset.o(t._ZNK13RPointerArrayIN13ContentAccess16CStringAttributeEEixEi)
+    t._ZNK13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEE5CountEv 0x00009d5a   Section        8  cafmimeheader.o(t._ZNK13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEE5CountEv)
+    t._ZNK13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEEixEi 0x00009d62   Section        8  cafmimeheader.o(t._ZNK13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEEixEi)
+    t._ZNK13RPointerArrayIN13ContentAccess9CMetaDataEE5CountEv 0x00009d6a   Section        8  Metadataarray.o(t._ZNK13RPointerArrayIN13ContentAccess9CMetaDataEE5CountEv)
+    t._ZNK13RPointerArrayIN13ContentAccess9CMetaDataEEixEi 0x00009d72   Section        8  Metadataarray.o(t._ZNK13RPointerArrayIN13ContentAccess9CMetaDataEEixEi)
+    t._ZNK6RArrayIN13ContentAccess13RAttributeSet15TAttributeValueEE5CountEv 0x00009d7a   Section        8  attributeset.o(t._ZNK6RArrayIN13ContentAccess13RAttributeSet15TAttributeValueEE5CountEv)
+    t._ZNK6RArrayIN13ContentAccess13RAttributeSet15TAttributeValueEEixEi 0x00009d82   Section        8  attributeset.o(t._ZNK6RArrayIN13ContentAccess13RAttributeSet15TAttributeValueEEixEi)
+    .extab._ZN13ContentAccess19RStringAttributeSet8SetValueEiRK7TDesC16i 0x00009d8c   Data           0  stringattributeset.o(.ARM.extab)
+    .extab._ZN13ContentAccess12CVirtualPathC1ERKNS_15TVirtualPathPtrE 0x00009db4   Data           0  virtualpath.o(.ARM.extab)
+    .extab._ZN7TPtrC163SetERK7TDesC16        0x00009dc4   Data           0  virtualpath.o(.ARM.extab)
+    .extab._ZN13ContentAccess14CMetaDataArrayC1Ev 0x00009dd4   Data           0  Metadataarray.o(.ARM.extab)
+    .extab._ZN13ContentAccess14CMetaDataArrayD1Ev 0x00009de4   Data           0  Metadataarray.o(.ARM.extab)
+    .extab._ZN13ContentAccess15CEmbeddedObjectC1ENS_13TEmbeddedTypeE 0x00009df4   Data           0  embeddedobject.o(.ARM.extab)
+    .extab._ZN13ContentAccess14CCafMimeHeaderC1Ev 0x00009e04   Data           0  cafmimeheader.o(.ARM.extab)
+    .extab._ZN13ContentAccess14CCafMimeHeaderD1Ev 0x00009e14   Data           0  cafmimeheader.o(.ARM.extab)
+    .constdata$1                             0x00009e24   Data           0  stringattributeset.o(.constdata)
+    KNullDesC                                0x00009e24   Data           8  stringattributeset.o(.constdata)
+    .constdata                               0x00009e24   Section        8  stringattributeset.o(.constdata)
+    .constdata$1                             0x00009e2c   Data           0  virtualpath.o(.constdata)
+    KNullDesC                                0x00009e2c   Data           8  virtualpath.o(.constdata)
+    .constdata                               0x00009e2c   Section       24  virtualpath.o(.constdata)
+    KNullDesC16                              0x00009e34   Data           8  virtualpath.o(.constdata)
+    ContentAccess::KCafVirtualPathSeparator  0x00009e3c   Data           8  virtualpath.o(.constdata)
+    .constdata$1                             0x00009e44   Data           0  Metadataarray.o(.constdata)
+    KNullDesC8                               0x00009e44   Data           8  Metadataarray.o(.constdata)
+    .constdata                               0x00009e44   Section       16  Metadataarray.o(.constdata)
+    KNullDesC16                              0x00009e4c   Data           8  Metadataarray.o(.constdata)
+    .constdata$1                             0x00009e54   Data           0  embeddedobject.o(.constdata)
+    KNullDesC                                0x00009e54   Data           8  embeddedobject.o(.constdata)
+    .constdata                               0x00009e54   Section        8  embeddedobject.o(.constdata)
+    .constdata$1                             0x00009e5c   Data           0  Virtualpathptr.o(.constdata)
+    KNullDesC16                              0x00009e5c   Data           8  Virtualpathptr.o(.constdata)
+    .constdata                               0x00009e5c   Section       36  Virtualpathptr.o(.constdata)
+    ContentAccess::KCafVirtualPathSeparator  0x00009e64   Data           8  Virtualpathptr.o(.constdata)
+    ContentAccess::KDefaultContentObject     0x00009e6c   Data          20  Virtualpathptr.o(.constdata)
+    .constdata$1                             0x00009e80   Data           0  bitset.o(.constdata)
+    ContentAccess::KCafUtilsPanic            0x00009e80   Data          24  bitset.o(.constdata)
+    .constdata                               0x00009e80   Section       24  bitset.o(.constdata)
+    .constdata$1                             0x00009e98   Data           0  cafmimeheader.o(.constdata)
+    KNullDesC8                               0x00009e98   Data           8  cafmimeheader.o(.constdata)
+    .constdata                               0x00009e98   Section        8  cafmimeheader.o(.constdata)
+    .constdata__ZTI13CArrayPakFlatI6TEntryE  0x00009ea0   Section       12  dirstreamable.o(.constdata__ZTI13CArrayPakFlatI6TEntryE)
+    .constdata__ZTI9CArrayPakI6TEntryE       0x00009eac   Section       12  dirstreamable.o(.constdata__ZTI9CArrayPakI6TEntryE)
+    .constdata__ZTIN13ContentAccess11CRightsInfoE 0x00009eb8   Section       12  rightsinfo.o(.constdata__ZTIN13ContentAccess11CRightsInfoE)
+    .constdata__ZTIN13ContentAccess12CVirtualPathE 0x00009ec4   Section       12  virtualpath.o(.constdata__ZTIN13ContentAccess12CVirtualPathE)
+    .constdata__ZTIN13ContentAccess14CCafMimeHeaderE 0x00009ed0   Section       12  cafmimeheader.o(.constdata__ZTIN13ContentAccess14CCafMimeHeaderE)
+    .constdata__ZTIN13ContentAccess14CDirStreamableE 0x00009edc   Section       12  dirstreamable.o(.constdata__ZTIN13ContentAccess14CDirStreamableE)
+    .constdata__ZTIN13ContentAccess14CMetaDataArrayE 0x00009ee8   Section       12  Metadataarray.o(.constdata__ZTIN13ContentAccess14CMetaDataArrayE)
+    .constdata__ZTIN13ContentAccess15CEmbeddedObjectE 0x00009ef4   Section       12  embeddedobject.o(.constdata__ZTIN13ContentAccess15CEmbeddedObjectE)
+    .constdata__ZTIN13ContentAccess16CStringAttributeE 0x00009f00   Section       12  stringattribute.o(.constdata__ZTIN13ContentAccess16CStringAttributeE)
+    .constdata__ZTIN13ContentAccess7CBitsetE 0x00009f0c   Section       12  bitset.o(.constdata__ZTIN13ContentAccess7CBitsetE)
+    .constdata__ZTIN13ContentAccess9CMetaDataE 0x00009f18   Section       12  Metadata.o(.constdata__ZTIN13ContentAccess9CMetaDataE)
+    .constdata__ZTS13CArrayPakFlatI6TEntryE  0x00009f24   Section       25  dirstreamable.o(.constdata__ZTS13CArrayPakFlatI6TEntryE)
+    .constdata__ZTS9CArrayPakI6TEntryE       0x00009f3d   Section       20  dirstreamable.o(.constdata__ZTS9CArrayPakI6TEntryE)
+    .constdata__ZTSN13ContentAccess11CRightsInfoE 0x00009f51   Section       31  rightsinfo.o(.constdata__ZTSN13ContentAccess11CRightsInfoE)
+    .constdata__ZTSN13ContentAccess12CVirtualPathE 0x00009f70   Section       32  virtualpath.o(.constdata__ZTSN13ContentAccess12CVirtualPathE)
+    .constdata__ZTSN13ContentAccess14CCafMimeHeaderE 0x00009f90   Section       34  cafmimeheader.o(.constdata__ZTSN13ContentAccess14CCafMimeHeaderE)
+    .constdata__ZTSN13ContentAccess14CDirStreamableE 0x00009fb2   Section       34  dirstreamable.o(.constdata__ZTSN13ContentAccess14CDirStreamableE)
+    .constdata__ZTSN13ContentAccess14CMetaDataArrayE 0x00009fd4   Section       34  Metadataarray.o(.constdata__ZTSN13ContentAccess14CMetaDataArrayE)
+    .constdata__ZTSN13ContentAccess15CEmbeddedObjectE 0x00009ff6   Section       35  embeddedobject.o(.constdata__ZTSN13ContentAccess15CEmbeddedObjectE)
+    .constdata__ZTSN13ContentAccess16CStringAttributeE 0x0000a019   Section       36  stringattribute.o(.constdata__ZTSN13ContentAccess16CStringAttributeE)
+    .constdata__ZTSN13ContentAccess7CBitsetE 0x0000a03d   Section       26  bitset.o(.constdata__ZTSN13ContentAccess7CBitsetE)
+    .constdata__ZTSN13ContentAccess9CMetaDataE 0x0000a057   Section       28  Metadata.o(.constdata__ZTSN13ContentAccess9CMetaDataE)
+    .constdata__ZTV13CArrayPakFlatI6TEntryE  0x0000a074   Section       20  dirstreamable.o(.constdata__ZTV13CArrayPakFlatI6TEntryE)
+    .constdata__ZTVN13ContentAccess11CRightsInfoE 0x0000a088   Section       20  rightsinfo.o(.constdata__ZTVN13ContentAccess11CRightsInfoE)
+    .constdata__ZTVN13ContentAccess12CVirtualPathE 0x0000a09c   Section       20  virtualpath.o(.constdata__ZTVN13ContentAccess12CVirtualPathE)
+    .constdata__ZTVN13ContentAccess14CCafMimeHeaderE 0x0000a0b0   Section       20  cafmimeheader.o(.constdata__ZTVN13ContentAccess14CCafMimeHeaderE)
+    .constdata__ZTVN13ContentAccess14CDirStreamableE 0x0000a0c4   Section       20  dirstreamable.o(.constdata__ZTVN13ContentAccess14CDirStreamableE)
+    .constdata__ZTVN13ContentAccess14CMetaDataArrayE 0x0000a0d8   Section       20  Metadataarray.o(.constdata__ZTVN13ContentAccess14CMetaDataArrayE)
+    .constdata__ZTVN13ContentAccess15CEmbeddedObjectE 0x0000a0ec   Section       20  embeddedobject.o(.constdata__ZTVN13ContentAccess15CEmbeddedObjectE)
+    .constdata__ZTVN13ContentAccess16CStringAttributeE 0x0000a100   Section       20  stringattribute.o(.constdata__ZTVN13ContentAccess16CStringAttributeE)
+    .constdata__ZTVN13ContentAccess7CBitsetE 0x0000a114   Section       20  bitset.o(.constdata__ZTVN13ContentAccess7CBitsetE)
+    .constdata__ZTVN13ContentAccess9CMetaDataE 0x0000a128   Section       20  Metadata.o(.constdata__ZTVN13ContentAccess9CMetaDataE)
+    .ARM.exidx                               0x0000a13c   Section        8  ucppinit_aeabi.o(.ARM.exidx)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THUMB_ISAv2$ARM_ISAv5$M$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$IEEEJ$EBA8$UX$FPIC$INDIRECT$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    cafutils{000a0000}.dll                   0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    drtaeabi{000a0000}.dll                   0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    efsrv{000a0000}[100039e4].dll            0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    estor{000a0000}[10003b0d].dll            0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    euser{000a0000}[100039e5].dll            0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    scppnwdl{000a0000}.dll                   0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    SHT$$INIT_ARRAY$$Base                     - Undefined Weak Reference
+    SHT$$INIT_ARRAY$$Limit                    - Undefined Weak Reference
+    RArrayBase::Close()                       - Undefined Reference
+    _ZN10RArrayBase5CloseEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RArrayBase::Reset()                       - Undefined Reference
+    _ZN10RArrayBase5ResetEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RArrayBase::Append(const void*)           - Undefined Reference
+    _ZN10RArrayBase6AppendEPKv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RArrayBase::RArrayBase(int)               - Undefined Reference
+    _ZN10RArrayBaseC1Ei@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RReadStream::ReadInt16L()                 - Undefined Reference
+    _ZN11RReadStream10ReadInt16LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadInt32L()                 - Undefined Reference
+    _ZN11RReadStream10ReadInt32LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadL(TDes8&)                - Undefined Reference
+    _ZN11RReadStream5ReadLER5TDes8@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadL(TDes8&, int)           - Undefined Reference
+    _ZN11RReadStream5ReadLER5TDes8i@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadL(TDes16&, int)          - Undefined Reference
+    _ZN11RReadStream5ReadLER6TDes16i@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    CleanupStack::PopAndDestroy(int)          - Undefined Reference
+    _ZN12CleanupStack13PopAndDestroyEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CleanupStack::PopAndDestroy()             - Undefined Reference
+    _ZN12CleanupStack13PopAndDestroyEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CleanupStack::Pop()                       - Undefined Reference
+    _ZN12CleanupStack3PopEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CleanupStack::PushL(CBase*)               - Undefined Reference
+    _ZN12CleanupStack5PushLEP5CBase@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CleanupStack::PushL(void*)                - Undefined Reference
+    _ZN12CleanupStack5PushLEPv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RWriteStream::WriteInt16L(int)            - Undefined Reference
+    _ZN12RWriteStream11WriteInt16LEi@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteInt32L(long)           - Undefined Reference
+    _ZN12RWriteStream11WriteInt32LEl@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteL(const TDesC8&)       - Undefined Reference
+    _ZN12RWriteStream6WriteLERK6TDesC8@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteL(const TDesC16&)      - Undefined Reference
+    _ZN12RWriteStream6WriteLERK7TDesC16@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    CArrayPakBase::CArrayPakBase(CBufBase*(*)(int), int)  - Undefined Reference
+    _ZN13CArrayPakBaseC1EPFP8CBufBaseiEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CArrayPakBase::~CArrayPakBase()           - Undefined Reference
+    _ZN13CArrayPakBaseD1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RPointerArrayBase::Close()                - Undefined Reference
+    _ZN17RPointerArrayBase5CloseEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RPointerArrayBase::Reset()                - Undefined Reference
+    _ZN17RPointerArrayBase5ResetEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RPointerArrayBase::Append(const void*)    - Undefined Reference
+    _ZN17RPointerArrayBase6AppendEPKv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RPointerArrayBase::RPointerArrayBase()    - Undefined Reference
+    _ZN17RPointerArrayBaseC1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CDir::AddL(const TEntry&)                 - Undefined Reference
+    _ZN4CDir4AddLERK6TEntry@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    CDir::Sort(unsigned)                      - Undefined Reference
+    _ZN4CDir4SortEj@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    CDir::CDir()                              - Undefined Reference
+    _ZN4CDirC1Ev@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    CDir::~CDir()                             - Undefined Reference
+    _ZN4CDirD1Ev@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    User::LeaveIfError(int)                   - Undefined Reference
+    _ZN4User12LeaveIfErrorEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::MarkCleanupStack()                  - Undefined Reference
+    _ZN4User16MarkCleanupStackEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::UnMarkCleanupStack(TTrapHandler*)   - Undefined Reference
+    _ZN4User18UnMarkCleanupStackEP12TTrapHandler@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Leave(int)                          - Undefined Reference
+    _ZN4User5LeaveEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Panic(const TDesC16&, int)          - Undefined Reference
+    _ZN4User5PanicERK7TDesC16i@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::AllocL(int)                         - Undefined Reference
+    _ZN4User6AllocLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::AllocZL(int)                        - Undefined Reference
+    _ZN4User7AllocZLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Invariant()                         - Undefined Reference
+    _ZN4User9InvariantEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CBase::Extension_(unsigned, void*&, void*)  - Undefined Reference
+    _ZN5CBase10Extension_EjRPvS0_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CBase::~CBase()                           - Undefined Reference
+    _ZN5CBaseD1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::Copy(const TDesC8&)                - Undefined Reference
+    _ZN5TDes84CopyERK6TDesC8@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::Copy(const TDesC16&)               - Undefined Reference
+    _ZN5TDes84CopyERK7TDesC16@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::LowerCase()                        - Undefined Reference
+    _ZN5TDes89LowerCaseEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::SetLength(int)                     - Undefined Reference
+    _ZN5TDes89SetLengthEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::UpperCase()                        - Undefined Reference
+    _ZN5TDes89UpperCaseEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtr8::TPtr8(unsigned char*, int, int)    - Undefined Reference
+    _ZN5TPtr8C1EPhii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    HBufC8::Des()                             - Undefined Reference
+    _ZN6HBufC83DesEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    HBufC8::NewL(int)                         - Undefined Reference
+    _ZN6HBufC84NewLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    HBufC8::NewLC(int)                        - Undefined Reference
+    _ZN6HBufC85NewLCEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes16::Copy(const TDesC8&)               - Undefined Reference
+    _ZN6TDes164CopyERK6TDesC8@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes16::Copy(const TDesC16&)              - Undefined Reference
+    _ZN6TDes164CopyERK7TDesC16@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes16::Append(const TDesC16&)            - Undefined Reference
+    _ZN6TDes166AppendERK7TDesC16@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes16::UpperCase()                       - Undefined Reference
+    _ZN6TDes169UpperCaseEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TEntry::TEntry(const TEntry&)             - Undefined Reference
+    _ZN6TEntryC1ERKS_@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    TEntry::TEntry()                          - Undefined Reference
+    _ZN6TEntryC1Ev@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    TPtrC8::TPtrC8(const unsigned char*, int)  - Undefined Reference
+    _ZN6TPtrC8C1EPKhi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtrC8::TPtrC8(const TDesC8&)             - Undefined Reference
+    _ZN6TPtrC8C1ERK6TDesC8@euser{000a0000}[100039e5].dll  - Undefined Reference
+    HBufC16::Des()                            - Undefined Reference
+    _ZN7HBufC163DesEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    HBufC16::NewL(int)                        - Undefined Reference
+    _ZN7HBufC164NewLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    HBufC16::NewLC(int)                       - Undefined Reference
+    _ZN7HBufC165NewLCEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtrC16::TPtrC16(const TDesC16&)          - Undefined Reference
+    _ZN7TPtrC16C1ERK7TDesC16@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CBufFlat::NewL(int)                       - Undefined Reference
+    _ZN8CBufFlat4NewLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TBufBase8::TBufBase8(int)                 - Undefined Reference
+    _ZN9TBufBase8C1Ei@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RArrayBase::At(int) const                 - Undefined Reference
+    _ZNK10RArrayBase2AtEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RArrayBase::Count() const                 - Undefined Reference
+    _ZNK10RArrayBase5CountEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    XLeaveException::GetReason() const        - Undefined Reference
+    _ZNK15XLeaveException9GetReasonEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RPointerArrayBase::At(int) const          - Undefined Reference
+    _ZNK17RPointerArrayBase2AtEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RPointerArrayBase::Count() const          - Undefined Reference
+    _ZNK17RPointerArrayBase5CountEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CDir::Count() const                       - Undefined Reference
+    _ZNK4CDir5CountEv@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    CDir::operator [](int) const              - Undefined Reference
+    _ZNK4CDirixEi@efsrv{000a0000}[100039e4].dll  - Undefined Reference
+    TDesC8::Left(int) const                   - Undefined Reference
+    _ZNK6TDesC84LeftEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC8::AllocL() const                    - Undefined Reference
+    _ZNK6TDesC86AllocLEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC8::AllocLC() const                   - Undefined Reference
+    _ZNK6TDesC87AllocLCEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC8::Compare(const TDesC8&) const      - Undefined Reference
+    _ZNK6TDesC87CompareERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::LocateReverse(TChar) const       - Undefined Reference
+    _ZNK7TDesC1613LocateReverseE5TChar@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::AtC(int) const                   - Undefined Reference
+    _ZNK7TDesC163AtCEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::Left(int) const                  - Undefined Reference
+    _ZNK7TDesC164LeftEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::Right(int) const                 - Undefined Reference
+    _ZNK7TDesC165RightEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::AllocL() const                   - Undefined Reference
+    _ZNK7TDesC166AllocLEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::AllocLC() const                  - Undefined Reference
+    _ZNK7TDesC167AllocLCEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::Compare(const TDesC16&) const    - Undefined Reference
+    _ZNK7TDesC167CompareERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    typeinfo for CArrayPakBase                - Undefined Reference
+    _ZTI13CArrayPakBase@euser{000a0000}[100039e5].dll  - Undefined Reference
+    typeinfo for XLeaveException              - Undefined Reference
+    _ZTI15XLeaveException@drtaeabi{000a0000}.dll  - Undefined Reference
+    typeinfo for CDir                         - Undefined Reference
+    _ZTI4CDir@efsrv{000a0000}[100039e4].dll   - Undefined Reference
+    typeinfo for CBase                        - Undefined Reference
+    _ZTI5CBase@euser{000a0000}[100039e5].dll  - Undefined Reference
+    vtable for __cxxabiv1::__si_class_type_info  - Undefined Reference
+    _ZTVN10__cxxabiv120__si_class_type_infoE@drtaeabi{000a0000}.dll  - Undefined Reference
+    operator delete[] (void*)                 - Undefined Reference
+    _ZdaPv@scppnwdl{000a0000}.dll             - Undefined Reference
+    operator delete (void*)                   - Undefined Reference
+    _ZdlPv@scppnwdl{000a0000}.dll             - Undefined Reference
+    __aeabi_memset                            - Undefined Reference
+    __aeabi_memset@drtaeabi{000a0000}.dll     - Undefined Reference
+    __aeabi_unwind_cpp_pr0                    - Undefined Reference
+    __aeabi_unwind_cpp_pr0@drtaeabi{000a0000}.dll  - Undefined Reference
+    __cxa_begin_catch                         - Undefined Reference
+    __cxa_begin_catch@drtaeabi{000a0000}.dll  - Undefined Reference
+    __cxa_end_catch                           - Undefined Reference
+    __cxa_end_catch@drtaeabi{000a0000}.dll    - Undefined Reference
+    __cxa_end_cleanup                         - Undefined Reference
+    __cxa_end_cleanup@drtaeabi{000a0000}.dll  - Undefined Reference
+    _fp_init                                  - Undefined Weak Reference
+    memclr                                    - Undefined Reference
+    memclr@euser{000a0000}[100039e5].dll      - Undefined Reference
+    memcompare                                - Undefined Reference
+    memcompare@euser{000a0000}[100039e5].dll  - Undefined Reference
+    memmove                                   - Undefined Reference
+    memmove@euser{000a0000}[100039e5].dll     - Undefined Reference
+    run_static_dtors                          - Undefined Weak Reference
+    Image$$ER_RO$$Base                       0x00008000   Number         0  anon$$obj.o(linker$$defined$$symbols)
+    _E32Dll                                  0x00008000   ARM Code      40  uc_dll_.o(.emb_text)
+    Symbian$$CPP$$Exception$$Descriptor      0x00008014   Data           0  uc_dll_.o(.emb_text)
+    __cpp_initialize__aeabi_                 0x00008028   ARM Code      72  ucppinit_aeabi.o(.emb_text)
+    std::nothrow                             0x00008070   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    __PLT                                    0x00008070   ARM Code       0  anon$$obj.o(.plt)
+    ContentAccess::TCafUtils::ReadDescriptor16L(RReadStream&) 0x00008321   Thumb Code    50  Cafutils.o(.text)
+    ContentAccess::TCafUtils::WriteDescriptor16L(RWriteStream&, const TDesC16&) 0x00008353   Thumb Code    28  Cafutils.o(.text)
+    ContentAccess::TCafUtils::ReadDescriptor8L(RReadStream&) 0x0000836f   Thumb Code    50  Cafutils.o(.text)
+    ContentAccess::TCafUtils::ReadDescriptor8L(RReadStream&, TDes8&) 0x000083a1   Thumb Code    52  Cafutils.o(.text)
+    ContentAccess::TCafUtils::WriteDescriptor8L(RWriteStream&, const TDesC8&) 0x000083d5   Thumb Code    28  Cafutils.o(.text)
+    ContentAccess::RAttributeSet::RAttributeSet() 0x000083f1   Thumb Code    10  attributeset.o(.text)
+    ContentAccess::RAttributeSet::RAttributeSet__sub_object() 0x000083f1   Thumb Code     0  attributeset.o(.text)
+    ContentAccess::RAttributeSet::Close()    0x000083fb   Thumb Code    16  attributeset.o(.text)
+    ContentAccess::RAttributeSet::AddL(int, int, int) 0x0000840b   Thumb Code    20  attributeset.o(.text)
+    ContentAccess::RAttributeSet::SetValue(int, int, int) 0x0000841f   Thumb Code    74  attributeset.o(.text)
+    ContentAccess::RAttributeSet::AddL(int)  0x00008469   Thumb Code    34  attributeset.o(.text)
+    ContentAccess::RAttributeSet::GetValue(int, int&) const 0x0000848b   Thumb Code    68  attributeset.o(.text)
+    ContentAccess::RAttributeSet::operator [](int) const 0x000084cf   Thumb Code    10  attributeset.o(.text)
+    ContentAccess::RAttributeSet::Count() const 0x000084d9   Thumb Code     8  attributeset.o(.text)
+    ContentAccess::RAttributeSet::ExternalizeL(RWriteStream&) const 0x000084e1   Thumb Code    80  attributeset.o(.text)
+    ContentAccess::RAttributeSet::InternalizeL(RReadStream&) 0x00008531   Thumb Code    78  attributeset.o(.text)
+    ContentAccess::CStringAttribute::ConstructL(const TDesC16&) 0x00008585   Thumb Code    14  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::CStringAttribute(int, int) 0x00008593   Thumb Code    10  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::CStringAttribute__sub_object(int, int) 0x00008593   Thumb Code     0  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::NewL(int, const TDesC16&, int) 0x0000859d   Thumb Code    44  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::~CStringAttribute() 0x000085c9   Thumb Code    22  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::~CStringAttribute__sub_object() 0x000085c9   Thumb Code     0  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::~CStringAttribute__deallocating() 0x000085df   Thumb Code    16  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::Attribute() const 0x000085ef   Thumb Code     4  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::Value() const 0x000085f3   Thumb Code     4  stringattribute.o(.text)
+    ContentAccess::CStringAttribute::Error() const 0x000085f7   Thumb Code     4  stringattribute.o(.text)
+    ContentAccess::RStringAttributeSet::RStringAttributeSet() 0x00008601   Thumb Code     8  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::RStringAttributeSet__sub_object() 0x00008601   Thumb Code     0  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::Close() 0x00008609   Thumb Code    54  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::AddL(int, const TDesC16&, int) 0x0000863f   Thumb Code    38  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::SetValue(int, const TDesC16&, int) 0x00008665   Thumb Code   152  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::AddL(int) 0x000086fd   Thumb Code    36  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::GetValue(int, TDes16&) const 0x00008721   Thumb Code   130  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::GetValueLength(int) const 0x000087a3   Thumb Code    66  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::operator [](int) const 0x000087e5   Thumb Code    14  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::Count() const 0x000087f3   Thumb Code     8  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::ExternalizeL(RWriteStream&) const 0x000087fb   Thumb Code    98  stringattributeset.o(.text)
+    ContentAccess::RStringAttributeSet::InternalizeL(RReadStream&) 0x0000885d   Thumb Code    86  stringattributeset.o(.text)
+    ContentAccess::CVirtualPath::CreateCombinedUriUniqueIdL(const TDesC16&, const TDesC16&) 0x000088bd   Thumb Code   102  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::ConstructL() 0x00008923   Thumb Code    72  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::CVirtualPath(const ContentAccess::TVirtualPathPtr&) 0x0000896b   Thumb Code    40  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::CVirtualPath__sub_object(const ContentAccess::TVirtualPathPtr&) 0x0000896b   Thumb Code     0  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::NewL(const ContentAccess::TVirtualPathPtr&) 0x00008993   Thumb Code    36  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::NewL(const TDesC16&) 0x000089b7   Thumb Code    18  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::NewL(const TDesC16&, const TDesC16&) 0x000089c9   Thumb Code    18  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::InternalizeL(RReadStream&) 0x000089db   Thumb Code    46  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::NewL(RReadStream&) 0x00008a09   Thumb Code    54  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::~CVirtualPath() 0x00008a3f   Thumb Code    34  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::~CVirtualPath__sub_object() 0x00008a3f   Thumb Code     0  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::~CVirtualPath__deallocating() 0x00008a61   Thumb Code    16  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::URI() const 0x00008a71   Thumb Code     4  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::UniqueId() const 0x00008a75   Thumb Code     4  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::ExternalizeL(RWriteStream&) const 0x00008a79   Thumb Code    24  virtualpath.o(.text)
+    ContentAccess::CVirtualPath::GetCombinedUriUniqueId() 0x00008a91   Thumb Code     4  virtualpath.o(.text)
+    ContentAccess::CMetaData::ConstructL(const TDesC8&, const TDesC8&) 0x00008a9d   Thumb Code    84  Metadata.o(.text)
+    ContentAccess::CMetaData::CMetaData(int) 0x00008af1   Thumb Code     8  Metadata.o(.text)
+    ContentAccess::CMetaData::CMetaData__sub_object(int) 0x00008af1   Thumb Code     0  Metadata.o(.text)
+    ContentAccess::CMetaData::NewL(const TDesC8&, const TDesC8&) 0x00008af9   Thumb Code    42  Metadata.o(.text)
+    ContentAccess::CMetaData::ConstructL(const TDesC16&, const TDesC16&) 0x00008b23   Thumb Code   100  Metadata.o(.text)
+    ContentAccess::CMetaData::NewL(const TDesC16&, const TDesC16&) 0x00008b87   Thumb Code    42  Metadata.o(.text)
+    ContentAccess::CMetaData::InternalizeL(RReadStream&) 0x00008bb1   Thumb Code    84  Metadata.o(.text)
+    ContentAccess::CMetaData::NewL(RReadStream&) 0x00008c05   Thumb Code    38  Metadata.o(.text)
+    ContentAccess::CMetaData::~CMetaData()   0x00008c2b   Thumb Code    40  Metadata.o(.text)
+    ContentAccess::CMetaData::~CMetaData__sub_object() 0x00008c2b   Thumb Code     0  Metadata.o(.text)
+    ContentAccess::CMetaData::~CMetaData__deallocating() 0x00008c53   Thumb Code    16  Metadata.o(.text)
+    ContentAccess::CMetaData::Field() const  0x00008c63   Thumb Code     4  Metadata.o(.text)
+    ContentAccess::CMetaData::Data() const   0x00008c67   Thumb Code     4  Metadata.o(.text)
+    ContentAccess::CMetaData::Field8() const 0x00008c6b   Thumb Code     4  Metadata.o(.text)
+    ContentAccess::CMetaData::Data8() const  0x00008c6f   Thumb Code     4  Metadata.o(.text)
+    ContentAccess::CMetaData::ExternalizeL(RWriteStream&) const 0x00008c73   Thumb Code    24  Metadata.o(.text)
+    ContentAccess::CMetaDataArray::CMetaDataArray() 0x00008c91   Thumb Code    22  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::CMetaDataArray__sub_object() 0x00008c91   Thumb Code     0  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::NewLC()   0x00008ca7   Thumb Code    22  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::NewL()    0x00008cbd   Thumb Code    16  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::InternalizeL(RReadStream&) 0x00008ccd   Thumb Code    74  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::NewL(RReadStream&) 0x00008d17   Thumb Code    36  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::~CMetaDataArray() 0x00008d3b   Thumb Code    64  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::~CMetaDataArray__sub_object() 0x00008d3b   Thumb Code     0  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::~CMetaDataArray__deallocating() 0x00008d7b   Thumb Code    16  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::AddL(const TDesC8&, const TDesC8&) 0x00008d8b   Thumb Code    52  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::AddL(const TDesC16&, const TDesC16&) 0x00008dbf   Thumb Code    52  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::operator [](int) const 0x00008df3   Thumb Code    12  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::Count() const 0x00008dff   Thumb Code    10  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::SearchL(const TDesC16&, int) const 0x00008e09   Thumb Code   178  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::SearchL(const TDesC8&, int) const 0x00008ebb   Thumb Code   178  Metadataarray.o(.text)
+    ContentAccess::CMetaDataArray::ExternalizeL(RWriteStream&) const 0x00008f6d   Thumb Code    58  Metadataarray.o(.text)
+    ContentAccess::CEmbeddedObject::ConstructL(const TDesC16&, const TDesC16&, const TDesC8&) 0x00008fb1   Thumb Code    56  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::CEmbeddedObject(ContentAccess::TEmbeddedType) 0x00008fe9   Thumb Code    26  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::CEmbeddedObject__sub_object(ContentAccess::TEmbeddedType) 0x00008fe9   Thumb Code     0  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::NewL(const TDesC16&, const TDesC16&, const TDesC8&, ContentAccess::TEmbeddedType) 0x00009003   Thumb Code    50  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::NewL(const TDesC16&, const TDesC8&, ContentAccess::TEmbeddedType) 0x00009035   Thumb Code    14  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::InternalizeL(RReadStream&) 0x00009043   Thumb Code    68  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::NewL(RReadStream&) 0x00009087   Thumb Code    40  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::~CEmbeddedObject() 0x000090af   Thumb Code    28  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::~CEmbeddedObject__sub_object() 0x000090af   Thumb Code     0  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::~CEmbeddedObject__deallocating() 0x000090cb   Thumb Code    16  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::UniqueId() const 0x000090db   Thumb Code     4  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::Name() const 0x000090df   Thumb Code    14  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::Type() const 0x000090ed   Thumb Code     4  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::MimeType() const 0x000090f1   Thumb Code     4  embeddedobject.o(.text)
+    ContentAccess::CEmbeddedObject::ExternalizeL(RWriteStream&) const 0x000090f5   Thumb Code    48  embeddedobject.o(.text)
+    ContentAccess::CRightsInfo::ConstructL(const TDesC16&, const TDesC16&) 0x0000912d   Thumb Code    24  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::CRightsInfo(int, ContentAccess::TRightsStatus) 0x00009145   Thumb Code    10  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::CRightsInfo__sub_object(int, ContentAccess::TRightsStatus) 0x00009145   Thumb Code     0  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::NewL(const TDesC16&, const TDesC16&, int, ContentAccess::TRightsStatus) 0x0000914f   Thumb Code    48  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::InternalizeL(RReadStream&) 0x0000917f   Thumb Code    40  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::CRightsInfo() 0x000091a7   Thumb Code     6  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::CRightsInfo__sub_object() 0x000091a7   Thumb Code     0  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::NewL(RReadStream&) 0x000091ad   Thumb Code    36  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::~CRightsInfo() 0x000091d1   Thumb Code    28  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::~CRightsInfo__sub_object() 0x000091d1   Thumb Code     0  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::~CRightsInfo__deallocating() 0x000091ed   Thumb Code    16  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::Description() const 0x000091fd   Thumb Code     4  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::UniqueId() const 0x00009201   Thumb Code     4  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::RightsType() const 0x00009205   Thumb Code     4  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::RightsStatus() const 0x00009209   Thumb Code     4  rightsinfo.o(.text)
+    ContentAccess::CRightsInfo::ExternalizeL(RWriteStream&) const 0x0000920d   Thumb Code    40  rightsinfo.o(.text)
+    ContentAccess::TVirtualPathPtr::TVirtualPathPtr(const TDesC16&, const TDesC16&) 0x00009239   Thumb Code    20  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::TVirtualPathPtr__sub_object(const TDesC16&, const TDesC16&) 0x00009239   Thumb Code     0  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::Set(const TDesC16&, const TDesC16&) 0x0000924d   Thumb Code    22  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::TVirtualPathPtr(const TDesC16&) 0x00009263   Thumb Code   108  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::TVirtualPathPtr__sub_object(const TDesC16&) 0x00009263   Thumb Code     0  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::UniqueId() const 0x000092cf   Thumb Code     4  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::URI() const 0x000092d3   Thumb Code     2  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::TVirtualPathPtr(const ContentAccess::TVirtualPathPtr&) 0x000092d5   Thumb Code    22  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::TVirtualPathPtr__sub_object(const ContentAccess::TVirtualPathPtr&) 0x000092d5   Thumb Code     0  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::operator =(const ContentAccess::TVirtualPathPtr&) 0x000092eb   Thumb Code    16  Virtualpathptr.o(.text)
+    ContentAccess::TVirtualPathPtr::operator =(const TDesC16&) 0x000092fb   Thumb Code    26  Virtualpathptr.o(.text)
+    ContentAccess::CDirStreamable::ConstructL() 0x00009319   Thumb Code    22  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::CDirStreamable() 0x0000932f   Thumb Code    12  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::CDirStreamable__sub_object() 0x0000932f   Thumb Code     0  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::NewL()    0x0000933b   Thumb Code    32  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::AddL(const TEntry&) 0x0000935b   Thumb Code     8  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::ConstructL(CDir&) 0x00009363   Thumb Code    72  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::NewL(CDir&) 0x000093ab   Thumb Code    36  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::InternalizeL(RReadStream&) 0x000093cf   Thumb Code    70  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::NewL(RReadStream) 0x00009415   Thumb Code    40  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::~CDirStreamable() 0x0000943d   Thumb Code     8  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::~CDirStreamable__sub_object() 0x0000943d   Thumb Code     0  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::~CDirStreamable__deallocating() 0x00009445   Thumb Code    16  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::Count() const 0x00009455   Thumb Code     8  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::operator [](int) const 0x0000945d   Thumb Code     8  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::Sort(unsigned) 0x00009465   Thumb Code     8  dirstreamable.o(.text)
+    ContentAccess::CDirStreamable::ExternalizeL(RWriteStream&) const 0x0000946d   Thumb Code    78  dirstreamable.o(.text)
+    ContentAccess::CBitset::Reset()          0x000094c1   Thumb Code    14  bitset.o(.text)
+    ContentAccess::CBitset::ConstructL(int)  0x000094cf   Thumb Code    32  bitset.o(.text)
+    ContentAccess::CBitset::CBitset()        0x000094ef   Thumb Code     6  bitset.o(.text)
+    ContentAccess::CBitset::CBitset__sub_object() 0x000094ef   Thumb Code     0  bitset.o(.text)
+    ContentAccess::CBitset::NewLC(int)       0x000094f5   Thumb Code    32  bitset.o(.text)
+    ContentAccess::CBitset::NewL(int)        0x00009515   Thumb Code    16  bitset.o(.text)
+    ContentAccess::CBitset::ConstructL(const ContentAccess::CBitset&) 0x00009525   Thumb Code    24  bitset.o(.text)
+    ContentAccess::CBitset::CBitset(const ContentAccess::CBitset&) 0x0000953d   Thumb Code    14  bitset.o(.text)
+    ContentAccess::CBitset::CBitset__sub_object(const ContentAccess::CBitset&) 0x0000953d   Thumb Code     0  bitset.o(.text)
+    ContentAccess::CBitset::NewLC(const ContentAccess::CBitset&) 0x0000954b   Thumb Code    34  bitset.o(.text)
+    ContentAccess::CBitset::NewL(const ContentAccess::CBitset&) 0x0000956d   Thumb Code    16  bitset.o(.text)
+    ContentAccess::CBitset::~CBitset()       0x0000957d   Thumb Code    22  bitset.o(.text)
+    ContentAccess::CBitset::~CBitset__sub_object() 0x0000957d   Thumb Code     0  bitset.o(.text)
+    ContentAccess::CBitset::~CBitset__deallocating() 0x00009593   Thumb Code    16  bitset.o(.text)
+    ContentAccess::CBitset::MaxBits() const  0x000095a3   Thumb Code     4  bitset.o(.text)
+    ContentAccess::CBitset::SetAll()         0x000095a7   Thumb Code    16  bitset.o(.text)
+    ContentAccess::CBitset::Invert()         0x000095b7   Thumb Code    22  bitset.o(.text)
+    ContentAccess::CBitset::IdentifyBit(int, int&, int&) const 0x000095cd   Thumb Code    22  bitset.o(.text)
+    ContentAccess::CBitset::Set(int)         0x000095e3   Thumb Code    60  bitset.o(.text)
+    ContentAccess::CBitset::Unset(int)       0x0000961f   Thumb Code    60  bitset.o(.text)
+    ContentAccess::CBitset::IsSet(int) const 0x0000965b   Thumb Code    66  bitset.o(.text)
+    ContentAccess::CBitset::operator =(const ContentAccess::CBitset&) 0x0000969d   Thumb Code    66  bitset.o(.text)
+    ContentAccess::CBitset::operator ==(const ContentAccess::CBitset&) const 0x000096df   Thumb Code   116  bitset.o(.text)
+    ContentAccess::CBitset::ExternalizeL(RWriteStream&) const 0x00009753   Thumb Code    34  bitset.o(.text)
+    ContentAccess::CBitset::InternalizeL(RReadStream&) 0x00009775   Thumb Code    52  bitset.o(.text)
+    ContentAccess::CBitset::SetListL(int, ...) 0x000097a9   Thumb Code    74  bitset.o(.text)
+    ContentAccess::CBitset::IsSetList(int, ...) const 0x000097f3   Thumb Code    44  bitset.o(.text)
+    ContentAccess::CCafMimeHeader::SetStandardMimeDataL(const ContentAccess::TMimeFields&, const TDesC8&) 0x00009829   Thumb Code    60  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::ConstructL(const TDesC8&) 0x00009865   Thumb Code    16  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::CCafMimeHeader() 0x00009875   Thumb Code    20  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::CCafMimeHeader__sub_object() 0x00009875   Thumb Code     0  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::NewL(const TDesC8&) 0x00009889   Thumb Code    36  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::~CCafMimeHeader() 0x000098ad   Thumb Code    50  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::~CCafMimeHeader__sub_object() 0x000098ad   Thumb Code     0  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::~CCafMimeHeader__deallocating() 0x000098df   Thumb Code    16  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::StandardMimeData(const ContentAccess::TMimeFields&) const 0x000098ef   Thumb Code    56  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::AddNonStandardMimeL(const TDesC8&, const TDesC8&) 0x00009927   Thumb Code    34  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::NonStandardMimeField(int) const 0x00009949   Thumb Code    24  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::NonStandardMimeData(int) const 0x00009961   Thumb Code    24  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::NonStandardMimeCount() const 0x00009979   Thumb Code    10  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::ExternalizeL(RWriteStream&) const 0x00009983   Thumb Code   254  cafmimeheader.o(.text)
+    ContentAccess::CCafMimeHeader::InternalizeL(RReadStream&) 0x00009a81   Thumb Code   242  cafmimeheader.o(.text)
+    ContentAccess::CMimeFieldAndData::ConstructL(const TDesC8&, const TDesC8&) 0x00009b7d   Thumb Code    24  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::CMimeFieldAndData() 0x00009b95   Thumb Code     2  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::CMimeFieldAndData__sub_object() 0x00009b95   Thumb Code     0  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::NewL(const TDesC8&, const TDesC8&) 0x00009b97   Thumb Code    36  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::~CMimeFieldAndData() 0x00009bbb   Thumb Code    20  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::~CMimeFieldAndData__sub_object() 0x00009bbb   Thumb Code     0  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::FieldName() const 0x00009bcf   Thumb Code    20  mimefieldanddata.o(.text)
+    ContentAccess::CMimeFieldAndData::Data() const 0x00009be3   Thumb Code    20  mimefieldanddata.o(.text)
+    __ARM_switch8                            0x00009bf8   ARM Code      24  switch8.o(.text)
+    __rt_switch8                             0x00009bf8   ARM Code       0  switch8.o(.text)
+    _E32Dll_Body                             0x00009c11   Thumb Code    34  uc_dll.o(.text)
+    __DLL_Export_Table__                     0x00009c38   ARM Code       4  dllexp.o(.text)
+    CArrayPakFlat<TEntry>::~CArrayPakFlat__deallocating() 0x00009c81   Thumb Code    16  dirstreamable.o(i._ZN13CArrayPakFlatI6TEntryED0Ev)
+    CArrayPakFlat<TEntry>::~CArrayPakFlat()  0x00009c91   Thumb Code     8  dirstreamable.o(i._ZN13CArrayPakFlatI6TEntryED1Ev)
+    CArrayPakFlat<TEntry>::~CArrayPakFlat__sub_object() 0x00009c91   Thumb Code     0  dirstreamable.o(i._ZN13CArrayPakFlatI6TEntryED1Ev)
+    Mem::Copy(void*, const void*, int)       0x00009c99   Thumb Code    12  bitset.o(i._ZN3Mem4CopyEPvPKvi)
+    TPtrC16::Set(const TDesC16&)             0x00009ca5   Thumb Code    28  virtualpath.o(i._ZN7TPtrC163SetERK7TDesC16)
+    CArrayPak<TEntry>::~CArrayPak()          0x00009ccd   Thumb Code     8  dirstreamable.o(i._ZN9CArrayPakI6TEntryED1Ev)
+    CArrayPak<TEntry>::~CArrayPak__sub_object() 0x00009ccd   Thumb Code     0  dirstreamable.o(i._ZN9CArrayPakI6TEntryED1Ev)
+    TDesC8::operator ==(const TDesC8&) const 0x00009cd5   Thumb Code    18  Metadataarray.o(i._ZNK6TDesC8eqERKS_)
+    TDesC16::operator ==(const TDesC16&) const 0x00009ce7   Thumb Code    18  Metadataarray.o(i._ZNK7TDesC16eqERKS_)
+    operator delete (void*, void*)           0x00009cf9   Thumb Code     2  virtualpath.o(i._ZdlPvS_)
+    operator new(unsigned, void*)            0x00009cfb   Thumb Code     4  virtualpath.o(i._ZnwjPv)
+    CArrayPakFlat<TEntry>::CArrayPakFlat(int) 0x00009d01   Thumb Code    16  dirstreamable.o(t._ZN13CArrayPakFlatI6TEntryEC1Ei)
+    CArrayPakFlat<TEntry>::CArrayPakFlat__sub_object(int) 0x00009d01   Thumb Code     0  dirstreamable.o(t._ZN13CArrayPakFlatI6TEntryEC1Ei)
+    RPointerArray<ContentAccess::CMimeFieldAndData>::ResetAndDestroy() 0x00009d19   Thumb Code    50  cafmimeheader.o(t._ZN13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEE15ResetAndDestroyEv)
+    RPointerArray<ContentAccess::CStringAttribute>::Count() const 0x00009d4b   Thumb Code     8  stringattributeset.o(t._ZNK13RPointerArrayIN13ContentAccess16CStringAttributeEE5CountEv)
+    RPointerArray<ContentAccess::CStringAttribute>::operator [](int) const 0x00009d53   Thumb Code     8  stringattributeset.o(t._ZNK13RPointerArrayIN13ContentAccess16CStringAttributeEEixEi)
+    RPointerArray<ContentAccess::CMimeFieldAndData>::Count() const 0x00009d5b   Thumb Code     8  cafmimeheader.o(t._ZNK13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEE5CountEv)
+    RPointerArray<ContentAccess::CMimeFieldAndData>::operator [](int) const 0x00009d63   Thumb Code     8  cafmimeheader.o(t._ZNK13RPointerArrayIN13ContentAccess17CMimeFieldAndDataEEixEi)
+    RPointerArray<ContentAccess::CMetaData>::Count() const 0x00009d6b   Thumb Code     8  Metadataarray.o(t._ZNK13RPointerArrayIN13ContentAccess9CMetaDataEE5CountEv)
+    RPointerArray<ContentAccess::CMetaData>::operator [](int) const 0x00009d73   Thumb Code     8  Metadataarray.o(t._ZNK13RPointerArrayIN13ContentAccess9CMetaDataEEixEi)
+    RArray<ContentAccess::RAttributeSet::TAttributeValue>::Count() const 0x00009d7b   Thumb Code     8  attributeset.o(t._ZNK6RArrayIN13ContentAccess13RAttributeSet15TAttributeValueEE5CountEv)
+    RArray<ContentAccess::RAttributeSet::TAttributeValue>::operator [](int) const 0x00009d83   Thumb Code     8  attributeset.o(t._ZNK6RArrayIN13ContentAccess13RAttributeSet15TAttributeValueEEixEi)
+    typeinfo for CArrayPakFlat<TEntry>       0x00009ea0   Data          12  dirstreamable.o(.constdata__ZTI13CArrayPakFlatI6TEntryE)
+    typeinfo for CArrayPak<TEntry>           0x00009eac   Data          12  dirstreamable.o(.constdata__ZTI9CArrayPakI6TEntryE)
+    typeinfo for ContentAccess::CRightsInfo  0x00009eb8   Data          12  rightsinfo.o(.constdata__ZTIN13ContentAccess11CRightsInfoE)
+    typeinfo for ContentAccess::CVirtualPath 0x00009ec4   Data          12  virtualpath.o(.constdata__ZTIN13ContentAccess12CVirtualPathE)
+    typeinfo for ContentAccess::CCafMimeHeader 0x00009ed0   Data          12  cafmimeheader.o(.constdata__ZTIN13ContentAccess14CCafMimeHeaderE)
+    typeinfo for ContentAccess::CDirStreamable 0x00009edc   Data          12  dirstreamable.o(.constdata__ZTIN13ContentAccess14CDirStreamableE)
+    typeinfo for ContentAccess::CMetaDataArray 0x00009ee8   Data          12  Metadataarray.o(.constdata__ZTIN13ContentAccess14CMetaDataArrayE)
+    typeinfo for ContentAccess::CEmbeddedObject 0x00009ef4   Data          12  embeddedobject.o(.constdata__ZTIN13ContentAccess15CEmbeddedObjectE)
+    typeinfo for ContentAccess::CStringAttribute 0x00009f00   Data          12  stringattribute.o(.constdata__ZTIN13ContentAccess16CStringAttributeE)
+    typeinfo for ContentAccess::CBitset      0x00009f0c   Data          12  bitset.o(.constdata__ZTIN13ContentAccess7CBitsetE)
+    typeinfo for ContentAccess::CMetaData    0x00009f18   Data          12  Metadata.o(.constdata__ZTIN13ContentAccess9CMetaDataE)
+    typeinfo name for CArrayPakFlat<TEntry>  0x00009f24   Data          25  dirstreamable.o(.constdata__ZTS13CArrayPakFlatI6TEntryE)
+    typeinfo name for CArrayPak<TEntry>      0x00009f3d   Data          20  dirstreamable.o(.constdata__ZTS9CArrayPakI6TEntryE)
+    typeinfo name for ContentAccess::CRightsInfo 0x00009f51   Data          31  rightsinfo.o(.constdata__ZTSN13ContentAccess11CRightsInfoE)
+    typeinfo name for ContentAccess::CVirtualPath 0x00009f70   Data          32  virtualpath.o(.constdata__ZTSN13ContentAccess12CVirtualPathE)
+    typeinfo name for ContentAccess::CCafMimeHeader 0x00009f90   Data          34  cafmimeheader.o(.constdata__ZTSN13ContentAccess14CCafMimeHeaderE)
+    typeinfo name for ContentAccess::CDirStreamable 0x00009fb2   Data          34  dirstreamable.o(.constdata__ZTSN13ContentAccess14CDirStreamableE)
+    typeinfo name for ContentAccess::CMetaDataArray 0x00009fd4   Data          34  Metadataarray.o(.constdata__ZTSN13ContentAccess14CMetaDataArrayE)
+    typeinfo name for ContentAccess::CEmbeddedObject 0x00009ff6   Data          35  embeddedobject.o(.constdata__ZTSN13ContentAccess15CEmbeddedObjectE)
+    typeinfo name for ContentAccess::CStringAttribute 0x0000a019   Data          36  stringattribute.o(.constdata__ZTSN13ContentAccess16CStringAttributeE)
+    typeinfo name for ContentAccess::CBitset 0x0000a03d   Data          26  bitset.o(.constdata__ZTSN13ContentAccess7CBitsetE)
+    typeinfo name for ContentAccess::CMetaData 0x0000a057   Data          28  Metadata.o(.constdata__ZTSN13ContentAccess9CMetaDataE)
+    vtable for CArrayPakFlat<TEntry>         0x0000a074   Data          20  dirstreamable.o(.constdata__ZTV13CArrayPakFlatI6TEntryE)
+    vtable for ContentAccess::CRightsInfo    0x0000a088   Data          20  rightsinfo.o(.constdata__ZTVN13ContentAccess11CRightsInfoE)
+    vtable for ContentAccess::CVirtualPath   0x0000a09c   Data          20  virtualpath.o(.constdata__ZTVN13ContentAccess12CVirtualPathE)
+    vtable for ContentAccess::CCafMimeHeader 0x0000a0b0   Data          20  cafmimeheader.o(.constdata__ZTVN13ContentAccess14CCafMimeHeaderE)
+    vtable for ContentAccess::CDirStreamable 0x0000a0c4   Data          20  dirstreamable.o(.constdata__ZTVN13ContentAccess14CDirStreamableE)
+    vtable for ContentAccess::CMetaDataArray 0x0000a0d8   Data          20  Metadataarray.o(.constdata__ZTVN13ContentAccess14CMetaDataArrayE)
+    vtable for ContentAccess::CEmbeddedObject 0x0000a0ec   Data          20  embeddedobject.o(.constdata__ZTVN13ContentAccess15CEmbeddedObjectE)
+    vtable for ContentAccess::CStringAttribute 0x0000a100   Data          20  stringattribute.o(.constdata__ZTVN13ContentAccess16CStringAttributeE)
+    vtable for ContentAccess::CBitset        0x0000a114   Data          20  bitset.o(.constdata__ZTVN13ContentAccess7CBitsetE)
+    vtable for ContentAccess::CMetaData      0x0000a128   Data          20  Metadata.o(.constdata__ZTVN13ContentAccess9CMetaDataE)
+    .ARM.exidx$$Base                         0x0000a13c   Number         0  ucppinit_aeabi.o(.ARM.exidx)
+    .ARM.exidx$$Limit                        0x0000a4ac   Number         0  stringattributeset.o(.ARM.exidx)
+    Image$$ER_RO$$Limit                      0x0000a4ac   Number         0  anon$$obj.o(linker$$defined$$symbols)
+

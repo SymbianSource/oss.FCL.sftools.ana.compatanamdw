@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>41</minute>
+      <second>24</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>10</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\scripts\HATC023_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\results\HATC023_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>*.rh</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\baseline_headers\epoc32\include\baerrrsvr.rh</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\current_headers\epoc32\include\baerrrsvr.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>57</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>error_array::starterror</cause>
+        <documentation>Not specifiederror_array::starterror</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>37</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>PlwGHdiCcnzsX</checksum>
+      <shortname>baerrrsvr.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\baseline_headers\epoc32\include\uikon.rh</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC023\current_headers\epoc32\include\uikon.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>50</issueid>
+        <typeid>0</typeid>
+        <identityid>10</identityid>
+        <identitydescription>Field</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>badef.rh</cause>
+        <documentation>Not specifiedbadef.rh</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>52</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>ctrl_color::logical_color</cause>
+        <documentation>Not specifiedctrl_color::logical_color</documentation>
+        <ignoreinformation>byte</ignoreinformation>
+        <linenumber>82</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>53</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>eikcolorlist::ext_id</cause>
+        <documentation>Not specifiedeikcolorlist::ext_id</documentation>
+        <ignoreinformation>ltext8</ignoreinformation>
+        <linenumber>94</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>54</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>font::flags</cause>
+        <documentation>Not specifiedfont::flags</documentation>
+        <ignoreinformation>22</ignoreinformation>
+        <linenumber>109</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>55</issueid>
+        <typeid>0</typeid>
+        <identityid>5</identityid>
+        <identitydescription>Struct</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>named_font</cause>
+        <documentation>Not specifiednamed_font</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>56</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>notifier_list::notifier_list[]</cause>
+        <documentation>Not specifiednotifier_list::notifier_list[]</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>219</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>51</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>number_int8::value</cause>
+        <documentation>Not specifiednumber_int8::value</documentation>
+        <ignoreinformation>word</ignoreinformation>
+        <linenumber>55</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>6P6Et-oA9ohat</checksum>
+      <shortname>uikon.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\baseline_headers\epoc32\include\aiftool.rh</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\current_headers\epoc32\include\aiftool.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::edatatypepriorityhigh</cause>
+        <documentation>Not specified::edatatypepriorityhigh</documentation>
+        <ignoreinformation>edatatypepriorityhigh</ignoreinformation>
+        <linenumber>192</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::edatatypeprioritylow</cause>
+        <documentation>Not specified::edatatypeprioritylow</documentation>
+        <ignoreinformation>edatatypeprioritylow</ignoreinformation>
+        <linenumber>194</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::edatatypeprioritynormal</cause>
+        <documentation>Not specified::edatatypeprioritynormal</documentation>
+        <ignoreinformation>edatatypeprioritynormal</ignoreinformation>
+        <linenumber>193</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>aif_data::groupname(kappmaxgroupname)</cause>
+        <documentation>Not specifiedaif_data::groupname(kappmaxgroupname)</documentation>
+        <ignoreinformation>""</ignoreinformation>
+        <linenumber>57</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>file_ownership_info::file_name(kmaxfilenamelength)</cause>
+        <documentation>Not specifiedfile_ownership_info::file_name(kmaxfilenamelength)</documentation>
+        <ignoreinformation>ltext</ignoreinformation>
+        <linenumber>227</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>2</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>kapplaunchinforeground</cause>
+        <documentation>Not specifiedkapplaunchinforeground</documentation>
+        <ignoreinformation>0</ignoreinformation>
+        <linenumber>33</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>2</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>kmaxcaption</cause>
+        <documentation>Not specifiedkmaxcaption</documentation>
+        <ignoreinformation>256</ignoreinformation>
+        <linenumber>71</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>yvOi00YB+-dT3</checksum>
+      <shortname>aiftool.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\baseline_headers\epoc32\include\avkon.rh</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\current_headers\epoc32\include\avkon.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>23</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangamerican</cause>
+        <documentation>Not specified::elangamerican</documentation>
+        <ignoreinformation>elangamerican</ignoreinformation>
+        <linenumber>486</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>20</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangdanish</cause>
+        <documentation>Not specified::elangdanish</documentation>
+        <ignoreinformation>elangdanish</ignoreinformation>
+        <linenumber>484</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>22</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::elangfinnish</cause>
+        <documentation>Not specified::elangfinnish</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>16</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::elanggerman</cause>
+        <documentation>Not specified::elanggerman</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>28</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangicelandic</cause>
+        <documentation>Not specified::elangicelandic</documentation>
+        <ignoreinformation>elangicelandic</ignoreinformation>
+        <linenumber>491</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>18</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangitalian</cause>
+        <documentation>Not specified::elangitalian</documentation>
+        <ignoreinformation>elangitalian</ignoreinformation>
+        <linenumber>482</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>21</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangnorwegian</cause>
+        <documentation>Not specified::elangnorwegian</documentation>
+        <ignoreinformation>elangnorwegian</ignoreinformation>
+        <linenumber>485</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>26</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangportuguese</cause>
+        <documentation>Not specified::elangportuguese</documentation>
+        <ignoreinformation>elangportuguese</ignoreinformation>
+        <linenumber>489</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>29</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangrussian</cause>
+        <documentation>Not specified::elangrussian</documentation>
+        <ignoreinformation>elangrussian</ignoreinformation>
+        <linenumber>493</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>17</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangspanish</cause>
+        <documentation>Not specified::elangspanish</documentation>
+        <ignoreinformation>elangspanish</ignoreinformation>
+        <linenumber>481</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>19</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangswedish</cause>
+        <documentation>Not specified::elangswedish</documentation>
+        <ignoreinformation>elangswedish</ignoreinformation>
+        <linenumber>483</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>24</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangswissfrench</cause>
+        <documentation>Not specified::elangswissfrench</documentation>
+        <ignoreinformation>elangswissfrench</ignoreinformation>
+        <linenumber>487</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>25</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangswissgerman</cause>
+        <documentation>Not specified::elangswissgerman</documentation>
+        <ignoreinformation>elangswissgerman</ignoreinformation>
+        <linenumber>488</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>27</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>::elangturkish</cause>
+        <documentation>Not specified::elangturkish</documentation>
+        <ignoreinformation>elangturkish</ignoreinformation>
+        <linenumber>490</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>15</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>abcd::edatatypeprioritylastresort</cause>
+        <documentation>Not specifiedabcd::edatatypeprioritylastresort</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>496</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>14</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>abcd::edatatypeprioritynormal</cause>
+        <documentation>Not specifiedabcd::edatatypeprioritynormal</documentation>
+        <ignoreinformation>4</ignoreinformation>
+        <linenumber>498</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>12</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>avkon_data_query::control</cause>
+        <documentation>Not specifiedavkon_data_query::control</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>173</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>31</issueid>
+        <typeid>0</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>avkon_layout1</cause>
+        <documentation>Not specifiedavkon_layout1</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>30</issueid>
+        <typeid>2</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>avkon_layout_image</cause>
+        <documentation>Not specifiedavkon_layout_image</documentation>
+        <ignoreinformation>avkon_layout_rect1</ignoreinformation>
+        <linenumber>503</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>13</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>avkon_multi_line_data_query::firstlabel</cause>
+        <documentation>Not specifiedavkon_multi_line_data_query::firstlabel</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>185</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>9</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>indicator::npriority</cause>
+        <documentation>Not specifiedindicator::npriority</documentation>
+        <ignoreinformation>0xfdd</ignoreinformation>
+        <linenumber>107</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>10</issueid>
+        <typeid>0</typeid>
+        <identityid>5</identityid>
+        <identitydescription>Struct</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>indicator_state</cause>
+        <documentation>Not specifiedindicator_state</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>navi_decorator::type</cause>
+        <documentation>Not specifiednavi_decorator::type</documentation>
+        <ignoreinformation>long</ignoreinformation>
+        <linenumber>42</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>11</issueid>
+        <typeid>0</typeid>
+        <identityid>5</identityid>
+        <identitydescription>Struct</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>note_component</cause>
+        <documentation>Not specifiednote_component</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>tab::bmpid</cause>
+        <documentation>Not specifiedtab::bmpid</documentation>
+        <ignoreinformation>long</ignoreinformation>
+        <linenumber>73</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>QRzP7xDC6Iak9</checksum>
+      <shortname>avkon.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\baseline_headers\epoc32\include\baerrrsvr.rh</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\current_headers\epoc32\include\baerrrsvr.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>32</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>error_array::starterror</cause>
+        <documentation>Not specifiederror_array::starterror</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>37</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>PlwGHdiCcnzsX</checksum>
+      <shortname>baerrrsvr.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\baseline_headers\epoc32\include\biftool2.rh</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\current_headers\epoc32\include\biftool2.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>35</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>bio_info_file::general_data1</cause>
+        <documentation>Not specifiedbio_info_file::general_data1</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>28</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>34</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>bio_info_file::message_app_uid</cause>
+        <documentation>Not specifiedbio_info_file::message_app_uid</documentation>
+        <ignoreinformation>kuidusenoapp</ignoreinformation>
+        <linenumber>32</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>33</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>bio_info_file::message_type_uid</cause>
+        <documentation>Not specifiedbio_info_file::message_type_uid</documentation>
+        <ignoreinformation>0x00000000</ignoreinformation>
+        <linenumber>29</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>36</issueid>
+        <typeid>12</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>id_confidence::enotrecognized</cause>
+        <documentation>Not specifiedid_confidence::enotrecognized</documentation>
+        <ignoreinformation>-2147483647</ignoreinformation>
+        <linenumber>72</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>37</issueid>
+        <typeid>2</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>kmaxdescription</cause>
+        <documentation>Not specifiedkmaxdescription</documentation>
+        <ignoreinformation>128</ignoreinformation>
+        <linenumber>20</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>38</issueid>
+        <typeid>0</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>kmaxfileextension</cause>
+        <documentation>Not specifiedkmaxfileextension</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>88+kgTFAMesdy</checksum>
+      <shortname>biftool2.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\baseline_headers\epoc32\include\eikon.rh</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\current_headers\epoc32\include\eikon.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>42</issueid>
+        <typeid>2</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>akn_editor_extensions</cause>
+        <documentation>Not specifiedakn_editor_extensions</documentation>
+        <ignoreinformation>wordxyz=hjkhkjh;worddefault_case=eakneditortextcase;wordallowed_case_modes=eakneditorallcasemodes;wordnumeric_keymap=eakneditoralphanumericnumbermodekeymap;wordallowed_input_modes=eakneditorallinputmodes;worddefault_input_mode=eakneditortextinputmode;llinkspecial_character_table=-1;wordavkon_flags=eakneditorflagdefault;wordmax_view_height_in_lines=0;wordbase_line_delta=0;wordspare=0</ignoreinformation>
+        <linenumber>38</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>40</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>edwin::akn_editor_extensions</cause>
+        <documentation>Not specifiededwin::akn_editor_extensions</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>51</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>39</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>edwin::flags</cause>
+        <documentation>Not specifiededwin::flags</documentation>
+        <ignoreinformation>0</ignoreinformation>
+        <linenumber>52</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>41</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>menu_bar::extension</cause>
+        <documentation>Not specifiedmenu_bar::extension</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>130</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>RWGP2GcAaXUoN</checksum>
+      <shortname>eikon.rh</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\baseline_headers\epoc32\include\uikon.rh</filename>
+      <comparefilename>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc023\current_headers\epoc32\include\uikon.rh</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>43</issueid>
+        <typeid>0</typeid>
+        <identityid>10</identityid>
+        <identitydescription>Field</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>badef.rh</cause>
+        <documentation>Not specifiedbadef.rh</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>45</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>ctrl_color::logical_color</cause>
+        <documentation>Not specifiedctrl_color::logical_color</documentation>
+        <ignoreinformation>byte</ignoreinformation>
+        <linenumber>82</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>46</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>eikcolorlist::ext_id</cause>
+        <documentation>Not specifiedeikcolorlist::ext_id</documentation>
+        <ignoreinformation>ltext8</ignoreinformation>
+        <linenumber>94</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>47</issueid>
+        <typeid>12</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its initialisation value</typestring>
+        <cause>font::flags</cause>
+        <documentation>Not specifiedfont::flags</documentation>
+        <ignoreinformation>22</ignoreinformation>
+        <linenumber>109</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>48</issueid>
+        <typeid>0</typeid>
+        <identityid>5</identityid>
+        <identitydescription>Struct</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>named_font</cause>
+        <documentation>Not specifiednamed_font</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>49</issueid>
+        <typeid>0</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>notifier_list::notifier_list[]</cause>
+        <documentation>Not specifiednotifier_list::notifier_list[]</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>219</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>44</issueid>
+        <typeid>11</typeid>
+        <identityid>21</identityid>
+        <identitydescription>Strcut member</identitydescription>
+        <typestring>has changed its type</typestring>
+        <cause>number_int8::value</cause>
+        <documentation>Not specifiednumber_int8::value</documentation>
+        <ignoreinformation>word</ignoreinformation>
+        <linenumber>55</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>6P6Et-oA9ohat</checksum>
+      <shortname>uikon.rh</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

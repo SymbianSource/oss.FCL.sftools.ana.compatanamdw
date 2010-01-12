@@ -1,0 +1,10 @@
+Baseline platform
+baseplatform\lib
+Product platform
+currentplatform\lib
+results
+
+FALSE
+baseplatform\urel\baselineexedata.xml
+currentplatform\urel
+

@@ -1,0 +1,1334 @@
+ARM Linker, RVCT2.2 [Build 616]
+
+================================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../../unhosted.s                         0x00000000   Number         0  switch8.o ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\euser\EDLL\ARMV5\urel\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    \\EPOC32\\BUILD\\src\\cedar\\generic\\base\\e32\\euser\\EDLL\\ARMV5\\urel\\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    \\src\\cedar\\generic\\base\\e32\\compsupp\\RVCT2_2\\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    \src\cedar\generic\base\e32\compsupp\RVCT2_2\dllexp.cpp 0x00000000   Number         0  dllexp.o ABSOLUTE
+    \src\cedar\generic\base\e32\compsupp\RVCT2_2\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    \src\cedar\generic\base\e32\euser\epoc\arm\uc_dll.cpp 0x00000000   Number         0  uc_dll.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\accelsoftbc.cpp 0x00000000   Number         0  accelsoftbc.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\bitblt.cpp 0x00000000   Number         0  BITBLT.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\bitmapdv.cpp 0x00000000   Number         0  BITMAPDV.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\bitmapspec.cpp 0x00000000   Number         0  BitmapSpec.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\drawbmp.cpp 0x00000000   Number         0  DRAWBMP.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\ellipse.cpp 0x00000000   Number         0  ELLIPSE.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\fbservdv.cpp 0x00000000   Number         0  FBSERVDV.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\fontbmp.cpp 0x00000000   Number         0  FONTBMP.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\graphics.cpp 0x00000000   Number         0  GRAPHICS.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\line.cpp 0x00000000   Number         0  LINE.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\main.cpp 0x00000000   Number         0  MAIN.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\piearc.cpp 0x00000000   Number         0  PIEARC.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\polygon.cpp 0x00000000   Number         0  POLYGON.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\rect.cpp 0x00000000   Number         0  RECT.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\roundrec.cpp 0x00000000   Number         0  ROUNDREC.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\screendv.cpp 0x00000000   Number         0  SCREENDV.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\text.cpp 0x00000000   Number         0  TEXT.o ABSOLUTE
+    \src\common\generic\graphics\bitgdi\sbit\vertext.cpp 0x00000000   Number         0  VERTEXT.o ABSOLUTE
+    .emb_text                                0x00008000   Section       40  uc_dll_.o(.emb_text)
+    .emb_text                                0x00008028   Section       72  ucppinit_aeabi.o(.emb_text)
+    skip                                     0x0000803c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    loop                                     0x0000804c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    fpinit                                   0x00008064   Data           0  ucppinit_aeabi.o(.emb_text)
+    base                                     0x00008068   Data           0  ucppinit_aeabi.o(.emb_text)
+    limit                                    0x0000806c   Data           0  ucppinit_aeabi.o(.emb_text)
+    .text                                    0x00008710   Section    13992  BITBLT.o(.text)
+    TileScanLine(TPtr8&, int, const TPoint&, const CBitwiseBitmap*, TLineScanningPosition&, unsigned long*, TDisplayMode) 0x0000876f   Thumb Code   208  BITBLT.o(.text)
+    .text                                    0x0000bdb8   Section     1312  BITMAPDV.o(.text)
+    .text                                    0x0000c2d8   Section      332  BitmapSpec.o(.text)
+    .text                                    0x0000c424   Section     2542  DRAWBMP.o(.text)
+    .text                                    0x0000ce14   Section     2530  ELLIPSE.o(.text)
+    CFbsDevice::SetScalingFactor(const TPoint&, int, int, int, int)::TInitializer::~TInitializer() 0x0000d7f9   Thumb Code    52  FBSERVDV.o(.text)
+    CFbsDevice::SetScalingFactor(const TPoint&, int, int, int, int)::TInitializer::~TInitializer__sub_object() 0x0000d7f9   Thumb Code     0  FBSERVDV.o(.text)
+    .text                                    0x0000d7f8   Section     1744  FBSERVDV.o(.text)
+    CFbsDevice::SetScalingFactor(const TPoint&, int, int, int, int)::TInitializer::TInitializer(CFbsDrawDevice*) 0x0000de55   Thumb Code   104  FBSERVDV.o(.text)
+    CFbsDevice::SetScalingFactor(const TPoint&, int, int, int, int)::TInitializer::TInitializer__sub_object(CFbsDrawDevice*) 0x0000de55   Thumb Code     0  FBSERVDV.o(.text)
+    .text                                    0x0000dec8   Section      156  FONTBMP.o(.text)
+    .text                                    0x0000df64   Section     2836  GRAPHICS.o(.text)
+    .text                                    0x0000ea78   Section     3966  LINE.o(.text)
+    .text                                    0x0000f9f8   Section     4736  MAIN.o(.text)
+    .text                                    0x00010c78   Section     3752  PIEARC.o(.text)
+    .text                                    0x00011b20   Section     4040  POLYGON.o(.text)
+    Sort(int, const TKey&, const TSwap&)     0x00012ac7   Thumb Code    24  POLYGON.o(.text)
+    .text                                    0x00012ae8   Section     3076  RECT.o(.text)
+    .text                                    0x000136ec   Section     1242  ROUNDREC.o(.text)
+    .text                                    0x00013bc8   Section     1380  SCREENDV.o(.text)
+    .text                                    0x0001412c   Section     5880  TEXT.o(.text)
+    .text                                    0x00015824   Section     3572  VERTEXT.o(.text)
+    Rotate(TPoint&, TPoint, int)             0x000165f5   Thumb Code    32  VERTEXT.o(.text)
+    .text                                    0x00016618   Section       16  accelsoftbc.o(.text)
+    .text                                    0x00016628   Section       24  switch8.o(.text)
+    .text                                    0x00016640   Section       40  uc_dll.o(.text)
+    .text                                    0x00016668   Section        4  dllexp.o(.text)
+    .text.clean                              0x0001666c   Section       26  BITMAPDV.o(.text.clean)
+    .text.clean                              0x00016686   Section       12  BitmapSpec.o(.text.clean)
+    .text.clean                              0x00016692   Section       56  FBSERVDV.o(.text.clean)
+    .text.clean                              0x000166ca   Section       40  LINE.o(.text.clean)
+    .text.clean                              0x000166f2   Section       68  MAIN.o(.text.clean)
+    .text.clean                              0x00016736   Section       32  POLYGON.o(.text.clean)
+    .text.clean                              0x00016756   Section        8  SCREENDV.o(.text.clean)
+    .text.clean                              0x0001675e   Section       12  TEXT.o(.text.clean)
+    .text.clean                              0x0001676a   Section       12  VERTEXT.o(.text.clean)
+    i._ZN10CFbsDevice10DrawingEndEi          0x00016776   Section        2  FBSERVDV.o(i._ZN10CFbsDevice10DrawingEndEi)
+    i._ZN10CFbsDevice12DrawingBeginEi        0x00016778   Section        2  FBSERVDV.o(i._ZN10CFbsDevice12DrawingBeginEi)
+    i._ZN10CFbsDevice13CreateContextERP16CGraphicsContext 0x0001677a   Section        8  BITMAPDV.o(i._ZN10CFbsDevice13CreateContextERP16CGraphicsContext)
+    i._ZN10CFbsDevice7SetBitsEv              0x00016782   Section        2  FBSERVDV.o(i._ZN10CFbsDevice7SetBitsEv)
+    i._ZN13CBitmapDeviceD2Ev                 0x00016784   Section        8  FBSERVDV.o(i._ZN13CBitmapDeviceD2Ev)
+    i._ZN14CBitmapContextD2Ev                0x0001678c   Section        8  MAIN.o(i._ZN14CBitmapContextD2Ev)
+    i._ZN15CFbsBitGcBitmapD0Ev               0x00016794   Section       16  BITMAPDV.o(i._ZN15CFbsBitGcBitmapD0Ev)
+    i._ZN15CFbsBitGcBitmapD1Ev               0x000167a4   Section        8  BITMAPDV.o(i._ZN15CFbsBitGcBitmapD1Ev)
+    i._ZN15CGraphicsDeviceD2Ev               0x000167ac   Section       18  FBSERVDV.o(i._ZN15CGraphicsDeviceD2Ev)
+    i._ZN15CGraphicsDeviceD2Ev.clean         0x000167be   Section       10  FBSERVDV.o(i._ZN15CGraphicsDeviceD2Ev.clean)
+    i._ZN18CFbsBitGcExtraData13ResetPenArrayEv 0x000167c8   Section       16  MAIN.o(i._ZN18CFbsBitGcExtraData13ResetPenArrayEv)
+    i._ZN22TAcceleratedBitmapSpecC1ERKS_     0x000167d8   Section       22  BITBLT.o(i._ZN22TAcceleratedBitmapSpecC1ERKS_)
+    i._ZN4TRgbC1Em                           0x000167ee   Section       36  MAIN.o(i._ZN4TRgbC1Em)
+    i._ZN5CFont14TPositionParam7TOutputC1Ev  0x00016812   Section       12  MAIN.o(i._ZN5CFont14TPositionParam7TOutputC1Ev)
+    i._ZN5CFont14TPositionParamC1Ev          0x00016820   Section       48  MAIN.o(i._ZN5CFont14TPositionParamC1Ev)
+    i._ZN5TRectC1ERKS_                       0x00016850   Section       18  BITBLT.o(i._ZN5TRectC1ERKS_)
+    i._ZN6TPointC1ERKS_                      0x00016862   Section       10  BITBLT.o(i._ZN6TPointC1ERKS_)
+    i._ZN6TPointC1Ev                         0x0001686c   Section        8  ELLIPSE.o(i._ZN6TPointC1Ev)
+    i._ZN7TPtrC163SetERK7TDesC16             0x00016874   Section       28  MAIN.o(i._ZN7TPtrC163SetERK7TDesC16)
+    i._ZN7TPtrC163SetERK7TDesC16.clean       0x00016890   Section       12  MAIN.o(i._ZN7TPtrC163SetERK7TDesC16.clean)
+    i._ZN8TEllipseC1Ev                       0x0001689c   Section       12  PIEARC.o(i._ZN8TEllipseC1Ev)
+    i._ZN9CFbsBitGc6Load16EPKh               0x000168a8   Section       14  TEXT.o(i._ZN9CFbsBitGc6Load16EPKh)
+    i._ZNK10CFbsDevice10HideSpriteERK5TRectPK7TRegion 0x000168b6   Section        4  BITMAPDV.o(i._ZNK10CFbsDevice10HideSpriteERK5TRectPK7TRegion)
+    i._ZNK10CFbsDevice10HideSpriteEv         0x000168ba   Section        4  BITMAPDV.o(i._ZNK10CFbsDevice10HideSpriteEv)
+    i._ZNK10CFbsDevice10ShowSpriteEP11TSpriteBase 0x000168be   Section        2  BITMAPDV.o(i._ZNK10CFbsDevice10ShowSpriteEP11TSpriteBase)
+    i._ZNK10CFbsDevice10ShowSpriteEP11TSpriteBaseRK5TRectPK7TRegion 0x000168c0   Section        2  BITMAPDV.o(i._ZNK10CFbsDevice10ShowSpriteEP11TSpriteBaseRK5TRectPK7TRegion)
+    i._ZNK10CFbsDevice12CancelSpriteEv       0x000168c2   Section        2  BITMAPDV.o(i._ZNK10CFbsDevice12CancelSpriteEv)
+    i._ZNK8CFbsFont9DoTypeUidEv              0x000168c4   Section       12  FONTBMP.o(i._ZNK8CFbsFont9DoTypeUidEv)
+    i._ZdlPvS_                               0x000168d0   Section        2  BitmapSpec.o(i._ZdlPvS_)
+    i._ZlsR12RWriteStreamRK6TPoint           0x000168d2   Section       20  MAIN.o(i._ZlsR12RWriteStreamRK6TPoint)
+    i._ZnwjPv                                0x000168e6   Section        4  BitmapSpec.o(i._ZnwjPv)
+    i._ZrsR11RReadStreamR6TPoint             0x000168ea   Section       16  MAIN.o(i._ZrsR11RReadStreamR6TPoint)
+    t._Z3AbsIiET_S0_                         0x000168fa   Section       12  GRAPHICS.o(t._Z3AbsIiET_S0_)
+    t._ZN10TRegionFixILi1EEC1ERK5TRect       0x00016906   Section       24  FBSERVDV.o(t._ZN10TRegionFixILi1EEC1ERK5TRect)
+    t._ZNK9CArrayFixI6TPointEixEi            0x0001691e   Section        8  LINE.o(t._ZNK9CArrayFixI6TPointEixEi)
+    .extab._ZN9CFbsBitGc13DoBitBltAlphaERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_S2_ii 0x00016928   Data           0  BITBLT.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc13DoBitBltAlphaERK6TPointPK14CBitwiseBitmapPmS5_S6_S5_S6_RK5TRectS2_S2_i 0x00016934   Data           0  BITBLT.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc18DoDrawBitmapMaskedERK5TRectP14CBitwiseBitmapPmS2_S4_S5_iRK6TPoint 0x00016940   Data           0  BITBLT.o(.ARM.extab)
+    .extab._ZN16CFbsBitmapDevice10ConstructLEP10CFbsBitmap 0x0001694c   Data           0  BITMAPDV.o(.ARM.extab)
+    .extab._ZN16CFbsBitmapDeviceD1Ev         0x0001699c   Data           0  BITMAPDV.o(.ARM.extab)
+    .extab._ZN16CFbsBitmapDevice6ResizeERK5TSize 0x000169ac   Data           0  BITMAPDV.o(.ARM.extab)
+    .extab._ZN22TAcceleratedBitmapSpecC1EP10CFbsBitmap 0x00016a14   Data           0  BitmapSpec.o(.ARM.extab)
+    .extab._ZN10CFbsDeviceD2Ev               0x00016a24   Data           0  FBSERVDV.o(.ARM.extab)
+    .extab._ZN10CFbsDevice13CreateContextERP9CFbsBitGc 0x00016a34   Data           0  FBSERVDV.o(.ARM.extab)
+    .extab._ZNK10CFbsDevice11RectCompareERK5TRectRKS_S2_ 0x00016a5c   Data           0  FBSERVDV.o(.ARM.extab)
+    .extab._ZN10CFbsDevice16SetScalingFactorERK6TPointiiii 0x00016a6c   Data           0  FBSERVDV.o(.ARM.extab)
+    .extab._ZN10CFbsDeviceC2Ev               0x00016a7c   Data           0  FBSERVDV.o(.ARM.extab)
+    .extab._ZN15CGraphicsDeviceD2Ev          0x00016a94   Data           0  FBSERVDV.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc8PolyFillEPK9CArrayFixI6TPointEN16CGraphicsContext9TFillRuleE 0x00016aa4   Data           0  LINE.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc13PolyFillLargeEPK9CArrayFixI6TPointEN16CGraphicsContext9TFillRuleE 0x00016ab4   Data           0  LINE.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc8PolyFillEPK6TPointiN16CGraphicsContext9TFillRuleE 0x00016ac4   Data           0  LINE.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc13PolyFillLargeEPK6TPointiN16CGraphicsContext9TFillRuleE 0x00016ad4   Data           0  LINE.o(.ARM.extab)
+    .extab._ZN18CFbsBitGcExtraDataC1Ev       0x00016ae4   Data           0  MAIN.o(.ARM.extab)
+    .extab._ZN9CFbsBitGcC1Ev                 0x00016af4   Data           0  MAIN.o(.ARM.extab)
+    .extab._ZN9CFbsBitGcD1Ev                 0x00016b14   Data           0  MAIN.o(.ARM.extab)
+    .extab._ZN7TPtrC163SetERK7TDesC16        0x00016b34   Data           0  MAIN.o(.ARM.extab)
+    .extab._ZN14CPolygonFillerC1Ev           0x00016b44   Data           0  POLYGON.o(.ARM.extab)
+    .extab._ZN14CPolygonFillerD1Ev           0x00016b54   Data           0  POLYGON.o(.ARM.extab)
+    .extab._ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE 0x00016b64   Data           0  POLYGON.o(.ARM.extab)
+    .extab._ZN16CFbsScreenDevice18ChangeScreenDeviceEPS_ 0x00016b7c   Data           0  SCREENDV.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect 0x00016ba4   Data           0  TEXT.o(.ARM.extab)
+    .extab._ZN9CFbsBitGc16DrawTextVerticalERK7TDesC16RK5TRectiiiN16CGraphicsContext10TTextAlignEi 0x00016bb4   Data           0  VERTEXT.o(.ARM.extab)
+    .constdata$1                             0x00016bc4   Data           0  BITBLT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc33DoBitBltMaskedNonFlickerPatternedERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_iS2_i_0 0x00016bc4   Data         108  BITBLT.o(.constdata)
+    .constdata                               0x00016bc4   Section      400  BITBLT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc33DoBitBltMaskedNonFlickerPatternedERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_iS2_i_1 0x00016c30   Data          56  BITBLT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc33DoBitBltMaskedNonFlickerPatternedERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_iS2_i_2 0x00016c68   Data          28  BITBLT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc33DoBitBltMaskedNonFlickerPatternedERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_iS2_i_3 0x00016c84   Data         108  BITBLT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc33DoBitBltMaskedNonFlickerPatternedERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_iS2_i_4 0x00016cf0   Data          56  BITBLT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc33DoBitBltMaskedNonFlickerPatternedERK6TPointP14CBitwiseBitmapPmRK5TRectS4_S5_iS2_i_5 0x00016d28   Data          44  BITBLT.o(.constdata)
+    .constdata$1                             0x00016d54   Data           0  BITMAPDV.o(.constdata)
+    KPanicFileName@_ZN16CFbsBitmapDevice4NewLEP10CFbsBitmap_0 0x00016d54   Data         112  BITMAPDV.o(.constdata)
+    .constdata                               0x00016d54   Section      396  BITMAPDV.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN16CFbsBitmapDevice4NewLEP10CFbsBitmap_1 0x00016dc4   Data          56  BITMAPDV.o(.constdata)
+    KPanicCondition@_ZN16CFbsBitmapDevice4NewLEP10CFbsBitmap_2 0x00016dfc   Data          44  BITMAPDV.o(.constdata)
+    KPanicFileName@_ZN16CFbsBitmapDevice7SetBitsEv_0 0x00016e28   Data         112  BITMAPDV.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN16CFbsBitmapDevice7SetBitsEv_1 0x00016e98   Data          56  BITMAPDV.o(.constdata)
+    KPanicCondition@_ZN16CFbsBitmapDevice7SetBitsEv_2 0x00016ed0   Data          16  BITMAPDV.o(.constdata)
+    .constdata$1                             0x00016ee0   Data           0  DRAWBMP.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc10DrawBitmapERK6TPointPK10CFbsBitmap_0 0x00016ee0   Data         112  DRAWBMP.o(.constdata)
+    .constdata                               0x00016ee0   Section      612  DRAWBMP.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc10DrawBitmapERK6TPointPK10CFbsBitmap_1 0x00016f50   Data          56  DRAWBMP.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc10DrawBitmapERK6TPointPK10CFbsBitmap_2 0x00016f88   Data          36  DRAWBMP.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc10DrawBitmapERK5TRectPK10CFbsBitmap_0 0x00016fac   Data         112  DRAWBMP.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc10DrawBitmapERK5TRectPK10CFbsBitmap_1 0x0001701c   Data          56  DRAWBMP.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc10DrawBitmapERK5TRectPK10CFbsBitmap_2 0x00017054   Data          36  DRAWBMP.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc10DrawBitmapERK5TRectPK10CFbsBitmapS2__0 0x00017078   Data         112  DRAWBMP.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc10DrawBitmapERK5TRectPK10CFbsBitmapS2__1 0x000170e8   Data          56  DRAWBMP.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc10DrawBitmapERK5TRectPK10CFbsBitmapS2__2 0x00017120   Data          36  DRAWBMP.o(.constdata)
+    .constdata$1                             0x00017144   Data           0  FBSERVDV.o(.constdata)
+    KPanicFileName@_ZN10CFbsDevice13DoGetScanLineER5TDes8RK6TPointi12TDisplayMode_0 0x00017144   Data         112  FBSERVDV.o(.constdata)
+    .constdata                               0x00017144   Section      180  FBSERVDV.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidDisplayMode@_ZN10CFbsDevice13DoGetScanLineER5TDes8RK6TPointi12TDisplayMode_1 0x000171b4   Data          68  FBSERVDV.o(.constdata)
+    .constdata$1                             0x000171f8   Data           0  FONTBMP.o(.constdata)
+    KCFbsFontUid                             0x000171f8   Data           4  FONTBMP.o(.constdata)
+    .constdata                               0x000171f8   Section        4  FONTBMP.o(.constdata)
+    .constdata$1                             0x000171fc   Data           0  GRAPHICS.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc12ClipFillLineE6TPointS0__0 0x000171fc   Data         112  GRAPHICS.o(.constdata)
+    .constdata                               0x000171fc   Section      408  GRAPHICS.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc12ClipFillLineE6TPointS0__1 0x0001726c   Data          56  GRAPHICS.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc12ClipFillLineE6TPointS0__2 0x000172a4   Data          28  GRAPHICS.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc12ClipFillLineE6TPointS0__3 0x000172c0   Data         112  GRAPHICS.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc12ClipFillLineE6TPointS0__4 0x00017330   Data          56  GRAPHICS.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc12ClipFillLineE6TPointS0__5 0x00017368   Data          44  GRAPHICS.o(.constdata)
+    .constdata$1                             0x00017394   Data           0  MAIN.o(.constdata)
+    KFbsBitGc_VerNo                          0x00017394   Data           2  MAIN.o(.constdata)
+    .constdata                               0x00017394   Section     2784  MAIN.o(.constdata)
+    KCFbsFontUid                             0x00017398   Data           4  MAIN.o(.constdata)
+    KBITGDIPanicDesc1                        0x0001739c   Data         100  MAIN.o(.constdata)
+    KBITGDIPanicDesc2                        0x00017400   Data          52  MAIN.o(.constdata)
+    KBITGDIPanicDesc3                        0x00017434   Data         100  MAIN.o(.constdata)
+    KBitgdiPanicCategory@_Z5Panic12TBitgdiPanic_0 0x00017498   Data          20  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc17SetClippingRegionEPK7TRegion_0 0x000174ac   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidRegion@_ZN9CFbsBitGc17SetClippingRegionEPK7TRegion_1 0x00017514   Data          56  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc17SetClippingRegionEPK7TRegion_2 0x0001754c   Data          52  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc17SetClippingRegionEPK7TRegion_3 0x00017580   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidRegion@_ZN9CFbsBitGc17SetClippingRegionEPK7TRegion_4 0x000175e8   Data          56  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc17SetClippingRegionEPK7TRegion_5 0x00017620   Data         112  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc15UseBrushPatternEPK10CFbsBitmap_0 0x00017690   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc15UseBrushPatternEPK10CFbsBitmap_1 0x000176f8   Data          56  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc15UseBrushPatternEPK10CFbsBitmap_2 0x00017730   Data          36  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc15UseBrushPatternEPK10CFbsBitmap_3 0x00017754   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc15UseBrushPatternEPK10CFbsBitmap_4 0x000177bc   Data          56  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc15UseBrushPatternEPK10CFbsBitmap_5 0x000177f4   Data          52  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc15UseBrushPatternEi_0 0x00017828   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc15UseBrushPatternEi_1 0x00017890   Data          56  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc15UseBrushPatternEi_2 0x000178c8   Data          40  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc7UseFontEPK5CFont_0 0x000178f0   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidFont@_ZN9CFbsBitGc7UseFontEPK5CFont_1 0x00017958   Data          52  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc7UseFontEPK5CFont_2 0x0001798c   Data          32  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc7UseFontEPK5CFont_3 0x000179ac   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidFont@_ZN9CFbsBitGc7UseFontEPK5CFont_4 0x00017a14   Data          52  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc7UseFontEPK5CFont_5 0x00017a48   Data          72  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc7UseFontEPK5CFont_6 0x00017a90   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidFont@_ZN9CFbsBitGc7UseFontEPK5CFont_7 0x00017af8   Data          52  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc7UseFontEPK5CFont_8 0x00017b2c   Data          52  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc7UseFontEi_0 0x00017b60   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidFont@_ZN9CFbsBitGc7UseFontEi_1 0x00017bc8   Data          52  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc7UseFontEi_2 0x00017bfc   Data          36  MAIN.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc18UseFontNoDuplicateEPK13CFbsBitGcFont_0 0x00017c20   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidFont@_ZN9CFbsBitGc18UseFontNoDuplicateEPK13CFbsBitGcFont_1 0x00017c88   Data          52  MAIN.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc18UseFontNoDuplicateEPK13CFbsBitGcFont_2 0x00017cbc   Data          72  MAIN.o(.constdata)
+    KPanicFileName@_ZNK9CFbsBitGc11CheckDeviceEv_0 0x00017d04   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicNoDevicePresent@_ZNK9CFbsBitGc11CheckDeviceEv_1 0x00017d6c   Data          60  MAIN.o(.constdata)
+    KPanicCondition@_ZNK9CFbsBitGc11CheckDeviceEv_2 0x00017da8   Data          20  MAIN.o(.constdata)
+    KPanicFileName@_ZNK9CFbsBitGc11CheckDeviceERK5TRect_0 0x00017dbc   Data         104  MAIN.o(.constdata)
+    KPanicEnumEBitgdiPanicNoDevicePresent@_ZNK9CFbsBitGc11CheckDeviceERK5TRect_1 0x00017e24   Data          60  MAIN.o(.constdata)
+    KPanicCondition@_ZNK9CFbsBitGc11CheckDeviceERK5TRect_2 0x00017e60   Data          20  MAIN.o(.constdata)
+    .constdata$1                             0x00017e74   Data           0  POLYGON.o(.constdata)
+    KPanicFileName@_Z4SortiRK4TKeyRK5TSwap_0 0x00017e74   Data         112  POLYGON.o(.constdata)
+    .constdata                               0x00017e74   Section     1280  POLYGON.o(.constdata)
+    KPanicCondition@_Z4SortiRK4TKeyRK5TSwap_1 0x00017ee4   Data          36  POLYGON.o(.constdata)
+    KPanicFileName@_ZN14CPolygonFiller9ConstructEPK9CArrayFixI6TPointEN16CGraphicsContext9TFillRuleENS_6TUsageE_0 0x00017f08   Data         112  POLYGON.o(.constdata)
+    KPanicEnumEBitgdiPanicPolygonFiller@_ZN14CPolygonFiller9ConstructEPK9CArrayFixI6TPointEN16CGraphicsContext9TFillRuleENS_6TUsageE_1 0x00017f78   Data          56  POLYGON.o(.constdata)
+    KPanicCondition@_ZN14CPolygonFiller9ConstructEPK9CArrayFixI6TPointEN16CGraphicsContext9TFillRuleENS_6TUsageE_2 0x00017fb0   Data          40  POLYGON.o(.constdata)
+    KPanicFileName@_ZN14CPolygonFiller9ConstructEPK6TPointiN16CGraphicsContext9TFillRuleENS_6TUsageE_0 0x00017fd8   Data         112  POLYGON.o(.constdata)
+    KPanicEnumEBitgdiPanicPolygonFiller@_ZN14CPolygonFiller9ConstructEPK6TPointiN16CGraphicsContext9TFillRuleENS_6TUsageE_1 0x00018048   Data          56  POLYGON.o(.constdata)
+    KPanicCondition@_ZN14CPolygonFiller9ConstructEPK6TPointiN16CGraphicsContext9TFillRuleENS_6TUsageE_2 0x00018080   Data          40  POLYGON.o(.constdata)
+    KPanicFileName@_ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE_0 0x000180a8   Data         112  POLYGON.o(.constdata)
+    KPanicEnumEBitgdiPanicPolygonFiller@_ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE_1 0x00018118   Data          56  POLYGON.o(.constdata)
+    KPanicCondition@_ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE_2 0x00018150   Data         176  POLYGON.o(.constdata)
+    KPanicFileName@_ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE_3 0x00018200   Data         112  POLYGON.o(.constdata)
+    KPanicEnumEBitgdiPanicPolygonFiller@_ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE_4 0x00018270   Data          56  POLYGON.o(.constdata)
+    KPanicCondition@_ZN14CPolygonFiller9ConstructEN16CGraphicsContext9TFillRuleENS_6TUsageE_5 0x000182a8   Data         204  POLYGON.o(.constdata)
+    .constdata$1                             0x00018374   Data           0  RECT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8DrawRectERK5TRect_0 0x00018374   Data         104  RECT.o(.constdata)
+    .constdata                               0x00018374   Section      784  RECT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc8DrawRectERK5TRect_1 0x000183dc   Data          56  RECT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8DrawRectERK5TRect_2 0x00018414   Data          28  RECT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8DrawRectERK5TRect_3 0x00018430   Data         104  RECT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc8DrawRectERK5TRect_4 0x00018498   Data          56  RECT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8DrawRectERK5TRect_5 0x000184d0   Data          44  RECT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8RectFillERK5TRect_0 0x000184fc   Data         104  RECT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc8RectFillERK5TRect_1 0x00018564   Data          56  RECT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8RectFillERK5TRect_2 0x0001859c   Data          28  RECT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8RectFillERK5TRect_3 0x000185b8   Data         104  RECT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBitmap@_ZN9CFbsBitGc8RectFillERK5TRect_4 0x00018620   Data          56  RECT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8RectFillERK5TRect_5 0x00018658   Data          44  RECT.o(.constdata)
+    .constdata$1                             0x00018684   Data           0  SCREENDV.o(.constdata)
+    KPanicFileName@_ZNK16CFbsScreenDevice12CancelSpriteEv_0 0x00018684   Data         112  SCREENDV.o(.constdata)
+    .constdata                               0x00018684   Section      412  SCREENDV.o(.constdata)
+    KPanicEnumEBitgdiPanicNoSpriteSet@_ZNK16CFbsScreenDevice12CancelSpriteEv_1 0x000186f4   Data          52  SCREENDV.o(.constdata)
+    KPanicCondition@_ZNK16CFbsScreenDevice12CancelSpriteEv_2 0x00018728   Data          32  SCREENDV.o(.constdata)
+    KPanicFileName@_ZN16CFbsScreenDevice18ChangeScreenDeviceEPS__0 0x00018748   Data         112  SCREENDV.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidWindowHandle@_ZN16CFbsScreenDevice18ChangeScreenDeviceEPS__1 0x000187b8   Data          68  SCREENDV.o(.constdata)
+    KPanicCondition@_ZN16CFbsScreenDevice18ChangeScreenDeviceEPS__2 0x000187fc   Data          36  SCREENDV.o(.constdata)
+    .constdata$1                             0x00018820   Data           0  TEXT.o(.constdata)
+    KGetUnderlineMetrics                     0x00018820   Data           4  TEXT.o(.constdata)
+    .constdata                               0x00018820   Section      784  TEXT.o(.constdata)
+    KSetFastBlendDisabled                    0x00018824   Data           4  TEXT.o(.constdata)
+    KSetShadowColor                          0x00018828   Data           4  TEXT.o(.constdata)
+    KGetShadowColor                          0x0001882c   Data           4  TEXT.o(.constdata)
+    KUidIsFbsBitmapGc                        0x00018830   Data           4  TEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_0 0x00018834   Data         104  TEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicNoDevicePresent@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_1 0x0001889c   Data          60  TEXT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_2 0x000188d8   Data          20  TEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_3 0x000188ec   Data         104  TEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicNoFontSelected@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_4 0x00018954   Data          60  TEXT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_5 0x00018990   Data          44  TEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_6 0x000189bc   Data         104  TEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicNoFontSelected@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_7 0x00018a24   Data          60  TEXT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_8 0x00018a60   Data          40  TEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_9 0x00018a88   Data         104  TEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBrushStyle@_ZN9CFbsBitGc8DrawTextERK7TDesC16RK6TPointN16CGraphicsContext10TTextAlignEN5CFont14TTextDirectionEPK5TRect_10 0x00018af0   Data          64  TEXT.o(.constdata)
+    .constdata$1                             0x00018b30   Data           0  VERTEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc16DrawTextVerticalERK7TDesC16RK5TRectiiiN16CGraphicsContext10TTextAlignEi_0 0x00018b30   Data         112  VERTEXT.o(.constdata)
+    .constdata                               0x00018b30   Section      560  VERTEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicNoFontSelected@_ZN9CFbsBitGc16DrawTextVerticalERK7TDesC16RK5TRectiiiN16CGraphicsContext10TTextAlignEi_1 0x00018ba0   Data          60  VERTEXT.o(.constdata)
+    KPanicCondition@_ZN9CFbsBitGc16DrawTextVerticalERK7TDesC16RK5TRectiiiN16CGraphicsContext10TTextAlignEi_2 0x00018bdc   Data          40  VERTEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc16DrawTextVerticalERK7TDesC16RK5TRectiiiN16CGraphicsContext10TTextAlignEi_3 0x00018c04   Data         112  VERTEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicNoFontSelected@_ZN9CFbsBitGc16DrawTextVerticalERK7TDesC16RK5TRectiiiN16CGraphicsContext10TTextAlignEi_4 0x00018c74   Data          60  VERTEXT.o(.constdata)
+    KPanicFileName@_ZN9CFbsBitGc18DoDrawTextVerticalERN5CFont14TPositionParamEPK11CBitmapFonti_0 0x00018cb0   Data         112  VERTEXT.o(.constdata)
+    KPanicEnumEBitgdiPanicInvalidBrushStyle@_ZN9CFbsBitGc18DoDrawTextVerticalERN5CFont14TPositionParamEPK11CBitmapFonti_1 0x00018d20   Data          64  VERTEXT.o(.constdata)
+    .constdata__ZTI10CFbsDevice              0x00018d60   Section       12  FBSERVDV.o(.constdata__ZTI10CFbsDevice)
+    .constdata__ZTI10TSwapEdges              0x00018d6c   Section       12  POLYGON.o(.constdata__ZTI10TSwapEdges)
+    .constdata__ZTI13CBitmapDevice           0x00018d78   Section       12  FBSERVDV.o(.constdata__ZTI13CBitmapDevice)
+    .constdata__ZTI13CFbsBitGcFont           0x00018d84   Section       12  FONTBMP.o(.constdata__ZTI13CFbsBitGcFont)
+    .constdata__ZTI14CPolygonFiller          0x00018d90   Section       12  POLYGON.o(.constdata__ZTI14CPolygonFiller)
+    .constdata__ZTI15CFbsBitGcBitmap         0x00018d9c   Section       12  BITMAPDV.o(.constdata__ZTI15CFbsBitGcBitmap)
+    .constdata__ZTI15CGraphicsDevice         0x00018da8   Section       32  FBSERVDV.o(.constdata__ZTI15CGraphicsDevice)
+    .constdata__ZTI16CFbsBitmapDevice        0x00018dc8   Section       12  BITMAPDV.o(.constdata__ZTI16CFbsBitmapDevice)
+    .constdata__ZTI16CFbsScreenDevice        0x00018dd4   Section       12  SCREENDV.o(.constdata__ZTI16CFbsScreenDevice)
+    .constdata__ZTI16TSwapActiveEdges        0x00018de0   Section       12  POLYGON.o(.constdata__ZTI16TSwapActiveEdges)
+    .constdata__ZTI18CFbsBitGcExtraData      0x00018dec   Section       12  MAIN.o(.constdata__ZTI18CFbsBitGcExtraData)
+    .constdata__ZTI19TCompareEdgesUpperY     0x00018df8   Section       12  POLYGON.o(.constdata__ZTI19TCompareEdgesUpperY)
+    .constdata__ZTI26TSwapScanLineIntersections 0x00018e04   Section       12  POLYGON.o(.constdata__ZTI26TSwapScanLineIntersections)
+    .constdata__ZTI30TCompareActiveEdgesFirstVertex 0x00018e10   Section       12  POLYGON.o(.constdata__ZTI30TCompareActiveEdgesFirstVertex)
+    .constdata__ZTI39TCompareScanLineIntersectionsFirstPixel 0x00018e1c   Section       12  POLYGON.o(.constdata__ZTI39TCompareScanLineIntersectionsFirstPixel)
+    .constdata__ZTI9CFbsBitGc                0x00018e28   Section       12  MAIN.o(.constdata__ZTI9CFbsBitGc)
+    .constdata__ZTS10CFbsDevice              0x00018e34   Section       13  FBSERVDV.o(.constdata__ZTS10CFbsDevice)
+    .constdata__ZTS10TSwapEdges              0x00018e41   Section       13  POLYGON.o(.constdata__ZTS10TSwapEdges)
+    .constdata__ZTS13CBitmapDevice           0x00018e4e   Section       16  FBSERVDV.o(.constdata__ZTS13CBitmapDevice)
+    .constdata__ZTS13CFbsBitGcFont           0x00018e5e   Section       16  FONTBMP.o(.constdata__ZTS13CFbsBitGcFont)
+    .constdata__ZTS14CPolygonFiller          0x00018e6e   Section       17  POLYGON.o(.constdata__ZTS14CPolygonFiller)
+    .constdata__ZTS15CFbsBitGcBitmap         0x00018e7f   Section       18  BITMAPDV.o(.constdata__ZTS15CFbsBitGcBitmap)
+    .constdata__ZTS15CGraphicsDevice         0x00018e91   Section       18  FBSERVDV.o(.constdata__ZTS15CGraphicsDevice)
+    .constdata__ZTS16CFbsBitmapDevice        0x00018ea3   Section       19  BITMAPDV.o(.constdata__ZTS16CFbsBitmapDevice)
+    .constdata__ZTS16CFbsScreenDevice        0x00018eb6   Section       19  SCREENDV.o(.constdata__ZTS16CFbsScreenDevice)
+    .constdata__ZTS16TSwapActiveEdges        0x00018ec9   Section       19  POLYGON.o(.constdata__ZTS16TSwapActiveEdges)
+    .constdata__ZTS18CFbsBitGcExtraData      0x00018edc   Section       21  MAIN.o(.constdata__ZTS18CFbsBitGcExtraData)
+    .constdata__ZTS19TCompareEdgesUpperY     0x00018ef1   Section       22  POLYGON.o(.constdata__ZTS19TCompareEdgesUpperY)
+    .constdata__ZTS26TSwapScanLineIntersections 0x00018f07   Section       29  POLYGON.o(.constdata__ZTS26TSwapScanLineIntersections)
+    .constdata__ZTS30TCompareActiveEdgesFirstVertex 0x00018f24   Section       33  POLYGON.o(.constdata__ZTS30TCompareActiveEdgesFirstVertex)
+    .constdata__ZTS39TCompareScanLineIntersectionsFirstPixel 0x00018f45   Section       42  POLYGON.o(.constdata__ZTS39TCompareScanLineIntersectionsFirstPixel)
+    .constdata__ZTS9CFbsBitGc                0x00018f6f   Section       11  MAIN.o(.constdata__ZTS9CFbsBitGc)
+    .constdata__ZTV10CFbsDevice              0x00018f7c   Section      188  FBSERVDV.o(.constdata__ZTV10CFbsDevice)
+    .constdata__ZTV10TSwapEdges              0x00019038   Section       12  POLYGON.o(.constdata__ZTV10TSwapEdges)
+    .constdata__ZTV13CFbsBitGcFont           0x00019044   Section       80  FONTBMP.o(.constdata__ZTV13CFbsBitGcFont)
+    .constdata__ZTV14CPolygonFiller          0x00019094   Section       20  POLYGON.o(.constdata__ZTV14CPolygonFiller)
+    .constdata__ZTV15CFbsBitGcBitmap         0x000190a8   Section       20  BITMAPDV.o(.constdata__ZTV15CFbsBitGcBitmap)
+    .constdata__ZTV16CFbsBitmapDevice        0x000190bc   Section      204  BITMAPDV.o(.constdata__ZTV16CFbsBitmapDevice)
+    .constdata__ZTV16CFbsScreenDevice        0x00019188   Section      204  SCREENDV.o(.constdata__ZTV16CFbsScreenDevice)
+    .constdata__ZTV16TSwapActiveEdges        0x00019254   Section       12  POLYGON.o(.constdata__ZTV16TSwapActiveEdges)
+    .constdata__ZTV18CFbsBitGcExtraData      0x00019260   Section       20  MAIN.o(.constdata__ZTV18CFbsBitGcExtraData)
+    .constdata__ZTV19TCompareEdgesUpperY     0x00019274   Section       16  POLYGON.o(.constdata__ZTV19TCompareEdgesUpperY)
+    .constdata__ZTV26TSwapScanLineIntersections 0x00019284   Section       12  POLYGON.o(.constdata__ZTV26TSwapScanLineIntersections)
+    .constdata__ZTV30TCompareActiveEdgesFirstVertex 0x00019290   Section       16  POLYGON.o(.constdata__ZTV30TCompareActiveEdgesFirstVertex)
+    .constdata__ZTV39TCompareScanLineIntersectionsFirstPixel 0x000192a0   Section       16  POLYGON.o(.constdata__ZTV39TCompareScanLineIntersectionsFirstPixel)
+    .constdata__ZTV9CFbsBitGc                0x000192b0   Section      296  MAIN.o(.constdata__ZTV9CFbsBitGc)
+    .ARM.exidx                               0x000193d8   Section        8  ucppinit_aeabi.o(.ARM.exidx)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THUMB_ISAv2$ARM_ISAv5$M$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$IEEEJ$EBA8$UX$FPIC$INDIRECT$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    bitgdi{000a0000}[10003b18].dll           0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    drtaeabi{000a0000}.dll                   0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    drtrvct2_2{000a0000}.dll                 0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    estor{000a0000}[10003b0d].dll            0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    euser{000a0000}[100039e5].dll            0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    fbscli{000a0000}[10003a15].dll           0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    fntstr{000a0000}[10003b1a].dll           0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    gdi{000a0000}[10003b15].dll              0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    scdv{000a0000}[100001ec].dll             0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    scppnwdl{000a0000}.dll                   0x00000000   Data           0  anon$$obj.o ABSOLUTE
+    SHT$$INIT_ARRAY$$Base                     - Undefined Weak Reference
+    SHT$$INIT_ARRAY$$Limit                    - Undefined Weak Reference
+    ExternalizeL(TSize, RWriteStream&)        - Undefined Reference
+    _Z12ExternalizeL5TSizeR12RWriteStream@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    ExternalizeL(TPoint, RWriteStream&)       - Undefined Reference
+    _Z12ExternalizeL6TPointR12RWriteStream@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    ExternalizeL(const TRect&, RWriteStream&)  - Undefined Reference
+    _Z12ExternalizeLRK5TRectR12RWriteStream@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    InternalizeL(TRect&, RReadStream&)        - Undefined Reference
+    _Z12InternalizeLR5TRectR11RReadStream@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    InternalizeL(TSize&, RReadStream&)        - Undefined Reference
+    _Z12InternalizeLR5TSizeR11RReadStream@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    InternalizeL(TPoint&, RReadStream&)       - Undefined Reference
+    _Z12InternalizeLR6TPointR11RReadStream@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    CFbsBitmap::ScanLineLength(int, TDisplayMode)  - Undefined Reference
+    _ZN10CFbsBitmap14ScanLineLengthEi12TDisplayMode@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::SwapWidthAndHeight()          - Undefined Reference
+    _ZN10CFbsBitmap18SwapWidthAndHeightEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::GetDecompressionBuffer(int)   - Undefined Reference
+    _ZN10CFbsBitmap22GetDecompressionBufferEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::Reset()                       - Undefined Reference
+    _ZN10CFbsBitmap5ResetEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::Resize(const TSize&)          - Undefined Reference
+    _ZN10CFbsBitmap6ResizeERK5TSize@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::Duplicate(int)                - Undefined Reference
+    _ZN10CFbsBitmap9DuplicateEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::CFbsBitmap()                  - Undefined Reference
+    _ZN10CFbsBitmapC1Ev@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::~CFbsBitmap()                 - Undefined Reference
+    _ZN10CFbsBitmapD1Ev@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    RShapeInfo::Close()                       - Undefined Reference
+    _ZN10RShapeInfo5CloseEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    RShapeInfo::IsOpen()                      - Undefined Reference
+    _ZN10RShapeInfo6IsOpenEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    RShapeInfo::RShapeInfo()                  - Undefined Reference
+    _ZN10RShapeInfoC1Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TBufBase16::TBufBase16(int)               - Undefined Reference
+    _ZN10TBufBase16C1Ei@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TLinearDDA::JumpToRect(const TRect&)      - Undefined Reference
+    _ZN10TLinearDDA10JumpToRectERK5TRect@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::SingleStep(TPoint&)           - Undefined Reference
+    _ZN10TLinearDDA10SingleStepER6TPoint@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::JumpToYCoord(int&, int)       - Undefined Reference
+    _ZN10TLinearDDA12JumpToYCoordERii@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::JumpToYCoord2(int&, int)      - Undefined Reference
+    _ZN10TLinearDDA13JumpToYCoord2ERii@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::SingleScanline(TPoint&, TPoint&)  - Undefined Reference
+    _ZN10TLinearDDA14SingleScanlineER6TPointS1_@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::NextStep(TPoint&)             - Undefined Reference
+    _ZN10TLinearDDA8NextStepER6TPoint@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::Construct(const TPoint&, const TPoint&, TLinearDDA::TLineMode)  - Undefined Reference
+    _ZN10TLinearDDA9ConstructERK6TPointS2_NS_9TLineModeE@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::TLinearDDA(const TLinearDDA&)  - Undefined Reference
+    _ZN10TLinearDDAC1ERKS_@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TLinearDDA::TLinearDDA()                  - Undefined Reference
+    _ZN10TLinearDDAC1Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    RFbsSession::GetSession()                 - Undefined Reference
+    _ZN11RFbsSession10GetSessionEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    RReadStream::ReadInt32L()                 - Undefined Reference
+    _ZN11RReadStream10ReadInt32LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadUint8L()                 - Undefined Reference
+    _ZN11RReadStream10ReadUint8LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadUint16L()                - Undefined Reference
+    _ZN11RReadStream11ReadUint16LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadUint32L()                - Undefined Reference
+    _ZN11RReadStream11ReadUint32LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RReadStream::ReadInt8L()                  - Undefined Reference
+    _ZN11RReadStream9ReadInt8LEv@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    CleanupStack::Pop()                       - Undefined Reference
+    _ZN12CleanupStack3PopEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CleanupStack::PushL(CBase*)               - Undefined Reference
+    _ZN12CleanupStack5PushLEP5CBase@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RWriteStream::WriteInt8L(int)             - Undefined Reference
+    _ZN12RWriteStream10WriteInt8LEi@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteInt32L(long)           - Undefined Reference
+    _ZN12RWriteStream11WriteInt32LEl@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteUint8L(unsigned)       - Undefined Reference
+    _ZN12RWriteStream11WriteUint8LEj@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteUint16L(unsigned)      - Undefined Reference
+    _ZN12RWriteStream12WriteUint16LEj@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    RWriteStream::WriteUint32L(unsigned long)  - Undefined Reference
+    _ZN12RWriteStream12WriteUint32LEm@estor{000a0000}[10003b0d].dll  - Undefined Reference
+    CBitmapContext::APIExtension(TUid, void*&, void*)  - Undefined Reference
+    _ZN14CBitmapContext12APIExtensionE4TUidRPvS1_@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CBitmapContext::Reserved_CBitmapContext_1()  - Undefined Reference
+    _ZN14CBitmapContext25Reserved_CBitmapContext_1Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CBitmapContext::Reserved_CBitmapContext_2()  - Undefined Reference
+    _ZN14CBitmapContext25Reserved_CBitmapContext_2Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CBitmapContext::Reserved_CBitmapContext_3()  - Undefined Reference
+    _ZN14CBitmapContext25Reserved_CBitmapContext_3Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CBitmapContext::Reserved_CGraphicsContext_2()  - Undefined Reference
+    _ZN14CBitmapContext27Reserved_CGraphicsContext_2Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CBitwiseBitmap::SetCompressionBookmark(TLineScanningPosition&, unsigned long*, const CFbsBitmap*)  - Undefined Reference
+    _ZN14CBitwiseBitmap22SetCompressionBookmarkER21TLineScanningPositionPmPK10CFbsBitmap@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsDrawDevice::DisplayMode16M()          - Undefined Reference
+    _ZN14CFbsDrawDevice14DisplayMode16MEv@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CFbsDrawDevice::NewBitmapDeviceL(TScreenInfoV01, TDisplayMode)  - Undefined Reference
+    _ZN14CFbsDrawDevice16NewBitmapDeviceLE14TScreenInfoV0112TDisplayMode@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CFbsDrawDevice::NewBitmapDeviceL(const TSize&, TDisplayMode)  - Undefined Reference
+    _ZN14CFbsDrawDevice16NewBitmapDeviceLERK5TSize12TDisplayMode@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CFbsDrawDevice::NewScreenDeviceL(int, TDisplayMode)  - Undefined Reference
+    _ZN14CFbsDrawDevice16NewScreenDeviceLEi12TDisplayMode@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CTypefaceStore::ReleaseFont(CFont*)       - Undefined Reference
+    _ZN14CTypefaceStore11ReleaseFontEP5CFont@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    RHardwareBitmap::SetAsScreenReference(int)  - Undefined Reference
+    _ZN15RHardwareBitmap20SetAsScreenReferenceEi@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CGraphicsContext::GetUnderlineMetrics(int&, int&)  - Undefined Reference
+    _ZN16CGraphicsContext19GetUnderlineMetricsERiS0_@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CGraphicsContext::JustificationInPixels(int&, int&)  - Undefined Reference
+    _ZN16CGraphicsContext21JustificationInPixelsERiS0_@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CGraphicsContext::DrawText(const TDesC16&, const TPoint&, const CGraphicsContext::TDrawTextParam&)  - Undefined Reference
+    _ZN16CGraphicsContext8DrawTextERK7TDesC16RK6TPointRKNS_14TDrawTextParamE@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CGraphicsContext::Reserved()              - Undefined Reference
+    _ZN16CGraphicsContext8ReservedEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFbsTypefaceStore::RemoveFile(int)        - Undefined Reference
+    _ZN17CFbsTypefaceStore10RemoveFileEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsTypefaceStore::GetFontById(CFont*&, TUid, const TAlgStyle&)  - Undefined Reference
+    _ZN17CFbsTypefaceStore11GetFontByIdERP5CFont4TUidRK9TAlgStyle@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsTypefaceStore::RegisterLinkedTypeface(const CLinkedTypefaceSpecification&, int&)  - Undefined Reference
+    _ZN17CFbsTypefaceStore22RegisterLinkedTypefaceERK28CLinkedTypefaceSpecificationRi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsTypefaceStore::GetNearestFontToMaxHeightInPixels(CFont*&, const TFontSpec&, int)  - Undefined Reference
+    _ZN17CFbsTypefaceStore33GetNearestFontToMaxHeightInPixelsERP5CFontRK9TFontSpeci@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsTypefaceStore::GetNearestFontToDesignHeightInPixels(CFont*&, const TFontSpec&)  - Undefined Reference
+    _ZN17CFbsTypefaceStore36GetNearestFontToDesignHeightInPixelsERP5CFontRK9TFontSpec@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsTypefaceStore::NewL(CGraphicsDevice*)  - Undefined Reference
+    _ZN17CFbsTypefaceStore4NewLEP15CGraphicsDevice@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsTypefaceStore::AddFile(const TDesC16&, int&)  - Undefined Reference
+    _ZN17CFbsTypefaceStore7AddFileERK7TDesC16Ri@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    TDisplayModeUtils::NumDisplayModeColors(TDisplayMode)  - Undefined Reference
+    _ZN17TDisplayModeUtils20NumDisplayModeColorsE12TDisplayMode@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TDisplayModeUtils::NumDisplayModeBitsPerPixel(TDisplayMode)  - Undefined Reference
+    _ZN17TDisplayModeUtils26NumDisplayModeBitsPerPixelE12TDisplayMode@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    MGraphicsDeviceMap::MGraphicsDeviceMap__sub_object()  - Undefined Reference
+    _ZN18MGraphicsDeviceMapC2Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    MGraphicsDeviceMap::~MGraphicsDeviceMap__sub_object()  - Undefined Reference
+    _ZN18MGraphicsDeviceMapD2Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CHardwareGraphicsAccelerator::NewL(RHardwareBitmap)  - Undefined Reference
+    _ZN28CHardwareGraphicsAccelerator4NewLE15RHardwareBitmap@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CSoftwareGraphicsAccelerator::GenericCapabilities()  - Undefined Reference
+    _ZN28CSoftwareGraphicsAccelerator19GenericCapabilitiesEv@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    CSoftwareGraphicsAccelerator::NewL(CFbsBitmap*)  - Undefined Reference
+    _ZN28CSoftwareGraphicsAccelerator4NewLEP10CFbsBitmap@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    TKey::TKey()                              - Undefined Reference
+    _ZN4TKeyC1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRgb::InternalizeL(RReadStream&)          - Undefined Reference
+    _ZN4TRgb12InternalizeLER11RReadStream@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    User::LeaveIfNull(void*)                  - Undefined Reference
+    _ZN4User11LeaveIfNullEPv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::LeaveIfError(int)                   - Undefined Reference
+    _ZN4User12LeaveIfErrorEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::MarkCleanupStack()                  - Undefined Reference
+    _ZN4User16MarkCleanupStackEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::UnMarkCleanupStack(TTrapHandler*)   - Undefined Reference
+    _ZN4User18UnMarkCleanupStackEP12TTrapHandler@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Free(void*)                         - Undefined Reference
+    _ZN4User4FreeEPv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Alloc(int)                          - Undefined Reference
+    _ZN4User5AllocEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Leave(int)                          - Undefined Reference
+    _ZN4User5LeaveEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Panic(const TDesC16&, int)          - Undefined Reference
+    _ZN4User5PanicERK7TDesC16i@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::AllocL(int)                         - Undefined Reference
+    _ZN4User6AllocLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::AllocZL(int)                        - Undefined Reference
+    _ZN4User7AllocZLEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::Invariant()                         - Undefined Reference
+    _ZN4User9InvariantEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    User::QuickSort(int, const TKey&, const TSwap&)  - Undefined Reference
+    _ZN4User9QuickSortEiRK4TKeyRK5TSwap@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CBase::Extension_(unsigned, void*&, void*)  - Undefined Reference
+    _ZN5CBase10Extension_EjRPvS0_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CBase::~CBase()                           - Undefined Reference
+    _ZN5CBaseD1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::SetMax()                           - Undefined Reference
+    _ZN5TDes86SetMaxEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes8::SetLength(int)                     - Undefined Reference
+    _ZN5TDes89SetLengthEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtr8::TPtr8(unsigned char*, int, int)    - Undefined Reference
+    _ZN5TPtr8C1EPhii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::BoundingRect(const TRect&)         - Undefined Reference
+    _ZN5TRect12BoundingRectERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Intersection(const TRect&)         - Undefined Reference
+    _ZN5TRect12IntersectionERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Grow(int, int)                     - Undefined Reference
+    _ZN5TRect4GrowEii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Move(const TPoint&)                - Undefined Reference
+    _ZN5TRect4MoveERK6TPoint@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Shrink(int, int)                   - Undefined Reference
+    _ZN5TRect6ShrinkEii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::SetRect(int, int, int, int)        - Undefined Reference
+    _ZN5TRect7SetRectEiiii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::SetWidth(int)                      - Undefined Reference
+    _ZN5TRect8SetWidthEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Normalize()                        - Undefined Reference
+    _ZN5TRect9NormalizeEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::SetHeight(int)                     - Undefined Reference
+    _ZN5TRect9SetHeightEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::TRect(const TSize&)                - Undefined Reference
+    _ZN5TRectC1ERK5TSize@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::TRect(const TPoint&, const TSize&)  - Undefined Reference
+    _ZN5TRectC1ERK6TPointRK5TSize@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::TRect(const TPoint&, const TPoint&)  - Undefined Reference
+    _ZN5TRectC1ERK6TPointS2_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::TRect(int, int, int, int)          - Undefined Reference
+    _ZN5TRectC1Eiiii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::TRect()                            - Undefined Reference
+    _ZN5TRectC1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TSize::SetSize(int, int)                  - Undefined Reference
+    _ZN5TSize7SetSizeEii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TSwap::TSwap()                            - Undefined Reference
+    _ZN5TSwapC1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RDebug::Print(TRefByValue<const TDesC16>, ...)  - Undefined Reference
+    _ZN6RDebug5PrintE11TRefByValueIK7TDesC16Ez@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDes16::Format(TRefByValue<const TDesC16>, ...)  - Undefined Reference
+    _ZN6TDes166FormatE11TRefByValueIK7TDesC16Ez@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::SetXY(int, int)                   - Undefined Reference
+    _ZN6TPoint5SetXYEii@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator -=(const TPoint&)        - Undefined Reference
+    _ZN6TPointmIERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator +=(const TPoint&)        - Undefined Reference
+    _ZN6TPointpLERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RRegion::Close()                          - Undefined Reference
+    _ZN7RRegion5CloseEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    RRegion::RRegion()                        - Undefined Reference
+    _ZN7RRegionC1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtrC16::TPtrC16(const unsigned short*)   - Undefined Reference
+    _ZN7TPtrC16C1EPKt@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtrC16::TPtrC16(const TDesC16&)          - Undefined Reference
+    _ZN7TPtrC16C1ERK7TDesC16@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPtrC16::TPtrC16()                        - Undefined Reference
+    _ZN7TPtrC16C1Ev@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::RectangleListW()                 - Undefined Reference
+    _ZN7TRegion14RectangleListWEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::Copy(const TRegion&)             - Undefined Reference
+    _ZN7TRegion4CopyERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::Sort(const TPoint&)              - Undefined Reference
+    _ZN7TRegion4SortERK6TPoint@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::Clear()                          - Undefined Reference
+    _ZN7TRegion5ClearEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::AddRect(const TRect&)            - Undefined Reference
+    _ZN7TRegion7AddRectERK5TRect@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::TRegion(int)                     - Undefined Reference
+    _ZN7TRegionC1Ei@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CFbsFont::Reset()                         - Undefined Reference
+    _ZN8CFbsFont5ResetEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::Duplicate(int)                  - Undefined Reference
+    _ZN8CFbsFont9DuplicateEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::CFbsFont()                      - Undefined Reference
+    _ZN8CFbsFontC1Ev@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::~CFbsFont()                     - Undefined Reference
+    _ZN8CFbsFontD1Ev@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    TBufBase8::TBufBase8(int)                 - Undefined Reference
+    _ZN9TBufBase8C1Ei@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TFontSpec::InternalizeL(RReadStream&)     - Undefined Reference
+    _ZN9TFontSpec12InternalizeLER11RReadStream@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TFontSpec::TFontSpec()                    - Undefined Reference
+    _ZN9TFontSpecC1Ev@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFbsBitmap::DataStride() const            - Undefined Reference
+    _ZNK10CFbsBitmap10DataStrideEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::UnlockHeap(int) const         - Undefined Reference
+    _ZNK10CFbsBitmap10UnlockHeapEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::DataAddress() const           - Undefined Reference
+    _ZNK10CFbsBitmap11DataAddressEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::DisplayMode() const           - Undefined Reference
+    _ZNK10CFbsBitmap11DisplayModeEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::IsRomBitmap() const           - Undefined Reference
+    _ZNK10CFbsBitmap11IsRomBitmapEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::SizeInTwips() const           - Undefined Reference
+    _ZNK10CFbsBitmap11SizeInTwipsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::CleanAddress() const          - Undefined Reference
+    _ZNK10CFbsBitmap12CleanAddressEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::SizeInPixels() const          - Undefined Reference
+    _ZNK10CFbsBitmap12SizeInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::EndDataAccess(int) const      - Undefined Reference
+    _ZNK10CFbsBitmap13EndDataAccessEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::BeginDataAccess() const       - Undefined Reference
+    _ZNK10CFbsBitmap15BeginDataAccessEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::HardwareBitmapHandle() const  - Undefined Reference
+    _ZNK10CFbsBitmap20HardwareBitmapHandleEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::VerticalPixelsToTwips(int) const  - Undefined Reference
+    _ZNK10CFbsBitmap21VerticalPixelsToTwipsEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::VerticalTwipsToPixels(int) const  - Undefined Reference
+    _ZNK10CFbsBitmap21VerticalTwipsToPixelsEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::HorizontalPixelsToTwips(int) const  - Undefined Reference
+    _ZNK10CFbsBitmap23HorizontalPixelsToTwipsEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::HorizontalTwipsToPixels(int) const  - Undefined Reference
+    _ZNK10CFbsBitmap23HorizontalTwipsToPixelsEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::Handle() const                - Undefined Reference
+    _ZNK10CFbsBitmap6HandleEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::Header() const                - Undefined Reference
+    _ZNK10CFbsBitmap6HeaderEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsBitmap::LockHeap(int) const           - Undefined Reference
+    _ZNK10CFbsBitmap8LockHeapEi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CArrayFixBase::At(int) const              - Undefined Reference
+    _ZNK13CArrayFixBase2AtEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CBitwiseBitmap::DataStride() const        - Undefined Reference
+    _ZNK14CBitwiseBitmap10DataStrideEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::DisplayMode() const       - Undefined Reference
+    _ZNK14CBitwiseBitmap11DisplayModeEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::GetScanLine(TDes8&, const TPoint&, int, int, const TPoint&, TDisplayMode, unsigned long*, TLineScanningPosition&) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap11GetScanLineER5TDes8RK6TPointiiS4_12TDisplayModePmR21TLineScanningPosition@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::GetScanLine(unsigned long*&, TDes8&, const TPoint&, int, int, const TPoint&, TDisplayMode) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap11GetScanLineERPmR5TDes8RK6TPointiiS6_12TDisplayMode@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::IsCompressed() const      - Undefined Reference
+    _ZNK14CBitwiseBitmap12IsCompressedEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::SizeInPixels() const      - Undefined Reference
+    _ZNK14CBitwiseBitmap12SizeInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::GetScanLinePtr(unsigned long*&, TPoint&, int, unsigned long*, TLineScanningPosition&) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap14GetScanLinePtrERPmR6TPointiS0_R21TLineScanningPosition@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::GetScanLinePtr(unsigned long*&, int&, TPoint&, unsigned long*, TLineScanningPosition&) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap14GetScanLinePtrERPmRiR6TPointS0_R21TLineScanningPosition@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::ScanLineAddress(unsigned long*, unsigned) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap15ScanLineAddressEPmj@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::StretchScanLine(TDes8&, const TPoint&, int, int, int, int, int, const TPoint&, TDisplayMode, unsigned long*, TLineScanningPosition&) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap15StretchScanLineER5TDes8RK6TPointiiiiiS4_12TDisplayModePmR21TLineScanningPosition@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CBitwiseBitmap::GetPixel(TRgb&, const TPoint&, unsigned long*) const  - Undefined Reference
+    _ZNK14CBitwiseBitmap8GetPixelER4TRgbRK6TPointPm@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    RHardwareBitmap::GetInfo(TAcceleratedBitmapInfo&) const  - Undefined Reference
+    _ZNK15RHardwareBitmap7GetInfoER22TAcceleratedBitmapInfo@scdv{000a0000}[100001ec].dll  - Undefined Reference
+    XLeaveException::GetReason() const        - Undefined Reference
+    _ZNK15XLeaveException9GetReasonEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CFbsTypefaceStore::FontHeightInPixels(int, int) const  - Undefined Reference
+    _ZNK17CFbsTypefaceStore18FontHeightInPixelsEii@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    TKey::At(int) const                       - Undefined Reference
+    _ZNK4TKey2AtEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRgb::ExternalizeL(RWriteStream&) const   - Undefined Reference
+    _ZNK4TRgb12ExternalizeLER12RWriteStream@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TUid::operator ==(const TUid&) const      - Undefined Reference
+    _ZNK4TUideqERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CFont::MeasureText(const TDesC16&, const CFont::TMeasureTextInput*, CFont::TMeasureTextOutput*) const  - Undefined Reference
+    _ZNK5CFont11MeasureTextERK7TDesC16PKNS_17TMeasureTextInputEPNS_18TMeasureTextOutputE@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::AscentInPixels() const             - Undefined Reference
+    _ZNK5CFont14AscentInPixelsEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::HeightInPixels() const             - Undefined Reference
+    _ZNK5CFont14HeightInPixelsEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::FontSpecInTwips() const            - Undefined Reference
+    _ZNK5CFont15FontSpecInTwipsEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::DoDescentInPixels() const          - Undefined Reference
+    _ZNK5CFont17DoDescentInPixelsEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::GetCharacterPosition2(CFont::TPositionParam&, RShapeInfo&) const  - Undefined Reference
+    _ZNK5CFont21GetCharacterPosition2ERNS_14TPositionParamER10RShapeInfo@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::DoGetCharacterPosition(CFont::TPositionParam&) const  - Undefined Reference
+    _ZNK5CFont22DoGetCharacterPositionERNS_14TPositionParamE@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    CFont::TypeUid() const                    - Undefined Reference
+    _ZNK5CFont7TypeUidEv@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    TRect::Intersects(const TRect&) const     - Undefined Reference
+    _ZNK5TRect10IntersectsERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Size() const                       - Undefined Reference
+    _ZNK5TRect4SizeEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Width() const                      - Undefined Reference
+    _ZNK5TRect5WidthEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Center() const                     - Undefined Reference
+    _ZNK5TRect6CenterEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Height() const                     - Undefined Reference
+    _ZNK5TRect6HeightEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::IsEmpty() const                    - Undefined Reference
+    _ZNK5TRect7IsEmptyEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::Contains(const TPoint&) const      - Undefined Reference
+    _ZNK5TRect8ContainsERK6TPoint@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRect::operator !=(const TRect&) const    - Undefined Reference
+    _ZNK5TRectneERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TSize::operator ==(const TSize&) const    - Undefined Reference
+    _ZNK5TSizeeqERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC8::Ptr() const                       - Undefined Reference
+    _ZNK6TDesC83PtrEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC8::Compare(const TDesC8&) const      - Undefined Reference
+    _ZNK6TDesC87CompareERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator ==(const TPoint&) const  - Undefined Reference
+    _ZNK6TPointeqERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator -(const TPoint&) const   - Undefined Reference
+    _ZNK6TPointmiERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator !=(const TPoint&) const  - Undefined Reference
+    _ZNK6TPointneERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator -() const                - Undefined Reference
+    _ZNK6TPointngEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator +(const TSize&) const    - Undefined Reference
+    _ZNK6TPointplERK5TSize@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TPoint::operator +(const TPoint&) const   - Undefined Reference
+    _ZNK6TPointplERKS_@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TDesC16::AtC(int) const                   - Undefined Reference
+    _ZNK7TDesC163AtCEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::BoundingRect() const             - Undefined Reference
+    _ZNK7TRegion12BoundingRectEv@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::IsContainedBy(const TRect&) const  - Undefined Reference
+    _ZNK7TRegion13IsContainedByERK5TRect@euser{000a0000}[100039e5].dll  - Undefined Reference
+    TRegion::operator [](int) const           - Undefined Reference
+    _ZNK7TRegionixEi@euser{000a0000}[100039e5].dll  - Undefined Reference
+    CFbsFont::DoTextCount(const TDesC16&, int) const  - Undefined Reference
+    _ZNK8CFbsFont11DoTextCountERK7TDesC16i@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoTextCount(const TDesC16&, int, int&) const  - Undefined Reference
+    _ZNK8CFbsFont11DoTextCountERK7TDesC16iRi@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::GetFontMetrics(TOpenFontMetrics&) const  - Undefined Reference
+    _ZNK8CFbsFont14GetFontMetricsER16TOpenFontMetrics@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoAscentInPixels() const        - Undefined Reference
+    _ZNK8CFbsFont16DoAscentInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoHeightInPixels() const        - Undefined Reference
+    _ZNK8CFbsFont16DoHeightInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoFontSpecInTwips() const       - Undefined Reference
+    _ZNK8CFbsFont17DoFontSpecInTwipsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoExtendedFunction(TUid, void*) const  - Undefined Reference
+    _ZNK8CFbsFont18DoExtendedFunctionE4TUidPv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoGetCharacterData(unsigned, TOpenFontCharMetrics&, const unsigned char*&, TSize&) const  - Undefined Reference
+    _ZNK8CFbsFont18DoGetCharacterDataEjR20TOpenFontCharMetricsRPKhR5TSize@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoCharWidthInPixels(TChar) const  - Undefined Reference
+    _ZNK8CFbsFont19DoCharWidthInPixelsE5TChar@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoTextWidthInPixels(const TDesC16&) const  - Undefined Reference
+    _ZNK8CFbsFont19DoTextWidthInPixelsERK7TDesC16@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoMaxCharWidthInPixels() const  - Undefined Reference
+    _ZNK8CFbsFont22DoMaxCharWidthInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoBaselineOffsetInPixels() const  - Undefined Reference
+    _ZNK8CFbsFont24DoBaselineOffsetInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::DoMaxNormalCharWidthInPixels() const  - Undefined Reference
+    _ZNK8CFbsFont28DoMaxNormalCharWidthInPixelsEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::Handle() const                  - Undefined Reference
+    _ZNK8CFbsFont6HandleEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    CFbsFont::Address() const                 - Undefined Reference
+    _ZNK8CFbsFont7AddressEv@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    TAlgStyle::WidthFactor() const            - Undefined Reference
+    _ZNK9TAlgStyle11WidthFactorEv@fntstr{000a0000}[10003b1a].dll  - Undefined Reference
+    TAlgStyle::HeightFactor() const           - Undefined Reference
+    _ZNK9TAlgStyle12HeightFactorEv@fntstr{000a0000}[10003b1a].dll  - Undefined Reference
+    TAlgStyle::IsBold() const                 - Undefined Reference
+    _ZNK9TAlgStyle6IsBoldEv@fntstr{000a0000}[10003b1a].dll  - Undefined Reference
+    TAlgStyle::IsItalic() const               - Undefined Reference
+    _ZNK9TAlgStyle8IsItalicEv@fntstr{000a0000}[10003b1a].dll  - Undefined Reference
+    TFontSpec::ExternalizeL(RWriteStream&) const  - Undefined Reference
+    _ZNK9TFontSpec12ExternalizeLER12RWriteStream@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    typeinfo for CFbsBitmap                   - Undefined Reference
+    _ZTI10CFbsBitmap@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    typeinfo for CBitmapContext               - Undefined Reference
+    _ZTI14CBitmapContext@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    typeinfo for XLeaveException              - Undefined Reference
+    _ZTI15XLeaveException@drtaeabi{000a0000}.dll  - Undefined Reference
+    typeinfo for MGraphicsDeviceMap           - Undefined Reference
+    _ZTI18MGraphicsDeviceMap@gdi{000a0000}[10003b15].dll  - Undefined Reference
+    typeinfo for TKey                         - Undefined Reference
+    _ZTI4TKey@euser{000a0000}[100039e5].dll   - Undefined Reference
+    typeinfo for CBase                        - Undefined Reference
+    _ZTI5CBase@euser{000a0000}[100039e5].dll  - Undefined Reference
+    typeinfo for TSwap                        - Undefined Reference
+    _ZTI5TSwap@euser{000a0000}[100039e5].dll  - Undefined Reference
+    typeinfo for CFbsFont                     - Undefined Reference
+    _ZTI8CFbsFont@fbscli{000a0000}[10003a15].dll  - Undefined Reference
+    vtable for CBase                          - Undefined Reference
+    _ZTV5CBase@euser{000a0000}[100039e5].dll  - Undefined Reference
+    vtable for __cxxabiv1::__si_class_type_info  - Undefined Reference
+    _ZTVN10__cxxabiv120__si_class_type_infoE@drtaeabi{000a0000}.dll  - Undefined Reference
+    vtable for __cxxabiv1::__vmi_class_type_info  - Undefined Reference
+    _ZTVN10__cxxabiv121__vmi_class_type_infoE@drtaeabi{000a0000}.dll  - Undefined Reference
+    operator delete[] (void*)                 - Undefined Reference
+    _ZdaPv@scppnwdl{000a0000}.dll             - Undefined Reference
+    operator delete (void*)                   - Undefined Reference
+    _ZdlPv@scppnwdl{000a0000}.dll             - Undefined Reference
+    operator new[] (unsigned)                 - Undefined Reference
+    _Znaj@scppnwdl{000a0000}.dll              - Undefined Reference
+    __ARM_ll_cmpge                            - Undefined Reference
+    __ARM_ll_cmpge@drtrvct2_2{000a0000}.dll   - Undefined Reference
+    __ARM_ll_cmple                            - Undefined Reference
+    __ARM_ll_cmple@drtrvct2_2{000a0000}.dll   - Undefined Reference
+    __ARM_ll_mulls                            - Undefined Reference
+    __ARM_ll_mulls@drtrvct2_2{000a0000}.dll   - Undefined Reference
+    __ARM_ll_rsb                              - Undefined Reference
+    __ARM_ll_rsb@drtrvct2_2{000a0000}.dll     - Undefined Reference
+    __aeabi_idivmod                           - Undefined Reference
+    __aeabi_idivmod@drtaeabi{000a0000}.dll    - Undefined Reference
+    __aeabi_lmul                              - Undefined Reference
+    __aeabi_lmul@drtaeabi{000a0000}.dll       - Undefined Reference
+    __aeabi_memclr4                           - Undefined Reference
+    __aeabi_memclr4@drtaeabi{000a0000}.dll    - Undefined Reference
+    __aeabi_memcpy4                           - Undefined Reference
+    __aeabi_memcpy4@drtaeabi{000a0000}.dll    - Undefined Reference
+    __aeabi_unwind_cpp_pr0                    - Undefined Reference
+    __aeabi_unwind_cpp_pr0@drtaeabi{000a0000}.dll  - Undefined Reference
+    __aeabi_unwind_cpp_pr1                    - Undefined Reference
+    __aeabi_unwind_cpp_pr1@drtaeabi{000a0000}.dll  - Undefined Reference
+    __aeabi_vec_ctor_nocookie_nodtor          - Undefined Reference
+    __aeabi_vec_ctor_nocookie_nodtor@drtaeabi{000a0000}.dll  - Undefined Reference
+    __cxa_begin_catch                         - Undefined Reference
+    __cxa_begin_catch@drtaeabi{000a0000}.dll  - Undefined Reference
+    __cxa_end_catch                           - Undefined Reference
+    __cxa_end_catch@drtaeabi{000a0000}.dll    - Undefined Reference
+    __cxa_end_cleanup                         - Undefined Reference
+    __cxa_end_cleanup@drtaeabi{000a0000}.dll  - Undefined Reference
+    __cxa_pure_virtual                        - Undefined Reference
+    __cxa_pure_virtual@drtaeabi{000a0000}.dll  - Undefined Reference
+    _fp_init                                  - Undefined Weak Reference
+    memclr                                    - Undefined Reference
+    memclr@euser{000a0000}[100039e5].dll      - Undefined Reference
+    memmove                                   - Undefined Reference
+    memmove@euser{000a0000}[100039e5].dll     - Undefined Reference
+    run_static_dtors                          - Undefined Weak Reference
+    Image$$ER_RO$$Base                       0x00008000   Number         0  anon$$obj.o(linker$$defined$$symbols)
+    _E32Dll                                  0x00008000   ARM Code      40  uc_dll_.o(.emb_text)
+    Symbian$$CPP$$Exception$$Descriptor      0x00008014   Data           0  uc_dll_.o(.emb_text)
+    __cpp_initialize__aeabi_                 0x00008028   ARM Code      72  ucppinit_aeabi.o(.emb_text)
+    std::nothrow                             0x00008070   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    __PLT                                    0x00008070   ARM Code       0  anon$$obj.o(.plt)
+    XorBuffers(unsigned long*, const unsigned long*, int) 0x00008711   Thumb Code    26  BITBLT.o(.text)
+    AndBuffers(unsigned long*, const unsigned long*, int) 0x0000872b   Thumb Code    26  BITBLT.o(.text)
+    InvertBuffer(unsigned long*, int)        0x00008745   Thumb Code    22  BITBLT.o(.text)
+    InvertBuffer(unsigned char*, int)        0x0000875b   Thumb Code    20  BITBLT.o(.text)
+    CFbsBitGc::FastBlendInterface(const CBitwiseBitmap*, const CBitwiseBitmap*, MFastBlend*&) const 0x0000883f   Thumb Code    68  BITBLT.o(.text)
+    CFbsBitGc::DoBitBlt(const TPoint&, CFbsDevice*, const TRect&) 0x00008883   Thumb Code   314  BITBLT.o(.text)
+    CFbsBitGc::BitBlt(const TPoint&, const CFbsBitGc&, const TRect&) 0x000089bd   Thumb Code   464  BITBLT.o(.text)
+    CFbsBitGc::BitBlt(const TPoint&, const CFbsBitGc&) 0x00008b8d   Thumb Code    42  BITBLT.o(.text)
+    CFbsBitGc::BitBlt(const TPoint&, const CFbsBitmap*) 0x00008bb7   Thumb Code    46  BITBLT.o(.text)
+    CFbsBitGc::GetScanLineOffsetPtr(CBitwiseBitmap*, unsigned long*&, int, TPoint, unsigned long*, TLineScanningPosition&, unsigned) 0x00008be5   Thumb Code    34  BITBLT.o(.text)
+    CFbsBitGc::MemoryOffsetForPixelPitch(unsigned, TDisplayMode) 0x00008c07   Thumb Code    40  BITBLT.o(.text)
+    CFbsBitGc::DoBitBlt(const TPoint&, CBitwiseBitmap*, unsigned long*, int, const TRect&) 0x00008c2f   Thumb Code  1734  BITBLT.o(.text)
+    CFbsBitGc::BitBlt(const TPoint&, const CFbsBitmap*, const TRect&) 0x000092f5   Thumb Code   638  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltMaskedFlicker(const TPoint&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, int, const TPoint&, int) 0x00009573   Thumb Code  1590  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltMaskedNonFlicker(const TPoint&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, int, const TPoint&, int) 0x00009ba9   Thumb Code   750  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltMaskedNonFlickerPatterned(const TPoint&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, int, const TPoint&, int) 0x00009e97   Thumb Code   696  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltMaskedNonFlickerSolid(const TPoint&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, int, const TPoint&, int) 0x0000a14f   Thumb Code   468  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltAlpha(const TPoint&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, const TPoint&, int, int) 0x0000a323   Thumb Code  1010  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltMasked(const TPoint&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, int, const TPoint&, int) 0x0000a715   Thumb Code   838  BITBLT.o(.text)
+    CFbsBitGc::BitBltMasked(const TPoint&, const CFbsBitmap*, const TRect&, const CFbsBitmap*, int) 0x0000aa5b   Thumb Code   894  BITBLT.o(.text)
+    CFbsBitGc::DoBitBltAlpha(const TPoint&, const CBitwiseBitmap*, unsigned long*, const CBitwiseBitmap*, unsigned long*, const CBitwiseBitmap*, unsigned long*, const TRect&, const TPoint&, const TPoint&, int) 0x0000add9   Thumb Code   492  BITBLT.o(.text)
+    CFbsBitGc::AlphaBlendBitmaps(const TPoint&, const CFbsBitmap*, const CFbsBitmap*, const TRect&, const TPoint&, const CFbsBitmap*, const TPoint&) 0x0000afc5   Thumb Code   968  BITBLT.o(.text)
+    CFbsBitGc::AlphaBlendBitmaps(const TPoint&, const CFbsBitmap*, const TRect&, const CFbsBitmap*, const TPoint&) 0x0000b38d   Thumb Code   752  BITBLT.o(.text)
+    CFbsBitGc::AlphaBlendBitmaps(const TPoint&, const CWsBitmap*, const TRect&, const CWsBitmap*, const TPoint&) 0x0000b67d   Thumb Code    28  BITBLT.o(.text)
+    CFbsBitGc::DoDrawBitmapMasked(const TRect&, CBitwiseBitmap*, unsigned long*, const TRect&, CBitwiseBitmap*, unsigned long*, int, const TPoint&) 0x0000b699   Thumb Code  1808  BITBLT.o(.text)
+    DummyReserved1()                         0x0000bdb9   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved2()                         0x0000bdcb   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved3()                         0x0000bddd   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved4()                         0x0000bdef   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved5()                         0x0000be01   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved6()                         0x0000be13   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved7()                         0x0000be25   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved8()                         0x0000be37   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved9()                         0x0000be49   Thumb Code    18  BITMAPDV.o(.text)
+    DummyReserved10()                        0x0000be5b   Thumb Code    18  BITMAPDV.o(.text)
+    CFbsBitmapDevice::ConstructL(CFbsBitmap*) 0x0000be6d   Thumb Code   220  BITMAPDV.o(.text)
+    CFbsBitmapDevice::CFbsBitmapDevice()     0x0000bf49   Thumb Code    16  BITMAPDV.o(.text)
+    CFbsBitmapDevice::CFbsBitmapDevice__sub_object() 0x0000bf49   Thumb Code     0  BITMAPDV.o(.text)
+    CFbsBitmapDevice::NewL(CFbsBitmap*)      0x0000bf59   Thumb Code    60  BITMAPDV.o(.text)
+    CFbsBitmapDevice::NewL(CFbsBitmap*, const TDesC16&) 0x0000bf95   Thumb Code     2  BITMAPDV.o(.text)
+    CFbsBitmapDevice::~CFbsBitmapDevice()    0x0000bf97   Thumb Code    32  BITMAPDV.o(.text)
+    CFbsBitmapDevice::~CFbsBitmapDevice__sub_object() 0x0000bf97   Thumb Code     0  BITMAPDV.o(.text)
+    CFbsBitmapDevice::~CFbsBitmapDevice__deallocating() 0x0000bfb7   Thumb Code    16  BITMAPDV.o(.text)
+    thunk{-4} to CFbsBitmapDevice::~CFbsBitmapDevice__deallocating() 0x0000bfc7   Thumb Code     4  BITMAPDV.o(.text)
+    thunk{-4} to CFbsBitmapDevice::~CFbsBitmapDevice() 0x0000bfcb   Thumb Code     4  BITMAPDV.o(.text)
+    CFbsBitmapDevice::Resize(const TSize&)   0x0000bfcf   Thumb Code   336  BITMAPDV.o(.text)
+    CFbsBitmapDevice::GetScanLine(TDes8&, const TPoint&, int, TDisplayMode) const 0x0000c11f   Thumb Code    52  BITMAPDV.o(.text)
+    CFbsBitmapDevice::GetPixel(TRgb&, const TPoint&) const 0x0000c153   Thumb Code   122  BITMAPDV.o(.text)
+    CFbsBitmapDevice::HorizontalPixelsToTwips(int) const 0x0000c1cd   Thumb Code    10  BITMAPDV.o(.text)
+    thunk{-4} to CFbsBitmapDevice::HorizontalPixelsToTwips(int) const 0x0000c1d7   Thumb Code     4  BITMAPDV.o(.text)
+    CFbsBitmapDevice::VerticalPixelsToTwips(int) const 0x0000c1db   Thumb Code    10  BITMAPDV.o(.text)
+    thunk{-4} to CFbsBitmapDevice::VerticalPixelsToTwips(int) const 0x0000c1e5   Thumb Code     4  BITMAPDV.o(.text)
+    CFbsBitmapDevice::HorizontalTwipsToPixels(int) const 0x0000c1e9   Thumb Code    10  BITMAPDV.o(.text)
+    thunk{-4} to CFbsBitmapDevice::HorizontalTwipsToPixels(int) const 0x0000c1f3   Thumb Code     4  BITMAPDV.o(.text)
+    CFbsBitmapDevice::VerticalTwipsToPixels(int) const 0x0000c1f7   Thumb Code    10  BITMAPDV.o(.text)
+    thunk{-4} to CFbsBitmapDevice::VerticalTwipsToPixels(int) const 0x0000c201   Thumb Code     4  BITMAPDV.o(.text)
+    CFbsBitmapDevice::SizeInTwips() const    0x0000c205   Thumb Code    10  BITMAPDV.o(.text)
+    CFbsBitmapDevice::PaletteAttributes(int&, int&) const 0x0000c20f   Thumb Code    44  BITMAPDV.o(.text)
+    CFbsBitmapDevice::SetPalette(CPalette*)  0x0000c23b   Thumb Code     8  BITMAPDV.o(.text)
+    CFbsBitmapDevice::GetPalette(CPalette*&) const 0x0000c243   Thumb Code     8  BITMAPDV.o(.text)
+    CFbsBitmapDevice::DrawingBegin(int)      0x0000c24b   Thumb Code    20  BITMAPDV.o(.text)
+    CFbsBitmapDevice::DrawingEnd(int)        0x0000c25f   Thumb Code    24  BITMAPDV.o(.text)
+    CFbsBitmapDevice::SwapWidthAndHeight()   0x0000c277   Thumb Code    44  BITMAPDV.o(.text)
+    CFbsBitmapDevice::SetBits()              0x0000c2a3   Thumb Code    48  BITMAPDV.o(.text)
+    TAcceleratedBitmapSpec::TAcceleratedBitmapSpec(RHardwareBitmap) 0x0000c2d9   Thumb Code    16  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::TAcceleratedBitmapSpec__sub_object(RHardwareBitmap) 0x0000c2d9   Thumb Code     0  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::TAcceleratedBitmapSpec(CFbsBitmap*) 0x0000c2e9   Thumb Code    56  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::TAcceleratedBitmapSpec__sub_object(CFbsBitmap*) 0x0000c2e9   Thumb Code     0  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::GetInfo(TAcceleratedBitmapInfo&) const 0x0000c321   Thumb Code   170  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::DoLock(TBitmapLockCount&) 0x0000c3cb   Thumb Code    26  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::DoLock(TBitmapLockCount&, TAcceleratedBitmapInfo&) 0x0000c3e5   Thumb Code    38  BitmapSpec.o(.text)
+    TAcceleratedBitmapSpec::DoUnlock(TBitmapLockCount&) 0x0000c40b   Thumb Code    26  BitmapSpec.o(.text)
+    CFbsBitGc::DrawBitmap(const TPoint&, const CFbsBitmap*) 0x0000c425   Thumb Code   120  DRAWBMP.o(.text)
+    CFbsBitGc::DrawBitmap(const TRect&, const CFbsBitmap*) 0x0000c49d   Thumb Code    80  DRAWBMP.o(.text)
+    CFbsBitGc::DoDrawBitmap(const TRect&, CBitwiseBitmap*, unsigned long*, int, const TRect&, const TPoint&) 0x0000c4ed   Thumb Code   556  DRAWBMP.o(.text)
+    CFbsBitGc::DrawBitmap(const TRect&, const CFbsBitmap*, const TRect&) 0x0000c719   Thumb Code   834  DRAWBMP.o(.text)
+    CFbsBitGc::DrawBitmapMasked(const TRect&, const CFbsBitmap*, const TRect&, const CFbsBitmap*, int) 0x0000ca5b   Thumb Code   924  DRAWBMP.o(.text)
+    CFbsBitGc::DrawBitmapMasked(const TRect&, const CWsBitmap*, const TRect&, const CWsBitmap*, int) 0x0000cdf7   Thumb Code    28  DRAWBMP.o(.text)
+    TEllipse::Construct(const TRect&)        0x0000ce15   Thumb Code   208  ELLIPSE.o(.text)
+    TEllipse::Output(TPoint&, TPoint&, TPoint&, TPoint&) 0x0000cee5   Thumb Code   116  ELLIPSE.o(.text)
+    TEllipse::SingleStep(TPoint&, TPoint&, TPoint&, TPoint&) 0x0000cf59   Thumb Code   482  ELLIPSE.o(.text)
+    TEllipse::NextStep(TPoint&, TPoint&, TPoint&, TPoint&) 0x0000d13b   Thumb Code    60  ELLIPSE.o(.text)
+    TEllipse::Intersection(const TRect&, const TPoint&) 0x0000d177   Thumb Code   404  ELLIPSE.o(.text)
+    CFbsBitGc::EllipseOutline(const TRect&)  0x0000d30b   Thumb Code   488  ELLIPSE.o(.text)
+    CFbsBitGc::EllipseOutlineWide(const TRect&) 0x0000d4f3   Thumb Code   294  ELLIPSE.o(.text)
+    CFbsBitGc::EllipseFill(const TRect&)     0x0000d619   Thumb Code   274  ELLIPSE.o(.text)
+    CFbsBitGc::DrawEllipse(const TRect&)     0x0000d72b   Thumb Code   204  ELLIPSE.o(.text)
+    CFbsDevice::~CFbsDevice()                0x0000d82d   Thumb Code     0  FBSERVDV.o(.text)
+    CFbsDevice::~CFbsDevice__sub_object()    0x0000d82d   Thumb Code    62  FBSERVDV.o(.text)
+    CFbsDevice::~CFbsDevice__deallocating()  0x0000d86b   Thumb Code    16  FBSERVDV.o(.text)
+    thunk{-4} to CFbsDevice::~CFbsDevice__deallocating() 0x0000d87b   Thumb Code     4  FBSERVDV.o(.text)
+    thunk{-4} to CFbsDevice::~CFbsDevice()   0x0000d87f   Thumb Code     4  FBSERVDV.o(.text)
+    CFbsDevice::CreateContext(CFbsBitGc*&)   0x0000d883   Thumb Code    88  FBSERVDV.o(.text)
+    CFbsDevice::DisplayMode() const          0x0000d8db   Thumb Code     8  FBSERVDV.o(.text)
+    CFbsDevice::SizeInPixels() const         0x0000d8e3   Thumb Code     8  FBSERVDV.o(.text)
+    CFbsDevice::RectCompare(const TRect&, const CFbsDevice&, const TRect&) const 0x0000d8eb   Thumb Code   568  FBSERVDV.o(.text)
+    CFbsDevice::AddFile(const TDesC16&, int&) 0x0000db23   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::RemoveFile(int)              0x0000db2d   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::GetNearestFontInTwips(CFont*&, const TFontSpec&) 0x0000db37   Thumb Code     6  FBSERVDV.o(.text)
+    thunk{-4} to CFbsDevice::GetNearestFontInTwips(CFont*&, const TFontSpec&) 0x0000db3d   Thumb Code     4  FBSERVDV.o(.text)
+    CFbsDevice::GetNearestFontInPixels(CFont*&, const TFontSpec&) 0x0000db41   Thumb Code     6  FBSERVDV.o(.text)
+    CFbsDevice::GetNearestFontToDesignHeightInTwips(CFont*&, const TFontSpec&) 0x0000db47   Thumb Code     8  FBSERVDV.o(.text)
+    thunk{-4} to CFbsDevice::GetNearestFontToDesignHeightInTwips(CFont*&, const TFontSpec&) 0x0000db4f   Thumb Code     4  FBSERVDV.o(.text)
+    CFbsDevice::GetNearestFontToDesignHeightInPixels(CFont*&, const TFontSpec&) 0x0000db53   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::GetNearestFontToMaxHeightInTwips(CFont*&, const TFontSpec&, int) 0x0000db5d   Thumb Code    14  FBSERVDV.o(.text)
+    thunk{-4} to CFbsDevice::GetNearestFontToMaxHeightInTwips(CFont*&, const TFontSpec&, int) 0x0000db6b   Thumb Code     4  FBSERVDV.o(.text)
+    CFbsDevice::GetNearestFontToMaxHeightInPixels(CFont*&, const TFontSpec&, int) 0x0000db6f   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::GetFontById(CFont*&, TUid, const TAlgStyle&) 0x0000db79   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::ReleaseFont(CFont*)          0x0000db83   Thumb Code    10  FBSERVDV.o(.text)
+    thunk{-4} to CFbsDevice::ReleaseFont(CFont*) 0x0000db8d   Thumb Code     4  FBSERVDV.o(.text)
+    CFbsDevice::FontHeightInTwips(int, int) const 0x0000db91   Thumb Code     8  FBSERVDV.o(.text)
+    CFbsDevice::FontHeightInPixels(int, int) const 0x0000db99   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::NumTypefaces() const         0x0000dba3   Thumb Code     8  FBSERVDV.o(.text)
+    CFbsDevice::TypefaceSupport(TTypefaceSupport&, int) const 0x0000dbab   Thumb Code     8  FBSERVDV.o(.text)
+    CFbsDevice::SetCustomPalette(const CPalette*) 0x0000dbb3   Thumb Code    42  FBSERVDV.o(.text)
+    CFbsDevice::DisplayMode16M()             0x0000dbdd   Thumb Code     8  FBSERVDV.o(.text)
+    CFbsDevice::SetScalingFactor(const TPoint&, int, int, int, int) 0x0000dbe5   Thumb Code   124  FBSERVDV.o(.text)
+    CFbsDevice::GetDrawRect(TRect&) const    0x0000dc61   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::RegisterLinkedTypeface(const CLinkedTypefaceSpecification&, int&) 0x0000dc6b   Thumb Code    10  FBSERVDV.o(.text)
+    CFbsDevice::CFbsDevice__sub_object()     0x0000dc75   Thumb Code    34  FBSERVDV.o(.text)
+    CFbsDevice::DoGetScanLine(TDes8&, const TPoint&, int, TDisplayMode) 0x0000dc97   Thumb Code   256  FBSERVDV.o(.text)
+    CFbsDevice::TruncateRect(TRect&)         0x0000dd97   Thumb Code   116  FBSERVDV.o(.text)
+    CFbsDevice::SetOrientation(CFbsBitGc::TGraphicsOrientation) 0x0000de0b   Thumb Code    24  FBSERVDV.o(.text)
+    CFbsDevice::DrawingBegin(const CFbsBitmap*, int) 0x0000de23   Thumb Code    24  FBSERVDV.o(.text)
+    CFbsDevice::DrawingEnd(const CFbsBitmap*, int) 0x0000de3b   Thumb Code    26  FBSERVDV.o(.text)
+    CFbsBitGcFont::CFbsBitGcFont()           0x0000dec9   Thumb Code    16  FONTBMP.o(.text)
+    CFbsBitGcFont::CFbsBitGcFont__sub_object() 0x0000dec9   Thumb Code     0  FONTBMP.o(.text)
+    CFbsBitGcFont::~CFbsBitGcFont()          0x0000ded9   Thumb Code     8  FONTBMP.o(.text)
+    CFbsBitGcFont::~CFbsBitGcFont__sub_object() 0x0000ded9   Thumb Code     0  FONTBMP.o(.text)
+    CFbsBitGcFont::~CFbsBitGcFont__deallocating() 0x0000dee1   Thumb Code    16  FONTBMP.o(.text)
+    CFbsBitGcFont::Address() const           0x0000def1   Thumb Code     8  FONTBMP.o(.text)
+    CFbsBitGcFont::Reset()                   0x0000def9   Thumb Code    26  FONTBMP.o(.text)
+    CFbsBitGcFont::Duplicate(int)            0x0000df13   Thumb Code    20  FONTBMP.o(.text)
+    CFbsBitGcFont::operator =(const CFbsBitGcFont&) 0x0000df27   Thumb Code    28  FONTBMP.o(.text)
+    CFbsBitGcBitmap::Address() const         0x0000df43   Thumb Code     8  FONTBMP.o(.text)
+    CFbsBitGcBitmap::LockHeap() const        0x0000df4b   Thumb Code    10  FONTBMP.o(.text)
+    CFbsBitGcBitmap::UnlockHeap() const      0x0000df55   Thumb Code    10  FONTBMP.o(.text)
+    CFbsBitGc::Clear()                       0x0000df65   Thumb Code    76  GRAPHICS.o(.text)
+    CFbsBitGc::Clear(const TRect&)           0x0000dfb1   Thumb Code   122  GRAPHICS.o(.text)
+    CFbsBitGc::PenDrawClipped(TPoint)        0x0000e02b   Thumb Code   588  GRAPHICS.o(.text)
+    CFbsBitGc::DoPlot(const TPoint&)         0x0000e277   Thumb Code   254  GRAPHICS.o(.text)
+    CFbsBitGc::Plot(const TPoint&)           0x0000e375   Thumb Code   164  GRAPHICS.o(.text)
+    CFbsBitGc::ShadowFadeArea(const TRegion*, signed char) 0x0000e419   Thumb Code   420  GRAPHICS.o(.text)
+    CFbsBitGc::ShadowArea(const TRegion*)    0x0000e5bd   Thumb Code     4  GRAPHICS.o(.text)
+    CFbsBitGc::FadeArea(const TRegion*)      0x0000e5c1   Thumb Code     4  GRAPHICS.o(.text)
+    CFbsBitGc::ClipFillLine(TPoint, TPoint)  0x0000e5c5   Thumb Code   834  GRAPHICS.o(.text)
+    CFbsBitGc::PenAllocate()                 0x0000e907   Thumb Code   234  GRAPHICS.o(.text)
+    CFbsBitGc::PenDrawDeferred(TPoint, int*, int) 0x0000e9f1   Thumb Code    94  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CGraphicsContext_2() 0x0000ea4f   Thumb Code     8  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CBitmapContext_1()   0x0000ea57   Thumb Code     8  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CBitmapContext_2()   0x0000ea5f   Thumb Code     8  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CBitmapContext_3()   0x0000ea67   Thumb Code     8  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CFbsBitGc_1()        0x0000ea6f   Thumb Code     2  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CFbsBitGc_2()        0x0000ea71   Thumb Code     2  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CFbsBitGc_3()        0x0000ea73   Thumb Code     2  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CFbsBitGc_4()        0x0000ea75   Thumb Code     2  GRAPHICS.o(.text)
+    CFbsBitGc::Reserved_CFbsBitGc_5()        0x0000ea77   Thumb Code     2  GRAPHICS.o(.text)
+    CFbsBitGc::DrawPolyLine(const CArrayFix<TPoint>*) 0x0000ea79   Thumb Code   100  LINE.o(.text)
+    CFbsBitGc::DrawPolyLineNoEndPoint(const CArrayFix<TPoint>*) 0x0000eadd   Thumb Code    70  LINE.o(.text)
+    CFbsBitGc::DrawPolyLineNoEndPoint(const TPoint*, int) 0x0000eb23   Thumb Code    54  LINE.o(.text)
+    CFbsBitGc::DrawPolyLine(const TPoint*, int) 0x0000eb59   Thumb Code    36  LINE.o(.text)
+    CFbsBitGc::DoDrawSolidWideLine(const TPoint&, const TPoint&, int, const TRect&) 0x0000eb7d   Thumb Code   548  LINE.o(.text)
+    CFbsBitGc::DoDrawDottedWideLine(const TPoint&, const TPoint&, int, const TRect&) 0x0000eda1   Thumb Code   290  LINE.o(.text)
+    CFbsBitGc::DoDrawLine(TPoint, TPoint, int) 0x0000eec3   Thumb Code   894  LINE.o(.text)
+    CFbsBitGc::PolyOutline(const CArrayFix<TPoint>*) 0x0000f241   Thumb Code   246  LINE.o(.text)
+    CFbsBitGc::PolyFill(const CArrayFix<TPoint>*, CGraphicsContext::TFillRule) 0x0000f337   Thumb Code   184  LINE.o(.text)
+    CFbsBitGc::PolyFillLarge(const CArrayFix<TPoint>*, CGraphicsContext::TFillRule) 0x0000f3ef   Thumb Code   208  LINE.o(.text)
+    CFbsBitGc::DrawPolygon(const CArrayFix<TPoint>*, CGraphicsContext::TFillRule) 0x0000f4bf   Thumb Code   250  LINE.o(.text)
+    CFbsBitGc::PolyOutline(const TPoint*, int) 0x0000f5b9   Thumb Code   230  LINE.o(.text)
+    CFbsBitGc::PolyFill(const TPoint*, int, CGraphicsContext::TFillRule) 0x0000f69f   Thumb Code   184  LINE.o(.text)
+    CFbsBitGc::PolyFillLarge(const TPoint*, int, CGraphicsContext::TFillRule) 0x0000f757   Thumb Code   208  LINE.o(.text)
+    CFbsBitGc::DrawPolygon(const TPoint*, int, CGraphicsContext::TFillRule) 0x0000f827   Thumb Code   258  LINE.o(.text)
+    CFbsBitGc::DrawLine(const TPoint&, const TPoint&) 0x0000f929   Thumb Code   162  LINE.o(.text)
+    CFbsBitGc::DrawLineTo(const TPoint&)     0x0000f9cb   Thumb Code    12  LINE.o(.text)
+    CFbsBitGc::DrawLineBy(const TPoint&)     0x0000f9d7   Thumb Code    32  LINE.o(.text)
+    Panic(TBitgdiPanic)                      0x0000f9f9   Thumb Code    12  MAIN.o(.text)
+    PanicWithInfo(TBitgdiPanic, const TDesC16&, const TDesC16&, int) 0x0000fa05   Thumb Code    58  MAIN.o(.text)
+    PanicWithCondAndInfo(TBitgdiPanic, const TDesC16&, const TDesC16&, const TDesC16&, int) 0x0000fa3f   Thumb Code    76  MAIN.o(.text)
+    InvariantWithCondAndInfo(const TDesC16&, const TDesC16&, int) 0x0000fa8b   Thumb Code    68  MAIN.o(.text)
+    CFbsBitGcExtraData::CFbsBitGcExtraData() 0x0000facf   Thumb Code    30  MAIN.o(.text)
+    CFbsBitGcExtraData::CFbsBitGcExtraData__sub_object() 0x0000facf   Thumb Code     0  MAIN.o(.text)
+    CFbsBitGcExtraData::~CFbsBitGcExtraData() 0x0000faed   Thumb Code    22  MAIN.o(.text)
+    CFbsBitGcExtraData::~CFbsBitGcExtraData__sub_object() 0x0000faed   Thumb Code     0  MAIN.o(.text)
+    CFbsBitGcExtraData::~CFbsBitGcExtraData__deallocating() 0x0000fb03   Thumb Code    16  MAIN.o(.text)
+    CFbsBitGcExtraData::Reset()              0x0000fb13   Thumb Code    28  MAIN.o(.text)
+    CFbsBitGc::CFbsBitGc()                   0x0000fb2f   Thumb Code   350  MAIN.o(.text)
+    CFbsBitGc::CFbsBitGc__sub_object()       0x0000fb2f   Thumb Code     0  MAIN.o(.text)
+    CFbsBitGc::NewL()                        0x0000fc8d   Thumb Code    42  MAIN.o(.text)
+    CFbsBitGc::Reset()                       0x0000fcb7   Thumb Code   218  MAIN.o(.text)
+    CFbsBitGc::~CFbsBitGc()                  0x0000fd91   Thumb Code    96  MAIN.o(.text)
+    CFbsBitGc::~CFbsBitGc__sub_object()      0x0000fd91   Thumb Code     0  MAIN.o(.text)
+    CFbsBitGc::~CFbsBitGc__deallocating()    0x0000fdf1   Thumb Code    16  MAIN.o(.text)
+    CFbsBitGc::Activate(CFbsDevice*)         0x0000fe01   Thumb Code    88  MAIN.o(.text)
+    CFbsBitGc::ActivateNoJustAutoUpdate(CFbsDevice*) 0x0000fe59   Thumb Code    16  MAIN.o(.text)
+    CFbsBitGc::CancelClipping()              0x0000fe69   Thumb Code    24  MAIN.o(.text)
+    CFbsBitGc::CancelClippingRect()          0x0000fe81   Thumb Code    46  MAIN.o(.text)
+    CFbsBitGc::CancelClippingRegion()        0x0000feaf   Thumb Code     8  MAIN.o(.text)
+    CFbsBitGc::UseBrushPattern(int)          0x0000feb7   Thumb Code    66  MAIN.o(.text)
+    CFbsBitGc::UseFont(int)                  0x0000fef9   Thumb Code    60  MAIN.o(.text)
+    CFbsBitGc::CopySettings(const CFbsBitGc&) 0x0000ff35   Thumb Code   220  MAIN.o(.text)
+    CFbsBitGc::Device() const                0x00010011   Thumb Code     4  MAIN.o(.text)
+    CFbsBitGc::DiscardBrushPattern()         0x00010015   Thumb Code    24  MAIN.o(.text)
+    CFbsBitGc::DiscardFont()                 0x0001002d   Thumb Code    10  MAIN.o(.text)
+    CFbsBitGc::SetupDevice() const           0x00010037   Thumb Code    66  MAIN.o(.text)
+    CFbsBitGc::UserClipRect(TRect&)          0x00010079   Thumb Code    36  MAIN.o(.text)
+    CFbsBitGc::AddRect(const TRect&)         0x0001009d   Thumb Code    44  MAIN.o(.text)
+    CFbsBitGc::CheckDevice(const TRect&) const 0x000100c9   Thumb Code    40  MAIN.o(.text)
+    CFbsBitGc::MapColors(const TRect&, const TRgb*, int, int) 0x000100f1   Thumb Code   212  MAIN.o(.text)
+    CFbsBitGc::MoveTo(const TPoint&)         0x000101c5   Thumb Code    10  MAIN.o(.text)
+    CFbsBitGc::MoveBy(const TPoint&)         0x000101cf   Thumb Code    10  MAIN.o(.text)
+    CFbsBitGc::OrientationsAvailable(int*)   0x000101d9   Thumb Code    26  MAIN.o(.text)
+    CFbsBitGc::RectDrawnTo(TRect&)           0x000101f3   Thumb Code    26  MAIN.o(.text)
+    CFbsBitGc::CheckDevice() const           0x0001020d   Thumb Code    34  MAIN.o(.text)
+    CFbsBitGc::Resized()                     0x0001022f   Thumb Code   186  MAIN.o(.text)
+    CFbsBitGc::SetBrushColor(const TRgb&)    0x000102e9   Thumb Code     6  MAIN.o(.text)
+    CFbsBitGc::SetBrushOrigin(const TPoint&) 0x000102ef   Thumb Code     8  MAIN.o(.text)
+    CFbsBitGc::SetBrushStyle(CGraphicsContext::TBrushStyle) 0x000102f7   Thumb Code     4  MAIN.o(.text)
+    CFbsBitGc::SetClippingRegion(const TRegion*) 0x000102fb   Thumb Code   100  MAIN.o(.text)
+    CFbsBitGc::SetClippingRect(const TRect&) 0x0001035f   Thumb Code    88  MAIN.o(.text)
+    CFbsBitGc::SetDitherOrigin(const TPoint&) 0x000103b7   Thumb Code    16  MAIN.o(.text)
+    CFbsBitGc::SetDrawMode(CGraphicsContext::TDrawMode) 0x000103c7   Thumb Code     6  MAIN.o(.text)
+    CFbsBitGc::SetOrigin(const TPoint&)      0x000103cd   Thumb Code    40  MAIN.o(.text)
+    CFbsBitGc::SetPenColor(const TRgb&)      0x000103f5   Thumb Code     8  MAIN.o(.text)
+    CFbsBitGc::SetPenStyle(CGraphicsContext::TPenStyle) 0x000103fd   Thumb Code    70  MAIN.o(.text)
+    CFbsBitGc::SetPenSize(const TSize&)      0x00010443   Thumb Code   106  MAIN.o(.text)
+    CFbsBitGc::SetCharJustification(int, int) 0x000104ad   Thumb Code    24  MAIN.o(.text)
+    CFbsBitGc::SetWordJustification(int, int) 0x000104c5   Thumb Code    22  MAIN.o(.text)
+    CFbsBitGc::SetUnderlineStyle(TFontUnderline) 0x000104db   Thumb Code     6  MAIN.o(.text)
+    CFbsBitGc::SetUserDisplayMode(TDisplayMode) 0x000104e1   Thumb Code    28  MAIN.o(.text)
+    CFbsBitGc::SetStrikethroughStyle(TFontStrikethrough) 0x000104fd   Thumb Code     6  MAIN.o(.text)
+    CFbsBitGc::SetShadowMode(int)            0x00010503   Thumb Code    24  MAIN.o(.text)
+    CFbsBitGc::SetFaded(int)                 0x0001051b   Thumb Code    28  MAIN.o(.text)
+    CFbsBitGc::SetFadingParameters(unsigned char, unsigned char) 0x00010537   Thumb Code     8  MAIN.o(.text)
+    CFbsBitGc::SetOrientation(CFbsBitGc::TGraphicsOrientation) 0x0001053f   Thumb Code    90  MAIN.o(.text)
+    CFbsBitGc::UpdateJustification(const TDesC16&) 0x00010599   Thumb Code   222  MAIN.o(.text)
+    CFbsBitGc::UpdateJustificationVertical(const TDesC16&, int) 0x00010677   Thumb Code   244  MAIN.o(.text)
+    CFbsBitGc::UseBrushPattern(const CFbsBitmap*) 0x0001076b   Thumb Code    76  MAIN.o(.text)
+    CFbsBitGc::UseFont(const CFont*)         0x000107b7   Thumb Code   122  MAIN.o(.text)
+    CFbsBitGc::UseFontNoDuplicate(const CFbsBitGcFont*) 0x00010831   Thumb Code    80  MAIN.o(.text)
+    CFbsBitGc::IsBrushPatternUsed() const    0x00010881   Thumb Code     4  MAIN.o(.text)
+    CFbsBitGc::IsFontUsed() const            0x00010885   Thumb Code    20  MAIN.o(.text)
+    CFbsBitGc::ExternalizeL(RWriteStream&)   0x00010899   Thumb Code   344  MAIN.o(.text)
+    CFbsBitGc::InternalizeL(RReadStream&)    0x000109f1   Thumb Code   492  MAIN.o(.text)
+    CFbsBitGc::SetClippingRegion(const TRegion&) 0x00010bdd   Thumb Code    72  MAIN.o(.text)
+    CFbsBitGc::BrushColor()                  0x00010c25   Thumb Code     4  MAIN.o(.text)
+    CFbsBitGc::PenColor()                    0x00010c29   Thumb Code     6  MAIN.o(.text)
+    CFbsBitGc::ChangeDevice(CFbsDevice*)     0x00010c2f   Thumb Code     4  MAIN.o(.text)
+    CFbsBitGc::GraphicsAccelerator()         0x00010c33   Thumb Code    66  MAIN.o(.text)
+    TArc::Step(TPoint&, int&, TPoint&, int&, TPoint&, int&, TPoint&, int&) 0x00010c79   Thumb Code   468  PIEARC.o(.text)
+    TArc::SingleStep(TPoint&, int&, TPoint&, int&, TPoint&, int&, TPoint&, int&) 0x00010e4d   Thumb Code    58  PIEARC.o(.text)
+    TArc::Construct(const TRect&, const TPoint&, const TPoint&) 0x00010e87   Thumb Code   398  PIEARC.o(.text)
+    CFbsBitGc::PieArcOutline(const TRect&, const TPoint&, const TPoint&, int) 0x00011015   Thumb Code   528  PIEARC.o(.text)
+    CFbsBitGc::DrawArc(const TRect&, const TPoint&, const TPoint&) 0x00011225   Thumb Code   214  PIEARC.o(.text)
+    CFbsBitGc::PieSliver(const TRect&, const TPoint&, const TPoint&, int) 0x000112fb   Thumb Code   484  PIEARC.o(.text)
+    CFbsBitGc::PieTriangles(int, const TPoint&, const TPoint&) 0x000114df   Thumb Code   128  PIEARC.o(.text)
+    CFbsBitGc::PieShell(const TRect&, const TPoint&, const TPoint&, const int*, int, int) 0x0001155f   Thumb Code   692  PIEARC.o(.text)
+    CFbsBitGc::PieFill(const TRect&, const TPoint&, const TPoint&, int, int, const int*) 0x00011813   Thumb Code   150  PIEARC.o(.text)
+    CFbsBitGc::AnalyseEllipse(const TRect&, TPoint&, TPoint&, int&, int&, int*) 0x000118a9   Thumb Code   340  PIEARC.o(.text)
+    CFbsBitGc::DrawPie(const TRect&, const TPoint&, const TPoint&) 0x000119fd   Thumb Code   292  PIEARC.o(.text)
+    CPolygonFiller::CPolygonFiller()         0x00011b21   Thumb Code    78  POLYGON.o(.text)
+    CPolygonFiller::CPolygonFiller__sub_object() 0x00011b21   Thumb Code     0  POLYGON.o(.text)
+    CPolygonFiller::Reset()                  0x00011b6f   Thumb Code    64  POLYGON.o(.text)
+    CPolygonFiller::~CPolygonFiller()        0x00011baf   Thumb Code    22  POLYGON.o(.text)
+    CPolygonFiller::~CPolygonFiller__sub_object() 0x00011baf   Thumb Code     0  POLYGON.o(.text)
+    CPolygonFiller::~CPolygonFiller__deallocating() 0x00011bc5   Thumb Code    16  POLYGON.o(.text)
+    CPolygonFiller::Point(int)               0x00011bd5   Thumb Code    22  POLYGON.o(.text)
+    TSwapEdges::TSwapEdges(CPolygonFiller::SFastData&) 0x00011beb   Thumb Code    16  POLYGON.o(.text)
+    TSwapEdges::TSwapEdges__sub_object(CPolygonFiller::SFastData&) 0x00011beb   Thumb Code     0  POLYGON.o(.text)
+    TCompareEdgesUpperY::TCompareEdgesUpperY(const CPolygonFiller::SFastData&) 0x00011bfb   Thumb Code    16  POLYGON.o(.text)
+    TCompareEdgesUpperY::TCompareEdgesUpperY__sub_object(const CPolygonFiller::SFastData&) 0x00011bfb   Thumb Code     0  POLYGON.o(.text)
+    CPolygonFiller::Construct(CGraphicsContext::TFillRule, CPolygonFiller::TUsage) 0x00011c0b   Thumb Code   676  POLYGON.o(.text)
+    CPolygonFiller::Construct(const CArrayFix<TPoint>*, CGraphicsContext::TFillRule, CPolygonFiller::TUsage) 0x00011eaf   Thumb Code    82  POLYGON.o(.text)
+    CPolygonFiller::Construct(const TPoint*, int, CGraphicsContext::TFillRule, CPolygonFiller::TUsage) 0x00011f01   Thumb Code    58  POLYGON.o(.text)
+    CPolygonFiller::JumpToCurrentScanLine(TLinearDDA&, const TPoint&, const TPoint&, TPoint&, TPoint&) const 0x00011f3b   Thumb Code    62  POLYGON.o(.text)
+    CPolygonFiller::SlowHandleVertexIntersection(CPolygonFiller::SSlowScanLineIntersection&, int&, int) 0x00011f79   Thumb Code   284  POLYGON.o(.text)
+    CPolygonFiller::GetNextPixelRunOnSpecifiedScanLine(int&, int, int&, int&) 0x00012095   Thumb Code   836  POLYGON.o(.text)
+    TSwapScanLineIntersections::TSwapScanLineIntersections(CPolygonFiller::SFastData&) 0x000123d9   Thumb Code    16  POLYGON.o(.text)
+    TSwapScanLineIntersections::TSwapScanLineIntersections__sub_object(CPolygonFiller::SFastData&) 0x000123d9   Thumb Code     0  POLYGON.o(.text)
+    TCompareScanLineIntersectionsFirstPixel::TCompareScanLineIntersectionsFirstPixel(const CPolygonFiller::SFastData&) 0x000123e9   Thumb Code    16  POLYGON.o(.text)
+    TCompareScanLineIntersectionsFirstPixel::TCompareScanLineIntersectionsFirstPixel__sub_object(const CPolygonFiller::SFastData&) 0x000123e9   Thumb Code     0  POLYGON.o(.text)
+    CPolygonFiller::SetFastIntersection(CPolygonFiller::SFastActiveEdge&, CPolygonFiller::SFastScanLineIntersection&) 0x000123f9   Thumb Code    52  POLYGON.o(.text)
+    CPolygonFiller::FastHandleVertexIntersection(int&, int) 0x0001242d   Thumb Code   510  POLYGON.o(.text)
+    TSwapActiveEdges::TSwapActiveEdges(CPolygonFiller::SFastData&) 0x0001262b   Thumb Code    16  POLYGON.o(.text)
+    TSwapActiveEdges::TSwapActiveEdges__sub_object(CPolygonFiller::SFastData&) 0x0001262b   Thumb Code     0  POLYGON.o(.text)
+    TCompareActiveEdgesFirstVertex::TCompareActiveEdgesFirstVertex(const CPolygonFiller::SFastData&) 0x0001263b   Thumb Code    16  POLYGON.o(.text)
+    TCompareActiveEdgesFirstVertex::TCompareActiveEdgesFirstVertex__sub_object(const CPolygonFiller::SFastData&) 0x0001263b   Thumb Code     0  POLYGON.o(.text)
+    CPolygonFiller::GetNextPixelRun(int&, int&, int&, int&) 0x0001264b   Thumb Code   868  POLYGON.o(.text)
+    TCompareEdgesUpperY::Compare(int, int) const 0x000129af   Thumb Code    52  POLYGON.o(.text)
+    TSwapEdges::Swap(int, int) const         0x000129e3   Thumb Code    32  POLYGON.o(.text)
+    TCompareActiveEdgesFirstVertex::Compare(int, int) const 0x00012a03   Thumb Code    40  POLYGON.o(.text)
+    TSwapActiveEdges::Swap(int, int) const   0x00012a2b   Thumb Code    76  POLYGON.o(.text)
+    TCompareScanLineIntersectionsFirstPixel::Compare(int, int) const 0x00012a77   Thumb Code    36  POLYGON.o(.text)
+    TSwapScanLineIntersections::Swap(int, int) const 0x00012a9b   Thumb Code    44  POLYGON.o(.text)
+    CFbsBitGc::DoCopyRect(const TPoint&, const TRect&) 0x00012ae9   Thumb Code   166  RECT.o(.text)
+    CFbsBitGc::CopyRect(const TPoint&, const TRect&) 0x00012b8f   Thumb Code   350  RECT.o(.text)
+    CFbsBitGc::RectFill(const TRect&)        0x00012ced   Thumb Code  1370  RECT.o(.text)
+    CFbsBitGc::DrawRect(const TRect&)        0x00013247   Thumb Code  1186  RECT.o(.text)
+    CFbsBitGc::RoundRectOutline(const TRect&, TSize) 0x000136ed   Thumb Code   516  ROUNDREC.o(.text)
+    CFbsBitGc::RoundRectFill(const TRect&, TSize) 0x000138f1   Thumb Code   446  ROUNDREC.o(.text)
+    CFbsBitGc::DrawRoundRect(const TRect&, const TSize&) 0x00013aaf   Thumb Code   280  ROUNDREC.o(.text)
+    CFbsScreenDevice::ConstructL(int, TDisplayMode) 0x00013bc9   Thumb Code    82  SCREENDV.o(.text)
+    CFbsScreenDevice::CFbsScreenDevice(int)  0x00013c1b   Thumb Code    20  SCREENDV.o(.text)
+    CFbsScreenDevice::CFbsScreenDevice__sub_object(int) 0x00013c1b   Thumb Code     0  SCREENDV.o(.text)
+    CFbsScreenDevice::NewL(int, TDisplayMode) 0x00013c2f   Thumb Code    42  SCREENDV.o(.text)
+    CFbsScreenDevice::NewL(const TDesC16&, TDisplayMode) 0x00013c59   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::NewL(const TDesC16&, TDisplayMode, TRgb) 0x00013c5d   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::~CFbsScreenDevice()    0x00013c61   Thumb Code     8  SCREENDV.o(.text)
+    CFbsScreenDevice::~CFbsScreenDevice__sub_object() 0x00013c61   Thumb Code     0  SCREENDV.o(.text)
+    CFbsScreenDevice::~CFbsScreenDevice__deallocating() 0x00013c69   Thumb Code    16  SCREENDV.o(.text)
+    thunk{-4} to CFbsScreenDevice::~CFbsScreenDevice__deallocating() 0x00013c79   Thumb Code     4  SCREENDV.o(.text)
+    thunk{-4} to CFbsScreenDevice::~CFbsScreenDevice() 0x00013c7d   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::GetScanLine(TDes8&, const TPoint&, int, TDisplayMode) const 0x00013c81   Thumb Code    94  SCREENDV.o(.text)
+    CFbsScreenDevice::GetPixel(TRgb&, const TPoint&) const 0x00013cdf   Thumb Code   116  SCREENDV.o(.text)
+    CFbsScreenDevice::HorizontalPixelsToTwips(int) const 0x00013d53   Thumb Code    28  SCREENDV.o(.text)
+    thunk{-4} to CFbsScreenDevice::HorizontalPixelsToTwips(int) const 0x00013d6f   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::VerticalPixelsToTwips(int) const 0x00013d73   Thumb Code    28  SCREENDV.o(.text)
+    thunk{-4} to CFbsScreenDevice::VerticalPixelsToTwips(int) const 0x00013d8f   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::HorizontalTwipsToPixels(int) const 0x00013d93   Thumb Code    30  SCREENDV.o(.text)
+    thunk{-4} to CFbsScreenDevice::HorizontalTwipsToPixels(int) const 0x00013db1   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::VerticalTwipsToPixels(int) const 0x00013db5   Thumb Code    30  SCREENDV.o(.text)
+    thunk{-4} to CFbsScreenDevice::VerticalTwipsToPixels(int) const 0x00013dd3   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::SetAutoUpdate(int)     0x00013dd7   Thumb Code     8  SCREENDV.o(.text)
+    CFbsScreenDevice::DrawSpriteBegin()      0x00013ddf   Thumb Code     6  SCREENDV.o(.text)
+    CFbsScreenDevice::DrawSpriteEnd()        0x00013de5   Thumb Code     6  SCREENDV.o(.text)
+    CFbsScreenDevice::CancelSprite() const   0x00013deb   Thumb Code    88  SCREENDV.o(.text)
+    CFbsScreenDevice::HideSprite() const     0x00013e43   Thumb Code    46  SCREENDV.o(.text)
+    CFbsScreenDevice::HideSprite(const TRect&, const TRegion*) const 0x00013e71   Thumb Code    56  SCREENDV.o(.text)
+    CFbsScreenDevice::ShowSprite(TSpriteBase*) const 0x00013ea9   Thumb Code    56  SCREENDV.o(.text)
+    CFbsScreenDevice::ShowSprite(TSpriteBase*, const TRect&, const TRegion*) const 0x00013ee1   Thumb Code    26  SCREENDV.o(.text)
+    CFbsScreenDevice::ChangeScreenDevice(CFbsScreenDevice*) 0x00013efb   Thumb Code   306  SCREENDV.o(.text)
+    CFbsScreenDevice::PaletteAttributes(int&, int&) const 0x0001402d   Thumb Code    44  SCREENDV.o(.text)
+    CFbsScreenDevice::SetPalette(CPalette*)  0x00014059   Thumb Code     8  SCREENDV.o(.text)
+    CFbsScreenDevice::GetPalette(CPalette*&) const 0x00014061   Thumb Code     8  SCREENDV.o(.text)
+    CFbsScreenDevice::Update()               0x00014069   Thumb Code    10  SCREENDV.o(.text)
+    CFbsScreenDevice::Update(const TRegion&) 0x00014073   Thumb Code    10  SCREENDV.o(.text)
+    CFbsScreenDevice::SizeInTwips() const    0x0001407d   Thumb Code    58  SCREENDV.o(.text)
+    CFbsScreenDevice::HardwareBitmap()       0x000140b7   Thumb Code    22  SCREENDV.o(.text)
+    CFbsScreenDevice::Bits() const           0x000140cd   Thumb Code    38  SCREENDV.o(.text)
+    CFbsScreenDevice::Stride() const         0x000140f3   Thumb Code     8  SCREENDV.o(.text)
+    CFbsScreenDevice::ScreenNo() const       0x000140fb   Thumb Code     4  SCREENDV.o(.text)
+    CFbsScreenDevice::DeviceOrientationsAvailable() const 0x000140ff   Thumb Code    12  SCREENDV.o(.text)
+    CFbsScreenDevice::SetDeviceOrientation(TDeviceOrientation) const 0x0001410b   Thumb Code    12  SCREENDV.o(.text)
+    CFbsScreenDevice::GetSurface(TSurfaceId&) const 0x00014117   Thumb Code    10  SCREENDV.o(.text)
+    CFbsScreenDevice::DeviceOrientation() const 0x00014121   Thumb Code    12  SCREENDV.o(.text)
+    CFbsBitGc::ClipBinaryArray(unsigned long*, unsigned long*, int, int&, int&, TPoint&) 0x0001412d   Thumb Code   122  TEXT.o(.text)
+    CFbsBitGc::CopyCharWord(unsigned long*, const unsigned char*, int) 0x000141a7   Thumb Code    46  TEXT.o(.text)
+    CFbsBitGc::BitMultiply(unsigned long*, int, int) 0x000141d5   Thumb Code   104  TEXT.o(.text)
+    CFbsBitGc::OutputCharLineMultiplied(TPoint, unsigned long*, int, int, int, int, int) 0x0001423d   Thumb Code   314  TEXT.o(.text)
+    CFbsBitGc::CopyCharLine(unsigned long*, int, const unsigned char*, int, int) 0x00014377   Thumb Code    66  TEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterExLarge(const TPoint&, const TSize&, const unsigned char*, int, int, int, int, int) 0x000143b9   Thumb Code   428  TEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterMultiplied(const TPoint&, const TSize&, const unsigned char*, int, int, int, int, int) 0x00014565   Thumb Code   408  TEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterLarge(const TPoint&, const TSize&, const unsigned char*, int, int, int, int, int) 0x000146fd   Thumb Code   558  TEXT.o(.text)
+    CFbsBitGc::DoDrawTextLarge(CFont::TPositionParam&, const CBitmapFont*) 0x0001492b   Thumb Code   522  TEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterEx(const TPoint&, const TSize&, const unsigned char*, int, int, int) 0x00014b35   Thumb Code   394  TEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterAntiAliased(const TPoint&, const TSize&, const unsigned char*) 0x00014cbf   Thumb Code   254  TEXT.o(.text)
+    CFbsBitGc::GetStrikethroughMetrics(int&, int&) 0x00014dbd   Thumb Code    60  TEXT.o(.text)
+    CFbsBitGc::DoDrawTextEx(CFont::TPositionParam&, const CBitmapFont*) 0x00014df9   Thumb Code   558  TEXT.o(.text)
+    CFbsBitGc::DoDrawCharacter(const TPoint&, const TSize&, const unsigned char*) 0x00015027   Thumb Code   318  TEXT.o(.text)
+    CFbsBitGc::DoDrawText(CFont::TPositionParam&) 0x00015165   Thumb Code   112  TEXT.o(.text)
+    CFbsBitGc::DrawText(const TDesC16&, const TPoint&, CGraphicsContext::TTextAlign, CFont::TTextDirection, const TRect*) 0x000151d5   Thumb Code  1156  TEXT.o(.text)
+    CFbsBitGc::DrawText(const TDesC16&)      0x00015659   Thumb Code    20  TEXT.o(.text)
+    CFbsBitGc::DrawText(const TDesC16&, const TPoint&) 0x0001566d   Thumb Code    20  TEXT.o(.text)
+    CFbsBitGc::DrawText(const TDesC16&, const TRect&) 0x00015681   Thumb Code    76  TEXT.o(.text)
+    CFbsBitGc::DrawText(const TDesC16&, const TRect&, int, int, CGraphicsContext::TTextAlign, int) 0x000156cd   Thumb Code    88  TEXT.o(.text)
+    CFbsBitGc::DrawText(const TDesC16&, const TRect&, int, CGraphicsContext::TTextAlign, int) 0x00015725   Thumb Code    32  TEXT.o(.text)
+    CFbsBitGc::APIExGetUnderlineMetrics(void*&) 0x00015745   Thumb Code    44  TEXT.o(.text)
+    CFbsBitGc::APIExSetShadowColor(void*)    0x00015771   Thumb Code    12  TEXT.o(.text)
+    CFbsBitGc::APIExGetShadowColor(void*&)   0x0001577d   Thumb Code    14  TEXT.o(.text)
+    CFbsBitGc::APIExIsFbsBitGc(void*&)       0x0001578b   Thumb Code    10  TEXT.o(.text)
+    CFbsBitGc::APIExtension(TUid, void*&, void*) 0x00015795   Thumb Code   140  TEXT.o(.text)
+    CFbsBitGc::DrawTextVertical(const TDesC16&, int) 0x00015825   Thumb Code    20  VERTEXT.o(.text)
+    CFbsBitGc::DrawTextVertical(const TDesC16&, const TPoint&, int) 0x00015839   Thumb Code   266  VERTEXT.o(.text)
+    CFbsBitGc::DrawTextVertical(const TDesC16&, const TRect&, int) 0x00015943   Thumb Code    68  VERTEXT.o(.text)
+    CFbsBitGc::OutputCharLineVertical(TPoint, unsigned long*, int, int, int, int, int, int) 0x00015987   Thumb Code   462  VERTEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterVertical(const TPoint&, const TSize&, const unsigned char*, int, int, int, int, int, int) 0x00015b55   Thumb Code   526  VERTEXT.o(.text)
+    CFbsBitGc::DoDrawCharacterVerticalAntiAliased(const TPoint&, const TSize&, const unsigned char*, int) 0x00015d63   Thumb Code   512  VERTEXT.o(.text)
+    CFbsBitGc::DoDrawTextVertical(CFont::TPositionParam&, const CBitmapFont*, int) 0x00015f63   Thumb Code   890  VERTEXT.o(.text)
+    CFbsBitGc::DrawTextVertical(const TDesC16&, const TRect&, int, int, int, CGraphicsContext::TTextAlign, int) 0x000162dd   Thumb Code   756  VERTEXT.o(.text)
+    CFbsBitGc::DrawTextVertical(const TDesC16&, const TRect&, int, int, CGraphicsContext::TTextAlign, int) 0x000165d1   Thumb Code    36  VERTEXT.o(.text)
+    CSoftwareGraphicsAcceleratorBC::NewL(CFbsBitmap*) 0x00016619   Thumb Code     8  accelsoftbc.o(.text)
+    CSoftwareGraphicsAcceleratorBC::GenericCapabilities() 0x00016621   Thumb Code     8  accelsoftbc.o(.text)
+    __ARM_switch8                            0x00016628   ARM Code      24  switch8.o(.text)
+    __rt_switch8                             0x00016628   ARM Code       0  switch8.o(.text)
+    _E32Dll_Body                             0x00016641   Thumb Code    34  uc_dll.o(.text)
+    __DLL_Export_Table__                     0x00016668   ARM Code       4  dllexp.o(.text)
+    CFbsDevice::DrawingEnd(int)              0x00016777   Thumb Code     2  FBSERVDV.o(i._ZN10CFbsDevice10DrawingEndEi)
+    CFbsDevice::DrawingBegin(int)            0x00016779   Thumb Code     2  FBSERVDV.o(i._ZN10CFbsDevice12DrawingBeginEi)
+    CFbsDevice::CreateContext(CGraphicsContext*&) 0x0001677b   Thumb Code     8  BITMAPDV.o(i._ZN10CFbsDevice13CreateContextERP16CGraphicsContext)
+    CFbsDevice::SetBits()                    0x00016783   Thumb Code     2  FBSERVDV.o(i._ZN10CFbsDevice7SetBitsEv)
+    CBitmapDevice::~CBitmapDevice()          0x00016785   Thumb Code     0  FBSERVDV.o(i._ZN13CBitmapDeviceD2Ev)
+    CBitmapDevice::~CBitmapDevice__sub_object() 0x00016785   Thumb Code     8  FBSERVDV.o(i._ZN13CBitmapDeviceD2Ev)
+    CBitmapContext::~CBitmapContext()        0x0001678d   Thumb Code     0  MAIN.o(i._ZN14CBitmapContextD2Ev)
+    CBitmapContext::~CBitmapContext__sub_object() 0x0001678d   Thumb Code     8  MAIN.o(i._ZN14CBitmapContextD2Ev)
+    CFbsBitGcBitmap::~CFbsBitGcBitmap__deallocating() 0x00016795   Thumb Code    16  BITMAPDV.o(i._ZN15CFbsBitGcBitmapD0Ev)
+    CFbsBitGcBitmap::~CFbsBitGcBitmap()      0x000167a5   Thumb Code     8  BITMAPDV.o(i._ZN15CFbsBitGcBitmapD1Ev)
+    CFbsBitGcBitmap::~CFbsBitGcBitmap__sub_object() 0x000167a5   Thumb Code     0  BITMAPDV.o(i._ZN15CFbsBitGcBitmapD1Ev)
+    CGraphicsDevice::~CGraphicsDevice()      0x000167ad   Thumb Code     0  FBSERVDV.o(i._ZN15CGraphicsDeviceD2Ev)
+    CGraphicsDevice::~CGraphicsDevice__sub_object() 0x000167ad   Thumb Code    18  FBSERVDV.o(i._ZN15CGraphicsDeviceD2Ev)
+    CFbsBitGcExtraData::ResetPenArray()      0x000167c9   Thumb Code    16  MAIN.o(i._ZN18CFbsBitGcExtraData13ResetPenArrayEv)
+    TAcceleratedBitmapSpec::TAcceleratedBitmapSpec(const TAcceleratedBitmapSpec&) 0x000167d9   Thumb Code    22  BITBLT.o(i._ZN22TAcceleratedBitmapSpecC1ERKS_)
+    TAcceleratedBitmapSpec::TAcceleratedBitmapSpec__sub_object(const TAcceleratedBitmapSpec&) 0x000167d9   Thumb Code     0  BITBLT.o(i._ZN22TAcceleratedBitmapSpecC1ERKS_)
+    TRgb::TRgb(unsigned long)                0x000167ef   Thumb Code    36  MAIN.o(i._ZN4TRgbC1Em)
+    TRgb::TRgb__sub_object(unsigned long)    0x000167ef   Thumb Code     0  MAIN.o(i._ZN4TRgbC1Em)
+    CFont::TPositionParam::TOutput::TOutput() 0x00016813   Thumb Code    12  MAIN.o(i._ZN5CFont14TPositionParam7TOutputC1Ev)
+    CFont::TPositionParam::TOutput::TOutput__sub_object() 0x00016813   Thumb Code     0  MAIN.o(i._ZN5CFont14TPositionParam7TOutputC1Ev)
+    CFont::TPositionParam::TPositionParam()  0x00016821   Thumb Code    44  MAIN.o(i._ZN5CFont14TPositionParamC1Ev)
+    CFont::TPositionParam::TPositionParam__sub_object() 0x00016821   Thumb Code     0  MAIN.o(i._ZN5CFont14TPositionParamC1Ev)
+    TRect::TRect(const TRect&)               0x00016851   Thumb Code    18  BITBLT.o(i._ZN5TRectC1ERKS_)
+    TRect::TRect__sub_object(const TRect&)   0x00016851   Thumb Code     0  BITBLT.o(i._ZN5TRectC1ERKS_)
+    TPoint::TPoint(const TPoint&)            0x00016863   Thumb Code    10  BITBLT.o(i._ZN6TPointC1ERKS_)
+    TPoint::TPoint__sub_object(const TPoint&) 0x00016863   Thumb Code     0  BITBLT.o(i._ZN6TPointC1ERKS_)
+    TPoint::TPoint()                         0x0001686d   Thumb Code     8  ELLIPSE.o(i._ZN6TPointC1Ev)
+    TPoint::TPoint__sub_object()             0x0001686d   Thumb Code     0  ELLIPSE.o(i._ZN6TPointC1Ev)
+    TPtrC16::Set(const TDesC16&)             0x00016875   Thumb Code    28  MAIN.o(i._ZN7TPtrC163SetERK7TDesC16)
+    TEllipse::TEllipse()                     0x0001689d   Thumb Code    12  PIEARC.o(i._ZN8TEllipseC1Ev)
+    TEllipse::TEllipse__sub_object()         0x0001689d   Thumb Code     0  PIEARC.o(i._ZN8TEllipseC1Ev)
+    CFbsBitGc::Load16(const unsigned char*)  0x000168a9   Thumb Code    14  TEXT.o(i._ZN9CFbsBitGc6Load16EPKh)
+    CFbsDevice::HideSprite(const TRect&, const TRegion*) const 0x000168b7   Thumb Code     4  BITMAPDV.o(i._ZNK10CFbsDevice10HideSpriteERK5TRectPK7TRegion)
+    CFbsDevice::HideSprite() const           0x000168bb   Thumb Code     4  BITMAPDV.o(i._ZNK10CFbsDevice10HideSpriteEv)
+    CFbsDevice::ShowSprite(TSpriteBase*) const 0x000168bf   Thumb Code     2  BITMAPDV.o(i._ZNK10CFbsDevice10ShowSpriteEP11TSpriteBase)
+    CFbsDevice::ShowSprite(TSpriteBase*, const TRect&, const TRegion*) const 0x000168c1   Thumb Code     2  BITMAPDV.o(i._ZNK10CFbsDevice10ShowSpriteEP11TSpriteBaseRK5TRectPK7TRegion)
+    CFbsDevice::CancelSprite() const         0x000168c3   Thumb Code     2  BITMAPDV.o(i._ZNK10CFbsDevice12CancelSpriteEv)
+    CFbsFont::DoTypeUid() const              0x000168c5   Thumb Code     6  FONTBMP.o(i._ZNK8CFbsFont9DoTypeUidEv)
+    operator delete (void*, void*)           0x000168d1   Thumb Code     2  BitmapSpec.o(i._ZdlPvS_)
+    operator <<(RWriteStream&, const TPoint&) 0x000168d3   Thumb Code    20  MAIN.o(i._ZlsR12RWriteStreamRK6TPoint)
+    operator new(unsigned, void*)            0x000168e7   Thumb Code     4  BitmapSpec.o(i._ZnwjPv)
+    operator >>(RReadStream&, TPoint&)       0x000168eb   Thumb Code    16  MAIN.o(i._ZrsR11RReadStreamR6TPoint)
+    Abs<int>(T1)                             0x000168fb   Thumb Code    12  GRAPHICS.o(t._Z3AbsIiET_S0_)
+    TRegionFix<(int)1>::TRegionFix(const TRect&) 0x00016907   Thumb Code    24  FBSERVDV.o(t._ZN10TRegionFixILi1EEC1ERK5TRect)
+    TRegionFix<(int)1>::TRegionFix__sub_object(const TRect&) 0x00016907   Thumb Code     0  FBSERVDV.o(t._ZN10TRegionFixILi1EEC1ERK5TRect)
+    CArrayFix<TPoint>::operator [](int) const 0x0001691f   Thumb Code     8  LINE.o(t._ZNK9CArrayFixI6TPointEixEi)
+    typeinfo for CFbsDevice                  0x00018d60   Data          12  FBSERVDV.o(.constdata__ZTI10CFbsDevice)
+    typeinfo for TSwapEdges                  0x00018d6c   Data          12  POLYGON.o(.constdata__ZTI10TSwapEdges)
+    typeinfo for CBitmapDevice               0x00018d78   Data          12  FBSERVDV.o(.constdata__ZTI13CBitmapDevice)
+    typeinfo for CFbsBitGcFont               0x00018d84   Data          12  FONTBMP.o(.constdata__ZTI13CFbsBitGcFont)
+    typeinfo for CPolygonFiller              0x00018d90   Data          12  POLYGON.o(.constdata__ZTI14CPolygonFiller)
+    typeinfo for CFbsBitGcBitmap             0x00018d9c   Data          12  BITMAPDV.o(.constdata__ZTI15CFbsBitGcBitmap)
+    typeinfo for CGraphicsDevice             0x00018da8   Data          32  FBSERVDV.o(.constdata__ZTI15CGraphicsDevice)
+    typeinfo for CFbsBitmapDevice            0x00018dc8   Data          12  BITMAPDV.o(.constdata__ZTI16CFbsBitmapDevice)
+    typeinfo for CFbsScreenDevice            0x00018dd4   Data          12  SCREENDV.o(.constdata__ZTI16CFbsScreenDevice)
+    typeinfo for TSwapActiveEdges            0x00018de0   Data          12  POLYGON.o(.constdata__ZTI16TSwapActiveEdges)
+    typeinfo for CFbsBitGcExtraData          0x00018dec   Data          12  MAIN.o(.constdata__ZTI18CFbsBitGcExtraData)
+    typeinfo for TCompareEdgesUpperY         0x00018df8   Data          12  POLYGON.o(.constdata__ZTI19TCompareEdgesUpperY)
+    typeinfo for TSwapScanLineIntersections  0x00018e04   Data          12  POLYGON.o(.constdata__ZTI26TSwapScanLineIntersections)
+    typeinfo for TCompareActiveEdgesFirstVertex 0x00018e10   Data          12  POLYGON.o(.constdata__ZTI30TCompareActiveEdgesFirstVertex)
+    typeinfo for TCompareScanLineIntersectionsFirstPixel 0x00018e1c   Data          12  POLYGON.o(.constdata__ZTI39TCompareScanLineIntersectionsFirstPixel)
+    typeinfo for CFbsBitGc                   0x00018e28   Data          12  MAIN.o(.constdata__ZTI9CFbsBitGc)
+    typeinfo name for CFbsDevice             0x00018e34   Data          13  FBSERVDV.o(.constdata__ZTS10CFbsDevice)
+    typeinfo name for TSwapEdges             0x00018e41   Data          13  POLYGON.o(.constdata__ZTS10TSwapEdges)
+    typeinfo name for CBitmapDevice          0x00018e4e   Data          16  FBSERVDV.o(.constdata__ZTS13CBitmapDevice)
+    typeinfo name for CFbsBitGcFont          0x00018e5e   Data          16  FONTBMP.o(.constdata__ZTS13CFbsBitGcFont)
+    typeinfo name for CPolygonFiller         0x00018e6e   Data          17  POLYGON.o(.constdata__ZTS14CPolygonFiller)
+    typeinfo name for CFbsBitGcBitmap        0x00018e7f   Data          18  BITMAPDV.o(.constdata__ZTS15CFbsBitGcBitmap)
+    typeinfo name for CGraphicsDevice        0x00018e91   Data          18  FBSERVDV.o(.constdata__ZTS15CGraphicsDevice)
+    typeinfo name for CFbsBitmapDevice       0x00018ea3   Data          19  BITMAPDV.o(.constdata__ZTS16CFbsBitmapDevice)
+    typeinfo name for CFbsScreenDevice       0x00018eb6   Data          19  SCREENDV.o(.constdata__ZTS16CFbsScreenDevice)
+    typeinfo name for TSwapActiveEdges       0x00018ec9   Data          19  POLYGON.o(.constdata__ZTS16TSwapActiveEdges)
+    typeinfo name for CFbsBitGcExtraData     0x00018edc   Data          21  MAIN.o(.constdata__ZTS18CFbsBitGcExtraData)
+    typeinfo name for TCompareEdgesUpperY    0x00018ef1   Data          22  POLYGON.o(.constdata__ZTS19TCompareEdgesUpperY)
+    typeinfo name for TSwapScanLineIntersections 0x00018f07   Data          29  POLYGON.o(.constdata__ZTS26TSwapScanLineIntersections)
+    typeinfo name for TCompareActiveEdgesFirstVertex 0x00018f24   Data          33  POLYGON.o(.constdata__ZTS30TCompareActiveEdgesFirstVertex)
+    typeinfo name for TCompareScanLineIntersectionsFirstPixel 0x00018f45   Data          42  POLYGON.o(.constdata__ZTS39TCompareScanLineIntersectionsFirstPixel)
+    typeinfo name for CFbsBitGc              0x00018f6f   Data          11  MAIN.o(.constdata__ZTS9CFbsBitGc)
+    vtable for CFbsDevice                    0x00018f7c   Data         188  FBSERVDV.o(.constdata__ZTV10CFbsDevice)
+    vtable for TSwapEdges                    0x00019038   Data          12  POLYGON.o(.constdata__ZTV10TSwapEdges)
+    vtable for CFbsBitGcFont                 0x00019044   Data          80  FONTBMP.o(.constdata__ZTV13CFbsBitGcFont)
+    vtable for CPolygonFiller                0x00019094   Data          20  POLYGON.o(.constdata__ZTV14CPolygonFiller)
+    vtable for CFbsBitGcBitmap               0x000190a8   Data          20  BITMAPDV.o(.constdata__ZTV15CFbsBitGcBitmap)
+    vtable for CFbsBitmapDevice              0x000190bc   Data         204  BITMAPDV.o(.constdata__ZTV16CFbsBitmapDevice)
+    vtable for CFbsScreenDevice              0x00019188   Data         204  SCREENDV.o(.constdata__ZTV16CFbsScreenDevice)
+    vtable for TSwapActiveEdges              0x00019254   Data          12  POLYGON.o(.constdata__ZTV16TSwapActiveEdges)
+    vtable for CFbsBitGcExtraData            0x00019260   Data          20  MAIN.o(.constdata__ZTV18CFbsBitGcExtraData)
+    vtable for TCompareEdgesUpperY           0x00019274   Data          16  POLYGON.o(.constdata__ZTV19TCompareEdgesUpperY)
+    vtable for TSwapScanLineIntersections    0x00019284   Data          12  POLYGON.o(.constdata__ZTV26TSwapScanLineIntersections)
+    vtable for TCompareActiveEdgesFirstVertex 0x00019290   Data          16  POLYGON.o(.constdata__ZTV30TCompareActiveEdgesFirstVertex)
+    vtable for TCompareScanLineIntersectionsFirstPixel 0x000192a0   Data          16  POLYGON.o(.constdata__ZTV39TCompareScanLineIntersectionsFirstPixel)
+    vtable for CFbsBitGc                     0x000192b0   Data         296  MAIN.o(.constdata__ZTV9CFbsBitGc)
+    .ARM.exidx$$Base                         0x000193d8   Number         0  ucppinit_aeabi.o(.ARM.exidx)
+    .ARM.exidx$$Limit                        0x00019b10   Number         0  LINE.o(.ARM.exidx)
+    Image$$ER_RO$$Limit                      0x00019b10   Number         0  anon$$obj.o(linker$$defined$$symbols)
+

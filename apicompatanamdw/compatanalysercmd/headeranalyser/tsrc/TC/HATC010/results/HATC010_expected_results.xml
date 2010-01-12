@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>38</minute>
+      <second>44</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>10</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\scripts\HATC010_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>forcebaseinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>forcecurrentinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\results\HATC010_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>HATC*.h;HATC*.hrh;HATC*.rsg;HATC*.mbg;HATC*.hpp;HATC*.pan</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include\HATC010.hpp</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include\HATC010.hpp</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>0</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>TABLE(name,natives,entries)</cause>
+        <documentation>Not specifiedTABLE(name,natives,entries)</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>WRSuQE8AglXsy</checksum>
+      <shortname>hatc010.hpp</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include\HATC010.pan</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include\HATC010.pan</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>0</typeid>
+        <identityid>7</identityid>
+        <identitydescription>Enumeration value</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::TEikServPanic</cause>
+        <documentation>Not specified::TEikServPanic</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>28</linenumber>
+        <severity>
+          <typeid>5</typeid>
+          <typestring>Possible FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>kRoQyYDChxMpA</checksum>
+      <shortname>hatc010.pan</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include\HATC010.rsg</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include\HATC010.rsg</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>0</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>R_BCAPPLOCATION_MENUBAR</cause>
+        <documentation>Not specifiedR_BCAPPLOCATION_MENUBAR</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>2</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>R_DEFAULT_DOCUMENT_NAME</cause>
+        <documentation>Not specifiedR_DEFAULT_DOCUMENT_NAME</documentation>
+        <ignoreinformation>0xa27c002</ignoreinformation>
+        <linenumber>18</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <checksum>HsGCHqcBDahYH</checksum>
+      <shortname>hatc010.rsg</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\baseline_headers\Epoc32\include\HATC010b.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC010\current_headers\Epoc32\include\HATC010b.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>3</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed size</typestring>
+        <cause>::HATC010_02</cause>
+        <documentation>Not specified::HATC010_02</documentation>
+        <ignoreinformation>32</ignoreinformation>
+        <linenumber>24</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>18</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed base size</typestring>
+        <cause>::HATC010_02</cause>
+        <documentation>Not specified::HATC010_02</documentation>
+        <ignoreinformation>32</ignoreinformation>
+        <linenumber>24</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>0</typeid>
+        <identityid>10</identityid>
+        <identitydescription>Field</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC010_02::removeProtected</cause>
+        <documentation>Not specified::HATC010_02::removeProtected</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>24</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>K60GTljD7Ry1n</checksum>
+      <shortname>hatc010b.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

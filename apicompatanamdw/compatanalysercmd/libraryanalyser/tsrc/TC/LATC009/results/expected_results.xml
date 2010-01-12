@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+	<header>
+		<baselineversion>Baseline platform</baselineversion>
+		<currentversion>Product platform</currentversion>
+		<timestamp>
+			<day>20</day>
+			<month>7</month>
+			<year>2009</year>
+			<hour>14</hour>
+			<minute>38</minute>
+			<second>10</second>
+		</timestamp>
+		<laversion>3.3.0</laversion>
+		<formatversion>1.1</formatversion>
+		<cmdlineparms>
+			<parm>
+				<pname>toolchain</pname>
+				<pvalue>RVCT</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinelibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC009\baseplatform\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>currentlibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC009\currentplatform\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinedlldir</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>currentdlldir</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>warning</pname>
+				<pvalue>Required parameters for checking dll properties not specified. Compatibility Breaks in dll are not checked.</pvalue>
+			</parm>
+			<parm>
+				<pname>baselineversion</pname>
+				<pvalue>Baseline platform</pvalue>
+			</parm>
+			<parm>
+				<pname>currentversion</pname>
+				<pvalue>Product platform</pvalue>
+			</parm>
+			<parm>
+				<pname>reportfile</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC009\results\results.xml</pvalue>
+			</parm>
+			<parm>
+				<pname>tools</pname>
+				<pvalue>C:\APPS\rvct22_593\bin\</pvalue>
+			</parm>
+			<parm>
+				<pname>temp</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\bin\temp\</pvalue>
+			</parm>
+			<parm>
+				<pname>cfilt</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\bin\cfilt.exe</pvalue>
+			</parm>
+			<parm>
+				<pname>set</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC009\scripts\config.txt</pvalue>
+			</parm>
+		</cmdlineparms>
+		<knownissuesversion></knownissuesversion>
+	</header>
+	<issuelist>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC009\baseplatform\lib\OCTC009.dso</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\libraryAnalyser\trunk\tsrc\TC\LATC009\currentplatform\lib\OCTC009.dso</comparefilename>
+			<shortname>OCTC009</shortname>
+			<baseplatform></baseplatform>
+			<currentplatform></currentplatform>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>COCTC001::TestFunction() const</funcname>
+				<newfuncname>COCTC001::TestFunction()</newfuncname>
+				<funcpos>1</funcpos>
+				<bc_severity>None</bc_severity>
+				<sc_severity>SC Break</sc_severity>
+			</issue>
+		</library>
+	</issuelist>
+</bbcresults>

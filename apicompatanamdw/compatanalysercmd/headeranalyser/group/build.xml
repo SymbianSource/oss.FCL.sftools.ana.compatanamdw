@@ -1,0 +1,39 @@
+<project name="HeaderAnalyser" default="build" basedir=".">
+                      
+  <description>HeaderAnalyser build file</description>
+  <property name="test.folder" location="../tscr"/>
+
+  <target name="compile">
+    <exec executable="cmd.exe" failonerror="true">
+      <arg value="/c"/>
+      <arg value="make clean"/>
+    </exec>
+  </target>
+  
+  <target name="zip">
+  
+  	<delete dir="../nightly_builds"/>
+  	<mkdir dir="../nightly_builds"/>
+  
+  	<tstamp>
+		   <format property="timestamp" pattern="dd-MM-yyyy" />
+		</tstamp>
+  
+    <zip destfile="../nightly_builds/HeaderAnalyser.${timestamp}.zip">
+      <zipfileset dir="../bin" includes="ha.exe libxerces-c2_7_0.dll"/>
+      <zipfileset dir="../group" includes="ReleaseNotes_HeaderAnalyser.txt"/>
+    </zip>
+  </target>
+  
+  <target name="test">
+    <exec dir="../tsrc" executable="python" resolveexecutable="true" failonerror="true">
+          <arg value="hatest.py"/>
+          <arg value="TestResults.xml"/>
+          
+    </exec>
+  </target>
+  
+
+  <target name="build" depends="compile,test,zip"/>
+
+</project>

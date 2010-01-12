@@ -1,0 +1,129 @@
+#
+# Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+# All rights reserved.
+# This component and the accompanying materials are made available
+# under the terms of the License "Eclipse Public License v1.0"
+# which accompanies this distribution, and is available
+# at the URL "http://www.eclipse.org/legal/epl-v10.html".
+#
+# Initial Contributors:
+# Nokia Corporation - initial contribution.
+#
+# Contributors:
+#
+# Description:  End-user Interface for Core Tools execution
+#
+
+
+################GUIDELINES################
+
+# Please do not keep any empty tags, delete if not being used
+# If any paths contain spaces, place them in "Quotes"
+
+################COMMON PARAMETERS################
+# Name for baseline file set
+# Mandatory
+BASELINE_NAME=Base
+
+# Root directory for files in base directory
+# Mandatory
+BASELINE_SDK_DIR=.\tsrc\baseline
+
+# S60 version of baseline set
+# Mandatory
+BASELINE_SDK_S60_VERSION=5.0
+
+# Name for current file set
+# Mandatory
+CURRENT_NAME=Current
+
+# Root directory for files in current directory
+# Mandatory
+CURRENT_SDK_DIR=.\tsrc\current
+
+# S60 version of current set, Mandatory
+CURRENT_SDK_S60_VERSION=5.1
+
+# Defines the path for intermediate temporary files
+# Optional - uses system defined paths if empty
+TEMP=.\temp
+
+#################HEADER ANALYSIS SPECIFIC################
+# Analyse any header directory, other than \epoc32\include, This will override the default SDK paths
+BASELINE_HEADERS=.\tsrc\baseline\epoc32\include
+CURRENT_HEADERS=.\tsrc\current\epoc32\include
+
+# Specifies the dependant header directories, multiple names separated by ‘;’ can be input
+# Optional, if  not defined, defaults to system defined inputs
+BASELINE_SYSTEMINCLUDEDIR=
+CURRENT_SYSTEMINCLUDEDIR=
+
+# Usage of platform data to resolve compile time dependency information 
+# Optional, defaults to 'true' if not defined
+USE_PLATFORM_DATA=true
+
+# Recurse the directory hierarchy while scanning for files under verification
+# Optional, defaults to 'true' if not defined
+RECURSIVE_HEADERS=true
+
+# If the recursive scan is enabled, optionally exclude some subdirectories
+# Optional, defaults to none
+EXCLUDE_DIR_HEADERS=caf
+
+# File pairs to be compared, if names change between base & current releases,
+# Format, OLD:NEW, each such set is separated by ‘;’
+# Optional, defaults to none
+REPLACE_HEADERS=
+
+# Report file for header analysis
+REPORT_FILE_HEADERS=.\tsrc\temp\results\headers
+
+# If required, to write the filtered output of above file to a different one
+FILTER_FILE_HEADERS=.\tsrc\temp\results\output_headers
+
+################LIBRARY ANALYSIS SPECIFIC################
+# Specifies the type and paths of GCC/GCCE/RVCT toolchains to be used
+# Optional, defaults to GCCE if not defined
+TOOLCHAIN=GCCE
+TOOLCHAIN_PATH=C:\Program Files\CSL Arm Toolchain\bin
+
+# Specifies ARMV5/WINSCW/others, by default this is ARMV5
+# Used to determine the path when using SDK directories
+BASELINE_BUILDTARGET=ARMv5
+CURRENT_BUILDTARGET=ARMv5
+
+# Analyse any other import library directory than from under \epoc32\release,
+# this will override target builds mentioned above
+#If they are relative paths, BASELINE_SDK_DIR\epoc32\release and CURRENT_SDK_DIR\epoc32\release will be inserted at the begining.
+#If any of these param is mentioned,corresponding dll path is also needs to be mentioned.
+BASELINE_IMPORTLIBRARIES=.\tsrc\baseline\epoc32\release\armv5\lib
+CURRENT_IMPORTLIBRARIES=.\tsrc\current\epoc32\release\armv5\lib
+
+# Analyse any other dll directory than from under \epoc32\release,
+# this will override target builds mentioned above
+#If they are relative paths, BASELINE_SDK_DIR\epoc32\release and CURRENT_SDK_DIR\epoc32\release will be inserted at the begining.
+#If any of these param is mentioned,corresponding lib path is also needs to be mentioned.
+BASELINE_IMPORTDLLS=.\tsrc\baseline\epoc32\release\armv5\urel
+CURRENT_IMPORTDLLS=.\tsrc\current\epoc32\release\armv5\urel
+
+# Report file for library analysis
+REPORT_FILE_LIBRARIES=.\tsrc\temp\results\libraries
+
+# If required, to write the filtered output of above file to a different one
+FILTER_FILE_LIBRARIES=.\tsrc\temp\results\output_libraries
+
+#################BCREPORT FILTER SPECIFIC################
+# Report file for Filter, multiple reports can be mentioned here
+# In addition, Report paths mentioned in headers, libraries section are also filtered
+# Multiple files can be specified by using 'semi-colon' for seperation
+REPORT_FILE_FILTER=.\tsrc\testdata\sareport;.\tsrc\testdata\sareporta
+
+# Output file for Filter, multiple files can be mentioned here
+# Multiple files can be specified by using 'semi-colon' for seperation
+# There is a correspondance between report file above and the output file
+# If a report file does not have a corresponding Output file mentioned then it is filtered in-place
+OUTPUT_FILE_FILTER=;.\tsrc\temp\results\output_sareporta
+
+# Defines the path for knownissues which can be either local directory or a server path
+# Multiple files can be specified by using 'semi-colon' for seperation
+ISSUES_FILE=.\tsrc\testdata\knownissues.xml

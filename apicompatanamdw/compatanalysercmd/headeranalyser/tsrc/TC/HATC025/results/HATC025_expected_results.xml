@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>41</minute>
+      <second>25</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baseline</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\baseline_headers\epoc32\include\HATC025.h</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>10</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\scripts\HATC025_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>current</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\current_headers\epoc32\include\HATC025.h</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\results\HATC025_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\baseline_headers\epoc32\include\HATC025.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC025\current_headers\epoc32\include\HATC025.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>0</typeid>
+        <identityid>12</identityid>
+        <identitydescription>Macro</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>HATC025_H</cause>
+        <documentation>Not specifiedHATC025_H</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>EKQ4r+1CossdW</checksum>
+      <shortname>c:\symbian\carbide\workspace\headeranalyser\trunk\tsrc\tc\hatc025\current_headers\epoc32\include\hatc025.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

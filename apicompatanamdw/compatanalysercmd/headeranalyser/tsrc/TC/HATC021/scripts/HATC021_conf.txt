@@ -1,0 +1,9 @@
+-baselinedir             "..\tsrc\TC\HATC021\baseline_headers\epoc32\include"
+-currentdir              "..\tsrc\TC\HATC021\current_headers\epoc32\include"
+-baseplatformheaders     "..\tsrc\TC\HATC021\baseline_headers\epoc32\include"
+-currentplatformheaders  "..\tsrc\TC\HATC021\current_headers\epoc32\include"
+-baselineversion         "BASELINE"
+-currentversion          "CURRENT"
+-reportfile              "..\tsrc\TC\HATC021\results\HATC021_results.xml"
+-recursive
+-bundlesize 5

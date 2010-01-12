@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+	<header>
+		<baselineversion>Base</baselineversion>
+		<currentversion>Current</currentversion>
+		<timestamp>
+			<day>2</day>
+			<month>12</month>
+			<year>2009</year>
+			<hour>11</hour>
+			<minute>46</minute>
+			<second>25</second>
+		</timestamp>
+		<laversion>3.3.2</laversion>
+		<formatversion>1.1</formatversion>
+		<cmdlineparms>
+			<parm>
+				<pname>toolchain</pname>
+				<pvalue>GCCE</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinelibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\baseline\epoc32\release\armv5\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>currentlibdir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\current\epoc32\release\armv5\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinedlldir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\baseline\epoc32\release\armv5\urel</pvalue>
+			</parm>
+			<parm>
+				<pname>currentdlldir</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\current\epoc32\release\armv5\urel</pvalue>
+			</parm>
+			<parm>
+				<pname>baselineversion</pname>
+				<pvalue>Base</pvalue>
+			</parm>
+			<parm>
+				<pname>currentversion</pname>
+				<pvalue>Current</pvalue>
+			</parm>
+			<parm>
+				<pname>reportfile</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\temp\results\libraries_test_05.xml</pvalue>
+			</parm>
+			<parm>
+				<pname>tools</pname>
+				<pvalue>C:\Program Files\CSL Arm Toolchain\bin\</pvalue>
+			</parm>
+			<parm>
+				<pname>temp</pname>
+				<pvalue>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\temp\</pvalue>
+			</parm>
+			<parm>
+				<pname>cfilt</pname>
+				<pvalue></pvalue>
+			</parm>
+			<parm>
+				<pname>set</pname>
+				<pvalue></pvalue>
+			</parm>
+		</cmdlineparms>
+		<knownissuesversion></knownissuesversion>
+	</header>
+	<issuelist>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\baseline\epoc32\release\armv5\lib\caleninterimutils.dso</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\current\epoc32\release\armv5\lib\caleninterimutils.dso</comparefilename>
+			<shortname>caleninterimutils</shortname>
+			<baseplatform>armv5</baseplatform>
+			<currentplatform>armv5</currentplatform>
+			<issue>
+				<typeid>9</typeid>
+				<typeinfo>UID2 has been changed</typeinfo>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>10</typeid>
+				<typeinfo>UID3 has been changed</typeinfo>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>11</typeid>
+				<typeinfo>Secure ID has been changed</typeinfo>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\baseline\epoc32\release\armv5\lib\calinterimapi.dso</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\current\epoc32\release\armv5\lib\calinterimapi.dso</comparefilename>
+			<shortname>calinterimapi</shortname>
+			<baseplatform>armv5</baseplatform>
+			<currentplatform>armv5</currentplatform>
+			<issue>
+				<typeid>14</typeid>
+				<typeinfo>Baseline DLL is not available for analysis</typeinfo>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\baseline\epoc32\release\armv5\lib\ccon.dso</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\current\epoc32\release\armv5\lib\ccon.dso</comparefilename>
+			<shortname>ccon</shortname>
+			<baseplatform>armv5</baseplatform>
+			<currentplatform>armv5</currentplatform>
+			<issue>
+				<typeid>14</typeid>
+				<typeinfo>Baseline DLL is not available for analysis</typeinfo>
+				<bc_severity>Informative</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+		<library>
+			<name>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\baseline\epoc32\release\armv5\lib\centralrepository.dso</name>
+			<comparefilename>C:\Symbian\Carbide\workspace\CheckBC\branches\EPL_2.8.3\tsrc\current\epoc32\release\armv5\lib\centralrepository.dso</comparefilename>
+			<shortname>centralrepository</shortname>
+			<baseplatform>armv5</baseplatform>
+			<currentplatform>armv5</currentplatform>
+			<issue>
+				<typeid>10</typeid>
+				<typeinfo>UID3 has been changed</typeinfo>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+			<issue>
+				<typeid>11</typeid>
+				<typeinfo>Secure ID has been changed</typeinfo>
+				<bc_severity>BBC Break</bc_severity>
+				<sc_severity>None</sc_severity>
+			</issue>
+		</library>
+	</issuelist>
+</bbcresults>

@@ -1,0 +1,63 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the License "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+BCFilter building instructions
+==============================
+
+Windows platform
+----------------
+
+1) Set up MinGW and MSYS compiling environments
+   - Download MinGW installer 5.0.2 (or newer) from http://www.mingw.org
+   - Install MinGW including GCC compiler with version number at least 3.4.2
+   - Download and install MSYS environment from http://www.mingw.org with
+     version number at least 1.0.11
+   - Set "bin"-directories of both MinGW and MSYS to your path environment, eg
+        SET PATH=C:\APPS\MinGW\bin;C:\APPS\MSYS\bin;%PATH%  
+
+2) Download Xerces-C 2.7.0 sources from http://xml.apache.org/xerces-c/
+   Install it to any folder.
+
+3) Modify "XERCESHOME"-variable in a file "group/MakeFile" in BCFilter
+   installation to point to the directory where you installed Xerces-C.
+
+4) Copy libxerces-c2_7_0.dll under lib directory of your Xerces-C installation.
+   Alternatively you may have to compile Xerces-C yourself, before it can be
+   used. To do that follow these steps:
+     1) Extract Xerces-C sources under MSYS installation
+     2) Start bash by typing "sh" (ie msys\bin\sh.exe)
+     3) Set XERCESCROOT environment variable to the directory where you just
+        extracted the sources, for example
+            export XERCESCROOT=/home/user-id/src/xerces-c-src_2_7_0
+     4) Go to the source directory xerces-c-src_2_7_0/src/xercesc
+     5) Type "runConfigure -p mingw-msys -cgcc -xg++ -nfileonly -tnative -rnone"
+     6) Type Make
+     7) Close bash with "exit" command
+     8) Now you have the compiler Xerces-C environment. Copy it or update
+        XERCESHOME in the Makefile. Make sure that the *.dll files from
+        xerces-c-src_2_7_0/lib are the same as in the BCFilter/bin folder          
+   
+5) With command prompt, go to the same "group" directory and type "make". 
+
+
+
+Any other platform
+------------------
+
+Set up GCC compiling environment as usually and follow steps 2-5 just like in the
+instructions for Windows platform. Modify variables to suitable to your environment.
+
+

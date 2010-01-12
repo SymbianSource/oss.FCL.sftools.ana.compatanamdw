@@ -1,0 +1,338 @@
+ARM Linker, RVCT2.2 [Build 616]
+
+================================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-816.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-158.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-947.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  scppnwdl{000a0000}-7.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-180.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-953.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1088.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-183.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-144.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1089.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-184.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-147.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1090.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  scppnwdl{000a0000}-3.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1428.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1091.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-205.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1430.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1094.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2128.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1432.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1355.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-424.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1434.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1425.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-617.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1469.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-669.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-654.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-81.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-743.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2061.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2060.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2082.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-208.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2123.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2125.o ABSOLUTE
+    \EPOC32\BUILD\s60\mw\networking\group\CCONNDLGCLIENT\ARMV5\urel\AGENTDIALOG{000a0000}.s 0x00000000   Number         0  AGENTDIALOG{000a0000}.exp ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\compsupp\DRTAEABI\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\euser\EDLL\ARMV5\urel\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\euser\EUSER\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \\EPOC32\\BUILD\\src\\cedar\\generic\\base\\e32\\euser\\EDLL\\ARMV5\\urel\\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    \\src\\cedar\\generic\\base\\e32\\compsupp\\RVCT2_2\\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    \s60\mw\networking\networkingutilities\connectiondialogs\CConnDlg\clientsrc\activelogin.cpp 0x00000000   Number         0  AGENTDIALOG.in ABSOLUTE
+    \s60\mw\networking\networkingutilities\connectiondialogs\CConnDlg\clientsrc\genconagentdialogserver.cpp 0x00000000   Number         0  AGENTDIALOG.in ABSOLUTE
+    \src\cedar\generic\base\e32\compsupp\RVCT2_2\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    \src\cedar\generic\base\e32\euser\epoc\arm\uc_dll.cpp 0x00000000   Number         0  uc_dll.o ABSOLUTE
+    .emb_text                                0x00008000   Section       40  uc_dll_.o(.emb_text)
+    .emb_text                                0x00008028   Section       72  ucppinit_aeabi.o(.emb_text)
+    skip                                     0x0000803c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    loop                                     0x0000804c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    fpinit                                   0x00008064   Data           0  ucppinit_aeabi.o(.emb_text)
+    base                                     0x00008068   Data           0  ucppinit_aeabi.o(.emb_text)
+    limit                                    0x0000806c   Data           0  ucppinit_aeabi.o(.emb_text)
+    .text                                    0x00008070   Section     1388  AGENTDIALOG.in(.text)
+    .text                                    0x000085dc   Section      288  AGENTDIALOG.in(.text)
+    .text                                    0x000086fc   Section       40  uc_dll.o(.text)
+    .text.clean                              0x00008724   Section      120  AGENTDIALOG.in(.text.clean)
+    .text.clean                              0x0000879c   Section       30  AGENTDIALOG.in(.text.clean)
+    ExportTable                              0x000087bc   Section      144  AGENTDIALOG{000a0000}.exp(ExportTable)
+    StubCode                                 0x0000884c   Section        8  euser{000a0000}-1088.o(StubCode)
+    theImportedSymbol                        0x00008850   Data           0  euser{000a0000}-1088.o(StubCode)
+    StubCode                                 0x00008854   Section        8  euser{000a0000}-1089.o(StubCode)
+    theImportedSymbol                        0x00008858   Data           0  euser{000a0000}-1089.o(StubCode)
+    StubCode                                 0x0000885c   Section        8  euser{000a0000}-1090.o(StubCode)
+    theImportedSymbol                        0x00008860   Data           0  euser{000a0000}-1090.o(StubCode)
+    StubCode                                 0x00008864   Section        8  euser{000a0000}-1091.o(StubCode)
+    theImportedSymbol                        0x00008868   Data           0  euser{000a0000}-1091.o(StubCode)
+    StubCode                                 0x0000886c   Section        8  euser{000a0000}-1094.o(StubCode)
+    theImportedSymbol                        0x00008870   Data           0  euser{000a0000}-1094.o(StubCode)
+    StubCode                                 0x00008874   Section        8  euser{000a0000}-1355.o(StubCode)
+    theImportedSymbol                        0x00008878   Data           0  euser{000a0000}-1355.o(StubCode)
+    StubCode                                 0x0000887c   Section        8  euser{000a0000}-1425.o(StubCode)
+    theImportedSymbol                        0x00008880   Data           0  euser{000a0000}-1425.o(StubCode)
+    StubCode                                 0x00008884   Section        8  euser{000a0000}-1428.o(StubCode)
+    theImportedSymbol                        0x00008888   Data           0  euser{000a0000}-1428.o(StubCode)
+    StubCode                                 0x0000888c   Section        8  euser{000a0000}-1430.o(StubCode)
+    theImportedSymbol                        0x00008890   Data           0  euser{000a0000}-1430.o(StubCode)
+    StubCode                                 0x00008894   Section        8  euser{000a0000}-1432.o(StubCode)
+    theImportedSymbol                        0x00008898   Data           0  euser{000a0000}-1432.o(StubCode)
+    StubCode                                 0x0000889c   Section        8  euser{000a0000}-1434.o(StubCode)
+    theImportedSymbol                        0x000088a0   Data           0  euser{000a0000}-1434.o(StubCode)
+    StubCode                                 0x000088a4   Section        8  euser{000a0000}-1469.o(StubCode)
+    theImportedSymbol                        0x000088a8   Data           0  euser{000a0000}-1469.o(StubCode)
+    StubCode                                 0x000088ac   Section        8  euser{000a0000}-205.o(StubCode)
+    theImportedSymbol                        0x000088b0   Data           0  euser{000a0000}-205.o(StubCode)
+    StubCode                                 0x000088b4   Section        8  euser{000a0000}-2060.o(StubCode)
+    theImportedSymbol                        0x000088b8   Data           0  euser{000a0000}-2060.o(StubCode)
+    StubCode                                 0x000088bc   Section        8  euser{000a0000}-2061.o(StubCode)
+    theImportedSymbol                        0x000088c0   Data           0  euser{000a0000}-2061.o(StubCode)
+    StubCode                                 0x000088c4   Section        8  euser{000a0000}-208.o(StubCode)
+    theImportedSymbol                        0x000088c8   Data           0  euser{000a0000}-208.o(StubCode)
+    StubCode                                 0x000088cc   Section        8  euser{000a0000}-2082.o(StubCode)
+    theImportedSymbol                        0x000088d0   Data           0  euser{000a0000}-2082.o(StubCode)
+    StubCode                                 0x000088d4   Section        8  euser{000a0000}-2128.o(StubCode)
+    theImportedSymbol                        0x000088d8   Data           0  euser{000a0000}-2128.o(StubCode)
+    StubCode                                 0x000088dc   Section        8  euser{000a0000}-424.o(StubCode)
+    theImportedSymbol                        0x000088e0   Data           0  euser{000a0000}-424.o(StubCode)
+    StubCode                                 0x000088e4   Section        8  euser{000a0000}-617.o(StubCode)
+    theImportedSymbol                        0x000088e8   Data           0  euser{000a0000}-617.o(StubCode)
+    StubCode                                 0x000088ec   Section        8  euser{000a0000}-654.o(StubCode)
+    theImportedSymbol                        0x000088f0   Data           0  euser{000a0000}-654.o(StubCode)
+    StubCode                                 0x000088f4   Section        8  euser{000a0000}-669.o(StubCode)
+    theImportedSymbol                        0x000088f8   Data           0  euser{000a0000}-669.o(StubCode)
+    StubCode                                 0x000088fc   Section        8  euser{000a0000}-743.o(StubCode)
+    theImportedSymbol                        0x00008900   Data           0  euser{000a0000}-743.o(StubCode)
+    StubCode                                 0x00008904   Section        8  euser{000a0000}-81.o(StubCode)
+    theImportedSymbol                        0x00008908   Data           0  euser{000a0000}-81.o(StubCode)
+    StubCode                                 0x0000890c   Section        8  euser{000a0000}-816.o(StubCode)
+    theImportedSymbol                        0x00008910   Data           0  euser{000a0000}-816.o(StubCode)
+    StubCode                                 0x00008914   Section        8  euser{000a0000}-947.o(StubCode)
+    theImportedSymbol                        0x00008918   Data           0  euser{000a0000}-947.o(StubCode)
+    StubCode                                 0x0000891c   Section        8  euser{000a0000}-953.o(StubCode)
+    theImportedSymbol                        0x00008920   Data           0  euser{000a0000}-953.o(StubCode)
+    StubCode                                 0x00008924   Section        8  drtaeabi{000a0000}-144.o(StubCode)
+    theImportedSymbol                        0x00008928   Data           0  drtaeabi{000a0000}-144.o(StubCode)
+    StubCode                                 0x0000892c   Section        8  drtaeabi{000a0000}-147.o(StubCode)
+    theImportedSymbol                        0x00008930   Data           0  drtaeabi{000a0000}-147.o(StubCode)
+    StubCode                                 0x00008934   Section        8  drtaeabi{000a0000}-158.o(StubCode)
+    theImportedSymbol                        0x00008938   Data           0  drtaeabi{000a0000}-158.o(StubCode)
+    StubCode                                 0x0000893c   Section        8  drtaeabi{000a0000}-180.o(StubCode)
+    theImportedSymbol                        0x00008940   Data           0  drtaeabi{000a0000}-180.o(StubCode)
+    StubCode                                 0x00008944   Section        8  drtaeabi{000a0000}-183.o(StubCode)
+    theImportedSymbol                        0x00008948   Data           0  drtaeabi{000a0000}-183.o(StubCode)
+    StubCode                                 0x0000894c   Section        8  drtaeabi{000a0000}-184.o(StubCode)
+    theImportedSymbol                        0x00008950   Data           0  drtaeabi{000a0000}-184.o(StubCode)
+    StubCode                                 0x00008954   Section        8  scppnwdl{000a0000}-3.o(StubCode)
+    theImportedSymbol                        0x00008958   Data           0  scppnwdl{000a0000}-3.o(StubCode)
+    StubCode                                 0x0000895c   Section        8  scppnwdl{000a0000}-7.o(StubCode)
+    theImportedSymbol                        0x00008960   Data           0  scppnwdl{000a0000}-7.o(StubCode)
+    i._ZN19TIspConnectionNamesC1Ev           0x00008964   Section       36  AGENTDIALOG.in(i._ZN19TIspConnectionNamesC1Ev)
+    i._ZdlPvS_                               0x00008988   Section        2  AGENTDIALOG.in(i._ZdlPvS_)
+    i._ZnwjPv                                0x0000898a   Section        4  AGENTDIALOG.in(i._ZnwjPv)
+    t._ZN12TAlignedBuf8ILi4EEC1Ei            0x0000898e   Section       10  AGENTDIALOG.in(t._ZN12TAlignedBuf8ILi4EEC1Ei)
+    t._ZN4TBufILi50EEC1Ev                    0x00008998   Section       10  AGENTDIALOG.in(t._ZN4TBufILi50EEC1Ev)
+    t._ZN5TPckgIiEC1ERKi                     0x000089a2   Section       12  AGENTDIALOG.in(t._ZN5TPckgIiEC1ERKi)
+    t._ZN5TPckgImEC1ERKm                     0x000089ae   Section       12  AGENTDIALOG.in(t._ZN5TPckgImEC1ERKm)
+    t._ZN8TPckgBufI16TConnectionPrefsEC1ERKS0_ 0x000089ba   Section       36  AGENTDIALOG.in(t._ZN8TPckgBufI16TConnectionPrefsEC1ERKS0_)
+    t._ZN8TPckgBufI22TNewIapConnectionPrefsEC1ERKS0_ 0x000089de   Section       56  AGENTDIALOG.in(t._ZN8TPckgBufI22TNewIapConnectionPrefsEC1ERKS0_)
+    t._ZN8TPckgBufImEC1ERKm                  0x00008a16   Section       34  AGENTDIALOG.in(t._ZN8TPckgBufImEC1ERKm)
+    .extab._ZN24RGenConAgentDialogServer7ConnectEv 0x00008a38   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN24RGenConAgentDialogServer25ModemAndLocationSelectionERmS0_R14TRequestStatus 0x00008a68   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN24RGenConAgentDialogServer13IapConnectionERmRK16TConnectionPrefsiR14TRequestStatus 0x00008a80   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN24RGenConAgentDialogServer20WarnNewIapConnectionERK16TConnectionPrefsiRK7TDesC16RiR14TRequestStatus 0x00008a98   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN24RGenConAgentDialogServer12AuthenticateER6TDes16S1_iR14TRequestStatus 0x00008ab0   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN24RGenConAgentDialogServer10QoSWarningERiR14TRequestStatus 0x00008ad8   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN24RGenConAgentDialogServer21AccessPointConnectionERmmS0_mR14TRequestStatus 0x00008af0   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN12CActiveLoginC1ER6TDes16S1_   0x00008b08   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .extab._ZN12CActiveLoginD1Ev             0x00008b20   Data           0  AGENTDIALOG.in(.ARM.extab)
+    .constdata$1                             0x00008b30   Data           0  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgIap                          0x00008b30   Data           4  AGENTDIALOG.in(.constdata)
+    .constdata                               0x00008b30   Section       28  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgNewIap                       0x00008b34   Data           4  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgAuthentication               0x00008b38   Data           4  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgReconnect                    0x00008b3c   Data           4  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgQos                          0x00008b40   Data           4  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgModemAndLocation             0x00008b44   Data           4  AGENTDIALOG.in(.constdata)
+    KUidCConnDlgSelectConn                   0x00008b48   Data           4  AGENTDIALOG.in(.constdata)
+    .constdata__ZTI12CActiveLogin            0x00008b4c   Section       12  AGENTDIALOG.in(.constdata__ZTI12CActiveLogin)
+    .constdata__ZTS12CActiveLogin            0x00008b58   Section       15  AGENTDIALOG.in(.constdata__ZTS12CActiveLogin)
+    .constdata__ZTV12CActiveLogin            0x00008b68   Section       32  AGENTDIALOG.in(.constdata__ZTV12CActiveLogin)
+    .ARM.exidx                               0x00008b88   Section        8  ucppinit_aeabi.o(.ARM.exidx)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THUMB_ISAv2$ARM_ISAv5$M$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$IEEEJ$EBA8$UX$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>90     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>93     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>9e     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>b4     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>b7     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>b8     - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>1a8  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>269  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>28e  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>29d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>2e7  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>330  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>3b3  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>3b9  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>440  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>441  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>442  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>443  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>446  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>51  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>54b  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>591  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>594  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>596  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>598  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>59a  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>5bd  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>80c  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>80d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>822  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>84b  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>84d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>850  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>cd  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>d0  - Undefined Reference
+    #<DLL>scppnwdl{000a0000}.dll#<\DLL>3      - Undefined Reference
+    #<DLL>scppnwdl{000a0000}.dll#<\DLL>7      - Undefined Reference
+    SHT$$INIT_ARRAY$$Base                     - Undefined Weak Reference
+    SHT$$INIT_ARRAY$$Limit                    - Undefined Weak Reference
+    typeinfo for XLeaveException              - Undefined Reference
+    typeinfo for CBase                        - Undefined Reference
+    typeinfo for CActive                      - Undefined Reference
+    vtable for __cxxabiv1::__si_class_type_info  - Undefined Reference
+    _fp_init                                  - Undefined Weak Reference
+    run_static_dtors                          - Undefined Weak Reference
+    Image$$ER_RO$$Base                       0x00008000   Number         0  anon$$obj.o(linker$$defined$$symbols)
+    _E32Dll                                  0x00008000   ARM Code      40  uc_dll_.o(.emb_text)
+    Symbian$$CPP$$Exception$$Descriptor      0x00008014   Data           0  uc_dll_.o(.emb_text)
+    __cpp_initialize__aeabi_                 0x00008028   ARM Code      72  ucppinit_aeabi.o(.emb_text)
+    ThreadFunction(void*)                    0x00008071   Thumb Code     4  AGENTDIALOG.in(.text)
+    std::nothrow                             0x00008071   Thumb Code     0  ucppinit_aeabi.o(.emb_text)
+    StartDialogThread()                      0x00008075   Thumb Code     4  AGENTDIALOG.in(.text)
+    RDialogNotifier::Connect()               0x00008079   Thumb Code     8  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::RGenConAgentDialogServer() 0x00008081   Thumb Code   372  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::RGenConAgentDialogServer__sub_object() 0x00008081   Thumb Code     0  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::~RGenConAgentDialogServer() 0x000081f5   Thumb Code    14  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::~RGenConAgentDialogServer__sub_object() 0x000081f5   Thumb Code     0  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::Version() const 0x00008203   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::Connect()      0x00008215   Thumb Code   112  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::Close()        0x00008285   Thumb Code    14  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::ModemAndLocationSelection(unsigned long&, unsigned long&, TRequestStatus&) 0x00008293   Thumb Code   130  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::IapConnection(unsigned long&, const TConnectionPrefs&, int, TRequestStatus&) 0x00008315   Thumb Code    70  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::IapConnection(unsigned long&, const TConnectionPrefs&, TRequestStatus&) 0x0000835b   Thumb Code    12  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::WarnNewIapConnection(const TConnectionPrefs&, int, const TDesC16&, int&, TRequestStatus&) 0x00008367   Thumb Code   122  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::Authenticate(TDes16&, TDes16&, int, TRequestStatus&) 0x000083e1   Thumb Code   122  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::Login(TDes16&, TDes16&, int, TRequestStatus&) 0x0000845b   Thumb Code    16  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::Reconnect(int&, TRequestStatus&) 0x0000846b   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::OpenPct()      0x0000847d   Thumb Code     6  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::WritePct(const TDesC16&) 0x00008483   Thumb Code     4  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::ReadPct(TDes16&, TRequestStatus&) 0x00008487   Thumb Code    16  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::DestroyPctNotification(TRequestStatus&) 0x00008497   Thumb Code     2  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::ClosePct()     0x00008499   Thumb Code     2  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::QoSWarning(int&, TRequestStatus&) 0x0000849b   Thumb Code    56  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelModemAndLocationSelection() 0x000084d3   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelIapConnection() 0x000084e5   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelWarnNewIapConnection() 0x000084f7   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelAuthenticate() 0x00008509   Thumb Code    46  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelLogin()  0x00008537   Thumb Code     2  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelReconnect() 0x00008539   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelReadPct() 0x0000854b   Thumb Code     2  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelDestroyPctNotification() 0x0000854d   Thumb Code     2  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelQoSWarning() 0x0000854f   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::AccessPointConnection(unsigned long&, int, TRequestStatus&) 0x00008561   Thumb Code     2  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::CancelAccessPointConnection() 0x00008563   Thumb Code    18  AGENTDIALOG.in(.text)
+    RGenConAgentDialogServer::AccessPointConnection(unsigned long&, unsigned long, unsigned long&, unsigned long, TRequestStatus&) 0x00008575   Thumb Code   100  AGENTDIALOG.in(.text)
+    CActiveLogin::CActiveLogin(TDes16&, TDes16&) 0x000085dd   Thumb Code    90  AGENTDIALOG.in(.text)
+    CActiveLogin::CActiveLogin__sub_object(TDes16&, TDes16&) 0x000085dd   Thumb Code     0  AGENTDIALOG.in(.text)
+    CActiveLogin::ConstructL()               0x00008637   Thumb Code     2  AGENTDIALOG.in(.text)
+    CActiveLogin::NewL(TDes16&, TDes16&)     0x00008639   Thumb Code    36  AGENTDIALOG.in(.text)
+    CActiveLogin::~CActiveLogin()            0x0000865d   Thumb Code    22  AGENTDIALOG.in(.text)
+    CActiveLogin::~CActiveLogin__sub_object() 0x0000865d   Thumb Code     0  AGENTDIALOG.in(.text)
+    CActiveLogin::~CActiveLogin__deallocating() 0x00008673   Thumb Code    16  AGENTDIALOG.in(.text)
+    CActiveLogin::RunL()                     0x00008683   Thumb Code    58  AGENTDIALOG.in(.text)
+    CActiveLogin::DoCancel()                 0x000086bd   Thumb Code    18  AGENTDIALOG.in(.text)
+    CActiveLogin::Observe(TRequestStatus&)   0x000086cf   Thumb Code    32  AGENTDIALOG.in(.text)
+    CActiveLogin::GetBuffer()                0x000086ef   Thumb Code     4  AGENTDIALOG.in(.text)
+    _E32Dll_Body                             0x000086fd   Thumb Code    34  uc_dll.o(.text)
+    __DLL_Export_Table__                     0x000087bc   ARM Code       0  AGENTDIALOG{000a0000}.exp(ExportTable)
+    DLL##ExportTableSize                     0x000087c0   Data           0  AGENTDIALOG{000a0000}.exp(ExportTable)
+    DLL##ExportTable                         0x000087c4   Data           0  AGENTDIALOG{000a0000}.exp(ExportTable)
+    CActive::Cancel()                        0x0000884c   ARM Code       0  euser{000a0000}-1088.o(StubCode)
+    CActive::RunError(int)                   0x00008854   ARM Code       0  euser{000a0000}-1089.o(StubCode)
+    CActive::SetActive()                     0x0000885c   ARM Code       0  euser{000a0000}-1090.o(StubCode)
+    CActive::CActive__sub_object(int)        0x00008864   ARM Code       0  euser{000a0000}-1091.o(StubCode)
+    CActive::~CActive__sub_object()          0x0000886c   ARM Code       0  euser{000a0000}-1094.o(StubCode)
+    TVersion::TVersion(int, int, int)        0x00008874   ARM Code       0  euser{000a0000}-1355.o(StubCode)
+    RNotifier::CancelNotifier(TUid)          0x0000887c   ARM Code       0  euser{000a0000}-1425.o(StubCode)
+    RNotifier::StartNotifierAndGetResponse(TRequestStatus&, TUid, const TDesC8&, TDes8&) 0x00008884   ARM Code       0  euser{000a0000}-1428.o(StubCode)
+    RNotifier::Close()                       0x0000888c   ARM Code       0  euser{000a0000}-1430.o(StubCode)
+    RNotifier::Connect()                     0x00008894   ARM Code       0  euser{000a0000}-1432.o(StubCode)
+    RNotifier::RNotifier()                   0x0000889c   ARM Code       0  euser{000a0000}-1434.o(StubCode)
+    TBufBase8::TBufBase8(int, int)           0x000088a4   ARM Code       0  euser{000a0000}-1469.o(StubCode)
+    CleanupStack::Pop()                      0x000088ac   ARM Code       0  euser{000a0000}-205.o(StubCode)
+    User::MarkCleanupStack()                 0x000088b4   ARM Code       0  euser{000a0000}-2060.o(StubCode)
+    User::UnMarkCleanupStack(TTrapHandler*)  0x000088bc   ARM Code       0  euser{000a0000}-2061.o(StubCode)
+    CleanupStack::PushL(CBase*)              0x000088c4   ARM Code       0  euser{000a0000}-208.o(StubCode)
+    XLeaveException::GetReason() const       0x000088cc   ARM Code       0  euser{000a0000}-2082.o(StubCode)
+    CActive::Extension_(unsigned, void*&, void*) 0x000088d4   ARM Code       0  euser{000a0000}-2128.o(StubCode)
+    CActiveScheduler::Add(CActive*)          0x000088dc   ARM Code       0  euser{000a0000}-424.o(StubCode)
+    User::RequestComplete(TRequestStatus*&, int) 0x000088e4   ARM Code       0  euser{000a0000}-617.o(StubCode)
+    User::AllocZL(int)                       0x000088ec   ARM Code       0  euser{000a0000}-654.o(StubCode)
+    User::Invariant()                        0x000088f4   ARM Code       0  euser{000a0000}-669.o(StubCode)
+    TDes8::Copy(const unsigned char*, int)   0x000088fc   ARM Code       0  euser{000a0000}-743.o(StubCode)
+    TBufBase16::TBufBase16(int)              0x00008904   ARM Code       0  euser{000a0000}-81.o(StubCode)
+    TPtr8::TPtr8(unsigned char*, int, int)   0x0000890c   ARM Code       0  euser{000a0000}-816.o(StubCode)
+    TDes16::Num(long long)                   0x00008914   ARM Code       0  euser{000a0000}-947.o(StubCode)
+    TDes16::Copy(const TDesC16&)             0x0000891c   ARM Code       0  euser{000a0000}-953.o(StubCode)
+    __aeabi_memclr4                          0x00008924   ARM Code       0  drtaeabi{000a0000}-144.o(StubCode)
+    __aeabi_memcpy4                          0x0000892c   ARM Code       0  drtaeabi{000a0000}-147.o(StubCode)
+    __aeabi_unwind_cpp_pr0                   0x00008934   ARM Code       0  drtaeabi{000a0000}-158.o(StubCode)
+    __cxa_begin_catch                        0x0000893c   ARM Code       0  drtaeabi{000a0000}-180.o(StubCode)
+    __cxa_end_catch                          0x00008944   ARM Code       0  drtaeabi{000a0000}-183.o(StubCode)
+    __cxa_end_cleanup                        0x0000894c   ARM Code       0  drtaeabi{000a0000}-184.o(StubCode)
+    operator delete (void*)                  0x00008954   ARM Code       0  scppnwdl{000a0000}-3.o(StubCode)
+    operator new(unsigned)                   0x0000895c   ARM Code       0  scppnwdl{000a0000}-7.o(StubCode)
+    TIspConnectionNames::TIspConnectionNames() 0x00008965   Thumb Code    36  AGENTDIALOG.in(i._ZN19TIspConnectionNamesC1Ev)
+    TIspConnectionNames::TIspConnectionNames__sub_object() 0x00008965   Thumb Code     0  AGENTDIALOG.in(i._ZN19TIspConnectionNamesC1Ev)
+    operator delete (void*, void*)           0x00008989   Thumb Code     2  AGENTDIALOG.in(i._ZdlPvS_)
+    operator new(unsigned, void*)            0x0000898b   Thumb Code     4  AGENTDIALOG.in(i._ZnwjPv)
+    TAlignedBuf8<(int)4>::TAlignedBuf8(int)  0x0000898f   Thumb Code    10  AGENTDIALOG.in(t._ZN12TAlignedBuf8ILi4EEC1Ei)
+    TAlignedBuf8<(int)4>::TAlignedBuf8__sub_object(int) 0x0000898f   Thumb Code     0  AGENTDIALOG.in(t._ZN12TAlignedBuf8ILi4EEC1Ei)
+    TBuf<(int)50>::TBuf()                    0x00008999   Thumb Code    10  AGENTDIALOG.in(t._ZN4TBufILi50EEC1Ev)
+    TBuf<(int)50>::TBuf__sub_object()        0x00008999   Thumb Code     0  AGENTDIALOG.in(t._ZN4TBufILi50EEC1Ev)
+    TPckg<int>::TPckg(const int&)            0x000089a3   Thumb Code    12  AGENTDIALOG.in(t._ZN5TPckgIiEC1ERKi)
+    TPckg<int>::TPckg__sub_object(const int&) 0x000089a3   Thumb Code     0  AGENTDIALOG.in(t._ZN5TPckgIiEC1ERKi)
+    TPckg<unsigned long>::TPckg(const unsigned long&) 0x000089af   Thumb Code    12  AGENTDIALOG.in(t._ZN5TPckgImEC1ERKm)
+    TPckg<unsigned long>::TPckg__sub_object(const unsigned long&) 0x000089af   Thumb Code     0  AGENTDIALOG.in(t._ZN5TPckgImEC1ERKm)
+    TPckgBuf<TConnectionPrefs>::TPckgBuf(const TConnectionPrefs&) 0x000089bb   Thumb Code    36  AGENTDIALOG.in(t._ZN8TPckgBufI16TConnectionPrefsEC1ERKS0_)
+    TPckgBuf<TConnectionPrefs>::TPckgBuf__sub_object(const TConnectionPrefs&) 0x000089bb   Thumb Code     0  AGENTDIALOG.in(t._ZN8TPckgBufI16TConnectionPrefsEC1ERKS0_)
+    TPckgBuf<TNewIapConnectionPrefs>::TPckgBuf(const TNewIapConnectionPrefs&) 0x000089df   Thumb Code    56  AGENTDIALOG.in(t._ZN8TPckgBufI22TNewIapConnectionPrefsEC1ERKS0_)
+    TPckgBuf<TNewIapConnectionPrefs>::TPckgBuf__sub_object(const TNewIapConnectionPrefs&) 0x000089df   Thumb Code     0  AGENTDIALOG.in(t._ZN8TPckgBufI22TNewIapConnectionPrefsEC1ERKS0_)
+    TPckgBuf<unsigned long>::TPckgBuf(const unsigned long&) 0x00008a17   Thumb Code    34  AGENTDIALOG.in(t._ZN8TPckgBufImEC1ERKm)
+    TPckgBuf<unsigned long>::TPckgBuf__sub_object(const unsigned long&) 0x00008a17   Thumb Code     0  AGENTDIALOG.in(t._ZN8TPckgBufImEC1ERKm)
+    typeinfo for CActiveLogin                0x00008b4c   Data          12  AGENTDIALOG.in(.constdata__ZTI12CActiveLogin)
+    typeinfo name for CActiveLogin           0x00008b58   Data          15  AGENTDIALOG.in(.constdata__ZTS12CActiveLogin)
+    vtable for CActiveLogin                  0x00008b68   Data          32  AGENTDIALOG.in(.constdata__ZTV12CActiveLogin)
+    .ARM.exidx$$Base                         0x00008b88   Number         0  ucppinit_aeabi.o(.ARM.exidx)
+    .ARM.exidx$$Limit                        0x00008c68   Number         0  AGENTDIALOG.in(.ARM.exidx)
+    Image$$ER_RO$$Limit                      0x00008c68   Number         0  anon$$obj.o(linker$$defined$$symbols)
+

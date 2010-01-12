@@ -1,0 +1,478 @@
+ARM Linker, RVCT2.2 [Build 616]
+
+================================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-31.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-12.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-10.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-5.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-13.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-11.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-6.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-14.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-13.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-7.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-15.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-14.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-8.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-17.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-17.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-9.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-2.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-19.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-158.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-20.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-20.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-180.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-21.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-6.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-183.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-24.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-7.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  drtaeabi{000a0000}-184.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-25.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  centralrepository{000a0000}-9.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  scppnwdl{000a0000}-3.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-29.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-1.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-782.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-3.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-10.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-82.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-30.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  AudioEqualizerEffect{000a0000}-11.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1468.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-963.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-52.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1507.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-760.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-55.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-1510.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-46.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-649.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-205.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-47.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-654.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2060.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-88.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-669.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2061.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-891.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-40.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-208.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-893.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2123.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2082.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-91.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-2125.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-953.o ABSOLUTE
+    [Anonymous Symbol]                       0x00000000   Number         0  euser{000a0000}-48.o ABSOLUTE
+    \EPOC32\BUILD\s60\osext\mmextensions\group\AUDIOEQUALIZEREFFECT\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\s60\osext\mmextensions\group\AUDIOEQUALIZERUTILITY\ARMV5\urel\AudioEqualizerUtility{000a0000}.s 0x00000000   Number         0  AudioEqualizerUtility{000a0000}.exp ABSOLUTE
+    \EPOC32\BUILD\s60\osext\mmextensions\group\BASSBOOSTEFFECT\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\s60\osext\mmextensions\group\DRMPLAYUTILITY\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\s60\osext\mmextensions\group\EFFECTBASE\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\compsupp\DRTAEABI\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\euser\EDLL\ARMV5\urel\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    \EPOC32\BUILD\src\cedar\generic\base\e32\euser\EUSER\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\common\generic\multimedia\mmf\group\MEDIACLIENTVIDEO\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\common\generic\multimedia\mmf\group\MMFCONTROLLERFRAMEWORK\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\common\generic\syslibs\centralrepository\group\CENREPCLI\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \EPOC32\BUILD\src\common\generic\syslibs\stdlib\group\ESTLIB\ARMV5\VtblExports.s 0x00000000   Number         0  VtblExports.o ABSOLUTE
+    \\EPOC32\\BUILD\\src\\cedar\\generic\\base\\e32\\euser\\EDLL\\ARMV5\\urel\\uc_dll_.cpp 0x00000000   Number         0  uc_dll_.o ABSOLUTE
+    \\src\\cedar\\generic\\base\\e32\\compsupp\\RVCT2_2\\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    \s60\osext\mmextensions\devsoundextensions\EffectsPresets\AudioEqualizerUtility\Src\audioequalizerutility.cpp 0x00000000   Number         0  AudioEqualizerUtility.in ABSOLUTE
+    \s60\osext\mmextensions\devsoundextensions\EffectsPresets\AudioEqualizerUtility\Src\tempaudioequalizer.cpp 0x00000000   Number         0  AudioEqualizerUtility.in ABSOLUTE
+    \src\cedar\generic\base\e32\compsupp\RVCT2_2\ucppinit_aeabi.cpp 0x00000000   Number         0  ucppinit_aeabi.o ABSOLUTE
+    \src\cedar\generic\base\e32\euser\epoc\arm\uc_dll.cpp 0x00000000   Number         0  uc_dll.o ABSOLUTE
+    .emb_text                                0x00008000   Section       40  uc_dll_.o(.emb_text)
+    .emb_text                                0x00008028   Section       72  ucppinit_aeabi.o(.emb_text)
+    skip                                     0x0000803c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    loop                                     0x0000804c   ARM Code       0  ucppinit_aeabi.o(.emb_text)
+    fpinit                                   0x00008064   Data           0  ucppinit_aeabi.o(.emb_text)
+    base                                     0x00008068   Data           0  ucppinit_aeabi.o(.emb_text)
+    limit                                    0x0000806c   Data           0  ucppinit_aeabi.o(.emb_text)
+    .text                                    0x00008070   Section     3344  AudioEqualizerUtility.in(.text)
+    .text                                    0x00008d80   Section      332  AudioEqualizerUtility.in(.text)
+    .text                                    0x00008ecc   Section       40  uc_dll.o(.text)
+    .text.clean                              0x00008ef4   Section       28  AudioEqualizerUtility.in(.text.clean)
+    ExportTable                              0x00008f10   Section      148  AudioEqualizerUtility{000a0000}.exp(ExportTable)
+    StubCode                                 0x00008fa4   Section        8  euser{000a0000}-1468.o(StubCode)
+    theImportedSymbol                        0x00008fa8   Data           0  euser{000a0000}-1468.o(StubCode)
+    StubCode                                 0x00008fac   Section        8  euser{000a0000}-1507.o(StubCode)
+    theImportedSymbol                        0x00008fb0   Data           0  euser{000a0000}-1507.o(StubCode)
+    StubCode                                 0x00008fb4   Section        8  euser{000a0000}-1510.o(StubCode)
+    theImportedSymbol                        0x00008fb8   Data           0  euser{000a0000}-1510.o(StubCode)
+    StubCode                                 0x00008fbc   Section        8  euser{000a0000}-205.o(StubCode)
+    theImportedSymbol                        0x00008fc0   Data           0  euser{000a0000}-205.o(StubCode)
+    StubCode                                 0x00008fc4   Section        8  euser{000a0000}-2060.o(StubCode)
+    theImportedSymbol                        0x00008fc8   Data           0  euser{000a0000}-2060.o(StubCode)
+    StubCode                                 0x00008fcc   Section        8  euser{000a0000}-2061.o(StubCode)
+    theImportedSymbol                        0x00008fd0   Data           0  euser{000a0000}-2061.o(StubCode)
+    StubCode                                 0x00008fd4   Section        8  euser{000a0000}-208.o(StubCode)
+    theImportedSymbol                        0x00008fd8   Data           0  euser{000a0000}-208.o(StubCode)
+    StubCode                                 0x00008fdc   Section        8  euser{000a0000}-2082.o(StubCode)
+    theImportedSymbol                        0x00008fe0   Data           0  euser{000a0000}-2082.o(StubCode)
+    StubCode                                 0x00008fe4   Section        8  euser{000a0000}-2123.o(StubCode)
+    theImportedSymbol                        0x00008fe8   Data           0  euser{000a0000}-2123.o(StubCode)
+    StubCode                                 0x00008fec   Section        8  euser{000a0000}-2125.o(StubCode)
+    theImportedSymbol                        0x00008ff0   Data           0  euser{000a0000}-2125.o(StubCode)
+    StubCode                                 0x00008ff4   Section        8  euser{000a0000}-40.o(StubCode)
+    theImportedSymbol                        0x00008ff8   Data           0  euser{000a0000}-40.o(StubCode)
+    StubCode                                 0x00008ffc   Section        8  euser{000a0000}-46.o(StubCode)
+    theImportedSymbol                        0x00009000   Data           0  euser{000a0000}-46.o(StubCode)
+    StubCode                                 0x00009004   Section        8  euser{000a0000}-47.o(StubCode)
+    theImportedSymbol                        0x00009008   Data           0  euser{000a0000}-47.o(StubCode)
+    StubCode                                 0x0000900c   Section        8  euser{000a0000}-48.o(StubCode)
+    theImportedSymbol                        0x00009010   Data           0  euser{000a0000}-48.o(StubCode)
+    StubCode                                 0x00009014   Section        8  euser{000a0000}-52.o(StubCode)
+    theImportedSymbol                        0x00009018   Data           0  euser{000a0000}-52.o(StubCode)
+    StubCode                                 0x0000901c   Section        8  euser{000a0000}-55.o(StubCode)
+    theImportedSymbol                        0x00009020   Data           0  euser{000a0000}-55.o(StubCode)
+    StubCode                                 0x00009024   Section        8  euser{000a0000}-649.o(StubCode)
+    theImportedSymbol                        0x00009028   Data           0  euser{000a0000}-649.o(StubCode)
+    StubCode                                 0x0000902c   Section        8  euser{000a0000}-654.o(StubCode)
+    theImportedSymbol                        0x00009030   Data           0  euser{000a0000}-654.o(StubCode)
+    StubCode                                 0x00009034   Section        8  euser{000a0000}-669.o(StubCode)
+    theImportedSymbol                        0x00009038   Data           0  euser{000a0000}-669.o(StubCode)
+    StubCode                                 0x0000903c   Section        8  euser{000a0000}-760.o(StubCode)
+    theImportedSymbol                        0x00009040   Data           0  euser{000a0000}-760.o(StubCode)
+    StubCode                                 0x00009044   Section        8  euser{000a0000}-782.o(StubCode)
+    theImportedSymbol                        0x00009048   Data           0  euser{000a0000}-782.o(StubCode)
+    StubCode                                 0x0000904c   Section        8  euser{000a0000}-82.o(StubCode)
+    theImportedSymbol                        0x00009050   Data           0  euser{000a0000}-82.o(StubCode)
+    StubCode                                 0x00009054   Section        8  euser{000a0000}-88.o(StubCode)
+    theImportedSymbol                        0x00009058   Data           0  euser{000a0000}-88.o(StubCode)
+    StubCode                                 0x0000905c   Section        8  euser{000a0000}-891.o(StubCode)
+    theImportedSymbol                        0x00009060   Data           0  euser{000a0000}-891.o(StubCode)
+    StubCode                                 0x00009064   Section        8  euser{000a0000}-893.o(StubCode)
+    theImportedSymbol                        0x00009068   Data           0  euser{000a0000}-893.o(StubCode)
+    StubCode                                 0x0000906c   Section        8  euser{000a0000}-91.o(StubCode)
+    theImportedSymbol                        0x00009070   Data           0  euser{000a0000}-91.o(StubCode)
+    StubCode                                 0x00009074   Section        8  euser{000a0000}-953.o(StubCode)
+    theImportedSymbol                        0x00009078   Data           0  euser{000a0000}-953.o(StubCode)
+    StubCode                                 0x0000907c   Section        8  euser{000a0000}-963.o(StubCode)
+    theImportedSymbol                        0x00009080   Data           0  euser{000a0000}-963.o(StubCode)
+    StubCode                                 0x00009084   Section        8  centralrepository{000a0000}-10.o(StubCode)
+    theImportedSymbol                        0x00009088   Data           0  centralrepository{000a0000}-10.o(StubCode)
+    StubCode                                 0x0000908c   Section        8  centralrepository{000a0000}-11.o(StubCode)
+    theImportedSymbol                        0x00009090   Data           0  centralrepository{000a0000}-11.o(StubCode)
+    StubCode                                 0x00009094   Section        8  centralrepository{000a0000}-13.o(StubCode)
+    theImportedSymbol                        0x00009098   Data           0  centralrepository{000a0000}-13.o(StubCode)
+    StubCode                                 0x0000909c   Section        8  centralrepository{000a0000}-14.o(StubCode)
+    theImportedSymbol                        0x000090a0   Data           0  centralrepository{000a0000}-14.o(StubCode)
+    StubCode                                 0x000090a4   Section        8  centralrepository{000a0000}-17.o(StubCode)
+    theImportedSymbol                        0x000090a8   Data           0  centralrepository{000a0000}-17.o(StubCode)
+    StubCode                                 0x000090ac   Section        8  centralrepository{000a0000}-19.o(StubCode)
+    theImportedSymbol                        0x000090b0   Data           0  centralrepository{000a0000}-19.o(StubCode)
+    StubCode                                 0x000090b4   Section        8  centralrepository{000a0000}-20.o(StubCode)
+    theImportedSymbol                        0x000090b8   Data           0  centralrepository{000a0000}-20.o(StubCode)
+    StubCode                                 0x000090bc   Section        8  centralrepository{000a0000}-6.o(StubCode)
+    theImportedSymbol                        0x000090c0   Data           0  centralrepository{000a0000}-6.o(StubCode)
+    StubCode                                 0x000090c4   Section        8  centralrepository{000a0000}-7.o(StubCode)
+    theImportedSymbol                        0x000090c8   Data           0  centralrepository{000a0000}-7.o(StubCode)
+    StubCode                                 0x000090cc   Section        8  centralrepository{000a0000}-9.o(StubCode)
+    theImportedSymbol                        0x000090d0   Data           0  centralrepository{000a0000}-9.o(StubCode)
+    StubCode                                 0x000090d4   Section        8  AudioEqualizerEffect{000a0000}-1.o(StubCode)
+    theImportedSymbol                        0x000090d8   Data           0  AudioEqualizerEffect{000a0000}-1.o(StubCode)
+    StubCode                                 0x000090dc   Section        8  AudioEqualizerEffect{000a0000}-10.o(StubCode)
+    theImportedSymbol                        0x000090e0   Data           0  AudioEqualizerEffect{000a0000}-10.o(StubCode)
+    StubCode                                 0x000090e4   Section        8  AudioEqualizerEffect{000a0000}-11.o(StubCode)
+    theImportedSymbol                        0x000090e8   Data           0  AudioEqualizerEffect{000a0000}-11.o(StubCode)
+    StubCode                                 0x000090ec   Section        8  AudioEqualizerEffect{000a0000}-12.o(StubCode)
+    theImportedSymbol                        0x000090f0   Data           0  AudioEqualizerEffect{000a0000}-12.o(StubCode)
+    StubCode                                 0x000090f4   Section        8  AudioEqualizerEffect{000a0000}-13.o(StubCode)
+    theImportedSymbol                        0x000090f8   Data           0  AudioEqualizerEffect{000a0000}-13.o(StubCode)
+    StubCode                                 0x000090fc   Section        8  AudioEqualizerEffect{000a0000}-14.o(StubCode)
+    theImportedSymbol                        0x00009100   Data           0  AudioEqualizerEffect{000a0000}-14.o(StubCode)
+    StubCode                                 0x00009104   Section        8  AudioEqualizerEffect{000a0000}-15.o(StubCode)
+    theImportedSymbol                        0x00009108   Data           0  AudioEqualizerEffect{000a0000}-15.o(StubCode)
+    StubCode                                 0x0000910c   Section        8  AudioEqualizerEffect{000a0000}-17.o(StubCode)
+    theImportedSymbol                        0x00009110   Data           0  AudioEqualizerEffect{000a0000}-17.o(StubCode)
+    StubCode                                 0x00009114   Section        8  AudioEqualizerEffect{000a0000}-2.o(StubCode)
+    theImportedSymbol                        0x00009118   Data           0  AudioEqualizerEffect{000a0000}-2.o(StubCode)
+    StubCode                                 0x0000911c   Section        8  AudioEqualizerEffect{000a0000}-20.o(StubCode)
+    theImportedSymbol                        0x00009120   Data           0  AudioEqualizerEffect{000a0000}-20.o(StubCode)
+    StubCode                                 0x00009124   Section        8  AudioEqualizerEffect{000a0000}-21.o(StubCode)
+    theImportedSymbol                        0x00009128   Data           0  AudioEqualizerEffect{000a0000}-21.o(StubCode)
+    StubCode                                 0x0000912c   Section        8  AudioEqualizerEffect{000a0000}-24.o(StubCode)
+    theImportedSymbol                        0x00009130   Data           0  AudioEqualizerEffect{000a0000}-24.o(StubCode)
+    StubCode                                 0x00009134   Section        8  AudioEqualizerEffect{000a0000}-25.o(StubCode)
+    theImportedSymbol                        0x00009138   Data           0  AudioEqualizerEffect{000a0000}-25.o(StubCode)
+    StubCode                                 0x0000913c   Section        8  AudioEqualizerEffect{000a0000}-29.o(StubCode)
+    theImportedSymbol                        0x00009140   Data           0  AudioEqualizerEffect{000a0000}-29.o(StubCode)
+    StubCode                                 0x00009144   Section        8  AudioEqualizerEffect{000a0000}-3.o(StubCode)
+    theImportedSymbol                        0x00009148   Data           0  AudioEqualizerEffect{000a0000}-3.o(StubCode)
+    StubCode                                 0x0000914c   Section        8  AudioEqualizerEffect{000a0000}-30.o(StubCode)
+    theImportedSymbol                        0x00009150   Data           0  AudioEqualizerEffect{000a0000}-30.o(StubCode)
+    StubCode                                 0x00009154   Section        8  AudioEqualizerEffect{000a0000}-31.o(StubCode)
+    theImportedSymbol                        0x00009158   Data           0  AudioEqualizerEffect{000a0000}-31.o(StubCode)
+    StubCode                                 0x0000915c   Section        8  AudioEqualizerEffect{000a0000}-5.o(StubCode)
+    theImportedSymbol                        0x00009160   Data           0  AudioEqualizerEffect{000a0000}-5.o(StubCode)
+    StubCode                                 0x00009164   Section        8  AudioEqualizerEffect{000a0000}-6.o(StubCode)
+    theImportedSymbol                        0x00009168   Data           0  AudioEqualizerEffect{000a0000}-6.o(StubCode)
+    StubCode                                 0x0000916c   Section        8  AudioEqualizerEffect{000a0000}-7.o(StubCode)
+    theImportedSymbol                        0x00009170   Data           0  AudioEqualizerEffect{000a0000}-7.o(StubCode)
+    StubCode                                 0x00009174   Section        8  AudioEqualizerEffect{000a0000}-8.o(StubCode)
+    theImportedSymbol                        0x00009178   Data           0  AudioEqualizerEffect{000a0000}-8.o(StubCode)
+    StubCode                                 0x0000917c   Section        8  AudioEqualizerEffect{000a0000}-9.o(StubCode)
+    theImportedSymbol                        0x00009180   Data           0  AudioEqualizerEffect{000a0000}-9.o(StubCode)
+    StubCode                                 0x00009184   Section        8  drtaeabi{000a0000}-158.o(StubCode)
+    theImportedSymbol                        0x00009188   Data           0  drtaeabi{000a0000}-158.o(StubCode)
+    StubCode                                 0x0000918c   Section        8  drtaeabi{000a0000}-180.o(StubCode)
+    theImportedSymbol                        0x00009190   Data           0  drtaeabi{000a0000}-180.o(StubCode)
+    StubCode                                 0x00009194   Section        8  drtaeabi{000a0000}-183.o(StubCode)
+    theImportedSymbol                        0x00009198   Data           0  drtaeabi{000a0000}-183.o(StubCode)
+    StubCode                                 0x0000919c   Section        8  drtaeabi{000a0000}-184.o(StubCode)
+    theImportedSymbol                        0x000091a0   Data           0  drtaeabi{000a0000}-184.o(StubCode)
+    StubCode                                 0x000091a4   Section        8  scppnwdl{000a0000}-3.o(StubCode)
+    theImportedSymbol                        0x000091a8   Data           0  scppnwdl{000a0000}-3.o(StubCode)
+    i._ZN30TEfAudioEqualizerUtilityPresetC1Ev 0x000091ac   Section       20  AudioEqualizerUtility.in(i._ZN30TEfAudioEqualizerUtilityPresetC1Ev)
+    t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEC1Ev 0x000091c0   Section       10  AudioEqualizerUtility.in(t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEC1Ev)
+    t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEixEi 0x000091ca   Section        8  AudioEqualizerUtility.in(t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEixEi)
+    t._ZNK6RArrayI30TEfAudioEqualizerUtilityPresetE5CountEv 0x000091d2   Section        8  AudioEqualizerUtility.in(t._ZNK6RArrayI30TEfAudioEqualizerUtilityPresetE5CountEv)
+    .extab._ZN22CAudioEqualizerUtilityC1Ev   0x000091dc   Data           0  AudioEqualizerUtility.in(.ARM.extab)
+    .extab._ZN22CAudioEqualizerUtilityD1Ev   0x000091ec   Data           0  AudioEqualizerUtility.in(.ARM.extab)
+    .extab._ZN22CAudioEqualizerUtility13DeletePresetLEi 0x000091fc   Data           0  AudioEqualizerUtility.in(.ARM.extab)
+    .constdata$1                             0x00009244   Data           0  AudioEqualizerUtility.in(.constdata)
+    KCRUidAudioEqUtilityPresets              0x00009244   Data           4  AudioEqualizerUtility.in(.constdata)
+    .constdata                               0x00009244   Section       12  AudioEqualizerUtility.in(.constdata)
+    KNullDesC                                0x00009248   Data           8  AudioEqualizerUtility.in(.constdata)
+    .constdata__ZTI19CTempAudioEqualizer     0x00009250   Section       12  AudioEqualizerUtility.in(.constdata__ZTI19CTempAudioEqualizer)
+    .constdata__ZTI22CAudioEqualizerUtility  0x0000925c   Section       12  AudioEqualizerUtility.in(.constdata__ZTI22CAudioEqualizerUtility)
+    .constdata__ZTS19CTempAudioEqualizer     0x00009268   Section       22  AudioEqualizerUtility.in(.constdata__ZTS19CTempAudioEqualizer)
+    .constdata__ZTS22CAudioEqualizerUtility  0x0000927e   Section       25  AudioEqualizerUtility.in(.constdata__ZTS22CAudioEqualizerUtility)
+    .constdata__ZTV19CTempAudioEqualizer     0x00009298   Section       60  AudioEqualizerUtility.in(.constdata__ZTV19CTempAudioEqualizer)
+    .constdata__ZTV22CAudioEqualizerUtility  0x000092d4   Section       20  AudioEqualizerUtility.in(.constdata__ZTV22CAudioEqualizerUtility)
+    .ARM.exidx                               0x000092e8   Section        8  ucppinit_aeabi.o(.ARM.exidx)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THUMB_ISAv2$ARM_ISAv5$M$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$IEEEJ$EBA8$UX$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>1  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>11  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>14  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>15  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>18  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>19  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>1d  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>1e  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>1f  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>2  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>3  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>5  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>6  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>7  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>8  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>9  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>a  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>b  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>c  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>d  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>e  - Undefined Reference
+    #<DLL>AudioEqualizerEffect{000a0000}[101fafdb].dll#<\DLL>f  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>11  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>13  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>14  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>6  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>7  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>9  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>a  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>b  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>d  - Undefined Reference
+    #<DLL>centralrepository{000a0000}[101fbc70].dll#<\DLL>e  - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>9e     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>b4     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>b7     - Undefined Reference
+    #<DLL>drtaeabi{000a0000}.dll#<\DLL>b8     - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>28  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>289  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>28e  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>29d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>2e  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>2f  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>2f8  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>30  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>30e  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>34  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>37  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>37b  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>37d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>3b9  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>3c3  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>52  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>58  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>5b  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>5bc  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>5e3  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>5e6  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>80c  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>80d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>822  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>84b  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>84d  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>cd  - Undefined Reference
+    #<DLL>euser{000a0000}[100039e5].dll#<\DLL>d0  - Undefined Reference
+    #<DLL>scppnwdl{000a0000}.dll#<\DLL>3      - Undefined Reference
+    SHT$$INIT_ARRAY$$Base                     - Undefined Weak Reference
+    SHT$$INIT_ARRAY$$Limit                    - Undefined Weak Reference
+    typeinfo for CAudioEqualizer              - Undefined Reference
+    typeinfo for XLeaveException              - Undefined Reference
+    typeinfo for CBase                        - Undefined Reference
+    vtable for __cxxabiv1::__si_class_type_info  - Undefined Reference
+    _fp_init                                  - Undefined Weak Reference
+    run_static_dtors                          - Undefined Weak Reference
+    Image$$ER_RO$$Base                       0x00008000   Number         0  anon$$obj.o(linker$$defined$$symbols)
+    _E32Dll                                  0x00008000   ARM Code      40  uc_dll_.o(.emb_text)
+    Symbian$$CPP$$Exception$$Descriptor      0x00008014   Data           0  uc_dll_.o(.emb_text)
+    __cpp_initialize__aeabi_                 0x00008028   ARM Code      72  ucppinit_aeabi.o(.emb_text)
+    CAudioEqualizerUtility::UpdatePresetArray(RArray<TEfAudioEqualizerUtilityPreset>&, const RArray<TEfAudioEqualizerUtilityPreset>&) 0x00008071   Thumb Code    96  AudioEqualizerUtility.in(.text)
+    std::nothrow                             0x00008071   Thumb Code     0  ucppinit_aeabi.o(.emb_text)
+    CAudioEqualizerUtility::UpdateFullPresetArrayFromCenRep(RArray<TEfAudioEqualizerUtilityPreset>&) 0x000080d1   Thumb Code   134  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMMFDevSound&) 0x00008157   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::CAudioEqualizerUtility() 0x000081b9   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::CAudioEqualizerUtility__sub_object() 0x000081b9   Thumb Code     0  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMMFDevSound&) 0x000081dd   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMdaAudioConvertUtility&) 0x00008201   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMdaAudioConvertUtility&) 0x00008263   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMdaAudioInputStream&) 0x00008287   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMdaAudioInputStream&) 0x000082e9   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMdaAudioOutputStream&) 0x0000830d   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMdaAudioOutputStream&) 0x0000836f   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMdaAudioPlayerUtility&) 0x00008393   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMdaAudioPlayerUtility&) 0x000083f5   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMdaAudioRecorderUtility&) 0x00008419   Thumb Code   100  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMdaAudioRecorderUtility&) 0x0000847d   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMdaAudioToneUtility&) 0x000084a1   Thumb Code   112  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMdaAudioToneUtility&) 0x00008511   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CCustomCommandUtility*) 0x00008535   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CCustomCommandUtility*) 0x00008597   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(MCustomInterface&) 0x000085bb   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(MCustomInterface&) 0x0000861d   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CMidiClientUtility&) 0x00008641   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CMidiClientUtility&) 0x000086a3   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CDrmPlayerUtility&) 0x000086c7   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CDrmPlayerUtility&) 0x00008729   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ConstructL(CVideoPlayerUtility&) 0x0000874d   Thumb Code    98  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NewL(CVideoPlayerUtility&) 0x000087af   Thumb Code    36  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::~CAudioEqualizerUtility() 0x000087d3   Thumb Code    66  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::~CAudioEqualizerUtility__sub_object() 0x000087d3   Thumb Code     0  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::~CAudioEqualizerUtility__deallocating() 0x00008815   Thumb Code    16  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ApplyPresetL(int) 0x00008825   Thumb Code   182  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::DisableEqualizerL() 0x000088db   Thumb Code    14  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::CreatePresetL(TDesC16&, CAudioEqualizer&) 0x000088e9   Thumb Code   204  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::DeletePresetL(int) 0x000089b5   Thumb Code   346  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::GetPresetL(int)  0x00008b0f   Thumb Code   186  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::Equalizer()      0x00008bc9   Thumb Code     4  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::BassBoost()      0x00008bcd   Thumb Code     4  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ModifyPresetL(int, TDesC16&, CAudioEqualizer&) 0x00008bd1   Thumb Code   204  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::NumberOfPreDefinedPresets() const 0x00008c9d   Thumb Code    16  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::Presets()        0x00008cad   Thumb Code    46  AudioEqualizerUtility.in(.text)
+    CAudioEqualizerUtility::ResetPresetL(int) 0x00008cdb   Thumb Code   166  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::ConstructL(int, CAudioEqualizer*) 0x00008d81   Thumb Code    52  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::CTempAudioEqualizer() 0x00008db5   Thumb Code    12  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::CTempAudioEqualizer__sub_object() 0x00008db5   Thumb Code     0  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::NewL(int, CAudioEqualizer*) 0x00008dc1   Thumb Code    40  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::~CTempAudioEqualizer() 0x00008de9   Thumb Code     8  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::~CTempAudioEqualizer__sub_object() 0x00008de9   Thumb Code     0  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::~CTempAudioEqualizer__deallocating() 0x00008df1   Thumb Code    16  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::ApplyL()            0x00008e01   Thumb Code    78  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::IsEnabled() const   0x00008e4f   Thumb Code    24  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::DisableL()          0x00008e67   Thumb Code    20  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::IsEnforced() const  0x00008e7b   Thumb Code    24  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::EnableL()           0x00008e93   Thumb Code    10  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::EnforceL(int)       0x00008e9d   Thumb Code    18  AudioEqualizerUtility.in(.text)
+    CTempAudioEqualizer::HaveUpdateRights() const 0x00008eaf   Thumb Code    24  AudioEqualizerUtility.in(.text)
+    _E32Dll_Body                             0x00008ecd   Thumb Code    34  uc_dll.o(.text)
+    __DLL_Export_Table__                     0x00008f10   ARM Code       0  AudioEqualizerUtility{000a0000}.exp(ExportTable)
+    DLL##ExportTableSize                     0x00008f14   Data           0  AudioEqualizerUtility{000a0000}.exp(ExportTable)
+    DLL##ExportTable                         0x00008f18   Data           0  AudioEqualizerUtility{000a0000}.exp(ExportTable)
+    TBufBase8::TBufBase8(int)                0x00008fa4   ARM Code       0  euser{000a0000}-1468.o(StubCode)
+    RArrayBase::At(int) const                0x00008fac   ARM Code       0  euser{000a0000}-1507.o(StubCode)
+    RArrayBase::Count() const                0x00008fb4   ARM Code       0  euser{000a0000}-1510.o(StubCode)
+    CleanupStack::Pop()                      0x00008fbc   ARM Code       0  euser{000a0000}-205.o(StubCode)
+    User::MarkCleanupStack()                 0x00008fc4   ARM Code       0  euser{000a0000}-2060.o(StubCode)
+    User::UnMarkCleanupStack(TTrapHandler*)  0x00008fcc   ARM Code       0  euser{000a0000}-2061.o(StubCode)
+    CleanupStack::PushL(CBase*)              0x00008fd4   ARM Code       0  euser{000a0000}-208.o(StubCode)
+    XLeaveException::GetReason() const       0x00008fdc   ARM Code       0  euser{000a0000}-2082.o(StubCode)
+    CBase::Extension_(unsigned, void*&, void*) 0x00008fe4   ARM Code       0  euser{000a0000}-2123.o(StubCode)
+    CBase::~CBase()                          0x00008fec   ARM Code       0  euser{000a0000}-2125.o(StubCode)
+    RArrayBase::GetElementPtr(const CBase*, int) 0x00008ff4   ARM Code       0  euser{000a0000}-40.o(StubCode)
+    RArrayBase::Close()                      0x00008ffc   ARM Code       0  euser{000a0000}-46.o(StubCode)
+    RArrayBase::Reset()                      0x00009004   ARM Code       0  euser{000a0000}-47.o(StubCode)
+    RArrayBase::Append(const void*)          0x0000900c   ARM Code       0  euser{000a0000}-48.o(StubCode)
+    RArrayBase::GetCount(const CBase*)       0x00009014   ARM Code       0  euser{000a0000}-52.o(StubCode)
+    RArrayBase::RArrayBase(int)              0x0000901c   ARM Code       0  euser{000a0000}-55.o(StubCode)
+    User::Leave(int)                         0x00009024   ARM Code       0  euser{000a0000}-649.o(StubCode)
+    User::AllocZL(int)                       0x0000902c   ARM Code       0  euser{000a0000}-654.o(StubCode)
+    User::Invariant()                        0x00009034   ARM Code       0  euser{000a0000}-669.o(StubCode)
+    TDes8::Append(const TDesC8&)             0x0000903c   ARM Code       0  euser{000a0000}-760.o(StubCode)
+    TDes8::SetLength(int)                    0x00009044   ARM Code       0  euser{000a0000}-782.o(StubCode)
+    TBufBase16::TBufBase16(int, int)         0x0000904c   ARM Code       0  euser{000a0000}-82.o(StubCode)
+    TBufCBase8::Copy(const TDesC8&, int)     0x00009054   ARM Code       0  euser{000a0000}-88.o(StubCode)
+    HBufC8::Des()                            0x0000905c   ARM Code       0  euser{000a0000}-891.o(StubCode)
+    HBufC8::NewL(int)                        0x00009064   ARM Code       0  euser{000a0000}-893.o(StubCode)
+    TBufCBase8::TBufCBase8()                 0x0000906c   ARM Code       0  euser{000a0000}-91.o(StubCode)
+    TDes16::Copy(const TDesC16&)             0x00009074   ARM Code       0  euser{000a0000}-953.o(StubCode)
+    TDes16::FillZ(int)                       0x0000907c   ARM Code       0  euser{000a0000}-963.o(StubCode)
+    CRepository::Set(unsigned long, const TDesC8&) 0x00009084   ARM Code       0  centralrepository{000a0000}-10.o(StubCode)
+    CRepository::Set(unsigned long, const TDesC16&) 0x0000908c   ARM Code       0  centralrepository{000a0000}-11.o(StubCode)
+    CRepository::Set(unsigned long, int)     0x00009094   ARM Code       0  centralrepository{000a0000}-13.o(StubCode)
+    CRepository::NewL(TUid)                  0x0000909c   ARM Code       0  centralrepository{000a0000}-14.o(StubCode)
+    CRepository::Reset(unsigned long)        0x000090a4   ARM Code       0  centralrepository{000a0000}-17.o(StubCode)
+    CRepository::Create(unsigned long, const TDesC8&) 0x000090ac   ARM Code       0  centralrepository{000a0000}-19.o(StubCode)
+    CRepository::Create(unsigned long, const TDesC16&) 0x000090b4   ARM Code       0  centralrepository{000a0000}-20.o(StubCode)
+    CRepository::Get(unsigned long, TDes8&)  0x000090bc   ARM Code       0  centralrepository{000a0000}-6.o(StubCode)
+    CRepository::Get(unsigned long, TDes16&) 0x000090c4   ARM Code       0  centralrepository{000a0000}-7.o(StubCode)
+    CRepository::Get(unsigned long, int&)    0x000090cc   ARM Code       0  centralrepository{000a0000}-9.o(StubCode)
+    CAudioEqualizer::DoBandDataL(unsigned char, int) 0x000090d4   ARM Code       0  AudioEqualizerEffect{000a0000}-1.o(StubCode)
+    CAudioEqualizer::NewL(CMdaAudioInputStream&) 0x000090dc   ARM Code       0  AudioEqualizerEffect{000a0000}-10.o(StubCode)
+    CAudioEqualizer::NewL(CMdaAudioToneUtility&) 0x000090e4   ARM Code       0  AudioEqualizerEffect{000a0000}-11.o(StubCode)
+    CAudioEqualizer::NewL(CMdaAudioOutputStream&) 0x000090ec   ARM Code       0  AudioEqualizerEffect{000a0000}-12.o(StubCode)
+    CAudioEqualizer::NewL(CMdaAudioPlayerUtility&) 0x000090f4   ARM Code       0  AudioEqualizerEffect{000a0000}-13.o(StubCode)
+    CAudioEqualizer::NewL(CMdaAudioConvertUtility&) 0x000090fc   ARM Code       0  AudioEqualizerEffect{000a0000}-14.o(StubCode)
+    CAudioEqualizer::NewL(CMdaAudioRecorderUtility&, int) 0x00009104   ARM Code       0  AudioEqualizerEffect{000a0000}-15.o(StubCode)
+    CAudioEqualizer::CAudioEqualizer__sub_object() 0x0000910c   ARM Code       0  AudioEqualizerEffect{000a0000}-17.o(StubCode)
+    CAudioEqualizer::DoEffectData()          0x00009114   ARM Code       0  AudioEqualizerEffect{000a0000}-2.o(StubCode)
+    CAudioEqualizer::~CAudioEqualizer__sub_object() 0x0000911c   ARM Code       0  AudioEqualizerEffect{000a0000}-20.o(StubCode)
+    CAudioEqualizer::NumberOfBands() const   0x00009124   ARM Code       0  AudioEqualizerEffect{000a0000}-21.o(StubCode)
+    CAudioEqualizer::Uid() const             0x0000912c   ARM Code       0  AudioEqualizerEffect{000a0000}-24.o(StubCode)
+    CAudioEqualizer::BandLevel(unsigned char) const 0x00009134   ARM Code       0  AudioEqualizerEffect{000a0000}-25.o(StubCode)
+    CAudioEqualizer::NewL(CMidiClientUtility&) 0x0000913c   ARM Code       0  AudioEqualizerEffect{000a0000}-29.o(StubCode)
+    CAudioEqualizer::SetBandDataL(int, const TDesC8&) 0x00009144   ARM Code       0  AudioEqualizerEffect{000a0000}-3.o(StubCode)
+    CAudioEqualizer::NewL(CDrmPlayerUtility&) 0x0000914c   ARM Code       0  AudioEqualizerEffect{000a0000}-30.o(StubCode)
+    CAudioEqualizer::NewL(CVideoPlayerUtility&) 0x00009154   ARM Code       0  AudioEqualizerEffect{000a0000}-31.o(StubCode)
+    CAudioEqualizer::SetBandLevelL(signed char, long) 0x0000915c   ARM Code       0  AudioEqualizerEffect{000a0000}-5.o(StubCode)
+    CAudioEqualizer::SetEffectData(const TDesC8&) 0x00009164   ARM Code       0  AudioEqualizerEffect{000a0000}-6.o(StubCode)
+    CAudioEqualizer::NewL(CCustomCommandUtility*) 0x0000916c   ARM Code       0  AudioEqualizerEffect{000a0000}-7.o(StubCode)
+    CAudioEqualizer::NewL(CMMFDevSound&)     0x00009174   ARM Code       0  AudioEqualizerEffect{000a0000}-8.o(StubCode)
+    CAudioEqualizer::NewL(MCustomInterface&) 0x0000917c   ARM Code       0  AudioEqualizerEffect{000a0000}-9.o(StubCode)
+    __aeabi_unwind_cpp_pr0                   0x00009184   ARM Code       0  drtaeabi{000a0000}-158.o(StubCode)
+    __cxa_begin_catch                        0x0000918c   ARM Code       0  drtaeabi{000a0000}-180.o(StubCode)
+    __cxa_end_catch                          0x00009194   ARM Code       0  drtaeabi{000a0000}-183.o(StubCode)
+    __cxa_end_cleanup                        0x0000919c   ARM Code       0  drtaeabi{000a0000}-184.o(StubCode)
+    operator delete (void*)                  0x000091a4   ARM Code       0  scppnwdl{000a0000}-3.o(StubCode)
+    TEfAudioEqualizerUtilityPreset::TEfAudioEqualizerUtilityPreset() 0x000091ad   Thumb Code    20  AudioEqualizerUtility.in(i._ZN30TEfAudioEqualizerUtilityPresetC1Ev)
+    TEfAudioEqualizerUtilityPreset::TEfAudioEqualizerUtilityPreset__sub_object() 0x000091ad   Thumb Code     0  AudioEqualizerUtility.in(i._ZN30TEfAudioEqualizerUtilityPresetC1Ev)
+    RArray<TEfAudioEqualizerUtilityPreset>::RArray() 0x000091c1   Thumb Code    10  AudioEqualizerUtility.in(t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEC1Ev)
+    RArray<TEfAudioEqualizerUtilityPreset>::RArray__sub_object() 0x000091c1   Thumb Code     0  AudioEqualizerUtility.in(t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEC1Ev)
+    RArray<TEfAudioEqualizerUtilityPreset>::operator [](int) 0x000091cb   Thumb Code     8  AudioEqualizerUtility.in(t._ZN6RArrayI30TEfAudioEqualizerUtilityPresetEixEi)
+    RArray<TEfAudioEqualizerUtilityPreset>::Count() const 0x000091d3   Thumb Code     8  AudioEqualizerUtility.in(t._ZNK6RArrayI30TEfAudioEqualizerUtilityPresetE5CountEv)
+    typeinfo for CTempAudioEqualizer         0x00009250   Data          12  AudioEqualizerUtility.in(.constdata__ZTI19CTempAudioEqualizer)
+    typeinfo for CAudioEqualizerUtility      0x0000925c   Data          12  AudioEqualizerUtility.in(.constdata__ZTI22CAudioEqualizerUtility)
+    typeinfo name for CTempAudioEqualizer    0x00009268   Data          22  AudioEqualizerUtility.in(.constdata__ZTS19CTempAudioEqualizer)
+    typeinfo name for CAudioEqualizerUtility 0x0000927e   Data          25  AudioEqualizerUtility.in(.constdata__ZTS22CAudioEqualizerUtility)
+    vtable for CTempAudioEqualizer           0x00009298   Data          60  AudioEqualizerUtility.in(.constdata__ZTV19CTempAudioEqualizer)
+    vtable for CAudioEqualizerUtility        0x000092d4   Data          20  AudioEqualizerUtility.in(.constdata__ZTV22CAudioEqualizerUtility)
+    .ARM.exidx$$Base                         0x000092e8   Number         0  ucppinit_aeabi.o(.ARM.exidx)
+    .ARM.exidx$$Limit                        0x000093a0   Number         0  AudioEqualizerUtility.in(.ARM.exidx)
+    Image$$ER_RO$$Limit                      0x000093a0   Number         0  anon$$obj.o(linker$$defined$$symbols)
+

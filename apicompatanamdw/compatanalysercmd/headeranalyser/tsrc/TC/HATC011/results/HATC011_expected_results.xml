@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>38</minute>
+      <second>46</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\baseline_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>10</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\scripts\HATC011_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\current_headers\epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\results\HATC011_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>HATC011*.h;HATC*.rsg;HATC*.mbg</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\baseline_headers\epoc32\include\HATC011.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\current_headers\epoc32\include\HATC011.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>13</typeid>
+        <identityid>13</identityid>
+        <identitydescription>File</identitydescription>
+        <typestring>has compilation errors</typestring>
+        <cause></cause>
+        <documentation>Not specified</documentation>
+        <ignoreinformation></ignoreinformation>
+        <linenumber>0</linenumber>
+        <compilationerror>In file included from C:/DOCUME~1/satapal/LOCALS~1/Temp/580793.cpp:1:
+C:/Symbian/Carbide/workspace/HeaderAnalyser/trunk/tsrc/TC/HATC011/baseline_headers/epoc32/include/HATC011.h:78: error: syntax
+   error before `*` token
+</compilationerror>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>esiRw1PA2c321</checksum>
+      <shortname>hatc011.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\baseline_headers\epoc32\include\HATC011BASE.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC011\current_headers\epoc32\include\HATC011BASE.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>3</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed size</typestring>
+        <cause>::HATC011BASE_class1</cause>
+        <documentation>Not specified::HATC011BASE_class1</documentation>
+        <ignoreinformation>32</ignoreinformation>
+        <linenumber>33</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>18</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed base size</typestring>
+        <cause>::HATC011BASE_class1</cause>
+        <documentation>Not specified::HATC011BASE_class1</documentation>
+        <ignoreinformation>32</ignoreinformation>
+        <linenumber>33</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>0</typeid>
+        <identityid>11</identityid>
+        <identitydescription>Field</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC011BASE_class1::a</cause>
+        <documentation>Not specified::HATC011BASE_class1::a</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>33</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>3</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed size</typestring>
+        <cause>::HATC011BASE_class2</cause>
+        <documentation>Not specified::HATC011BASE_class2</documentation>
+        <ignoreinformation>64</ignoreinformation>
+        <linenumber>47</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>18</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed base size</typestring>
+        <cause>::HATC011BASE_class2</cause>
+        <documentation>Not specified::HATC011BASE_class2</documentation>
+        <ignoreinformation>64</ignoreinformation>
+        <linenumber>47</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>1</typeid>
+        <identityid>16</identityid>
+        <identitydescription>Virtual table pointer</identitydescription>
+        <typestring>has been added</typestring>
+        <cause>::HATC011BASE_class2::vtableptr</cause>
+        <documentation>Not specified::HATC011BASE_class2::vtableptr</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>47</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>1</typeid>
+        <identityid>3</identityid>
+        <identitydescription>Virtual function</identitydescription>
+        <typestring>has been added</typestring>
+        <cause>::HATC011BASE_class2::~HATC011BASE_class2( )</cause>
+        <documentation>Not specified::HATC011BASE_class2::~HATC011BASE_class2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>50</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>2</typeid>
+        <identityid>14</identityid>
+        <identitydescription>Virtual table</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC011BASE_class2[Primary-vtable]</cause>
+        <documentation>Not specified::HATC011BASE_class2[Primary-vtable]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>47</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <checksum>TqwpZMWBmMj0B</checksum>
+      <shortname>hatc011base.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

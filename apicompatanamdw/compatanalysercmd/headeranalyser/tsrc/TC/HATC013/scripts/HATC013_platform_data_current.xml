@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- Version history BEGIN -->
+<!-- 20.06.2008 Automatically created. Version: 1.0 -->
+<!-- Version history END -->
+<platform versionid="currentTest" build="50wk12_2008">
+  <component id="o:/s60/mw/imppservices/group/bld.inf">
+    <hdr id="epoc32/include/domain/middleware/cbsfactory.h">
+      <fname>cbsfactory.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/cbsfactory.h">
+      <fname>cbsfactory.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/mbsaccess.h">
+      <fname>mbsaccess.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/mbsaccess.h">
+      <fname>mbsaccess.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/mbsupdater.h">
+      <fname>mbsupdater.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/mbsupdater.h">
+      <fname>mbsupdater.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/mbselement.h">
+      <fname>mbselement.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/mbselement.h">
+      <fname>mbselement.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/cbsbitmap.h">
+      <fname>cbsbitmap.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/cbsbitmap.h">
+      <fname>cbsbitmap.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/bselementfactory.h">
+      <fname>bselementfactory.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/bselementfactory.h">
+      <fname>bselementfactory.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/tbselementiterator.h">
+      <fname>tbselementiterator.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/tbselementiterator.h">
+      <fname>tbselementiterator.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/middleware/rbsobjowningptrarray.h">
+      <fname>rbsobjowningptrarray.h</fname>
+      <path>epoc32/include/domain/middleware</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/rbsobjowningptrarray.h">
+      <fname>rbsobjowningptrarray.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <prj id="o:/s60/mw/imppservices/brandingserver/group/bsclient.mmp">
+      <incpath>epoc32/include</incpath>
+      <incpath>epoc32/include/oem</incpath>
+      <incpath>epoc32/include/middleware</incpath>
+      <incpath>epoc32/include/domain/middleware</incpath>
+      <incpath>epoc32/include/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions</incpath>
+      <incpath>epoc32/include/applications</incpath>
+      <incpath>epoc32/include/domain/applications</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc</incpath>
+      <incpath>epoc32/include/domain/middleware/loc</incpath>
+      <incpath>epoc32/include/domain/applications/loc</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc/sc</incpath>
+      <incpath>epoc32/include/domain/middleware/loc/sc</incpath>
+      <incpath>epoc32/include/domain/applications/loc/sc</incpath>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsclient.cpp">
+        <inc>cbsclient.h</inc>
+        <inc>bsclientdefs.h</inc>
+        <inc>bsprocessstarter.h</inc>
+        <inc>bsserverdefs.h</inc>
+        <inc>mbselement.h</inc>
+        <inc>bselementfactory.h</inc>
+        <inc>cbsbitmap.h</inc>
+        <inc>cbsbrandobserver.h</inc>
+        <inc>e32base.h</inc>
+        <inc>s32mem.h</inc>
+        <inc>debugtrace.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/bsprocessstarter.cpp">
+        <inc>bsprocessstarter.h</inc>
+        <inc>e32std.h</inc>
+        <inc>f32file.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsfactory.cpp">
+        <inc>cbsfactory.h</inc>
+        <inc>cbsaccess.h</inc>
+        <inc>cbsupdater.h</inc>
+        <inc>mbsaccess.h</inc>
+        <inc>mbsupdater.h</inc>
+        <inc>cbsclient.h</inc>
+        <inc>debugtrace.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsaccess.cpp">
+        <inc>e32base.h</inc>
+        <inc>aknsskininstance.h</inc>
+        <inc>aknsutils.h</inc>
+        <inc>coemain.h</inc>
+        <inc>cbsaccess.h</inc>
+        <inc>cbsbitmap.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>mbsaccess.h</inc>
+        <inc>mbsupdater.h</inc>
+        <inc>cbsiconfileprovider.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsupdater.cpp">
+        <inc>e32base.h</inc>
+        <inc>cbsupdater.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>mbsaccess.h</inc>
+        <inc>bselementfactory.h</inc>
+        <inc>mbselement.h</inc>
+        <inc>bsserverdefs.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbselement.cpp">
+        <inc>utf.h</inc>
+        <inc>e32base.h</inc>
+        <inc>s32strm.h</inc>
+        <inc>cbselement.h</inc>
+        <inc>cbsbitmap.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/bselementfactory.cpp">
+        <inc>debugtrace.h</inc>
+        <inc>bselementfactory.h</inc>
+        <inc>cbselement.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsbitmap.cpp">
+        <inc>e32base.h</inc>
+        <inc>cbsbitmap.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsbrandobserver.cpp">
+        <inc>cbsbrandobserver.h</inc>
+        <inc>mbsbrandchangeobserver.h</inc>
+        <inc>mbsbackuprestorestateobserver.h</inc>
+        <inc>mbsbrandobserverregistrar.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsiconfileprovider.cpp">
+        <inc>cbsiconfileprovider.h</inc>
+        <inc>aknappui.h</inc>
+        <inc>akniconutils.h</inc>
+      </src>
+    </prj>
+    <prj id="o:/s60/mw/imppservices/brandingserver/group/bsserver.mmp">
+      <incpath>epoc32/include</incpath>
+      <incpath>epoc32/include/oem</incpath>
+      <incpath>epoc32/include/middleware</incpath>
+      <incpath>epoc32/include/domain/middleware</incpath>
+      <incpath>epoc32/include/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions</incpath>
+      <incpath>epoc32/include/applications</incpath>
+      <incpath>epoc32/include/domain/applications</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc</incpath>
+      <incpath>epoc32/include/domain/middleware/loc</incpath>
+      <incpath>epoc32/include/domain/applications/loc</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc/sc</incpath>
+      <incpath>epoc32/include/domain/middleware/loc/sc</incpath>
+      <incpath>epoc32/include/domain/applications/loc/sc</incpath>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsserver.cpp">
+        <inc>cbsserver.h</inc>
+        <inc>cbssession.h</inc>
+        <inc>bsserverdefs.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>cbsstoragemanager.h</inc>
+        <inc>cbsinstallhandler.h</inc>
+        <inc>cbsbackupobserver.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbssession.cpp">
+        <inc>e32base.h</inc>
+        <inc>apgcli.h</inc>
+        <inc>cbssession.h</inc>
+        <inc>cbsserver.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>cbsbrandhandler.h</inc>
+        <inc>cbsstoragemanager.h</inc>
+        <inc>cbsstorage.h</inc>
+        <inc>cbsbitmap.h</inc>
+        <inc>rbsobjowningptrarray.h</inc>
+        <inc>bselementfactory.h</inc>
+        <inc>bsimportconstants.h</inc>
+        <inc>badesca.h</inc>
+        <inc>s32buf.h</inc>
+        <inc>s32mem.h</inc>
+        <inc>utf.h</inc>
+        <inc>e32property.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsbrandhandler.cpp">
+        <inc>cbsbrandhandler.h</inc>
+        <inc>bselementfactory.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>cbsstoragemanager.h</inc>
+        <inc>cbsbitmap.h</inc>
+        <inc>bsimportconstants.h</inc>
+        <inc>e32base.h</inc>
+        <inc>utf.h</inc>
+        <inc>s32file.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsibywriter.cpp">
+        <inc>f32file.h</inc>
+        <inc>bautils.h</inc>
+        <inc>utf.h</inc>
+        <inc>cbsibywriter.h</inc>
+        <inc>bsimportconstants.h</inc>
+        <inc>debugtrace.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsstoragemanager.cpp">
+        <inc>s32strm.h</inc>
+        <inc>s32file.h</inc>
+        <inc>f32file.h</inc>
+        <inc>bautils.h</inc>
+        <inc>utf.h</inc>
+        <inc>bsimportconstants.h</inc>
+        <inc>cbsstoragemanager.h</inc>
+        <inc>cbsstorage.h</inc>
+        <inc>cbsibywriter.h</inc>
+        <inc>cbsserver.h</inc>
+        <inc>cbssession.h</inc>
+        <inc>mbsupdater.h</inc>
+        <inc>debugtrace.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsstorage.cpp">
+        <inc>cbsstorage.h</inc>
+        <inc>bsimportconstants.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>s32strm.h</inc>
+        <inc>utf.h</inc>
+        <inc>mbselement.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsinstallhandler.cpp">
+        <inc>apgcli.h</inc>
+        <inc>apacmdln.h</inc>
+        <inc>eikenv.h</inc>
+        <inc>bautils.h</inc>
+        <inc>utf.h</inc>
+        <inc>e32property.h</inc>
+        <inc>cbsinstallhandler.h</inc>
+        <inc>debugtrace.h</inc>
+        <inc>bsimportconstants.h</inc>
+        <inc>cbsstoragemanager.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsserver/cbsbackupobserver.cpp">
+        <inc>sbdefs.h</inc>
+        <inc>cbsbackupobserver.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbselement.cpp">
+        <inc>utf.h</inc>
+        <inc>e32base.h</inc>
+        <inc>s32strm.h</inc>
+        <inc>cbselement.h</inc>
+        <inc>cbsbitmap.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/cbsbitmap.cpp">
+        <inc>e32base.h</inc>
+        <inc>cbsbitmap.h</inc>
+      </src>
+      <src id="o:/s60/mw/imppservices/brandingserver/bsclient/bselementfactory.cpp">
+        <inc>debugtrace.h</inc>
+        <inc>bselementfactory.h</inc>
+        <inc>cbselement.h</inc>
+      </src>
+    </prj>
+  </component>
+    <component id="o:/s60/osext/imagingextensions/group/bld.inf">
+    <hdr id="epoc32/include/domain/osextensions/jp2kuids.hrh">
+      <fname>jp2kuids.hrh</fname>
+      <path>epoc32/include/domain/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/jp2kuids.hrh">
+      <fname>jp2kuids.hrh</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/osextensions/jp2kimagedata.h">
+      <fname>jp2kimagedata.h</fname>
+      <path>epoc32/include/domain/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/jp2kimagedata.h">
+      <fname>jp2kimagedata.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/osextensions/iclextjpegapi.h">
+      <fname>iclextjpegapi.h</fname>
+      <path>epoc32/include/domain/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/iclextjpegapi.h">
+      <fname>iclextjpegapi.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/domain/osextensions/ch324annexkdefinedencoderconfigdataci.h">
+      <fname>ch324annexkdefinedencoderconfigdataci.h</fname>
+      <path>epoc32/include/domain/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/oem/ch324annexkdefinedencoderconfigdataci.h">
+      <fname>ch324annexkdefinedencoderconfigdataci.h</fname>
+      <path>epoc32/include/oem</path>
+    </hdr>
+    <hdr id="epoc32/include/osextensions/exiftag.h">
+      <fname>exiftag.h</fname>
+      <path>epoc32/include/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/exiftag.h">
+      <fname>exiftag.h</fname>
+      <path>epoc32/include</path>
+    </hdr>
+    <hdr id="epoc32/include/osextensions/exifread.h">
+      <fname>exifread.h</fname>
+      <path>epoc32/include/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/exifread.h">
+      <fname>exifread.h</fname>
+      <path>epoc32/include</path>
+    </hdr>
+    <hdr id="epoc32/include/osextensions/exifmodify.h">
+      <fname>exifmodify.h</fname>
+      <path>epoc32/include/osextensions</path>
+    </hdr>
+    <hdr id="epoc32/include/exifmodify.h">
+      <fname>exifmodify.h</fname>
+      <path>epoc32/include</path>
+    </hdr>
+    <prj id="o:/s60/osext/imagingextensions/imageadaptationextensions/iclextjpegapi/group/iclextjpegapi.mmp">
+      <incpath>epoc32/include</incpath>
+      <incpath>epoc32/include/oem</incpath>
+      <incpath>epoc32/include/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc/sc</incpath>
+      <incpath>epoc32/include/ecom</incpath>
+      <incpath>epoc32/include/icl</incpath>
+      <src id="o:/s60/osext/imagingextensions/imageadaptationextensions/iclextjpegapi/src/iclextjpegapi.cpp">
+        <inc>iclextjpegapi.h</inc>
+        <inc>iclextjpegapiframeimpl.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imageadaptationextensions/iclextjpegapi/src/iclextjpegapiframeimplv2.cpp">
+        <inc>iclextjpegapi.h</inc>
+        <inc>iclextjpegapiframeimpl.h</inc>
+      </src>
+    </prj>
+    <prj id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/group/exiflib.mmp">
+      <incpath>epoc32/include</incpath>
+      <incpath>epoc32/include/oem</incpath>
+      <incpath>epoc32/include/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc/sc</incpath>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exifcommon.cpp">
+        <inc>exifcommon.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exiftag.cpp">
+        <inc>exiftagimpl.h</inc>
+        <inc>exifcommon.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exififd.cpp">
+        <inc>exifread.h</inc>
+        <inc>exiftagimpl.h</inc>
+        <inc>exififd.h</inc>
+        <inc>exifcommon.h</inc>
+        <inc>exifvaluetable.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exifread.cpp">
+        <inc>exifreadimpl.h</inc>
+        <inc>exifcore.h</inc>
+        <inc>exifendian.h</inc>
+        <inc>exifcommon.h</inc>
+        <inc>exiftagimpl.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exifmodify.cpp">
+        <inc>exifmodifyimpl.h</inc>
+        <inc>exifreadimpl.h</inc>
+        <inc>exiftagimpl.h</inc>
+        <inc>exifcore.h</inc>
+        <inc>exifcommon.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exifcore.cpp">
+        <inc>exififd.h</inc>
+        <inc>exifcore.h</inc>
+        <inc>exifreadimpl.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/exiflib/src/exifendian.cpp">
+        <inc>exifendian.h</inc>
+        <inc>exifcommon.h</inc>
+      </src>
+    </prj>
+    <prj id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/group/jp2kcodec.mmp">
+      <incpath>epoc32/include</incpath>
+      <incpath>epoc32/include/oem</incpath>
+      <incpath>epoc32/include/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc/sc</incpath>
+      <incpath>epoc32/include/ecom</incpath>
+      <incpath>epoc32/include/icl</incpath>
+      <incpath>epoc32/include/libc</incpath>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kcodec.cpp">
+        <inc>fbs.h</inc>
+        <inc>jp2kimagedata.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kcodec.h</inc>
+        <inc>jp2kentropydecoder.h</inc>
+        <inc>jp2kimagewriter.h</inc>
+        <inc>jp2ksynthesis.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kconvert.cpp">
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kconvert.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2kimageclientmain.h</inc>
+        <inc>jp2kcodec.h</inc>
+        <inc>barsc.h</inc>
+        <inc>imageconversion.h</inc>
+        <inc>barsread.h</inc>
+        <inc>bautils.h</inc>
+        <inc>e32math.h</inc>
+        <inc>icl_uids.hrh</inc>
+        <inc>jp2kuids.hrh</inc>
+        <inc>jp2kimagedata.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kproxy.cpp">
+        <inc>ecom.h</inc>
+        <inc>implementationproxy.h</inc>
+        <inc>imageconstruct.h</inc>
+        <inc>icl_uids.hrh</inc>
+        <inc>jp2kuids.hrh</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kconvert.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kformat.cpp">
+        <inc>jp2kformat.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kimageinfo.cpp">
+        <inc>imagecodec.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kcodec.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kstreamreader.cpp">
+        <inc>imageprocessor.h</inc>
+        <inc>imagecodec.h</inc>
+        <inc>imagecodecdata.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2kcodec.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2ktileinfo.cpp">
+        <inc>imagecodec.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kcodec.h</inc>
+        <inc>jp2kcomponentinfo.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kmarker.cpp">
+        <inc>jp2kmarker.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kcomponentinfo.cpp">
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2ksubband.h</inc>
+        <inc>jp2kcomponentinfo.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2ksubband.cpp">
+        <inc>imagecodec.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kcodec.h</inc>
+        <inc>jp2kpacket.h</inc>
+        <inc>jp2ksubband.h</inc>
+        <inc>jp2kcomponentinfo.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kpacket.cpp">
+        <inc>imagecodec.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kstreamreader.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kcodeblock.h</inc>
+        <inc>jp2kpacket.h</inc>
+        <inc>jp2ksubband.h</inc>
+        <inc>jp2kcomponentinfo.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kcodeblock.cpp">
+        <inc>jp2kcodeblock.h</inc>
+        <inc>jp2kutils.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kutils.cpp">
+        <inc>jp2kutils.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kentropydecoder.cpp">
+        <inc>jp2kcodeblock.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kentropydecoder.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2ksynthesis.cpp">
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2kimagewriter.h</inc>
+        <inc>jp2kentropydecoder.h</inc>
+        <inc>jp2kcodeblock.h</inc>
+        <inc>jp2kpacket.h</inc>
+        <inc>jp2ksubband.h</inc>
+        <inc>jp2kcomponentinfo.h</inc>
+        <inc>jp2ksynthesis.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kimagewriter.cpp">
+        <inc>e32math.h</inc>
+        <inc>fbs.h</inc>
+        <inc>jp2kimageutils.h</inc>
+        <inc>jp2kformat.h</inc>
+        <inc>jp2ktileinfo.h</inc>
+        <inc>jp2kimageinfo.h</inc>
+        <inc>jp2ksubband.h</inc>
+        <inc>jp2kcomponentinfo.h</inc>
+        <inc>jp2kimagewriter.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/jp2kcodec/src/jp2kimagedata.cpp">
+        <inc>jp2kimagedata.h</inc>
+      </src>
+    </prj>
+    <prj id="o:/s60/osext/imagingextensions/imagingmodules/videoencpluginarm/h263ehwdevarm/group/cvearmh263encodehwdevice.mmp">
+      <incpath>epoc32/include</incpath>
+      <incpath>epoc32/include/oem</incpath>
+      <incpath>epoc32/include/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc</incpath>
+      <incpath>epoc32/include/domain/osextensions/loc/sc</incpath>
+      <incpath>epoc32/include/ecom</incpath>
+      <incpath>epoc32/include/mmf/devvideo</incpath>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/videoencpluginarm/h263ehwdevarm/src/cvearmh263encodehwdevice.cpp">
+        <inc>e32math.h</inc>
+        <inc>cvearmh263encodehwdevice.h</inc>
+        <inc>cvearmencodehwdeviceinfo.h</inc>
+        <inc>cvearmh263encodehwdevicesettings.h</inc>
+        <inc>h263encoder.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/videoencpluginarm/h263ehwdevarm/src/cvearmh263mpeg4encodehwdeviceimplproxy.cpp">
+        <inc>cvearmh263encodehwdevice.h</inc>
+        <inc>cvearmmpeg4encodehwdevice.h</inc>
+        <inc>implementationproxy.h</inc>
+      </src>
+      <src id="o:/s60/osext/imagingextensions/imagingmodules/videoencpluginarm/h263ehwdevarm/src/cvearmmpeg4encodehwdevice.cpp">
+        <inc>e32math.h</inc>
+        <inc>cvearmh263encodehwdevicesettings.h</inc>
+        <inc>cvearmencodehwdeviceinfo.h</inc>
+        <inc>cvearmmpeg4encodehwdevice.h</inc>
+      </src>
+    </prj>
+  </component>
+</platform>

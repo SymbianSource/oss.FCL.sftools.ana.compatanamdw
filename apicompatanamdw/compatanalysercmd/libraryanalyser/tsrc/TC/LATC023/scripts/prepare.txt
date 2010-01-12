@@ -1,0 +1,7 @@
+Baseline platform
+baseplatform\lib1;baseplatform\lib2
+Product platform
+currentplatform\lib1;currentplatform\lib2
+results
+GCC
+TRUE

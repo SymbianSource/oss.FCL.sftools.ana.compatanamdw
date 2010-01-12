@@ -1,0 +1,12 @@
+-baselinedir             "..\tsrc\TC\<TESTCASE_NUM>\baseline_headers\Epoc32\include\"
+-currentdir              "..\tsrc\TC\<TESTCASE_NUM>\current_headers\Epoc32\include\"
+-baseplatformheaders     "..\tsrc\TC\<TESTCASE_NUM>\baseline_headers\Epoc32\include\"
+-currentplatformheaders  "..\tsrc\TC\<TESTCASE_NUM>\current_headers\Epoc32\include\"
+-baselineversion         "BASELINE"
+-currentversion          "CURRENT"
+-forcebaseinclude "..\tsrc\TC\<TESTCASE_NUM>\baseline_headers\Epoc32\include\forced.h"
+-forcecurrentinclude "..\tsrc\TC\<TESTCASE_NUM>\current_headers\Epoc32\include\forced.h"
+-reportfile              "..\tsrc\TC\<TESTCASE_NUM>\results\<TESTCASE_NUM>_results.xml"
+-recursive
+-bundlesize 50
+-set                     "<TESTCASE_NUM>.h"

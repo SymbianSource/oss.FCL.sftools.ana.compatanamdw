@@ -1,0 +1,13 @@
+-baselinedir             "..\tsrc\TC\HATC019\baseline headers\epoc32\include"
+-currentdir              "..\tsrc\TC\HATC019\current headers\epoc32\include"
+-baseplatformheaders     "..\tsrc\TC\HATC019\baseline headers\epoc32\include"
+-currentplatformheaders  "..\tsrc\TC\HATC019\current headers\epoc32\include"
+-replace                 "HATC019BASE.h" "HATC019BASE_replace.h"
+-baselineversion         "BASELINE"
+-currentversion          "CURRENT"
+-reportfile              "..\tsrc\TC\HATC019\results\HATC019_results.xml"
+-forcebaseinclude        "..\tsrc\TC\HATC019\baseline headers\epoc32\include\forced.h"
+-forcecurrentinclude     "..\tsrc\TC\HATC019\current headers\epoc32\include\forced.h"
+-recursive
+-bundlesize 10
+-set                     "HA*.h;HA*.rsg;HA*.mbg"

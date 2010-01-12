@@ -1,0 +1,144 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the License "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+HeaderAnalyser
+
+ACCEPTED PARAMETERS
+    -baseline <filename>
+        - required specifier: a filename with or without path
+        - "previous version" header files to analyse
+        - one of the next choices has to be set: -baseline or -baselinedir
+        - if used -current is mandatory
+    -baselinedir <path with filename>
+        - required specifier: a directory name with filename
+        - filename may be a wildcard (e.g. "*.h", "coe*.h", "*.*")
+        - if using file sets (-set parameter) then you can only give directory
+        - all files in this directory are subject to analysis
+        - one of the next choices has to be set: -baseline or -baselinedir
+        - if used -currentdir is mandatory
+    -baselineversion <string>
+        - required specifier: alphanumerical string, no whitespaces or newlines or other
+          "sensitive" characters
+        - version name of the "previous version" files that are subjected to analysis
+        - optional
+    -current <filename>
+        - same as -baseline, except for "current version" header files
+        - if used -baseline is mandatory
+    -currentdir <directory>
+        - same as -baselinedir, except for "current version" header files
+        - if used -baselinedir is mandatory
+    -currentversion <string>
+        - same as -baselineversion
+    -reportfile <filename>
+        - required specifier: filename
+        - output name of the XML-formatted analysis report file
+        - mandatory
+    -commandfile <filename>
+        - required specifier: filename of a text file containing more command switches
+        - contains more command-line switches
+        - overrides environment variables
+        - command-line parameters override command-file parameters
+        - optional
+    -baseplatformheaders <directory>
+        - required specifier: directory name
+        - points to the "base header set" that is to be used when analysing
+          "previous version" headers
+        - e.g. c:\symbian\s60_2nd_fp2\epoc32\include
+        - mandatory
+    -currentplatformheaders <directory>
+        - as -baseplatformroot, except for "current version" headers
+        - e.g. c:\symbian\s60_3rd_beta1\epoc32\include
+        - mandatory
+    -forcebaseinclude <path>
+        - specifies a file which is always included first in generated 
+          temporary cpp file for baseline.
+        - optional
+    -forcecurrentinclude <path>
+        - specifies a file which is always included first in generated 
+          temporary cpp file for current.
+        - optional
+    -set <file1[;file2]*>
+        - you can give file list which is separated with semicolon
+        - if given is used instead of wildcards in baselinedir-parameter
+        - optional; can only be used with -baselinedir/-currentdir
+    -replace <file newfile [file newfile]*>
+        - takes pairs of paths as parameters
+        - first of pair tells which file to replace, if directory is given it's trunkated away
+        - second of pair tells which path (directory + filename) to use instead
+        - optional; can only be used with -baselinedir/-currentdir
+    -recursive
+        - no specifiers allowed
+        - if recursive is defined, then subdirectories will be analysed as well
+        - optional; can only be used with -baselinedir/-currentdir
+    -baseplatformheaders <filename>
+        - required specifier: a file name or a list of file names, separated by semicolons
+        - forces the inclusion of these files during the "previous version" preprocessing phase
+        - may slow down the system significantly
+        - mandatory, in practice required when processing symbian files (many of the headers in 
+          epoc32\include
+          make implicit assumptions about pre-included header files)
+    -currentplatformheaders <filename>
+        - same as -baseplatformheaders, except for "current version" files        
+    -bundlesize <count>
+        - required specifier: integer between 0 and 9999
+        - specifies how large "header bundles" to use when running the analysis
+        - larger bundles lead to shorter preprocessing times
+        - actual analysis might take longer when the XML files are large
+        - default 1
+        - optional
+    -temp <directory>
+        - output location of temporary files
+        - optional
+    -docurl <url>
+        - tells where documentation can be found
+        - specifier added to end of url
+        - used for report
+        - optional
+
+1. it's possible to compare two files
+
+command -baseline c:\base\test.h -current c:\current\test.h -baseplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include -currentplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include
+
+2. its possible to compare files of two directories (recursively)
+
+command -baselinedir c:\base\*.h -current c:\current\*.h -baseplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include -currentplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include (-recursive)
+
+3. its possible to compare two file sets (recursively)
+
+command -baselinedir c:\base -current c:\current -baseplatformheaders c:\symbian\9.1\S60_3rd_Beta\Epoc32\include -currenplatformheaders
+c:\symbian\9.1\S60_3rd_Beta\Epoc32\include (-recursive) -set file1.h;file2.h;file3.h;text.txt;file5.h
+
+Q. How about situation when file name has been renamed?
+
+A.
+command -baselinedir c:\base\*.h -current c:\current\*.h -baseplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include -currentplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include -replace c:\base\old.h c:\base\new.h
+
+Q. what if I have one hundred files which has been replaced?
+
+A.
+command -commandfile settings.txt
+
+inside CommandFile:
+-baselinedir c:\base\*.h
+-current c:\current\*.h
+-baseplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include
+-currentplatformheaders C:\Symbian\9.1\S60_3rd_Beta\Epoc32\include
+-replace
+c:\base\old.h c:\base\new.h
+c:\base\test.h c:\base\test2.h
+c:\base\filehandle.h c:\base\file.h
+

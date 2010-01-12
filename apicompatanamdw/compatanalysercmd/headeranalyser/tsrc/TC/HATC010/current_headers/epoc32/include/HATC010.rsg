@@ -1,0 +1,20 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of the License "Symbian Foundation License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.symbianfoundation.org/legal/sfl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+#define R_DEFAULT_DOCUMENT_NAME                   0xa27c002
+#define R_BCAPPLOCATION_HOTKEYS                   0xa27c004
+#define R_BCAPPLOCATION_MENU                      0xa27c006

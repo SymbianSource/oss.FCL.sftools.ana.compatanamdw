@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>53</minute>
+      <second>24</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>50</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\scripts\HATC003_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>forcebaseinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\baseline_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>forcecurrentinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\current_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\results\HATC003_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>HA*.h</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\baseline_headers\Epoc32\include\HATC003.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\current_headers\Epoc32\include\HATC003.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>19</issueid>
+        <typeid>8</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changes in inheritance</typestring>
+        <cause>::HATC003_class1</cause>
+        <documentation>Not specified::HATC003_class1</documentation>
+        <ignoreinformation>Nonepublic virtual ::HATC003BASE_class1;</ignoreinformation>
+        <linenumber>34</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>18</issueid>
+        <typeid>15</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has virtual bases</typestring>
+        <cause>::HATC003_class1</cause>
+        <documentation>Not specified::HATC003_class1</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>34</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>13</issueid>
+        <typeid>3</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed size</typestring>
+        <cause>::HATC003_class2</cause>
+        <documentation>Not specified::HATC003_class2</documentation>
+        <ignoreinformation>32</ignoreinformation>
+        <linenumber>45</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>16</issueid>
+        <typeid>8</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changes in inheritance</typestring>
+        <cause>::HATC003_class2</cause>
+        <documentation>Not specified::HATC003_class2</documentation>
+        <ignoreinformation>Nonepublic ::HATC003BASE_class1;</ignoreinformation>
+        <linenumber>45</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>14</issueid>
+        <typeid>18</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changed base size</typestring>
+        <cause>::HATC003_class2</cause>
+        <documentation>Not specified::HATC003_class2</documentation>
+        <ignoreinformation>32</ignoreinformation>
+        <linenumber>45</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>15</issueid>
+        <typeid>0</typeid>
+        <identityid>16</identityid>
+        <identitydescription>Virtual table pointer</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC003_class2[::HATC003BASE_class2::vtableptr]</cause>
+        <documentation>Not specified::HATC003_class2[::HATC003BASE_class2::vtableptr]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>45</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>17</issueid>
+        <typeid>0</typeid>
+        <identityid>15</identityid>
+        <identitydescription>Subobject</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC003_class2[::HATC003BASE_class2]</cause>
+        <documentation>Not specified::HATC003_class2[::HATC003BASE_class2]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>45</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>11</issueid>
+        <typeid>8</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changes in inheritance</typestring>
+        <cause>::HATC003_class3</cause>
+        <documentation>Not specified::HATC003_class3</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>56</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>9</issueid>
+        <typeid>1</typeid>
+        <identityid>3</identityid>
+        <identitydescription>Virtual function</identitydescription>
+        <typestring>has been added</typestring>
+        <cause>::HATC003_class3::~HATC003_class3( )</cause>
+        <documentation>Not specified::HATC003_class3::~HATC003_class3( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>59</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>10</issueid>
+        <typeid>0</typeid>
+        <identityid>16</identityid>
+        <identitydescription>Virtual table pointer</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC003_class3[::HATC003BASE_class3::vtableptr]</cause>
+        <documentation>Not specified::HATC003_class3[::HATC003BASE_class3::vtableptr]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>56</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>12</issueid>
+        <typeid>0</typeid>
+        <identityid>15</identityid>
+        <identitydescription>Subobject</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC003_class3[::HATC003BASE_class3]</cause>
+        <documentation>Not specified::HATC003_class3[::HATC003BASE_class3]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>56</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>2</typeid>
+        <identityid>14</identityid>
+        <identitydescription>Virtual table</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC003_class3[Primary-vtable]</cause>
+        <documentation>Not specified::HATC003_class3[Primary-vtable]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>56</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>8</typeid>
+        <identityid>0</identityid>
+        <identitydescription>Class</identitydescription>
+        <typestring>has changes in inheritance</typestring>
+        <cause>::HATC003_class4</cause>
+        <documentation>Not specified::HATC003_class4</documentation>
+        <ignoreinformation>Nonepublic ::HATC003BASE_class4;</ignoreinformation>
+        <linenumber>67</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>9</typeid>
+        <identityid>16</identityid>
+        <identitydescription>Virtual table pointer</identitydescription>
+        <typestring>has changed its offset</typestring>
+        <cause>::HATC003_class5[::HATC003BASE_class1::vtableptr]</cause>
+        <documentation>Not specified::HATC003_class5[::HATC003BASE_class1::vtableptr]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>78</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>9</typeid>
+        <identityid>15</identityid>
+        <identitydescription>Subobject</identitydescription>
+        <typestring>has changed its offset</typestring>
+        <cause>::HATC003_class5[::HATC003BASE_class1]</cause>
+        <documentation>Not specified::HATC003_class5[::HATC003BASE_class1]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>78</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>9</typeid>
+        <identityid>16</identityid>
+        <identitydescription>Virtual table pointer</identitydescription>
+        <typestring>has changed its offset</typestring>
+        <cause>::HATC003_class5[::HATC003BASE_class2::vtableptr]</cause>
+        <documentation>Not specified::HATC003_class5[::HATC003BASE_class2::vtableptr]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>78</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>9</typeid>
+        <identityid>15</identityid>
+        <identitydescription>Subobject</identitydescription>
+        <typestring>has changed its offset</typestring>
+        <cause>::HATC003_class5[::HATC003BASE_class2]</cause>
+        <documentation>Not specified::HATC003_class5[::HATC003BASE_class2]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>78</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>2</typeid>
+        <identityid>14</identityid>
+        <identitydescription>Virtual table</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC003_class5[Primary-vtable]</cause>
+        <documentation>Not specified::HATC003_class5[Primary-vtable]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>78</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>2</typeid>
+        <identityid>14</identityid>
+        <identitydescription>Virtual table</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC003_class6[::HATC003BASE_class5-vtable]</cause>
+        <documentation>Not specified::HATC003_class6[::HATC003BASE_class5-vtable]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>89</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>2</typeid>
+        <identityid>14</identityid>
+        <identitydescription>Virtual table</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC003_class6[Primary-vtable]</cause>
+        <documentation>Not specified::HATC003_class6[Primary-vtable]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>89</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <checksum>ziue2NyBHBza-</checksum>
+      <shortname>hatc003.h</shortname>
+    </headerfile>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\baseline_headers\Epoc32\include\HATC003BASE.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC003\current_headers\Epoc32\include\HATC003BASE.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>22</issueid>
+        <typeid>0</typeid>
+        <identityid>3</identityid>
+        <identitydescription>Virtual function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC003BASE_class5::RemoveThis( )</cause>
+        <documentation>Not specified::HATC003BASE_class5::RemoveThis( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>55</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>21</issueid>
+        <typeid>0</typeid>
+        <identityid>3</identityid>
+        <identitydescription>Virtual function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC003BASE_class5::SetValue(  const int&amp; )</cause>
+        <documentation>Not specified::HATC003BASE_class5::SetValue(  const int&amp; )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>55</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>23</issueid>
+        <typeid>1</typeid>
+        <identityid>3</identityid>
+        <identitydescription>Virtual function</identitydescription>
+        <typestring>has been added</typestring>
+        <cause>::HATC003BASE_class5::SetValue( int&amp; )</cause>
+        <documentation>Not specified::HATC003BASE_class5::SetValue( int&amp; )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>61</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>20</issueid>
+        <typeid>2</typeid>
+        <identityid>14</identityid>
+        <identitydescription>Virtual table</identitydescription>
+        <typestring>has been changed</typestring>
+        <cause>::HATC003BASE_class5[Primary-vtable]</cause>
+        <documentation>Not specified::HATC003BASE_class5[Primary-vtable]</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>55</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <checksum>o0WPPg5DHiUGn</checksum>
+      <shortname>hatc003base.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

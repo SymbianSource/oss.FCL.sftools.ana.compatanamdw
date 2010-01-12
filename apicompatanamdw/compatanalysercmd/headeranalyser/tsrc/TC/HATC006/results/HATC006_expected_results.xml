@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+
+  <header>
+    <baselineversion>BASELINE</baselineversion>
+    <currentversion>CURRENT</currentversion>
+    <timestamp>
+      <day>14</day>
+      <month>9</month>
+      <year>2009</year>
+      <hour>17</hour>
+      <minute>38</minute>
+      <second>41</second>
+    </timestamp>
+    <haversion>1.6.1</haversion>
+    <formatversion>1.2</formatversion>
+    <cmdlineparms>
+      <parm>
+        <pname>baselinedir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>baselineversion</pname>
+        <pvalue>BASELINE</pvalue>
+      </parm>
+      <parm>
+        <pname>baseplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\baseline_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>bundlesize</pname>
+        <pvalue>50</pvalue>
+      </parm>
+      <parm>
+        <pname>commandfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\scripts\HATC006_conf.txt</pvalue>
+      </parm>
+      <parm>
+        <pname>currentdir</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentplatformheaders</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\current_headers\Epoc32\include</pvalue>
+      </parm>
+      <parm>
+        <pname>currentversion</pname>
+        <pvalue>CURRENT</pvalue>
+      </parm>
+      <parm>
+        <pname>forcebaseinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\baseline_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>forcecurrentinclude</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\current_headers\Epoc32\include\forced.h</pvalue>
+      </parm>
+      <parm>
+        <pname>recursive</pname>
+        <pvalue></pvalue>
+      </parm>
+      <parm>
+        <pname>reportfile</pname>
+        <pvalue>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\results\HATC006_results.xml</pvalue>
+      </parm>
+      <parm>
+        <pname>set</pname>
+        <pvalue>HAT*.h</pvalue>
+      </parm>
+      <parm>
+        <pname>temp</pname>
+        <pvalue>C:\DOCUME~1\satapal\LOCALS~1\Temp</pvalue>
+      </parm>
+    </cmdlineparms>
+  </header>
+
+  <issuelist>
+    <headerfile>
+      <filename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\baseline_headers\Epoc32\include\HATC006.h</filename>
+      <comparefilename>C:\Symbian\Carbide\workspace\HeaderAnalyser\trunk\tsrc\TC\HATC006\current_headers\Epoc32\include\HATC006.h</comparefilename>
+      <status></status>
+      <comment></comment>
+      <issue>
+        <issueid>25</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class1::ExpProtectedFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class1::ExpProtectedFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>31</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>26</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class1::ExpProtectedFunc2( )</cause>
+        <documentation>Not specified::HATC006_class1::ExpProtectedFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>31</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>23</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class1::ExpPublicFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class1::ExpPublicFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>31</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>24</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class1::ExpPublicFunc2( )</cause>
+        <documentation>Not specified::HATC006_class1::ExpPublicFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>31</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>21</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class2::InlPrivateFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class2::InlPrivateFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>53</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>22</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class2::InlPrivateFunc2( )</cause>
+        <documentation>Not specified::HATC006_class2::InlPrivateFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>53</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>19</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class2::InlProtectedFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class2::InlProtectedFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>53</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>20</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class2::InlProtectedFunc2( )</cause>
+        <documentation>Not specified::HATC006_class2::InlProtectedFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>53</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>17</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class2::InlPublicFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class2::InlPublicFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>53</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>18</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class2::InlPublicFunc2( )</cause>
+        <documentation>Not specified::HATC006_class2::InlPublicFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>53</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>15</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class3::ExpPrivateFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class3::ExpPrivateFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>77</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>16</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class3::ExpPrivateFunc2( )</cause>
+        <documentation>Not specified::HATC006_class3::ExpPrivateFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>77</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>13</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class3::ExpProtectedFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class3::ExpProtectedFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>77</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>14</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class3::ExpProtectedFunc2( )</cause>
+        <documentation>Not specified::HATC006_class3::ExpProtectedFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>77</linenumber>
+        <severity>
+          <typeid>2</typeid>
+          <typestring>Possible BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>11</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class4::InlPrivateFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class4::InlPrivateFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>97</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>12</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class4::InlPrivateFunc2( )</cause>
+        <documentation>Not specified::HATC006_class4::InlPrivateFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>97</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>9</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class4::InlProtectedFunc1( int )</cause>
+        <documentation>Not specified::HATC006_class4::InlProtectedFunc1( int )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>97</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>10</issueid>
+        <typeid>0</typeid>
+        <identityid>2</identityid>
+        <identitydescription>Inline function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class4::InlProtectedFunc2( )</cause>
+        <documentation>Not specified::HATC006_class4::InlProtectedFunc2( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>97</linenumber>
+        <severity>
+          <typeid>3</typeid>
+          <typestring>Informative</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>2</issueid>
+        <typeid>20</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed one of its parameters or funtion type</typestring>
+        <cause>::HATC006_class6::TestFunc1( int**, int*, int&amp; )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc1( int**, int*, int&amp; )</documentation>
+        <ignoreinformation>None;;;</ignoreinformation>
+        <linenumber>164</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>4</issueid>
+        <typeid>21</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed one of its parameters or funtion type</typestring>
+        <cause>::HATC006_class6::TestFunc2(  const  const  const int** )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc2(  const  const  const int** )</documentation>
+        <ignoreinformation>None;</ignoreinformation>
+        <linenumber>167</linenumber>
+        <severity>
+          <typeid>4</typeid>
+          <typestring>FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>5</issueid>
+        <typeid>21</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed one of its parameters or funtion type</typestring>
+        <cause>::HATC006_class6::TestFunc3(  const int&amp; )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc3(  const int&amp; )</documentation>
+        <ignoreinformation>None;</ignoreinformation>
+        <linenumber>170</linenumber>
+        <severity>
+          <typeid>4</typeid>
+          <typestring>FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>3</issueid>
+        <typeid>20</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed one of its parameters or funtion type</typestring>
+        <cause>::HATC006_class6::TestFunc4( )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc4( )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>173</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>6</issueid>
+        <typeid>21</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed one of its parameters or funtion type</typestring>
+        <cause>::HATC006_class6::TestFunc5( ) const</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc5( ) const</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>176</linenumber>
+        <severity>
+          <typeid>4</typeid>
+          <typestring>FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>7</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class6::TestFunc6( int (*) ( int&amp; ) )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc6( int (*) ( int&amp; ) )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>158</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>8</issueid>
+        <typeid>0</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has been removed</typestring>
+        <cause>::HATC006_class6::TestFunc7( int (*) (  const int&amp; ) )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc7( int (*) (  const int&amp; ) )</documentation>
+        <ignoreinformation>None</ignoreinformation>
+        <linenumber>158</linenumber>
+        <severity>
+          <typeid>1</typeid>
+          <typestring>BBC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>0</issueid>
+        <typeid>22</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed its return value</typestring>
+        <cause>::HATC006_class6::TestFunc8( )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc8( )</documentation>
+        <ignoreinformation>Noneint&amp;</ignoreinformation>
+        <linenumber>185</linenumber>
+        <severity>
+          <typeid>0</typeid>
+          <typestring>None</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <issue>
+        <issueid>1</issueid>
+        <typeid>23</typeid>
+        <identityid>1</identityid>
+        <identitydescription>Exported function</identitydescription>
+        <typestring>has changed its return value</typestring>
+        <cause>::HATC006_class6::TestFunc9( )</cause>
+        <documentation>Not specified::HATC006_class6::TestFunc9( )</documentation>
+        <ignoreinformation>None const int&amp;</ignoreinformation>
+        <linenumber>188</linenumber>
+        <severity>
+          <typeid>4</typeid>
+          <typestring>FC Break</typestring>
+        </severity>
+        <scseverity>
+          <typeid>1</typeid>
+          <typestring>SC Break</typestring>
+        </scseverity>
+      </issue>
+      <checksum>B18pCNlCCo4a4</checksum>
+      <shortname>hatc006.h</shortname>
+    </headerfile>
+  </issuelist>
+
+</bbcresults>

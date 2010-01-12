@@ -1,0 +1,60 @@
+<!-- 
+- Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+- All rights reserved.
+- This component and the accompanying materials are made available
+- under the terms of the License "Symbian Foundation License v1.0"
+- which accompanies this distribution, and is available
+- at the URL "http://www.symbianfoundation.org/legal/sfl-v10.html".
+- 
+- Initial Contributors:
+- Nokia Corporation - initial contribution.
+- 
+- Contributors:
+- 
+- Description:
+- 
+-->
+
+<dll_list>
+
+<dll>
+  <dllname>10281922.dll</dllname>
+  <uid1>10000079</uid1>
+  <uid2>10009d8d</uid2>
+  <uid3>10281922</uid3>
+  <sid>10281922</sid>
+  <capability>000ffffe</capability>
+</dll>
+<dll>
+  <dllname>OCTC024.dll</dllname>
+  <uid1>10000079</uid1>
+  <uid2>10009d8d</uid2>
+  <uid3>10281fc6</uid3>
+  <sid>10281fc6</sid>
+  <capability>ffffffff</capability>
+</dll>
+<dll>
+  <dllname>102827cf.dll</dllname>
+  <uid1>10000079</uid1>
+  <uid2>10009d8d</uid2>
+  <uid3>102827cf</uid3>
+  <sid>102827cf</sid>
+  <capability>000ffffe</capability>
+</dll>
+<dll>
+  <dllname>10283389.dll</dllname>
+  <uid1>10000079</uid1>
+  <uid2>10009d8d</uid2>
+  <uid3>10283389</uid3>
+  <sid>10283389</sid>
+  <capability>000ffffe</capability>
+</dll>
+<dll>
+  <dllname>10285a2b.dll</dllname>
+  <uid1>10000079</uid1>
+  <uid2>10009d8d</uid2>
+  <uid3>10285a2b</uid3>
+  <sid>10285a2b</sid>
+  <capability>00000134</capability>
+</dll>
+</dll_list>

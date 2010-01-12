@@ -1,0 +1,3 @@
+Total Issues: 3
+Parsing known issues file... Done
+100% complete

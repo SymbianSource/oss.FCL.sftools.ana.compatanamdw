@@ -1,0 +1,12 @@
+-baselinedir             "..\tsrc\TC\HATC002\baseline_headers\Epoc32\include\"
+-currentdir              "..\tsrc\TC\HATC002\current_headers\Epoc32\include\"
+-baseplatformheaders     "..\tsrc\TC\HATC002\baseline_headers\Epoc32\include\"
+-currentplatformheaders  "..\tsrc\TC\HATC002\current_headers\Epoc32\include\"
+-baselineversion         "BASELINE"
+-currentversion          "CURRENT"
+-forcebaseinclude "..\tsrc\TC\HATC002\baseline_headers\Epoc32\include\forced.h"
+-forcecurrentinclude "..\tsrc\TC\HATC002\current_headers\Epoc32\include\forced.h"
+-reportfile              "..\tsrc\TC\HATC002\results\HATC002_results.xml"
+-recursive
+-bundlesize 50
+-set                     "HA*.h"

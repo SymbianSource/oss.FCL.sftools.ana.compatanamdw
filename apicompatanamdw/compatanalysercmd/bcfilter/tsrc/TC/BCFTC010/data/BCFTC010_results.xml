@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="BBCResults.xsl"?>
+<bbcresults>
+	<header>
+		<baselineversion>Baseline platform</baselineversion>
+		<currentversion>Product platform</currentversion>
+		<timestamp>
+			<day>1</day>
+			<month>10</month>
+			<year>2008</year>
+			<hour>11</hour>
+			<minute>11</minute>
+			<second>19</second>
+		</timestamp>
+		<ocversion>3.0.7</ocversion>
+		<formatversion>1.0</formatversion>
+		<cmdlineparms>
+			<parm>
+				<pname>toolchain</pname>
+				<pvalue>RVCT</pvalue>
+			</parm>
+			<parm>
+				<pname>baselinedir</pname>
+				<pvalue>C:\cvs_workspace\OrdinalChecker\trunk\tsrc\TC\OCTC019\baseplatform\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>currentdir</pname>
+				<pvalue>C:\cvs_workspace\OrdinalChecker\trunk\tsrc\TC\OCTC019\currentplatform\lib</pvalue>
+			</parm>
+			<parm>
+				<pname>baselineversion</pname>
+				<pvalue>Baseline platform</pvalue>
+			</parm>
+			<parm>
+				<pname>currentversion</pname>
+				<pvalue>Product platform</pvalue>
+			</parm>
+			<parm>
+				<pname>reportfile</pname>
+				<pvalue>C:\cvs_workspace\OrdinalChecker\trunk\tsrc\TC\OCTC019\results\results.xml</pvalue>
+			</parm>
+			<parm>
+				<pname>tools</pname>
+				<pvalue>C:\APPS\rvct22_593\bin\</pvalue>
+			</parm>
+			<parm>
+				<pname>temp</pname>
+				<pvalue>C:\cvs_workspace\OrdinalChecker\trunk\bin\temp\</pvalue>
+			</parm>
+			<parm>
+				<pname>cfilt</pname>
+				<pvalue>C:\cvs_workspace\OrdinalChecker\trunk\bin\cfilt.exe</pvalue>
+			</parm>
+			<parm>
+				<pname>set</pname>
+				<pvalue>C:\cvs_workspace\OrdinalChecker\trunk\tsrc\TC\OCTC019\scripts\config.txt</pvalue>
+			</parm>
+		</cmdlineparms>
+		<knownissuesversion></knownissuesversion>
+	</header>
+	<issuelist>
+		<library>
+			<name>C:\cvs_workspace\OrdinalChecker\trunk\tsrc\TC\OCTC019\baseplatform\lib\OCTC019.lib</name>
+			<shortname>OCTC019</shortname>
+			<issue>
+				<typeid>6</typeid>
+				<funcname>COCTC001::TestFunction() const</funcname>
+				<newfuncname>COCTC001::TestFunction()</newfuncname>
+				<funcpos>1</funcpos>
+			</issue>
+		</library>
+	</issuelist>
+</bbcresults>
