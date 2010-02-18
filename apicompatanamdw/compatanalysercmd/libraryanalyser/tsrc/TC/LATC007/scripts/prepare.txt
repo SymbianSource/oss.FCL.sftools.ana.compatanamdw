@@ -1,7 +1,0 @@
-Baseline platform
-baseplatform\lib
-Product platform
-currentplatform\lib
-results
-GCC
-TRUE

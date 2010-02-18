@@ -1,2 +1,0 @@
-./TC/BCFTC009/data/BCFTC009_results.xml
-./TC/BCFTC009/data/knownissues.xml

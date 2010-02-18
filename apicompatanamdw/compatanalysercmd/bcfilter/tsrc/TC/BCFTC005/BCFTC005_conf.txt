@@ -1,2 +1,0 @@
-.\TC\BCFTC005\data\BCFTC005_results.xml
-.\TC\BCFTC005\data\knownissues.xml

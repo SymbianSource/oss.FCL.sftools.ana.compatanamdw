@@ -1,8 +1,0 @@
-Baseline platform
-baseplatform\lib
-Product platform
-currentplatform\lib
-results
-GCCE
-TRUE
-
