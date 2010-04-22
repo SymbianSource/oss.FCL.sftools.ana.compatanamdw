@@ -1,0 +1,133 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+CONSECUTIVE
+
+START_TESTCASE OE-001
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap1.exe
+LOAD_SUITE tstdio_cap1
+RUN_TEST_STEP   !Result=13 tstdio_cap1 fopensysread
+END_TESTCASE OE-001
+
+
+START_TESTCASE OE-002
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap2.exe
+LOAD_SUITE tstdio_cap2
+RUN_TEST_STEP tstdio_cap2 fopensysread
+END_TESTCASE OE-002
+
+START_TESTCASE OE-003
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap3.exe
+LOAD_SUITE tstdio_cap3
+RUN_TEST_STEP !Result=13 tstdio_cap3 fopenprivateread
+END_TESTCASE OE-003
+
+START_TESTCASE OE-004
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap4.exe
+LOAD_SUITE tstdio_cap4
+RUN_TEST_STEP tstdio_cap4 fopenprivateread
+END_TESTCASE OE-004
+
+
+START_TESTCASE OE-005
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap5.exe
+LOAD_SUITE tstdio_cap5
+RUN_TEST_STEP !Result=13 tstdio_cap5 fopensyswrite
+END_TESTCASE OE-005
+
+START_TESTCASE OE-006
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap6.exe
+LOAD_SUITE tstdio_cap6
+RUN_TEST_STEP !Result=13 tstdio_cap6 fopensyswrite
+END_TESTCASE OE-006
+
+START_TESTCASE OE-007
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap7.exe
+LOAD_SUITE tstdio_cap7
+RUN_TEST_STEP !Result=13 tstdio_cap7 fopenprivatewrite
+END_TESTCASE OE-007
+
+
+START_TESTCASE OE-008
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap8.exe
+LOAD_SUITE tstdio_cap8
+RUN_TEST_STEP !Result=13 tstdio_cap8 fopenprivatewrite
+END_TESTCASE OE-008
+
+
+START_TESTCASE OE-009
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap9.exe
+LOAD_SUITE tstdio_cap9
+RUN_TEST_STEP  !Result=13 tstdio_cap9 renamesys
+END_TESTCASE OE-009
+
+
+START_TESTCASE OE-0010
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap10.exe
+LOAD_SUITE tstdio_cap10
+RUN_TEST_STEP !Result=13 tstdio_cap3 renamesys
+END_TESTCASE OE-009
+
+
+START_TESTCASE OE-0011
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap11.exe
+LOAD_SUITE tstdio_cap11
+RUN_TEST_STEP !Result=13 tstdio_cap11 renameprivate
+END_TESTCASE OE-0011
+
+
+START_TESTCASE OE-0012
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap12.exe
+LOAD_SUITE tstdio_cap12
+RUN_TEST_STEP !Result=13 tstdio_cap3 renameprivate
+END_TESTCASE OE-008
+
+
+START_TESTCASE OE-0013
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap13.exe
+LOAD_SUITE tstdio_cap13
+RUN_TEST_STEP !Result=13 tstdio_cap13 removesys
+END_TESTCASE OE-008
+
+
+
+
+START_TESTCASE OE-0014
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap14.exe
+LOAD_SUITE tstdio_cap14
+RUN_TEST_STEP !Result=13 tstdio_cap14 removesys
+END_TESTCASE OE-0014
+
+
+START_TESTCASE OE-0015
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000000  tstdio_cap15.exe
+LOAD_SUITE tstdio_cap15
+RUN_TEST_STEP !Result=13 tstdio_cap15 removeprivate
+END_TESTCASE OE-0015
+
+
+START_TESTCASE OE-0016
+RUN_PROGRAM -1 setcap.exe tstdiocap.exe 000800  tstdio_cap16.exe
+LOAD_SUITE tstdio_cap16
+RUN_TEST_STEP !Result=13 tstdio_cap16 removeprivate
+END_TESTCASE OE-0016
+
+
+
+
+

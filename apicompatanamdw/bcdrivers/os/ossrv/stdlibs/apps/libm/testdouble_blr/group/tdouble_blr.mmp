@@ -1,0 +1,48 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+TARGET      tdouble_blr.exe
+
+//Add your platform security capabilities 
+
+CAPABILITY All -TCB
+TARGETTYPE  exe
+UID         0x1000008D 0x2001FC41
+
+SOURCEPATH		../src
+SOURCE			tdouble_blrserver.cpp
+SOURCE			tdouble_blr.cpp
+SOURCE			tdouble_blr_2arg.cpp
+SOURCE			tdouble_blr2.cpp
+
+//USERINCLUDE		.  
+USERINCLUDE 	../inc
+
+SYSTEMINCLUDE   /epoc32/include
+SYSTEMINCLUDE   /epoc32/include/test
+SYSTEMINCLUDE   /epoc32/include/stdapis
+APP_LAYER_SYSTEMINCLUDE
+
+
+LIBRARY 		euser.lib efsrv.lib ecom.lib bafl.lib c32.lib XmlFramework.lib hash.lib
+LIBRARY			testexecuteutils.lib libm.lib
+LIBRARY			testexecutelogclient.lib
+LIBRARY         libc.lib
+
+STATICLIBRARY libcrt0.lib
+macro __LONG_LONG_SUPPORTED

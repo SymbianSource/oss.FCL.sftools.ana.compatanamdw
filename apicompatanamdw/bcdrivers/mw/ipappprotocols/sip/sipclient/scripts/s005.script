@@ -1,0 +1,163 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_sendsiprequest.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           5000
+
+
+START_TESTCASE send-sip-request-master-0005 
+//! @SYMTestCaseID          send-sip-request-master-0005
+//! @SYMAPI                 Cancel SIP Request,CSIPClientTransaction::CancelAllowed(),CSIPClientTransaction::Refresh
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Send INVITE request and CANCEL it.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.     
+//!                         13.Save new profile to the persistent storage.
+//!                         14.Get the default profile.
+//!                         15.Enable the profile.
+//!                         16.Open SDP Codec string pool.
+//!                         17.Create a CSIPContentTypeHeader object.
+//!                         18.Create a CSdpOriginField object.
+//!                         19.Create a CSdpConnectionField object.
+//!                         20.Create a CSdpMediaField object.
+//!                         21.Create a CSdpDocument object.
+//!                         22.Set the session origin field.
+//!                         23.Set the session name field value.
+//!                         24.Set the session level connection field.
+//!                         25.Get the set of media description fields and append the CSdpMediaField object.
+//!                         26.Get the SDP document formatted according to SDP syntax.
+//!                         27.Create a CSIPMessageElements object.
+//!                         28.Set the SIP message content and its type.
+//!                         29.Create a CSIPInviteDialogAssoc object.
+//!                         30.Create INVITE and send it to the remote target.
+//!                         31.MSIPConnectionObserver::IncomingResponse() is called once.
+//!							32.CSIPClientTransaction::Refresh is called
+//!							33.CSIPClientTransaction::CancelAllowed() is called.
+//!                         34.Create CANCEL and send it to the remote target.
+//!                         35.MSIPConnectionObserver::IncomingResponse() is called 2 times.
+//!                         36.Create SIP ACK request and send it to the remote target.
+//!                         37.Wait for MSIPConnectionObserver::WaitForInviteCompleted() is called.
+//!                         38.Disable the profile.
+//!                         39.Remove the SIP profile from the persistent storage.
+//!                         40.Destroy all objects and close SDP Codec string pool.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: INVITE is canceled without error.  
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\send-sip-request-master.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSdpOriginField               sdporiginfield
+        CREATE_OBJECT       CSdpConnectionField           sdpconnectionfield
+        CREATE_OBJECT       CSdpMediaField                sdpmediafield
+        CREATE_OBJECT       CSdpDocument                  sdpdocument
+        CREATE_OBJECT       SdpCodecStringPool            sdpcodecstringpool
+        CREATE_OBJECT		CSIPRefresh					  refresh
+        COMMAND             sip                           NewL                      send-sip-request-master-0005-NewL_command01
+        COMMAND             profileregistry               NewL                      send-sip-request-master-0005-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      send-sip-request-master-0005-NewL_command04
+        OUTSTANDING
+        COMMAND             managedprofileregistry        CreateL                   send-sip-request-master-0005-CreateL_command05
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0005-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     send-sip-request-master-0005-SaveL_command17
+        OUTSTANDING
+        COMMAND             profileregistry               DefaultProfileL           send-sip-request-master-0005-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   send-sip-request-master-0005-EnableL_command19 
+        OUTSTANDING
+        DELAY               3000000
+        COMMAND             sdpcodecstringpool            OpenL
+        COMMAND             contenttypeheader             NewL                      send-sip-request-master-0005-NewL_command21
+        COMMAND             sdporiginfield                NewL                      send-sip-request-master-0005-NewL_command22
+        COMMAND             sdpconnectionfield            NewL                      send-sip-request-master-0005-NewL_command23
+        COMMAND             sdpmediafield                 NewL                      send-sip-request-master-0005-NewL_command24
+        COMMAND             sdpdocument                   NewL
+        COMMAND             sdpdocument                   SetOriginField            send-sip-request-master-0005-SetOriginField_command26
+        COMMAND             sdpdocument                   SetSessionNameL           send-sip-request-master-0005-SetSessionNameL_command27
+        COMMAND             sdpdocument                   SetConnectionField        send-sip-request-master-0005-SetConnectionField_command28
+        COMMAND             sdpdocument                   MediaFields_Append        send-sip-request-master-0005-MediaFields_Append_command29
+        COMMAND             sdpdocument                   EncodeL
+        COMMAND             messageelements              NewL
+        COMMAND             messageelements              SetContentL               send-sip-request-master-0005-SetContentL_command32
+        COMMAND             invitedialogassoc             NewL                      send-sip-request-master-0005-NewL_command33
+        COMMAND             invitedialogassoc             SendInviteL               send-sip-request-master-0005-SendInviteL_command34
+        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0005-WaitForIncomingResponse_command35
+        OUTSTANDING 
+        COMMAND             clienttransaction             Refresh					send-sip-request-master-0005-Refresh_command36
+        COMMAND             clienttransaction             CancelAllowed				send-sip-request-master-0005-CancelAllowed_command37
+		COMMAND             clienttransaction             CancelL					send-sip-request-master-0005-CancelL_command38       
+        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0005-WaitForIncomingResponse_command39
+        OUTSTANDING
+		COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0005-WaitForIncomingResponse_command40
+        OUTSTANDING
+        COMMAND             profileregistry               Disable                   send-sip-request-master-0005-Disable_command41
+        OUTSTANDING
+        COMMAND             managedprofileregistry        DestroyL                  send-sip-request-master-0005-DestroyL_command42
+        OUTSTANDING
+        COMMAND				refresh					  ~
+        COMMAND             clienttransaction             ~
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sdpdocument                   ~
+        COMMAND             sdpconnectionfield            ~
+        COMMAND             sdpmediafield                 ~
+        COMMAND             sdporiginfield                ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             sdpcodecstringpool            Close
+        COMMAND             profile                       ~
+        COMMAND             managedprofile                ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE send-sip-request-master-0005
+

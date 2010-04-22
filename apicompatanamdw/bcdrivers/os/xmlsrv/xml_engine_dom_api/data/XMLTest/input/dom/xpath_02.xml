@@ -1,0 +1,23 @@
+<test>
+	text 1
+	<test1 attr1="1" name="test1">121</test1>
+	<test2 attr1="2" name="test2">test text</test2>
+	<test3 attr1="3" name="test3">
+		start
+		<test31 attr1="31" name="test31"/>
+		<test32 attr1="32" name="test32" test="1243">test text3</test32>
+		<test33 attr1="33" name="test33"/>
+		text
+	</test3>
+	text 2
+	<test1 attr1="1b" name="test1">text</test1>
+	<test2 attr1="2b" name="test2">test text</test2>
+	<test3 attr1="3b" name="test3">
+		start
+		<test31 attr1="31b" name="test31" new="true"/>
+		<test32 attr1="32b" name="test32">test text3</test32>
+		<test33 attr1="33b" name="test33" new="false"/>
+		text
+	</test3>
+	end text
+</test>

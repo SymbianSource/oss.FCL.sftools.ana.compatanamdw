@@ -1,0 +1,63 @@
+//
+// Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tpipe
+LOAD_SUITE tpipe
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tpipe TestPipe
+RUN_TEST_STEP !Result=0 5 tpipe PipeCheckWriteOnReadfd
+RUN_TEST_STEP !Result=0 5 tpipe PipeCheckReadOnWritefd
+RUN_TEST_STEP !Result=0 5 tpipe PipeWriteRead
+RUN_TEST_STEP !Result=0 5 tpipe PipeCheckReadFd
+RUN_TEST_STEP !Result=0 5 tpipe PipeCheckWriteFd
+
+
+//RUN_TEST_STEP !Result=0 5 tpipe PopenPipeCommandRead  \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 50 tpipe MultiplePopenPipeCommandRead \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe PopenPipeOEExeRead   \tstdapis\tpipe.ini Testpopen
+//RUN_TEST_STEP !Result=0 20 tpipe PopenPipeInvalidPathRead   \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe PopenPipeInvalidCommand  \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe PopenPipeInvalidMode \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe PopenPipeWrite   \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe PopenBlockingRead \tstdapis\tpipe.ini Testpopen
+
+//RUN_TEST_STEP !Result=0 20 tpipe Popen3PipeCommandRead \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe MultiplePopen3PipeCommandRead \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe Popen3PipeOEExeRead \tstdapis\tpipe.ini Testpopen
+//RUN_TEST_STEP !Result=0 20 tpipe Popen3PipeInvalidPathRead \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe Popen3PipeInvalidCommand \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe TestProcessPopen3ChitChat \tstdapis\tpipe.ini Testpopen
+RUN_TEST_STEP !Result=0 20 tpipe Popen3ReadWriteTest \tstdapis\tpipe.ini Testpopen
+
+RUN_TEST_STEP !Result=0 20 tpipe  TestSystem \tstdapis\tpipe.ini TestSystem
+
+RUN_TEST_STEP !Result=0 20 tpipe  Lseekpipetest 
+//RUN_TEST_STEP !Result=0 20 tpipe  SimultaneousOpenfdPipetest 
+//RUN_TEST_STEP !Result=0 20 tpipe  OpenMaxfdPipetest 
+//RUN_TEST_STEP !Result=0 20 tpipe  FopenMaxPopen3Test \tstdapis\tpipe.ini Testpopen 
+//RUN_TEST_STEP !Result=0 -1 tpipe  TestEnvPopen3 \tstdapis\tpipe.ini Testpopen
+//RUN_TEST_STEP !Result=0 20 tpipe  FopenMaxPopenTest \tstdapis\tpipe.ini Testpopen
+
+RUN_TEST_STEP !Result=0 5 tpipe  Testsystem_LongName	
+RUN_TEST_STEP !Result=0 5 tpipe  Testwsystem_LongName
+RUN_TEST_STEP !Result=0 5 tpipe  Testpopen_LongName
+RUN_TEST_STEP !Result=0 5 tpipe  Testwpopen_LongName
+RUN_TEST_STEP !Result=0 5 tpipe  Testpopen3_LongName
+RUN_TEST_STEP !Result=0 5 tpipe  Testwpopen3_LongName
+RUN_TEST_STEP !Result=-39 20 tpipe TestPipeWaitForData
+
+	

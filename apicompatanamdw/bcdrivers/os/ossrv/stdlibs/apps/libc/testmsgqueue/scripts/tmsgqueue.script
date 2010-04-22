@@ -1,0 +1,83 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tmsgqueue
+LOAD_SUITE tmsgqueue -SharedData
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tmsgqueue msggettest1
+RUN_TEST_STEP !Result=0 5 tmsgqueue msggettest2
+RUN_TEST_STEP !Result=0 5 tmsgqueue msggettest3
+RUN_TEST_STEP !Result=0 5 tmsgqueue msggettest4
+RUN_TEST_STEP !Result=0 5 tmsgqueue msggettest5
+RUN_TEST_STEP !Result=0 5 tmsgqueue msggettest6
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgctltest1
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgctltest2
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgctltest3
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgctltest4
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgctltest5
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgsndtest1
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgsndtest2
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgsndtest3
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgsndtest4
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgsndtest5
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgsndtest6
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgrcvtest1
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgrcvtest2
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgrcvtest3
+RUN_TEST_STEP !Result=0 5 tmsgqueue msgrcvtest4
+RUN_TEST_STEP !Result=0 5 tmsgqueue sndrcvtest1
+RUN_TEST_STEP !Result=0 5 tmsgqueue sndrcvtest2
+RUN_TEST_STEP !Result=0 5 tmsgqueue sndrcvtest3
+RUN_TEST_STEP !Result=0 5 tmsgqueue sndrcvtest4
+
+
+
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest1 \tstdapis\tmsgqueue.ini Section_IntgTest1_1
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest2 \tstdapis\tmsgqueue.ini Section_IntgTest2
+RUN_TEST_STEP !Result=0 5 tmsgqueue MessageQueueCreate \tstdapis\tmsgqueue.ini Section_MessageQueueCreate
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest1 \tstdapis\tmsgqueue.ini Section_IntgTest1_2
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest1 \tstdapis\tmsgqueue.ini Section_IntgTest1_3
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest3 \tstdapis\tmsgqueue.ini Section_IntgTest3_1
+RUN_TEST_STEP !Result=0 5 tmsgqueue MessageQueueControl \tstdapis\tmsgqueue.ini Section_MessageQueueControl_1
+RUN_TEST_STEP !Result=0 5 tmsgqueue MessageQueueControl \tstdapis\tmsgqueue.ini Section_MessageQueueControl_2
+RUN_TEST_STEP !Result=0 5 tmsgqueue MessageQueueControl \tstdapis\tmsgqueue.ini Section_MessageQueueControl_3
+RUN_TEST_STEP !Result=0 5 tmsgqueue MessageQueueControl \tstdapis\tmsgqueue.ini Section_MessageQueueControl_4
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest3 \tstdapis\tmsgqueue.ini Section_IntgTest3_2
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest4 \tstdapis\tmsgqueue.ini Section_IntgTest4
+
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest6 \tstdapis\tmsgqueue.ini Section_IntgTest6_1
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest6 \tstdapis\tmsgqueue.ini Section_IntgTest6_2
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest7 \tstdapis\tmsgqueue.ini Section_IntgTest7
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest8 \tstdapis\tmsgqueue.ini Section_IntgTest8_1
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest8 \tstdapis\tmsgqueue.ini Section_IntgTest8_2
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest10 \tstdapis\tmsgqueue.ini Section_IntgTest10
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest11 \tstdapis\tmsgqueue.ini Section_IntgTest11
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest12 \tstdapis\tmsgqueue.ini Section_IntgTest12
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest13 \tstdapis\tmsgqueue.ini Section_IntgTest13
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest14 \tstdapis\tmsgqueue.ini Section_IntgTest14
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest17 \tstdapis\tmsgqueue.ini Section_IntgTest17
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest5 \tstdapis\tmsgqueue.ini Section_IntgTest5
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest9 \tstdapis\tmsgqueue.ini Section_IntgTest9
+// tests related on macros
+//RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest16 \tstdapis\tmsgqueue.ini Section_IntgTest16
+RUN_TEST_STEP !Result=0 -1 tmsgqueue IntgTest16 \tstdapis\tmsgqueue.ini Section_IntgTest16_1
+
+//RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest6 \tstdapis\tmsgqueue.ini Section_IntgTest6_3
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest6_1 \tstdapis\tmsgqueue.ini Section_IntgTest6_3_1
+RUN_TEST_STEP !Result=0 5 tmsgqueue IntgTest15 \tstdapis\tmsgqueue.ini Section_IntgTest15
+RUN_TEST_STEP !Result=0 10 tmsgqueue thsndrcvtest1
+RUN_TEST_STEP !Result=0 5 tmsgqueue MsggetCreateKey \tstdapis\tmsgqueue.ini Section_MsggetCreateKey_1

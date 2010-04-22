@@ -1,0 +1,123 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_sendsiprequest.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           5000
+
+START_TESTCASE send-sip-request-master-0001 
+//! @SYMTestCaseID          send-sip-request-master-0001
+//! @SYMAPI                 Send SIP Request
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        04/08/2009
+//! @SYMTestCaseDesc        Creates SIP request and sends it to the given destination.
+//! @SYMTestActions         1.Create object for CSIPManagedProfileRegistry, CSIPManagedProfile, CSIPProfileRegistry, CSIP,
+//!                           CSIPProfile, CSIPConnection, CSIPClientTransaction, CSIPResponseElements, CSIPRequestElements,
+//!                           CSIPToHeader, CSIPFromHeader, CSIPMessageElements, CSIPContentTypeHeader.
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPProfileRegistry object with parameter CSip.
+//!                         4.Instantiate a new CSIPManagedProfileRegistry object with default values for given type.
+//!                         5.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         6.Create a SIP profile.
+//!                         4.Set Parameter to this profle.
+//!                         5.Save the new profile to the persistent storage and verify the registry event EProfileCreated = 0.
+//!                         6.Get default profile using  CSIPProfileRegistry::DefaultProfileL
+//!                         7.Enable the default profile and verify the registry event EProfileRegistered = 2
+//!                         8.Instantiate a new CSIPRequestElements object with 
+//!                         9.Disable the profile
+//!                         10.Destroy and delete the profile and verify the registry event EProfileDestroyed = 4
+//!                         11.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP request is sent out and incoming response is receieved.  
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\send-sip-request-master.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPFromHeader                fromheader
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        COMMAND             sip                           NewL                      send-sip-request-master-0001-NewL_command01
+        COMMAND             profileregistry               NewL                      send-sip-request-master-0001-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      send-sip-request-master-0001-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   send-sip-request-master-0001-CreateL_command05
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              send-sip-request-master-0001-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     send-sip-request-master-0001-SaveL_command14
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           send-sip-request-master-0001-DefaultProfileL_command15
+        COMMAND             profileregistry               EnableL                   send-sip-request-master-0001-EnableL_command16 
+        OUTSTANDING
+        COMMAND             requestelements               NewL                      send-sip-request-master-0001-NewL_command17
+        COMMAND             toheader                      DecodeL                   send-sip-request-master-0001-DecodeL_command18
+        COMMAND             requestelements               SetToHeaderL              send-sip-request-master-0001-SetToHeaderL_command19
+        COMMAND             fromheader                    DecodeL                   send-sip-request-master-0001-DecodeL_command20
+        COMMAND             requestelements               SetFromHeaderL            send-sip-request-master-0001-SetFromHeaderL_command21
+        COMMAND             requestelements               SetMethodL                send-sip-request-master-0001-SetMethodL_command22
+        COMMAND             contenttypeheader             NewL                      send-sip-request-master-0001-NewL_command23
+        COMMAND             requestelements               MessageElements           send-sip-request-master-0001-MessageElements_command24
+        COMMAND             messageelements               SetContentL               send-sip-request-master-0001-SetContentL_command25
+        COMMAND             sipconnection                 SendRequestL              send-sip-request-master-0001-SendRequestL_command26
+        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0001-WaitForIncomingResponse_command27
+        OUTSTANDING           
+        COMMAND             clienttransaction             ResponseElements          send-sip-request-master-0001-ResponseElements_command28
+        COMMAND             responseelements              StatusCode                send-sip-request-master-0001-StatusCode_command29
+        COMMAND             profileregistry               Disable                   send-sip-request-master-0001-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  send-sip-request-master-0001-DestroyL_command31
+        OUTSTANDING
+        COMMAND             sipconnection                 ~
+        COMMAND             clienttransaction             ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             responseelements              ~
+        COMMAND             requestelements               ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             toheader                      ~
+        COMMAND             fromheader                    ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE send-sip-request-master-0001
+
+

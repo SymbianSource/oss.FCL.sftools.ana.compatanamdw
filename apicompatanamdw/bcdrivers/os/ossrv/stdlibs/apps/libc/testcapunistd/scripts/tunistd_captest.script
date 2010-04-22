@@ -1,0 +1,151 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+CONSECUTIVE
+
+START_TESTCASE OE-001
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap1.exe
+LOAD_SUITE tunistd_cap1
+RUN_TEST_STEP   !Result=13 tunistd_cap1 accesssys
+END_TESTCASE OE-001
+
+
+START_TESTCASE OE-002
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap2.exe
+LOAD_SUITE tunistd_cap2
+RUN_TEST_STEP  tunistd_cap2 accesssys
+END_TESTCASE OE-002
+
+START_TESTCASE OE-003
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap3.exe
+LOAD_SUITE tunistd_cap3
+RUN_TEST_STEP !Result=13 tunistd_cap3 accessprivate
+END_TESTCASE OE-003
+
+START_TESTCASE OE-004
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap4.exe
+LOAD_SUITE tunistd_cap4
+RUN_TEST_STEP tunistd_cap4 accessprivate
+END_TESTCASE OE-004
+
+
+START_TESTCASE OE-005
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap5.exe
+LOAD_SUITE tunistd_cap5
+RUN_TEST_STEP !Result=13 tunistd_cap5 chdirsys
+END_TESTCASE OE-005
+
+START_TESTCASE OE-006
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap6.exe
+LOAD_SUITE tunistd_cap6
+RUN_TEST_STEP  tunistd_cap6 chdirsys
+END_TESTCASE OE-006
+
+START_TESTCASE OE-007
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap7.exe
+LOAD_SUITE tunistd_cap7
+RUN_TEST_STEP !Result=13 tunistd_cap7 chdirprivate
+END_TESTCASE OE-007
+
+
+START_TESTCASE OE-008
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap8.exe
+LOAD_SUITE tunistd_cap8
+RUN_TEST_STEP  tunistd_cap8 chdirprivate
+END_TESTCASE OE-008
+
+
+
+START_TESTCASE OE-0009
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap09.exe
+LOAD_SUITE tunistd_cap09
+RUN_TEST_STEP  !Result=13 tunistd_cap09 symlinksys
+END_TESTCASE OE-0009
+
+
+START_TESTCASE OE-0010
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap10.exe
+LOAD_SUITE tunistd_cap10
+RUN_TEST_STEP !Result=13 tunistd_cap10 symlinksys
+END_TESTCASE OE-0010
+
+
+START_TESTCASE OE-0011
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap11.exe
+LOAD_SUITE tunistd_cap11
+RUN_TEST_STEP !Result=13 tunistd_cap11 symlinkprivate
+END_TESTCASE OE-0011
+
+START_TESTCASE OE-0012
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap12.exe
+LOAD_SUITE tunistd_cap12
+RUN_TEST_STEP !Result=13 tunistd_cap12 symlinkprivate
+END_TESTCASE OE-0012
+
+
+
+START_TESTCASE OE-0013
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap13.exe
+LOAD_SUITE tunistd_cap13
+RUN_TEST_STEP !Result=13 tunistd_cap13 linksys
+END_TESTCASE OE-0013
+
+
+START_TESTCASE OE-0014
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap14.exe
+LOAD_SUITE tunistd_cap14
+RUN_TEST_STEP !Result=13 tunistd_cap14 linksys
+END_TESTCASE OE-0014
+
+
+START_TESTCASE OE-0015
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap15.exe
+LOAD_SUITE tunistd_cap15
+RUN_TEST_STEP  !Result=13  tunistd_cap15 linkprivate
+END_TESTCASE OE-0015
+
+START_TESTCASE OE-0016
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap16.exe
+LOAD_SUITE tunistd_cap16
+RUN_TEST_STEP !Result=13 tunistd_cap16 linkprivate
+END_TESTCASE OE-0016
+
+START_TESTCASE OE-0017
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap17.exe
+LOAD_SUITE tunistd_cap17
+RUN_TEST_STEP !Result=13 tunistd_cap17 rmdirsys
+END_TESTCASE OE-0017
+
+START_TESTCASE OE-0018
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap18.exe
+LOAD_SUITE tunistd_cap18
+RUN_TEST_STEP !Result=13  tunistd_cap18  rmdirsys
+END_TESTCASE OE-0018
+
+START_TESTCASE OE-0019
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000000  tunistd_cap19.exe
+LOAD_SUITE tunistd_cap19
+RUN_TEST_STEP !Result=13 tunistd_cap19 rmdirprivate
+END_TESTCASE OE-0019
+
+START_TESTCASE OE-0020
+RUN_PROGRAM -1 setcap.exe tunistdcap.exe 000800  tunistd_cap20.exe
+LOAD_SUITE tunistd_cap20
+RUN_TEST_STEP !Result=13 tunistd_cap20 rmdirprivate
+END_TESTCASE OE-0020
+

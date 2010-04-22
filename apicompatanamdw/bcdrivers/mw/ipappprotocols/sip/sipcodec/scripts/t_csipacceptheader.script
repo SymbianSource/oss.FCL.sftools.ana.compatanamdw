@@ -1,0 +1,278 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipacceptheader
+//
+// Tests all public elements of the t_csipacceptheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPAcceptHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csipacceptheader-0001
+//! @SYMTestCaseID          t_csipacceptheader-0001
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::NewL(const TDesC8 {ref}, const TDesC8 {ref});
+//!                         CSIPAcceptHeader::~CSIPAcceptHeader() 
+//! @SYMTestCaseDesc        Construct and destruct CSIPAcceptHeader object.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPAcceptHeader is created and destroyed successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0001-NewL_Command01
+        COMMAND             sipacceptheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0001
+
+START_TESTCASE              t_csipacceptheader-0002
+//! @SYMTestCaseID          t_csipacceptheader-0002
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::NewLC(const TDesC8 {ref}, const TDesC8 {ref});
+//!                         CSIPAcceptHeader::~CSIPAcceptHeader() 
+//! @SYMTestCaseDesc        Construct and destruct CSIPAcceptHeader object.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPAcceptHeader is created and destroyed successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sipacceptheader             NewLC                       t_csipacceptheader-0002-NewLC_Command01
+        COMMAND             sipacceptheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0002
+
+
+START_TESTCASE              t_csipacceptheader-0003
+//! @SYMTestCaseID          t_csipacceptheader-0003
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::DecodeL(const TDesC8 {ref}) 
+//! @SYMTestCaseDesc        Constructs a CSIPAcceptHeader from textual representation of the header's value part. 
+//! @SYMTestActions         1. Constructs a CSIPAcceptHeader from textual representation.
+//!                         2. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPAcceptHeader is created and destroyed successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sip                         NewL                           t_csipacceptheader-0003-NewL_Command01
+        COMMAND             sipacceptheader             DecodeL                        t_csipacceptheader-0003-DecodeL_Command02
+        COMMAND             sipacceptheader             ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0003
+
+
+START_TESTCASE              t_csipacceptheader-0004
+//! @SYMTestCaseID          t_csipacceptheader-0004
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::IsEmpty() 
+//! @SYMTestCaseDesc        Checks if the header is empty.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Checks if the header is empty.
+//!                         3. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Returns expected value without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0004-NewL_Command01
+        COMMAND             sipacceptheader             IsEmpty                     t_csipacceptheader-0004-IsEmpty_Command02
+        COMMAND             sipacceptheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0004
+
+START_TESTCASE              t_csipacceptheader-0005
+//! @SYMTestCaseID          t_csipacceptheader-0005
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::MediaType()
+//!                         CSIPAcceptHeader::SetMediaType(const TDesC8 {ref}) 
+//! @SYMTestCaseDesc        Sets and gets the media type in the "Accept" header.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Gets media type.
+//!                         3. Sets media type.
+//!                         4. Gets media type.
+//!                         5. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The media type could be set and got successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0005-NewL_Command01
+        COMMAND             sipacceptheader             MediaType                   t_csipacceptheader-0005-MediaType_Command02
+        COMMAND             sipacceptheader             SetMediaTypeL               t_csipacceptheader-0005-SetMediaTypeL_Command03
+        COMMAND             sipacceptheader             MediaType                   t_csipacceptheader-0005-MediaType_Command04
+        COMMAND             sipacceptheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0005
+
+START_TESTCASE              t_csipacceptheader-0006
+//! @SYMTestCaseID          t_csipacceptheader-0006
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::MediaSubtype()
+//!                         CSIPAcceptHeader::SetMediaSubtype(const TDesC8 {ref}) 
+//! @SYMTestCaseDesc        Sets and gets the media subtype in the "Accept" header.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Gets media subtype.
+//!                         3. Sets media subtype.
+//!                         4. Gets media subtype.
+//!                         5. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The media subtype could be set and got successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0006-NewL_Command01
+        COMMAND             sipacceptheader             MediaSubtype                t_csipacceptheader-0006-MediaSubtype_Command02
+        COMMAND             sipacceptheader             SetMediaSubtypeL            t_csipacceptheader-0006-SetMediaSubtypeL_Command03
+        COMMAND             sipacceptheader             MediaSubtype                t_csipacceptheader-0006-MediaSubtype_Command04
+        COMMAND             sipacceptheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0006
+
+START_TESTCASE              t_csipacceptheader-0007
+//! @SYMTestCaseID          t_csipacceptheader-0007
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::QParameter()
+//!                         CSIPAcceptHeader::SetQParameter(TReal ) 
+//! @SYMTestCaseDesc        Sets and gets Sets the "q"-parameter value.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Sets the "q"-parameter value.
+//!                         3. Gets the "q"-parameter value.
+//!                         4. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The the "q"-parameter value could be set and got successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sip                         NewL                        t_csipacceptheader-0007-NewL_Command01
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0007-NewL_Command02
+        COMMAND             sipacceptheader             SetQParameterL              t_csipacceptheader-0007-SetQParameterL_Command03
+        COMMAND             sipacceptheader             QParameter                  t_csipacceptheader-0007-QParameter_Command04
+        COMMAND             sipacceptheader             ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0007
+
+START_TESTCASE              t_csipacceptheader-0008
+//! @SYMTestCaseID          t_csipacceptheader-0008
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::InternalizeValueL(RReadStream {ref}) 
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPAcceptHeader from a RReadStream.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!							2. Externalizes CSIPAcceptHeader object sipacceptheader to c:\sip\sipcodec\temp.
+//!							3. Internalizes CSIPAcceptHeader object sipacceptheader1 from c:\sip\sipcodec\temp.
+//!                         4. Test the internalized CSIPAcceptHeader object.
+//!                         5. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPAcceptHeader is created successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader1
+        COMMAND             sip                         NewL                        t_csipacceptheader-0008-NewL_Command01
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0008-NewL_Command02
+        COMMAND             sipacceptheader             ExternalizeL                t_csipacceptheader-0008-ExternalizeL_Command03
+        COMMAND             sipacceptheader1            InternalizeValueL           t_csipacceptheader-0008-InternalizeValueL_Command04
+        COMMAND             sipacceptheader1            MediaType                   t_csipacceptheader-0008-MediaType_Command05
+        COMMAND             sipacceptheader1            ~
+        COMMAND             sipacceptheader             ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0008
+
+START_TESTCASE              t_csipacceptheader-0009
+//! @SYMTestCaseID          t_csipacceptheader-0009
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::CloneL() 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPHeaderBase object.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!							2. Clones a CSIPAcceptHeader object sipacceptheader from sipacceptheader1.
+//!							3. Test the cloned CSIPAcceptHeader object.
+//!                         4. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPAcceptHeader is cloned successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader1
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0009-NewL_Command01
+        COMMAND             sipacceptheader             CloneL                      t_csipacceptheader-0009-CloneL_Command02
+        COMMAND             sipacceptheader1            MediaType                   t_csipacceptheader-0009-MediaType_Command03
+        COMMAND             sipacceptheader1            ~
+        COMMAND             sipacceptheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0009
+
+START_TESTCASE              t_csipacceptheader-0010
+//! @SYMTestCaseID          t_csipacceptheader-0010
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        29/10/2009
+//! @SYMAPI                 CSIPAcceptHeader::Name() 
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Creates a CSIPAcceptHeader object.
+//!                         2. Gets the full name of the header.
+//!                         3. Deletes the CSIPAcceptHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Gets the full name correctly without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipacceptheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPAcceptHeader            sipacceptheader
+        COMMAND             sip                         NewL                        t_csipacceptheader-0010-NewL_Command01
+        COMMAND             sipacceptheader             NewL                        t_csipacceptheader-0010-NewL_Command02
+        COMMAND             sipacceptheader             Name                        t_csipacceptheader-0010-Name_Command03
+        COMMAND             sipacceptheader             ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipacceptheader-0010

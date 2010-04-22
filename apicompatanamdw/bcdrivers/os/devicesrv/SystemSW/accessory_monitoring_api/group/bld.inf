@@ -1,0 +1,42 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ?Description
+*
+*/
+
+
+
+PRJ_PLATFORMS
+		DEFAULT
+
+// Specify the source file followed by its destination here
+// copy will be used to copy the source file to its destination
+// If there's no destination then the source file will be copied
+// to the same name in /epoc32/include
+
+PRJ_EXPORTS
+testacm_c.bat		/epoc32/winscw/c/testacm_c.bat
+testacm_z.bat		/epoc32/winscw/c/testacm_z.bat
+testframework.ini		/epoc32/winscw/c/testframework/testframework_accmon.ini
+
+
+PRJ_MMPFILES
+
+//#ifdef RD_ACCESSORY_MONITOR_SDK
+
+AccMonAPIBCTests.mmp
+
+//#endif // RD_ACCESSORY_MONITOR_SDK
+
+//  End of File

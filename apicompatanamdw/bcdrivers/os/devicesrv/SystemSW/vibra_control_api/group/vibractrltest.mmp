@@ -1,0 +1,75 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ?Description
+*
+*/
+
+
+TARGET          vibractrltest.dll
+TARGETTYPE      dll
+UID             0x1000008D 0x101FB3E7
+CAPABILITY      ALL -TCB
+//VENDORID	      VID_DEFAULT
+DEFFILE         vibractrltest.def
+//TARGETPATH      ?target_path
+
+SOURCEPATH      ../src
+SOURCE          vibractrltest.cpp
+SOURCE			vibractrltestcases.cpp
+SOURCE			testscheduler.cpp
+
+//RESOURCE        resource_file
+//RESOURCE        resource_file2
+
+USERINCLUDE     ../inc 
+SYSTEMINCLUDE   /epoc32/include 
+SYSTEMINCLUDE   /epoc32/include/internal
+APP_LAYER_SYSTEMINCLUDE
+/*
+SYSTEMINCLUDE   /epoc32/include/oem
+*/
+LIBRARY         euser.lib
+LIBRARY         stiftestinterface.lib
+LIBRARY		vibractrl.lib
+LIBRARY		    centralrepository.lib
+//LIBRARY	logger.lib
+//LIBRARY	      parser.lib
+//LIBRARY	      logger.lib
+
+LANG			SC
+
+/*
+START WINS      
+?wins_specific_information
+END
+
+START MARM
+?marm_specific_information
+END
+*/
+// Other possible keywords:
+ 
+// DOCUMENT		?file, that is not compiled, but added to MSVC project workspace (i.e. release notes)
+/*
+START BITMAP ?target
+TARGETPATH   ?emulated_path_on_target_machine
+HEADER
+SOURCEPATH   ?source_path
+SOURCE       ?color_depth ?source_bitmap
+END
+*/
+// AIF ?filename
+
+
+

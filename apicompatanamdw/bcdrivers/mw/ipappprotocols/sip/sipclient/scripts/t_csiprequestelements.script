@@ -1,0 +1,176 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csiprequestelements.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           2000
+
+
+START_TESTCASE t_csiprequestelements-0001
+//! @SYMTestCaseID          t_csiprequestelements-0001
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPRequestElements::NewL(CUri*)
+//! @SYMTestCaseDesc        Creates a CSIPRequestElements object.
+//! @SYMTestActions         1. Creates a CSIPRequestElements object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csiprequestelements.ini
+        CREATE_OBJECT       CSIPRequestElements           siprequestelements
+        COMMAND             siprequestelements            NewL            t_csiprequestelements-0001-NewL_Command01
+        COMMAND             siprequestelements            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprequestelements-0001
+
+
+
+START_TESTCASE t_csiprequestelements-0002
+//! @SYMTestCaseID          t_csiprequestelements-0002
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPRequestElements::NewLC(CUri*)
+//! @SYMTestCaseDesc        Creates a CSIPRequestElements object.
+//! @SYMTestActions         1. Creates a CSIPRequestElements object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csiprequestelements.ini
+        CREATE_OBJECT       CSIPRequestElements           siprequestelements
+        COMMAND             siprequestelements            NewLC            t_csiprequestelements-0002-NewL_Command01
+        COMMAND             siprequestelements            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprequestelements-0002
+
+
+START_TESTCASE t_csiprequestelements-0003
+//! @SYMTestCaseID          t_csiprequestelements-0003
+//! @SYMAPI                 Send SIP Request
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPRequestElements::SetToHeaderL(CSIPToHeader*)
+//!                         CSIPRequestElements::ToHeader()
+//! @SYMTestCaseDesc        Set and get the siptoheader.
+//! @SYMTestActions         1. Creates a CSIPRequestElements object
+//!                         2. Create CSIPToHeader object
+//!                         3. Set SIP toheader
+//!                         4. Get SIP toheader
+//!                         5. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults ToHeader is set and got successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csiprequestelements.ini
+        CREATE_OBJECT       CSIPRequestElements           siprequestelements
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        COMMAND             siprequestelements            NewL            t_csiprequestelements-0003-NewL_Command01
+        COMMAND             toheader                      DecodeL         t_csiprequestelements-0003-DecodeL_Command02          
+        COMMAND             siprequestelements            SetToHeaderL    t_csiprequestelements-0003-SetToHeaderL_Command03
+        COMMAND             siprequestelements            ToHeader        t_csiprequestelements-0003-ToHeader_Command04
+        COMMAND             siprequestelements            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprequestelements-0003
+
+
+START_TESTCASE t_csiprequestelements-0004
+//! @SYMTestCaseID          t_csiprequestelements-0004
+//! @SYMAPI                 Send SIP Request
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPRequestElements::SetFromHeaderL(CSIPToHeader*)
+//!                         CSIPRequestElements::FromHeader()
+//! @SYMTestCaseDesc        Creates a CSIPRequestElements object.
+//! @SYMTestActions         1. Creates a CSIPRequestElements object
+//!                         2. Create CSIPFromHeader object
+//!                         3. Set SIP fromheader
+//!                         4. Get SIP fromheader
+//!                         5. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults FromHeader is set and got successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csiprequestelements.ini
+        CREATE_OBJECT       CSIPRequestElements           siprequestelements
+        CREATE_OBJECT       CSIPFromHeader                  fromheader
+        COMMAND             siprequestelements            NewL              t_csiprequestelements-0004-NewL_Command01
+        COMMAND             fromheader                    DecodeL           t_csiprequestelements-0004-DecodeL_Command02          
+        COMMAND             siprequestelements            SetFromHeaderL    t_csiprequestelements-0004-SetFromHeaderL_Command03
+        COMMAND             siprequestelements            FromHeader        
+        COMMAND             siprequestelements            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprequestelements-0004
+
+
+
+START_TESTCASE t_csiprequestelements-0005
+//! @SYMTestCaseID          t_csiprequestelements-0005
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPRequestElements::SetRemoteUriL(CUri*)
+//!                         CSIPRequestElements::RemoteUri()
+//! @SYMTestCaseDesc        Creates a CSIPRequestElements object.
+//! @SYMTestActions         1. Creates a CSIPRequestElements object
+//!                         2. Set uri
+//!                         3. Get uri
+//!                         4. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults uri is set and got successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csiprequestelements.ini
+        CREATE_OBJECT       CSIPRequestElements           siprequestelements
+        COMMAND             siprequestelements            NewL            t_csiprequestelements-0005-NewL_Command01         
+        COMMAND             siprequestelements            SetRemoteUriL   t_csiprequestelements-0005-SetRemoteUriL_Command03
+        COMMAND             siprequestelements            RemoteUri       
+        COMMAND             siprequestelements            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprequestelements-0005
+
+
+
+START_TESTCASE t_csiprequestelements-0006
+//! @SYMTestCaseID          t_csiprequestelements-0006
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPRequestElements::SetMethodL(RStringF)
+//!                         CSIPRequestElements::Method()
+//! @SYMTestCaseDesc        Creates a CSIPRequestElements object.
+//! @SYMTestActions         1. Creates a CSIPRequestElements object
+//!                         2. Set method
+//!                         3. Get method
+//!                         4. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults ToHeader is set and got successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csiprequestelements.ini
+        CREATE_OBJECT       CSIPRequestElements           siprequestelements
+        COMMAND             siprequestelements            NewL            t_csiprequestelements-0006-NewL_Command01         
+        COMMAND             siprequestelements            SetMethodL      t_csiprequestelements-0006-SetMethodL_Command03
+        COMMAND             siprequestelements            Method          
+        COMMAND             siprequestelements            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprequestelements-0006
+

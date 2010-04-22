@@ -1,0 +1,98 @@
+/*
+* Copyright (c) 2007-2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+TARGET			T_BTSdpAPI.exe
+TARGETTYPE		exe
+UID				0x1000007B 0x20000F7E
+VENDORID		0x70000001
+
+CAPABILITY		UserEnvironment LocalServices NetworkServices NetworkControl
+
+SOURCEPATH		../src
+
+SOURCE			../../common/src/T_BTUtil.cpp
+SOURCE			../../common/src/DataWrapperBase.cpp
+
+SOURCE			T_BTSdpAPIServer.cpp
+SOURCE			T_DataSdpAttrValueNil.cpp
+SOURCE			T_DataSdpAgent.cpp
+SOURCE			T_DataCElementParser.cpp
+SOURCE			T_DataCSdpAttrValueURL.cpp
+SOURCE			T_DataCSdpSearchPattern.cpp
+SOURCE			T_DataRSdp.cpp
+SOURCE			T_DataRSdpdatabase.cpp
+SOURCE			T_DataSdpAttrIdMatchList.cpp
+SOURCE			T_DataSdpAttrValue.cpp
+SOURCE			T_DataSdpAttrValueBoolean.cpp
+SOURCE			T_DataSdpAttrValueInt.cpp
+SOURCE			T_DataSdpAttrValueString.cpp
+SOURCE			T_DataSdpAttrValueUint.cpp
+SOURCE			T_DataSdpAttrValueUUID.cpp
+SOURCE			T_DataSdpUtil.cpp
+SOURCE			T_DataSdpElementBuilder.cpp
+SOURCE			T_DataSdpAttrValueList.cpp
+SOURCE			T_DataSdpAttrValueDES.cpp
+SOURCE			T_DataSdpAttrValueDEA.cpp
+SOURCE			T_DataSdpIntBuf8.cpp
+SOURCE			T_DataSdpIntBuf16.cpp
+SOURCE			T_DataSdpIntBuf32.cpp
+SOURCE			T_DataSdpIntBuf64.cpp
+
+// From T_BTSockAddrAPI
+SOURCE			../../t_btsockaddrapi/src/T_BTServiceSecurityData.cpp
+SOURCE			../../t_btsockaddrapi/src/T_RfcommSockAddrData.cpp
+SOURCE			../../t_btsockaddrapi/src/T_BTSockAddrData.cpp
+SOURCE			../../t_btsockaddrapi/src/T_SockAddrData.cpp
+SOURCE			../../t_btsockaddrapi/src/T_TBTSockAddrChild.cpp
+SOURCE			../../t_btsockaddrapi/src/T_TRfcommSockAddrChild.cpp
+SOURCE			../../t_btsockaddrapi/src/T_BTDevAddrData.cpp
+// From T_BTSockAPI
+SOURCE			../../t_btsockapi/src/T_CBluetoothSocketData.cpp
+SOURCE			../../t_btsockapi/src/T_BluetoothSocketNotifier.cpp
+SOURCE			../../t_btsockapi/src/T_RSocketData.cpp
+
+USERINCLUDE		../inc
+USERINCLUDE		../../common/inc
+USERINCLUDE		../../t_btsockaddrapi/inc
+USERINCLUDE		../../t_btsockapi/inc
+USERINCLUDE		../../group
+
+SYSTEMINCLUDE	/epoc32/include
+SYSTEMINCLUDE	/epoc32/include/test
+APP_LAYER_SYSTEMINCLUDE
+
+LIBRARY			euser.lib
+LIBRARY			efsrv.lib
+LIBRARY			esock.lib
+LIBRARY			testexecuteutils.lib
+LIBRARY			testexecutelogclient.lib
+LIBRARY			sdpdatabase.lib
+LIBRARY			bluetooth.lib 
+LIBRARY			charconv.lib
+LIBRARY			fbscli.lib
+LIBRARY			ws32.lib
+LIBRARY			bafl.lib
+LIBRARY			c32.lib
+LIBRARY			c32root.lib
+LIBRARY 		hal.lib 
+LIBRARY			cinidata.lib
+
+//T_SdpAgent
+LIBRARY			sdpagent.lib
+LIBRARY			btextnotifiers.lib
+

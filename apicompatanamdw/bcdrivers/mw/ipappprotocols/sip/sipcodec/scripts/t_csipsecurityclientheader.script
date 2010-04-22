@@ -1,0 +1,284 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName  t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csipsecurityclientheader.script
+
+LOAD_SUITE      t_sipcodecapi
+DELAY           2000
+
+START_TESTCASE t_csipsecurityclientheader-0001
+//! @SYMTestCaseID          t_csipsecurityclientheader-0001
+//! @SYMAuthor              Simon Zhang   
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::NewL(const TDesC8 {ref}) 
+//!							CSIPSecurityClientHeader::~CSIPSecurityClientHeader()
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIPSecurityClientHeader            sipsecurityclientheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader             NewL             t_csipsecurityclientheader-0001-NewL_Command02
+        COMMAND             sipsecurityclientheader             ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipsecurityclientheader-0001
+
+START_TESTCASE t_csipsecurityclientheader-0002
+//! @SYMTestCaseID          t_csipsecurityclientheader-0002
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::NewLC(const TDesC8 {ref})
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIPSecurityClientHeader            sipsecurityclientheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader             NewLC            t_csipsecurityclientheader-0002-NewLC_Command02
+        COMMAND             sipsecurityclientheader             ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipsecurityclientheader-0002
+
+START_TESTCASE t_csipsecurityclientheader-0003
+//! @SYMTestCaseID          t_csipsecurityclientheader-0003
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::DecodeL(const TDesC8 {ref})
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Decode the header value
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIPSecurityClientHeader            sipsecurityclientheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader             DecodeL          t_csipsecurityclientheader-0003-DecodeL_Command02
+        COMMAND             sipsecurityclientheader          	Name             t_csipsecurityclientheader-0003-Name_command03
+        COMMAND             sipsecurityclientheader             ~
+        COMMAND             sip			                        ~
+        END_TEST_BLOCK
+END_TESTCASE		    t_csipsecurityclientheader-0003
+
+
+START_TESTCASE              t_csipsecurityclientheader-0004
+//! @SYMTestCaseID          t_csipsecurityclientheader-0004
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Externalize the value to a file
+//!                         3. Internalize the value from a file
+//!                         4. Check the instance via get the name
+//!                         5. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIPSecurityClientHeader         sipsecurityclientheader
+        CREATE_OBJECT       CSIP                             sip
+        COMMAND             sip                              NewL                   t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader          NewL                   t_csipsecurityclientheader-0004-NewL_Command02
+        COMMAND             sipsecurityclientheader          ExternalizeL           t_csipsecurityclientheader-0004-ExternalizeL_command03
+        COMMAND             sipsecurityclientheader          InternalizeValueL      t_csipsecurityclientheader-0004-InternalizeValueL_command04
+        COMMAND             sipsecurityclientheader          Name                   t_csipsecurityclientheader-0004-Name_command05      
+        COMMAND             sipsecurityclientheader          ~
+        COMMAND             sip                              ~
+        END_TEST_BLOCK
+END_TESTCASE t_csipsecurityclientheader-0004
+
+START_TESTCASE              t_csipsecurityclientheader-0005
+//! @SYMTestCaseID          t_csipsecurityclientheader-0005
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Clone the instance
+//!                         2. Destroys the 2 objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPSecurityClientHeader object is cloned sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIP                             sip
+        CREATE_OBJECT       CSIPSecurityClientHeader         sipsecurityclientheader
+        CREATE_OBJECT       CSIPSecurityClientHeader         sipsecurityclientheader2
+        COMMAND             sip                              NewL             		t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader          NewL                   t_csipsecurityclientheader-0005-NewL_Command02
+        COMMAND             sipsecurityclientheader          CloneL                 t_csipsecurityclientheader-0005-CloneL_command03
+        COMMAND             sipsecurityclientheader2         Name                   t_csipsecurityclientheader-0005-Name_command04
+        COMMAND             sipsecurityclientheader          ~
+        COMMAND             sipsecurityclientheader2         ~
+        COMMAND             sip                              ~
+        END_TEST_BLOCK
+END_TESTCASE t_csipsecurityclientheader-0005
+
+START_TESTCASE              t_csipsecurityclientheader-0006
+//! @SYMTestCaseID          t_csipsecurityclientheader-0006
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::Name()
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Get the name
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPSecurityClientHeader object name is gotten sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIPSecurityClientHeader          sipsecurityclientheader
+        CREATE_OBJECT       CSIP                               sip
+        COMMAND             sip                                NewL             t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader            NewL            t_csipsecurityclientheader-0006-NewL_Command02
+        COMMAND             sipsecurityclientheader            Name            t_csipsecurityclientheader-0006-Name_Command03
+        COMMAND             sipsecurityclientheader            ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipsecurityclientheader-0006
+
+//***********Defined in CSIPSecurityHeaderBase*************//
+START_TESTCASE              t_csipsecurityclientheader-0007
+//! @SYMTestCaseID          t_csipsecurityclientheader-0007
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::MechanismName()const
+//!							CSIPSecurityClientHeader::SetMechanismNameL()
+//! @SYMTestCaseDesc        Set and get SIP address with CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPSecurityClientHeader object.
+//!                         3. Set mechanism name.
+//!                         4. Get mechanism name and check the result.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Commands are executed without error, and returned result is as expected 
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                       \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPSecurityClientHeader            sipsecurityclientheader
+        COMMAND             sip                                 NewL                t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader             NewL                t_csipsecurityclientheader-0007-NewL_Command02
+        COMMAND				sipsecurityclientheader				MechanismName       t_csipsecurityclientheader-0007-MechanismName_Command03	
+        COMMAND             sipsecurityclientheader             SetMechanismNameL   t_csipsecurityclientheader-0007-SetMechanismNameL_Command04
+        COMMAND             sipsecurityclientheader             MechanismName       t_csipsecurityclientheader-0007-MechanismName_Command05
+        COMMAND             sipsecurityclientheader             ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsecurityclientheader-0007
+
+START_TESTCASE              t_csipsecurityclientheader-0008
+//! @SYMTestCaseID          t_csipsecurityclientheader-0008
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::PreferenceParam()
+//!							CSIPSecurityClientHeader::SetPreferenceParamL()
+//! @SYMTestCaseDesc        Set and get SIP Preference Param with CSIPSecurityClientHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPSecurityClientHeader object.
+//!                         3. Set Preference Param.
+//!                         4. Get Preference Param and check the result.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Commands are executed without error, and returned result is as expected 
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                       \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPSecurityClientHeader            sipsecurityclientheader
+        COMMAND             sip                                 NewL                t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND             sipsecurityclientheader             NewL                t_csipsecurityclientheader-0008-NewL_Command02
+        COMMAND             sipsecurityclientheader             SetPreferenceParamL t_csipsecurityclientheader-0008-SetPreferenceParamL_Command03
+        COMMAND             sipsecurityclientheader             PreferenceParam     t_csipsecurityclientheader-0008-PreferenceParam_Command04
+        COMMAND             sipsecurityclientheader             ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsecurityclientheader-0008
+
+START_TESTCASE t_csipsecurityclientheader-0009
+//! @SYMTestCaseID          t_csipsecurityclientheader-0009
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::DecodeL(const TDesC8 {ref})
+//! @SYMTestCaseDesc        Creates a CSIPSecurityClientHeader object from abnormal textual presentation.
+//! @SYMTestActions         1. Creates a CSIPSecurityClientHeader object
+//!                         2. Decode the header value from an abnormal textual presentation
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The CSIPSecurityClientHeader::DecodeL leaves with error KErrSipCodecTokenizer(-17751).
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100   t_sipcodecapi                     \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT         CSIPSecurityClientHeader            sipsecurityclientheader
+        CREATE_OBJECT         CSIP                                sip
+        COMMAND               sip                                 NewL             t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND !Error=-17751 sipsecurityclientheader             DecodeL          t_csipsecurityclientheader-0009-DecodeL_Command02
+        COMMAND               sipsecurityclientheader             ~
+        COMMAND               sip			                      ~
+        END_TEST_BLOCK
+END_TESTCASE		    t_csipsecurityclientheader-0009
+
+START_TESTCASE              t_csipsecurityclientheader-0010
+//! @SYMTestCaseID          t_csipsecurityclientheader-0010
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPSecurityClientHeader::SetPreferenceParamL()
+//! @SYMTestCaseDesc        Set SIP Preference Param with wrong value.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPSecurityClientHeader object.
+//!                         3. Set Preference Param with a wrong value.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Commands are executed without error, and returned result is as expected 
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100   t_sipcodecapi                       \SIP\sipcodec\t_csipsecurityclientheader.ini
+        CREATE_OBJECT         CSIP                                sip
+        CREATE_OBJECT         CSIPSecurityClientHeader            sipsecurityclientheader
+        COMMAND               sip                                 NewL                t_csipsecurityclientheader-0000-NewL_Command01
+        COMMAND               sipsecurityclientheader             NewL                t_csipsecurityclientheader-0010-NewL_Command02
+        COMMAND !Error=-17796 sipsecurityclientheader             SetPreferenceParamL t_csipsecurityclientheader-0010-SetPreferenceParamL_Command03
+        COMMAND               sipsecurityclientheader             ~
+        COMMAND               sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsecurityclientheader-0010

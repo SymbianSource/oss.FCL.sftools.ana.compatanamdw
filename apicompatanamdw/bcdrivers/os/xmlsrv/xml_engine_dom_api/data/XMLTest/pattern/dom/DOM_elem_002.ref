@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing"><doc xmlns="http://test.pl" xmlns:testns="http://test.com" attr1="test"><test1/><testns:test2/><undefns:test3/><test4 testns:attr2="1"/>! " % & ' ( ) * + , - . / : ; < = > ?<test5/></doc></s:Envelope>

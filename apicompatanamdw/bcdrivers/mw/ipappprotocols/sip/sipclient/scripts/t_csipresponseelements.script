@@ -1,0 +1,316 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName        t_cresponseelements
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_cresponseelements
+//
+// Tests all public elements of the CSIPResponseElements
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPResponseElements
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipclientapi
+DELAY        2000
+
+
+START_TESTCASE              t_csipresponseelements-0001
+//! @SYMTestCaseID          t_csipresponseelements-0001
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::NewL(TUint,RStringF)
+//! @SYMTestCaseDesc        Create a CSIPResponseElements object via NewL(). 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a CSIPResponseElements object without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        COMMAND             sip                           NewL                      t_csipresponseelements-0001-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0001-NewL_command02
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0001
+
+
+START_TESTCASE              t_csipresponseelements-0002
+//! @SYMTestCaseID          t_csipresponseelements-0002
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::NewLC(TUint,RStringF)
+//! @SYMTestCaseDesc        Create a CSIPResponseElements object via NewLC(). 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a CSIPResponseElements object without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        COMMAND             sip                           NewL                      t_csipresponseelements-0002-NewL_command01
+        COMMAND             responseelements              NewLC                     t_csipresponseelements-0002-NewL_command02
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0002
+
+
+START_TESTCASE              t_csipresponseelements-0003
+//! @SYMTestCaseID          t_csipresponseelements-0003
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::SetStatusCodeL(TUint)
+//! @SYMTestCaseDesc        Set a SIP Response extension status code. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Set a SIP Response extension status code.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Set the status code without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        COMMAND             sip                           NewL                      t_csipresponseelements-0003-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0003-NewL_command02
+        COMMAND             responseelements              SetStatusCodeL            t_csipresponseelements-0003-SetStatusCodeL_command03
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0003
+
+
+START_TESTCASE              t_csipresponseelements-0004
+//! @SYMTestCaseID          t_csipresponseelements-0004
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::StatusCode(TUint)
+//! @SYMTestCaseDesc        Get the SIP Response status code. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Get the SIP Response status code. 
+//!                         4. Set a SIP Response extension status code.
+//!                         5. Get the SIP Response status code. 
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. Step 3 returns 200.
+//!                          2. Step 5 returns 180.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        COMMAND             sip                           NewL                      t_csipresponseelements-0004-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0004-NewL_command02
+        COMMAND             responseelements              StatusCode                t_csipresponseelements-0004-StatusCode_command03
+        COMMAND             responseelements              SetStatusCodeL            t_csipresponseelements-0004-SetStatusCodeL_command04
+        COMMAND             responseelements              StatusCode                t_csipresponseelements-0004-StatusCode_command05
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0004
+
+
+START_TESTCASE              t_csipresponseelements-0005
+//! @SYMTestCaseID          t_csipresponseelements-0005
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::SetReasonPhraseL(TUint)
+//! @SYMTestCaseDesc        Set a SIP Response Reason Phrase. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Set a SIP Response Reason Phrase.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Set the Reason Phrase without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        COMMAND             sip                           NewL                      t_csipresponseelements-0005-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0005-NewL_command02
+        COMMAND             responseelements              SetReasonPhraseL          t_csipresponseelements-0005-SetReasonPhraseL_command03
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0005
+
+
+START_TESTCASE              t_csipresponseelements-0006
+//! @SYMTestCaseID          t_csipresponseelements-0006
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::ReasonPhrase(TUint)
+//! @SYMTestCaseDesc        Get the SIP Response Reason Phrase. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Get the SIP Response Reason Phrase. 
+//!                         4. Set a SIP Response Reason Phrase.
+//!                         5. Get the SIP Response Reason Phrase. 
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. Step 3 returns EPhraseOk.
+//!                          2. Step 5 returns EPhraseRinging.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        COMMAND             sip                           NewL                      t_csipresponseelements-0006-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0006-NewL_command02
+        COMMAND             responseelements              ReasonPhrase              t_csipresponseelements-0006-ReasonPhrase_command03
+        COMMAND             responseelements              SetReasonPhraseL          t_csipresponseelements-0006-SetReasonPhraseL_command04
+        COMMAND             responseelements              ReasonPhrase              t_csipresponseelements-0006-ReasonPhrase_command05
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0006
+
+
+START_TESTCASE              t_csipresponseelements-0007
+//! @SYMTestCaseID          t_csipresponseelements-0007
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::FromHeader()
+//! @SYMTestCaseDesc        Get the originator's From-header. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Get the originator's From-header.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get the originator's From-header without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPFromHeader                fromheader
+        COMMAND             sip                           NewL                      t_csipresponseelements-0007-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0007-NewL_command02
+        COMMAND             responseelements              FromHeader                t_csipresponseelements-0007-FromHeader_command03
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0007
+
+
+START_TESTCASE              t_csipresponseelements-0008
+//! @SYMTestCaseID          t_csipresponseelements-0008
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::ToHeader()
+//! @SYMTestCaseDesc        Get the originator's To-header. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Get the originator's To-header.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get the originator's To-header without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        COMMAND             sip                           NewL                      t_csipresponseelements-0008-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0008-NewL_command02
+        COMMAND             responseelements              ToHeader                  t_csipresponseelements-0008-ToHeader_command03
+        COMMAND             responseelements             ~
+        COMMAND             sip                          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0008
+
+
+START_TESTCASE              t_csipresponseelements-0009
+//! @SYMTestCaseID          t_csipresponseelements-0009
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::CSeqHeader()
+//! @SYMTestCaseDesc        Get the CSeq-header. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Get the CSeq-header.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get the CSeq-header without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPFromHeader                cseqheader
+        COMMAND             sip                           NewL                      t_csipresponseelements-0009-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0009-NewL_command02
+        COMMAND             responseelements              CSeqHeader                t_csipresponseelements-0009-CSeqHeader_command03
+        COMMAND             responseelements              ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0009
+
+
+START_TESTCASE              t_csipresponseelements-0010
+//! @SYMTestCaseID          t_csipresponseelements-0010
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPResponseElements::MessageElements()
+//!                         CSIPResponseElements::MessageElements() const
+//! @SYMTestCaseDesc        Get message elements . 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPResponseElements object.
+//!                         3. Get message elements .
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get message elements without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipresponseelements.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPMessageElements           messageelements1
+        COMMAND             sip                           NewL                      t_csipresponseelements-0010-NewL_command01
+        COMMAND             responseelements              NewL                      t_csipresponseelements-0010-NewL_command02
+        COMMAND             responseelements              MessageElements           t_csipresponseelements-0010-MessageElements_command03
+        COMMAND             responseelements              MessageElements           t_csipresponseelements-0010-MessageElements_command04
+        COMMAND             responseelements              ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipresponseelements-0010
+

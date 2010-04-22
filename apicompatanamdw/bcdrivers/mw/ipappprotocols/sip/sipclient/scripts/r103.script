@@ -1,0 +1,148 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName               t_csipservertransaction
+//! @SYMScriptTestEnvironment       This test script requires a basic ROM. An Echo server listening on ports 10007 and 10008.
+//                                  The communicaion to the server is established using the default connection.
+//                                  The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation            The test suites are fully automated using TestDriver and Testexecute
+
+
+LOAD_SUITE   t_sipclientapi
+DELAY     2000
+
+START_TESTCASE              receive-sip-request-slave-0103
+//! @SYMTestCaseID          receive-sip-request-slave-0103
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/17/2009
+//! @SYMAPI                 CSIPConnection::
+//! @SYMTestCaseDesc        CSIPConnection object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.  
+//!                         13.Save new profile to the persistent storage.
+//!                         14.Get the default profile.
+//!                         15.Enable the  profile.
+//!                         16.Create a CSIPConnection object.
+//!                         17.Wait for the incoming request(INVITE).
+//!                         18.Create a CSIPResponseElements object.
+//!                         19.Send response(180) to server.
+//!                         20.Send response(200) to server.
+//!                         21.Wait for the incoming request(UPDATE).
+//!                         22.Send response(200) to server.
+//!                         23.Disable the profile.
+//!                         24.Remove the SIP profile from the persistent storage.
+//!                         25.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Receive UPDATE request successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    300 t_sipclientapi            \SIP\sipclient\receive-sip-request-slave.ini
+        CREATE_OBJECT   CSIP                          sip
+        CREATE_OBJECT   CSIPProfileRegistry           sipprofileregistry
+        CREATE_OBJECT   CSIPManagedProfileRegistry    sipmanagedprofileregistry
+        CREATE_OBJECT   CSIPManagedProfile            sipmanagedprofile
+        CREATE_OBJECT   CSIPProfile                   sipprofile
+        CREATE_OBJECT   CSIPConnection                sipconnection
+        CREATE_OBJECT   CSIPServerTransaction         sipservertransaction
+        CREATE_OBJECT   CSIPResponseElements          sipresponseelements1
+        CREATE_OBJECT   CSIPResponseElements          sipresponseelements2
+        CREATE_OBJECT   CSIPInviteDialogAssoc         sipinvitedialogassoc        
+        CREATE_OBJECT   CSIPMessageElements           messageelements
+        CREATE_OBJECT   CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT   CSdpOriginField               sdporiginfield
+        CREATE_OBJECT   CSdpConnectionField           sdpconnectionfield
+        CREATE_OBJECT   CSdpMediaField                sdpmediafield
+        CREATE_OBJECT   CSdpDocument                  sdpdocument
+        CREATE_OBJECT   SdpCodecStringPool            sdpcodecstringpool
+        CREATE_OBJECT   CSIPDialog                    sipdialog
+        COMMAND         sip                           NewL                receive-sip-request-slave-0103-NewL_command01
+        COMMAND         sipprofileregistry            NewL                receive-sip-request-slave-0103-NewL_command02
+        COMMAND         sipmanagedprofileregistry     NewL
+        COMMAND         sipmanagedprofileregistry     CreateL             receive-sip-request-slave-0103-CreateL_command04
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command05
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command06
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command07
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command08
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command09
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command10
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command11
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command12
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command13
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command14
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0103-SetParameter_command15
+        COMMAND         sipmanagedprofileregistry     SaveL               receive-sip-request-slave-0103-SaveL_command13
+        OUTSTANDING
+        COMMAND         sipprofileregistry            DefaultProfileL     receive-sip-request-slave-0103-DefaultProfileL_command14
+        COMMAND         sipprofileregistry            EnableL             receive-sip-request-slave-0103-EnableL_command15
+        OUTSTANDING
+        COMMAND         sipconnection                 NewL                receive-sip-request-slave-0103-NewL_command16
+        COMMAND         sipconnection                 WaitForIncomingRequest  receive-sip-request-slave-0103-WaitForIncomingReq_command17
+        OUTSTANDING
+        COMMAND         sipinvitedialogassoc          NewL                receive-sip-request-slave-0103-NewL_command18
+        COMMAND         sipresponseelements1          NewL                receive-sip-request-slave-0103-NewL_command19
+        COMMAND         sipservertransaction          SendResponseL       receive-sip-request-slave-0103-SendResponseL_command20
+        COMMAND         contenttypeheader             NewL                receive-sip-request-slave-0103-NewL_command21
+        COMMAND         sdpcodecstringpool            OpenL
+        COMMAND         sdporiginfield                NewL                receive-sip-request-slave-0103-NewL_command22
+        COMMAND         sdpconnectionfield            NewL                receive-sip-request-slave-0103-NewL_command23
+        COMMAND         sdpmediafield                 NewL                receive-sip-request-slave-0103-NewL_command24
+        COMMAND         sdpdocument                   NewL
+        COMMAND         sdpdocument                   SetOriginField      receive-sip-request-slave-0103-SetOriginField_command25
+        COMMAND         sdpdocument                   SetSessionNameL     receive-sip-request-slave-0103-SetSessionNameL_command26
+        COMMAND         sdpdocument                   SetConnectionField  receive-sip-request-slave-0103-SetConnectionField_command27
+        COMMAND         sdpdocument                   MediaFields_Append  receive-sip-request-slave-0103-MediaFields_Append_command28
+        COMMAND         sdpdocument                   EncodeL
+        COMMAND         sipresponseelements2          NewL                receive-sip-request-slave-0103-NewL_command29
+        COMMAND         sipresponseelements2          MessageElements     receive-sip-request-slave-0103-MessageElements_command30
+        COMMAND         messageelements               SetContentL         receive-sip-request-slave-0103-SetContentL_command31
+        COMMAND         sipservertransaction          SendResponseL       receive-sip-request-slave-0103-SendResponseL_command32
+        COMMAND         sipconnection                 WaitForIncomingRequest  receive-sip-request-slave-0103-WaitForIncomingReq_command33
+        OUTSTANDING
+        COMMAND         sipservertransaction          SendResponseL       receive-sip-request-slave-0103-SendResponseL_command34
+        COMMAND         sipprofileregistry            Disable             receive-sip-request-slave-0103-Disable_command35
+        OUTSTANDING
+        COMMAND         sipmanagedprofileregistry     DestroyL            receive-sip-request-slave-0103-DestroyL_command36
+        OUTSTANDING
+        COMMAND         messageelements              ~        
+        COMMAND         sipresponseelements1           ~
+        COMMAND         sipresponseelements2           ~
+        COMMAND         sipservertransaction          ~
+        COMMAND         sdpdocument                   ~
+        COMMAND         sdpconnectionfield            ~
+        COMMAND         sdpmediafield                 ~
+        COMMAND         sdporiginfield                ~
+        COMMAND         contenttypeheader             ~
+        COMMAND         sdpcodecstringpool            Close
+        COMMAND         sipinvitedialogassoc          ~
+        COMMAND         sipconnection                 ~
+        COMMAND         sipprofile                    ~
+        COMMAND         sipmanagedprofile             ~
+        COMMAND         sipmanagedprofileregistry     ~
+        COMMAND         sipprofileregistry            ~
+        COMMAND         sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE            receive-sip-request-slave-0103
+

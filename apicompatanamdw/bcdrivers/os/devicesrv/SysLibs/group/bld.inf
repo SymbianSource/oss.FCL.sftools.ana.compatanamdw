@@ -1,0 +1,31 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+#include "../testsuites/group/bld.inf"
+#include "../ecom/group/bld.inf"
+
+PRJ_TESTEXPORTS
+
+../testdata/winscw/t_syslibs.ini	/epoc32/winscw/c/syslibs/t_syslibs.ini
+../testdata/winscw/t_syslibs.ini	/epoc32/winscw/c/syslibs/winscw/t_syslibs.ini
+../testdata/armv5/t_syslibs.ini		/epoc32/winscw/c/syslibs/armv5/t_syslibs.ini
+
+PRJ_TESTMMPFILES
+TPCopyFileUtility.mmp
+TPDeleteFileUtility.mmp
+

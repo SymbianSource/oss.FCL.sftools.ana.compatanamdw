@@ -1,0 +1,284 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csipallowheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipallowheader
+//
+// Tests all public elements of the CSIPAllowHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPAllowHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+START_TESTCASE              t_csipallowheader-0001
+//! @SYMTestCaseID          t_csipallowheader-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPAllowHeader::NewL(RString)
+//! @SYMTestCaseDesc        Creates a new instance of CSIPAllowHeader.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAllowHeader object.
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults NewL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                sip
+        CREATE_OBJECT       CSIPAllowHeader     sipallowheader
+        COMMAND             sip                 NewL                   t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader      NewL                   t_csipallowheader-0001-NewL_Command02
+        COMMAND             sipallowheader      ~
+        COMMAND             sip                 ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0001
+
+START_TESTCASE              t_csipallowheader-0002
+//! @SYMTestCaseID          t_csipallowheader-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPAllowHeader::NewLC(RString)
+//!                         CSIPAllowHeader::Name()
+//! @SYMTestCaseDesc        Creates a new instance of CSIPAllowHeader and puts it onto the cleanup stack, then check the name of the object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAllowHeader object and check the name.
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults NewLC() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                sip
+        CREATE_OBJECT       CSIPAllowHeader     sipallowheader
+        COMMAND             sip                 NewL                   t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader      NewLC                  t_csipallowheader-0002-NewLC_Command02
+        COMMAND             sipallowheader      Name                   t_csipallowheader-0002-Name_Command03
+        COMMAND             sipallowheader      ~
+        COMMAND             sip                 ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0002
+
+START_TESTCASE              t_csipallowheader-0003
+//! @SYMTestCaseID          t_csipallowheader-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPAllowHeader::DecodeL(const TDesC8{ref})
+//!                         CSIPTokenHeaderBase::Value()
+//! @SYMTestCaseDesc        Constructs CSIPAllowHeader objects from textual representation of the header's value part. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct array of CSIPAllowHeader by calling CSIPAllowHeader::DecodeL().
+//!                         3. Check the value of decoded objects.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults DecodeL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader1
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader2
+        COMMAND             sip                  NewL                   t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader       DecodeL                t_csipallowheader-0003-DecodeL_Command02
+        COMMAND             sipallowheader       Value                  t_csipallowheader-0003-Value_Command03
+        COMMAND             sipallowheader1      Value                  t_csipallowheader-0003-Value_Command04
+        COMMAND             sipallowheader2      Value                  t_csipallowheader-0003-Value_Command05
+        COMMAND             sipallowheader       ~
+        COMMAND             sipallowheader1      ~
+        COMMAND             sipallowheader2      ~
+        COMMAND             sip                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0003
+
+START_TESTCASE              t_csipallowheader-0004
+//! @SYMTestCaseID          t_csipallowheader-0004
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPTokenHeaderBase::SetValueL(RStringF)
+//! @SYMTestCaseDesc        Sets the header value as a token.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAllowHeader object.
+//!                         3. Sets the value in the CSIPAllowHeader.
+//!                         4. check the value just set.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults SetValueL() can be called successfully.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                 sip
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader
+        COMMAND             sip                  NewL                t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader       NewL                t_csipallowheader-0004-NewL_Command02
+        COMMAND             sipallowheader       SetValueL           t_csipallowheader-0004-SetValueL_Command03
+        COMMAND             sipallowheader       Value               t_csipallowheader-0004-Value_Command04
+        COMMAND             sipallowheader       ~
+        COMMAND             sip                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0004
+
+
+START_TESTCASE              t_csipallowheader-0005
+//! @SYMTestCaseID          t_csipallowheader-0005
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPTokenHeaderBase::ToTextValueL()
+//! @SYMTestCaseDesc        Encodes the header's value into its textual representation.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAllowHeader objects.
+//!                         3. Encodes the header's value into its textual representation.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults ToTextValueL() can be called successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                 sip
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader
+        COMMAND             sip                  NewL                t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader       NewL                t_csipallowheader-0005-NewL_Command02
+        COMMAND             sipallowheader       ToTextValueL        t_csipallowheader-0005-ToTextValueL_Command03
+        COMMAND             sipallowheader       ~
+        COMMAND             sip                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0005
+
+START_TESTCASE              t_csipallowheader-0006
+//! @SYMTestCaseID          t_csipallowheader-0006
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPAllowHeader::InternalizeValueL(RReadStream{ref}), RStringF CSIPAllowHeader::Name()
+//! @SYMTestCaseDesc        Construct an instance of a CSIPAllowHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPAllowHeader object.
+//!                         3. Externalize the CSIPAllowHeader to file.
+//!                         4. Construct a CSIPAllowHeader by calling CSIPAllowHeader::InternalizeValueL() from file.
+//!                         5. Get the name and header's value.
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults 1. InternalizeValueL() is called without errors;
+//!                         2. The retrieved value and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi           \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAllowHeader         sipallowheader
+        CREATE_OBJECT       CSIPAllowHeader         sipallowheader1
+        COMMAND             sip                     NewL                   t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader          NewL                   t_csipallowheader-0006-NewL_Command02
+        COMMAND             sipallowheader          ExternalizeL           t_csipallowheader-0006-ExternalizeL_Command03
+        COMMAND             sipallowheader1         InternalizeValueL      t_csipallowheader-0006-InternalizeValueL_Command04
+        COMMAND             sipallowheader1         Value                  t_csipallowheader-0006-Value_command05
+        COMMAND             sipallowheader1         ~
+        COMMAND             sipallowheader          ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0006
+
+START_TESTCASE              t_csipallowheader-0007
+//! @SYMTestCaseID          t_csipallowheader-0007
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPAllowHeader::CloneL() const
+//! @SYMTestCaseDesc        Construct an instance of a CSIPAllowHeader from another one.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPAllowHeader object.
+//!                         3. Clone the CSIPAllowHeader to another CSIPAllowHeader object.
+//!                         4. Check the value of the newly generated CSIPAllowHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults 1. CloneL() is called without errors;
+//!                         2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi               \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPAllowHeader             sipallowheader
+        CREATE_OBJECT       CSIPAllowHeader             sipallowheader1
+        COMMAND             sip                         NewL                   t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader              NewL                   t_csipallowheader-0007-NewL_Command02
+        COMMAND             sipallowheader              CloneL                 t_csipallowheader-0007-CloneL_Command03
+        COMMAND             sipallowheader1             Value                  t_csipallowheader-0007-Value_Command04
+        COMMAND             sipallowheader1             ~
+        COMMAND             sipallowheader              ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0007
+
+START_TESTCASE              t_csipallowheader-0008
+//! @SYMTestCaseID          t_csipallowheader-0008
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPTokenHeaderBase::SetValueL(RStringF)
+//! @SYMTestCaseDesc        Negative case. Sets illegal value as a token.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAllowHeader object.
+//!                         3. Sets the value in the CSIPAllowHeader.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults -17789 is returned.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                 sip
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader
+        COMMAND             sip                  NewL                t_csipallowheader-0000-NewL_Command01
+        COMMAND             sipallowheader       NewL                t_csipallowheader-0008-NewL_Command02
+        COMMAND !Error=-17789 sipallowheader       SetValueL           t_csipallowheader-0008-SetValueL_Command03
+        COMMAND             sip                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0008
+
+START_TESTCASE              t_csipallowheader-0009
+//! @SYMTestCaseID          t_csipallowheader-0009
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        12/11/2009
+//! @SYMAPI                 CSIPAllowHeader::DecodeL(const TDesC8{ref})
+//!                         CSIPTokenHeaderBase::Value()
+//! @SYMTestCaseDesc        Negative case. Constructs a CSIPAllowHeader object from illegal text.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct array of CSIPAllowHeader by calling CSIPAllowHeader::DecodeL().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults -17789 is returned.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipallowheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPAllowHeader      sipallowheader
+        COMMAND             sip                  NewL                   t_csipallowheader-0000-NewL_Command01
+        COMMAND !Error=-17789 sipallowheader       DecodeL                t_csipallowheader-0009-DecodeL_Command02
+        COMMAND             sip                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipallowheader-0009
+

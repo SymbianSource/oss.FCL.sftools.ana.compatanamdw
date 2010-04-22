@@ -1,0 +1,716 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName		t-csipprofileregistry
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM. 
+//! @SYMScriptAutomation	The test suites are fully automated using TestDriver and Testexecute
+
+
+LOAD_SUITE	t_sipprofileapi
+DELAY		2000
+
+START_TESTCASE			t-csipprofileregistry-0001
+//! @SYMTestCaseID		t-csipprofileregistry-0001
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::NewL(CSIP{ref}, MSIPProfileRegistryObserver{ref})
+//! @SYMTestCaseDesc	Create a CSIPProfileRegistry object via NewL().
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Destroy the CSIPProfileRegistry object and CSIP object.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	NewL() is called without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL		t-csipprofileregistry-0001-NewL_command01
+		COMMAND			profileregistry			NewL		t-csipprofileregistry-0001-NewL_command02
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0001
+
+
+START_TESTCASE			t-csipprofileregistry-0002
+//! @SYMTestCaseID		t-csipprofileregistry-0002
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::NewLC(CSIP{ref}, MSIPProfileRegistryObserver{ref})
+//! @SYMTestCaseDesc	Create a CSIPProfileRegistry object via NewLC().
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Destroy the CSIPProfileRegistry object and CSIP object.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	NewLC() is called without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL		t-csipprofileregistry-0002-NewL_command01
+		COMMAND			profileregistry			NewLC		t-csipprofileregistry-0002-NewLC_command02
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0002
+
+
+START_TESTCASE			t-csipprofileregistry-0003
+//! @SYMTestCaseID		t-csipprofileregistry-0003
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::SIP()
+//! @SYMTestCaseDesc	Get handle to the SIP server.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Call SIP().
+//! 					4. Destroy the CSIPProfileRegistry object and two CSIP objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get the handle without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIP					sip1
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL		t-csipprofileregistry-0003-NewL_command01
+		COMMAND			profileregistry			NewL		t-csipprofileregistry-0003-NewL_command02
+		COMMAND			profileregistry			SIP			t-csipprofileregistry-0003-SIP_command03
+		COMMAND			profileregistry			~
+		COMMAND			sip1					~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0003
+
+
+START_TESTCASE			t-csipprofileregistry-0004
+//! @SYMTestCaseID		t-csipprofileregistry-0004
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::EnableL(CSIPProfile{ref})
+//!						CSIPProfileRegistry::Disable(CSIPProfile{ref})
+//! @SYMTestCaseDesc	Enable and disable the SIP profile.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new SIP profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Get the default profile.
+//! 					15.Enable the profile.
+//!						16.Disable the profile. 
+//!						17.Remove the SIP profile from the persistent storage.
+//! 					18.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Enable and disable the SIP profile without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		COMMAND			sip						NewL			t-csipprofileregistry-0004-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-0004-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-0004-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command12
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command18
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command19
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0004-SetParameter_command20
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-0004-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			DefaultProfileL	t-csipprofileregistry-0004-DefaultProfileL_command14
+		COMMAND			profileregistry			EnableL			t-csipprofileregistry-0004-EnableL_command15
+		OUTSTANDING
+		COMMAND			profileregistry			Disable			t-csipprofileregistry-0004-Disable_command16
+		OUTSTANDING
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-0004-DestroyL_command17
+		OUTSTANDING
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0004
+
+
+START_TESTCASE			t-csipprofileregistry-0005
+//! @SYMTestCaseID		t-csipprofileregistry-0005
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::IsEnabled(CSIPProfile{ref})
+//! @SYMTestCaseDesc	Test whether is the SIP profile enabled for the use.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Get the default profile.
+//! 					15.Call IsEnabled().
+//! 					16.Enable the profile.
+//! 					17.Call IsEnabled().
+//! 					18.Disable the profile.
+//! 					19.Call IsEnabled().
+//!						20.Remove the SIP profile from the persistent storage.
+//! 					21.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Step 15 returns EFalse;
+//! 						Step 17 returns ETrue;
+//! 						Step 19 returns EFalse
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		COMMAND			sip						NewL			t-csipprofileregistry-0005-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-0005-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-0005-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command12
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command21
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command22
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0005-SetParameter_command23
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-0005-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			DefaultProfileL	t-csipprofileregistry-0005-DefaultProfileL_command14
+		COMMAND			profileregistry			IsEnabled		t-csipprofileregistry-0005-IsEnabled_command15
+		COMMAND			profileregistry			EnableL			t-csipprofileregistry-0005-EnableL_command16
+		OUTSTANDING
+		COMMAND			profileregistry			IsEnabled		t-csipprofileregistry-0005-IsEnabled_command17
+		COMMAND			profileregistry			Disable			t-csipprofileregistry-0005-Disable_command18
+		OUTSTANDING
+		COMMAND			profileregistry			IsEnabled		t-csipprofileregistry-0005-IsEnabled_command19
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-0005-DestroyL_command20
+		OUTSTANDING
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0005
+
+
+START_TESTCASE			t-csipprofileregistry-0006
+//! @SYMTestCaseID		t-csipprofileregistry-0006
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::ConnectionL(CSIPProfile{ref})
+//! @SYMTestCaseDesc	Get the SIP connection to be used with this SIP profile.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Get the default profile.
+//! 					15.Enable the profile and test whether is the SIP profile enabled for the use.
+//! 					16.Get the SIP connection to be used with this SIP profile.
+//! 					17.Disable the profile.
+//!						18.Remove the SIP profile from the persistent storage.
+//! 					19.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get the SIP connection without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		CREATE_OBJECT	CSIPConnection			sipconnection
+		COMMAND			sip						NewL			t-csipprofileregistry-0006-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-0006-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-0006-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command12
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command20
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command21
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0006-SetParameter_command22
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-0006-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			DefaultProfileL	t-csipprofileregistry-0006-DefaultProfileL_command14
+		COMMAND			profileregistry			EnableL			t-csipprofileregistry-0006-EnableL_command15
+		OUTSTANDING
+		COMMAND			profileregistry			IsEnabled		t-csipprofileregistry-0006-IsEnabled_command16
+		COMMAND			profileregistry			ConnectionL		t-csipprofileregistry-0006-ConnectionL_command17
+		COMMAND			profileregistry			Disable			t-csipprofileregistry-0006-Disable_command18
+		OUTSTANDING
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-0006-DestroyL_command19
+		OUTSTANDING
+		COMMAND			sipconnection			~
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0006
+
+
+START_TESTCASE			t-csipprofileregistry-0007
+//! @SYMTestCaseID		t-csipprofileregistry-0007
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistry::ConnectionL(CSIPProfile{ref})
+//! @SYMTestCaseDesc	Get the SIP connection twice. 
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Get the default profile.
+//! 					15.Enable the profile and test whether is the SIP profile enabled for the use.
+//! 					16.Get the SIP connection to be used with this SIP profile.
+//! 					17.Get the SIP connection again.
+//! 					18.Disable the profile.
+//!						19.Remove the SIP profile from the persistent storage.
+//! 					20.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get the SIP connection twice without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		CREATE_OBJECT	CSIPConnection			sipconnection
+		CREATE_OBJECT	CSIPConnection			sipconnection1
+		COMMAND			sip						NewL			t-csipprofileregistry-0007-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-0007-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-0007-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command12
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command21
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command22
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-0007-SetParameter_command23
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-0007-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			DefaultProfileL	t-csipprofileregistry-0007-DefaultProfileL_command14
+		COMMAND			profileregistry			EnableL			t-csipprofileregistry-0007-EnableL_command15
+		OUTSTANDING
+		COMMAND			profileregistry			IsEnabled		t-csipprofileregistry-0007-IsEnabled_command16
+		COMMAND			profileregistry			ConnectionL		t-csipprofileregistry-0007-ConnectionL_command17
+		COMMAND			profileregistry			ConnectionL		t-csipprofileregistry-0007-ConnectionL_command18
+		COMMAND			profileregistry			Disable			t-csipprofileregistry-0007-Disable_command19
+		OUTSTANDING
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-0007-DestroyL_command20
+		OUTSTANDING
+		COMMAND			sipconnection1			disown
+		COMMAND			sipconnection1			~
+		COMMAND			sipconnection			~
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-0007
+
+
+// for CSIPProfileRegistryBase
+
+START_TESTCASE			t-csipprofileregistry-1001
+//! @SYMTestCaseID		t-csipprofileregistry-1001
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::DefaultProfileL()
+//! @SYMTestCaseDesc	Get the default profile and check it.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new SIP profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Get the default profile.
+//! 					15.Get profile type information.
+//!						16.Get profile KSIPAccessPointId parameter. 
+//!						17.Get profile KSIPUserAor parameter. 
+//!						18.Get profile KSIPProviderName parameter. 
+//!						19.Get profile KSIPSigComp parameter. 
+//!						20.Get profile KSIPAutoRegistration parameter. 
+//!						21.Get profile KSIPDefaultProfile parameter. 
+//!						22.Get profile KSIPSecurityNegotiation parameter. 
+//!						23.Remove the SIP profile from the persistent storage.
+//! 					24.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	1. DefaultProfileL is called without error.
+//! 						2. All retrieved parameters are expected.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		COMMAND			sip						NewL			t-csipprofileregistry-1001-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1001-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-1001-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1001-SetParameter_command12
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-1001-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			DefaultProfileL	t-csipprofileregistry-1001-DefaultProfileL_command14
+		COMMAND			profile					Type			t-csipprofileregistry-1001-Type_command15
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command16
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command17
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command18
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command19
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command20
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command21
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command22
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1001-GetParameter_command23
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-1001-DestroyL_command24
+		OUTSTANDING
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1001
+
+
+START_TESTCASE			t-csipprofileregistry-1002
+//! @SYMTestCaseID		t-csipprofileregistry-1002
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::ProfileL(TUint32 aId)
+//! @SYMTestCaseDesc	Get SIP profile identified by the Id.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new SIP profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Call ProfileL() by the Id of new profile.
+//! 					15.Get profile type information.
+//!						16.Get profile KSIPAccessPointId parameter. 
+//!						17.Get profile KSIPUserAor parameter. 
+//!						18.Get profile KSIPProviderName parameter. 
+//!						19.Get profile KSIPSigComp parameter. 
+//!						20.Get profile KSIPAutoRegistration parameter. 
+//!						21.Get profile KSIPDefaultProfile parameter. 
+//!						22.Get profile KSIPSecurityNegotiation parameter. 
+//!						23.Remove the SIP profile from the persistent storage.
+//! 					24.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	1. ProfileL() is called without error.
+//!							2. All retrieved parameters are expected.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		COMMAND			sip						NewL			t-csipprofileregistry-1002-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1002-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-1002-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1002-SetParameter_command12
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-1002-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			ProfileL		t-csipprofileregistry-1002-ProfileL_command14
+		COMMAND			profile					Type			t-csipprofileregistry-1002-Type_command15
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command16
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command17
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command18
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command19
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command20
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command21
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command22
+		COMMAND			profile					GetParameter	t-csipprofileregistry-1002-GetParameter_command23
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-1002-DestroyL_command24
+		OUTSTANDING
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1002
+
+
+
+START_TESTCASE			t-csipprofileregistry-1003
+//! @SYMTestCaseID		t-csipprofileregistry-1003
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::ProfilesL(RPointerArray<CSIPProfile>{ref})
+//! @SYMTestCaseDesc	Get all profiles.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Call ProfilesL().
+//! 					4. Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get all profiles without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfile				profile
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL			t-csipprofileregistry-1003-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1003-NewL_command02
+		COMMAND			profileregistry			ProfilesL		t-csipprofileregistry-1003-ProfilesL_command03
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1003
+
+
+START_TESTCASE			t-csipprofileregistry-1004
+//! @SYMTestCaseID		t-csipprofileregistry-1004
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::ProfilesL(const TSIPProfileTypeInfo{ref}, RPointerArray<CSIPProfile>{ref})
+//! @SYMTestCaseDesc	Gets all SIP profiles of particular type.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Call ProfilesL().
+//! 					4. Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get expected profiles without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfile				profile
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL			t-csipprofileregistry-1004-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1004-NewL_command02
+		COMMAND			profileregistry			ProfilesL		t-csipprofileregistry-1004-ProfilesL_command03
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1004
+
+
+START_TESTCASE			t-csipprofileregistry-1005
+//! @SYMTestCaseID		t-csipprofileregistry-1005
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::ProfilesL(const TDesC8{ref}, RPointerArray<CSIPProfile>{ref})
+//! @SYMTestCaseDesc	Gets SIP profile for a particular SIP AOR.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Call ProfilesL().
+//! 					4. Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get expected profiles without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfile				profile
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL			t-csipprofileregistry-1005-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1005-NewL_command02
+		COMMAND			profileregistry			ProfilesL		t-csipprofileregistry-1005-ProfilesL_command03
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1005
+
+
+START_TESTCASE			t-csipprofileregistry-1006
+//! @SYMTestCaseID		t-csipprofileregistry-1006
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::SupportedProfileTypesL(RArray<TSIPProfileTypeInfo>{ref})
+//! @SYMTestCaseDesc	Get supported profile types.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Call SupportedProfileTypesL().
+//! 					4. Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Get all supported profile types without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfile				profile
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		COMMAND			sip						NewL			t-csipprofileregistry-1006-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1006-NewL_command02
+		COMMAND			profileregistry			SupportedProfileTypesL	t-csipprofileregistry-1006-SupportedProfileTypesL_command03
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1006
+
+
+
+START_TESTCASE			t-csipprofileregistry-1007
+//! @SYMTestCaseID		t-csipprofileregistry-1007
+//! @SYMAuthor			Forbes Fu
+//! @SYMCreationDate	08/07/2009
+//! @SYMAPI				CSIPProfileRegistryBase::LastRegistrationError(const CSIPProfile {ref})
+//! @SYMTestCaseDesc	Get the last occurred error during registration.
+//! @SYMTestActions		1. Create a CSIP object.
+//! 					2. Create a CSIPProfileRegistry object with the CSIP object.
+//! 					3. Create a CSIPManagedProfileRegistry object.
+//! 					4. Instantiate a new SIP profile with default values for given type. 
+//!						5. Set profile KSIPAccessPointId parameter. 
+//!						6. Set profile KSIPUserAor parameter. 
+//!						7. Set profile KSIPProviderName parameter. 
+//!						8. Set profile KSIPSigComp parameter. 
+//!						9. Set profile KSIPAutoRegistration parameter. 
+//!						10.Set profile KSIPDefaultProfile parameter. 
+//!						11.Set profile KSIPSecurityNegotiation parameter. 
+//!						12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//! 					13.Save new profile to the persistent storage.
+//! 					14.Get the default profile.
+//! 					15.Call LastRegistrationError().
+//!						16.Remove the SIP profile from the persistent storage.
+//! 					17.Destroy all objects.
+//! @SYMTestStatus			Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	LastRegistrationError() is called without error.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	t_sipprofileapi		\sip\sipprofile\t_csipprofileregistry.ini
+		CREATE_OBJECT	CSIP					sip
+		CREATE_OBJECT	CSIPProfileRegistry		profileregistry
+		CREATE_OBJECT	CSIPManagedProfileRegistry	managedregistry
+		CREATE_OBJECT	CSIPManagedProfile			managedprofile
+		CREATE_OBJECT	CSIPProfile				profile
+		COMMAND			sip						NewL			t-csipprofileregistry-1007-NewL_command01
+		COMMAND			profileregistry			NewL			t-csipprofileregistry-1007-NewL_command02
+		COMMAND			managedregistry			NewL
+		COMMAND			managedregistry			CreateL			t-csipprofileregistry-1007-CreateL_command04
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command05
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command06
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command07
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command08
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command09
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command10
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command11
+		COMMAND			managedprofile			SetParameter	t-csipprofileregistry-1007-SetParameter_command12
+		COMMAND			managedregistry			SaveL			t-csipprofileregistry-1007-SaveL_command13
+		OUTSTANDING
+		COMMAND			profileregistry			DefaultProfileL	t-csipprofileregistry-1007-DefaultProfileL_command14
+		COMMAND			profileregistry			LastRegistrationError	t-csipprofileregistry-1007-LastRegistrationError_command15
+		COMMAND			managedregistry			DestroyL		t-csipprofileregistry-1007-DestroyL_command16
+		OUTSTANDING
+		COMMAND			profile					~
+		COMMAND			managedprofile			~
+		COMMAND			managedregistry			~
+		COMMAND			profileregistry			~
+		COMMAND			sip						~
+	END_TEST_BLOCK
+END_TESTCASE			t-csipprofileregistry-1007
+

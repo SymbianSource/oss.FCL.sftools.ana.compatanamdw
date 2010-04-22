@@ -1,0 +1,63 @@
+/*
+* Copyright (c) 2005-2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+
+../scripts/setup-MM-ICL-DECDE-PublicApi.script	/Epoc32/winscw/c/multimedia/setup-MM-ICL-DECDE-PublicApi.script
+../scripts/MM-ICL-DECDE-PublicApi.script		/Epoc32/winscw/c/multimedia/MM-ICL-DECDE-PublicApi.script
+../config/MM-ICL-DECDE-PublicApi.tcs		/Epoc32/winscw/c/multimedia/MM-ICL-DECDE-PublicApi.tcs
+../testdata/MM-ICL-DECDE-PublicApi.ini			/Epoc32/winscw/c/multimedia/MM-ICL-DECDE-PublicApi.ini
+../testdata/24bit.apm							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.apm
+../testdata/1bit.bmp							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bit.bmp
+../testdata/4bit.bmp							/Epoc32/winscw/c/multimedia/t_imagedecoder/4bit.bmp
+../testdata/8bit.bmp							/Epoc32/winscw/c/multimedia/t_imagedecoder/8bit.bmp
+../testdata/24bit.bmp							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.bmp
+../testdata/24bit.clp							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.clp
+../testdata/1bit.gif							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bit.gif
+../testdata/2bit.gif							/Epoc32/winscw/c/multimedia/t_imagedecoder/2bit.gif
+../testdata/4bit.gif							/Epoc32/winscw/c/multimedia/t_imagedecoder/4bit.gif
+../testdata/6bit.gif							/Epoc32/winscw/c/multimedia/t_imagedecoder/6bit.gif
+../testdata/8bit.gif							/Epoc32/winscw/c/multimedia/t_imagedecoder/8bit.gif
+../testdata/commented.gif						/Epoc32/winscw/c/multimedia/t_imagedecoder/commented.gif
+../testdata/4bit.ico							/Epoc32/winscw/c/multimedia/t_imagedecoder/4bit.ico
+../testdata/8bit.ico							/Epoc32/winscw/c/multimedia/t_imagedecoder/8bit.ico
+../testdata/8bit.jpg							/Epoc32/winscw/c/multimedia/t_imagedecoder/8bit.jpg
+../testdata/24bit.jpg							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.jpg
+../testdata/thumbnail.jpg						/Epoc32/winscw/c/multimedia/t_imagedecoder/thumbnail.jpg
+../testdata/commented.jpg						/Epoc32/winscw/c/multimedia/t_imagedecoder/commented.jpg
+../testdata/24bit.mng							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.mng
+../testdata/1bit.ota							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bit.ota
+../testdata/1bit.png							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bit.png
+../testdata/4bit.png							/Epoc32/winscw/c/multimedia/t_imagedecoder/4bit.png
+../testdata/8bit.png							/Epoc32/winscw/c/multimedia/t_imagedecoder/8bit.png
+../testdata/24bit.png							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.png
+../testdata/1bitG3.tif							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bitG3.tif
+../testdata/1bitG4.tif							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bitG4.tif
+../testdata/1bit.tif							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bit.tif
+../testdata/4bit.tif							/Epoc32/winscw/c/multimedia/t_imagedecoder/4bit.tif
+../testdata/8bit.tif							/Epoc32/winscw/c/multimedia/t_imagedecoder/8bit.tif
+../testdata/24bit.tif							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.tif
+../testdata/1bit.wbmp							/Epoc32/winscw/c/multimedia/t_imagedecoder/1bit.wbmp
+../testdata/24bit.wmf							/Epoc32/winscw/c/multimedia/t_imagedecoder/24bit.wmf
+../testdata/corrupted.bmp						/Epoc32/winscw/c/multimedia/t_imagedecoder/corrupted.bmp
+../testdata/partial.bmp							/Epoc32/winscw/c/multimedia/t_imagedecoder/partial.bmp
+
+dec.bat 							/Epoc32/winscw/c/multimedia/dec.bat
+
+PRJ_TESTMMPFILES
+T_ImageDecoder.mmp

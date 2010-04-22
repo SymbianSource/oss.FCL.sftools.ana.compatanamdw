@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+  <S:Header>
+    <mws:DeviceOptions xmlns:mws="http://schemas.live.com/mws/2005/08/core">
+      <mws:Locale>1033</mws:Locale>
+      <mws:UserAgent>
+        <mws:Manufacturer>NO_UserAgent</mws:Manufacturer>
+        <mws:Model>NO_Model</mws:Model>
+        <mws:OS>
+          <mws:Name>NO_OS</mws:Name>
+          <mws:Version>NO_Version</mws:Version>
+        </mws:OS>
+      </mws:UserAgent>
+    </mws:DeviceOptions>
+    <wsb:Billing xmlns:wsb="http://schemas.xmlsoap.org/ws/2005/08/billing">
+      <wsb:OperatorID>OperatorID</wsb:OperatorID>
+      <wsb:GatewayID>GatewayID</wsb:GatewayID>
+      <wsb:OperatorCustomerRef>OperatorCustomerRef</wsb:OperatorCustomerRef>
+      <wsb:TransactionID>7bbd5c5b-7857-44a4-c609-53498d0cac6b</wsb:TransactionID>
+      <wsb:TransactionStart>2006-10-16T16:05:34Z</wsb:TransactionStart>
+      <wsb:TransactionFinish>0001-01-01T00:00:00.0000000</wsb:TransactionFinish>
+      <wsb:WebServiceCustomerID/>
+      <wsb:WebServiceDeviceID/>
+      <wsb:WebServiceID/>
+      <wsb:ServiceActions/>
+    </wsb:Billing>
+    <mws:Application xmlns:mws="http://schemas.live.com/mws/2005/08/core">
+      <mws:Name>Sen Client Application</mws:Name>
+      <mws:Vendor>Nokia</mws:Vendor>
+      <mws:Version>Sen v1.0.0</mws:Version>
+    </mws:Application>
+    <wsa:MessageID xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">urn:uuid:6d540f4b-cd8e-a993-9bf1-e27810d97dfb</wsa:MessageID>
+    <wsa:To xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">http://schemas.live.com/mws/2005/08/messaging</wsa:To>
+    <wsa:Action xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">http://schemas.live.com/mws/2005/08/messaging/Register</wsa:Action>
+    <wsa:ReplyTo xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="ReplyTo">
+      <wsa:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:Address>
+      <wsa:ReferenceProperties>
+        <mws:DeviceAddress xmlns:mws="http://schemas.live.com/mws/2005/08/core">uuid:7bbd5c5b-7857-44a3-c609-53498d0cac5b/messaging</mws:DeviceAddress>
+      </wsa:ReferenceProperties>
+    </wsa:ReplyTo>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="Timestamp">
+        <wsu:Created>2006-10-16T07:33:51Z</wsu:Created>
+      </wsu:Timestamp>
+      <wsse:BinarySecurityToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="token">PEVuY3J5cHRlZERhdGEgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jIyIgSWQ9IkFzc2VydGlvbjAiIFR5cGU9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jI0VsZW1lbnQiPjxFbmNyeXB0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjdHJpcGxlZGVzLWNiYyI+PC9FbmNyeXB0aW9uTWV0aG9kPjxkczpLZXlJbmZvIHhtbG5zOmRzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjIj48RW5jcnlwdGVkS2V5PjxFbmNyeXB0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjcnNhLW9hZXAtbWdmMXAiPjwvRW5jcnlwdGlvbk1ldGhvZD48ZHM6S2V5SW5mbz48ZHM6WDUwOURhdGE+PGRzOlg1MDlTS0k+dGIzcVp5Y1ZBRUFWZm1vTTluS3dtUUNlSGZVPTwvZHM6WDUwOVNLST48L2RzOlg1MDlEYXRhPjxkczpLZXlOYW1lPm13cy5iZXRhLm1vYmlsZS5saXZlLmNvbTwvZHM6S2V5TmFtZT48L2RzOktleUluZm8+PENpcGhlckRhdGE+PENpcGhlclZhbHVlPmNSeG1WL1VudW9aZFNLZzVzUkJRSU1kSFJ0alM2N3pKR242Y2s1M0dGd2k2VTVMLzRYNXhlK1BOR3NRSk1uL2tWTU1tQzRQajV6NEpPTm1FNGl5UzdjY0kyVmNobHFGRjZGZGhOS0VqcHBmTTMrQm1FOUNVbFU5NHJqZTNKbkhLOWRSZmRRUiszRUZabEZSNHZpY0JrQ2JSdXUwU0ppTjl2cUJkeStaZnpVRT08L0NpcGhlclZhbHVlPjwvQ2lwaGVyRGF0YT48L0VuY3J5cHRlZEtleT48L2RzOktleUluZm8+PENpcGhlckRhdGE+PENpcGhlclZhbHVlPlhBakJhcm1jSkxteVVxYUZZeXo1WkswRjhSNVNZWTRWTnZPRnlMR3BENi9IdlhwY0pRV3RmdWk4U3RCWjN6NW5IcHBZVFp6dzNEemkwTWJUY3BZZHU0QkM4Q3dMZVNzWWlHVG5zNE1LRmdvU0VickpwOVUyWXhUMHFiK1I2TDVXNmVWUi8ySEdCWDRablBsb1VvMm9wTjBFeWp2L2I4WUlJV1J5QXlBckpLSkVlMWVNMWJBMjdqbVAyTnJRemJjNkZxM0FUekdoa25yVUlSRWtPcEZXQ3pmUDk0eG9zRk5JWjIvZ0VMMm92RDY4cmdDeWhOMFFtMGIwUUdwZENxQzg3dWkxc2Vjdlo2Rmx6K0dtYzZZZDEvK2VoazJUYmhobmg1YlpyNnlUbkpqZ1E1ZFEwcytwR2tqU1k0UU81a3ZZcUJjWEloeHN2MVhCbEpOY3A5aFEvYVVReVF2L0lUTkJVbURBZXZxQUp2VjFVdnVSdGZJZUhHUktUdksyamJJODNUMG1NU2xMTDRRSTFZTmhjcXR5U0cweklpakxiT0N4WjVYQkY4MGppQ0lXaUJxYmNhbGVZVlVyTFV1Q3ZWMHJuNVJSUVRZdjdwek94ZFRCckhUQjZSWitDL0RLdkpSMXVPRHhjZUo1VTBVMGNaOHdOdk1pNGIwSE9tUXFUZ29SYks3Tlp3SmptUmROdG14bTh0bFlna3dPT0RFOEROeXZuY2NScjBiQzBCL281NWtTZVRFVkRqYTdJVzhzOTNocTlTWWlLY3hRZ3FvMmdlRjJZNXpBdmwzeSt5Q0s2TnlQczVJVUJOZGlCZ0l0ZGVmNmlFeHVQTDFHZEFEbkFBR0I2STVQU2haaHVqUVh6SkVTNDdLajVjODJZclJhZXBnZ2FJclROSGlzcSs0clNRV0pnZ2RuN21IM1RFcDFpc1M4cnFWelJib0hSR2I3NGd1S1VHU3lBT2pHK3p6V1FqZmYveUdFOHlSczE1am5vM3pMRkcvQ2VwWEtJZGVzVTZLcWF4QTlpakFURzBrd280NWFTZ3ZxQ25xeFlsZEpQRzZoQmRoaS9jd1dDRndVR09hNVN5TTgxWVRnRWV2cFFpaGk1enRtcy9hTEN1RDlCMmFhWDAzYjZjVFo4eFduY1l4dnFRUzBEMTU1UnovZlRudGUxYXN2ODYzSmp1a3dxcXo3alZJQXpCMWdOMlU5dnB0cjAyZVlRQ1dMZVJsMXFtME9ZWlFnZlBOeUd3SFc5VGQyWko4b000bEVMNkd4M0hlL0lKdzFBaGlUZWRuQnhValR2RjlPRXo0S2hsa2lpekdhaDBqOW14d0lZWmliQlFDL1pzclhKV29URlNMZ21LRGpPSFNiT3pRQkhydzIrUXEvVWJHbFF5aWg5TVFHTXZRYmFSTkx0eEk1bHRTTDZYVGhuREZhV0w2bmNjcUxoR3pkM0F2VE91Y0syWnhTUlFLaXdnYVNVVExiTG5SeUFOakdVdE1iRldFdDJoMjVlSjFHeXowSkFKZGlSL3lqdUVTQXdLM0dTYnZ0V3BqMWk1K1FNZGQ1WjZTYjVUNDUzU1JkTGxqR3dDcnc0ODBSVXdSVUp6UXR0SzB1eFhRRUNXM0JqZElOVXhVK1o2dVpQeXlTRFNpMDVEWFRXNlJzdCtVQ3JYcldoS1RmaStVd25YeFVUUFRzY2I2MkRCbkZJL1ZWdUxZQzV1TXh3WCt0SE0rbGZxRVJjeHU0RVRNcW4zdnhWSmJiMGNmRS9FbWJzSldXcDdudFUvcWZYbHhrVXQ0TGNoZlRUZktJejNBSEVGbkJkZGVlRXNiOTF5amxmYzQycVl2TEQ2bmYydGQ0V08wREYrRlREVjR2Ui9mNHZsZXh3VmNDUVFqWVU1Z2xvUGpmdnloM1cxcDRMNFNvb1FBMmFnZm54YUd1MHdYdDBqTzR6aURhRkFZd3djckd0VFpwZm9Od1BJUzVLOHloWnp5WGt6aXpoVm1PdTdsaTNjWjJuckxrZXlIeFhwL2grWkhldDFUelpkOHhZZGM3VGNCcythNnI3dGJ0d3hIeGRsSUlGUVdnU21JVWdENThhSGpqRDBPYUhGOE44RHNhVVFhYUs2eWxQbjVVV3liOTYzSTdrcXpOTTcwQVhramVScTBRdklNQ3BRTXNJVENleEtRS2M5b1RwOVNqajZtTWpqcmIwdnZGOUR5OUJzUlJaOHFIVE1ZdldnMmdPY0hPWDBUUFNXcm5WdGI4a29EYnJSZUhzK3A1bEpUNitXTTFlNzZiRCtlTk8vVFJKNGUwYlFzNkRTZXNSYWZqTnBRNks4QmhjQVc5YWwyUHpOL0NLUk9FNStVTW9CdTVXQk1hdWhXZVE0a2l5cUtkU3FXUjJUbHVwN1h2TDRTNkVwNENMTFZiRmY2WmJLQTBOWGIvS2RSMEQzQjBVa2NHYXk5UmlQY0MrdFBpNHI5RFRYL3ZHTUQ3cnVlOXFEcWc4MEUzN00xbjVXUWh1dVQ2T1RVeEVtbldEUWlyK2kxWFFIUTA0cm81d3hERHdNQ1ljUW1CSVFzTTViRzZweUo2MStOMEEwWXE4UTd3ZDN0UWQxRzZqUVpoL2ZYVit6aU9wZlR1VTFoODd6aTNpdzZRS3pqc1ZLVk5ocU40b3J1emJQb1ptTUF5UFBiWWxKVFlTcWhlSFpPdjVCekVJOGZTZlYyMjk1Rm1kL1VKamdObFE1MWdJUXRBSnNhelhYMldOVlNrWjJnRnFtdCswQXJXbUF1Q0QvaHEyTXlaTHRlcGdVdStmajlBQWJHeVdTYmpHNzE4ekIxeGVNQ1VLNHNSZytya0FiTG5pcUR6NlloNlBtVS9HaWZ0V2x3YmM3VjZnWC96MjcvcFNjUmQ3VmQ4Sm9jNFhpUDNwN2lSVm1WQ3NGVGVXMnFEZXBlbEJoNjNNbDFEMTRaWE1qVXgxNE5JNUNBbjlKWWlmYlBKOGFZWjJMTExTT09RcEw1QklWNGxOM1hsL0RvWHpWbTNnMkJxK0JQa3hidkwvM0dhNm92N1J4d2ZJckxib0xQSS9EWDV4QlAvR2RReDFZWnVMZExuTnVYVDBZcy94TEc3R0d4QytNK2NMcUpqQkFGUDhKd0hudVNwN2x5bFpySFU2cmhhaWVWVzZkNGtXclpYbGVPc0RSeGIwaGFNQ2pvb0ozK25hUGZNY2xCN3FGREd0bkpxbENqZlJycCtLNU9RQXdQMUxsNWNtTk9vS2F5T1hNYld5bTErT1NndkZ5N0VKT0JPVHROS0t4RjZZRklkbUhRTHRyUzBINi82LytFMEIxekNjOUsyQWNLWmdoczgyeVJ6UmphZGkvM09xakgrYlVjOFpJUmk2Qy9oN0FHWUhmVDBQaFBHRWttTVNSUC9veGV3R0dyRXBnbjIyejBVdUdjdFR2WG1ndndEOVgxeVpaWDl0UzBHcEt4TVJ5bDdDWWthSWhoWjhrOW1TbmhOdG5Rd1pUSlpCdE9uUHBhSGtaL2ZsQWZpblEreHorcjZHaHhJWlNLZkZFdU9RQVZqNmtkaFVUdENKUlhxOWxpVis0SEdSZU1PTHJLM3Exd0dZL3pTTGZWZHA3N2hXekJzd09EeG95Q3VUZmVKc1hFVUxRM0dvZVFiZkNraG9rd29EeHUxMy9pNWlOUmRLQ0NINFZWcXByNWpCWUx2eGVqUjQvV3FaSy9sRVRwWTh3R3ZlQWk1aHphN053Z3ZCbG1yT2FiYTBGZ0RaUm9rSjNUNXYwMG5PaEwyYUludndINnJQc293QTBXTUNPMU1vd1dWM1VvQnhqc2psUVdacE5qUDZINXdrR1FjSEVZS0RvcXFKYUlSTGxIV2JxbGVoYTlKMExFZzFFOGVwWHlJUnVJZ0ZTbkhlSTI1dVhJbzMraEkvQ3hEOWlZNG9ZeGNxMjZTQlVhMHhPTDJ0WTBCUlVYVmtON2tZaWpMTVhVRmx4a0l3dmlaeEowdGR6WkRPMm5hWFJCTUMvWlFBeDBxd1pUMlRDV1Bzd1E1WCtsN040THdJTTZKOHpFYTBSZ2dGd3dFTzU2VHc0cUJYaDJBWlZhTUE1eklsQWNxdkF4L1F6bU5EdlY2b3BTazdlbTZUSUZtSVZJbmZrS3YzbWdONkg3NWV1QmtxQTBjbzdRdFhwY0VrTEpKUDJ2UWZVbW9nUkdjUDV5M2dvaUlOZ1ZFMmNScWpROExDNnY3aHJxZlJEekJKbTVTZUlNblZGaTVzcVUwZkhVYmZFd1ppMDB1TjJteDZNdkQ5MEhPWTRjWHgvVGplbW1VbjJVbEFkRDR2VGt1SEd4VndpZGxsa001OWpieGF0L1c3SU5lZUc0TVl6VHVZZ29Yc0p5cEJ1WFZySFFtOEdZMkhFWSsvTVNSNFE3Smk5ZkpUdkhtZHdERXpubGFqUU40bUpPcFdYRXZEQWtTbXBWNXI3cXpjdnlYdmdvNjExbG5OQmJmQkRnNzc1Q2hzbTZsNlZWTVJWQjdsbnozNnRWQzJNZWhiaE1EYjFPUlArTEFkWVNWcnVHNHlGZHJFTG5xYVk4ejNlWFNZZEluNW9CalpvbUt0RkFYa1QrY1c3bmJzYjBXT3lSL01aYzQ2UE1CWjZvSzdZT2pnMDh5T256T1czdjhwaHgrVlk4SFR2bWhFY1UvM1VWRHIvRUNmWC9MazBDVkVDM1llM21NOHIvTDFxUHVhREpvbnJycC8xNW9KeDFRR3JtNWFTcmV0REE5MkRwN0ZVVkhCaXkrOXhZS1h1WkM5alpCR2VlcG16aENJMkZOMUdKc3hOZC9VdjRkbEtabzFoWHhPMGt3Z04wVFdyWktlMWxCY04yaHEvOVJWYndTeFRUVXlyT3dGSSszQVl2bWxUaGcrZ2pra1hOQldnMVJJZEtYeDJVdDZLVXVOWGlDUjlibmdyNkowdFZsRzlpQnFzOW1BUUNaNitIV3dzemFQYmd0VGd5YTE3dWFmbUhiL3BHMFVoRmRKa1I3dVNTUlhFWGlXZTNkcUtCNmhCV09uU2pLWmVROW5BQ1N5NzA4N1dYMEhCazQ3bXFDNWFWUk4zdUlVeFRXS2hxdGkzTTdaNlB2M0V1YkEzSmRTVUNxRS9oeEJTT28yMzdrdStHaGdNd0ltV3RoUC9VYjRwcmVwQThWWENVSEtQeFJUeXh6aDVMcHVRUG5XRU4vT09pbUVmb3o3cDFpS2IxRlNNSzd5VDREc012K3FGSEtiTnYwYnVKY0lhMDZNVTdSZHFXQlcrUHBCTFZtZ0IveGxSQURIejFVVmlwVDZIR0E4bXF4azJHSE5FODI0ZW1yRFoyOHp0VklnMWJqVTZ3T04zSVMxdHNTTmZ5MHdPb0Rla0hFcFRDQVlKSFlmRVVoV3F1SHI0dER4R1dzc3gzSUwxY3p0MEJ1L1JUa0RhT2FMM1IyOW5YcEhObWJkSU1Wc3FpdnBjbkpVVTMzOUpVVExsNFJTd1M0VDdEdnBiM3kzc3FLUm1VMXd1SFdsS2pYS3FacktDSTJFOVNYUXpjUGNjb0ZXZlFmYUNTaDBrS2U4dlhQdjVhd0R0aFQ4dXJKanJkYkZUZ0ZxTGMwSGNPbUhtYUczMWJ3Q2ZHZFF1VEpzUWJDMmNxQ3U4MUhOcExUSTYzN2VqWXU3aGxSZjd1YWpwdmM0Z3VSdmMxTzUybnNZS0xlMXlYRmFRUEp0SGV4eXBwOEpSM0c8L0NpcGhlclZhbHVlPjwvQ2lwaGVyRGF0YT48L0VuY3J5cHRlZERhdGE+</wsse:BinarySecurityToken>
+      <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:SignedInfo>
+          <ds:CanonicalizationMethod ds:Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          <ds:SignatureMethod ds:Algorithm="http://www.w3.org/2000/09/xmldsig#hmac-sha1"/>
+          <ds:Reference ds:URI="#ReplyTo">
+            <ds:Transforms>
+              <ds:Transform ds:Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            </ds:Transforms>
+            <ds:DigestMethod ds:Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+            <ds:DigestValue>P6NRh4oYhjRzERHHwX/2VPfAiwI=</ds:DigestValue>
+          </ds:Reference>
+          <ds:Reference ds:URI="#Timestamp">
+            <ds:Transforms>
+              <ds:Transform ds:Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            </ds:Transforms>
+            <ds:DigestMethod ds:Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+            <ds:DigestValue>YrPyX6bOdJ+1EJQcefsYqb/JsKo=</ds:DigestValue>
+          </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue>KeYkXbExJXUfa0MU8xykLqy0q5g=</ds:SignatureValue>
+        <ds:KeyInfo>
+          <wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+            <wsse:Reference wsse:URI="token"/>
+          </wsse:SecurityTokenReference>
+        </ds:KeyInfo>
+      </ds:Signature>
+    </wsse:Security>
+  </S:Header>
+  <S:Body>
+    <sip:RegisterRequest xmlns:sip="http://schemas.live.com/mws/2005/08/messaging"/>
+  </S:Body>
+</S:Envelope>

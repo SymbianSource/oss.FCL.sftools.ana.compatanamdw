@@ -1,0 +1,335 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipretryafterheader
+//
+// Tests all public elements of the t_csipretryafterheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPRetryAfterHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csipretryafterheader-0001
+//! @SYMTestCaseID          t_csipretryafterheader-0001
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::NewL(TUint) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPRetryAfterHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRetryAfterHeader object.
+//!                         2. Construct CSIP and CSIPRetryAfterHeader object.
+//!                         3. Delete the CSIPRetryAfterHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPRetryAfterHeader        sipretryafterheader
+        COMMAND             sip                         NewL            t_csipretryafterheader-0001-NewL_Command01
+        COMMAND             sipretryafterheader         NewL            t_csipretryafterheader-0001-NewL_Command02
+        COMMAND             sipretryafterheader         ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0001
+
+START_TESTCASE              t_csipretryafterheader-0002
+//! @SYMTestCaseID          t_csipretryafterheader-0002
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::NewLC(TUint)
+//! @SYMTestCaseDesc        Constructs a CSIPRetryAfterHeader object by using NewLC.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRetryAfterHeader object.
+//!                         2. Construct CSIP, and construct CSIPRetryAfterHeader object.
+//!                         3. Delete the CSIPRetryAfterHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPRetryAfterHeader        sipretryafterheader
+        COMMAND             sip                         NewL            t_csipretryafterheader-0002-NewL_Command01
+        COMMAND             sipretryafterheader         NewLC           t_csipretryafterheader-0002-NewLC_Command02
+        COMMAND             sipretryafterheader         ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0002
+
+START_TESTCASE              t_csipretryafterheader-0003
+//! @SYMTestCaseID          t_csipretryafterheader-0003
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPRetryAfterHeader object from textual presentation.
+//! @SYMTestActions         1. Create a CSIP object and CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPRetryAfterHeader objects from textual presentation by using DecodeL.
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPRetryAfterHeader can be decoded successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRetryAfterHeader    sipretryafterheader
+        COMMAND             sip                     NewL                        t_csipretryafterheader-0003-NewL_Command01
+        COMMAND             sipretryafterheader     DecodeL                     t_csipretryafterheader-0003-DecodeL_Command02
+        COMMAND             sipretryafterheader     ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0003
+
+START_TESTCASE              t_csipretryafterheader-0004
+//! @SYMTestCaseID          t_csipretryafterheader-0004
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::RetryAfter() const
+//!                         CSIPRetryAfterHeader::SetRetryAfter(TUint)
+//! @SYMTestCaseDesc        Gets the retry after value and then set.
+//! @SYMTestActions         1. Create a CSIP object and CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPRetryAfterHeader objects.
+//!                         4. Get the retry-after.
+//!                         5. Set the retry-after.
+//!                         6. Get the retry-after again to verify set value.
+//!                         7. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned retry-after is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPRetryAfterHeader        sipretryafterheader
+        COMMAND             sip                         NewL            t_csipretryafterheader-0004-NewL_Command01
+        COMMAND             sipretryafterheader         NewL            t_csipretryafterheader-0004-NewL_Command02
+        COMMAND             sipretryafterheader         RetryAfter      t_csipretryafterheader-0004-RetryAfter_Command03
+        COMMAND             sipretryafterheader         SetRetryAfter   t_csipretryafterheader-0004-SetRetryAfter_Command04
+        COMMAND             sipretryafterheader         RetryAfter      t_csipretryafterheader-0004-RetryAfter_Command05
+        COMMAND             sipretryafterheader         ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0004
+
+START_TESTCASE              t_csipretryafterheader-0005
+//! @SYMTestCaseID          t_csipretryafterheader-0005
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::SetDurationParamL(TInt)
+//!                         CSIPRetryAfterHeader::DurationParame() const
+//! @SYMTestCaseDesc        Gets the value of the "duration"-parameter and then set.
+//! @SYMTestActions         1. Create a CSIP object and CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPRetryAfterHeader.
+//!                         4. Get the "duration"-parameter value.
+//!                         5. Set the "duration"-parameter value .
+//!                         6. Get the "duration"-parameter value again to verify set value.
+//!                         7. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned "duration"-parameter value is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPRetryAfterHeader    sipretryafterheader
+        COMMAND             sip                     NewL            t_csipretryafterheader-0005-NewL_Command01
+        COMMAND             sipretryafterheader     NewL            t_csipretryafterheader-0005-NewL_Command02
+        COMMAND             sipretryafterheader     DurationParam   t_csipretryafterheader-0005-DurationParam_Command03
+        COMMAND             sipretryafterheader     SetDurationParamL t_csipretryafterheader-0005-SetDurationParamL_Command04
+        COMMAND             sipretryafterheader     DurationParam   t_csipretryafterheader-0005-DurationParam_Command05
+        COMMAND             sipretryafterheader     ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0005
+
+START_TESTCASE              t_csipretryafterheader-0006
+//! @SYMTestCaseID          t_csipretryafterheader-0006
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::InternalizeValueL()
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPRetryAfterHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP and CSIPRetryAfterHeader object.
+//!                         3. Set the 1st CSIPRetryAfterHeader object's "duration"-parameter value. 
+//!                         4. Externalize 1st CSIPRetryAfterHeader object
+//!                         5. Constructs an instance of a CSIPRetryAfterHeader from a RReadStream by using InternalizeValueL.
+//!                         6. Get the retry-after and "duration"-parameter value to check whether they are same with 1st CSIPRetryAfterHeader object set. 
+//!                         7. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults A CSIPRetryAfterHeader object can be created by internalizing from a file. The new one is same as the original one which externalizes to a file.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIPRetryAfterHeader     sipretryafterheader
+        CREATE_OBJECT       CSIPRetryAfterHeader     sipretryafterheader1
+        CREATE_OBJECT       CSIP                     sip
+        COMMAND             sip                      NewL            t_csipretryafterheader-0006-NewL_command01
+        COMMAND             sipretryafterheader      NewL            t_csipretryafterheader-0006-NewL_command02
+        COMMAND             sipretryafterheader      SetDurationParamL t_csipretryafterheader-0006-SetDurationParamL_Command03
+        COMMAND             sipretryafterheader      ExternalizeL    t_csipretryafterheader-0006-ExternalizeL_command04
+        COMMAND             sipretryafterheader1     InternalizeValueL  t_csipretryafterheader-0006-InternalizeValueL_command05
+        COMMAND             sipretryafterheader1     RetryAfter      t_csipretryafterheader-0006-RetryAfter_command06
+        COMMAND             sipretryafterheader1     DurationParam   t_csipretryafterheader-0006-DurationParam_command07
+        COMMAND             sipretryafterheader      ~
+        COMMAND             sipretryafterheader1     ~
+        COMMAND             sip                      ~ 
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0006
+
+
+START_TESTCASE              t_csipretryafterheader-0007
+//! @SYMTestCaseID          t_csipretryafterheader-0007
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::Name()
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRetryAfterHeader object.
+//!                         2. Construct CSIP and CSIPRetryAfterHeader object.
+//!                         3. Get name of the CSIPRetryAfterHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Name() can be called successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPRetryAfterHeader        sipretryafterheader
+        COMMAND             sip                         NewL            t_csipretryafterheader-0007-NewL_Command01
+        COMMAND             sipretryafterheader         NewL            t_csipretryafterheader-0007-NewL_Command02
+        COMMAND             sipretryafterheader         Name
+        COMMAND             sipretryafterheader         ~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0007
+
+
+START_TESTCASE              t_csipretryafterheader-0008
+//! @SYMTestCaseID          t_csipretryafterheader-0008
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a deep-copy of this header object.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP and CSIPRetryAfterHeader object.
+//!                         3. Clone the CSIPRetryAfterHeader object to 2nd one and check the 2nd one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults CloneL can be called successfully and the clone is same as original one.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIPRetryAfterHeader     sipretryafterheader
+        CREATE_OBJECT       CSIPRetryAfterHeader     sipretryafterheader1
+        CREATE_OBJECT       CSIP                     sip
+        COMMAND             sip                      NewL           t_csipretryafterheader-0008-NewL_Command01
+        COMMAND             sipretryafterheader      NewL           t_csipretryafterheader-0008-NewL_Command02
+        COMMAND             sipretryafterheader      SetDurationParamL t_csipretryafterheader-0008-SetDurationParamL_Command03
+        COMMAND             sipretryafterheader      CloneL         t_csipretryafterheader-0008-CloneL_command04
+        COMMAND             sipretryafterheader1     RetryAfter     t_csipretryafterheader-0008-RetryAfter_command05
+        COMMAND             sipretryafterheader1     DurationParam  t_csipretryafterheader-0008-DurationParam_command06
+        COMMAND             sipretryafterheader      ~
+        COMMAND             sipretryafterheader1     ~
+        COMMAND             sip                      ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0008
+
+START_TESTCASE              t_csipretryafterheader-0009
+//! @SYMTestCaseID          t_csipretryafterheader-0009
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::Comment()
+//! @SYMTestCaseDesc        Constructs a CSIPRetryAfterHeader object from textual presentation and get the comment value.
+//! @SYMTestActions         1. Create a CSIP object and CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPRetryAfterHeader objects from textual presentation by using DecodeL.
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The comment valuse returned as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRetryAfterHeader    sipretryafterheader
+        COMMAND             sip                     NewL        t_csipretryafterheader-0009-NewL_Command01
+        COMMAND             sipretryafterheader     DecodeL     t_csipretryafterheader-0009-DecodeL_Command02
+        COMMAND             sipretryafterheader     Comment     t_csipretryafterheader-0009-Comment_Command03
+        COMMAND             sipretryafterheader     ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0009
+
+START_TESTCASE              t_csipretryafterheader-0010
+//! @SYMTestCaseID          t_csipretryafterheader-0010
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::DecodeL()
+//! @SYMTestCaseDesc        Negative case,constructs a CSIPRetryAfterHeader object from abnormal textual presentation.
+//! @SYMTestActions         1. Create a CSIP object and CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPRetryAfterHeader objects from an abnormal textual presentation by using DecodeL.
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPRetryAfterHeader DecodeL leaves with error KErrSipCodecRetryAfterHeader(-17815).
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRetryAfterHeader    sipretryafterheader
+        COMMAND             sip                     NewL        t_csipretryafterheader-0010-NewL_Command01
+        COMMAND  !Error=-17815 sipretryafterheader  DecodeL     t_csipretryafterheader-0010-DecodeL_Command02
+        COMMAND             sipretryafterheader     ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0010
+
+START_TESTCASE              t_csipretryafterheader-0011
+//! @SYMTestCaseID          t_csipretryafterheader-0011
+//! @SYMAuthor              Jeffery Zhao
+//! @SYMCreationDate        05/11/2009
+//! @SYMAPI                 CSIPRetryAfterHeader::SetDurationParamL(TInt)
+//! @SYMTestCaseDesc        Negative case,set the value of the "duration"-parameter with a negative value.
+//! @SYMTestActions         1. Create a CSIP object and CSIPRetryAfterHeader objects.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPRetryAfterHeader.
+//!                         4. Set the "duration"-parameter with a negative value .
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SetDurationParamL leaves with error KErrSipCodecAnyParam(-17761).
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipretryafterheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRetryAfterHeader    sipretryafterheader
+        COMMAND             sip                     NewL            t_csipretryafterheader-0011-NewL_Command01
+        COMMAND             sipretryafterheader     NewL            t_csipretryafterheader-0011-NewL_Command02
+        COMMAND  !Error=-17761 sipretryafterheader  SetDurationParamL t_csipretryafterheader-0011-SetDurationParamL_Command03
+        COMMAND             sipretryafterheader     ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipretryafterheader-0011

@@ -1,0 +1,69 @@
+/*TYPE TESTCLASS*//*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Test Module DLL to Location Acquisition API
+*
+*/
+
+
+//#include <domain/osextensions/platform_paths.hrh>
+
+TARGET          testlbslocacquisition.dll
+TARGETTYPE      dll
+UID             0x1000008D 0x101FB3E5
+
+CAPABILITY      ALL -TCB
+/* Remove comments and replace 0x00000000 with correct vendor id */
+// VENDORID     0x00000000
+/* Remove comments and replace 0x00000000 with correct secure id */
+// SECUREID     0x00000000
+
+//TARGETPATH 
+DEFFILE         testlbslocacquisition.def
+
+SOURCEPATH      ../src
+SOURCE          testlbslocacquisition.cpp
+SOURCE          testlbslocacquisitionBlocks.cpp
+SOURCE          testpositionserver.cpp
+SOURCE          testpositioner.cpp
+SOURCE          testpositionInfo.cpp
+SOURCE          testpositioncourseinfo.cpp
+SOURCE          testpositiongenericinfo.cpp
+SOURCE          testcoordinate.cpp
+SOURCE          testlocality.cpp
+SOURCE          testposition.cpp
+SOURCE          testcourse.cpp
+SOURCE          testpositionquality.cpp
+SOURCE          testpositionmodule.cpp
+SOURCE          testsatellite.cpp
+SOURCE          testcriteria.cpp
+SOURCE          testrequestor.cpp
+
+
+
+USERINCLUDE     ../inc 
+
+//MW_LAYER_SYSTEMINCLUDE
+SYSTEMINCLUDE		/epoc32/include
+SYSTEMINCLUDE		/epoc32/include/internal
+APP_LAYER_SYSTEMINCLUDE
+
+LIBRARY         euser.lib
+LIBRARY         stiftestinterface.lib
+LIBRARY         lbs.lib			// Location Acquisition
+LIBRARY         efsrv.lib
+LIBRARY         bafl.lib estor.lib
+
+LANG            SC
+
+// End of File

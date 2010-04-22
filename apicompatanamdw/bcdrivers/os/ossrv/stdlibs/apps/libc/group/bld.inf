@@ -1,0 +1,69 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+#include "../testprogname/group/bld.inf"
+#include "../testlibcwchar/group/bld.inf"
+#include "../testsyscalls/group/bld.inf"
+//#include "../testifioctls/group/bld.inf"
+//#include "../teststdlib/group/bld.inf"
+#include "../teststdio/group/bld.inf"
+//#include "../testpipe/group/bld.inf"
+#include "../teststring/group/bld.inf"
+#include "../testctype/group/bld.inf"
+#include "../testinet/group/bld.inf"
+#include "../testlink/group/bld.inf"
+#include "../testmkfifo/group/bld.inf"
+#include "../testmmap/group/bld.inf"
+//#include "../testmsgqueue/group/bld.inf"
+//#include "../testnetdb/group/bld.inf"
+#include "../testregex/group/bld.inf"
+#include "../testsemaphore/group/bld.inf"
+#include "../testshm/group/bld.inf"
+//#include "../testsocket/group/bld.inf"
+#include "../testsyssim/group/bld.inf"
+#include "../testsysunistd/group/bld.inf"
+#include "../testtime_blr/group/bld.inf"
+#include "../testwctype/group/bld.inf"
+#include "../testselect/group/bld.inf"
+#include "../testdb_blr/group/bld.inf"
+#include "../testlocblr/group/bld.inf"
+//#include "../testmisc/group/bld.inf"
+#include "../testglob/group/bld.inf"
+
+#include "../testcapsystime/group/bld.inf"
+#include "../testcapfcntl/group/bld.inf"
+#include "../testcaputime/group/bld.inf"
+#include "../testcapipc/group/bld.inf"
+#include "../testcapstdio/group/bld.inf"
+#include "../testcapwchar/group/bld.inf"
+#include "../testcapstat/group/bld.inf"
+#include "../testcapioccom/group/bld.inf"
+#include "../testcapunistd/group/bld.inf"
+#include "../testcapsocket/group/bld.inf"
+
+#include "../testwchar/group/bld.inf"
+#include "../testwcharapi/group/bld.inf"
+#include "../testwideapis/group/bld.inf"
+#include "../testcomport/group/bld.inf"
+#include "../testftw/group/bld.inf"
+//#include "../testmulticast/group/bld.inf"
+//#include "../testlocalsocket/group/bld.inf"
+//#include "../testoffsetof/group/bld.inf"
+
+PRJ_TESTEXPORTS
+libc.bat							/Epoc32/winscw/c/tstdapis/libc.bat
+

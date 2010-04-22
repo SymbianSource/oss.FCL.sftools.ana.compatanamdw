@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<doc doc="ATTR_value">test content<![CDATA[test < test2 & 
+> ;]]></doc>
+<?doc ATTR_value?>

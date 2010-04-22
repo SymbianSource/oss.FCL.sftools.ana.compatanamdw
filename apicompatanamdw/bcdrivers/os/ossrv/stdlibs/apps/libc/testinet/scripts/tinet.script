@@ -1,0 +1,32 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tinet
+LOAD_SUITE tinet
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tinet  Inet_addr_with_valid_input \tstdapis\tinet.ini Section_Inet_addr_with_valid_input
+RUN_TEST_STEP !Result=0 5 tinet  Inet_addr_with_invalid_input \tstdapis\tinet.ini Section_Inet_addr_with_invalid_input
+RUN_TEST_STEP !Result=0 5 tinet  Inet_ntoaTest \tstdapis\tinet.ini Section_Inet_ntoaTest
+RUN_TEST_STEP !Result=-2 5 tinet  Inet_ptonTest \tstdapis\tinet.ini Section_Inet_ptonTest_1
+RUN_TEST_STEP !Result=-2 5 tinet  Inet_ptonTest \tstdapis\tinet.ini Section_Inet_ptonTest_2
+RUN_TEST_STEP !Result=0 5 tinet  Inet_ptonTest \tstdapis\tinet.ini Section_Inet_ptonTest_3
+RUN_TEST_STEP !Result=0 5 tinet  Inet_ptonTest \tstdapis\tinet.ini Section_Inet_ptonTest_4
+RUN_TEST_STEP !Result=0 5 tinet  Inet_ntopTest \tstdapis\tinet.ini Section_Inet_ntopTest_1
+RUN_TEST_STEP !Result=-2 5 tinet  Inet_ntopTest \tstdapis\tinet.ini Section_Inet_ntopTest_2
+
+
+

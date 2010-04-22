@@ -1,0 +1,180 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName  t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csiprseqheader.script
+
+LOAD_SUITE      t_sipcodecapi
+DELAY           2000
+
+START_TESTCASE t_csiprseqheader-0001
+//! @SYMTestCaseID          t_csiprseqheader-0001
+//! @SYMAuthor              Dorothy Zhang   
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPRSeqHeader::NewL(RStringF)
+//! @SYMTestCaseDesc        Creates a CSIPRSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPRSeqHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csiprseqheader.ini
+        CREATE_OBJECT       CSIPRSeqHeader                     siprseqheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprseqheader-0001-NewL_Command01
+        COMMAND             siprseqheader                      CSIPRSeqHeader             t_csiprseqheader-0001-CSIPRSeqHeader_Command02
+        COMMAND             siprseqheader                      ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprseqheader-0001
+
+START_TESTCASE t_csiprseqheader-0002
+//! @SYMTestCaseID          t_csiprseqheader-0002
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPRSeqHeader::DecodeL(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPRSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPRSeqHeader object
+//!                         2. Decode the header value
+//!                         3. Check the instance via encode the header's value 
+//!                         4. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csiprseqheader.ini
+        CREATE_OBJECT       CSIPRSeqHeader           siprseqheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprseqheader-0002-NewL_Command01
+        COMMAND             siprseqheader                      DecodeL            t_csiprseqheader-0002-DecodeL_Command02
+        COMMAND             siprseqheader                      ToTextValueL       t_csiprseqheader-0002-ToTextValueL_Command03
+        COMMAND             siprseqheader                      ~
+        END_TEST_BLOCK
+END_TESTCASE		    t_csiprseqheader-0002
+
+
+START_TESTCASE              t_csiprseqheader-0003
+//! @SYMTestCaseID          t_csiprseqheader-0003
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPRSeqHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Creates a CSIPRSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPRSeqHeader object
+//!                         2. Externalize the value to a file
+//!                         3. Internalize the value from a file
+//!                         4. Check the instance via get the name
+//!                         5. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csiprseqheader.ini
+        CREATE_OBJECT       CSIPRSeqHeader           siprseqheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprseqheader-0003-NewL_Command01
+        COMMAND             siprseqheader          CSIPRSeqHeader              t_csiprseqheader-0003-CSIPRSeqHeader_Command02
+        COMMAND             siprseqheader          ExternalizeL           t_csiprseqheader-0003-ExternalizeL_command03
+        COMMAND             siprseqheader          InternalizeValueL      t_csiprseqheader-0003-InternalizeValueL_command04
+        COMMAND             siprseqheader          Name                   t_csiprseqheader-0003-Name_command05
+        COMMAND             siprseqheader            ~
+        COMMAND             sip                                ~
+        END_TEST_BLOCK
+END_TESTCASE t_csiprseqheader-0003
+
+START_TESTCASE              t_csiprseqheader-0004
+//! @SYMTestCaseID          t_csiprseqheader-0004
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPRSeqHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a CSIPRSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPRSeqHeader object
+//!                         2. Clone the instance
+//!                         3. Check the instance via get the name
+//!                         4. Destroys the 2 object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPRSeqHeader object is cloned sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csiprseqheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRSeqHeader         siprseqheader
+        CREATE_OBJECT       CSIPRSeqHeader         siprseqheader2
+        COMMAND             sip                                 NewL             t_csiprseqheader-0004-NewL_Command01
+        COMMAND             siprseqheader          CSIPRSeqHeader                t_csiprseqheader-0004-CSIPRSeqHeader_Command02
+        COMMAND             siprseqheader          CloneL                 t_csiprseqheader-0004-CloneL_command03
+        COMMAND             siprseqheader2         Name                   t_csiprseqheader-0004-Name_command04
+        COMMAND             siprseqheader          ~
+        COMMAND             siprseqheader2         ~
+        COMMAND             sip                                ~
+        END_TEST_BLOCK
+END_TESTCASE t_csiprseqheader-0004
+
+START_TESTCASE              t_csiprseqheader-0005
+//! @SYMTestCaseID          t_csiprseqheader-0005
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPRSeqHeader::Name()
+//! @SYMTestCaseDesc        Creates a CSIPRSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPRSeqHeader object
+//!                         2. Get the name
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPRSeqHeader object name is gotten sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csiprseqheader.ini
+        CREATE_OBJECT       CSIPRSeqHeader           siprseqheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprseqheader-0005-NewL_Command01
+        COMMAND             siprseqheader            CSIPRSeqHeader           t_csiprseqheader-0005-CSIPRSeqHeader_Command02
+        COMMAND             siprseqheader            Name            t_csiprseqheader-0005-Name_Command03
+        COMMAND             siprseqheader            ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprseqheader-0005
+
+START_TESTCASE t_csiprseqheader-0006
+//! @SYMTestCaseID          t_csiprseqheader-0006
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        24/11/2009
+//! @SYMAPI                 CSIPRSeqHeader::DecodeL(const TDesC8&)
+//! @SYMTestCaseDesc        Negetive case, try to decode a CSIPRSeqHeader object with illegal value
+//! @SYMTestActions         1. Creates a CSIPRSeqHeader object
+//!                         2. Decode the header value with illegal one
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The KErrSipCodecTokenBaseHeader returns as expected
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csiprseqheader.ini
+        CREATE_OBJECT       CSIPRSeqHeader           siprseqheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprseqheader-0006-NewL_Command01
+        COMMAND !Error=-17812   siprseqheader                      DecodeL            t_csiprseqheader-0006-DecodeL_Command02
+        COMMAND             siprseqheader                      ~
+        END_TEST_BLOCK
+END_TESTCASE		    t_csiprseqheader-0006
+
+

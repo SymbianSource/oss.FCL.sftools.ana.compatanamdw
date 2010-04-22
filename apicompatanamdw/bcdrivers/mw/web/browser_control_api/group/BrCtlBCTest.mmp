@@ -1,0 +1,89 @@
+/*
+* Copyright (c) 2006-2009 Nokia Corporation and/or its subsidiary(-ies). 
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:      ?Description
+*
+*/
+
+TARGET      BrCtlBCTest.exe
+TARGETTYPE  exe
+UID  0x100039CE 0xA0000181 
+EPOCSTACKSIZE	  0x5000
+
+EPOCHEAPSIZE 0x5000 0x1000000
+
+VENDORID    0
+
+CAPABILITY	NetworkServices WriteDeviceData ReadDeviceData
+
+
+SOURCEPATH ../src
+SOURCE  BrCtlBCTestApp.cpp 
+SOURCE  BrCtlBCTestAppUi.cpp
+SOURCE  BrCtlBCTestDocument.cpp
+SOURCE  BrCtlBCTestContainer.cpp
+SOURCE  BrCtlBCTestObserver.cpp
+SOURCE  BrCtlBCTestStateChangeObserver.cpp
+SOURCE  BrCtlBCTestQueryDialog.cpp
+
+
+START RESOURCE ../Data/BrCtlBCTest.rss
+HEADER
+TARGETPATH resource/apps
+LANG	SC
+END
+
+START RESOURCE ../Data/BrCtlBCTest_reg.rss
+#ifdef WINSCW
+TARGETPATH 	  /private/10003a3f/apps
+#else
+TARGETPATH 	  /private/10003a3f/import/apps
+#endif
+END
+
+USERINCLUDE .
+USERINCLUDE ../inc
+
+#ifdef SBSV2
+	APP_LAYER_SYSTEMINCLUDE
+
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#else // SBSV2 not defined
+	APP_LAYER_SYSTEMINCLUDE
+
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#endif // SBSV2
+
+SYSTEMINCLUDE   /epoc32/include/ecom
+
+LIBRARY euser.lib apparc.lib cone.lib eikcore.lib downloadmgr.lib downloadmgruilib.lib
+LIBRARY avkon.lib flogger.lib apmime.lib apgrfx.lib efsrv.lib eikcoctl.lib commonui.lib ecom.lib 
+LIBRARY eikdlg.lib aknnotify.lib fbscli.lib
+
+
+LIBRARY browserengine.lib
+

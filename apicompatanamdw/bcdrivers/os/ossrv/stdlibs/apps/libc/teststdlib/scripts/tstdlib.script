@@ -1,0 +1,245 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tstdlib
+LOAD_SUITE tstdlib
+
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tstdlib  malloc_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib  malloc_Test1
+//RUN_TEST_STEP !Result=0 5 tstdlib  malloc_Test2 
+
+RUN_TEST_STEP !Result=0 5 tstdlib calloc_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib calloc_Test1
+//RUN_TEST_STEP !Result=0 5 tstdlib calloc_Test2
+
+RUN_TEST_STEP !Result=0 5 tstdlib realloc_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib realloc_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib realloc_Test2
+RUN_TEST_STEP !Result=0 5 tstdlib realloc_Test3
+RUN_TEST_STEP !Result=0 5 tstdlib realloc_Test4
+
+RUN_TEST_STEP !Result=0 5 tstdlib free_Test0
+
+RUN_TEST_STEP !Result=0 5 tstdlib getenv_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib getenv_Test1
+
+RUN_TEST_STEP !Result=0 5 tstdlib setenv_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib setenv_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib setenv_Test2
+RUN_TEST_STEP !Result=0 5 tstdlib setenv_Test3
+RUN_TEST_STEP !Result=0 5 tstdlib setenv_Test4
+
+RUN_TEST_STEP !Result=0 5 tstdlib putenv_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib putenv_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib putenv_Test2
+RUN_TEST_STEP !Result=0 5 tstdlib putenv_Test3
+
+RUN_TEST_STEP !Result=0 5 tstdlib unsetenv_Test0
+
+RUN_TEST_STEP !Result=0 5 tstdlib atexit_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib atexit_Test1
+
+RUN_TEST_STEP !Result=0 5 tstdlib Testlseek
+
+RUN_TEST_STEP !Result=0 5 tstdlib abs_good_param \tstdapis\tstdlib.ini Sectionabs_good_paramL
+RUN_TEST_STEP !Result=0 5 tstdlib abs_pos_max
+RUN_TEST_STEP !Result=0 5 tstdlib abs_neg_max
+RUN_TEST_STEP !Result=0 5 tstdlib labs_good_param \tstdapis\tstdlib.ini Sectionlabs_good_paramL
+RUN_TEST_STEP !Result=0 5 tstdlib labs_pos_max
+RUN_TEST_STEP !Result=0 5 tstdlib labs_neg_max
+RUN_TEST_STEP !Result=0 5 tstdlib llabs_good_param
+RUN_TEST_STEP !Result=0 5 tstdlib llabs_pos_max
+RUN_TEST_STEP !Result=0 5 tstdlib llabs_neg_max
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_null_string
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_6
+RUN_TEST_STEP !Result=0 5 tstdlib atoi_good_param \tstdapis\tstdlib.ini Sectionatoi_good_paramL_7
+RUN_TEST_STEP !Result=0 5 tstdlib atof_null_string
+RUN_TEST_STEP !Result=0 5 tstdlib atof_pos_floatnum
+RUN_TEST_STEP !Result=0 5 tstdlib atof_neg_floatnum
+RUN_TEST_STEP !Result=0 5 tstdlib atof_alpha
+RUN_TEST_STEP !Result=0 5 tstdlib atof_alpha_floatnum
+RUN_TEST_STEP !Result=0 5 tstdlib atof_pos_floatnum_alpha
+RUN_TEST_STEP !Result=0 5 tstdlib atof_neg_floatnum_alpha
+RUN_TEST_STEP !Result=0 5 tstdlib atof_leading_zero
+RUN_TEST_STEP !Result=0 5 tstdlib atof_neg_leading_zero
+RUN_TEST_STEP !Result=0 5 tstdlib atof_pos_floatnum_pos_expo
+RUN_TEST_STEP !Result=0 5 tstdlib atof_neg_floatnum_pos_expo
+RUN_TEST_STEP !Result=0 5 tstdlib atof_neg_floatnum_pos_expo
+RUN_TEST_STEP !Result=0 5 tstdlib atof_pos_floatnum_neg_expo
+RUN_TEST_STEP !Result=0 5 tstdlib atof_neg_floatnum_neg_expo
+RUN_TEST_STEP !Result=0 5 tstdlib atol_null_string
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_6
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_7
+RUN_TEST_STEP !Result=0 5 tstdlib atol_good_param \tstdapis\tstdlib.ini Sectionatol_good_paramL_8
+RUN_TEST_STEP !Result=0 5 tstdlib atollbasic
+RUN_TEST_STEP !Result=0 5 tstdlib atollspacecheck
+RUN_TEST_STEP !Result=0 5 tstdlib atollsignedsrc
+RUN_TEST_STEP !Result=0 5 tstdlib atolloctalcheck
+RUN_TEST_STEP !Result=0 5 tstdlib atollhexcheck
+RUN_TEST_STEP !Result=0 5 tstdlib atolldigitfirstcheck
+RUN_TEST_STEP !Result=0 5 tstdlib atollalphafirstcheck
+RUN_TEST_STEP !Result=0 5 tstdlib atollalphacheck
+RUN_TEST_STEP !Result=0 5 tstdlib atollleadingzeroscheck
+RUN_TEST_STEP !Result=0 5 tstdlib div_good_param \tstdapis\tstdlib.ini Sectiondiv_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib div_good_param \tstdapis\tstdlib.ini Sectiondiv_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib div_good_param \tstdapis\tstdlib.ini Sectiondiv_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib div_good_param \tstdapis\tstdlib.ini Sectiondiv_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib div_good_param \tstdapis\tstdlib.ini Sectiondiv_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib ldiv_good_param \tstdapis\tstdlib.ini Sectionldiv_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib ldiv_good_param \tstdapis\tstdlib.ini Sectionldiv_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib ldiv_good_param \tstdapis\tstdlib.ini Sectionldiv_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib ldiv_good_param \tstdapis\tstdlib.ini Sectionldiv_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib ldiv_good_param \tstdapis\tstdlib.ini Sectionldiv_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib lldiv_good_param0
+RUN_TEST_STEP !Result=0 5 tstdlib lldiv_good_param1
+RUN_TEST_STEP !Result=0 5 tstdlib lldiv_good_param2
+RUN_TEST_STEP !Result=0 5 tstdlib lldiv_good_param3
+RUN_TEST_STEP !Result=0 5 tstdlib lldiv_good_param4 
+RUN_TEST_STEP !Result=0 5 tstdlib rand
+RUN_TEST_STEP !Result=0 5 tstdlib srand \tstdapis\tstdlib.ini SectionsrandL
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_null_string
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_6
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_7
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_8
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_9
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_10
+RUN_TEST_STEP !Result=0 5 tstdlib strtol_good_param \tstdapis\tstdlib.ini Sectionstrtol_good_paramL_11
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_null_string
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_inf
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_nan
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_6
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_7
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_8
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_9
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_10
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_11
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_12
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_13
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_14
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_15
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_16
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_17
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_18
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_19
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_20
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_good_param \tstdapis\tstdlib.ini Sectionstrtod_good_paramL_21
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_neg_cases
+RUN_TEST_STEP !Result=0 5 tstdlib strtod_misc_cases
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_null_string \tstdapis\tstdlib.ini Sectionstrtoul_null_stringL
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_1
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_2
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_3
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_4
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_5
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_6
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_7
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_8
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_neg_num_alpha
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_good_param \tstdapis\tstdlib.ini Sectionstrtoul_good_paramL_9
+RUN_TEST_STEP !Result=0 5 tstdlib strtoul_neg_leading_zeroes
+RUN_TEST_STEP !Result=0 5 tstdlib qsort_integers \tstdapis\tstdlib.ini Sectionqsort_integersL
+RUN_TEST_STEP !Result=0 5 tstdlib qsort_strings  \tstdapis\tstdlib.ini Sectionqsort_stringsL
+RUN_TEST_STEP !Result=0 5 tstdlib binsearch_integers \tstdapis\tstdlib.ini Sectionbinsearch_integersL
+RUN_TEST_STEP !Result=0 5 tstdlib binsearch_strings \tstdapis\tstdlib.ini Sectionbinsearch_stringsL
+RUN_TEST_STEP !Result=0 5 tstdlib system_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib system_Test2
+RUN_TEST_STEP !Result=0 5 tstdlib system_Test4
+RUN_TEST_STEP !Result=0 5 tstdlib system_Test5
+RUN_TEST_STEP !Result=0 5 tstdlib isatty_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib isatty_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib usleep_Test0 \tstdapis\tstdlib.ini Sectionusleep_Test0L
+RUN_TEST_STEP !Result=0 5 tstdlib usleep_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib usleep_Test2 \tstdapis\tstdlib.ini Sectionusleep_Test2L
+RUN_TEST_STEP !Result=0 5 tstdlib getcwd_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib getcwd_Test1 \tstdapis\tstdlib.ini Sectiongetcwd_Test1L
+RUN_TEST_STEP !Result=0 5 tstdlib getcwd_Test2
+RUN_TEST_STEP !Result=0 5 tstdlib getcwd_Test3
+RUN_TEST_STEP !Result=0 5 tstdlib tmpfile_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib tmpfile_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib tmpnam_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib tmpnam_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib realpath_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib realpath_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib realpath_Test2
+RUN_TEST_STEP !Result=0 5 tstdlib realpath_Test3
+//RUN_TEST_STEP !Result=0 5 tstdlib realpath_Test4
+RUN_TEST_STEP !Result=0 5 tstdlib perror_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib mkstemp_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib mkstemp_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib confstr_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib confstr_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib fpathconf_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib fpathconf_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib filelock_Test0
+RUN_TEST_STEP !Result=0 5 tstdlib filelock_Test1
+RUN_TEST_STEP !Result=0 5 tstdlib filelock_Test2
+RUN_TEST_STEP !Result=0 -1 tstdlib filelock_Test3
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest1
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest2
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest3
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest4
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest5
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest6
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest_long1
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest_long2
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest_long3
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest_long4
+RUN_TEST_STEP !Result=0 5 tstdlib Testsigemptyset
+RUN_TEST_STEP !Result=0 5 tstdlib strfmon1
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_1
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_2
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_3
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_4
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_5
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_6
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_7
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_8
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_9
+RUN_TEST_STEP !Result=0 5 tstdlib TestRealPath5 \tstdapis\tstdlib.ini Section_TestRealPath5_10
+RUN_TEST_STEP !Result=0 5 tstdlib Testlseek1
+RUN_TEST_STEP !Result=0 5 tstdlib Testlseek2
+RUN_TEST_STEP !Result=0 5 tstdlib getoptTest_long5
+
+
+RUN_TEST_STEP !Result=0 5 tstdlib setjmpTest
+RUN_TEST_STEP !Result=0 5 tstdlib abortTest
+RUN_TEST_STEP !Result=0 5 tstdlib chownTest
+RUN_TEST_STEP !Result=0 5 tstdlib iconvTest
+RUN_TEST_STEP !Result=0 5 tstdlib setgrentTest
+RUN_TEST_STEP !Result=0 5 tstdlib wcreatTest
+

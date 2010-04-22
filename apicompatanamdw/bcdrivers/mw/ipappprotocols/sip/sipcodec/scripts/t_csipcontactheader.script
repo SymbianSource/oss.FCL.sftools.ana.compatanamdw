@@ -1,0 +1,406 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipcontactheader
+//
+// Tests all public elements of the t_csipcontactheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPcontactheader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+//***********Defined in CSIPContactHeader*************//
+START_TESTCASE              t_csipcontactheader-0001
+//! @SYMTestCaseID          t_csipcontactheader-0001
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::DecodeL(const TDesC8 {ref}) 
+//! @SYMTestCaseDesc        Constructs a CSIPContactHeader from textual representation.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPContactHeader object using DecodeL.
+//!                         3. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContactHeader object can be created successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader
+        COMMAND             sip                               NewL             t_csipcontactheader-0001-NewL_Command01
+        COMMAND             sipcontactheader                  DecodeL          t_csipcontactheader-0001-DecodeL_Command02
+        COMMAND             sipcontactheader                  ~
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0001
+
+START_TESTCASE              t_csipcontactheader-0002
+//! @SYMTestCaseID          t_csipcontactheader-0002
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::NewL(CSIPAddress {ptr});
+//!							CSIPContactHeader::~CSIPContactHeader()
+//! @SYMTestCaseDesc        Construct and destruct CSIPContactHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using NewL.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContactHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPAddress                       sipaddress
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader
+        COMMAND             sip                               NewL             t_csipcontactheader-0002-NewL_Command01
+        COMMAND             sipaddress                        NewL             t_csipcontactheader-0002-NewL_Command02
+        COMMAND             sipcontactheader                  NewL             t_csipcontactheader-0002-NewL_Command03
+        COMMAND             sipcontactheader                  ~
+        COMMAND             sipaddress                        ~
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0002
+
+
+START_TESTCASE              t_csipcontactheader-0003
+//! @SYMTestCaseID          t_csipcontactheader-0003
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::NewLC(CSIPAddress {ptr}) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPContactHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using NewLC.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContactHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPContactHeader                 	sipcontactheader
+        COMMAND             sip                                 NewL             t_csipcontactheader-0003-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipcontactheader-0003-NewL_Command02
+        COMMAND             sipcontactheader                   	NewLC            t_csipcontactheader-0003-NewLC_Command03
+        COMMAND             sipcontactheader                   	~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0003
+
+START_TESTCASE              t_csipcontactheader-0004
+//! @SYMTestCaseID          t_csipcontactheader-0004
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::InternalizeValueL(RReadStream{ref})
+//!							CSIPContactHeader::SIPAddress()
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPContactHeader from a RReadStream and get sip address.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using InternalizeValueL.
+//!							4. Call CSIPContactHeader::SIPAddress().
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Constructs an instance of a CSIPContactHeader from a RReadStream and get correct sip address.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader1
+        COMMAND             sip                                 NewL               t_csipcontactheader-0004-NewL_Command01
+        COMMAND             sipaddress                          NewL               t_csipcontactheader-0004-NewL_Command02
+        COMMAND             sipcontactheader                   	NewL               t_csipcontactheader-0004-NewL_Command03
+        COMMAND             sipcontactheader                   	ExternalizeL       t_csipcontactheader-0004-ExternalizeL_Command04
+        COMMAND             sipcontactheader1                  	InternalizeValueL  t_csipcontactheader-0004-InternalizeValueL_Command05
+        COMMAND             sipcontactheader1                  	SIPAddress         t_csipcontactheader-0004-SIPAddress_Command06
+        COMMAND             sipaddress1                         Uri8               t_csipcontactheader-0004-Uri8_Command07
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipcontactheader1                  	~
+        COMMAND             sipcontactheader                   	~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0004
+
+START_TESTCASE              t_csipcontactheader-0005
+//! @SYMTestCaseID          t_csipcontactheader-0005
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 const CSIPContactHeader::SIPAddress()
+//! @SYMTestCaseDesc        Get sip address.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using InternalizeValueL.
+//!							4. Call CSIPContactHeader::SIPAddress().
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get correct sip address.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader1
+        COMMAND             sip                                 NewL               t_csipcontactheader-0005-NewL_Command01
+        COMMAND             sipaddress                          NewL               t_csipcontactheader-0005-NewL_Command02
+        COMMAND             sipcontactheader                   	NewL               t_csipcontactheader-0005-NewL_Command03
+        COMMAND             sipcontactheader                   	ExternalizeL       t_csipcontactheader-0005-ExternalizeL_Command04
+        COMMAND             sipcontactheader1                  	InternalizeValueL  t_csipcontactheader-0005-InternalizeValueL_Command05
+        COMMAND             sipcontactheader1                  	SIPAddress         t_csipcontactheader-0005-SIPAddress_Command06
+        COMMAND             sipaddress1                         Uri8               t_csipcontactheader-0005-Uri8_Command07
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipcontactheader1                  	~
+        COMMAND             sipcontactheader                   	~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0005
+
+START_TESTCASE              t_csipcontactheader-0006
+//! @SYMTestCaseID          t_csipcontactheader-0006
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 const CSIPContactHeader::SetSIPAddressL(CSIPAddress* {ptr})
+//! @SYMTestCaseDesc        Set sip address.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using InternalizeValueL.
+//!							4. Set SIPAddress using CSIPContactHeader::SetSIPAddressL().
+//!							5. Call const CSIPContactHeader::SIPAddress().
+//!                         6. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Set sip address successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader
+        COMMAND             sip                                 NewL               t_csipcontactheader-0006-NewL_Command01
+        COMMAND             sipaddress                          NewL               t_csipcontactheader-0006-NewL_Command02
+        COMMAND             sipcontactheader                   	NewL               t_csipcontactheader-0006-NewL_Command03         
+        COMMAND             sipaddress1                         NewL               t_csipcontactheader-0006-NewL_Command04
+        COMMAND             sipcontactheader                  	SetSIPAddressL     t_csipcontactheader-0006-SetSIPAddressL_Command05       
+        COMMAND             sipcontactheader                  	SIPAddress         t_csipcontactheader-0006-SIPAddress_Command06
+        COMMAND             sipaddress1                         Uri8               t_csipcontactheader-0006-Uri8_Command07
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipcontactheader                   	~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0006
+
+START_TESTCASE              t_csipcontactheader-0007
+//! @SYMTestCaseID          t_csipcontactheader-0007
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::CloneL() 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPContactHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object.
+//!                         4. Clone a CSIPContactHeader object.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContactHeader object can be cloned successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader1
+        COMMAND             sip                                 NewL             t_csipcontactheader-0007-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipcontactheader-0007-NewL_Command02
+        COMMAND             sipcontactheader                   	NewL             t_csipcontactheader-0007-NewL_Command03
+        COMMAND             sipcontactheader                   	CloneL           t_csipcontactheader-0007-CloneL_Command04
+        COMMAND             sipcontactheader1                  	Name             t_csipcontactheader-0007-Name_Command05        
+        COMMAND             sipcontactheader1                  	~
+        COMMAND             sipcontactheader                   	~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0007
+
+START_TESTCASE              t_csipcontactheader-0008
+//! @SYMTestCaseID          t_csipcontactheader-0008
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::Name() 
+//! @SYMTestCaseDesc        Get contact header name.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object.
+//!                         4. Gets the full name of the CSIPContactHeader.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get correct header name.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPContactHeader                  	sipcontactheader
+        COMMAND             sip                                 NewL             t_csipcontactheader-0008-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipcontactheader-0008-NewL_Command02
+        COMMAND             sipcontactheader                   	NewL             t_csipcontactheader-0008-NewL_Command03
+        COMMAND             sipcontactheader                   	Name             t_csipcontactheader-0008-Name_Command04
+        COMMAND             sipcontactheader                   	~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0008
+
+START_TESTCASE              t_csipcontactheader-0009
+//! @SYMTestCaseID          t_csipcontactheader-0009
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::SetExpiresParameterL(TInt) 
+//!							CSIPContactHeader::ExpiresParameter()
+//! @SYMTestCaseDesc        Set a CSIPContactHeader Expires Parameter and get it.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using NewL.
+//!							4. Set Expires Parameter using CSIPContactHeader::SetExpiresParameterL(TInt).
+//!							5. Get Expires Parameter using CSIPContactHeader::ExpiresParameter() and check it.
+//!                         6. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Set and get a CSIPContactHeader Expires Parameter successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPAddress                       sipaddress
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader
+        COMMAND             sip                               NewL             		t_csipcontactheader-0009-NewL_Command01
+        COMMAND             sipaddress                        NewL             		t_csipcontactheader-0009-NewL_Command02
+        COMMAND             sipcontactheader                  NewL             		t_csipcontactheader-0009-NewL_Command03
+        COMMAND				sipcontactheader				  SetExpiresParameterL	t_csipcontactheader-0009-SetExpiresParameterL_Command04
+        COMMAND				sipcontactheader				  ExpiresParameter		t_csipcontactheader-0009-ExpiresParameter_Command05
+        COMMAND             sipcontactheader                  ~
+        COMMAND             sipaddress                        ~
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0009
+
+START_TESTCASE              t_csipcontactheader-0010
+//! @SYMTestCaseID          t_csipcontactheader-0010
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 TReal CSIPContactHeader::QParameter() const
+//!							void CSIPContactHeader::SetQParameterL(TReal)
+//! @SYMTestCaseDesc        Sets the "q"-parameter value, gets the value of "q"-parameter.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPContactHeader objects.
+//!                         3. Sets the "q"-parameter value.
+//!                         4. Gets the value of "q"-parameter.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Set "q"-parameter and check "q"-parameter value header retrieved expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPAddress                       sipaddress
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader
+        COMMAND             sip                               NewL             t_csipcontactheader-0010-NewL_Command01
+        COMMAND             sipaddress                        NewL             t_csipcontactheader-0010-NewL_Command02
+        COMMAND             sipcontactheader                  NewL             t_csipcontactheader-0010-NewL_Command03
+        COMMAND             sipcontactheader       		  	  SetQParameterL   t_csipcontactheader-0010-SetQParameterL_Command04
+        COMMAND             sipcontactheader       		  	  QParameter       t_csipcontactheader-0010-QParameterL_Command05
+        COMMAND             sipcontactheader                  ~
+        COMMAND             sipaddress                        ~
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontactheader-0010
+
+START_TESTCASE              t_csipcontactheader-0011
+//! @SYMTestCaseID          t_csipcontactheader-0011
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::Star() 
+//! @SYMTestCaseDesc        Check sip address of a CSIPContactHeader is *.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using DecodeL.
+//!							4. Call CSIPContactHeader::Star().
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults SIP Address returns *.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader
+        COMMAND             sip                               NewL             t_csipcontactheader-0011-NewL_Command01
+        COMMAND             sipcontactheader                  DecodeL          t_csipcontactheader-0011-DecodeL_Command02
+        COMMAND				sipcontactheader				  Star			   t_csipcontactheader-0011-Star_Command03
+        COMMAND             sipcontactheader                  ~
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0011
+
+START_TESTCASE              t_csipcontactheader-0012
+//! @SYMTestCaseID          t_csipcontactheader-0012
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        30/10/2009
+//! @SYMAPI                 CSIPContactHeader::operator==() 
+//! @SYMTestCaseDesc        Construct and destruct CSIPContactHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPContactHeader object using NewL.
+//!							4. Clone sipcontactheader1 from sipcontactheader.
+//!							5. Call CSIPContactHeader::operator==().
+//!                         6. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The two CSIPContactHeader objects are equal.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      	\SIP\sipcodec\t_csipcontactheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPAddress                       sipaddress
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader
+        CREATE_OBJECT       CSIPContactHeader                 sipcontactheader1        
+        COMMAND             sip                               NewL             t_csipcontactheader-0012-NewL_Command01
+        COMMAND				sipaddress                        NewL			   t_csipcontactheader-0012-NewL_Command02
+        COMMAND             sipcontactheader                  NewL             t_csipcontactheader-0012-NewL_Command03        
+        COMMAND             sipcontactheader                  CloneL	       t_csipcontactheader-0012-CloneL_Command04
+        COMMAND				sipcontactheader1				  ==			   t_csipcontactheader-0012-Compare_Command05
+        COMMAND             sipcontactheader1                 ~        
+        COMMAND             sipcontactheader                  ~
+        COMMAND             sipaddress		                  ~        
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontactheader-0012

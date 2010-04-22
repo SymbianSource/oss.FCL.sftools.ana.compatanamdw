@@ -1,0 +1,75 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+
+// to c-drive
+../scripts/setup-PBASE-F32-RFS-PublicApi.script					/Epoc32/winscw/c/base/setup-PBASE-F32-RFS-PublicApi.script
+
+../scripts/PBASE-F32-RFS-PublicApi.script						/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi.script
+../config/PBASE-F32-RFS-PublicApi.tcs							/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi.tcs
+../scripts/PBASE-F32-RFS-Drives-PublicApi-ANY.script			/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-ANY.script
+../config/PBASE-F32-RFS-Drives-PublicApi-ANY.tcs				/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-ANY.tcs
+../scripts/PBASE-F32-RFS-Files-PublicApi-ANY.script				/Epoc32/winscw/c/base/PBASE-F32-RFS-Files-PublicApi-ANY.script
+../config/PBASE-F32-RFS-Files-PublicApi-ANY.tcs					/Epoc32/winscw/c/base/PBASE-F32-RFS-Files-PublicApi-ANY.tcs
+../scripts/PBASE-F32-RFS-Misc-PublicApi-ANY.script				/Epoc32/winscw/c/base/PBASE-F32-RFS-Misc-PublicApi-ANY.script
+../config/PBASE-F32-RFS-Misc-PublicApi-ANY.tcs					/Epoc32/winscw/c/base/PBASE-F32-RFS-Misc-PublicApi-ANY.tcs
+../scripts/PBASE-F32-RFS-Mounts-PublicApi-ANY.script			/Epoc32/winscw/c/base/PBASE-F32-RFS-Mounts-PublicApi-ANY.script
+../config/PBASE-F32-RFS-Mounts-PublicApi-ANY.tcs				/Epoc32/winscw/c/base/PBASE-F32-RFS-Mounts-PublicApi-ANY.tcs
+../scripts/PBASE-F32-RFS-PublicApi-OS.script					/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi-OS.script
+../config/PBASE-F32-RFS-PublicApi-OS.tcs						/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi-OS.tcs
+../scripts/PBASE-F32-RFS-Drives-PublicApi-RAM.script			/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-RAM.script
+../config/PBASE-F32-RFS-Drives-PublicApi-RAM.tcs				/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-RAM.tcs
+../scripts/PBASE-F32-RFS-Files-PublicApi-RAM.script				/Epoc32/winscw/c/base/PBASE-F32-RFS-Files-PublicApi-RAM.script
+../config/PBASE-F32-RFS-Files-PublicApi-RAM.tcs					/Epoc32/winscw/c/base/PBASE-F32-RFS-Files-PublicApi-RAM.tcs
+../scripts/PBASE-F32-RFS-Misc-PublicApi-RAM.script				/Epoc32/winscw/c/base/PBASE-F32-RFS-Misc-PublicApi-RAM.script
+../config/PBASE-F32-RFS-Misc-PublicApi-RAM.tcs					/Epoc32/winscw/c/base/PBASE-F32-RFS-Misc-PublicApi-RAM.tcs
+../scripts/PBASE-F32-RFS-Mounts-PublicApi-RAM.script			/Epoc32/winscw/c/base/PBASE-F32-RFS-Mounts-PublicApi-RAM.script
+../config/PBASE-F32-RFS-Mounts-PublicApi-RAM.tcs				/Epoc32/winscw/c/base/PBASE-F32-RFS-Mounts-PublicApi-RAM.tcs
+../scripts/PBASE-F32-RFS-PublicApi-ROM.script					/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi-ROM.script
+../config/PBASE-F32-RFS-PublicApi-ROM.tcs						/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi-ROM.tcs
+../scripts/PBASE-F32-RFS-Drives-PublicApi-REM-manual.script		/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-REM-manual.script
+../config/PBASE-F32-RFS-Drives-PublicApi-REM-manual.tcs			/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-REM-manual.tcs
+../scripts/PBASE-F32-RFS-Drives-PublicApi-REM.script			/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-REM.script
+../config/PBASE-F32-RFS-Drives-PublicApi-REM.tcs				/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-REM.tcs
+
+../testdata/PBASE-F32-RFS-Drives-PublicApi-ANY.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-ANY.ini
+../testdata/PBASE-F32-RFS-Files-PublicApi-ANY.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Files-PublicApi-ANY.ini
+../testdata/PBASE-F32-RFS-Misc-PublicApi-ANY.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Misc-PublicApi-ANY.ini
+../testdata/PBASE-F32-RFS-Mounts-PublicApi-ANY.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Mounts-PublicApi-ANY.ini
+
+../testdata/PBASE-F32-RFS-PublicApi-OS.ini						/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi-OS.ini
+
+../testdata/PBASE-F32-RFS-Drives-PublicApi-RAM.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-RAM.ini
+../testdata/PBASE-F32-RFS-Files-PublicApi-RAM.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Files-PublicApi-RAM.ini
+../testdata/PBASE-F32-RFS-Misc-PublicApi-RAM.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Misc-PublicApi-RAM.ini
+../testdata/PBASE-F32-RFS-Mounts-PublicApi-RAM.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Mounts-PublicApi-RAM.ini
+
+../testdata/PBASE-F32-RFS-PublicApi-ROM.ini						/Epoc32/winscw/c/base/PBASE-F32-RFS-PublicApi-ROM.ini
+
+../testdata/PBASE-F32-RFS-Drives-PublicApi-REM.ini				/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-REM.ini
+../testdata/PBASE-F32-RFS-Drives-PublicApi-REM-manual.ini		/Epoc32/winscw/c/base/PBASE-F32-RFS-Drives-PublicApi-REM-manual.ini
+
+../testdata/test.txt											/Epoc32/winscw/c/base/t_sfsrv/test.txt
+../testdata/USBLOAD.ZIP											/Epoc32/winscw/c/base/t_sfsrv/USBLOAD.ZIP
+../testdata/test_rom.txt										/Epoc32/winscw/c/base/t_sfsrv/test_rom.txt
+
+base.bat								/Epoc32/winscw/c/base/base.bat
+
+PRJ_TESTMMPFILES
+t_sfsrv.mmp

@@ -1,0 +1,448 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName		t_csipclient
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM. An SIP server listening on ports 5060.
+//				The communicaion to the server is established using the default connection.
+//				The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation	The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipconnection-ne
+//
+// Tests all public elements of the CSIPConnection
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a negative regression test suite of PublishedAll APIs for CSIPConnection
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	t_sipclientapi
+DELAY		2000
+
+START_TESTCASE              t_csipconnection-ne-0001
+//! @SYMTestCaseID          t_csipconnection-ne-0001
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements, const MSIPRegistrationContext &aContext)
+//! @SYMTestCaseDesc        KErrArgument(-6) if aElements == 0
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and MSIPRegistrationContext.
+//!                         5.Wait for the registration response from SIP stack
+//!                         6.Construct message elements for SIP MESSAGE.
+//!                         7.Send SIP MESSAGE with NULL aElements, expecting error KErrArgument(-6).
+//!                         8.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPHttpDigest                httpdigest
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0001-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0001-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipconnection-ne-0001-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipconnection-ne-0001-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipconnection-ne-0001-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipconnection-ne-0001-NewL_command06
+        COMMAND             httpdigest                    NewL                      t_csipconnection-ne-0001-NewL_command07
+        COMMAND             binding                       RegisterL                 t_csipconnection-ne-0001-RegisterL_command08
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csipconnection-ne-0001-WaitForChallengeReceived_command09
+        OUTSTANDING
+        COMMAND             httpdigest                    SetCredentialsL           t_csipconnection-ne-0001-SetCredentialsL_command10
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csipconnection-ne-0001-WaitForIncomingResponse_command11
+        OUTSTANDING
+        COMMAND  !Error=-6  sipconnection                 SendRequestL              t_csipconnection-ne-0001-SendRequestL_command12
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipconnection-ne-0001
+
+START_TESTCASE              t_csipconnection-ne-0002
+//! @SYMTestCaseID          t_csipconnection-ne-0002
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements, const MSIPRegistrationContext &aContext)
+//! @SYMTestCaseDesc        KErrSIPInvalidRegistrationState if aContext.IsContextActive() == EFalse
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Construct message elements for SIP MESSAGE.
+//!                         5.Send SIP MESSAGE, expecting error KErrSIPInvalidRegistrationState(-17709).
+//!                         6.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0002-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0002-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipconnection-ne-0002-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipconnection-ne-0002-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipconnection-ne-0002-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipconnection-ne-0002-NewL_command06
+        COMMAND             requestelements               NewL                      t_csipconnection-ne-0002-NewL_command07
+        COMMAND             reqtoheader                   DecodeL                   t_csipconnection-ne-0002-DecodeL_command08
+        COMMAND             requestelements               SetToHeaderL              t_csipconnection-ne-0002-SetToHeaderL_command09
+        COMMAND             reqfromheader                 DecodeL                   t_csipconnection-ne-0002-DecodeL_command10
+        COMMAND             requestelements               SetFromHeaderL            t_csipconnection-ne-0002-SetFromHeaderL_command11
+        COMMAND             requestelements               SetMethodL                t_csipconnection-ne-0002-SetMethodL_command12
+        COMMAND             contenttypeheader             NewL                      t_csipconnection-ne-0002-NewL_command13
+        COMMAND             requestelements               MessageElements           t_csipconnection-ne-0002-MessageElements_command14
+        COMMAND             messageelements               SetContentL               t_csipconnection-ne-0002-SetContentL_command15
+        COMMAND  !Error=-17709  sipconnection             SendRequestL              t_csipconnection-ne-0002-SendRequestL_command16
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             requestelements               ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             reqtoheader                   ~
+        COMMAND             reqfromheader                 ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~                              
+    END_TEST_BLOCK
+END_TESTCASE			t_csipconnection-ne-0002
+
+START_TESTCASE              t_csipconnection-ne-0003
+//! @SYMTestCaseID          t_csipconnection-ne-0003
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements, const MSIPRegistrationContext &aContext, CSIPRefresh &aRefresh)
+//! @SYMTestCaseDesc        KErrArgument(-6) if aElements == 0
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and MSIPRegistrationContext.
+//!                         5.Wait for the registration response from SIP stack
+//!                         6.Construct message elements for SIP MESSAGE.
+//!                         7.Send SIP MESSAGE with NULL aElements, expecting error KErrArgument(-6).
+//!                         8.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPRefresh                   reqrefresh
+        CREATE_OBJECT       CSIPExpiresHeader             expiresheader
+        CREATE_OBJECT       CSIPHttpDigest                httpdigest
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0003-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0003-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipconnection-ne-0003-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipconnection-ne-0003-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipconnection-ne-0003-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipconnection-ne-0003-NewL_command06
+        COMMAND             httpdigest                    NewL                      t_csipconnection-ne-0001-NewL_command07
+        COMMAND             binding                       RegisterL                 t_csipconnection-ne-0003-RegisterL_command08
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csipconnection-ne-0001-WaitForChallengeReceived_command09
+        OUTSTANDING
+        COMMAND             httpdigest                    SetCredentialsL           t_csipconnection-ne-0001-SetCredentialsL_command10
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csipconnection-ne-0003-WaitForIncomingResponse_command11
+        OUTSTANDING
+        COMMAND             reqrefresh                    NewL
+        COMMAND  !Error=-6  sipconnection                 SendRequestL              t_csipconnection-ne-0003-SendRequestL_command12
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipconnection-ne-0003
+
+START_TESTCASE              t_csipconnection-ne-0004
+//! @SYMTestCaseID          t_csipconnection-ne-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements, const MSIPRegistrationContext &aContext, CSIPRefresh &aRefresh);
+//! @SYMTestCaseDesc        KErrSIPInvalidRegistrationState if aContext.IsContextActive() == EFalse
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Construct message elements for SIP MESSAGE.
+//!                         5.Send SIP MESSAGE, expecting error KErrSIPInvalidRegistrationState(-17709).
+//!                         6.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPRefresh                   reqrefresh
+        CREATE_OBJECT       CSIPExpiresHeader             expiresheader
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0004-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0004-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipconnection-ne-0004-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipconnection-ne-0004-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipconnection-ne-0004-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipconnection-ne-0004-NewL_command06
+        COMMAND             expiresheader                 NewL                      t_csipconnection-ne-0004-NewL_command07
+        COMMAND             reqtoheader                   DecodeL                   t_csipconnection-ne-0004-DecodeL_command08
+        COMMAND             reqfromheader                 DecodeL                   t_csipconnection-ne-0004-DecodeL_command09
+        COMMAND             requestelements               NewL                      t_csipconnection-ne-0004-NewL_command10
+        COMMAND             requestelements               SetMethodL                t_csipconnection-ne-0004-SetMethodL_command11
+        COMMAND             requestelements               MessageElements           t_csipconnection-ne-0004-MessageElements_command12
+        COMMAND             messageelements               SetUserHeadersL           t_csipconnection-ne-0004-SetUserHeadersL_command13
+        COMMAND             contenttypeheader             NewL                      t_csipconnection-ne-0004-NewL_command14
+        COMMAND             messageelements               SetContentL               t_csipconnection-ne-0004-SetContentL_command15 
+        COMMAND             requestelements               SetFromHeaderL            t_csipconnection-ne-0004-SetFromHeaderL_command16
+        COMMAND             requestelements               SetToHeaderL              t_csipconnection-ne-0004-SetToHeaderL_command17
+        COMMAND             reqrefresh                    NewL
+        COMMAND  !Error=-17709  sipconnection             SendRequestL              t_csipconnection-ne-0004-SendRequestL_command18
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             requestelements               ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             reqtoheader                   ~
+        COMMAND             reqfromheader                 ~
+        COMMAND             expiresheader                 ~
+        COMMAND             reqrefresh                    ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~                              
+    END_TEST_BLOCK
+END_TESTCASE			t_csipconnection-ne-0004
+
+START_TESTCASE              t_csipconnection-ne-0005
+//! @SYMTestCaseID          t_csipconnection-ne-0005
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements)
+//! @SYMTestCaseDesc        KErrArgument(-6) if aElements == 0
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and MSIPRegistrationContext.
+//!                         5.Wait for the registration response from SIP stack.
+//!                         6.Send SIP MESSAGE with NULL aElements, expecting error KErrArgument(-6).
+//!                         7.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPHttpDigest                httpdigest
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0005-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0005-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipconnection-ne-0005-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipconnection-ne-0005-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipconnection-ne-0005-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipconnection-ne-0005-NewL_command06
+        COMMAND             httpdigest                    NewL                      t_csipconnection-ne-0001-NewL_command07
+        COMMAND             binding                       RegisterL                 t_csipconnection-ne-0005-RegisterL_command08
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csipconnection-ne-0001-WaitForChallengeReceived_command09
+        OUTSTANDING
+        COMMAND             httpdigest                    SetCredentialsL           t_csipconnection-ne-0001-SetCredentialsL_command10
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csipconnection-ne-0005-WaitForIncomingResponse_command11
+        OUTSTANDING
+        COMMAND  !Error=-6  sipconnection                 SendRequestL              t_csipconnection-ne-0005-SendRequestL_command12
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipconnection-ne-0005
+
+START_TESTCASE              t_csipconnection-ne-0006
+//! @SYMTestCaseID          t_csipconnection-ne-0006
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements, CSIPRefresh &aRefresh)
+//! @SYMTestCaseDesc        KErrArgument(-6) if aElements == 0
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and MSIPRegistrationContext.
+//!                         5.Wait for the registration response from SIP stack
+//!                         6.Send SIP MESSAGE with NULL aElements, expecting error KErrArgument(-6).
+//!                         7.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPRefresh                   reqrefresh
+        CREATE_OBJECT       CSIPExpiresHeader             expiresheader
+        CREATE_OBJECT       CSIPHttpDigest                httpdigest
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0006-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0006-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipconnection-ne-0006-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipconnection-ne-0006-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipconnection-ne-0006-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipconnection-ne-0006-NewL_command06
+        COMMAND             httpdigest                    NewL                      t_csipconnection-ne-0001-NewL_command07
+        COMMAND             binding                       RegisterL                 t_csipconnection-ne-0006-RegisterL_command08
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csipconnection-ne-0001-WaitForChallengeReceived_command09
+        OUTSTANDING
+        COMMAND             httpdigest                    SetCredentialsL           t_csipconnection-ne-0001-SetCredentialsL_command10
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csipconnection-ne-0006-WaitForIncomingResponse_command11
+        OUTSTANDING
+        COMMAND             reqrefresh                    NewL
+        COMMAND  !Error=-6  sipconnection                 SendRequestL              t_csipconnection-ne-0006-SendRequestL_command12
+        OUTSTANDING
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipconnection-ne-0006
+
+
+START_TESTCASE              t_csipconnection-ne-0007
+//! @SYMTestCaseID          t_csipconnection-ne-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        07/09/2009
+//! @SYMAPI                 CSIPConnection::FetchRegistrationsL(CSIPRequestElements *aElements)
+//! @SYMTestCaseDesc        KErrArgument(-6) if aElements == 0.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and CSIPRefresh.
+//!                         5.Wait for the registration response from SIP stack
+//!                         6.Send SIP MESSAGE with NULL aElements, expecting error KErrArgument(-6).
+//!                         7.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    60 t_sipclientapi                     \SIP\sipclient\t_csipconnection-ne.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        COMMAND             sip                           NewL                      t_csipconnection-ne-0007-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-ne-0007-NewL_command02
+        OUTSTANDING
+        COMMAND  !Error=-6  sipconnection                 FetchRegistrationsL       t_csipconnection-ne-0007-FetchRegistrationsL_command03
+        OUTSTANDING
+        COMMAND             requestelements               ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-ne-0007

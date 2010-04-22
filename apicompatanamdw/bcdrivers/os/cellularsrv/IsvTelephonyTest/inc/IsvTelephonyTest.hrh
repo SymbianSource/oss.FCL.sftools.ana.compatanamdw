@@ -1,0 +1,282 @@
+/*
+* Copyright (c) 2002-2004 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  
+*
+*/
+
+
+
+#ifndef ISVTELEPHONYTEST_HRH
+#define ISVTELEPHONYTEST_HRH
+
+//  INCLUDES
+#include <e32base.h>
+
+// CONSTANTS
+_LIT( KInitIsvTelephonyTestSectionStart, "[IsvTelephonyTest]" );
+_LIT( KInitSectionEnd, "[EndSection]" );
+_LIT( KInitMoPhoneNumber1, "MoPhoneNumber1=" );
+_LIT( KInitMoPhoneNumber2, "MoPhoneNumber2=" );
+_LIT( KInitPhoneLine, "PhoneLine=" );
+_LIT( KInitEVoiceLine, "EVoiceLine" );
+_LIT( KInitEDataLine, "EDataLine" );
+_LIT( KInitEFaxLine, "EFaxLine" );
+_LIT( KInitIdRestrict, "IdRestrict=" );
+_LIT( KInitEIdRestrictDefault, "EIdRestrictDefault" );
+_LIT( KInitESendMyId, "ESendMyId" );
+_LIT( KInitEDontSendMyId, "EDontSendMyId" );
+_LIT( KInitDTMFTones, "DTMFTones=" );
+_LIT( KResultPASS, "Result: PASS" );
+_LIT( KResultFAIL, "Result: FAIL" );
+_LIT( KErrorCode, "error code: " );
+_LIT( KSetCancelAsyncs, "SetCancelAsyncs" );
+_LIT( KClearCancelAsyncs, "ClearCancelAsyncs" );
+_LIT( KGetVersion, "GetVersion" );
+_LIT( KGetPhoneId, "GetPhoneId" );
+_LIT( KGetSubscriberId, "GetSubscriberId" );
+_LIT( KGetFlightMode, "GetFlightMode" );
+_LIT( KGetIndicator, "GetIndicator" );
+_LIT( KGetBatteryInfo, "GetBatteryInfo" );
+_LIT( KGetSignalStrength, "GetSignalStrength" );
+_LIT( KGetLockInfo, "GetLockInfo" );
+_LIT( KSendDTMFTones, "SendDTMFTones" );
+_LIT( KGetLineStatus, "GetLineStatus" );
+_LIT( KGetCallInfo, "GetCallInfo" );
+_LIT( KGetNetworkRegistrationStatus, "GetNetworkRegistrationStatus" );
+_LIT( KGetCurrentNetworkInfo, "GetCurrentNetworkInfo" );
+_LIT( KGetCurrentNetworkName, "GetCurrentNetworkName" );
+_LIT( KGetOperatorName, "GetOperatorName" );
+_LIT( KGetCallForwardingStatus, "GetCallForwardingStatus" );
+_LIT( KGetCallBarringStatus, "GetCallBarringStatus" );
+_LIT( KGetCallWaitingStatus, "GetCallWaitingStatus" );
+_LIT( KGetIdentityServiceStatus, "GetIdentityServiceStatus" );
+_LIT( KDialNewCall, "DialNewCall" );
+_LIT( KGetCallDynamicCaps, "GetCallDynamicCaps" );
+_LIT( KGetCallStatus, "GetCallStatus" );
+_LIT( KHold, "Hold" );
+_LIT( KResume, "Resume" );
+_LIT( KSwap, "Swap" );
+_LIT( KHangup, "Hangup" );
+_LIT( KAnswerIncomingCall, "AnswerIncomingCall" );
+_LIT( KNotifyChangeVoiceLineStatus, "NotifyChange - VoiceLineStatus" );
+_LIT( KFindDeviceStatus, "FindDeviceStatus" );
+_LIT( KEstablishDataCall, "EstablishDataCall" );
+_LIT( KEstablishDataCallAsync, "EstablishDataCall - async" );
+_LIT( KTerminateDataCall, "TerminateDataCall" );
+_LIT( KReceiveDataCall, "ReceiveDataCall" );
+_LIT( KReceiveDataCallAsync, "ReceiveDataCall - async" );
+_LIT( KCancelEstablishDataCall, "CancelEstablishDataCall" );
+_LIT( KCancelReceiveDataCall, "CancelReceiveDataCall" );
+_LIT( KVersion, "Version:" );
+_LIT( KVersionBuild, "Build: " );
+_LIT( KVersionMajor, " Major: " );
+_LIT( KVersionMinor, " Minor: " );
+_LIT( KPhoneManufacturer, "Manufacturer:" );
+_LIT( KPhoneModel, "Model:" );
+_LIT( KPhoneSerialNumber, "Serial number:" );
+_LIT( KSubscriberId, "Subscriber id:" );
+_LIT( KFlightMode, "Flight mode:" );
+_LIT( KOn, "on" );
+_LIT( KOff, "off" );
+_LIT( KIndicator, "Indicator:" );
+_LIT( KChargerConnected, "charger connected" );
+_LIT( KChargerDisconnected, "charger disconnected" );
+_LIT( KNetworkAvailable, "network available" );
+_LIT( KNetworkUnavailable, "network unavailable" );
+_LIT( KCallInProgress, "call in progress" );
+_LIT( KCallNotInProgress, "call not in progress" );
+_LIT( KBatteryInfo, "Battery info:" );
+_LIT( KPowerStatusUnknown, "power status unknown" );
+_LIT( KPoweredByBattery, "powered by battery" );
+_LIT( KConnectedButExternallyPowered, "connected but externally powered" );
+_LIT( KNoBatteryConnected, "no battery connected" );
+_LIT( KPowerFault, "power fault" );
+_LIT( KChargeLevel, "charge level:" );
+_LIT( KSignalStrength, "Signal strength:" );
+_LIT( KBar, "bar:" );
+_LIT( KStrength, "strength:" );
+_LIT( KLock, "Lock:" );
+_LIT( KLockPin1, "lock pin 1" );
+_LIT( KLockPin2, "lock pin 2" );
+_LIT( KLockInfo, "Lock info:" );
+_LIT( KUnknown, "unknown" );
+_LIT( KLocked, "locked" );
+_LIT( KUnlocked, "unlocked" );
+_LIT( KBlocked, "blocked" );
+_LIT( KSetting, "setting:" );
+_LIT( KEnabled, "enabled" );
+_LIT( KDisabled, "disabled" );
+_LIT( KPhoneLine, "Phone line:" );
+_LIT( KVoiceLine, "voice line" );
+_LIT( KDataLine, "data line" );
+_LIT( KFaxLine, "fax line" );
+_LIT( KCallStatus, "Call status:" );
+_LIT( KIdle, "idle" );
+_LIT( KDialling, "dialling" );
+_LIT( KRinging, "ringing" );
+_LIT( KAnswering, "answering" );
+_LIT( KConnecting, "connecting" );
+_LIT( KConnected, "connected" );
+_LIT( KReconnectPending, "reconnect pending" );
+_LIT( KDisconnecting, "disconnecting" );
+_LIT( KOnHold, "on hold" );
+_LIT( KTransferring, "transferring" );
+_LIT( KTransferAlerting, "transfer alerting" );
+_LIT( KCallSelection, "Call selection:" );
+_LIT( KLine, "line:" );
+_LIT( KLineVoiceLine, "voice line" );
+_LIT( KLineDataLine, "data line" );
+_LIT( KLineFaxLine, "fax line" );
+_LIT( KStatus, "status:" );
+_LIT( KActiveCall, "active call" );
+_LIT( KHeldCall, "held call" );
+_LIT( KInProgressCall, "in progress call" );
+_LIT( KCallInfo, "Call info:" );
+_LIT( KStartTime, "start time:" );
+_LIT( KDuration, "duration:" );
+_LIT( KDialledParty, "Dialled party:" );
+_LIT( KTypeOfNumber, "type of number:" );
+_LIT( KUnknownNumber, "unknown number" );
+_LIT( KInternationalNumber, "international number" );
+_LIT( KNationalNumber, "national number" );
+_LIT( KNetworkSpecificNumber, "network specific number" );
+_LIT( KSubscriberNumber, "subscriber number" );
+_LIT( KAlphanumericNumber, "alphanumeric number" );
+_LIT( KAbbreviatedNumber, "abbreviated number" );
+_LIT( KNumberPlan, "number plan:" );
+_LIT( KUnknownNumberingPlan, "unknown numbering plan" );
+_LIT( KIsdnNumberPlan, "isdn number plan" );
+_LIT( KDataNumberPlan, "data number plan" );
+_LIT( KTelexNumberPlan, "telex number plan" );
+_LIT( KServiceCentreSpecificPlan1, "service centre specific plan 1" );
+_LIT( KServiceCentreSpecificPlan2, "service centre specific plan 2" );
+_LIT( KNationalNumberPlan, "national number plan" );
+_LIT( KPrivateNumberPlan, "private number plan" );
+_LIT( KErmesNumberPlan, "ERMES number plan" );
+_LIT( KDialledPartyTelNumber, "tel number:" );
+_LIT( KExitCode, "exit code:" );
+_LIT( KSecurity, "security:" );
+_LIT( KCipheringOff, "ciphering off" );
+_LIT( KCipheringGSM, "ciphering GSM" );
+_LIT( KCipheringWCDMA, "ciphering WCDMA" );
+_LIT( KDialledPartyCallId, "call id:" );
+_LIT( KRemotePartyInfo, "Remote party info:" );
+_LIT( KRemoteIdStatus, "remote id status:" );
+_LIT( KRemoteIdentityUnknown, "remote identity unknown" );
+_LIT( KRemoteIdentityAvailable, "remote identity available" );
+_LIT( KRemoteIdentitySuppressed, "remote identity suppressed" );
+_LIT( KCallingName, "calling name:" );
+_LIT( KRemoteNumber, "Remote number:" );
+_LIT( KCallDirection, "Call direction:" );
+_LIT( KDirectionUnknown, "direction unknown" );
+_LIT( KMobileOriginated, "mobile originated" );
+_LIT( KMobileTerminated, "mobile terminated" );
+_LIT( KNetworkRegistrationStatus, "Network registration status:" );
+_LIT( KNotRegisteredNoService, "not registered no service" );
+_LIT( KNotRegisteredEmergencyOnly, "not registered emergency only" );
+_LIT( KNotRegisteredSearched, "not registered searched" );
+_LIT( KRegisteredBusy, "registered busy" );
+_LIT( KRegisteredOnHomeNetwork, "registered on home network" );
+_LIT( KRegistrationDenied, "registration denied" );
+_LIT( KRegisteredRoaming, "registered roaming" );
+_LIT( KNetworkMode, "Network mode:" );
+_LIT( KUnregistered, "unregistered" );
+_LIT( KGSM, "GSM" );
+_LIT( KAMPS, "AMPS" );
+_LIT( KCDMA95, "CDMA95" );
+_LIT( KCDMA2000, "CDMA2000" );
+_LIT( KWCDMA, "WCDMA" );
+_LIT( KTDCDMA, "TDCDMA" );
+_LIT( KNetworkStatus, "Network status:" );
+_LIT( KAvailable, "available" );
+_LIT( KCurrent, "current" );
+_LIT( KForbidden, "forbidden" );
+_LIT( KCountryCode, "Country code:" );
+_LIT( KNetworkId, "Network id:" );
+_LIT( KDisplayTag, "Display tag:" );
+_LIT( KShortName, "Short name:" );
+_LIT( KLongName, "Long name:" );
+_LIT( KBandInfo, "Band info:" );
+_LIT( K800A, "800A" );
+_LIT( K800B, "800B" );
+_LIT( K800C, "800C" );
+_LIT( K1900A, "1900A" );
+_LIT( K1900B, "1900B" );
+_LIT( K1900C, "1900C" );
+_LIT( K1900D, "1900D" );
+_LIT( K1900E, "1900E" );
+_LIT( K1900F, "1900F" );
+_LIT( KCDMASID, "CDMA SID:" );
+_LIT( KNetworkAccess, "Network access:" );
+_LIT( KGSMCompact, "GSM compact" );
+_LIT( KUTRAN, "UTRAN" );
+_LIT( KArea, "Area:" );
+_LIT( KKnown, "known" );
+_LIT( KLocationAreaCode, "Location area code:" );
+_LIT( KCellId, "Cell id:" );
+_LIT( KNetworkName, "Network name:" );
+_LIT( KOperatorName, "Operator name:" );
+_LIT( KCallForwardingCondition, "Call forwarding condition:" );
+_LIT( KUnconditional, "unconditional" );
+_LIT( KBusy, "busy" );
+_LIT( KNoReply, "no reply" );
+_LIT( KNotReachable, "not reachable" );
+_LIT( KCallForwardingStatus, "Call forwarding status:" );
+_LIT( KActive, "active" );
+_LIT( KNotActive, "not active" );
+_LIT( KNotProvisioned, "not provisioned" );
+_LIT( KNotAvailable, "not available" );
+_LIT( KServiceGroup, "Service group:" );
+_LIT( KVoiceService, "voice service" );
+_LIT( KFaxService, "fax service" );
+_LIT( KDataService, "data service" );
+_LIT( KBarringCondition, "Barring condition:" );
+_LIT( KAllIncoming, "all incoming" );
+_LIT( KIncomingRoaming, "incoming roaming" );
+_LIT( KAllOutgoing, "all outgoing" );
+_LIT( KOutgoingInternational, "outgoing international" );
+_LIT( KOutgoingInternationalExceptToHC, "outgoing international except to HC" );
+_LIT( KCallBarringStatus, "Call barring status:" );
+_LIT( KCallWaitingStatus, "Call waiting status:" );
+_LIT( KIdentityService, "Identity service:" );
+_LIT( KUnspecified, "unspecified" );
+_LIT( KCallerPresentation, "caller presentation (CLIP)" );
+_LIT( KCallerRestriction, "caller restriction (CLIR)" );
+_LIT( KIdentityServiceStatus, "Identity service status:" );
+_LIT( KActivePermanent, "active permanent" );
+_LIT( KActiveDefaultRestricted, "active default restricted" );
+_LIT( KActiveDefaultAllowed, "active default allowed" );
+_LIT( KCallParams, "Call params:" );
+_LIT( KCLIRRestrictDefault, "CLIR: restrict default" );
+_LIT( KCLIRSendMyId, "CLIR: send my id" );
+_LIT( KCLIRDontSendMyId, "CLIR: don't send my id" );
+_LIT( KTelNumber, "Tel number:" );
+_LIT( KCallId, "Call id:" );
+_LIT( KIsvCall1, "isv telephony call 1" );
+_LIT( KIsvCall2, "isv telephony call 2" );
+_LIT( KIsvMaxNumberOfCalls, "isv telephony max number of calls" );
+_LIT( KCallDynamicCaps, "Call dynamic caps:" );
+_LIT( KWaitingForIncomingCall, "Waiting for incoming call" );  
+_LIT( KWaitingForVoiceLineChange, "Waiting for voice line change, e.g. MO/MT call" ); 
+_LIT( KSendingFollowingDTMFTones, "Sending following DTMF tones:" );
+_LIT( KDeprecatedFunctionTest, "Deprecated: returned KErrNotSupported or KErrNone as expected" ); 
+_LIT( KOperatorNameNotFoundFromSIM, "Warning! Operator name not found from SIM card, check the SIM card" );
+
+
+#endif
+            
+// End of File
+	
+	
+	

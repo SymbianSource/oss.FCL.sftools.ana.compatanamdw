@@ -1,0 +1,267 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipeventheader
+//
+// Tests all public elements of the t_csipeventheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPEventHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csipeventheader-0001
+//! @SYMTestCaseID          t_csipeventheader-0001
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::NewL(const TDesC8 {ref});
+//!                         CSIPEventHeader::~CSIPEventHeader() 
+//! @SYMTestCaseDesc        Construct and destruct CSIPEventHeader object.
+//! @SYMTestActions         1. Creates a CSIPEventHeader object.
+//!                         2. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPEventHeader is created and destroyed successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        COMMAND             sipeventheader             NewL                        t_csipeventheader-0001-NewL_Command01
+        COMMAND             sipeventheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0001
+
+START_TESTCASE              t_csipeventheader-0002
+//! @SYMTestCaseID          t_csipeventheader-0002
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::NewLC(const TDesC8 {ref});
+//!                         CSIPEventHeader::~CSIPEventHeader() 
+//! @SYMTestCaseDesc        Construct and destruct CSIPEventHeader object.
+//! @SYMTestActions         1. Creates a CSIPEventHeader object.
+//!                         2. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPEventHeader is created and destroyed successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        COMMAND             sipeventheader             NewLC                       t_csipeventheader-0002-NewLC_Command01
+        COMMAND             sipeventheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0002
+
+
+START_TESTCASE              t_csipeventheader-0003
+//! @SYMTestCaseID          t_csipeventheader-0003
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::DecodeL(const TDesC8 {ref}) 
+//! @SYMTestCaseDesc        Constructs a CSIPEventHeader from textual representation of the header's value part. 
+//! @SYMTestActions         1. Constructs a CSIPEventHeader from textual representation.
+//!                         2. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPEventHeader is created and destroyed successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        COMMAND             sip                        NewL                           t_csipeventheader-0003-NewL_Command01
+        COMMAND             sipeventheader             DecodeL                        t_csipeventheader-0003-DecodeL_Command02
+        COMMAND             sipeventheader             ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0003
+
+START_TESTCASE              t_csipeventheader-0004
+//! @SYMTestCaseID          t_csipeventheader-0004
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 operator==(const CSIPEventHeader& aHeader) 
+//! @SYMTestCaseDesc        Compares this instance to another CSIPEventHeader instance 
+//! @SYMTestActions         1. Constructs 3 CSIPEventHeader objects.
+//!                         2. Compares objects.
+//!                         2.1 Compares the first object to the second object.
+//!                         2.2 Compares the first object to the third object.
+//!                         3. Deletes all CSIPEventHeader objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Step 2.1 return ETrue and step 2.2 return EFalse
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader1
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader2
+        COMMAND             sip                        NewL                           t_csipeventheader-0004-NewL_Command01
+        COMMAND             sipeventheader             NewL                           t_csipeventheader-0004-NewL_Command02
+        COMMAND             sipeventheader1            NewL                           t_csipeventheader-0004-NewL_Command03
+        COMMAND             sipeventheader2            NewL                           t_csipeventheader-0004-NewL_Command04
+        COMMAND             sipeventheader             ==                             t_csipeventheader-0004-Compare_Command05
+        COMMAND             sipeventheader             ==                             t_csipeventheader-0004-Compare_Command06
+        COMMAND             sipeventheader             ~
+        COMMAND             sipeventheader1            ~
+        COMMAND             sipeventheader2            ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0004
+
+
+START_TESTCASE              t_csipeventheader-0005
+//! @SYMTestCaseID          t_csipeventheader-0005
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::EventPackage();
+//!                         CSIPEventHeader::SetEventPackageL(const TDesC8& {ref})
+//! @SYMTestCaseDesc        Gets and sets the Event-Package parameter in the "Event" header.
+//! @SYMTestActions         1. Constructs a CSIPEventHeader object.
+//!                         2. Sets the Event-Package parameter in the "Event" header.
+//!                         3. Gets the Event-Package parameter from the "Event" header.
+//!                         4. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The Event-Package parameter is got and set successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        COMMAND             sip                        NewL                           t_csipeventheader-0005-NewL_Command01
+        COMMAND             sipeventheader             NewL                           t_csipeventheader-0005-NewL_Command02
+        COMMAND             sipeventheader             SetEventPackageL               t_csipeventheader-0005-SetEventPackageL_Command03
+        COMMAND             sipeventheader             EventPackage                   t_csipeventheader-0005-EventPackage_Command04
+        COMMAND             sipeventheader             ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0005
+
+
+
+START_TESTCASE              t_csipeventheader-0006
+//! @SYMTestCaseID          t_csipeventheader-0006
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::EventTemplates();
+//!                         CSIPEventHeader::SetEventTemplatesL(const MDesC8Array {ref});
+//! @SYMTestCaseDesc        Gets and sets the event templates.
+//! @SYMTestActions         1. Constructs a CSIPEventHeader object.
+//!                         2. Sets the event templates overwriting all the existing ones.
+//!                         3. Gets the event templates.
+//!                         4. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The event templates are got and set successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        COMMAND             sip                        NewL                           t_csipeventheader-0006-NewL_Command01
+        COMMAND             sipeventheader             NewL                           t_csipeventheader-0006-NewL_Command02
+        COMMAND             sipeventheader             SetEventTemplatesL             t_csipeventheader-0006-SetEventTemplatesL_Command03
+        COMMAND             sipeventheader             EventTemplates                 t_csipeventheader-0006-EventTemplates_Command04
+        COMMAND             sipeventheader             ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0006
+
+START_TESTCASE              t_csipeventheader-0007
+//! @SYMTestCaseID          t_csipeventheader-0007
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::InternalizeValueL(RReadStream {ref}) 
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPEventHeader from a RReadStream.
+//! @SYMTestActions         1. Creates a CSIPEventHeader object.
+//!							2. Externalizes CSIPEventHeader object sipeventheader to c:\sip\sipcodec\temp.
+//!							3. Internalizes CSIPEventHeader object sipeventheader1 from c:\sip\sipcodec\temp.
+//!                         4. Test the internalized CSIPEventHeader object.
+//!                         5. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPEventHeader is created successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader1
+        COMMAND             sip                        NewL                        t_csipeventheader-0007-NewL_Command01
+        COMMAND             sipeventheader             NewL                        t_csipeventheader-0007-NewL_Command02
+        COMMAND             sipeventheader             ExternalizeL                t_csipeventheader-0007-ExternalizeL_Command03
+        COMMAND             sipeventheader1            InternalizeValueL           t_csipeventheader-0007-InternalizeValueL_Command04
+        COMMAND             sipeventheader1            EventPackage                t_csipeventheader-0007-EventPackage_Command05
+        COMMAND             sipeventheader1            ~
+        COMMAND             sipeventheader             ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0007
+
+START_TESTCASE              t_csipeventheader-0008
+//! @SYMTestCaseID          t_csipeventheader-0008
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::CloneL() 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPHeaderBase object.
+//! @SYMTestActions         1. Creates a CSIPEventHeader object.
+//!							2. Clones a CSIPEventHeader object sipeventheader from sipeventheader1.
+//!							3. Test the cloned CSIPEventHeader object.
+//!                         4. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPEventHeader is cloned successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader1
+        COMMAND             sipeventheader             NewL                        t_csipeventheader-0008-NewL_Command01
+        COMMAND             sipeventheader             CloneL                      t_csipeventheader-0008-CloneL_Command02
+        COMMAND             sipeventheader1            EventPackage                t_csipeventheader-0008-EventPackage_Command03
+        COMMAND             sipeventheader1            ~
+        COMMAND             sipeventheader             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0008
+
+START_TESTCASE              t_csipeventheader-0009
+//! @SYMTestCaseID          t_csipeventheader-0009
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        04/11/2009
+//! @SYMAPI                 CSIPEventHeader::Name() 
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Creates a CSIPEventHeader object.
+//!                         2. Gets the full name of the header.
+//!                         3. Deletes the CSIPEventHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Gets the full name correctly without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipeventheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPEventHeader            sipeventheader
+        COMMAND             sip                        NewL                        t_csipeventheader-0009-NewL_Command01
+        COMMAND             sipeventheader             NewL                        t_csipeventheader-0009-NewL_Command02
+        COMMAND             sipeventheader             Name                        t_csipeventheader-0009-Name_Command03
+        COMMAND             sipeventheader             ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipeventheader-0009

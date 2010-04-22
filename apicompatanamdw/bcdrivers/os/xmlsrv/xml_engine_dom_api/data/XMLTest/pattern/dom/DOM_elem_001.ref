@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing"><doc xmlns="http://test.pl">
+	<test1/>
+	<test2>&sup3; &#179;  &#xB3;</test2>
+	<test3/>
+</doc></s:Envelope>

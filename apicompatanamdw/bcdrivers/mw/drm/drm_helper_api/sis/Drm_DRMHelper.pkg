@@ -1,0 +1,47 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+; Languages
+; none -  English only by default
+&EN
+
+; Installation header
+; Only one component name as we only support English
+; UID is the main app's UID
+
+#{"BCTestDRMHelperLib"},(0x20015A5C),1,0,0,TYPE=SA
+[0x101F7961],3,*,*,{"Series60ProductID"}
+
+; Non-localised vendor name
+:"Nokia Corporation"
+
+; Localised vendor names
+%{"Nokia Corporation"}
+
+; Files to install and to where
+"\Epoc32\Release\armv5\urel\BCTestDRMHelperLib.dll"-"!:\sys\bin\BCTestDRMHelperLib.dll"
+"\epoc32\winscw\c\data\Others\video_interval1h.dcf"-"c:\Data\others\video_interval1h.dcf"
+"\epoc32\winscw\c\data\DRM\video_interval1h.ro"-"e:\drm\video_interval1h.ro"
+"\epoc32\winscw\c\data\Others\sd_S60FBT_005.dcf"-"c:\Data\others\sd_S60FBT_005.dcf"
+"\epoc32\winscw\c\data\Others\sd_S60FBT_015.dcf"-"c:\Data\others\sd_S60FBT_015.dcf"
+"\epoc32\winscw\c\data\Others\129-allthatshewants.odf"-"c:\Data\others\129-allthatshewants.odf"
+"\epoc32\winscw\c\data\DRM\sd_S60FBT_015.ro"-"e:\DRM\sd_S60FBT_015.ro"
+"\epoc32\winscw\c\data\Others\sd_water003.dcf"-"c:\Data\others\sd_water003.dcf"
+"\epoc32\winscw\c\data\DRM\sd_water.ro"-"e:\DRM\sd_water.ro"
+"\Epoc32\winscw\c\testframework\TestFramework_DRMHelper.ini"-"!:\TestFramework\TestFramework_DRMHelper.ini"
+"\Epoc32\winscw\c\testframework\tcBCTestDRMHelper.cfg"-"!:\TestFramework\tcBCTestDRMHelper.cfg"
+"\Epoc32\winscw\c\testframework\UI_BCTestDRMHelper.cfg"-"!:\TestFramework\UI_BCTestDRMHelper.cfg"
+"\epoc32\winscw\c\DRMHelper.bat"-"!:\DRMHelper.bat"
+"..\preconfigautomation\data\DrmPreconfig.exe"-"!:\sys\bin\DrmPreconfig.exe"

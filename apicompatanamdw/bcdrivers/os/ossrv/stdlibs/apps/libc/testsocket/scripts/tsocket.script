@@ -1,0 +1,101 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tsocket
+LOAD_SUITE tsocket
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tsocket  ExampleL \tstdapis\tsocket.ini Section_ExampleL
+RUN_TEST_STEP !Result=0 5 tsocket  SocketTest \tstdapis\tsocket.ini Section_SocketTest_1
+RUN_TEST_STEP !Result=0 5 tsocket  SocketTest \tstdapis\tsocket.ini Section_SocketTest_2
+RUN_TEST_STEP !Result=0 5 tsocket  SocketTest \tstdapis\tsocket.ini Section_SocketTest_3
+RUN_TEST_STEP !Result=0 5 tsocket  SocketTest \tstdapis\tsocket.ini Section_SocketTest_4
+RUN_TEST_STEP !Result=0 5 tsocket  SocketTest \tstdapis\tsocket.ini Section_SocketTest_5
+RUN_TEST_STEP !Result=0 5 tsocket  SocketTest \tstdapis\tsocket.ini Section_SocketTest_6
+RUN_TEST_STEP !Result=0 5 tsocket  BindTest \tstdapis\tsocket.ini Section_BindTest
+RUN_TEST_STEP !Result=0 5 tsocket  BindInvalidAddress \tstdapis\tsocket.ini Section_BindInvalidAddress
+RUN_TEST_STEP !Result=0 5 tsocket  BindUsingFileDescriptor \tstdapis\tsocket.ini Section_BindUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  BindUsingInvalidSocketDescriptor \tstdapis\tsocket.ini Section_BindUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  BindFailCases
+RUN_TEST_STEP !Result=0 5 tsocket  ListenTest \tstdapis\tsocket.ini Section_ListenTest 
+RUN_TEST_STEP !Result=0 5 tsocket  ListenUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  ListenUdp
+RUN_TEST_STEP !Result=0 5 tsocket  ListenUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  ShutdownTest \tstdapis\tsocket.ini Section_ShutdownTest_1
+RUN_TEST_STEP !Result=0 5 tsocket  ShutdownTest \tstdapis\tsocket.ini Section_ShutdownTest_2
+RUN_TEST_STEP !Result=0 5 tsocket  ShutdownTest \tstdapis\tsocket.ini Section_ShutdownTest_3
+RUN_TEST_STEP !Result=0 5 tsocket  ShutdownDisconnectedSocket \tstdapis\tsocket.ini Section_ShutdownDisconnectedSocket 
+RUN_TEST_STEP !Result=0 5 tsocket  ShutDownTestWithInvalidShutdownOption
+RUN_TEST_STEP !Result=0 5 tsocket  ShutdownUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  ShutdownUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  GetSocketName \tstdapis\tsocket.ini Section_GetSocketName 
+RUN_TEST_STEP !Result=0 5 tsocket  GetSocketNameUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  GetSocketNameUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  GetSocketNameInvalidLength \tstdapis\tsocket.ini Section_GetSocketNameInvalidLength
+RUN_TEST_STEP !Result=0 5 tsocket  GetSocketNameInvalidSocketBuffer \tstdapis\tsocket.ini Section_GetSocketNameInvalidSocketBuffer
+RUN_TEST_STEP !Result=0 5 tsocket  GetPeerSocketName  \tstdapis\tsocket.ini Section_GetPeerSocketName_1
+RUN_TEST_STEP !Result=0 5 tsocket  GetPeerSocketName  \tstdapis\tsocket.ini Section_GetPeerSocketName_2
+RUN_TEST_STEP !Result=0 5 tsocket  GetPeerSocketNameUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  GetPeerSocketNameUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  GetPeerSocketNameforUnconnectedSocket
+RUN_TEST_STEP !Result=0 5 tsocket  GetPeerSocketNameInvalidLengthSockAddr
+RUN_TEST_STEP !Result=0 5 tsocket  UDP
+RUN_TEST_STEP !Result=0 5 tsocket  TCP
+RUN_TEST_STEP !Result=0 5 tsocket  AcceptTest \tstdapis\tsocket.ini Section_AcceptTest
+RUN_TEST_STEP !Result=0 5 tsocket  UDPAccept
+RUN_TEST_STEP !Result=0 5 tsocket  AcceptUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  AcceptUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  AcceptFailCases
+RUN_TEST_STEP !Result=0 5 tsocket  ConnectTestFailCases \tstdapis\tsocket.ini Section_ConnectTestFailCases_1
+RUN_TEST_STEP !Result=0 5 tsocket  ConnectTestFailCases \tstdapis\tsocket.ini Section_ConnectTestFailCases_2
+RUN_TEST_STEP !Result=0 5 tsocket  ConnectUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  ConnectUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  RecvFromTestFailCases  \tstdapis\tsocket.ini Section_RecvFromTestFailCases 
+RUN_TEST_STEP !Result=0 5 tsocket  RecvUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  RecvUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  RecvTestFailCases \tstdapis\tsocket.ini Section_RecvTestFailCases 
+RUN_TEST_STEP !Result=0 5 tsocket  SendTestFailCases \tstdapis\tsocket.ini Section_SendTestFailCases_1
+RUN_TEST_STEP !Result=0 5 tsocket  SendTestFailCases \tstdapis\tsocket.ini Section_SendTestFailCases_2
+RUN_TEST_STEP !Result=0 5 tsocket  SendUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  SendUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  SendToTestFailCases \tstdapis\tsocket.ini Section_SendToTestFailCases_1
+RUN_TEST_STEP !Result=0 5 tsocket  SendToTestFailCases \tstdapis\tsocket.ini Section_SendToTestFailCases_2
+RUN_TEST_STEP !Result=0 5 tsocket  SendToUsingFileDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  SendToUsingInvalidSocketDescriptor
+RUN_TEST_STEP !Result=0 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_1
+RUN_TEST_STEP !Result=0 5 tsocket  GetSockOptFailCases
+RUN_TEST_STEP !Result=0 5 tsocket  SetSockOptFailCases
+RUN_TEST_STEP !Result=0 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_2
+RUN_TEST_STEP !Result=0 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_3
+RUN_TEST_STEP !Result=0 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_4
+RUN_TEST_STEP !Result=0 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_5
+RUN_TEST_STEP !Result=0 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_6
+RUN_TEST_STEP !Result=-2 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_7
+RUN_TEST_STEP !Result=-2 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_8
+RUN_TEST_STEP !Result=-2 5 tsocket  SocketOptions \tstdapis\tsocket.ini Section_SocketOptions_9
+RUN_TEST_STEP !Result=0 5 tsocket  BindResvPort \tstdapis\tsocket.ini Section_BindResvPort
+RUN_TEST_STEP !Result=0 5 tsocket  BindResvPortFailCases
+RUN_TEST_STEP !Result=0 5 tsocket  HErrNoLocation
+RUN_TEST_STEP !Result=0 5 tsocket  SendMsgRecvMsg
+RUN_TEST_STEP !Result=0 5 tsocket  GetHostName
+RUN_TEST_STEP !Result=0 5 tsocket  GetHostNameZero
+RUN_TEST_STEP !Result=0 5 tsocket  GetHostNameNull
+RUN_TEST_STEP !Result=0 5 tsocket  TestSockAfLocal
+RUN_TEST_STEP !Result=0 5 tsocket  TestSktlseek
+RUN_TEST_STEP !Result=0 5 tsocket  TestSktfstat
+RUN_TEST_STEP !Result=0 5 tsocket  TestSktfsync
+RUN_TEST_STEP !Result=0 15 tsocket  TestGreaterThan16kReadWrite
+

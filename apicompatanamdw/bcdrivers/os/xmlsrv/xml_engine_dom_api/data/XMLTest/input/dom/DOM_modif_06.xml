@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE doc [
+	<!ENTITY test1 "1.1">
+]>
+<doc><elem1>tekst</elem1><elem2>test &test1; test</elem2><elem2>&test1; test</elem2></doc>

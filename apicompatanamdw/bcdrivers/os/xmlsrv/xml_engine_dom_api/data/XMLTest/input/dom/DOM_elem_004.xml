@@ -1,0 +1,2 @@
+<!-- &raquo; 	&#187; 	&#xBB; -->
+<doc xmlns="http://test.pl" xmlns:testns="http://test.com" attr1="test"><?testtarget data test data?>&raquo;<!-- comment 2 --></doc &raquo; &#187; &#xBB;>

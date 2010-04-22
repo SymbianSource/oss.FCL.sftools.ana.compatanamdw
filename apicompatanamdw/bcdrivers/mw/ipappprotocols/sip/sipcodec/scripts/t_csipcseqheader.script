@@ -1,0 +1,321 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName		t_csipcseqheader
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM. 
+//! @SYMScriptAutomation	The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipcseqheader
+//
+// Tests all public elements of the CSIPCSeqHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPCSeqHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	t_sipcodecapi
+DELAY		2000
+
+START_TESTCASE              t_csipcseqheader-0001
+//! @SYMTestCaseID          t_csipcseqheader-0001
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::DecodeL(TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with DecodeL(TDesC8) API
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0001-NewL_Command01
+        COMMAND             sipcseqheader                 DecodeL               t_csipcseqheader-0001-DecodeL_Command02
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0001
+
+START_TESTCASE              t_csipcseqheader-0002
+//! @SYMTestCaseID          t_csipcseqheader-0002
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::NewL(TUint aSeq, RStringF aMethod)
+//! @SYMTestCaseDesc        Creates a CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0002-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0002-NewL_Command02
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0002
+
+
+START_TESTCASE              t_csipcseqheader-0003
+//! @SYMTestCaseID          t_csipcseqheader-0003
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::NewLC(TUint aSeq, RStringF aMethod)
+//! @SYMTestCaseDesc        Creates a CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewLC(TUint aSeq, RStringF aMethod)
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0003-NewL_Command01
+        COMMAND             sipcseqheader                 NewLC                 t_csipcseqheader-0003-NewLC_Command02
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0003
+
+
+START_TESTCASE              t_csipcseqheader-0004
+//! @SYMTestCaseID          t_csipcseqheader-0004
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::Seq()
+//! @SYMTestCaseDesc        Get the sequence number of a CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Gets the sequence number from the "CSeq" header
+//!                         3. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The sequence number as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0004-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0004-NewL_Command02
+        COMMAND             sipcseqheader                 Seq                   t_csipcseqheader-0004-Seq_Command03
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0004
+
+START_TESTCASE              t_csipcseqheader-0005
+//! @SYMTestCaseID          t_csipcseqheader-0005
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::SetSeq(TUint aSeq)
+//! @SYMTestCaseDesc        Set the sequence number for a CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Gets the sequence number
+//!                         3. Set the sequence number with new value
+//!                         4. Gets the sequence number 
+//!                         5. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The sequence number was set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0005-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0005-NewL_Command02
+        COMMAND             sipcseqheader                 Seq                   t_csipcseqheader-0005-Seq_Command03
+        COMMAND             sipcseqheader                 SetSeq                t_csipcseqheader-0005-SetSeq_Command04
+        COMMAND             sipcseqheader                 Seq                   t_csipcseqheader-0005-Seq_Command05
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0005
+
+
+START_TESTCASE              t_csipcseqheader-0006
+//! @SYMTestCaseID          t_csipcseqheader-0006
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::Method()
+//! @SYMTestCaseDesc        Get the method of a CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Gets the method from the "CSeq" header
+//!                         3. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The sequence number as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0006-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0006-NewL_Command02
+        COMMAND             sipcseqheader                 Method                t_csipcseqheader-0006-Method_Command03
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0006
+
+START_TESTCASE              t_csipcseqheader-0007
+//! @SYMTestCaseID          t_csipcseqheader-0007
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::SetMethod(RStringF aMethod)
+//! @SYMTestCaseDesc        Set the method for the CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Gets the method 
+//!                         3. Sets the method
+//!                         4. Gets the method
+//!                         5. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The sequence number as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0007-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0007-NewL_Command02
+        COMMAND             sipcseqheader                 Method                t_csipcseqheader-0007-Method_Command03
+        COMMAND             sipcseqheader                 SetMethodL            t_csipcseqheader-0007-SetMethodL_Command04
+        COMMAND             sipcseqheader                 Method                t_csipcseqheader-0007-Method_Command05
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0007
+
+
+START_TESTCASE              t_csipcseqheader-0008
+//! @SYMTestCaseID          t_csipcseqheader-0008
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::Clone()
+//! @SYMTestCaseDesc        Clone a CSIPCSeqHeader object from a exist CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Clone a CSIPCSeqHeader object
+//!                         3. Gets the sequence number
+//!                         4. Gets the method
+//!                         5. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The sequence number as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader1
+        COMMAND             sip                           NewL                  t_csipcseqheader-0008-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0008-NewL_Command02
+        COMMAND             sipcseqheader                 CloneL                t_csipcseqheader-0008-CloneL_Command03
+        COMMAND             sipcseqheader1                Seq                   t_csipcseqheader-0008-Seq_Command04
+        COMMAND             sipcseqheader1                Method                t_csipcseqheader-0008-Method_Command05
+        COMMAND             sipcseqheader1                ~
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0008
+
+
+START_TESTCASE              t_csipcseqheader-0009
+//! @SYMTestCaseID          t_csipcseqheader-0009
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::Name()
+//! @SYMTestCaseDesc        Set the method for the CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Gets the header name 
+//!                         3. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The header name is CSeq.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0009-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0009-NewL_Command02
+        COMMAND             sipcseqheader                 Name                  t_csipcseqheader-0009-Name_Command03
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0009
+
+START_TESTCASE              t_csipcseqheader-0010
+//! @SYMTestCaseID          t_csipcseqheader-0010
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::ToTextValueL()
+//! @SYMTestCaseDesc        Set the method for the CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Encodes the header's value
+//!                         3. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The header name is CSeq.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        COMMAND             sip                           NewL                  t_csipcseqheader-0010-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0010-NewL_Command02
+        COMMAND             sipcseqheader                 ToTextValueL          t_csipcseqheader-0010-ToTextValueL_Command03
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0010
+
+
+START_TESTCASE              t_csipcseqheader-0011
+//! @SYMTestCaseID          t_csipcseqheader-0011
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/12/2009
+//! @SYMAPI                 CSIPCSeqHeader::InternalizeValueL()
+//! @SYMTestCaseDesc        Set the method for the CSIPCSeqHeader object.
+//! @SYMTestActions         1. Creates a CSIPCSeqHeader object with NewL(TUint aSeq, RStringF aMethod)
+//!                         2. Writes the object to a RWriteStream
+//!                         3. Reads a RWriteStream to a CSIPCSeqHeader object 
+//!                         4. Gets the sequence number
+//!                         5. Gets the method
+//!                         6. Destroys the CSIPCSeqHeader object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The header name is CSeq.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipcseqheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader
+        CREATE_OBJECT       CSIPCSeqHeader                sipcseqheader1
+        COMMAND             sip                           NewL                  t_csipcseqheader-0011-NewL_Command01
+        COMMAND             sipcseqheader                 NewL                  t_csipcseqheader-0011-NewL_Command02
+        COMMAND             sipcseqheader                 ExternalizeL          t_csipcseqheader-0011-ExternalizeL_Command03
+        COMMAND             sipcseqheader1                InternalizevalueL     t_csipcseqheader-0011-InternalizevalueL_Command04
+        COMMAND             sipcseqheader1                Seq                   t_csipcseqheader-0011-Seq_Command05
+        COMMAND             sipcseqheader1                Method                t_csipcseqheader-0011-Method_Command06
+        COMMAND             sipcseqheader1                ~
+        COMMAND             sipcseqheader                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE			    t_csipcseqheader-0011
+
+

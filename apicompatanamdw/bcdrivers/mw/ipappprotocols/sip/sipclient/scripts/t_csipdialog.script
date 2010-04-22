@@ -1,0 +1,815 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName        t_csipdialog
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipdialog
+//
+// Tests all public elements of the CSIPDialog
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPDialog
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipclientapi
+DELAY        2000
+
+
+START_TESTCASE              t_csipdialog-0002
+//! @SYMTestCaseID          t_csipdialog-0002
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::Connection()
+//!                         CSIPDialog::Connection() const
+//! @SYMTestCaseDesc        Get the SIP connection used for this dialog. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get the the SIP connection by calling CSIPCallIDHeader::Connection().
+//!                         22.Get the the SIP connection by calling CSIPCallIDHeader::Connection() const.
+//!                         23.Disable the profile. 
+//!                         24.Remove the SIP profile from the persistent storage.
+//!                         25.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get SIP connection without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        CREATE_OBJECT       CSIPConnection                sipconnection1
+        CREATE_OBJECT       CSIPConnection                sipconnection2
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     Connection                t_csipdialog-0002-Connection_command22
+        COMMAND             sipdialog                     Connection                t_csipdialog-0002-Connection_command23
+        COMMAND             sipconnection1                State
+        COMMAND             sipconnection2                State
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING      
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0002
+
+
+START_TESTCASE              t_csipdialog-0003
+//! @SYMTestCaseID          t_csipdialog-0003
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::FromHeader()
+//! @SYMTestCaseDesc        Get originator's address.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get originator's address.
+//!                         22.Disable the profile. 
+//!                         23.Remove the SIP profile from the persistent storage.
+//!                         24.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get originator's address without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        CREATE_OBJECT       CSIPFromHeader                fromheader
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     FromHeader                t_csipdialog-0003-FromHeader_command22
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING     
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0003
+
+
+START_TESTCASE              t_csipdialog-0004
+//! @SYMTestCaseID          t_csipdialog-0004
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::ToHeader()
+//! @SYMTestCaseDesc        Get recipient's address.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get recipient's address.
+//!                         22.Disable the profile. 
+//!                         23.Remove the SIP profile from the persistent storage.
+//!                         24.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get recipient's address without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     ToHeader                  t_csipdialog-0004-ToHeader_command22
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING       
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0004
+
+
+START_TESTCASE              t_csipdialog-0005
+//! @SYMTestCaseID          t_csipdialog-0005
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::RegistrationContext()
+//! @SYMTestCaseDesc        Get used registration context for this dialog.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get used registration context for this dialog.
+//!                         22.Disable the profile. 
+//!                         23.Remove the SIP profile from the persistent storage.
+//!                         24.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: RegistrationContext() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     RegistrationContext       t_csipdialog-0005-RegistrationContext_command22
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING      
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0005
+
+
+START_TESTCASE              t_csipdialog-0006
+//! @SYMTestCaseID          t_csipdialog-0006
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::IsAssociated()
+//! @SYMTestCaseDesc        Check if the dialog association belongs to this dialog.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Check if the dialog association belongs to this dialog.
+//!                         22.Create another CSIPInviteDialogAssoc object.
+//!                         23.Check if the second dialog association belongs to this dialog.
+//!                         24.Remove the SIP profile from the persistent storage.
+//!                         25.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. Setp 21 returns ETrue.
+//!                          2. Setp 23 returns EFalse.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc1
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     IsAssociated              t_csipdialog-0006-IsAssociated_command22
+        COMMAND             invitedialogassoc1            NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             sipdialog                     IsAssociated              t_csipdialog-0006-IsAssociated_command23
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING
+        COMMAND             invitedialogassoc1            ~
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0006
+
+
+START_TESTCASE              t_csipdialog-0007
+//! @SYMTestCaseID          t_csipdialog-0007
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::RemoteURI()
+//! @SYMTestCaseDesc        Get remote-uri.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get remote-uri.
+//!                         22.Disable the profile. 
+//!                         23.Remove the SIP profile from the persistent storage.
+//!                         24.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: RemoteURI() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     RemoteURI
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING      
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0007
+
+
+START_TESTCASE              t_csipdialog-0008
+//! @SYMTestCaseID          t_csipdialog-0008
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::SIPDialogAssociations()
+//! @SYMTestCaseDesc        Get all dialog associations.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get all dialog associations.
+//!                         22.Disable the profile. 
+//!                         23.Remove the SIP profile from the persistent storage.
+//!                         24.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIPDialogAssociations() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     SIPDialogAssociations
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING      
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0008
+
+
+START_TESTCASE              t_csipdialog-0009
+//! @SYMTestCaseID          t_csipdialog-0009
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::State()
+//! @SYMTestCaseDesc        Get dialog state.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get the CSIPDialog object dialog from the CSIPInviteDialogAssoc object.
+//!                         21.Get dialog state.
+//!                         22.Disable the profile. 
+//!                         23.Remove the SIP profile from the persistent storage.
+//!                         24.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Dialog state is expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             sipdialog                     State                     t_csipdialog-0009-State_command22
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING      
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0009
+
+
+START_TESTCASE              t_csipdialog-0010
+//! @SYMTestCaseID          t_csipdialog-0010
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPDialog::operator==(const CSIPDialog &)
+//! @SYMTestCaseDesc        Compare this object to another object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new SIP profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters.
+//!                         13.Set profile KSIPRegistrar and KSIPDigestRealm parameters.
+//!                         14.Set profile KSIPRegistrar and KSIPDigestUserName parameters.
+//!                         15.Set profile KSIPRegistrar and KSIPDigestPassword parameters.
+//!                         16.Save new profile to the persistent storage.
+//!                         17.Get the default profile.
+//!                         18.Enable the profile.
+//!                         19.Create a CSIPInviteDialogAssoc object.
+//!                         20.Get two CSIPDialog objects from the CSIPInviteDialogAssoc object.
+//!                         21.Compare these two CSIPDialog objects.
+//!                         22.Create another CSIPInviteDialogAssoc object and get the CSIPDialog object.
+//!                         23.Compare it with the first CSIPDialog object.
+//!                         24.Disable the profile. 
+//!                         25.Remove the SIP profile from the persistent storage.
+//!                         26.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. Step 21 returns ETrue.
+//!                          2. Step 23 returns EFalse.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csipdialog.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPInviteDialogAssoc         invitedialogassoc
+        CREATE_OBJECT       CSIPDialog                    sipdialog
+        CREATE_OBJECT       CSIPDialog                    sipdialog1
+        CREATE_OBJECT       CSIPDialog                    sipdialog2
+        COMMAND             sip                           NewL                      t_csipdialog-0000-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipdialog-0000-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipdialog-0000-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipdialog-0000-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipdialog-0000-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipdialog-0000-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipdialog-0000-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipdialog-0000-EnableL_command19 
+        OUTSTANDING
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0000-NewL_command20
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0000-Dialog_command21
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0010-Dialog_command22
+        COMMAND             sipdialog                     ==                        t_csipdialog-0010-Compare_command23
+        COMMAND             invitedialogassoc             NewL                      t_csipdialog-0010-NewL_command24
+        COMMAND             invitedialogassoc             Dialog                    t_csipdialog-0010-Dialog_command25
+        COMMAND             sipdialog                     ==                        t_csipdialog-0010-Compare_command26
+        COMMAND             profileregistry               Disable                   t_csipdialog-0000-Disable_command30
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipdialog-0000-DestroyL_command31
+        OUTSTANDING      
+        COMMAND             invitedialogassoc             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipdialog-0010
+
+

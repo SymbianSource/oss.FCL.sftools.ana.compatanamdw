@@ -1,0 +1,26 @@
+<books xmlns="http://www.w3.org/2001/books20/book" xmlns:nv="http://www.w3.org/2002/01/novel">
+	<nv:book type="novel" id="1234567891">
+		<autor no="2.0">
+			<name>
+				<first>Anna</first>
+				<sec>AnnaJ</sec>	
+				<nv:last>Malinowska</nv:last>
+			</name>
+			<nv:adress>HelsinkiTeTest titlest title</nv:adress>
+			<phone>123 123 36534543543543 645</phone>
+			<female/>
+		</autor>
+		<title>TitleTest title 2TesTest titlet title</title>
+	</nv:book>
+	<nv:book type="novel" id="1234567890">
+		<autor no="1.0">
+			<name>Jan KowalsTest titlekiTest title</name>
+			<adress>CracowTest title</adress>
+			<male/>
+		</autor>
+		<title>Test titleTest title</title>
+		<desc>BookTest title about.....
+		two lineTest title content
+		</desc>
+	</nv:book>
+</books>

@@ -1,0 +1,45 @@
+//
+// Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tlocalsocket
+LOAD_SUITE tlocalsocket
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestBind
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestLseek
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestFstat
+RUN_TEST_STEP !Result=0 -1 tlocalsocket TestThreadSocketRead
+RUN_TEST_STEP !Result=0 -1 tlocalsocket TestThreadSocketWrite
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestMultProc
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestMultThread
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestListen
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetGetSockOpt \tstdapis\tlocalsocket.ini SectionOptionNameSendBuf
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetGetSockOpt \tstdapis\tlocalsocket.ini SectionOptionNameRecvBuf
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetGetSockOpt \tstdapis\tlocalsocket.ini SectionOptionNameDebug
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetSockOptNegative1 \tstdapis\tlocalsocket.ini SectionInvalidOptName
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetSockOptNegative2 \tstdapis\tlocalsocket.ini SectionSockLenZero
+//RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetSockOptNegative2 \tstdapis\tlocalsocket.ini SectionSockLenNegative
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetSockOptNegative3
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestSetSockOptNegative4
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestGetSockOptNegative1 \tstdapis\tlocalsocket.ini SectionInvalidOptName
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestGetSockOptNegative2
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestGetSockOptNegative3
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestGetSockOptNegative4
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestLocalSockIoctl
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestLocalSockFcntl \tstdapis\tlocalsocket.ini SectionFcntlSetFd
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestLocalSockFcntl \tstdapis\tlocalsocket.ini SectionFcntlGetFd
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestLocalSockSelect \tstdapis\tlocalsocket.ini SectionSelect1
+RUN_TEST_STEP !Result=0 5 tlocalsocket TestLocalSockSelect \tstdapis\tlocalsocket.ini SectionSelect2

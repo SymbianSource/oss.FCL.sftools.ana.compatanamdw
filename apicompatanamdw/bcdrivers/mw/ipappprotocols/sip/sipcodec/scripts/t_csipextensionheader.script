@@ -1,0 +1,278 @@
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csipextensionheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipextensionheader
+//
+// Tests all public elements of the CSIPExtensionHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPExtensionHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+START_TESTCASE              t_csipextensionheader-0001
+//! @SYMTestCaseID          t_csipextensionheader-0001
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::NewL(const TDesC8 &,const TDesC8 &) & CSIPExtensionHeader::~CSIPExtensionHeader
+//! @SYMTestCaseDesc        Constructs a CSIPExtensionHeader from header's value and name. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                   t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                   t_csipextensionheader-0000-NewL_command02
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0001
+
+START_TESTCASE              t_csipextensionheader-0002
+//! @SYMTestCaseID          t_csipextensionheader-0002
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::NewLC(const TDesC8 &,const TDesC8 &)
+//! @SYMTestCaseDesc        Constructs a CSIPExtensionHeader from header's value and name. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewLC().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                   t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewLC                   t_csipextensionheader-0000-NewL_command02
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0002
+
+START_TESTCASE              t_csipextensionheader-0003
+//! @SYMTestCaseID          t_csipextensionheader-0003
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::Name()
+//! @SYMTestCaseDesc        Get CSIPExtensionHeader name. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Get CSIPExtensionHeader name by calling CSIPExtensionHeader::Name().
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                   t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                   t_csipextensionheader-0000-NewL_command02
+        COMMAND             sipextensionheader			Name           		   t_csipextensionheader-0003-Name_command03
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0003
+
+START_TESTCASE              t_csipextensionheader-0004
+//! @SYMTestCaseID          t_csipextensionheader-0004
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::Value( )
+//! @SYMTestCaseDesc        Get CSIPExtensionHeader value. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Get CSIPExtensionHeader value by calling CSIPExtensionHeader::Value().
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                   t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                   t_csipextensionheader-0000-NewL_command02
+        COMMAND             sipextensionheader			Value           	   t_csipextensionheader-0004-Value_command03
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0004
+
+START_TESTCASE              t_csipextensionheader-0005
+//! @SYMTestCaseID          t_csipextensionheader-0005
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::SetValueL(const TDesC8 &)
+//! @SYMTestCaseDesc        Set CSIPExtensionHeader value. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Set CSIPExtensionHeader value by calling CSIPExtensionHeader::SetValueL(const TDesC8 &)
+//!							4. Test CSIPExtensionHeader value by calling CSIPExtensionHeader::Value().
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                    t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                    t_csipextensionheader-0000-NewL_command02
+        COMMAND				sipextensionheader			SetValueL				t_csipextensionheader-0005-SetValueL_command03
+        COMMAND             sipextensionheader			Value           	    t_csipextensionheader-0005-Value_command04
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0005
+
+START_TESTCASE              t_csipextensionheader-0006
+//! @SYMTestCaseID          t_csipextensionheader-0006
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::ToTextValueL()
+//! @SYMTestCaseDesc        Get CSIPExtensionHeader text value. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Get CSIPExtensionHeader text value by calling CSIPExtensionHeader::ToTextValueL().
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                   t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                   t_csipextensionheader-0000-NewL_command02
+        COMMAND             sipextensionheader			ToTextValueL           t_csipextensionheader-0006-ToTextValueL_command03
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0006
+
+START_TESTCASE              t_csipextensionheader-0007
+//! @SYMTestCaseID          t_csipextensionheader-0007
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::CloneL()
+//! @SYMTestCaseDesc        Clone a CSIPExtensionHeader from an existing CSIPExtensionHeader object. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Clone object sipextensionheader1 from existing object sipextensionheader. 
+//!							4. Verify the name of sipextensionheader1 by calling CSIPExtensionHeader::Name().
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader1
+        COMMAND				sip							NewL                   t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                   t_csipextensionheader-0000-NewL_command02
+        COMMAND				sipextensionheader			CloneL				   t_csipextensionheader-0007-CloneL_command03
+        COMMAND             sipextensionheader1			Name           		   t_csipextensionheader-0007-Name_command04
+        COMMAND             sipextensionheader1			~
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0007
+
+START_TESTCASE              t_csipextensionheader-0008
+//! @SYMTestCaseID          t_csipextensionheader-0008
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::ExternalizeSupported()
+//! @SYMTestCaseDesc        Test CSIPExtensionHeader support externalize. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Calling CSIPExtensionHeader::ExternalizeSupported().
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        COMMAND				sip							NewL                    t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                    t_csipextensionheader-0000-NewL_command02
+        COMMAND				sipextensionheader			ExternalizeSupported	t_csipextensionheader-0008-ExternalizeSupported_command03
+        COMMAND             sipextensionheader			ExternalizeL            t_csipextensionheader-0008-ExternalizeL_command04
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0008
+
+START_TESTCASE              t_csipextensionheader-0009
+//! @SYMTestCaseID          t_csipextensionheader-0009
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPExtensionHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Internalize CSIPExtensionHeader from RReadStream. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPExtensionHeader by calling CSIPExtensionHeader::NewL().
+//!							3. Externalize CSIPExtensionHeader object sipextensionheader to c:\sip\sipcodec\temp.
+//!							4. Internalize CSIPExtensionHeader object sipextensionheader1 from c:\sip\sipcodec\temp.
+//!							5. Test sipextensionheader1's name by calling CSIPExtensionHeader::Name().
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPExtensionHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi			\sip\sipcodec\t_csipextensionheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPExtensionHeader			sipextensionheader
+        CREATE_OBJECT		CSIPExtensionHeader			sipextensionheader1
+        COMMAND				sip							NewL                    t_csipextensionheader-0000-NewL_command01
+        COMMAND             sipextensionheader			NewL                    t_csipextensionheader-0000-NewL_command02
+        COMMAND             sipextensionheader			ExternalizeL            t_csipextensionheader-0009-ExternalizeL_command03
+        COMMAND				sipextensionheader			InternalizeValueL		t_csipextensionheader-0009-InternalizeValueL_command04
+        COMMAND				sipextensionheader1			Value					t_csipextensionheader-0009-Value_command05
+        COMMAND             sipextensionheader1			~
+        COMMAND             sipextensionheader			~
+        COMMAND             sip                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipextensionheader-0009

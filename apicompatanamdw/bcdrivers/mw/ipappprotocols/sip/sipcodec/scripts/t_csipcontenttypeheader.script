@@ -1,0 +1,235 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csipcontenttypeheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipcontenttypeheader
+//
+// Tests all public elements of the CSIPContentTypeHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPContentTypeHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+// ---------- API defined in CSIPContentTypeHeader ---------- //
+START_TESTCASE              t_csipcontenttypeheader-0001
+//! @SYMTestCaseID          t_csipcontenttypeheader-0001
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPContentTypeHeader* NewL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Creates a new instance of CSIPContentTypeHeader.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPContentTypeHeader object.
+//!                         3. Check MediaType of CSIPContentTypeHeader object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: NewL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPContentTypeHeader      sipcontenttypeheader
+        COMMAND             sip                        NewL                   t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader       NewL                   t_csipcontenttypeheader-0001-NewL_Command02
+        COMMAND             sipcontenttypeheader       MediaType              t_csipcontenttypeheader-0001-MediaType_Command03
+        COMMAND             sipcontenttypeheader       ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0001
+
+START_TESTCASE              t_csipcontenttypeheader-0002
+//! @SYMTestCaseID          t_csipcontenttypeheader-0002
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPContentTypeHeader* NewLC(const TDesC8{ref})
+//! @SYMTestCaseDesc        Creates a new instance of CSIPContentTypeHeader and puts it onto the cleanup stack.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPContentTypeHeader object.
+//!                         3. Check media subtype of CSIPContentTypeHeader object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: NewLC() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPContentTypeHeader      sipcontenttypeheader
+        COMMAND             sip                        NewL                   t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader       NewLC                  t_csipcontenttypeheader-0002-NewLC_Command02
+        COMMAND             sipcontenttypeheader       MediaSubtype           t_csipcontenttypeheader-0002-MediaSubtype_Command03
+        COMMAND             sipcontenttypeheader       ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0002
+
+START_TESTCASE              t_csipcontenttypeheader-0003
+//! @SYMTestCaseID          t_csipcontenttypeheader-0003
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPContentTypeHeader* CSIPContentTypeHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPContentTypeHeader object from textual representation of the header's value part. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct array of CSIPContentTypeHeader by calling CSIPContentTypeHeader::DecodeL().
+//!                         3. Check MediaSubtype and media subtype of CSIPContentTypeHeader object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: DecodeL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPContentTypeHeader      sipcontenttypeheader
+        COMMAND             sip                        NewL                   t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader       DecodeL                t_csipcontenttypeheader-0003-DecodeL_Command02
+        COMMAND             sipcontenttypeheader       MediaType              t_csipcontenttypeheader-0003-MediaType_Command03
+        COMMAND             sipcontenttypeheader       MediaSubtype           t_csipcontenttypeheader-0003-MediaSubtype_Command04
+        COMMAND             sipcontenttypeheader       ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0003
+
+
+START_TESTCASE              t_csipcontenttypeheader-0004
+//! @SYMTestCaseID          t_csipcontenttypeheader-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 const TDesC8{ref} CSIPContentTypeHeader::MediaType() const, CSIPContentTypeHeader::SetMediaTypeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Get the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPContentTypeHeader object.
+//!                         3. Sets the MediaType in the CSIPContentTypeHeader.
+//!                         4. Gets the MediaType from the CSIPContentTypeHeader.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: "Accept-Encoding" header is retrieved expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPContentTypeHeader      sipcontenttypeheader
+        COMMAND             sip                        NewL                t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader       NewL                t_csipcontenttypeheader-0004-NewL_Command02
+        COMMAND             sipcontenttypeheader       SetMediaTypeL       t_csipcontenttypeheader-0004-SetMediaTypeL_Command03
+        COMMAND             sipcontenttypeheader       MediaType           t_csipcontenttypeheader-0004-MediaType_Command04
+        COMMAND             sipcontenttypeheader       ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0004
+
+
+START_TESTCASE              t_csipcontenttypeheader-0005
+//! @SYMTestCaseID          t_csipcontenttypeheader-0005
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 TReal CSIPContentTypeHeader::MediaSubtype() const, void CSIPContentTypeHeader::SetMediaSubtypeL(TReal)
+//! @SYMTestCaseDesc        Sets the MediaSubtype value, gets the value of MediaSubtype.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPContentTypeHeader objects.
+//!                         3. Sets the MediaSubtype value.
+//!                         4. Gets the value of MediaSubtype.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: "q"-parameter value header is retrieved expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                       sip
+        CREATE_OBJECT       CSIPContentTypeHeader      sipcontenttypeheader
+        COMMAND             sip                        NewL                t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader       NewL                t_csipcontenttypeheader-0005-NewL_Command02
+        COMMAND             sipcontenttypeheader       SetMediaSubtypeL    t_csipcontenttypeheader-0005-SetMediaSubtypeL_Command03
+        COMMAND             sipcontenttypeheader       MediaSubtype        t_csipcontenttypeheader-0005-MediaSubtype_Command04
+        COMMAND             sipcontenttypeheader       ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0005
+
+START_TESTCASE              t_csipcontenttypeheader-0006
+//! @SYMTestCaseID          t_csipcontenttypeheader-0006
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPHeaderBase* CSIPContentTypeHeader::InternalizeValueL(RReadStream{ref}), RStringF CSIPContentTypeHeader::Name()
+//! @SYMTestCaseDesc        Construct an instance of a CSIPContentTypeHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPContentTypeHeader object.
+//!                         3. Externalize the CSIPContentTypeHeader to file.
+//!                         4. Construct a CSIPContentTypeHeader by calling CSIPContentTypeHeader::InternalizeValueL() from file.
+//!                         5. Get the name and header's value.
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's name are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi           \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPContentTypeHeader         sipcontenttypeheader
+        CREATE_OBJECT       CSIPContentTypeHeader         sipcontenttypeheader1
+        COMMAND             sip                           NewL                   t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader          NewL                   t_csipcontenttypeheader-0006-NewL_Command02
+        COMMAND             sipcontenttypeheader          ExternalizeL           t_csipcontenttypeheader-0006-ExternalizeL_Command03
+        COMMAND             sipcontenttypeheader1         InternalizeValueL      t_csipcontenttypeheader-0006-InternalizeValueL_Command04
+        COMMAND             sipcontenttypeheader1         Name                   t_csipcontenttypeheader-0006-Name_Command05
+        COMMAND             sipcontenttypeheader1         ~
+        COMMAND             sipcontenttypeheader          ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0006
+
+START_TESTCASE              t_csipcontenttypeheader-0007
+//! @SYMTestCaseID          t_csipcontenttypeheader-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPHeaderBase* CSIPContentTypeHeader::CloneL() const
+//! @SYMTestCaseDesc        Construct an instance of a CSIPContentTypeHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPContentTypeHeader object.
+//!                         3. Clone the CSIPContentTypeHeader to another CSIPContentTypeHeader object.
+//!                         4. Check the name of the newly generated CSIPContentTypeHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. CloneL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi               \sip\sipcodec\t_csipcontenttypeheader.ini
+        CREATE_OBJECT       CSIP                              sip
+        CREATE_OBJECT       CSIPContentTypeHeader             sipcontenttypeheader
+        CREATE_OBJECT       CSIPContentTypeHeader             sipcontenttypeheader1
+        COMMAND             sip                               NewL                   t_csipcontenttypeheader-0000-NewL_Command01
+        COMMAND             sipcontenttypeheader              NewL                   t_csipcontenttypeheader-0007-NewL_Command02
+        COMMAND             sipcontenttypeheader              CloneL                 t_csipcontenttypeheader-0007-CloneL_Command03
+        COMMAND             sipcontenttypeheader1             MediaType              t_csipcontenttypeheader-0007-MediaType_Command04
+        COMMAND             sipcontenttypeheader1             MediaSubtype           t_csipcontenttypeheader-0007-MediaSubtype_Command05
+        COMMAND             sipcontenttypeheader1             ~
+        COMMAND             sipcontenttypeheader              ~
+        COMMAND             sip                               ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcontenttypeheader-0007

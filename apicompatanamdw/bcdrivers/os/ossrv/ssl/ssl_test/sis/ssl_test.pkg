@@ -1,0 +1,41 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:      
+;
+;Languages
+&EN
+
+;Header
+#{"libssl_testapps"},(0xE0207800),1,0,0
+
+;Supports S60 3.0
+[0x101F7961], 0, 0, 0, {"S60ProductID"}
+
+;Localised Vendor name
+%{"Nokia Testing EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Files to install
+
+;**********************************libc related tests***********************************
+;SSL
+"\epoc32\release\armv5\urel\ssltest.exe"-"!:\sys\bin\ssltest.exe"
+"\epoc32\winscw\c\ca_cert.der"-"!:\ca_cert.der"
+"\epoc32\winscw\c\ca_cert.pem"-"!:\ca_cert.pem"
+"\epoc32\winscw\c\server.pem" -"!:\server.pem"
+"\epoc32\winscw\c\server2.pem"-"!:\server2.pem"
+"bcssltest.bat"-"!:\bcssltest.bat"
+

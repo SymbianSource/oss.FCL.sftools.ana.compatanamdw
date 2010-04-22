@@ -1,0 +1,41 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tregex
+LOAD_SUITE tregex
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_escape 
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_badrpt
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_eparen
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_ebrack
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_basic
+RUN_TEST_STEP !Result=0 5 tregex  regexec_basic
+RUN_TEST_STEP !Result=0 5 tregex  regexec_icase
+RUN_TEST_STEP !Result=0 5 tregex  regexec_notbol
+RUN_TEST_STEP !Result=0 5 tregex  regexec_noteol
+RUN_TEST_STEP !Result=0 5 tregex  regfree_basic
+RUN_TEST_STEP !Result=0 5 tregex  regfree_multiple
+RUN_TEST_STEP !Result=0 5 tregex  regerror_basic
+RUN_TEST_STEP !Result=0 5 tregex  regexec_range
+RUN_TEST_STEP !Result=0 5 tregex  regcomp1
+RUN_TEST_STEP !Result=0 5 tregex  regcomp2
+RUN_TEST_STEP !Result=0 5 tregex  regcomp3
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_nospec
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_icase2
+RUN_TEST_STEP !Result=0 5 tregex  regcomp_newline
+RUN_TEST_STEP !Result=0 5 tregex  regerror_basic1 \tstdapis\tregex.ini Section_regerror_basic1
+RUN_TEST_STEP !Result=0 5 tregex  regfree_multiple1 \tstdapis\tregex.ini Section_regfree_multiple1

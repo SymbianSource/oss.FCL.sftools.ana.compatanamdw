@@ -1,0 +1,383 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName		t_csipmanagedprofile
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM. 
+/////////////////////////////////////////////////////////////////////
+// t_csipmanagedprofile
+//
+// Tests all public elements of the CSIPManagedProfile
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPManagedProfile
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	t_sipprofileapi
+DELAY		2000
+
+START_TESTCASE              t_csipmanagedprofile-0001
+//! @SYMTestCaseID          t_csipmanagedprofile-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::CloneL()
+//! @SYMTestCaseDesc        Creates deep copy of a CSIPManagedProfile object.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPManagedProfileRegistry object and a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Save the managed profile just created.
+//!                         4. Clone the managed profile.
+//!                         5. Save the clone.
+//!                         6. Get the profiles through CSIPProfileRegistry object.
+//!                         7. Destroy the profiles just created. and all objects.
+//!                         8. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The profile is cloned successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile2
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0001-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0001-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0001-CreateL_Command04
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0001-SaveL_Command05
+        OUTSTANDING
+        COMMAND             managedProfile1                     CloneL          t_csipmanagedprofile-0001-CloneL_Command06
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0001-SaveL_Command07
+        OUTSTANDING
+        COMMAND             profileRegistry                     ProfilesL       t_csipmanagedprofile-0001-ProfilesL_Command08
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0001-DestroyL_Command09
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0001-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfile1                     ~
+        COMMAND             managedProfile2                     ~
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0001
+
+START_TESTCASE              t_csipmanagedprofile-0002
+//! @SYMTestCaseID          t_csipmanagedprofile-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetParameter(TUint32, TUint32)
+//! @SYMTestCaseDesc        Set parameter of TUint32 type to managed profile.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set parameters of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the parameter just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The parameter is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0002-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0002-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0002-CreateL_Command04
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0002-SetParameter_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0002-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0002-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0002-ProfileL_Command08
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0002-GetParameter_Command09
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0002-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0002
+
+START_TESTCASE              t_csipmanagedprofile-0003
+//! @SYMTestCaseID          t_csipmanagedprofile-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetParameter(TUint32, const TDesC8{ref})
+//! @SYMTestCaseDesc        Set parameter of TDesC8 type to managed profile.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set parameters of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the parameter just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The parameter is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0003-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0003-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0003-CreateL_Command04
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0003-SetParameter_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0003-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0003-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0003-ProfileL_Command08
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0003-GetParameter_Command09
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0003-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0003
+
+START_TESTCASE              t_csipmanagedprofile-0004
+//! @SYMTestCaseID          t_csipmanagedprofile-0004
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetParameter(TUint32, TBool)
+//! @SYMTestCaseDesc        Set parameter of TBool type to managed profile.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set parameters of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the parameter just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The parameter is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0004-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0004-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0004-CreateL_Command04
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0004-SetParameter_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0004-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0004-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0004-ProfileL_Command08
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0004-GetParameter_Command09
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0004-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0004
+
+START_TESTCASE              t_csipmanagedprofile-0005
+//! @SYMTestCaseID          t_csipmanagedprofile-0005
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetParameter(TUint32, const MDesC8Array{ref})
+//! @SYMTestCaseDesc        Set parameter of MDesC8Array type to managed profile.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set parameters of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the parameter just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The parameter is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0005-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0005-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0005-CreateL_Command04
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0005-SetParameter_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0005-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0005-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0005-ProfileL_Command08
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0005-GetParameter_Command09
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0005-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0005
+
+START_TESTCASE              t_csipmanagedprofile-0006
+//! @SYMTestCaseID          t_csipmanagedprofile-0006
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetParameter(TUint32, TUint32, const TDesC8{ref})
+//! @SYMTestCaseDesc        Sets profile parameter that is defined for a particular SIP server.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set parameters of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the parameter just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The parameter is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0006-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0006-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0006-CreateL_Command04
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0006-SetParameter_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0006-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0006-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0006-ProfileL_Command08
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0006-GetParameter_Command09
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0006-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0006
+
+START_TESTCASE              t_csipmanagedprofile-0007
+//! @SYMTestCaseID          t_csipmanagedprofile-0007
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetType(const TSIPProfileTypeInfo{ref})
+//! @SYMTestCaseDesc        Sets profile type information
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set type info of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the type info just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The type is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0007-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0007-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0007-CreateL_Command04
+        COMMAND             managedProfile1                     SetType         t_csipmanagedprofile-0007-SetType_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0007-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0007-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0007-ProfileL_Command08
+        COMMAND             profile1                            Type            t_csipmanagedprofile-0007-Type_Command09
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0007-DestroyL_Command10
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0007
+
+START_TESTCASE              t_csipmanagedprofile-0008
+//! @SYMTestCaseID          t_csipmanagedprofile-0008
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        07/07/2009
+//! @SYMAPI                 CSIPManagedProfile::SetParameter(TUint32, const MDesC8Array{ref})
+//! @SYMTestCaseDesc        Set parameter of MDesC8Array type to managed profile to clear the settings.
+//! @SYMTestActions         1. Create a CSIP object, a CSIPProfile, a CSIPManagedProfileRegistry object, a CSIPProfileRegistry object.
+//!                         2. Create a CSIPManagedProfile object from registry.
+//!                         3. Set parameters of the profile.
+//!                         4. Save the profile.
+//!                         5. Get the profile through CSIPProfileRegistry object.
+//!                         6. Check the parameter just set.
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The parameter is set successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipmanagedprofile.ini
+        CREATE_OBJECT       CSIPManagedProfile            managedProfile1
+        CREATE_OBJECT       CSIPProfile                   profile1
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedProfileRegistry
+        CREATE_OBJECT       CSIPProfileRegistry           profileRegistry
+        COMMAND             sip                                 NewL            t_csipmanagedprofile-0008-NewL_Command01
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             profileRegistry                     NewL            t_csipmanagedprofile-0008-NewL_Command03
+        COMMAND             managedProfileRegistry              CreateL         t_csipmanagedprofile-0008-CreateL_Command04
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0008-SetParameter_Command05
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0008-SaveL_Command06
+        OUTSTANDING
+        COMMAND             managedProfile1                     GetParameter    t_csipmanagedprofile-0008-GetParameter_Command07
+        COMMAND             profileRegistry                     ProfileL        t_csipmanagedprofile-0008-ProfileL_Command08
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0008-GetParameter_Command09
+        COMMAND             managedProfile1                     SetParameter    t_csipmanagedprofile-0008-SetParameter_Command10
+        COMMAND             managedProfileRegistry              SaveL           t_csipmanagedprofile-0008-SaveL_Command11
+        OUTSTANDING
+        COMMAND             profile1                            GetParameter    t_csipmanagedprofile-0008-GetParameter_Command12
+        COMMAND             managedProfileRegistry              DestroyL        t_csipmanagedprofile-0008-DestroyL_Command13
+        OUTSTANDING
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profileRegistry                     ~
+        COMMAND             managedProfile1                     ~
+        COMMAND             profile1                            ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipmanagedprofile-0008
+

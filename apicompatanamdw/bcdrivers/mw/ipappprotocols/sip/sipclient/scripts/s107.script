@@ -1,0 +1,110 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_sendsiprequest.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           5000
+
+START_TESTCASE              send-sip-request-master-0107
+//! @SYMTestCaseID          send-sip-request-master-0107
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        01/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::SendReferL(CSIPMessageElements{prt})
+//! @SYMTestCaseDesc        Send REFER to remote target
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         4. Initialize object of CSIPReferDialogAssoc using CSIPDialog object and CSIPReferToHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The REFER can be sent successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\send-sip-request-master.ini
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPToHeader                  toheader2
+        CREATE_OBJECT       CSIPFromHeader                fromheader
+        CREATE_OBJECT       CSIPReferToHeader             refertoheader
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPReferDialogAssoc          referdialogassoc
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSdpOriginField               sdporiginfield
+        CREATE_OBJECT       SdpCodecStringPool            sdpcodecstringpool
+        CREATE_OBJECT       CSdpConnectionField           sdpconnectionfield
+        CREATE_OBJECT       CSdpMediaField                sdpmediafield
+        CREATE_OBJECT       CSdpDocument                  sdpdocument
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      send-sip-request-master-0107-NewL_Command01
+        COMMAND             sipconnection                 NewL                      send-sip-request-master-0107-NewL_Command02
+        OUTSTANDING    
+        COMMAND             refresh                       NewL    
+        COMMAND             toheader                      DecodeL                   send-sip-request-master-0107-DecodeL_Command03
+        COMMAND             address                       DecodeL                   send-sip-request-master-0107-DecodeL_Command04
+        COMMAND             contactheader                 NewL                      send-sip-request-master-0107-NewL_Command05
+        COMMAND             binding                       NewL                      send-sip-request-master-0107-NewL_Command06
+        COMMAND				httpdigest					  NewL                      send-sip-request-master-0107-NewL_Command07
+        COMMAND             binding                       RegisterL                 send-sip-request-master-0107-RegisterL_Command08
+        COMMAND             httpdigest                    WaitForChallengeReceived  send-sip-request-master-0107-WaitForChallengeReceived_Command09
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			send-sip-request-master-0107-SetCredentialsL_Command10
+        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0107-WaitForIncomingResponse_Command11
+        OUTSTANDING
+        COMMAND             sdpcodecstringpool            OpenL
+        COMMAND             contenttypeheader             NewL                      send-sip-request-master-0107-NewL_Command12
+        COMMAND             fromheader                    DecodeL                   send-sip-request-master-0107-DecodeL_Command13
+        COMMAND             refertoheader                 DecodeL                   send-sip-request-master-0107-DecodeL_Command14
+        COMMAND             toheader2                     DecodeL                   send-sip-request-master-0107-DecodeL_Command15
+        COMMAND             sdporiginfield                NewL                      send-sip-request-master-0107-NewL_Command16
+        COMMAND             sdpconnectionfield            NewL                      send-sip-request-master-0107-NewL_Command17
+        COMMAND             sdpmediafield                 NewL                      send-sip-request-master-0107-NewL_Command18
+        COMMAND             sdpdocument                   NewL
+        COMMAND             sdpdocument                   SetOriginField            send-sip-request-master-0107-SetOriginField_Command19
+        COMMAND             sdpdocument                   SetSessionNameL           send-sip-request-master-0107-SetSessionNameL_Command20
+        COMMAND             sdpdocument                   SetConnectionField        send-sip-request-master-0107-SetConnectionField_Command21
+        COMMAND             sdpdocument                   MediaFields_Append        send-sip-request-master-0107-MediaFields_Append_Command22
+        COMMAND             sdpdocument                   EncodeL
+        COMMAND             messageelements               NewL
+        COMMAND             messageelements               SetContentL               send-sip-request-master-0107-SetContentL_Command23
+        COMMAND             referdialogassoc              NewL                      send-sip-request-master-0107-NewL_Command24
+        COMMAND             referdialogassoc              SendReferL                send-sip-request-master-0107-SendReferL_Command25
+        ASYNC_DELAY     500000
+//        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0107-WaitForIncomingResponse_Command26
+//        OUTSTANDING
+        COMMAND             referdialogassoc              ~
+        COMMAND             refresh                       ~
+        COMMAND             binding                       ~
+        COMMAND             httpdigest                    ~
+        COMMAND             sdpdocument                   ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             sdpcodecstringpool            Close
+        COMMAND             clienttransaction             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE send-sip-request-master-0107

@@ -1,0 +1,521 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName		t_csipreferdialogassoc
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM. An SIP server listening on ports 5060.
+//				The communicaion to the server is established using the default connection.
+//				The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation	The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipreferdialogassoc
+//
+// Tests all public elements of the CSIPReferDialogAssoc
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPReferDialogAssoc
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	t_sipclientapi
+DELAY		2000
+
+START_TESTCASE              t_csipreferdialogassoc-0001
+//! @SYMTestCaseID          t_csipreferdialogassoc-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        01/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::NewL(CSIPConnection{ref},CSIPFromHeader{prt},CUri8{prt},CSIPReferToHeader{prt},CSIPToHeader{prt},CSIPContactHeader{ptr})
+//! @SYMTestCaseDesc        Create a Refer to dialog from a CSIPDialog object and a refer to header.
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0001-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0001-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0001-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0001-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0001-DecodeL_command05
+        COMMAND             referdialogassoc        NewL            t_csipreferdialogassoc-0001-NewL_command07
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0001
+
+START_TESTCASE              t_csipreferdialogassoc-0002
+//! @SYMTestCaseID          t_csipreferdialogassoc-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        01/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::NewLC(CSIPConnection{ref},CSIPFromHeader{prt},CUri8{prt},CSIPReferToHeader{prt},CSIPToHeader{prt},CSIPContactHeader{ptr})
+//! @SYMTestCaseDesc        Create a Refer to dialog from a CSIPDialog object and a refer to header.
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPContactHeader       contactheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0002-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0002-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0002-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0002-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0002-DecodeL_command05
+        COMMAND             contactheader           DecodeL         t_csipreferdialogassoc-0002-DecodeL_command06
+        COMMAND             referdialogassoc        NewLC           t_csipreferdialogassoc-0002-NewLC_command07
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0002
+
+START_TESTCASE              t_csipreferdialogassoc-0003
+//! @SYMTestCaseID          t_csipreferdialogassoc-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        01/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::ReferTo()
+//! @SYMTestCaseDesc        Get referred-to resouce.
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         5. Get the referred-to resources.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The reffered-to resource can be got successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader2
+        CREATE_OBJECT       CSIPContactHeader       contactheader
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0003-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0003-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0003-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0003-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0003-DecodeL_command05
+        COMMAND             contactheader           DecodeL         t_csipreferdialogassoc-0003-DecodeL_command06
+        COMMAND             referdialogassoc        NewLC           t_csipreferdialogassoc-0003-NewLC_command07
+        COMMAND             referdialogassoc        ReferTo         t_csipreferdialogassoc-0003-ReferTo_command08
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0003
+
+START_TESTCASE              t_csipreferdialogassoc-0005
+//! @SYMTestCaseID          t_csipreferdialogassoc-0005
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::NewL(CSIPConnection{ref}, CUri8{ptr}, const MSIPRegistrationContext{ref}, CSIPReferToHeader{ptr}, CSIPFromHeader{ptr}, CSIPToHeader{ptr}, CSIPContactHeader{ptr})
+//! @SYMTestCaseDesc        Create a Refer to dialog from a CSIPDialog object and a refer to header.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Send registration request.
+//!                         10.Wait for the registration response from SIP stack
+//!                         11.Query the registration state
+//!                         12.Create objects of CSIPReferToHeader and CSIPFromHeader.
+//!                         13.Create object of CSIPReferDialogAssoc.
+//!                         14.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPFromHeader                fromheader
+        CREATE_OBJECT       CSIPReferToHeader             refertoheader
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPReferDialogAssoc          referdialogassoc
+        COMMAND             sip                           NewL                      t_csipreferdialogassoc-0005-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipreferdialogassoc-0005-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipreferdialogassoc-0005-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipreferdialogassoc-0005-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0005-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipreferdialogassoc-0005-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipreferdialogassoc-0005-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipreferdialogassoc-0005-EnableL_command19
+        OUTSTANDING
+        COMMAND             refertoheader                 DecodeL                   t_csipreferdialogassoc-0005-DecodeL_command20
+        COMMAND             fromheader                    DecodeL                   t_csipreferdialogassoc-0005-DecodeL_command21
+        COMMAND             referdialogassoc              NewL                      t_csipreferdialogassoc-0005-NewL_command22
+        COMMAND             profileregistry               Disable                   t_csipreferdialogassoc-0005-Disable_command23
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipreferdialogassoc-0005-DestroyL_command24
+        OUTSTANDING
+        COMMAND             sipconnection                 ~
+        COMMAND             clienttransaction             ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             responseelements              ~
+        COMMAND             requestelements               ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             toheader                      ~
+        COMMAND             referdialogassoc              ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0005
+
+START_TESTCASE              t_csipreferdialogassoc-0006
+//! @SYMTestCaseID          t_csipreferdialogassoc-0006
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        02/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::NewLC(CSIPConnection{ref}, CUri8{ptr}, const MSIPRegistrationContext{ref}, CSIPReferToHeader{ptr}, CSIPFromHeader{ptr}, CSIPToHeader{ptr}, CSIPContactHeader{ptr})
+//! @SYMTestCaseDesc        Create a Refer to dialog from a CSIPDialog object and a refer to header.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Send registration request.
+//!                         10.Wait for the registration response from SIP stack
+//!                         11.Query the registration state
+//!                         12.Create objects of CSIPReferToHeader and CSIPFromHeader.
+//!                         13.Create object of CSIPReferDialogAssoc.
+//!                         14.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIPManagedProfileRegistry    managedprofileregistry
+        CREATE_OBJECT       CSIPManagedProfile            managedprofile 
+        CREATE_OBJECT       CSIPProfileRegistry           profileregistry
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPProfile                   profile
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPResponseElements          responseelements
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPFromHeader                fromheader
+        CREATE_OBJECT       CSIPReferToHeader             refertoheader
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPReferDialogAssoc          referdialogassoc
+        COMMAND             sip                           NewL                      t_csipreferdialogassoc-0006-NewL_command01
+        COMMAND             profileregistry               NewL                      t_csipreferdialogassoc-0006-NewL_command02     
+        COMMAND             managedprofileregistry        NewL                      
+        COMMAND             sipconnection                 NewL                      t_csipreferdialogassoc-0006-NewL_command04
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        CreateL                   t_csipreferdialogassoc-0006-CreateL_command05
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command06
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command07
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command08
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command09
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command10
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command11
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command12
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command13
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command14
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command15
+        COMMAND             managedprofile                SetParameter              t_csipreferdialogassoc-0006-SetParameter_command16
+        COMMAND             managedprofileregistry        SaveL                     t_csipreferdialogassoc-0006-SaveL_command17
+        OUTSTANDING                                                                 
+        COMMAND             profileregistry               DefaultProfileL           t_csipreferdialogassoc-0006-DefaultProfileL_command18
+        COMMAND             profileregistry               EnableL                   t_csipreferdialogassoc-0006-EnableL_command19
+        OUTSTANDING
+        COMMAND             refertoheader                 DecodeL                   t_csipreferdialogassoc-0006-DecodeL_command20
+        COMMAND             fromheader                    DecodeL                   t_csipreferdialogassoc-0006-DecodeL_command21
+        COMMAND             referdialogassoc              NewLC                     t_csipreferdialogassoc-0006-NewLC_command22
+        COMMAND             profileregistry               Disable                   t_csipreferdialogassoc-0006-Disable_command23
+        OUTSTANDING                                                                 
+        COMMAND             managedprofileregistry        DestroyL                  t_csipreferdialogassoc-0006-DestroyL_command24
+        OUTSTANDING
+        COMMAND             sipconnection                 ~
+        COMMAND             clienttransaction             ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             responseelements              ~
+        COMMAND             requestelements               ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             toheader                      ~
+        COMMAND             referdialogassoc              ~
+        COMMAND             profile                       ~
+        COMMAND             sip                           ~
+        COMMAND             profileregistry               ~
+        COMMAND             managedprofileregistry        ~
+        COMMAND             managedprofile                ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0006
+
+START_TESTCASE              t_csipreferdialogassoc-0007
+//! @SYMTestCaseID          t_csipreferdialogassoc-0007
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        01/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::NewL(CSIPDialog{ref},CSIPReferToHeader{prt})
+//! @SYMTestCaseDesc        Create a Refer to dialog from a CSIPDialog object and a refer to header.
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         4. Initialize object of CSIPReferDialogAssoc using CSIPDialog object and CSIPReferToHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader2
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc2
+        CREATE_OBJECT       CSIPDialog              sipdialog
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0007-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0007-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0007-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0007-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0007-DecodeL_command05
+        COMMAND             referdialogassoc        NewL            t_csipreferdialogassoc-0007-NewL_command07
+        COMMAND             refertoheader2          DecodeL         t_csipreferdialogassoc-0007-DecodeL_command08
+        COMMAND             referdialogassoc        Dialog          t_csipreferdialogassoc-0007-Dialog_command09
+        COMMAND             referdialogassoc2       NewL            t_csipreferdialogassoc-0007-NewL_command10
+        COMMAND             referdialogassoc2       ~
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0007
+
+START_TESTCASE              t_csipreferdialogassoc-0008
+//! @SYMTestCaseID          t_csipreferdialogassoc-0008
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        01/09/2009
+//! @SYMAPI                 CSIPReferDialogAssoc::NewL(CSIPDialog{ref},CSIPReferToHeader{prt})
+//! @SYMTestCaseDesc        Create a Refer to dialog from a CSIPDialog object and a refer to header.
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         4. Initialize object of CSIPReferDialogAssoc using CSIPDialog object and CSIPReferToHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader2
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc2
+        CREATE_OBJECT       CSIPDialog              sipdialog
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0008-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0008-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0008-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0008-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0008-DecodeL_command05
+        COMMAND             referdialogassoc        NewL            t_csipreferdialogassoc-0008-NewL_command07
+        COMMAND             refertoheader2          DecodeL         t_csipreferdialogassoc-0008-DecodeL_command08
+        COMMAND             referdialogassoc        Dialog          t_csipreferdialogassoc-0008-Dialog_command09
+        COMMAND             referdialogassoc2       NewLC           t_csipreferdialogassoc-0008-NewLC_command10
+        COMMAND             referdialogassoc2       ~
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0008
+
+START_TESTCASE              t_csipreferdialogassoc-0009
+//! @SYMTestCaseID          t_csipreferdialogassoc-0009
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        11/09/2009
+//! @SYMAPI                 CSIPDialogAssocBase::Dialog() const
+//! @SYMTestCaseDesc        Get the dialog associated with the CSIPReferDialogAssoc object.
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         4. Get the dialog.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPReferDialogAssoc object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        CREATE_OBJECT       CSIPDialog              sipdialog
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0009-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0009-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0009-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0009-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0009-DecodeL_command05
+        COMMAND             referdialogassoc        NewL            t_csipreferdialogassoc-0009-NewL_command07
+        COMMAND             referdialogassoc        Dialog          t_csipreferdialogassoc-0009-Dialog_command08
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0009
+
+START_TESTCASE              t_csipreferdialogassoc-0010
+//! @SYMTestCaseID          t_csipreferdialogassoc-0010
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        11/09/2009
+//! @SYMAPI                 CSIPDialogAssocBase::IsNonTargetRefreshRequest(RStringF)
+//! @SYMTestCaseDesc        Tests if the request is a non target refresh request
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         4. Tests if the request REFER(20) is a non target refresh request
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Expected False is returned.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc2
+        CREATE_OBJECT       CSIPDialog              sipdialog
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0010-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0010-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0010-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0010-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0010-DecodeL_command05
+        COMMAND             referdialogassoc        NewL            t_csipreferdialogassoc-0010-NewL_command07
+        COMMAND             referdialogassoc        IsNonTargetRefreshRequest   t_csipreferdialogassoc-0010-IsNonTargetRefreshRequest_command08
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0010
+
+START_TESTCASE              t_csipreferdialogassoc-0011
+//! @SYMTestCaseID          t_csipreferdialogassoc-0011
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        11/09/2009
+//! @SYMAPI                 CSIPDialogAssocBase::IsNonTargetRefreshRequest(RStringF)
+//! @SYMTestCaseDesc        Tests if the request is a non target refresh request
+//! @SYMTestActions         1. Create wrapper objects of CSIPConnection, CSIPReferToHeader, CSIPContactHeader, CSIPToHeader, CSIP, CSIPReferDialogAssoc and CSIPFromHeader.
+//!                         2. Initialize objects of CSIP and CSIPConnection.
+//!                         3. Initialize objects of CSIPFromHeader, CSIPToHeader, CSIPContactHeader and CSIPReferToHeader.
+//!                         4. Initialize object of CSIPReferDialogAssoc.
+//!                         4. Tests if the request MESSAGE(21) is a non target refresh request
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Expected False is returned.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipreferdialogassoc.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPConnection          sipconnection
+        CREATE_OBJECT       CSIPReferToHeader       refertoheader
+        CREATE_OBJECT       CSIPToHeader            toheader
+        CREATE_OBJECT       CSIPFromHeader          fromheader
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc
+        CREATE_OBJECT       CSIPReferDialogAssoc    referdialogassoc2
+        CREATE_OBJECT       CSIPDialog              sipdialog
+        COMMAND             sip                     NewL            t_csipreferdialogassoc-0011-NewL_command01
+        COMMAND             sipconnection           NewL            t_csipreferdialogassoc-0011-NewL_command02
+        OUTSTANDING
+        COMMAND             toheader                DecodeL         t_csipreferdialogassoc-0011-DecodeL_command03
+        COMMAND             fromheader              DecodeL         t_csipreferdialogassoc-0011-DecodeL_command04
+        COMMAND             refertoheader           DecodeL         t_csipreferdialogassoc-0011-DecodeL_command05
+        COMMAND             referdialogassoc        NewL            t_csipreferdialogassoc-0011-NewL_command07
+        COMMAND             referdialogassoc        IsNonTargetRefreshRequest   t_csipreferdialogassoc-0011-IsNonTargetRefreshRequest_command08
+        COMMAND             referdialogassoc        ~
+        COMMAND             sipconnection           ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipreferdialogassoc-0011
+

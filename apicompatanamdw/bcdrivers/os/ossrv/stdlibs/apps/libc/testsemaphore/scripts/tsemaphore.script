@@ -1,0 +1,103 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tsemaphore
+LOAD_SUITE tsemaphore -SharedData
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest1 \tstdapis\tsemaphore.ini Section_IntgTest1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest5 \tstdapis\tsemaphore.ini Section_IntgTest5_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest7 \tstdapis\tsemaphore.ini Section_IntgTest7
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest5 \tstdapis\tsemaphore.ini Section_IntgTest5_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest2 \tstdapis\tsemaphore.ini Section_IntgTest2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemCreate \tstdapis\tsemaphore.ini Section_SemCreate_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemCreate \tstdapis\tsemaphore.ini Section_SemCreate_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemCreate \tstdapis\tsemaphore.ini Section_SemCreate_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest3 \tstdapis\tsemaphore.ini Section_IntgTest3
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest4 \tstdapis\tsemaphore.ini Section_IntgTest4_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest4 \tstdapis\tsemaphore.ini Section_IntgTest4_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest4 \tstdapis\tsemaphore.ini Section_IntgTest4_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest5 \tstdapis\tsemaphore.ini Section_IntgTest5_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest6 \tstdapis\tsemaphore.ini Section_IntgTest6_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest6 \tstdapis\tsemaphore.ini Section_IntgTest6_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest4 \tstdapis\tsemaphore.ini Section_IntgTest4_4
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest8 \tstdapis\tsemaphore.ini Section_IntgTest8
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest9 \tstdapis\tsemaphore.ini Section_IntgTest9_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest10 \tstdapis\tsemaphore.ini Section_IntgTest10_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest11 \tstdapis\tsemaphore.ini Section_IntgTest11
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest10 \tstdapis\tsemaphore.ini Section_IntgTest10_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest10 \tstdapis\tsemaphore.ini Section_IntgTest10_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest9 \tstdapis\tsemaphore.ini Section_IntgTest9_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest12 \tstdapis\tsemaphore.ini Section_IntgTest12
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest13 \tstdapis\tsemaphore.ini Section_IntgTest13_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest13 \tstdapis\tsemaphore.ini Section_IntgTest13_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  IntgTest14 \tstdapis\tsemaphore.ini 
+
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateKey	\tstdapis\tsemaphore.ini Section_SgCreateKey_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateKey	\tstdapis\tsemaphore.ini Section_SgCreateKey_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateKey	\tstdapis\tsemaphore.ini Section_SgCreateKey_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreatePrivate \tstdapis\tsemaphore.ini Section_SgCreatePvt_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreatePrivate \tstdapis\tsemaphore.ini Section_SgCreatePvt_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetPrivate \tstdapis\tsemaphore.ini Section_SgGetPvt_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetPrivate \tstdapis\tsemaphore.ini Section_SgGetPvt_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateKeyMax \tstdapis\tsemaphore.ini Section_SgCreateKMax_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreatePvtMax \tstdapis\tsemaphore.ini Section_SgCreatePMax_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetNonExisting \tstdapis\tsemaphore.ini Section_SgGetNonEx_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetNonExisting \tstdapis\tsemaphore.ini Section_SgGetNonEx_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateInvalidSizeK \tstdapis\tsemaphore.ini Section_SgInvalidSzK_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateInvalidSizeP \tstdapis\tsemaphore.ini Section_SgInvalidSzP_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetMore \tstdapis\tsemaphore.ini Section_SgGetMore_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetCreateExisting \tstdapis\tsemaphore.ini Section_SgCreateEx_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetExisting \tstdapis\tsemaphore.ini Section_SgGetEx_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemgetGetExisting \tstdapis\tsemaphore.ini Section_SgGetEx_2
+
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidId \tstdapis\tsemaphore.ini Section_ScInvalidId_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidArgsK \tstdapis\tsemaphore.ini Section_ScInvalidArgsK_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidArgsK \tstdapis\tsemaphore.ini Section_ScInvalidArgsK_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidArgsK \tstdapis\tsemaphore.ini Section_ScInvalidArgsK_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidArgsP \tstdapis\tsemaphore.ini Section_ScInvalidArgsP_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidArgsP \tstdapis\tsemaphore.ini Section_ScInvalidArgsP_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlInvalidArgsP \tstdapis\tsemaphore.ini Section_ScInvalidArgsP_3
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlStatK \tstdapis\tsemaphore.ini Section_ScStatK_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlStatP \tstdapis\tsemaphore.ini Section_ScStatP_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlSetK \tstdapis\tsemaphore.ini Section_ScSetK_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlSetP \tstdapis\tsemaphore.ini Section_ScSetP_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlGetValK \tstdapis\tsemaphore.ini Section_ScGetValK_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlGetValK \tstdapis\tsemaphore.ini Section_ScGetValK_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlGetValP \tstdapis\tsemaphore.ini Section_ScGetValP_1
+RUN_TEST_STEP !Result=0 5 tsemaphore  SemctlGetValP \tstdapis\tsemaphore.ini Section_ScGetValP_2
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest8
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest9
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest10
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest11
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest12
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest13
+RUN_TEST_STEP !Result=0 5 tsemaphore  semctltest14
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest1
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest2
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest3
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest4
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest5
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest6
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest7
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest8
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest9
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest10
+RUN_TEST_STEP !Result=0 5 tsemaphore  semoptest11
+RUN_TEST_STEP !Result=0 -1 tsemaphore  semoptest12
+RUN_TEST_STEP !Result=0 -1 tsemaphore  semoptest13
+RUN_TEST_STEP !Result=0 -1 tsemaphore  semoptest14
+RUN_TEST_STEP !Result=0 -1 tsemaphore  semoptest15

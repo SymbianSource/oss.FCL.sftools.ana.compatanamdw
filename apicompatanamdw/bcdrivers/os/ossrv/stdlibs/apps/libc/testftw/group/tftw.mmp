@@ -1,0 +1,41 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+TARGET      tftw.exe
+
+
+CAPABILITY All -TCB
+TARGETTYPE  exe
+UID         0x1000008D 0x2001FC61
+
+SOURCEPATH		../src
+SOURCE			tftwserver.cpp
+SOURCE			tftw.cpp
+SOURCE			tftwblocks.cpp
+
+SYSTEMINCLUDE   /epoc32/include
+SYSTEMINCLUDE   /epoc32/include/test
+SYSTEMINCLUDE   /epoc32/include/stdapis
+APP_LAYER_SYSTEMINCLUDE
+USERINCLUDE ../inc
+
+LIBRARY 		euser.lib efsrv.lib ecom.lib bafl.lib c32.lib 
+LIBRARY			testexecuteutils.lib
+LIBRARY			testexecutelogclient.lib
+LIBRARY         libc.lib
+
+STATICLIBRARY libcrt0.lib

@@ -1,0 +1,59 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+
+PRJ_TESTMMPFILES
+t_sipcodecapi.mmp
+
+
+PRJ_TESTEXPORTS
+
+../scripts/setup-sipcodec.script            /EPOC32/winscw/c/sip/sipcodec/setup-sipcodec.script  
+
+../scripts/t_sipstrings.script              /EPOC32/winscw/c/sip/sipcodec/t_sipstrings.script
+../testdata/t_sipstrings.ini                /EPOC32/winscw/c/sip/sipcodec/t_sipstrings.ini
+
+../scripts/t_csipcallidheader.script        /EPOC32/winscw/c/sip/sipcodec/t_csipcallidheader.script
+../testdata/t_csipcallidheader.ini          /EPOC32/winscw/c/sip/sipcodec/t_csipcallidheader.ini
+
+../scripts/t_csipaddress.script             /EPOC32/winscw/c/sip/sipcodec/t_csipaddress.script
+../testdata/t_csipaddress.ini               /EPOC32/winscw/c/sip/sipcodec/t_csipaddress.ini 
+
+../scripts/t_csipcseqheader.script        /EPOC32/winscw/c/sip/sipcodec/t_csipcseqheader.script
+../testdata/t_csipcseqheader.ini          /EPOC32/winscw/c/sip/sipcodec/t_csipcseqheader.ini
+
+../scripts/t_csipalloweventsheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csipalloweventsheader.script
+../testdata/t_csipalloweventsheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csipalloweventsheader.ini 
+
+../scripts/t_csipextensionheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csipextensionheader.script
+../testdata/t_csipextensionheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csipextensionheader.ini 
+
+../scripts/t_csiprackheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csiprackheader.script
+../testdata/t_csiprackheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csiprackheader.ini 
+
+../scripts/t_csiprefertoheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csiprefertoheader.script
+../testdata/t_csiprefertoheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csiprefertoheader.ini 
+
+../scripts/t_csipreplytoheader.script       /EPOC32/winscw/c/sip/sipcodec/t_csipreplytoheader.script
+../testdata/t_csipreplytoheader.ini         /EPOC32/winscw/c/sip/sipcodec/t_csipreplytoheader.ini 
+
+../scripts/t_csiptimestampheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csiptimestampheader.script
+../testdata/t_csiptimestampheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csiptimestampheader.ini 
+
+../scripts/t_csipfromheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csipfromheader.script
+../testdata/t_csipfromheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csipfromheader.ini 
+
+../scripts/t_csippassociateduriheader.script             /EPOC32/winscw/c/sip/sipcodec/t_csippassociateduriheader.script
+../testdata/t_csippassociateduriheader.ini               /EPOC32/winscw/c/sip/sipcodec/t_csippassociateduriheader.ini 

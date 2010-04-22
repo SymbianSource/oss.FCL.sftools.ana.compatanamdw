@@ -1,0 +1,47 @@
+/*
+* Copyright (c) 2007-2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+
+../scripts/pbase-f32-rfs-performance-small.script  		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-small.script
+../config/pbase-f32-rfs-performance-small.tcs  			/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-small.tcs
+../scripts/pbase-f32-rfs-performance-medium.script 		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-medium.script
+../config/pbase-f32-rfs-performance-medium.tcs 			/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-medium.tcs
+../scripts/pbase-f32-rfs-performance-large.script		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-large.script
+../config/pbase-f32-rfs-performance-large.tcs			/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-large.tcs
+../scripts/pbase-f32-rfile-performance-small.script		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-small.script
+../config/pbase-f32-rfile-performance-small.tcs			/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-small.tcs
+../scripts/pbase-f32-rfile-performance-medium.script	/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-medium.script
+../config/pbase-f32-rfile-performance-medium.tcs		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-medium.tcs
+../scripts/pbase-f32-rfile-performance-large.script  	/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-large.script
+../config/pbase-f32-rfile-performance-large.tcs  		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-large.tcs
+
+../testdata/pbase-f32-rfile-performance-small.ini		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-small.ini
+../testdata/pbase-f32-rfile-performance-medium.ini		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-medium.ini
+../testdata/pbase-f32-rfile-performance-large.ini		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-large.ini
+../testdata/pbase-f32-rfile-performance-utils.ini		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfile-performance-utils.ini
+../testdata/pbase-f32-rfs-performance-small.ini			/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-small.ini
+../testdata/pbase-f32-rfs-performance-medium.ini		/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-medium.ini
+../testdata/pbase-f32-rfs-performance-large.ini			/Epoc32/winscw/c/base/performance/f32/pbase-f32-rfs-performance-large.ini
+
+../testdata/winscw/base_perf_f32_env.ini				/Epoc32/winscw/c/base/performance/f32/base_perf_f32_env.ini
+../testdata/winscw/base_perf_f32_env.ini				/Epoc32/winscw/c/base/performance/f32/winscw/base_perf_f32_env.ini
+../testdata/armv5/base_perf_f32_env.ini					/Epoc32/winscw/c/base/performance/f32/armv5/base_perf_f32_env.ini
+
+PRJ_TESTMMPFILES
+t_perf.mmp

@@ -1,0 +1,42 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  Mmp file for featuremanagertest
+*
+*/
+
+
+TARGET      featuremanagertest.dll
+TARGETTYPE  dll
+// First UID is DLL UID, Second UID is STIF Test Framework UID
+UID 0x1000008D 0x101FB3E7 // read /tclient/doc/dll_uid_policy.txt
+CAPABILITY      ALL -TCB
+DEFFILE     featuremanagertest.def
+
+SOURCEPATH      ../src
+SOURCE          featuremanagertest.cpp
+SOURCE          featuremanagercases.cpp
+
+USERINCLUDE     ../inc 
+
+SYSTEMINCLUDE   /epoc32/include 
+SYSTEMINCLUDE   /epoc32/include/internal
+APP_LAYER_SYSTEMINCLUDE
+/*
+SYSTEMINCLUDE	/epoc32/include/oem
+*/
+SYSTEMINCLUDE	../inc
+
+LIBRARY     StifTestinterface.lib
+LIBRARY			featdiscovery.lib	
+LIBRARY			euser.lib

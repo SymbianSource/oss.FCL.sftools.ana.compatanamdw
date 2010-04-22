@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- new comment 1 -->
+<doc xmlns="http://test.pl" xmlns:testns="http://test.com" attr1="test">
+<?testtarget data test data?>
+<!-- comment 2 added comment 2 -->
+</doc>
+

@@ -1,0 +1,548 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipfromheader
+//
+// Tests all public elements of the t_csipfromheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPRAckHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+//***********Defined in CSIPFromHeader*************//
+START_TESTCASE              t_csipfromheader-0001
+//! @SYMTestCaseID          t_csipfromheader-0001
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::DecodeL(const TDesC8& aValue) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPFromHeader object.
+//!                         3. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0001-NewL_Command01
+        COMMAND             sipfromheader                       DecodeL          t_csipfromheader-0001-DecodeL_Command02
+        COMMAND             sipfromheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0001
+
+START_TESTCASE              t_csipfromheader-0002
+//! @SYMTestCaseID          t_csipfromheader-0002
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::NewL(CSIPAddress* aSIPAddress) 
+//! @SYMTestCaseDesc        Constructs a CSIPFromHeader from textual representation.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPFromHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0002-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0002-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0002-NewL_Command03
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0002
+
+
+START_TESTCASE              t_csipfromheader-0003
+//! @SYMTestCaseID          t_csipfromheader-0003
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::NewLC(CSIPAddress* aSIPAddress) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPFromHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0003-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0003-NewL_Command02
+        COMMAND             sipfromheader                       NewLC            t_csipfromheader-0003-NewLC_Command03
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0003
+
+
+START_TESTCASE              t_csipfromheader-0004
+//! @SYMTestCaseID          t_csipfromheader-0004
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::NewL(const CSIPFromToHeaderBase& aHeader) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPFromHeader object,Creates a deep-copy of a CSIPFromToHeaderBase.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPFromHeader object.
+//!                         4. Construct a new CSIPFromHeader object with a exist CSIPFromHeader object.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader1
+        COMMAND             sip                                 NewL             t_csipfromheader-0004-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0004-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0004-NewL_Command03
+        COMMAND             sipfromheader1                      NewL             t_csipfromheader-0004-NewL_Command04
+        COMMAND             sipfromheader1                      ~
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0004
+
+
+START_TESTCASE              t_csipfromheader-0005
+//! @SYMTestCaseID          t_csipfromheader-0005
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::NewLC(const CSIPFromToHeaderBase& aHeader) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPFromHeader object,Creates a deep-copy of a CSIPFromToHeaderBase.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPToHeader object.
+//!                         4. Construct a new CSIPFromHeader object with a exist CSIPToHeader object.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPToHeader                        siptoheader
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0005-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0005-NewL_Command02
+        COMMAND             siptoheader                         NewL             t_csipfromheader-0005-NewL_Command03
+        COMMAND             sipfromheader                       NewLC            t_csipfromheader-0005-NewLC_Command04
+        COMMAND             sipfromheader                       SIPAddress       t_csipfromheader-0005-SIPAddress_Command05
+        COMMAND             sipaddress1                         Uri8             t_csipfromheader-0005-Uri8_Command06
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipfromheader                       ~
+        COMMAND             siptoheader                         ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0005
+
+
+START_TESTCASE              t_csipfromheader-0006
+//! @SYMTestCaseID          t_csipfromheader-0006
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::InternalizeValueL(RReadStream& aReadStream) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPFromHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be created and deleted successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader1
+        COMMAND             sip                                 NewL               t_csipfromheader-0006-NewL_Command01
+        COMMAND             sipaddress                          NewL               t_csipfromheader-0006-NewL_Command02
+        COMMAND             sipfromheader                       NewL               t_csipfromheader-0006-NewL_Command03
+        COMMAND             sipfromheader                       ExternalizeL       t_csipfromheader-0006-ExternalizeL_Command04
+        COMMAND             sipfromheader1                      InternalizeValueL  t_csipfromheader-0006-InternalizeValueL_Command05
+        COMMAND             sipfromheader1                      SIPAddress         t_csipfromheader-0006-SIPAddress_Command06
+        COMMAND             sipaddress1                         Uri8               t_csipfromheader-0006-Uri8_Command07
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipfromheader1                      ~
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0006
+
+//***********Inherited from CSIPHeaderBase*************//
+
+START_TESTCASE              t_csipfromheader-0007
+//! @SYMTestCaseID          t_csipfromheader-0007
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::CloneL() 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPFromHeader object.
+//!                         4. Clone a CSIPFromHeader object.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPFromHeader object can be cloned successfully
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader1
+        COMMAND             sip                                 NewL             t_csipfromheader-0007-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0007-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0007-NewL_Command03
+        COMMAND             sipfromheader                       CloneL           t_csipfromheader-0007-CloneL_Command04
+        COMMAND             sipfromheader1                      ~
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0007
+
+START_TESTCASE              t_csipfromheader-0008
+//! @SYMTestCaseID          t_csipfromheader-0008
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::Name() 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object.
+//!                         3. Construct a CSIPFromHeader object.
+//!                         4. Gets the full name of the CSIPFromHeader.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the correct header name.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0008-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0008-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0008-NewL_Command03
+        COMMAND             sipfromheader                       Name             t_csipfromheader-0008-Name_Command04
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0008
+
+//***********Inherited from CSIPFromToHeaderBase*************//
+
+START_TESTCASE              t_csipfromheader-0009
+//! @SYMTestCaseID          t_csipfromheader-0009
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::SIPAddress(),CSIPFromHeader::SetSIPAddressL(CSIPAddress* aSIPAddress) 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Construct a CSIPAddress object sipaddress1.
+//!                         5. Sets the name-address wiht sipaddress1.
+//!                         6. Gets the name-address of the CSIPFromHeader object.
+//!                         7. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Set the name-address successfully, and get the correct name-address
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPAddress                         sipaddress2
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0009-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0009-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0009-NewL_Command03
+        COMMAND             sipaddress1                         NewL             t_csipfromheader-0009-NewL_Command04
+        COMMAND             sipfromheader                       SetSIPAddressL   t_csipfromheader-0009-SetSIPAddressL_Command05
+        COMMAND             sipfromheader                       SIPAddress       t_csipfromheader-0009-SIPAddress_Command06
+        COMMAND             sipaddress2                         Uri8             t_csipfromheader-0009-Uri8_Command07
+        COMMAND             sipaddress2                         ~
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0009
+
+
+START_TESTCASE              t_csipfromheader-0010
+//! @SYMTestCaseID          t_csipfromheader-0010
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPFromHeader::SIPAddress() const, CSIPFromHeader::operator==(const CSIPFromToHeaderBase &)const 
+//! @SYMTestCaseDesc        Creates a deep-copy of this CSIPFromHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Gets the name-address as const sipaddress1.
+//!                         5. Construct a CSIPFromHeader object with sipaddress1.
+//!                         6. Compare the 2 CSIPFromHeader objects.
+//!                         7. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the correct name-address, and get the expected compare result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader1
+        COMMAND             sip                                 NewL             t_csipfromheader-0010-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0010-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0010-NewL_Command03
+        COMMAND             sipaddress1                         NewL             t_csipfromheader-0010-NewL_Command04
+        COMMAND             sipfromheader1                      NewL             t_csipfromheader-0010-NewL_Command05
+        COMMAND             sipfromheader1                      ==               t_csipfromheader-0010-Compare_Command06
+        COMMAND             sipfromheader1                      ~
+        COMMAND             sipaddress1                         ~
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0010
+
+//***********Defined in CSIPParameterHeaderBase*************//
+
+START_TESTCASE              t_csipfromheader-0011
+//! @SYMTestCaseID          t_csipfromheader-0011
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        26/10/2009
+//! @SYMAPI                 CSIPParameterHeaderBase::HasParam(RStringF), CSIPParameterHeaderBase::SetParamL(RStringF) 
+//! @SYMTestCaseDesc        Checks if a parameter is present.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Sets a parameter without a value.
+//!                         5. Checks if the parameter is present.
+//!                         6. Delete all objects in CSIPFromHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the expected result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0011-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0011-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0011-NewL_Command03
+        COMMAND             sipfromheader                       SetParamL        t_csipfromheader-0011-SetParamL_Command04
+        COMMAND             sipfromheader                       HasParam         t_csipfromheader-0011-HasParam_Command05
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0011
+
+START_TESTCASE              t_csipfromheader-0012
+//! @SYMTestCaseID          t_csipfromheader-0012
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        26/10/2009
+//! @SYMAPI                 CSIPParameterHeaderBase::ParamValue(RStringF), CSIPParameterHeaderBase::SetParamL(RStringF, RStringF) 
+//! @SYMTestCaseDesc        Gets a parameter value.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Sets a parameter with a value.
+//!                         5. Gets a parameter value.
+//!                         6. Delete all objects in CSIPFromHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the expected result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0012-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0012-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0012-NewL_Command03
+        COMMAND             sipfromheader                       SetParamL        t_csipfromheader-0012-SetParamL_Command04
+        COMMAND             sipfromheader                       ParamValue       t_csipfromheader-0012-ParamValue_Command05
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0012
+
+START_TESTCASE              t_csipfromheader-0013
+//! @SYMTestCaseID          t_csipfromheader-0013
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        26/10/2009
+//! @SYMAPI                 CSIPParameterHeaderBase::DeleteParam(RStringF, RStringF) 
+//! @SYMTestCaseDesc        Deletes a parameter.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Sets a parameter without a value.
+//!                         5. Deletes the parameter.
+//!                         6. Check if the parameter is not present.
+//!                         7. Delete all objects in CSIPFromHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the expected result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0013-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0013-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0013-NewL_Command03
+        COMMAND             sipfromheader                       SetParamL        t_csipfromheader-0013-SetParamL_Command04
+        COMMAND             sipfromheader                       HasParam         t_csipfromheader-0013-HasParam_Command05
+        COMMAND             sipfromheader                       DeleteParam      t_csipfromheader-0013-DeleteParam_Command06
+        COMMAND             sipfromheader                       HasParam         t_csipfromheader-0013-HasParam_Command07
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0013
+
+START_TESTCASE              t_csipfromheader-0014
+//! @SYMTestCaseID          t_csipfromheader-0014
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        26/10/2009
+//! @SYMAPI                 CSIPParameterHeaderBase::ParamCount() 
+//! @SYMTestCaseDesc        Gets the count of header parameters .
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Sets two parameters without value.
+//!                         5. Gets the count of header parameters .
+//!                         6. Delete all objects in CSIPFromHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the expected result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0014-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0014-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0014-NewL_Command03
+        COMMAND             sipfromheader                       SetParamL        t_csipfromheader-0014-SetParamL_Command04
+        COMMAND             sipfromheader                       SetParamL        t_csipfromheader-0014-SetParamL_Command05
+        COMMAND             sipfromheader                       ParamCount       t_csipfromheader-0014-ParamCount_Command06
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0014
+
+START_TESTCASE              t_csipfromheader-0015
+//! @SYMTestCaseID          t_csipfromheader-0015
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        26/10/2009
+//! @SYMAPI                 CSIPParameterHeaderBase::Param(TInt, RStringF)
+//! @SYMTestCaseDesc        Gets a header parameter name by index.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Sets a parameter without a value.
+//!                         5. Gets a header parameter name by index.
+//!                         6. Delete all objects in CSIPFromHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the expected result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0015-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0015-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0015-NewL_Command03
+        COMMAND             sipfromheader                       SetParamL        t_csipfromheader-0015-SetParamL_Command04
+        COMMAND             sipfromheader                       Param            t_csipfromheader-0015-Param_Command05
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0015
+
+START_TESTCASE              t_csipfromheader-0016
+//! @SYMTestCaseID          t_csipfromheader-0016
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        26/10/2009
+//! @SYMAPI                 CSIPParameterHeaderBase::ToTextValueL(TInt, RStringF)
+//! @SYMTestCaseDesc        From CSIPHeaderBase ToTextValueL.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPAddress object sipaddress.
+//!                         3. Construct a CSIPFromHeader object with sipaddress.
+//!                         4. Gets text value.
+//!                         5. Delete all objects in CSIPFromHeader object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Get the expected result.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipfromheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPFromHeader                      sipfromheader
+        COMMAND             sip                                 NewL             t_csipfromheader-0016-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipfromheader-0016-NewL_Command02
+        COMMAND             sipfromheader                       NewL             t_csipfromheader-0016-NewL_Command03
+        COMMAND             sipfromheader                       ToTextValueL     t_csipfromheader-0016-ToTextValueL_Command04
+        COMMAND             sipfromheader                       ~
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipfromheader-0016

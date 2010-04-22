@@ -1,0 +1,533 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csipregistrationbinding.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           2000
+
+// ****************************************************************************
+// CSIPRegistrationBinding class
+// ****************************************************************************
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_001 
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_001
+//! @SYMAPI                 CSIPRegistrationBinding::NewL(CSIPConnection& aConnection,
+//!                                                       CSIPToHeader* aAor,
+//!                                                       CSIPContactHeader* aContacts,
+//!                                                       CSIPRefresh* aRefresh,
+//!                                                       CSIPRouteHeader* aOutboundProxy,
+//!                                                       CUri8* aRemoteUri,
+//!                                                       CSIPFromHeader* aFrom)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Create CSIPRegistrationBinding object.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPContactHeader.
+//!                         5.Create a SIPRouteHeader.
+//!                         6.Create a SIPRefresh.
+//!                         7.Create SIP registration binding with empty SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         8.Destruct objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create CSIPRegistrationBinding object failed , return -6 error code. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_001-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_001-NewL_command02
+        OUTSTANDING    
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_001-DecodeL_command03 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_001-NewL_command04 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_001-DecodeL_command05
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_001-NewL_command06 
+        COMMAND             refresh                       NewL    
+        COMMAND  !Error=-6  binding                       NewL                      t_csipregistrationbinding-ne_001-NewL_command08
+        COMMAND             binding                       ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_001
+
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_002
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_002
+//! @SYMAPI                 CSIPRegistrationBinding::NewL(CSIPConnection& aConnection,
+//!                                                       CSIPToHeader* aAor,
+//!                                                       CSIPContactHeader* aContacts,
+//!                                                       CSIPRefresh* aRefresh,
+//!                                                       CSIPRouteHeader* aOutboundProxy,
+//!                                                       CUri8* aRemoteUri,
+//!                                                       CSIPFromHeader* aFrom)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Create CSIPRegistrationBinding object.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPRouteHeader.
+//!                         6.Create a SIPRefresh.
+//!                         7.Create SIP registration binding with SIPToHeader, empty SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         8.Destruct objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create CSIPRegistrationBinding object failed , return -6 error code. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_002-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_002-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_002-DecodeL_command03 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_002-DecodeL_command04
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_002-NewL_command05 
+        COMMAND             refresh                       NewL    
+        COMMAND  !Error=-6  binding                       NewL                      t_csipregistrationbinding-ne_002-NewL_command07
+        COMMAND             binding                       ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_002
+
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_003
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_003
+//! @SYMAPI                 CSIPRegistrationBinding::NewL(CSIPConnection& aConnection,
+//!                                                       CSIPToHeader* aAor,
+//!                                                       CSIPContactHeader* aContacts,
+//!                                                       CSIPRefresh* aRefresh,
+//!                                                       CSIPRouteHeader* aOutboundProxy,
+//!                                                       CUri8* aRemoteUri,
+//!                                                       CSIPFromHeader* aFrom)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Create CSIPRegistrationBinding object.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         4.Create a SIPContactHeader.
+//!                         5.Create a SIPRouteHeader.
+//!                         6.Sets the "expires"-parameter.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding with SIPToHeader, SIPContactHeader(expire value less than KSIPMinExpirationValue), 
+//!                           SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Destruct objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create CSIPRegistrationBinding object failed , return -6 error code. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_003-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_003-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_003-DecodeL_command03 
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_003-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_003-NewL_command05 
+        COMMAND             contactheader                 SetExpiresParameterL      t_csipregistrationbinding-ne_003-SetExpiresParameterL_command06
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_003-DecodeL_command07
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_003-NewL_command08
+        COMMAND             refresh                       NewL    
+        COMMAND  !Error=-6  binding                       NewL                      t_csipregistrationbinding-ne_003-NewL_command10
+        COMMAND             binding                       ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_003
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_004
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_004
+//! @SYMAPI                 CSIPRegistrationBinding::RegisterL(CSIPMessageElements* aElements=0)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Send REGISTER request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Send registration request.
+//!                         10.Send registration request again.
+//!                         11.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Return -17709(KErrSIPInvalidRegistrationState). 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_004-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_004-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_004-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_004-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_004-NewL_command05 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_004-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_004-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipregistrationbinding-ne_004-NewL_command09
+        COMMAND             binding                       RegisterL                 t_csipregistrationbinding-ne_004-RegisterL_command10
+        COMMAND  !Error=-17709    binding                 RegisterL                 t_csipregistrationbinding-ne_004-RegisterL_command11
+        COMMAND             binding                       ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_004
+
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_005
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_005
+//! @SYMAPI                 CSIPRegistrationBinding::DeregisterL(CSIPMessageElements* aElements=0)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Send REGISTER request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Query the registration state
+//!                         10.Send deregistration request again.
+//!                         11.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Return -17709(KErrSIPInvalidRegistrationState). 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_005-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_005-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_005-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_005-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_005-NewL_command05 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_005-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_005-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipregistrationbinding-ne_005-NewL_command09
+        COMMAND             binding                       IsContextActive           t_csipregistrationbinding-ne_005-IsContextActive_command10
+        COMMAND  !Error=-17709    binding                 DeregisterL               t_csipregistrationbinding-ne_005-DeregisterL_command11
+        COMMAND             binding                       ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_005
+
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_006
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_006
+//! @SYMAPI                 CSIPRegistrationBinding::UpdateL(TUint aExpirationValue,CSIPMessageElements* aElements=0)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Send REGISTER request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Send registration request.
+//!                         10.Wait for server call back ChallengeReceived()
+//!                         11.SetCredentialsL with a clienttransaction object, an outbound proxy, servers's realm, user's name, and user's password
+//!                         12.Wait for the incoming response
+//!                         13.Query the registration state
+//!                         14.Send update request with empty csipmessageelements object.
+//!                         15.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Return -6(KErrArgument). 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPHttpDigest                httpdigest
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_006-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_006-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_006-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_006-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_006-NewL_command05 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_006-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_006-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipregistrationbinding-ne_006-NewL_command09
+        COMMAND             httpdigest                    NewL                      t_csipregistrationbinding-ne_006-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csipregistrationbinding-ne_006-RegisterL_command11
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csipregistrationbinding-ne_006-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csipregistrationbinding-ne_006-SetCredentialsL_command13
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csipregistrationbinding-ne_006-WaitForIncomingResponse_command14
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csipregistrationbinding-ne_006-IsContextActive_command15
+        COMMAND  !Error=-6  binding                       UpdateL                   t_csipregistrationbinding-ne_006-UpdateL_command16
+        COMMAND             binding                       ~
+        COMMAND             clienttransaction             ~
+        COMMAND             httpdigest                    ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_006
+
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_007
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_007
+//! @SYMAPI                 CSIPRegistrationBinding::UpdateL(CSIPMessageElements* aElements)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Send REGISTER request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         9.Query the registration state
+//!                         10.Send update request  with expiration value and csipmessageelements object.
+//!                         11.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Return -17709(KErrSIPInvalidRegistrationState). 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_007-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_007-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_007-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_007-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_007-NewL_command05 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_007-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_007-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csipregistrationbinding-ne_007-NewL_command09
+        COMMAND             httpdigest                    NewL                      t_csipregistrationbinding-ne_007-NewL_command10
+        COMMAND             binding                       IsContextActive           t_csipregistrationbinding-ne_007-IsContextActive_command11
+        COMMAND  !Error=-17709    binding                 UpdateL                   t_csipregistrationbinding-ne_007-UpdateL_command12
+        COMMAND             binding                       ~
+        COMMAND             clienttransaction             ~
+        COMMAND             httpdigest                    ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_007
+
+START_TESTCASE CSIPREGISTRATIONBINDING-NE_008
+//! @SYMTestCaseID          t_csipregistrationbinding-ne_008
+//! @SYMAPI                 CSIPRegistrationBinding::SetOutboundProxyL(CSIPRouteHeader* aOutboundProxy)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Send REGISTER request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPMessageElements.
+//!                         8.Create a SIPExpiresHeader.
+//!                         9.Set SIP expires header to the SIPMessageElements
+//!                         10.Create a SIPRefresh.
+//!                         11.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         12.Query the registration state
+//!                         13.Send update request  with expiration value and csipmessageelements object.
+//!                         14.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Return -17700(KErrSIPMalformedMessage). 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipclientapi          \sip\sipclient\t_csipregistrationbinding-ne.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPAddress                   address1
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPExpiresHeader             expiresheader
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        COMMAND             sip                           NewL                      t_csipregistrationbinding-ne_008-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipregistrationbinding-ne_008-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csipregistrationbinding-ne_008-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csipregistrationbinding-ne_008-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csipregistrationbinding-ne_008-NewL_command05 
+        COMMAND             address1                      DecodeL                   t_csipregistrationbinding-ne_008-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csipregistrationbinding-ne_008-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             messageelements               NewL
+        COMMAND             expiresheader                 NewL                      t_csipregistrationbinding-ne_008-NewL_Command10
+        COMMAND             messageelements               SetUserHeadersL           t_csipregistrationbinding-ne_008-SetUserHeadersL_Command11
+        COMMAND             binding                       NewL                      t_csipregistrationbinding-ne_008-NewL_command12
+        COMMAND !Error=-17700     binding                 RegisterL                 t_csipregistrationbinding-ne_008-RegisterL_command13
+        COMMAND             binding                       ~
+        COMMAND             clienttransaction             ~
+        COMMAND             expiresheader                 ~
+        COMMAND             messageelements               ~
+        COMMAND             refresh                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             address1                      ~
+        COMMAND             address                       ~
+        COMMAND             routeheader                   ~
+        COMMAND             toheader                      ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPREGISTRATIONBINDING-NE_008

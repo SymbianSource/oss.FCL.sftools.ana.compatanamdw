@@ -1,0 +1,31 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ?Description
+*
+*/
+
+
+
+PRJ_PLATFORMS
+DEFAULT
+
+PRJ_EXPORTS
+TestFramework.ini /epoc32/winscw/c/TestFramework/TestFramework_systemswmisc50.ini
+sysmc_c.bat /epoc32/winscw/c/sysmc_c.bat
+sysmc_z.bat /epoc32/winscw/c/sysmc_z.bat
+
+PRJ_MMPFILES
+SystemSWMisc50Test.mmp
+
+//  End of File

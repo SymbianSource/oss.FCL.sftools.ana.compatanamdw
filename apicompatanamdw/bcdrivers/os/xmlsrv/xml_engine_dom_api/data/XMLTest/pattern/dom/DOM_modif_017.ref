@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doc xmlns="http://test.pl" xmlns:testns="http://test.com" attr1="test">
+  <test1 attr2="wrong" testns:attr2="wrong"/>
+  <testns:test2 xmlns:testns2="http://test.com.pl" testns:attr2="wrong" testns:wrong="attr2" testns2:attr3="wrong"/>
+  <test3/>
+  <test4 attr2="wrong" testns:attr2="wrong"/>
+  <test5 xmlns:testns2="http://test.com.pl" testns2:attr3="attr2"/>
+</doc>

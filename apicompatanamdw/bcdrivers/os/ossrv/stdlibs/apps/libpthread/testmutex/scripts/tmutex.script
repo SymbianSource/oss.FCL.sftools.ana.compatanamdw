@@ -1,0 +1,70 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tmutex
+LOAD_SUITE tmutex
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest1 \tstdapis\tmutex.ini Section_IntgTest1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest2 \tstdapis\tmutex.ini Section_IntgTest2
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest3 \tstdapis\tmutex.ini Section_IntgTest3
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest4 \tstdapis\tmutex.ini Section_IntgTest4
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest5 \tstdapis\tmutex.ini Section_IntgTest5
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest6 \tstdapis\tmutex.ini Section_IntgTest6
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest7 \tstdapis\tmutex.ini Section_IntgTest7
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest1 \tstdapis\tmutex.ini Section_IntgTest1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest8 \tstdapis\tmutex.ini Section_IntgTest8
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest9 \tstdapis\tmutex.ini Section_IntgTest9
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest10 \tstdapis\tmutex.ini Section_IntgTest10
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest11 \tstdapis\tmutex.ini Section_IntgTest11
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest12 \tstdapis\tmutex.ini Section_IntgTest12
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest13 \tstdapis\tmutex.ini Section_IntgTest13
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest14 \tstdapis\tmutex.ini Section_IntgTest14
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest15 \tstdapis\tmutex.ini Section_IntgTest15
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest16 \tstdapis\tmutex.ini Section_IntgTest16
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest17 \tstdapis\tmutex.ini Section_IntgTest17
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest18 \tstdapis\tmutex.ini Section_IntgTest18
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest19 \tstdapis\tmutex.ini Section_IntgTest19
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest20 \tstdapis\tmutex.ini Section_IntgTest20_1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest21 \tstdapis\tmutex.ini Section_IntgTest21
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest22 \tstdapis\tmutex.ini Section_IntgTest22
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest20 \tstdapis\tmutex.ini Section_IntgTest20_2
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest20 \tstdapis\tmutex.ini Section_IntgTest20_3
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest23 \tstdapis\tmutex.ini Section_IntgTest23
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest24 \tstdapis\tmutex.ini Section_IntgTest24_1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest24 \tstdapis\tmutex.ini Section_IntgTest24_2
+RUN_TEST_STEP !Result=0 5 tmutex PThreadAttrStaticInitL
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest25 \tstdapis\tmutex.ini Section_IntgTest25
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest26 \tstdapis\tmutex.ini Section_IntgTest26
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest27 \tstdapis\tmutex.ini Section_IntgTest27
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest28 \tstdapis\tmutex.ini Section_IntgTest28
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest29 \tstdapis\tmutex.ini Section_IntgTest29
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest30 \tstdapis\tmutex.ini Section_IntgTest30
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest31 \tstdapis\tmutex.ini Section_IntgTest31_1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest31 \tstdapis\tmutex.ini Section_IntgTest31_2
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest32 \tstdapis\tmutex.ini Section_IntgTest32
+RUN_TEST_STEP !Result=0 5 tmutex PThreadAttrStaticInitTryLockL
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest33 \tstdapis\tmutex.ini Section_IntgTest33
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest34 \tstdapis\tmutex.ini Section_IntgTest34
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest35 \tstdapis\tmutex.ini Section_IntgTest35_1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest35 \tstdapis\tmutex.ini Section_IntgTest35_2
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest35 \tstdapis\tmutex.ini Section_IntgTest35_3
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest36 \tstdapis\tmutex.ini Section_IntgTest36
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest37 \tstdapis\tmutex.ini Section_IntgTest37_1
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest37 \tstdapis\tmutex.ini Section_IntgTest37_2
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest37 \tstdapis\tmutex.ini Section_IntgTest37_3
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest38 \tstdapis\tmutex.ini Section_IntgTest38
+RUN_TEST_STEP !Result=0 5 tmutex IntgTest39 \tstdapis\tmutex.ini Section_IntgTest39

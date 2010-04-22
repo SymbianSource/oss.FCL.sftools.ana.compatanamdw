@@ -1,0 +1,86 @@
+&#number superscript three = superscript digit three = cubed  	&sup3;  	&#179;  	&#xB3;  	3  	3  	3
+3453453 >= 7 >';	q && p
+
+
+2 <3
+4>2
+2> 3
+56875 == 55		
+
+superscript one = superscript digit one  	&sup1;  	&#185;  	&#xB9;  	1  	1  	1
+masculine ordinal indicator 	&ordm; 	&#186; 	&#xBA; 	o 	o 	o
+right-pointing double angle quotation mark = right pointing guillemet 	&raquo; 	&#187; 	&#xBB; 	» 	» 	»
+vulgar fraction one quarter = fraction one quarter 	&frac14; 	&#188; 	&#xBC; 	1 	1 	1
+vulgar fraction one half = fraction one half 	&frac12; 	&#189; 	&#xBD; 	1 	1 	1
+vulgar fraction three quarters = fraction three quarters 	&frac34; 	&#190; 	&#xBE; 	3 	3 	3
+inverted question mark = turned question mark 	&iquest; 	&#191; 	&#xBF; 	? 	? 	?
+Latin capital letter A with grave = Latin capital letter A grave 	&Agrave; 	&#192; 	&#xC0; 	A 	A 	A
+Latin capital letter A with acute 	&Aacute; 	&#193; 	&#xC1; 	Á 	Á 	Á
+Latin capital letter A with circumflex 	&Acirc; 	&#194; 	&#xC2; 	Â 	Â 	Â
+Latin capital letter A with tilde 	&Atilde; 	&#195; 	&#xC3; 	A 	A 	A 
+	if( p_Control.FindF( SINGLE ) != KErrNotFound )
+
+5 < 6 !True
+
+5 > 6 !False
+
+5 == 6 !False
+
+5 /= 6 !True
+
+5 <= 6 !True
+
+5 >= 6 !False
+
+age > 34 !a variable compared with a constant
+
+age /= my_age !two variables are compared
+
+45 == your_age !a variable can appear in any side
+
+name= 'Smith' !characters are allowed
+
+alpha(3) /= 33 !array elements are allowed
+
+(age*3) /= your_age !expressions are allowed
+
+age /= old
+
+age >= young
+
+age = 62
+
+(age==56 .and. old/=92)
+
+(age==56 .or. old/=92)
+
+(age==56 .or. (.not.(old/=92)))
+
+.not. (age==56 .or. old/=92)
+
+
+#
+
+(a<b .and. x<y) .or. (a>=b .and. x>=y) = (a<b .eqv. x<y)
+
+Re-write the following expressions using different logical operators
+
+.not. (a<b .and. b<c)
+
+.not. (a<b .eqv. x<y)
+
+# Determine the logical value of each expression
+
+"Adam" > "Eve"
+
+"ADAM" > "Adam"
+
+"M1" < "M25"
+
+"version_1" > "version-2"
+
+" more" < "more"
+
+LGT("Adam","adam")
+
+LLT("Me","me")

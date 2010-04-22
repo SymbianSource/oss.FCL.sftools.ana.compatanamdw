@@ -1,0 +1,323 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipaddress
+//
+// Tests all public elements of the t_csipaddress
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPAddress
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csipaddress-0001
+//! @SYMTestCaseID          t_csipaddress-0001
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::NewL(CUri8*)
+//! @SYMTestCaseDesc        Construct and destruct CSIPAddress object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPAddress object.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Delete the CSIPAddress object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        COMMAND             sip                                 NewL             t_csipaddress-0001-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipaddress-0001-NewL_Command02
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0001
+
+START_TESTCASE              t_csipaddress-0002
+//! @SYMTestCaseID          t_csipaddress-0002
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::NewL(const TDesC8&, CUri8*)
+//! @SYMTestCaseDesc        Construct and destruct CSIPAddress object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPAddress object.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Delete the CSIPAddress object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        COMMAND             sip                                 NewL             t_csipaddress-0002-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipaddress-0002-NewL_Command02
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0002
+
+START_TESTCASE              t_csipaddress-0003
+//! @SYMTestCaseID          t_csipaddress-0003
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::NewL(const CSIPAddress&)
+//! @SYMTestCaseDesc        Construct and destruct CSIPAddress object.
+//! @SYMTestActions         1. Create a CSIP object and two CSIPAddress objects.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Delete the CSIPAddress object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        COMMAND             sip                                 NewL             t_csipaddress-0003-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csipaddress-0003-NewL_Command02
+        COMMAND             sipaddress1                         NewL             t_csipaddress-0003-NewL_Command03
+        COMMAND             sipaddress                          ~
+        COMMAND             sipaddress1                         ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0003
+
+START_TESTCASE              t_csipaddress-0004
+//! @SYMTestCaseID          t_csipaddress-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::NewLC(const TDesC8&, CUri8*)
+//! @SYMTestCaseDesc        Creates a new instance of CSIPAddress and puts it to CleanupStack
+//! @SYMTestActions         1. Create a CSIP object and a CSIPAddress object.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Delete the CSIPAddress object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        COMMAND             sip                                 NewLC             t_csipaddress-0004-NewLC_Command01
+        COMMAND             sipaddress                          NewLC             t_csipaddress-0004-NewLC_Command02
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0004
+
+START_TESTCASE              t_csipaddress-0005
+//! @SYMTestCaseID          t_csipaddress-0005
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::NewLC(CUri8*)
+//! @SYMTestCaseDesc        Creates a new instance of CSIPAddress and puts it to CleanupStack
+//! @SYMTestActions         1. Create a CSIP object and a CSIPAddress object.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Delete the CSIPAddress object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        COMMAND             sip                                 NewLC             t_csipaddress-0005-NewLC_Command01
+        COMMAND             sipaddress                          NewLC             t_csipaddress-0005-NewLC_Command02
+        COMMAND             sipaddress                          ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0005
+
+START_TESTCASE              t_csipaddress-0006
+//! @SYMTestCaseID          t_csipaddress-0006
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::NewLC(const CSIPAddress&), CSIPAddress::DecodeL(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a new instance of CSIPAddress and puts it to CleanupStack
+//! @SYMTestActions         1. Create a CSIP object and two CSIPAddress objects.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Delete the CSIPAddress object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        COMMAND             sip                                 NewLC             t_csipaddress-0006-NewLC_Command01
+        COMMAND             sipaddress                          DecodeL           t_csipaddress-0006-NewLC_Command02
+        COMMAND             sipaddress1                         NewLC             t_csipaddress-0006-NewLC_Command03
+        COMMAND             sipaddress                          ~
+        COMMAND             sipaddress1                         ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0006
+
+START_TESTCASE              t_csipaddress-0007
+//! @SYMTestCaseID          t_csipaddress-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::operator==(const CSIPAddress&)
+//! @SYMTestCaseDesc        Compares this object to another instance of CSIPAddress
+//! @SYMTestActions         1. Create a CSIP object and two CSIPAddress object.
+//!                         2. Construct CSIP and CSIPAddress object.
+//!                         3. Compare CSIPAddress objects.
+//!                         4. Delete the CSIPAddress object.
+//!                         5. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        COMMAND             sip                                 NewLC             t_csipaddress-0007-NewLC_Command01
+        COMMAND             sipaddress                          NewLC             t_csipaddress-0007-NewLC_Command02
+        COMMAND             sipaddress1                         NewLC             t_csipaddress-0007-NewLC_Command03
+        COMMAND             sipaddress                          Compare           t_csipaddress-0007-Compare_Command04
+        COMMAND             sipaddress                          ~
+        COMMAND             sipaddress1                         ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0007
+
+START_TESTCASE              t_csipaddress-0008
+//! @SYMTestCaseID          t_csipaddress-0008
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::SetDisplayNameL(const TDesC8&), CSIPAddress::DisplayName()
+//! @SYMTestCaseDesc        Set and get display name.
+//! @SYMTestActions         1. Create a CSIP object and two CSIPAddress object.
+//!                         2. Instantiate objects preparing.
+//!                         3. Set display name.
+//!                         4. Get display name.
+//!                         5.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                 \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAddress                   sipaddress
+        COMMAND             sip                           NewL                      t_csipaddress-0008-NewL_Command01                          
+        COMMAND             sipaddress                    NewL                      t_csipaddress-0008-NewL_Command02
+        COMMAND             sipaddress                    SetDisplayNameL           t_csipaddress-0008-SetDisplayNameL_Command03
+        COMMAND             sipaddress                    DisplayName               t_csipaddress-0008-DisplayName_Command04
+        COMMAND             sipaddress                    ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0008
+
+START_TESTCASE              t_csipaddress-0009
+//! @SYMTestCaseID          t_csipaddress-0009
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::Uri8(), CSIPAddress::SetUri8L(CUri8*)
+//! @SYMTestCaseDesc        Sets and gets the URI part of the address as const.
+//! @SYMTestActions         1.Create object for CSIP, CSIPAddress.
+//!                         2.Instantiate objects.
+//!                         3.Sets and gets the URI part of the address.
+//!                         4.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIPAddress                sipaddress
+        CREATE_OBJECT       CSIP                       sip
+        COMMAND             sip                        NewL                      t_csipaddress-0009-NewL_Command01                          
+        COMMAND             sipaddress                 NewL                      t_csipaddress-0009-NewL_Command02
+        COMMAND             sipaddress                 SetUri8L                  t_csipaddress-0009-SetUri8L_Command03
+        COMMAND             sipaddress                 Uri8                      t_csipaddress-0009-Uri8_Command04
+        COMMAND             sipaddress                 ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0009
+
+START_TESTCASE              t_csipaddress-0010
+//! @SYMTestCaseID          t_csipaddress-0010
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::ToTextLC(TBool)
+//! @SYMTestCaseDesc        Creates a textual representation and pushes it to CleanupStack.
+//! @SYMTestActions         1.Create object for CSIP, CSIPAddress.
+//!                         2.Instantiate objects.
+//!                         3.Creates a textual representation and pushes it to CleanupStack.
+//!                         4.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIPAddress                sipaddress
+        CREATE_OBJECT       CSIP                       sip
+        COMMAND             sip                        NewL                      t_csipaddress-0010-NewL_Command01                          
+        COMMAND             sipaddress                 NewL                      t_csipaddress-0010-NewL_Command02
+        COMMAND             sipaddress                 ToTextLC                  t_csipaddress-0010-ToTextLC_Command03
+        COMMAND             sipaddress                 ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0010
+
+START_TESTCASE              t_csipaddress-0011
+//! @SYMTestCaseID          t_csipaddress-0011
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPAddress::InternalizeL(RReadStream&), CSIPAddress::ExternalizeL(RWriteStream&)
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPAddress from a RReadStream, Writes the object to a RWriteStream.
+//! @SYMTestActions         1.Create object for CSIP, CSIPAddress.
+//!                         2.Instantiate objects.
+//!                         3.Constructs an instance of a CSIPAddress from a RReadStream.
+//!                         4.Writes the object to a RWriteStream.
+//!                         5.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \SIP\sipcodec\t_csipaddress.ini
+        CREATE_OBJECT       CSIPAddress                sipaddress
+        CREATE_OBJECT       CSIPAddress                sipaddress1
+        CREATE_OBJECT       CSIP                       sip
+        COMMAND             sip                        NewL                      t_csipaddress-0011-NewL_Command01
+        COMMAND             sipaddress                 NewL                      t_csipaddress-0011-NewL_Command02
+        COMMAND             sipaddress1                NewL                      t_csipaddress-0011-NewL_Command03
+        COMMAND             sipaddress                 ExternalizeL              t_csipaddress-0011-ExternalizeL_Command04
+        COMMAND             sipaddress1                InternalizeL              t_csipaddress-0011-InternalizeL_Command05
+        COMMAND             sipaddress1                Uri8                      t_csipaddress-0011-Uri8_Command06
+        COMMAND             sipaddress                 ~
+        COMMAND             sipaddress1                ~
+        COMMAND             sip                        ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipaddress-0011

@@ -1,0 +1,28 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+#include "../validation/f32/group/bld.inf"
+#include "../FileSystemPlugins/group/bld.inf"
+#include "../prompt/group/bld.inf"
+#include "../performance/F32/t_perf/group/bld.inf"
+
+PRJ_TESTEXPORTS
+
+../scripts/setup_t_base.script	/Epoc32/winscw/c/base/setup_t_base.script
+../scripts/t_base.script		/Epoc32/winscw/c/base/t_base.script
+../config/t_base.tcs			/Epoc32/winscw/c/base/t_base.tcs

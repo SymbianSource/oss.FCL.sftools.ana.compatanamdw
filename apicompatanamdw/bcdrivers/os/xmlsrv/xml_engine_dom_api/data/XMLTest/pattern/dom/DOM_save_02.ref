@@ -1,0 +1,3 @@
+<?xml version="1.0"?><!DOCTYPE doc [
+<!ENTITY test1 "1.1">
+]><doc xmlns="http://test.pl" xmlns:testns="http://test.com" attr1="test"><elem1>test</elem1><testns:elem1/><testns:elem1/><elem2>&test1;test</elem2>the replaced binary data</doc>

@@ -1,0 +1,50 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+
+RUN_UTILS MkDir		${SYSDRIVE}\sip\sipprofile\
+
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\sip_profile.script 				${SYSDRIVE}\sip\sipprofile\sip_profile.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\sip_profile.script
+
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipprofile.script 				${SYSDRIVE}\sip\sipprofile\t_csipprofile.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipprofile.script
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipprofile.ini 				${SYSDRIVE}\sip\sipprofile\t_csipprofile.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipprofile.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipmanagedprofile.script 				${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofile.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofile.script
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipmanagedprofile.ini 					${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofile.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofile.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipprofileregistry.script 				${SYSDRIVE}\sip\sipprofile\t_csipprofileregistry.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipprofilegegistry.script
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipprofileregistry.ini 				${SYSDRIVE}\sip\sipprofile\t_csipprofileregistry.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipprofilegegistry.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipmanagedprofileregistry.script 			${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofileregistry.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofileregistry.script
+
+RUN_UTILS CopyFile	z:\sip\sipprofile\t_csipmanagedprofileregistry.ini 				${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofileregistry.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipprofile\t_csipmanagedprofileregistry.ini
+

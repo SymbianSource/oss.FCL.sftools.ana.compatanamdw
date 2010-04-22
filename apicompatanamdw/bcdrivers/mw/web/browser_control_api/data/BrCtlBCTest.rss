@@ -1,0 +1,185 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  RSS for registration file for brctlbctest
+*
+*/
+
+//  RESOURCE IDENTIFIER
+NAME    AWIZ // 4 letter ID
+
+//  INCLUDES
+
+#include <eikon.rh>
+#include "brctlbctest.hrh"
+#include "brctlbctest.loc"
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+
+
+//  RESOURCE DEFINITIONS 
+
+#include <appinfo.rh>
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF { buf="BrCtlBCTest"; }
+
+RESOURCE EIK_APP_INFO
+    {
+    hotkeys=r_brctlbctest_hotkeys;
+    menubar=r_brctlbctest_menubar;
+    cba=R_AVKON_SOFTKEYS_OPTIONS_BACK;     
+    }
+
+
+RESOURCE LOCALISABLE_APP_INFO r_brctlbctest_localisable_app_info
+    {
+    short_caption = STRING_brctlbctest_short_caption_string;
+    caption_and_icon = 
+    CAPTION_AND_ICON_INFO
+        {
+        caption = STRING_brctlbctest_caption_string;
+
+        number_of_icons = 1;
+
+        icon_file = "\\resource\\apps\\Brctlbctest_AIF.MIF";
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_brctlbctest_hotkeys
+//    ?description
+//
+//----------------------------------------------------
+//
+RESOURCE HOTKEYS r_brctlbctest_hotkeys
+    {
+    control=
+        {
+        HOTKEY { command=EAknCmdExit; key='e'; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_brctlbctest_menubar
+//    ?description
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_BAR r_brctlbctest_menubar
+    {
+    titles=
+        {
+        MENU_TITLE { menu_pane=r_brctlbctest_menu; txt="File"; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_brctlbctest_menu
+//    ?description
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_brctlbctest_menu
+    {
+    items=
+        {
+        MENU_ITEM { command = EBrCtlBCTestCmdAllTests; txt = "All Tests"; },
+//        MENU_ITEM { command = EBrCtlBCTestCmdBrCtlTests; txt = "BrCtl Tests"; },
+//        MENU_ITEM { command = EBrCtlBCTestCmdPluginTests; txt = "Plugin Tests"; },
+//        MENU_ITEM { command = EBrCtlBCTestCmdDldMgrTests; txt = "Download Mgr Tests"; },
+        MENU_ITEM { command=EAknCmdExit; txt="Exit"; }
+        };
+    }
+
+//----------------------------------------------------
+//   
+//    r_brctlbctest_app_menu
+//    ?description
+//
+//----------------------------------------------------
+//
+RESOURCE MENU_PANE r_brctlbctest_app_menu
+    {
+    items=
+        {
+        MENU_ITEM { command=EBrCtlBCTestCmdAppTest1; txt="<App specific menu item>"; },
+        MENU_ITEM { command=EAknCmdExit; txt="Exit"; }
+        };
+    }
+
+// For DialogPromptLC
+// ---------------------------------------------------------
+//   
+//    r_data_query_with_heading
+//
+// ---------------------------------------------------------
+//
+RESOURCE DIALOG r_data_query_with_heading
+	{
+	flags=EGeneralQueryFlags | EEikDialogFlagNoShadow;
+	buttons=R_AVKON_SOFTKEYS_OK_CANCEL;
+	items=
+		{
+		DLG_LINE 
+		{
+		type = EAknCtPopupHeadingPane;
+		id = EAknMessageQueryHeaderId;
+		control = AVKON_HEADING
+			{
+			label = qtn_browser_query_script_prompt;
+			};
+		},
+		DLG_LINE
+			{
+			type=EAknCtQuery;
+			id=EGeneralQuery;
+			control= AVKON_DATA_QUERY 
+				{ 
+				layout = EStaticSizeDataLayout; // Use this when you have a heading in data query
+				control=EDWIN 
+					{
+					flags= EEikEdwinNoHorizScrolling | EEikEdwinResizable; 
+					};
+				};
+			}
+		};
+	}
+
+
+RESOURCE DIALOG r_confirm_query
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_EMPTY;
+    items =
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+			control= AVERELL_CONFIRMATION_QUERY 
+				{ 
+					layout = EConfirmationLayout;
+					label = "";
+				};
+			}
+        };
+    }
+
+            
+// End of File

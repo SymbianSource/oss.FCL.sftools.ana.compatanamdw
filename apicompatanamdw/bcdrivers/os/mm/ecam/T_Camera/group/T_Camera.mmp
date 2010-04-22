@@ -1,0 +1,53 @@
+/*
+* Copyright (c) 2005-2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+TARGET			T_Camera.exe
+TARGETTYPE		exe
+UID				0x1000007A 0x20000F71
+VENDORID		0x70000001
+
+CAPABILITY		WriteUserData ReadUserData UserEnvironment MultimediaDD
+
+SOURCEPATH		../src
+
+SOURCE			../../../common/src/T_MMUtil.cpp
+SOURCE			../../../common/src/DataWrapperBase.cpp
+
+SOURCE			T_MMDataCamera.cpp
+SOURCE			T_CameraServer.cpp
+
+USERINCLUDE		../inc
+USERINCLUDE		../../../common/inc
+
+SYSTEMINCLUDE	/epoc32/include
+SYSTEMINCLUDE 	/epoc32/include/ecam
+SYSTEMINCLUDE	/epoc32/include/test
+SYSTEMINCLUDE	/epoc32/include/mmf/plugin
+APP_LAYER_SYSTEMINCLUDE
+
+LIBRARY			euser.lib
+LIBRARY			efsrv.lib
+LIBRARY			fbscli.lib
+LIBRARY			ws32.lib
+LIBRARY			ecam.lib
+LIBRARY			testexecuteutils.lib
+LIBRARY			testexecutelogclient.lib
+LIBRARY			bafl.lib
+LIBRARY			imageconversion.lib
+LIBRARY			mmfcontrollerframework.lib
+LIBRARY			iniparser.lib

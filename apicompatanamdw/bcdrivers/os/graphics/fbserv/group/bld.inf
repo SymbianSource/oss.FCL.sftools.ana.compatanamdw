@@ -1,0 +1,62 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+// to c-drive
+../scripts/setup-GRAPHICS-FBSERV-BitmapUtil-PublicApi.script			/Epoc32/winscw/c/graphics/setup-graphics-fbserv-bitmaputil-publicapi.script
+../scripts/setup-GRAPHICS-FBSERV-FbsBitmap-PublicApi.script				/Epoc32/winscw/c/graphics/setup-graphics-fbserv-fbsbitmap-publicapi.script
+../scripts/setup-GRAPHICS-FBSERV-FbsColor256BitmapUtil-PublicApi.script	/Epoc32/winscw/c/graphics/setup-graphics-fbserv-fbscolor256bitmaputil-publicapi.script
+../scripts/setup-GRAPHICS-FBSERV-FbsFont-PublicApi.script				/Epoc32/winscw/c/graphics/setup-graphics-fbserv-fbsfont-publicapi.script
+../scripts/setup-GRAPHICS-FBSERV-FbsSession-PublicApi.script			/Epoc32/winscw/c/graphics/setup-graphics-fbserv-fbssession-publicapi.script
+../scripts/setup-GRAPHICS-FBSERV-FbsTypefaceStore-PublicApi.script		/Epoc32/winscw/c/graphics/setup-graphics-fbserv-fbstypefacestore-publicapi.script
+../scripts/setup-GRAPHICS-FBSERV-PublicApi.script						/Epoc32/winscw/c/graphics/setup-graphics-fbserv-publicapi.script
+
+../scripts/GRAPHICS-FBSERV-BitmapUtil-PublicApi.script					/Epoc32/winscw/c/graphics/graphics-fbserv-bitmaputil-publicapi.script
+../config/GRAPHICS-FBSERV-BitmapUtil-PublicApi.tcs						/Epoc32/winscw/c/graphics/graphics-fbserv-bitmaputil-publicapi.tcs
+../scripts/GRAPHICS-FBSERV-FbsBitmap-PublicApi.script					/Epoc32/winscw/c/graphics/graphics-fbserv-fbsbitmap-publicapi.script
+../config/GRAPHICS-FBSERV-FbsBitmap-PublicApi.tcs						/Epoc32/winscw/c/graphics/graphics-fbserv-fbsbitmap-publicapi.tcs
+../scripts/GRAPHICS-FBSERV-FbsColor256BitmapUtil-PublicApi.script		/Epoc32/winscw/c/graphics/graphics-fbserv-fbscolor256bitmaputil-publicapi.script
+../config/GRAPHICS-FBSERV-FbsColor256BitmapUtil-PublicApi.tcs			/Epoc32/winscw/c/graphics/graphics-fbserv-fbscolor256bitmaputil-publicapi.tcs
+../scripts/GRAPHICS-FBSERV-FbsFont-PublicApi.script						/Epoc32/winscw/c/graphics/graphics-fbserv-fbsfont-publicapi.script
+../config/GRAPHICS-FBSERV-FbsFont-PublicApi.tcs							/Epoc32/winscw/c/graphics/graphics-fbserv-fbsfont-publicapi.tcs
+../scripts/GRAPHICS-FBSERV-FbsSession-PublicApi.script					/Epoc32/winscw/c/graphics/graphics-fbserv-fbssession-publicapi.script
+../config/GRAPHICS-FBSERV-FbsSession-PublicApi.tcs						/Epoc32/winscw/c/graphics/graphics-fbserv-fbssession-publicapi.tcs
+../scripts/GRAPHICS-FBSERV-FbsTypefaceStore-PublicApi.script			/Epoc32/winscw/c/graphics/graphics-fbserv-fbstypefacestore-publicapi.script
+../config/GRAPHICS-FBSERV-FbsTypefaceStore-PublicApi.tcs				/Epoc32/winscw/c/graphics/graphics-fbserv-fbstypefacestore-publicapi.tcs
+../scripts/GRAPHICS-FBSERV-PublicApi.script								/Epoc32/winscw/c/graphics/graphics-fbserv-publicapi.script
+../config/GRAPHICS-FBSERV-PublicApi.tcs									/Epoc32/winscw/c/graphics/graphics-fbserv-publicapi.tcs
+
+../testdata/GRAPHICS-FBSERV-BitmapUtil-PublicApi.ini					/Epoc32/winscw/c/graphics/graphics-fbserv-bitmaputil-publicapi.ini
+../testdata/GRAPHICS-FBSERV-FbsBitmap-PublicApi.ini						/Epoc32/winscw/c/graphics/graphics-fbserv-fbsbitmap-publicapi.ini
+../testdata/GRAPHICS-FBSERV-FbsColor256BitmapUtil-PublicApi.ini			/Epoc32/winscw/c/graphics/graphics-fbserv-fbscolor256bitmaputil-publicapi.ini
+../testdata/GRAPHICS-FBSERV-FbsFont-PublicApi.ini						/Epoc32/winscw/c/graphics/graphics-fbserv-fbsfont-publicapi.ini
+../testdata/GRAPHICS-FBSERV-FbsSession-PublicApi.ini					/Epoc32/winscw/c/graphics/graphics-fbserv-fbssession-publicapi.ini
+../testdata/GRAPHICS-FBSERV-FbsTypefaceStore-PublicApi.ini				/Epoc32/winscw/c/graphics/graphics-fbserv-fbstypefacestore-publicapi.ini
+
+../testdata/testfontfb.gdr												/Epoc32/winscw/c/graphics/t_fbservapi/testfontfb.gdr
+../testdata/empty_file.txt												/Epoc32/winscw/c/graphics/t_fbservapi/empty_file.txt
+../testdata/test_bitmap.mbm												/Epoc32/winscw/c/graphics/t_fbservapi/test_bitmap.mbm
+../testdata/test_bitmap_offset8.mbm										/Epoc32/winscw/c/graphics/t_fbservapi/test_bitmap_offset8.mbm
+../testdata/scaniline_10bytes.txt										/Epoc32/winscw/c/graphics/t_fbservapi/scaniline_10bytes.txt
+../testdata/test_bitmap_24bit_400x300.mbm								/Epoc32/winscw/c/graphics/t_fbservapi/test_bitmap_24bit_400x300.mbm
+../testdata/test_bitmap_32x8.mbm										/Epoc32/winscw/c/graphics/t_fbservapi/test_bitmap_32x8.mbm
+../testdata/test_bitmap_rom.rbm											/Epoc32/winscw/c/graphics/t_fbservapi/test_bitmap_rom.rbm
+graphics.bat																					/Epoc32/winscw/c/graphics/graphics.bat
+
+PRJ_TESTMMPFILES
+T_FBServAPI.mmp

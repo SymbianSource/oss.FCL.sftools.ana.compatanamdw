@@ -1,0 +1,325 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all twctype
+LOAD_SUITE twctype
+
+CONSECUTIVE
+//twctype
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_DIGIT_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_DIGIT_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalpha \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_DIGIT_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_DIGIT_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswalnum \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_DIGIT_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_DIGIT_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswdigit \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+
+//twctype_1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_DIGIT_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_DIGIT_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswcntrl \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_DIGIT_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_DIGIT_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_ALPHA_ATOF_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_ALPHA_ATOF_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_ALPHA_ATOF_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_ALPHA_ATOF_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswxdigit \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+
+//twctype_2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_SPACE_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_IDEOGRAPHIC_SPACE_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_SPACE_OTHER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_LATIN_CAPITAL_LETTER_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswspace \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_SPACE_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_IDEOGRAPHIC_SPACE_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_TABULATION
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_SPACE_OTHER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_LATIN_CAPITAL_LETTER_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswblank \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_LATIN_CAPITAL_LETTER_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_SPACE_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswpunct \tstdapis\twctype.ini Section_SPACE_OTHER_Expected0_Block2
+
+//twctype_3
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1_Block2
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_CYRILLIC_SMALL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_CYRILLIC_SMALL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_GREEK_SMALL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_GREEK_SMALL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_GREEK_SMALL_LETTER_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_DIGIT_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_DIGIT_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswlower \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_LATIN_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_LATIN_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_DIGIT_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_DIGIT_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswupper \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_DIGIT_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_DIGIT_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected1
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype  test_iswprint \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+
+//twctype_4
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_DIGIT_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_DIGIT_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_SPACE_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_IDEOGRAPHIC_SPACE_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswgraph \tstdapis\twctype.ini Section_SPACE_OTHER_Expected0_Block3
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_4_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_SPACE_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_IDEOGRAPHIC_SPACE_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_SPACE_OTHER_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_DIGIT_1_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_DIGIT_2_Expected1
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_FULLWIDTH_LATIN_SMALL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_SMALL_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_HIRAGANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_GREEK_CAPITAL_LETTER_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CYRILLIC_CAPITAL_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_HALFWIDTH_KATAKANA_LETTER_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_PUNCTUATION_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CONTROL_CHARS_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CONTROL_CHARS_2_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_CONTROL_CHARS_3_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_SPACE_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_IDEOGRAPHIC_SPACE_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_SPACE_OTHER_Expected0_Block3
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_DIGIT_1_Expected0
+RUN_TEST_STEP !Result=0 5 twctype test_iswctype \tstdapis\twctype.ini Section_DIGIT_1_Expected0

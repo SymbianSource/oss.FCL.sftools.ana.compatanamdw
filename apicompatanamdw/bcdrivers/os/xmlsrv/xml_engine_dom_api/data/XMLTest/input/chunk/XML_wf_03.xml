@@ -1,0 +1,13 @@
+<books xmlns="http://www.w3.org/2001/books20/book" xmlns:nv="http://www.w3.org/2002/01/novel">
+	<nv:book type="novel" id="1234567890">
+		<autor no="1.0">
+			<name>Jan Kowalski</name>
+			<adress>Cracow</adress>
+			<male/>
+		</autor>
+		<title>Test title</title>
+		<desc>Book about.....
+		two line content
+		</desc>
+	</nv:book>
+</books>

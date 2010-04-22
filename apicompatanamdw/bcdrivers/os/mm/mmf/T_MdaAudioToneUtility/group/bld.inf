@@ -1,0 +1,31 @@
+/*
+* Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+
+tmdtone.bat                     /Epoc32/winscw/c/multimedia/tmdtone.bat                     
+../scripts/MM-MMF-ACLNT-TONE-PublicAPI.script       /Epoc32/winscw/c/multimedia/MM-MMF-ACLNT-TONE-PublicAPI.script
+../config/MM-MMF-ACLNT-TONE-PublicAPI.tcs       		/Epoc32/winscw/c/multimedia/MM-MMF-ACLNT-TONE-PublicAPI.tcs
+../testdata/MM-MMF-ACLNT-TONE-PublicAPI.ini         /Epoc32/winscw/c/multimedia/MM-MMF-ACLNT-TONE-PublicAPI.ini
+../testdata/sequence1.sqn                           /Epoc32/winscw/c/multimedia/t_audiotoneutility/sequence1.sqn
+../testdata/sequence2.sqn                           /Epoc32/winscw/c/multimedia/t_audiotoneutility/sequence2.sqn
+../testdata/badsequence.sqn                         /Epoc32/winscw/c/multimedia/t_audiotoneutility/badsequence.sqn
+
+
+PRJ_TESTMMPFILES
+T_MdaAudioToneUtility.mmp

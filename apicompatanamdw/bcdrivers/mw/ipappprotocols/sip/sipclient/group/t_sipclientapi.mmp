@@ -1,0 +1,116 @@
+/*
+* Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*
+*/
+
+
+TARGET			t_sipclientapi.exe
+TARGETTYPE		exe
+UID				0x1000007A 0x20003711
+VENDORID		0x70000001
+
+CAPABILITY		All -Tcb
+
+SOURCE			../../common/src/DataWrapperBase.cpp 
+SOURCE 			../../common/src/T_SIPUtil.cpp
+SOURCE			../../common/src/UtilityClearPanicDlg.cpp
+SOURCE			../../sdpcodec/src/t_csdpdocument.cpp
+SOURCE			../../sdpcodec/src/t_csdpconnectionfield.cpp
+SOURCE			../../sdpcodec/src/t_csdpmediafield.cpp
+SOURCE			../../sdpcodec/src/t_csdporiginfield.cpp
+SOURCE			../../sdpcodec/src/t_sdpcodecstringpool.cpp
+SOURCE			../../sipprofile/src/t_csipprofile.cpp
+SOURCE			../../sipprofile/src/t_csipprofileregistrybase.cpp
+SOURCE			../../sipprofile/src/t_csipprofileregistry.cpp
+SOURCE			../../sipprofile/src/t_csipmanagedprofileregistry.cpp
+SOURCE			../../sipprofile/src/t_csipmanagedprofile.cpp
+SOURCE			../../sipcodec/src/t_csipaddress.cpp
+SOURCE			../../sipcodec/src/t_csipheaderbase.cpp
+SOURCE			../../sipcodec/src/t_csipparameterheaderbase.cpp
+SOURCE			../../sipcodec/src/t_csiprouteheaderbase.cpp
+SOURCE			../../sipcodec/src/t_csipfromtoheaderbase.cpp
+SOURCE			../../sipcodec/src/t_csipaddressheaderbase.cpp
+SOURCE			../../sipcodec/src/t_csipcontenttypeheader.cpp
+SOURCE			../../sipcodec/src/t_csipcseqheader.cpp
+SOURCE			../../sipcodec/src/t_csipcontactheader.cpp
+SOURCE			../../sipcodec/src/t_csiprefertoheader.cpp
+SOURCE			../../sipcodec/src/t_csipfromheader.cpp 
+SOURCE			../../sipcodec/src/t_csiptoheader.cpp
+SOURCE			../../sipcodec/src/t_csipexpiresheader.cpp
+SOURCE			../../sipcodec/src/t_csipeventheader.cpp
+SOURCE			../../sipcodec/src/t_csiprouteheader.cpp
+SOURCE			../../sipcodec/src/t_csipsubscriptionstateheader.cpp
+SOURCE			../../sipcodec/src/t_csipcallidheader.cpp
+SOURCE			../src/t_sipclientapiserver.cpp
+SOURCE			../src/t_sipclientblock.cpp
+SOURCE			../src/t_csip.cpp
+SOURCE			../src/t_csipconnection.cpp
+SOURCE			../src/t_csiptransactionbase.cpp
+SOURCE			../src/t_csipclienttransaction.cpp
+SOURCE			../src/t_csipservertransaction.cpp
+SOURCE			../src/t_csipmessageelements.cpp
+SOURCE			../src/t_csiprequestelements.cpp
+SOURCE			../src/t_csipresponseelements.cpp
+SOURCE			../src/t_csiprefresh.cpp
+SOURCE			../src/t_csipdialog.cpp
+SOURCE			../src/t_csipdialogassocbase.cpp
+SOURCE			../src/t_csipreferdialogassoc.cpp
+SOURCE			../src/t_csipinvitedialogassoc.cpp
+SOURCE 			../src/t_csipsubscribedialogassoc.cpp
+SOURCE			../src/t_csipnotifydialogassoc.cpp 
+SOURCE			../src/t_csiphttpdigest.cpp
+SOURCE			../src/t_csipregistrationbinding.cpp
+
+START RESOURCE  ../data/t_sipclientapi_reg.rss
+#ifdef WINSCW
+TARGETPATH 	  /private/10003a3f/apps
+#else
+TARGETPATH 	  /private/10003a3f/import/apps
+#endif
+END
+
+USERINCLUDE		../inc
+USERINCLUDE		../../common/inc
+USERINCLUDE		../../sipprofile/inc
+USERINCLUDE		../../sipcodec/inc
+USERINCLUDE		../../sdpcodec/inc
+
+SYSTEMINCLUDE	/epoc32/include
+SYSTEMINCLUDE	/epoc32/include/test
+SYSTEMINCLUDE   /epoc32/include/ecom
+SYSTEMINCLUDE   /epoc32/include/libc/
+
+LIBRARY			euser.lib
+LIBRARY			efsrv.lib
+LIBRARY			bafl.lib
+LIBRARY			sipprofilecli.lib
+LIBRARY			testexecuteutils.lib
+LIBRARY			testexecutelogclient.lib
+LIBRARY			commsdat.lib
+LIBRARY			commdb.lib
+LIBRARY			insock.lib
+LIBRARY			netmeta.lib
+LIBRARY			iniparser.lib
+LIBRARY         charconv.lib 
+LIBRARY			sdpcodec.lib
+LIBRARY			sipclient.lib 
+LIBRARY			sipcodec.lib
+LIBRARY			apengine.lib 
+LIBRARY			inetprotutil.lib 
+LIBRARY			estor.lib
+LIBRARY			libc.lib 
+
+SOURCEPATH ../src
+

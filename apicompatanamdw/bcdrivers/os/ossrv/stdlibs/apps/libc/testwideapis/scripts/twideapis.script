@@ -1,0 +1,45 @@
+//
+// Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all twideapis
+LOAD_SUITE twideapis
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 twideapis	wfdopen_ivalm	\tstdapis\twideapis.ini Section1
+
+RUN_TEST_STEP !Result=0 5 twideapis	wfdopen_val	\tstdapis\twideapis.ini Section2
+RUN_TEST_STEP !Result=0 5 twideapis	wfdopen_ivalm1
+
+//RUN_TEST_STEP !Result=0 5 twideapis	wfreopen_valm	\tstdapis\twideapis.ini Section3
+
+RUN_TEST_STEP !Result=0 5 twideapis	wfreopen_val	\tstdapis\twideapis.ini Section4
+RUN_TEST_STEP !Result=0 5 twideapis	wfreopen_val	\tstdapis\twideapis.ini Section4_1
+
+RUN_TEST_STEP !Result=0 5 twideapis	wfreopen_valinv	\tstdapis\twideapis.ini Section5
+
+RUN_TEST_STEP !Result=0 5 twideapis	wremove_val3	\tstdapis\twideapis.ini Section6
+RUN_TEST_STEP !Result=0 5 twideapis	wremove_val3	\tstdapis\twideapis.ini Section6_1
+RUN_TEST_STEP !Result=0 5 twideapis	wremove_val3	\tstdapis\twideapis.ini Section6_2
+
+RUN_TEST_STEP !Result=0 5 twideapis	wremove_val1	
+RUN_TEST_STEP !Result=0 5 twideapis	wremove_val2	
+RUN_TEST_STEP !Result=0 5 twideapis	getws_val	
+RUN_TEST_STEP !Result=0 5 twideapis	getws_null	
+RUN_TEST_STEP !Result=0 5 twideapis	putws_val1
+RUN_TEST_STEP !Result=0 5 twideapis	putws_val2
+RUN_TEST_STEP !Result=0 5 twideapis	putws_null
+RUN_TEST_STEP !Result=0 5 twideapis	wremove_null	
+RUN_TEST_STEP !Result=0 5 twideapis	wpopen_1	

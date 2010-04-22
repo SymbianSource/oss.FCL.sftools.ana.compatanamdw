@@ -1,0 +1,217 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipcontentdispositionheader
+//
+// Tests all public elements of the t_csipcontentdispositionheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPContentDispositionHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csipcontentdispositionheader-0001
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::NewL(const TDesC8{ref}) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPContentDispositionHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPContentDispositionHeader object.
+//!                         2. Construct CSIP and CSIPContentDispositionHeader object.
+//!                         3. Delete the CSIPContentDispositionHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContentDispositionHeader object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        COMMAND             sip                             NewL                            t_csipcontentdispositionheader-0001-NewL_Command01
+        COMMAND             sipcontentdispositionheader     NewL                            t_csipcontentdispositionheader-0001-NewL_Command02
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0001
+
+START_TESTCASE              t_csipcontentdispositionheader-0002
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::NewLC(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPContentDispositionHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPContentDispositionHeader object.
+//!                         2. Construct CSIP, and construct CSIPContentDispositionHeader object.
+//!                         3. Delete the CSIPContentDispositionHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContentDispositionHeader object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        COMMAND             sip                             NewL                            t_csipcontentdispositionheader-0002-NewL_Command01
+        COMMAND             sipcontentdispositionheader     NewLC                           t_csipcontentdispositionheader-0002-NewLC_Command02
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0002
+
+START_TESTCASE              t_csipcontentdispositionheader-0003
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPContentDispositionHeader object from textual presentation.
+//! @SYMTestActions         1. Create a CSIP object and CSIPContentDispositionHeader object.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPContentDispositionHeader object from textual presentation.
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPContentDispositionHeader can be decoded successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        COMMAND             sip                             NewL                            t_csipcontentdispositionheader-0003-NewL_Command01
+        COMMAND             sipcontentdispositionheader     DecodeL                         t_csipcontentdispositionheader-0003-DecodeL_Command02
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0003
+
+START_TESTCASE              t_csipcontentdispositionheader-0004
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0004
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::SetDispTypeL(const TDesC8{ref})
+//!                         CSIPContentDispositionHeader::DispType().
+//! @SYMTestCaseDesc        Set and get the disp-type parameter in the "Content-Disposition" header.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPContentDispositionHeader objects.
+//!                         2. Construct CSIP object and CSIPContentDispositionHeader object.
+//!                         3. Get and set disp-type and then check it.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned contentdisposition is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        COMMAND             sip                             NewL                        t_csipcontentdispositionheader-0004-NewL_Command01
+        COMMAND             sipcontentdispositionheader     NewL                        t_csipcontentdispositionheader-0004-NewL_Command02
+        COMMAND             sipcontentdispositionheader     DispType                    t_csipcontentdispositionheader-0004-DispType_Command03
+        COMMAND             sipcontentdispositionheader     SetDispTypeL                t_csipcontentdispositionheader-0004-SetDispTypeL_Command04
+        COMMAND             sipcontentdispositionheader     DispType                    t_csipcontentdispositionheader-0004-DispType_Command05
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0004
+
+START_TESTCASE              t_csipcontentdispositionheader-0010
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0010
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::Name()
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPContentDispositionHeader object.
+//!                         2. Construct CSIP and CSIPContentDispositionHeader object.
+//!                         3. Get name of the CSIPContentDispositionHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Name() can be called successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        COMMAND             sip                             NewL                    t_csipcontentdispositionheader-0010-NewL_Command01
+        COMMAND             sipcontentdispositionheader     NewL                    t_csipcontentdispositionheader-0010-NewL_Command02
+        COMMAND             sipcontentdispositionheader     Name
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0010
+
+START_TESTCASE              t_csipcontentdispositionheader-0012
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0012
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a deep-copy of this header object.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPContentDispositionHeader objects.
+//!                         2. Construct CSIP and CSIPContentDispositionHeader object.
+//!                         3. Clone the CSIPContentDispositionHeader object to 2nd one and check the 2nd one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults CloneL can be called successfully and the clone is same as original one.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader1
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                    t_csipcontentdispositionheader-0012-NewL_Command01
+        COMMAND             sipcontentdispositionheader     NewL                    t_csipcontentdispositionheader-0012-NewL_Command02
+        COMMAND             sipcontentdispositionheader     CloneL                  t_csipcontentdispositionheader-0012-CloneL_command03
+        COMMAND             sipcontentdispositionheader1    DispType                t_csipcontentdispositionheader-0012-DispType_command04
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sipcontentdispositionheader1    ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0012
+
+START_TESTCASE              t_csipcontentdispositionheader-0013
+//! @SYMTestCaseID          t_csipcontentdispositionheader-0013
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPContentDispositionHeader::InternalizeValueL()
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPContentDispositionHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPContentDispositionHeader objects.
+//!                         2. Construct CSIP and CSIPContentDispositionHeader object.
+//!                         3. Externalize 1st CSIPContentDispositionHeader object and check the internalized one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults A CSIPContentDispositionHeader object can be created by internalizing from a file. The new one is same as the original one which externalizes to a file.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csipcontentdispositionheader.ini
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader
+        CREATE_OBJECT       CSIPContentDispositionHeader    sipcontentdispositionheader1
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                        t_csipcontentdispositionheader-0013-NewL_command01
+        COMMAND             sipcontentdispositionheader     NewL                        t_csipcontentdispositionheader-0013-NewL_command02
+        COMMAND             sipcontentdispositionheader     ExternalizeL                t_csipcontentdispositionheader-0013-ExternalizeL_command03
+        COMMAND             sipcontentdispositionheader1    InternalizeValueL           t_csipcontentdispositionheader-0013-InternalizeValueL_command04
+        COMMAND             sipcontentdispositionheader1    DispType                    t_csipcontentdispositionheader-0013-DispType_command05
+        COMMAND             sipcontentdispositionheader     ~
+        COMMAND             sipcontentdispositionheader1    ~
+        COMMAND             sip                             ~ 
+    END_TEST_BLOCK
+END_TESTCASE      t_csipcontentdispositionheader-0013

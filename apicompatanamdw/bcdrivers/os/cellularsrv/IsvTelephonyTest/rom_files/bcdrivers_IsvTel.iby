@@ -1,0 +1,24 @@
+/*
+* Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  IBY file for IsvTel BC Driver Binaries
+*
+*/
+
+
+file=ABI_DIR\BUILD_DIR\IsvTelephonyTest.dll        	SHARED_LIB_DIR\IsvTelephonyTest.dll
+file=ABI_DIR\BUILD_DIR\IsvTelephonyTest.exe         PROGRAMS_DIR\IsvTelephonyTest.exe
+
+data=\epoc32\winscw\c\TestFramework\TestFramework_isv.ini	\TestFramework\TestFramework_isv.ini
+data=\epoc32\winscw\c\TestFramework\IsvTelephonyTest.ini	\TestFramework\IsvTelephonyTest.ini
+data=\epoc32\winscw\c\testisv.bat											 \testisv.bat

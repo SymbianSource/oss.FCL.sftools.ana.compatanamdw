@@ -1,0 +1,29 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tdl
+LOAD_SUITE tdl
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tdl  DlSymLkupWithRTLD_DEFAULT \tstdapis\tdl.ini Section_DlSymLkupWithRTLD_DEFAULT
+RUN_TEST_STEP !Result=0 5 tdl  DlLoadWithInvalidArg \tstdapis\tdl.ini Section_DlLoadWithInvalidArg
+RUN_TEST_STEP !Result=0 5 tdl  DlSymLkupWithHandle \tstdapis\tdl.ini Section_DlSymLkupWithHandle
+RUN_TEST_STEP !Result=0 100 tdl  DlMutexOnOpenHandle \tstdapis\tdl.ini Section_DlMutexOnOpenHandle 
+RUN_TEST_STEP !Result=0 5 tdl  DlLoadByVar \tstdapis\tdl.ini Section_DlLoadByVar 
+RUN_TEST_STEP !Result=0 5 tdl  OpenNonStdDllOrdinalLookup
+RUN_TEST_STEP !Result=0 5 tdl  OpenNonStdDllSymbolicLookup
+RUN_TEST_STEP !Result=0 5 tdl  OpenNonStdDllSymbolicLookupWithRTLD_DEFAULT
+

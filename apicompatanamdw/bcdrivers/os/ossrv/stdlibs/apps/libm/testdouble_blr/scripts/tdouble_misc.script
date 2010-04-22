@@ -1,0 +1,33 @@
+//
+// Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tdouble_blr
+LOAD_SUITE tdouble_blr
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tdouble_blr  erfc_test \tstdapis\tdouble_blr.ini Section_erfc_test_10
+
+RUN_TEST_STEP !Result=0 5 tdouble_blr  exp_test \tstdapis\tdouble_blr.ini Section_exp_test_3
+RUN_TEST_STEP !Result=0 5 tdouble_blr  exp_test \tstdapis\tdouble_blr.ini Section_exp_test_4
+RUN_TEST_STEP !Result=0 5 tdouble_blr  exp_test \tstdapis\tdouble_blr.ini Section_exp_test_8
+RUN_TEST_STEP !Result=0 5 tdouble_blr  exp_test \tstdapis\tdouble_blr.ini Section_exp_test_10
+
+RUN_TEST_STEP !Result=0 5 tdouble_blr  j0_test \tstdapis\tdouble_blr.ini Section_j0_test_9
+RUN_TEST_STEP !Result=0 5 tdouble_blr  j1_test \tstdapis\tdouble_blr.ini Section_j1_test_11
+
+RUN_TEST_STEP !Result=0 5 tdouble_blr  acos_test \tstdapis\tdouble_blr.ini Section_acos_test_8
+RUN_TEST_STEP !Result=0 5 tdouble_blr  acos_test \tstdapis\tdouble_blr.ini Section_acos_test_12
+RUN_TEST_STEP !Result=0 5 tdouble_blr  acos_test \tstdapis\tdouble_blr.ini Section_acos_test_14

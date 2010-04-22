@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<driver:driver xmlns:driver="http://www.symbian.com/TestDriver">
+	<task name="bluetooth">
+		<executeOnPC>
+			<build testBuild="true" URI="${sourceroot}\group\">
+				<componentName>t_btsockaddrapi</componentName>
+				<componentName>t_btsockapi</componentName>
+				<componentName>t_btsdpapi</componentName>
+			</build>
+		</executeOnPC>
+		<task name="master">
+			<task name="connected">
+				<task name="BT-SDP-PublicApi-Master-suite">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\release\${platform}\${build}\NetworkEmulatorControl.dll" SymbianPath="c:\sys\bin\NetworkEmulatorControl.dll"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\release\${platform}\${build}\UCCControlTE.exe" SymbianPath="c:\sys\bin\UCCControlTE.exe"/>
+					</transferToSymbian>
+					<task name="BTSDP-Agent-PublicApi-Active-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Agent-PublicApi-Passive-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Master.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\testdata.txt" SymbianPath="c:\bluetooth\sdp\testdata.txt"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Database-PublicApi-Active-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Database-PublicApi-Passive-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Lists-PublicApi-Active-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Lists-PublicApi-Passive-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Search-PublicApi-Active-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Search-PublicApi-Passive-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Master.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Master.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\testdata.txt" SymbianPath="c:\bluetooth\sdp\testdata.txt"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Master.script" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+				</task>
+				<task name="BT-USER-SOCK-PublicApi-Master-suite">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\UccControlChannelConfig.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\release\${platform}\${build}\NetworkEmulatorControl.dll" SymbianPath="c:\sys\bin\NetworkEmulatorControl.dll"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\release\${platform}\${build}\UCCControlTE.exe" SymbianPath="c:\sys\bin\UCCControlTE.exe"/>
+					</transferToSymbian>
+					<task name="BT-USER-SOCK-PublicApi-Active-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Active-Master.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Active-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Active-Master.script" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Active-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Active-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BT-USER-SOCK-PublicApi-Passive-Master-suite" timeout="3000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Passive-Master.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Passive-Master.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Passive-Master.script" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Passive-Master.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Passive-Master.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+				</task>
+			</task>
+			<task name="unconnected">
+				<task name="BT-Sock-Addr-API-PublicApi-suite">
+					<task name="BT-SOCK-ADDR-API-PublicApi-suite" timeout="1000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-SOCK-ADDR-PublicApi.ini" SymbianPath="c:\bluetooth\BT-SOCK-ADDR-PublicApi.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-SOCK-ADDR-PublicApi.script" SymbianPath="c:\bluetooth\BT-SOCK-ADDR-PublicApi.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\BT-SOCK-ADDR-PublicApi.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+				</task>
+				<task name="BT-USER-SOCK-PublicApi-suite">
+					<task name="BT-USER-SOCK-PublicApi-Unconnected-suite" timeout="1000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\UccControlChannelConfig.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.script" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+				</task>
+				<task name="BT-SDP-PublicApi-Master-suite">
+					<task name="BTSDP-Lists-PublicApi-Unconnected-suite" timeout="1000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Unconnected.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Unconnected.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Unconnected.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Unconnected.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-Agent-PublicApi-Unconnected-suite" timeout="1000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Unconnected.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Unconnected.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Unconnected.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Unconnected.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+					<task name="BTSDP-SearchPattern-PublicApi-Unconnected-suite" timeout="1000">
+						<transferToSymbian>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Unconnected.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+							<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\testdata.txt" SymbianPath="c:\bluetooth\sdp\testdata.txt"/>
+						</transferToSymbian>
+						<executeOnSymbian>
+							<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Unconnected.script" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Unconnected.script">
+								<testCasesList operator="exclude">
+									<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Unconnected.tcs"/>
+								</testCasesList>
+							</testExecuteScript>
+						</executeOnSymbian>
+					</task>
+				</task>
+			</task>
+		</task>
+		<task name="slave">
+			<task name="BT-USER-SOCK-PublicApi-Slave-suite">
+				<task name="BT-USER-SOCK-PublicApi-Passive-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Passive-Slave.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Passive-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Passive-Slave.script" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Passive-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Passive-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BT-USER-SOCK-PublicApi-Active-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Unconnected.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Active-Slave.ini" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Active-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\UccControlChannelConfig.ini" SymbianPath="c:\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Active-Slave.script" SymbianPath="c:\bluetooth\BT-USER-SOCK-PublicApi-Active-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\BT-USER-SOCK-PublicApi-Active-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+			</task>
+			<task name="BT-SDP-PublicApi-Slave-suite">
+				<task name="BTSDP-Agent-PublicApi-Passive-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\testdata.txt" SymbianPath="c:\bluetooth\sdp\testdata.txt"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Passive-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Agent-PublicApi-Active-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Agent-PublicApi-Active-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Database-PublicApi-Passive-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Passive-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Database-PublicApi-Active-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Database-PublicApi-Active-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Lists-PublicApi-Passive-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Passive-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Lists-PublicApi-Active-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-Lists-PublicApi-Active-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Search-PublicApi-Passive-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\testdata.txt" SymbianPath="c:\bluetooth\sdp\testdata.txt"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Passive-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+				<task name="BTSDP-Search-PublicApi-Active-Slave-suite" timeout="3000">
+					<transferToSymbian>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Slave.ini" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Slave.ini"/>
+						<transfer move="false" PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\UccControlChannelConfig.ini" SymbianPath="c:\bluetooth\sdp\UccControlChannelConfig.ini"/>
+					</transferToSymbian>
+					<executeOnSymbian>
+						<testExecuteScript PCPath="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Slave.script" SymbianPath="c:\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Slave.script">
+							<testCasesList operator="exclude">
+								<testCase target="${epocroot}\epoc32\data\z\bluetooth\sdp\BTSDP-SearchPattern-PublicApi-Active-Slave.tcs"/>
+							</testCasesList>
+						</testExecuteScript>
+					</executeOnSymbian>
+				</task>
+			</task>
+		</task>
+	</task>
+</driver:driver>

@@ -1,0 +1,77 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tctype
+LOAD_SUITE tctype
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tctype  isalpha_atoz
+RUN_TEST_STEP !Result=0 5 tctype  isalpha_num
+RUN_TEST_STEP !Result=0 5 tctype  isalpha_punc
+RUN_TEST_STEP !Result=0 5 tctype  isalpha_escape
+RUN_TEST_STEP !Result=0 5 tctype  isdigit_digit
+RUN_TEST_STEP !Result=0 5 tctype  isdigit_punc
+RUN_TEST_STEP !Result=0 5 tctype  isdigit_escape
+RUN_TEST_STEP !Result=0 5 tctype  isdigit_alpha
+RUN_TEST_STEP !Result=0 5 tctype  isalnum_alpha
+RUN_TEST_STEP !Result=0 5 tctype  isalnum_num
+RUN_TEST_STEP !Result=0 5 tctype  isalnum_escape
+RUN_TEST_STEP !Result=0 5 tctype  isalnum_punc
+RUN_TEST_STEP !Result=0 5 tctype  ispunct_punct
+RUN_TEST_STEP !Result=0 5 tctype  ispunct_alpha_num
+RUN_TEST_STEP !Result=0 5 tctype  ispunct_cntrl
+RUN_TEST_STEP !Result=0 5 tctype  isupper_upper
+RUN_TEST_STEP !Result=0 5 tctype  isupper_lower
+RUN_TEST_STEP !Result=0 5 tctype  isupper_punc
+RUN_TEST_STEP !Result=0 5 tctype  isupper_escape
+RUN_TEST_STEP !Result=0 5 tctype  islower_lower
+RUN_TEST_STEP !Result=0 5 tctype  islower_upper
+RUN_TEST_STEP !Result=0 5 tctype  islower_punc
+RUN_TEST_STEP !Result=0 5 tctype  islower_escape
+RUN_TEST_STEP !Result=0 5 tctype  isxdigit_xdigit
+RUN_TEST_STEP !Result=0 5 tctype  isxdigit_escape
+RUN_TEST_STEP !Result=0 5 tctype  isxdigit_punc
+RUN_TEST_STEP !Result=0 5 tctype  isxdigit_other_alpha
+RUN_TEST_STEP !Result=0 5 tctype  toupper_upper
+RUN_TEST_STEP !Result=0 5 tctype  toupper_punc
+RUN_TEST_STEP !Result=0 5 tctype  toupper_escape
+RUN_TEST_STEP !Result=0 5 tctype  tolower_upper
+RUN_TEST_STEP !Result=0 5 tctype  tolower_lower
+RUN_TEST_STEP !Result=0 5 tctype  tolower_punc
+RUN_TEST_STEP !Result=0 5 tctype  tolower_escape
+RUN_TEST_STEP !Result=0 5 tctype  isspace_space
+RUN_TEST_STEP !Result=0 5 tctype  isspace_punc
+RUN_TEST_STEP !Result=0 5 tctype  isspace_alpha
+RUN_TEST_STEP !Result=0 5 tctype  isspace_num
+RUN_TEST_STEP !Result=0 5 tctype  iscntrl_cntrl
+RUN_TEST_STEP !Result=0 5 tctype  iscntrl_other_escape
+RUN_TEST_STEP !Result=0 5 tctype  iscntrl_alpha_num
+RUN_TEST_STEP !Result=0 5 tctype  isprint_cntrl
+RUN_TEST_STEP !Result=0 5 tctype  isprint_alpha_num
+RUN_TEST_STEP !Result=0 5 tctype  isprint_punc
+RUN_TEST_STEP !Result=0 5 tctype  isprint_xdigit
+RUN_TEST_STEP !Result=0 5 tctype  isgraph_escape
+RUN_TEST_STEP !Result=0 5 tctype  isgraph_alpha_num
+RUN_TEST_STEP !Result=0 5 tctype  isgraph_punc
+RUN_TEST_STEP !Result=0 5 tctype  isgraph_xdigit
+RUN_TEST_STEP !Result=0 5 tctype  isgraph_space
+RUN_TEST_STEP !Result=0 5 tctype  isascii_ascii
+RUN_TEST_STEP !Result=0 5 tctype  isascii_bad_param
+RUN_TEST_STEP !Result=0 5 tctype  toascii_ascii
+RUN_TEST_STEP !Result=0 5 tctype  toascii_bad
+
+
+

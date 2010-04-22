@@ -1,0 +1,79 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tsyscalls
+LOAD_SUITE tsyscalls
+
+CONSECUTIVE
+# tsyscalls1 - 56 
+RUN_TEST_STEP 5 tsyscalls Creat c:\tstdapis\tsyscalls.ini SectionCreat
+RUN_TEST_STEP 5 tsyscalls open1 c:\tstdapis\tsyscalls.ini Sectionopen1_1
+RUN_TEST_STEP 5 tsyscalls open1 c:\tstdapis\tsyscalls.ini Sectionopen1_2
+RUN_TEST_STEP 5 tsyscalls open2 c:\tstdapis\tsyscalls.ini Sectionopen2
+RUN_TEST_STEP 5 tsyscalls open3 c:\tstdapis\tsyscalls.ini Sectionopen3
+RUN_TEST_STEP 5 tsyscalls open4 c:\tstdapis\tsyscalls.ini Sectionopen4
+RUN_TEST_STEP 5 tsyscalls open5 c:\tstdapis\tsyscalls.ini Sectionopen5
+RUN_TEST_STEP 5 tsyscalls open6 c:\tstdapis\tsyscalls.ini Sectionopen6
+RUN_TEST_STEP 5 tsyscalls OpenTruncate1 c:\tstdapis\tsyscalls.ini SectionOpenTruncate
+RUN_TEST_STEP 5 tsyscalls OpenTruncate2 c:\tstdapis\tsyscalls.ini SectionOpenTruncate
+RUN_TEST_STEP 5 tsyscalls open7 c:\tstdapis\tsyscalls.ini Sectionopen7
+RUN_TEST_STEP 5 tsyscalls open1 c:\tstdapis\tsyscalls.ini Sectionopen1_3
+RUN_TEST_STEP 5 tsyscalls write1 c:\tstdapis\tsyscalls.ini Sectionwrite1_1
+RUN_TEST_STEP 5 tsyscalls write1 c:\tstdapis\tsyscalls.ini Sectionwrite1_2
+RUN_TEST_STEP 5 tsyscalls write2 c:\tstdapis\tsyscalls.ini Sectionwrite2
+RUN_TEST_STEP 5 tsyscalls write3 c:\tstdapis\tsyscalls.ini Sectionwrite3
+RUN_TEST_STEP 5 tsyscalls write1 c:\tstdapis\tsyscalls.ini Sectionwrite1_3
+RUN_TEST_STEP 5 tsyscalls write1 c:\tstdapis\tsyscalls.ini Sectionwrite1_4
+RUN_TEST_STEP 5 tsyscalls write5 c:\tstdapis\tsyscalls.ini Sectionwrite5
+RUN_TEST_STEP 5 tsyscalls read1 c:\tstdapis\tsyscalls.ini Sectionread1_1
+RUN_TEST_STEP 5 tsyscalls read1 c:\tstdapis\tsyscalls.ini Sectionread1_2
+RUN_TEST_STEP 5 tsyscalls read2 c:\tstdapis\tsyscalls.ini Sectionread2
+RUN_TEST_STEP 5 tsyscalls read3 c:\tstdapis\tsyscalls.ini Sectionread3
+RUN_TEST_STEP 5 tsyscalls read4 c:\tstdapis\tsyscalls.ini Sectionread4
+RUN_TEST_STEP 5 tsyscalls Opendir c:\tstdapis\tsyscalls.ini SectionOpendir_1
+RUN_TEST_STEP 5 tsyscalls Opendir c:\tstdapis\tsyscalls.ini SectionOpendir_2
+RUN_TEST_STEP 5 tsyscalls Readdir c:\tstdapis\tsyscalls.ini SectionReaddir
+RUN_TEST_STEP 5 tsyscalls Closedir c:\tstdapis\tsyscalls.ini SectionClosedir_1
+RUN_TEST_STEP 5 tsyscalls Closedir c:\tstdapis\tsyscalls.ini SectionClosedir_2
+RUN_TEST_STEP 5 tsyscalls Lseek c:\tstdapis\tsyscalls.ini SectionLseek
+RUN_TEST_STEP 5 tsyscalls Lseek1
+RUN_TEST_STEP 5 tsyscalls Access c:\tstdapis\tsyscalls.ini SectionAccess
+RUN_TEST_STEP 5 tsyscalls Access1 c:\tstdapis\tsyscalls.ini SectionAccess1
+RUN_TEST_STEP 5 tsyscalls Dup c:\tstdapis\tsyscalls.ini SectionDup_1
+RUN_TEST_STEP 5 tsyscalls Dup c:\tstdapis\tsyscalls.ini SectionDup_2
+RUN_TEST_STEP 5 tsyscalls Dup2 c:\tstdapis\tsyscalls.ini SectionDup2_1
+RUN_TEST_STEP 5 tsyscalls Dup2 c:\tstdapis\tsyscalls.ini SectionDup2_2
+RUN_TEST_STEP 5 tsyscalls Dup2 c:\tstdapis\tsyscalls.ini SectionDup2_3
+RUN_TEST_STEP 5 tsyscalls Rename c:\tstdapis\tsyscalls.ini SectionRename_1
+RUN_TEST_STEP 5 tsyscalls Rename c:\tstdapis\tsyscalls.ini SectionRename_2
+RUN_TEST_STEP 5 tsyscalls Rename c:\tstdapis\tsyscalls.ini SectionRename_3
+RUN_TEST_STEP 5 tsyscalls Rename c:\tstdapis\tsyscalls.ini SectionRename_4
+RUN_TEST_STEP 5 tsyscalls Rename c:\tstdapis\tsyscalls.ini SectionRename_5
+RUN_TEST_STEP 5 tsyscalls Rename1 c:\tstdapis\tsyscalls.ini SectionRename1_1
+RUN_TEST_STEP 5 tsyscalls Rename1 c:\tstdapis\tsyscalls.ini SectionRename1_2
+RUN_TEST_STEP 5 tsyscalls Chmod c:\tstdapis\tsyscalls.ini SectionChmod_1
+RUN_TEST_STEP 5 tsyscalls Chmod c:\tstdapis\tsyscalls.ini SectionChmod_2
+RUN_TEST_STEP 5 tsyscalls Chmod_dir c:\tstdapis\tsyscalls.ini SectionChmod_dir
+RUN_TEST_STEP 5 tsyscalls FChmod c:\tstdapis\tsyscalls.ini SectionFChmod_1
+RUN_TEST_STEP 5 tsyscalls FChmod c:\tstdapis\tsyscalls.ini SectionFChmod_2
+RUN_TEST_STEP 5 tsyscalls FChmod_dir c:\tstdapis\tsyscalls.ini SectionFChmod_dir
+RUN_TEST_STEP 5 tsyscalls Exit
+RUN_TEST_STEP 5 tsyscalls Close c:\tstdapis\tsyscalls.ini SectionClose_1
+RUN_TEST_STEP 5 tsyscalls Close c:\tstdapis\tsyscalls.ini SectionClose_2
+RUN_TEST_STEP 5 tsyscalls Mkdir c:\tstdapis\tsyscalls.ini SectionMkdir_1
+RUN_TEST_STEP 5 tsyscalls Mkdir c:\tstdapis\tsyscalls.ini SectionMkdir_2
+RUN_TEST_STEP 5 tsyscalls Mkdir c:\tstdapis\tsyscalls.ini SectionMkdir_3
+
+RUN_TEST_STEP 5 tsyscalls Telldir c:\tstdapis\tsyscalls.ini SectionTelldir

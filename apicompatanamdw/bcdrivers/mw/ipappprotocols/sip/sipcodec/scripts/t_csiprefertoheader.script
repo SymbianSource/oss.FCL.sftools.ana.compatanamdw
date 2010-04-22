@@ -1,0 +1,282 @@
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csiprefertoheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csiprefertoheader
+//
+// Tests all public elements of the CSIPReferToHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for Csiprefertoheader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+START_TESTCASE              t_csiprefertoheader-0001
+//! @SYMTestCaseID          t_csiprefertoheader-0001
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPReferToHeader::NewL(const TDesC8 &,const TDesC8 &) & CSIPReferToHeader::~CSIPReferToHeader
+//! @SYMTestCaseDesc        Constructs a CSIPReferToHeader from header's value and name. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!							2. Create a CSIPAddress object.
+//!                         3. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewL().
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                        sip
+        CREATE_OBJECT       CSIPReferToHeader     siprefertoheader
+        CREATE_OBJECT       CSIPAddress         sipaddress
+        COMMAND           sip                 NewL           t_csiprefertoheader-0000-NewL_command01
+        COMMAND           sipaddress          NewL           t_csiprefertoheader-0000-NewL_command02
+        COMMAND           siprefertoheader    NewL           t_csiprefertoheader-0000-NewL_command03
+        COMMAND           siprefertoheader    ~
+        COMMAND           sipaddress          ~
+        COMMAND           sip                 ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0001
+
+START_TESTCASE              t_csiprefertoheader-0002
+//! @SYMTestCaseID          t_csiprefertoheader-0002
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPReferToHeader::NewLC(const TDesC8 &,const TDesC8 &) & CSIPReferToHeader::~CSIPReferToHeader
+//! @SYMTestCaseDesc        Constructs a CSIPReferToHeader from header's value and name. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!							2. Create a CSIPAddress object.
+//!                         3. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewLC().
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                  sip
+        CREATE_OBJECT       CSIPReferToHeader     siprefertoheader
+        CREATE_OBJECT       CSIPAddress           sipaddress
+        COMMAND       sip                 NewL           t_csiprefertoheader-0000-NewL_command01
+        COMMAND       sipaddress          NewL           t_csiprefertoheader-0000-NewL_command02
+        COMMAND       siprefertoheader    NewLC          t_csiprefertoheader-0000-NewL_command03
+        COMMAND       siprefertoheader    ~
+        COMMAND       sipaddress          ~
+        COMMAND       sip                 ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0002
+
+START_TESTCASE              t_csiprefertoheader-0003
+//! @SYMTestCaseID          t_csiprefertoheader-0003
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPReferToHeader::Name()
+//! @SYMTestCaseDesc        Get CSIPReferToHeader name. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!							2. Create a CSIPAddress object.
+//!                         3. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewL().
+//!             			4. Get CSIPReferToHeader name by calling CSIPReferToHeader::Name().
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                  sip
+        CREATE_OBJECT       CSIPReferToHeader     siprefertoheader
+        CREATE_OBJECT       CSIPAddress           sipaddress
+        COMMAND       sip                   NewL           t_csiprefertoheader-0000-NewL_command01
+        COMMAND       sipaddress            NewL           t_csiprefertoheader-0000-NewL_command02
+        COMMAND       siprefertoheader      NewL           t_csiprefertoheader-0000-NewL_command03
+        COMMAND       siprefertoheader      Name           t_csiprefertoheader-0003-Name_command04
+        COMMAND       siprefertoheader      ~
+        COMMAND       sipaddress            ~
+        COMMAND       sip                   ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0003
+
+START_TESTCASE              t_csiprefertoheader-0004
+//! @SYMTestCaseID          t_csiprefertoheader-0004
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPReferToHeader::CloneL()
+//! @SYMTestCaseDesc        Clone a CSIPReferToHeader from an existing CSIPReferToHeader object. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!							2. Create a CSIPAddress object.
+//!                         3. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewL().
+//!             			4. Clone object siprefertoheader1 from existing object siprefertoheader. 
+//!             			5. Verify the name of siprefertoheader1 by calling CSIPReferToHeader::Name().
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                sip
+        CREATE_OBJECT       CSIPAddress         sipaddress
+        CREATE_OBJECT       CSIPReferToHeader   siprefertoheader
+        CREATE_OBJECT       CSIPReferToHeader   siprefertoheader1
+        COMMAND       sip                   NewL                   t_csiprefertoheader-0000-NewL_command01
+        COMMAND       sipaddress            NewL                   t_csiprefertoheader-0000-NewL_command02        
+        COMMAND       siprefertoheader      NewL                   t_csiprefertoheader-0000-NewL_command03
+        COMMAND       siprefertoheader      CloneL                 t_csiprefertoheader-0004-CloneL_command04
+        COMMAND       siprefertoheader1     Name                   t_csiprefertoheader-0004-Name_command05
+        COMMAND       siprefertoheader1     ~
+        COMMAND       siprefertoheader      ~
+        COMMAND       sipaddress            ~
+        COMMAND       sip                   ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0004
+
+START_TESTCASE              t_csiprefertoheader-0005
+//! @SYMTestCaseID          t_csiprefertoheader-0005
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPReferToHeader::DecodeL()
+//! @SYMTestCaseDesc        DecodeL a CSIPReferToHeader from textual representation. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPReferToHeader by calling CSIPReferToHeader::DecodeL().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                  sip
+        CREATE_OBJECT       CSIPReferToHeader     siprefertoheader
+        COMMAND       sip                   NewL                   t_csiprefertoheader-0000-NewL_command01
+        COMMAND       siprefertoheader      DecodeL                t_csiprefertoheader-0005-NewL_command02
+        COMMAND       siprefertoheader      ~
+        COMMAND       sip                   ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0005
+
+START_TESTCASE              t_csiprefertoheader-0006
+//! @SYMTestCaseID          t_csiprefertoheader-0006
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        13/10/2009
+//! @SYMAPI                 CSIPReferToHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Internalize CSIPReferToHeader from RReadStream. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!							2. Create a CSIPAddress object.
+//!                         3. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewL().
+//!             			4. Externalize CSIPReferToHeader object siprefertoheader to c:\sip\sipcodec\temp.
+//!             			5. Internalize CSIPReferToHeader object siprefertoheader1 from c:\sip\sipcodec\temp.
+//!             			6. Test siprefertoheader1's name by calling CSIPReferToHeader::Name().
+//!                         7. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object is constructed without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT   CSIP                  sip
+        CREATE_OBJECT   CSIPAddress           sipaddress
+        CREATE_OBJECT   CSIPReferToHeader     siprefertoheader
+        CREATE_OBJECT   CSIPReferToHeader     siprefertoheader1
+        COMMAND       sip                   NewL                    t_csiprefertoheader-0000-NewL_command01
+        COMMAND       sipaddress            NewL                    t_csiprefertoheader-0000-NewL_command02  
+        COMMAND       siprefertoheader      NewL                    t_csiprefertoheader-0000-NewL_command03
+        COMMAND       siprefertoheader      ExternalizeL            t_csiprefertoheader-0006-ExternalizeL_command04
+        COMMAND       siprefertoheader      InternalizeValueL       t_csiprefertoheader-0006-InternalizeValueL_command05
+        COMMAND       siprefertoheader      Name                    t_csiprefertoheader-0006-Name_command06
+        COMMAND       siprefertoheader      ~
+        COMMAND       sipaddress            ~
+        COMMAND       sip                   ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0006
+
+START_TESTCASE              t_csiprefertoheader-0007
+//! @SYMTestCaseID          t_csiprefertoheader-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        23/10/2009
+//! @SYMAPI                 CSIPAddressHeaderBase::SetSIPAddressL(CSIPAddress*), const CSIPAddress& CSIPAddressHeaderBase::SIPAddress() const
+//! @SYMTestCaseDesc        Sets the name-address and Gets the name-address as const. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewL().
+//!                         3. Sets the name-address.
+//!                         4. Gets the name-address as const.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object sets the name-address and gets the name-address as const without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                  sip
+        CREATE_OBJECT       CSIPAddress           sipaddress
+        CREATE_OBJECT       CSIPAddress           sipaddress1
+        CREATE_OBJECT       CSIPReferToHeader     siprefertoheader
+        COMMAND       sip                   NewL                    t_csiprefertoheader-0000-NewL_command01
+        COMMAND       sipaddress            NewL                    t_csiprefertoheader-0000-NewL_command02
+        COMMAND       siprefertoheader      NewL                    t_csiprefertoheader-0000-NewL_command03
+        COMMAND       sipaddress1           NewL                    t_csiprefertoheader-0007-NewL_command04
+        COMMAND       siprefertoheader      SetSIPAddressL          t_csiprefertoheader-0007-SetSIPAddressL_command05
+        COMMAND       siprefertoheader      SIPAddress              t_csiprefertoheader-0007-SIPAddress_command06
+        COMMAND       siprefertoheader      ~
+        COMMAND       sipaddress            ~
+        COMMAND       sipaddress1           ~
+        COMMAND       sip                   ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0007
+
+START_TESTCASE              t_csiprefertoheader-0008
+//! @SYMTestCaseID          t_csiprefertoheader-0008
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        23/10/2009
+//! @SYMAPI                 CSIPAddressHeaderBase::SetSIPAddressL(CSIPAddress*), CSIPAddress& CSIPAddressHeaderBase::SIPAddress()
+//! @SYMTestCaseDesc        Sets the name-address and Gets the name-address. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPReferToHeader by calling CSIPReferToHeader::NewL().
+//!                         3. Sets the name-address.
+//!                         4. Gets the name-address.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPReferToHeader object sets the name-address and gets the name-address without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi     \sip\sipcodec\t_csiprefertoheader.ini
+        CREATE_OBJECT       CSIP                  sip
+        CREATE_OBJECT       CSIPAddress           sipaddress
+        CREATE_OBJECT       CSIPAddress           sipaddress1
+        CREATE_OBJECT       CSIPReferToHeader     siprefertoheader
+        COMMAND       sip                   NewL                    t_csiprefertoheader-0000-NewL_command01
+        COMMAND       sipaddress            NewL                    t_csiprefertoheader-0000-NewL_command02  
+        COMMAND       siprefertoheader      NewL                    t_csiprefertoheader-0000-NewL_command03
+        COMMAND       sipaddress1           NewL                    t_csiprefertoheader-0008-NewL_command04
+        COMMAND       siprefertoheader      SetSIPAddressL          t_csiprefertoheader-0008-SetSIPAddressL_command05
+        COMMAND       siprefertoheader      SIPAddress              t_csiprefertoheader-0008-SIPAddress_command06
+        COMMAND       siprefertoheader      ~
+        COMMAND       sipaddress            ~
+        COMMAND       sipaddress1           ~
+        COMMAND       sip                   ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefertoheader-0008

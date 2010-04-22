@@ -1,0 +1,39 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tlink
+LOAD_SUITE tlink
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tlink  Link \tstdapis\tlink.ini Section_Link
+RUN_TEST_STEP !Result=0 5 tlink  Link1 \tstdapis\tlink.ini Section_Link1 
+RUN_TEST_STEP !Result=0 5 tlink  Link2 \tstdapis\tlink.ini Section_Link2 
+RUN_TEST_STEP !Result=0 5 tlink  Link3 \tstdapis\tlink.ini Section_Link3 
+RUN_TEST_STEP !Result=0 5 tlink  Link4 \tstdapis\tlink.ini Section_Link4 
+RUN_TEST_STEP !Result=0 5 tlink  Link5 \tstdapis\tlink.ini Section_Link5 
+RUN_TEST_STEP !Result=0 5 tlink  Link6 \tstdapis\tlink.ini Section_Link6 
+RUN_TEST_STEP !Result=0 5 tlink  ReadWriteLink \tstdapis\tlink.ini Section_ReadWriteLink 
+RUN_TEST_STEP !Result=0 5 tlink  ReadLink \tstdapis\tlink.ini Section_ReadLink 
+RUN_TEST_STEP !Result=0 5 tlink  linkstat \tstdapis\tlink.ini Section_linkstat 
+RUN_TEST_STEP !Result=0 5 tlink  Unlink \tstdapis\tlink.ini Section_Unlink 
+RUN_TEST_STEP !Result=0 5 tlink  Unlink1 \tstdapis\tlink.ini Section_Unlink1 
+RUN_TEST_STEP !Result=0 5 tlink  ReadLink1 \tstdapis\tlink.ini Section_ReadLink1
+RUN_TEST_STEP !Result=0 5 tlink  TestUnlinkFifo \tstdapis\tlink.ini Section_UnLinkFifo
+RUN_TEST_STEP !Result=0 5 tlink  TestUnlinkFifo \tstdapis\tlink.ini Section_UnLinkFifo1
+RUN_TEST_STEP !Result=0 5 tlink  TestUnlinkFifo \tstdapis\tlink.ini Section_UnLinkFifo2
+RUN_TEST_STEP !Result=0 5 tlink  ReadLinkTest \tstdapis\tlink.ini Section_ReadLinkTest1
+RUN_TEST_STEP !Result=0 5 tlink  ReadLinkTest \tstdapis\tlink.ini Section_ReadLinkTest2
+RUN_TEST_STEP !Result=0 5 tlink  ReadLinkTest \tstdapis\tlink.ini Section_ReadLinkTest3

@@ -1,0 +1,204 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csiprequireheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csiprequireheader
+//
+// Tests all public elements of the CSIPRequireHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPRequireHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+START_TESTCASE              t_csiprequireheader-0001
+//! @SYMTestCaseID          t_csiprequireheader-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPRequireHeader::NewL(RStringF)
+//! @SYMTestCaseDesc        Creates a new instance of CSIPRequireHeader.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPRequireHeader object.
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults NewL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csiprequireheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader
+        COMMAND             sip                     NewL                   t_csiprequireheader-0000-NewL_Command01
+        COMMAND             siprequireheader        NewL                   t_csiprequireheader-0001-NewL_Command02
+        COMMAND             siprequireheader        ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprequireheader-0001
+
+START_TESTCASE              t_csiprequireheader-0002
+//! @SYMTestCaseID          t_csiprequireheader-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPRequireHeader::NewLC(RStringF)
+//!                         CSIPRequireHeader::Name()
+//! @SYMTestCaseDesc        Creates a new instance of CSIPRequireHeader and puts it onto the cleanup stack, then check the name of the object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPRequireHeader object and check the name.
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults NewLC() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csiprequireheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader
+        COMMAND             sip                     NewL                   t_csiprequireheader-0000-NewL_Command01
+        COMMAND             siprequireheader        NewLC                  t_csiprequireheader-0002-NewLC_Command02
+        COMMAND             siprequireheader        Name                   t_csiprequireheader-0002-Name_Command03
+        COMMAND             siprequireheader        ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprequireheader-0002
+
+START_TESTCASE              t_csiprequireheader-0003
+//! @SYMTestCaseID          t_csiprequireheader-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPRequireHeader::DecodeL(const TDesC8{ref})
+//!                         CSIPTokenHeaderBase::Value()
+//! @SYMTestCaseDesc        Constructs CSIPRequireHeader objects from textual representation of the header's value part. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct array of CSIPRequireHeader by calling CSIPRequireHeader::DecodeL().
+//!                         3. Check the value of decoded objects.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults DecodeL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csiprequireheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader1
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader2
+        COMMAND             sip                     NewL                   t_csiprequireheader-0000-NewL_Command01
+        COMMAND             siprequireheader        DecodeL                t_csiprequireheader-0003-DecodeL_Command02
+        COMMAND             siprequireheader        Value                  t_csiprequireheader-0003-Value_Command03
+        COMMAND             siprequireheader1       Value                  t_csiprequireheader-0003-Value_Command04
+        COMMAND             siprequireheader2       Value                  t_csiprequireheader-0003-Value_Command05
+        COMMAND             siprequireheader        ~
+        COMMAND             siprequireheader1       ~
+        COMMAND             siprequireheader2       ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprequireheader-0003
+
+START_TESTCASE              t_csiprequireheader-0006
+//! @SYMTestCaseID          t_csiprequireheader-0006
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPRequireHeader::InternalizeValueL(RReadStream{ref}), RStringF CSIPRequireHeader::Name()
+//! @SYMTestCaseDesc        Construct an instance of a CSIPRequireHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPRequireHeader object.
+//!                         3. Externalize the CSIPRequireHeader to file.
+//!                         4. Construct a CSIPRequireHeader by calling CSIPRequireHeader::InternalizeValueL() from file.
+//!                         5. Get the name and header's value.
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults 1. InternalizeValueL() is called without errors;
+//!                         2. The retrieved value and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi           \sip\sipcodec\t_csiprequireheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader1
+        COMMAND             sip                     NewL                   t_csiprequireheader-0000-NewL_Command01
+        COMMAND             siprequireheader        NewL                   t_csiprequireheader-0006-NewL_Command02
+        COMMAND             siprequireheader        ExternalizeL           t_csiprequireheader-0006-ExternalizeL_Command03
+        COMMAND             siprequireheader1       InternalizeValueL      t_csiprequireheader-0006-InternalizeValueL_Command04
+        COMMAND             siprequireheader1       Value                  t_csiprequireheader-0006-Value_command05
+        COMMAND             siprequireheader1       ~
+        COMMAND             siprequireheader        ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprequireheader-0006
+
+START_TESTCASE              t_csiprequireheader-0007
+//! @SYMTestCaseID          t_csiprequireheader-0007
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPRequireHeader::CloneL() const
+//! @SYMTestCaseDesc        Construct an instance of a CSIPRequireHeader from another one.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPRequireHeader object.
+//!                         3. Clone the CSIPRequireHeader to another CSIPRequireHeader object.
+//!                         4. Check the value of the newly generated CSIPRequireHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults 1. CloneL() is called without errors;
+//!                         2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi               \sip\sipcodec\t_csiprequireheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader1
+        COMMAND             sip                     NewL                   t_csiprequireheader-0000-NewL_Command01
+        COMMAND             siprequireheader        NewL                   t_csiprequireheader-0007-NewL_Command02
+        COMMAND             siprequireheader        CloneL                 t_csiprequireheader-0007-CloneL_Command03
+        COMMAND             siprequireheader1       Value                  t_csiprequireheader-0007-Value_Command04
+        COMMAND             siprequireheader1       ~
+        COMMAND             siprequireheader        ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprequireheader-0007
+
+START_TESTCASE              t_csiprequireheader-0009
+//! @SYMTestCaseID          t_csiprequireheader-0009
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        19/11/2009
+//! @SYMAPI                 CSIPRequireHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Negative case. Constructs a CSIPRequireHeader object from illegal text.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct array of CSIPRequireHeader by calling CSIPRequireHeader::DecodeL().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults -17789 is returned.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi        \sip\sipcodec\t_csiprequireheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPRequireHeader       siprequireheader
+        COMMAND             sip                     NewL                   t_csiprequireheader-0000-NewL_Command01
+        COMMAND !Error=-17789 siprequireheader      DecodeL                t_csiprequireheader-0009-DecodeL_Command02
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprequireheader-0009
+

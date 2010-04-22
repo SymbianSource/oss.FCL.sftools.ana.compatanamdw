@@ -1,0 +1,321 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipsubscriptionstateheader
+//
+// Tests all public elements of the t_csipsubscriptionstateheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPSubscriptionStateHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csipsubscriptionstateheader-0001
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::NewL(const TDesC8{ref}) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPSubscriptionStateHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPSubscriptionStateHeader object.
+//!                         2. Construct CSIP and CSIPSubscriptionStateHeader object.
+//!                         3. Delete the CSIPSubscriptionStateHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPSubscriptionStateHeader object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                            t_csipsubscriptionstateheader-0001-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewL                            t_csipsubscriptionstateheader-0001-NewL_Command02
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0001
+
+START_TESTCASE              t_csipsubscriptionstateheader-0002
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::NewLC(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPSubscriptionStateHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPSubscriptionStateHeader object.
+//!                         2. Construct CSIP, and construct CSIPSubscriptionStateHeader object.
+//!                         3. Delete the CSIPSubscriptionStateHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPSubscriptionStateHeader object can be created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                            t_csipsubscriptionstateheader-0002-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewLC                           t_csipsubscriptionstateheader-0002-NewLC_Command02
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0002
+
+START_TESTCASE              t_csipsubscriptionstateheader-0003
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPSubscriptionStateHeader object from textual presentation.
+//! @SYMTestActions         1. Create a CSIP object and CSIPSubscriptionStateHeader object.
+//!                         2. Construct CSIP object.
+//!                         3. Construct CSIPSubscriptionStateHeader object from textual presentation.
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The CSIPSubscriptionStateHeader can be decoded successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                            t_csipsubscriptionstateheader-0003-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      DecodeL                         t_csipsubscriptionstateheader-0003-DecodeL_Command02
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0003
+
+START_TESTCASE              t_csipsubscriptionstateheader-0004
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0004
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::SetSubStateValueL(const TDesC8{ref})
+//!                         CSIPSubscriptionStateHeader::SubStateValueL()
+//! @SYMTestCaseDesc        Set and get the subscription state parameter
+//! @SYMTestActions         1. Create a CSIP and CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP object and CSIPSubscriptionStateHeader object.
+//!                         3. Get and set SubStateValue and then check it.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned subscriptionstate is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                        t_csipsubscriptionstateheader-0004-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewL                        t_csipsubscriptionstateheader-0004-NewL_Command02
+        COMMAND             sipsubscriptionstateheader      SubStateValue               t_csipsubscriptionstateheader-0004-SubStateValue_Command03
+        COMMAND             sipsubscriptionstateheader      SetSubStateValueL           t_csipsubscriptionstateheader-0004-SetSubStateValueL_Command04
+        COMMAND             sipsubscriptionstateheader      SubStateValue               t_csipsubscriptionstateheader-0004-SubStateValue_Command05
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0004
+
+START_TESTCASE              t_csipsubscriptionstateheader-0005
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0005
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::SetExpiresParameterL(TInt)
+//!                         CSIPSubscriptionStateHeader::ExpiresParameter()
+//! @SYMTestCaseDesc        Set and get the expires parameter
+//! @SYMTestActions         1. Create a CSIP and CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP object and CSIPSubscriptionStateHeader object.
+//!                         3. Get and set expires parameter and then check it.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned expires parameter is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                        t_csipsubscriptionstateheader-0005-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewL                        t_csipsubscriptionstateheader-0005-NewL_Command02
+        COMMAND             sipsubscriptionstateheader      SetExpiresParameterL        t_csipsubscriptionstateheader-0005-SetExpiresParameterL_Command03
+        COMMAND             sipsubscriptionstateheader      ExpiresParameter            t_csipsubscriptionstateheader-0005-ExpiresParameter_Command04
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0005
+
+START_TESTCASE              t_csipsubscriptionstateheader-0006
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0006
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::SetRetryAfterParameterL(TInt)
+//!                         CSIPSubscriptionStateHeader::RetryAfterParameter()
+//! @SYMTestCaseDesc        Set and get the retryafter parameter
+//! @SYMTestActions         1. Create a CSIP and CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP object and CSIPSubscriptionStateHeader object.
+//!                         3. Get and set retryafter parameter and then check it.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned expires parameter is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                        t_csipsubscriptionstateheader-0006-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewL                        t_csipsubscriptionstateheader-0006-NewL_Command02
+        COMMAND             sipsubscriptionstateheader      SetRetryAfterParameterL     t_csipsubscriptionstateheader-0006-SetRetryAfterParameterL_Command03
+        COMMAND             sipsubscriptionstateheader      RetryAfterParameter         t_csipsubscriptionstateheader-0006-RetryAfterParameter_Command04
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0006
+
+START_TESTCASE              t_csipsubscriptionstateheader-0007
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0007
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::SetExpiresParameterL(TInt)
+//! @SYMTestCaseDesc        Negative case. Set expires parameter to negative value.
+//! @SYMTestActions         1. Create a CSIP and CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP object and CSIPSubscriptionStateHeader object.
+//!                         3. Set expires parameter to -1
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults -17761 is returned.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                        t_csipsubscriptionstateheader-0007-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewL                        t_csipsubscriptionstateheader-0007-NewL_Command02
+        COMMAND !Error=-17761 sipsubscriptionstateheader      SetExpiresParameterL        t_csipsubscriptionstateheader-0007-SetExpiresParameterL_Command03
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0007
+
+START_TESTCASE              t_csipsubscriptionstateheader-0008
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0008
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::SetRetryAfterParameterL(TInt)
+//! @SYMTestCaseDesc        Negative case. Set retryafter parameter to negative value
+//! @SYMTestActions         1. Create a CSIP and CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP object and CSIPSubscriptionStateHeader object.
+//!                         3. Set retryafter parameter.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults -17761 is returned.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader     sipsubscriptionstateheader
+        COMMAND             sip                             NewL                        t_csipsubscriptionstateheader-0008-NewL_Command01
+        COMMAND             sipsubscriptionstateheader      NewL                        t_csipsubscriptionstateheader-0008-NewL_Command02
+        COMMAND !Error=-17761 sipsubscriptionstateheader      SetRetryAfterParameterL     t_csipsubscriptionstateheader-0008-SetRetryAfterParameterL_Command03
+        COMMAND             sipsubscriptionstateheader      ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0008
+
+START_TESTCASE              t_csipsubscriptionstateheader-0010
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0010
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::Name()
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPSubscriptionStateHeader object.
+//!                         2. Construct CSIP and CSIPSubscriptionStateHeader object.
+//!                         3. Get name of the CSIPSubscriptionStateHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Name() can be called successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPSubscriptionStateHeader    sipsubscriptionstateheader
+        COMMAND             sip                             NewL                    t_csipsubscriptionstateheader-0010-NewL_Command01
+        COMMAND             sipsubscriptionstateheader     NewL                    t_csipsubscriptionstateheader-0010-NewL_Command02
+        COMMAND             sipsubscriptionstateheader     Name
+        COMMAND             sipsubscriptionstateheader     ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0010
+
+START_TESTCASE              t_csipsubscriptionstateheader-0012
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0012
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a deep-copy of this header object.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP and CSIPSubscriptionStateHeader object.
+//!                         3. Clone the CSIPSubscriptionStateHeader object to 2nd one and check the 2nd one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults CloneL can be called successfully and the clone is same as original one.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIPSubscriptionStateHeader    sipsubscriptionstateheader
+        CREATE_OBJECT       CSIPSubscriptionStateHeader    sipsubscriptionstateheader1
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                    t_csipsubscriptionstateheader-0012-NewL_Command01
+        COMMAND             sipsubscriptionstateheader     NewL                    t_csipsubscriptionstateheader-0012-NewL_Command02
+        COMMAND             sipsubscriptionstateheader     CloneL                  t_csipsubscriptionstateheader-0012-CloneL_command03
+        COMMAND             sipsubscriptionstateheader1    SubStateValue           t_csipsubscriptionstateheader-0012-SubStateValue_command04
+        COMMAND             sipsubscriptionstateheader     ~
+        COMMAND             sipsubscriptionstateheader1    ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0012
+
+START_TESTCASE              t_csipsubscriptionstateheader-0013
+//! @SYMTestCaseID          t_csipsubscriptionstateheader-0013
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        06/11/2009
+//! @SYMAPI                 CSIPSubscriptionStateHeader::InternalizeValueL()
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPSubscriptionStateHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPSubscriptionStateHeader objects.
+//!                         2. Construct CSIP and CSIPSubscriptionStateHeader object.
+//!                         3. Externalize 1st CSIPSubscriptionStateHeader object and check the internalized one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults A CSIPSubscriptionStateHeader object can be created by internalizing from a file. The new one is same as the original one which externalizes to a file.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csipsubscriptionstateheader.ini
+        CREATE_OBJECT       CSIPSubscriptionStateHeader    sipsubscriptionstateheader
+        CREATE_OBJECT       CSIPSubscriptionStateHeader    sipsubscriptionstateheader1
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                        t_csipsubscriptionstateheader-0013-NewL_command01
+        COMMAND             sipsubscriptionstateheader     NewL                        t_csipsubscriptionstateheader-0013-NewL_command02
+        COMMAND             sipsubscriptionstateheader     ExternalizeL                t_csipsubscriptionstateheader-0013-ExternalizeL_command03
+        COMMAND             sipsubscriptionstateheader1    InternalizeValueL           t_csipsubscriptionstateheader-0013-InternalizeValueL_command04
+        COMMAND             sipsubscriptionstateheader1    SubStateValue               t_csipsubscriptionstateheader-0013-SubStateValue_command05
+        COMMAND             sipsubscriptionstateheader     ~
+        COMMAND             sipsubscriptionstateheader1    ~
+        COMMAND             sip                             ~ 
+    END_TEST_BLOCK
+END_TESTCASE      t_csipsubscriptionstateheader-0013

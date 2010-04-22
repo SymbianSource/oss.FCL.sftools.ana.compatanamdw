@@ -1,0 +1,164 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName		t_csip
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM. 
+//! @SYMScriptAutomation	The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csip
+//
+// Tests all public elements of the CSIP
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIP
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	t_sipclientapi
+DELAY		2000
+
+START_TESTCASE              t_csip-0001
+//! @SYMTestCaseID          t_csip-0001
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIP::NewL(const TUid{ref}, MSIPObserver{ref})
+//! @SYMTestCaseDesc        Creates a CSIP object.
+//! @SYMTestActions         1. Creates a CSIP object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csip.ini
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL            t_csip-0001-NewL_Command01
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csip-0001
+
+
+START_TESTCASE              t_csip-0002
+//! @SYMTestCaseID          t_csip-0002
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIP::NewLC(const TUid{ref}, MSIPObserver{ref})
+//! @SYMTestCaseDesc        Creates a CSIP object.
+//! @SYMTestActions         1. Creates a CSIP object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csip.ini
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewLC            t_csip-0002-NewLC_Command01
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csip-0002
+
+
+START_TESTCASE              t_csip-0003
+//! @SYMTestCaseID          t_csip-0003
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIP::Connection(TUint32)
+//! @SYMTestCaseDesc        Checks if the user has a connection created for given IAP-id 
+//! @SYMTestActions         1. Creates a CSIP object
+//!                         2. Checks if return a 0-pointer
+//!                         3. Creates a connection for given IAP-id
+//!                         4. Checks if return a valid connection for a given IAP-id
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Step 2 returns a 0-pointer and step 4 returns a valid pointer
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csip.ini
+        CREATE_OBJECT       CSIP                            sip
+        CREATE_OBJECT       CSIPConnection                  sipconnection1
+        CREATE_OBJECT       CSIPConnection                  sipconnection2
+        COMMAND             sip                             NewL                t_csip-0003-NewL_Command01
+        COMMAND             sip                             Connection          t_csip-0003-Connection_Command02
+        COMMAND             sipconnection1                  NewL                t_csip-0003-NewL_Command03
+        OUTSTANDING
+        COMMAND             sip                             Connection          t_csip-0003-Connection_Command04
+        COMMAND             sipconnection2                  ~
+        COMMAND             sipconnection1                  ~
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csip-0003
+
+START_TESTCASE              t_csip-0004
+//! @SYMTestCaseID          t_csip-0004
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIP::IsSigCompSupportedL()
+//! @SYMTestCaseDesc        Checks if the signalling compression (SigComp) is supported 
+//! @SYMTestActions         1. Creates a CSIP object
+//!                         2. Checks if the signalling compression (SigComp) is supported
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The method returns expected value without causing panic.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csip.ini
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                    t_csip-0004-NewL_Command01
+        COMMAND             sip                             IsSigCompSupportedL
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csip-0004
+
+START_TESTCASE              t_csip-0005
+//! @SYMTestCaseID          t_csip-0005
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIP::SupportedSecurityMechanismsL()
+//! @SYMTestCaseDesc        Gets all supported security mechanisms  
+//! @SYMTestActions         1. Creates a CSIP object
+//!                         2. Gets all supported security mechanisms
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The method is called without causing panic.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csip.ini
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                            t_csip-0005-NewL_Command01
+        COMMAND             sip                             SupportedSecurityMechanismsL
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csip-0005
+
+START_TESTCASE              t_csip-0006
+//! @SYMTestCaseID          t_csip-0006
+//! @SYMAuthor              Wekey Weng
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIP::NegotiatedSecurityMechanismL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Gets negotiated security mechanism with the next hop on the signaling path  
+//! @SYMTestActions         1. Creates a CSIP object
+//!                         2. Gets negotiated security mechanism
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The method is called without causing panic.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csip.ini
+        CREATE_OBJECT       CSIP                            sip
+        COMMAND             sip                             NewL                            t_csip-0006-NewL_Command01
+        COMMAND             sip                             NegotiatedSecurityMechanismL    t_csip-006-NegotiatedSecurityMechanismL_Command02
+        COMMAND             sip                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csip-0006

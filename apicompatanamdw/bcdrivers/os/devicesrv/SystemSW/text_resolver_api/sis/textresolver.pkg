@@ -1,0 +1,37 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+
+; Languages
+; none -  English only by default
+&EN
+
+; Installation header
+; Only one component name as we only support English
+; UID is the main app's UID
+
+#{"SystemSW_textresolver"},(0x10282C9F),1,0,0,TYPE=SA
+(0x101F7961),3,*,*,{"Series60ProductID"}
+
+; Non-localised vendor name
+:"Nokia Corporation"
+
+; Localised vendor names
+%{"Nokia Corporation"}
+
+; Files to install and to where
+"\Epoc32\Release\armv5\urel\stiftextresolvertest.dll"-"!:\sys\bin\stiftextresolvertest.dll"
+"\Epoc32\winscw\c\TestFramework\TestFramework_textresolver.ini"-"!:\TestFramework\TestFramework_textresolver.ini"
+"\Epoc32\winscw\c\textr.bat"-"!:\textr.bat"

@@ -1,0 +1,200 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName		t_csipprofile
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM.
+
+/////////////////////////////////////////////////////////////////////
+// t_csipprofile
+//
+// Tests all public elements of the CSIPProfile
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPProfile
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	t_sipprofileapi
+DELAY		2000
+
+START_TESTCASE              t_csipprofile-0001
+//! @SYMTestCaseID          t_csipprofile-0001
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        20/07/2009
+//! @SYMAPI                 CSIPProfile::GetParameter(TUint32, TUint32)
+//! @SYMTestCaseDesc        Get a TUint32 parameter of sip profile.
+//! @SYMTestActions         1. Create a CSIPProfile object, a CSIPManagedProfileRegistry object.
+//!                         2. Create a CSIPProfile object from registry.
+//!                         3. Get parameters of the profile.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults GetParameter return with KErrNone.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipprofile.ini
+        CREATE_OBJECT       CSIPProfile                         profile
+        CREATE_OBJECT       CSIPManagedProfileRegistry          managedProfileRegistry
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             managedProfileRegistry              CreateL         t_csipprofile-0001-CreateL_Command02
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0001-GetParameter_Command03
+	  COMMAND  		    profile                     	    GetParameter    t_csipprofile-0001-GetParameter_Command04
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profile                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipprofile-0001
+
+START_TESTCASE              t_csipprofile-0002
+//! @SYMTestCaseID          t_csipprofile-0002
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        20/07/2009
+//! @SYMAPI                 CSIPProfile:GetParameter(TUint32, TDesC8 &*)
+//! @SYMTestCaseDesc        Get a TDesC8 parameter of sip profile.
+//! @SYMTestActions         1. Create a CSIPProfile object, a CSIPManagedProfileRegistry object.
+//!                         2. Create a CSIPProfile object from registry.
+//!                         3. Get parameters of the profile.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults GetParameter return with KErrNone.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipprofile.ini
+        CREATE_OBJECT       CSIPProfile                         profile
+        CREATE_OBJECT       CSIPManagedProfileRegistry          managedProfileRegistry
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             managedProfileRegistry              CreateL         t_csipprofile-0002-CreateL_Command02
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command03        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command19
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command04
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command05
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command06
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profile                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipprofile-0002
+
+
+START_TESTCASE              t_csipprofile-0003
+//! @SYMTestCaseID          t_csipprofile-0003
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        20/07/2009
+//! @SYMAPI                 CSIPProfile:GetParameter(TUint32, TUint32, TDesC8 &*)
+//! @SYMTestCaseDesc        Get a TDesC8 parameter of sip profile.
+//! @SYMTestActions         1. Create a CSIPProfile object, a CSIPManagedProfileRegistry object.
+//!                         2. Create a CSIPProfile object from registry.
+//!                         3. Get parameters of the profile.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults GetParameter return with KErrNone.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipprofile.ini
+        CREATE_OBJECT       CSIPProfile                         profile
+        CREATE_OBJECT       CSIPManagedProfileRegistry          managedProfileRegistry
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             managedProfileRegistry              CreateL         t_csipprofile-0003-CreateL_Command02
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0003-GetParameter_Command03        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command19
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0003-GetParameter_Command04
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0003-GetParameter_Command05
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profile                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipprofile-0003
+
+START_TESTCASE              t_csipprofile-0004
+//! @SYMTestCaseID          t_csipprofile-0004
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        20/07/2009
+//! @SYMAPI                 CSIPProfile:GetParameter(TUint32, MDesC8Array const *&)
+//! @SYMTestCaseDesc        Get a MDesC8Array parameter of sip profile.
+//! @SYMTestActions         1. Create a CSIPProfile object, a CSIPManagedProfileRegistry object.
+//!                         2. Create a CSIPProfile object from registry.
+//!                         3. Get parameters of the profile.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults GetParameter return with KErrNone.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipprofile.ini
+        CREATE_OBJECT       CSIPProfile                         profile
+        CREATE_OBJECT       CSIPManagedProfileRegistry          managedProfileRegistry
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             managedProfileRegistry              CreateL         t_csipprofile-0004-CreateL_Command02
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0004-GetParameter_Command03        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command19
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0004-GetParameter_Command04
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0004-GetParameter_Command05
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profile                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipprofile-0004
+
+START_TESTCASE              t_csipprofile-0005
+//! @SYMTestCaseID          t_csipprofile-0005
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        20/07/2009
+//! @SYMAPI                 CSIPProfile:GetParameter(TUint32, TBool)
+//! @SYMTestCaseDesc        Get a TBool parameter of sip profile.
+//! @SYMTestActions         1. Create a CSIPProfile object, a CSIPManagedProfileRegistry object.
+//!                         2. Create a CSIPProfile object from registry.
+//!                         3. Get parameters of the profile.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults GetParameter return with KErrNone.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipprofile.ini
+        CREATE_OBJECT       CSIPProfile                         profile
+        CREATE_OBJECT       CSIPManagedProfileRegistry          managedProfileRegistry
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             managedProfileRegistry              CreateL         t_csipprofile-0005-CreateL_Command02
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0005-GetParameter_Command03        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0002-GetParameter_Command19
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0005-GetParameter_Command04
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0005-GetParameter_Command05
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0005-GetParameter_Command06
+        COMMAND  		    profile                     	    GetParameter    t_csipprofile-0005-GetParameter_Command07
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profile                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipprofile-0005
+
+START_TESTCASE              t_csipprofile-0006
+//! @SYMTestCaseID          t_csipprofile-0006
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        20/07/2009
+//! @SYMAPI                 CSIPProfile::Type()
+//! @SYMTestCaseDesc        Get the type of sip profile.
+//! @SYMTestActions         1. Create a CSIPProfile object, a CSIPManagedProfileRegistry object.
+//!                         2. Create a CSIPProfile object from registry.
+//!                         3. Get type of the profile.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Type() return with KErrNone.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipprofileapi                     \SIP\sipprofile\t_csipprofile.ini
+        CREATE_OBJECT       CSIPProfile                         profile
+        CREATE_OBJECT       CSIPManagedProfileRegistry          managedProfileRegistry
+        COMMAND             managedProfileRegistry              NewL
+        COMMAND             managedProfileRegistry              CreateL         t_csipprofile-0006-CreateL_Command02
+        COMMAND  		    profile                     	    Type
+        COMMAND             managedProfileRegistry              ~
+        COMMAND             profile                             ~
+    END_TEST_BLOCK
+END_TESTCASE			t_csipprofile-0006
+
+
+
+
+

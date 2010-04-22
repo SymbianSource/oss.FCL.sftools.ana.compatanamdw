@@ -1,0 +1,185 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+
+RUN_UTILS MkDir		${SYSDRIVE}\sip\sipcodec\
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_sipstrings.script 			${SYSDRIVE}\sip\sipcodec\t_sipstrings.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_sipstrings.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_sipstrings.ini 				${SYSDRIVE}\sip\sipcodec\t_sipstrings.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_sipstrings.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipcallidheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipcallidheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcallidheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipcallidheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipcallidheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcallidheader.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipaddress.script 			${SYSDRIVE}\sip\sipcodec\t_csipaddress.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipaddress.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipaddress.ini 				${SYSDRIVE}\sip\sipcodec\t_csipaddress.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipaddress.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipextensionheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipextensionheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipextensionheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipextensionheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipextensionheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipextensionheader.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiprackheader.script 			${SYSDRIVE}\sip\sipcodec\t_csiprackheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprackheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiprackheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csiprackheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprackheader.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiprefertoheader.script 			${SYSDRIVE}\sip\sipcodec\t_csiprefertoheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprefertoheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiprefertoheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csiprefertoheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprefertoheader.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipreplytoheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipreplytoheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipreplytoheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipreplytoheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipreplytoheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipreplytoheader.ini
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiptimestampheader.script 			${SYSDRIVE}\sip\sipcodec\t_csiptimestampheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiptimestampheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiptimestampheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csiptimestampheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiptimestampheader.ini
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipacceptcontactheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipacceptcontactheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptcontactheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipacceptcontactheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipacceptcontactheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptcontactheader.ini
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipacceptheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipacceptheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipacceptheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipacceptheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptheader.ini
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiptoheader.script 			${SYSDRIVE}\sip\sipcodec\t_csiptoheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiptoheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csiptoheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csiptoheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiptoheader.ini
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipcontentdispositionheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipcontentdispositionheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontentdispositionheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipcontentdispositionheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipcontentdispositionheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontentdispositionheader.ini
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipacceptlanguageheader.script 			${SYSDRIVE}\sip\sipcodec\t_csipacceptlanguageheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptlanguageheader.script
+
+RUN_UTILS CopyFile	z:\sip\sipcodec\t_csipacceptlanguageheader.ini 				${SYSDRIVE}\sip\sipcodec\t_csipacceptlanguageheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptlanguageheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipacceptencodingheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipacceptencodingheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptencodingheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipacceptencodingheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipacceptencodingheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipacceptencodingheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipcontenttypeheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipcontenttypeheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontenttypeheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipcontenttypeheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipcontenttypeheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontenttypeheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipcontactheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipcontactheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontactheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipcontactheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipcontactheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontactheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipeventheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipeventheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipeventheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipeventheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipeventheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipeventheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipretryafterheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipretryafterheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipretryafterheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipretryafterheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipretryafterheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipretryafterheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipsubscriptionstateheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipsubscriptionstateheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipsubscriptionstateheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipsubscriptionstateheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipsubscriptionstateheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipsubscriptionstateheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipcontentencodingheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipcontentencodingheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontentencodingheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipcontentencodingheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipcontentencodingheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipcontentencodingheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipallowheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipallowheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipallowheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipallowheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipallowheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipallowheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csiprouteheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csiprouteheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprouteheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipproxyrequireheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipproxyrequireheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipproxyrequireheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipsupportedheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipsupportedheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipsupportedheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipsupportedheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipsupportedheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipsupportedheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csiprequireheader.script      ${SYSDRIVE}\sip\sipcodec\t_csiprequireheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprequireheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csiprequireheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csiprequireheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csiprequireheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipsecurityclientheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipsecurityclientheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipsecurityclientheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipsecurityclientheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipsecurityclientheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipsecurityclientheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipunsupportedheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipunsupportedheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipunsupportedheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipunsupportedheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipunsupportedheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipunsupportedheader.ini
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipexpiresheader.script      ${SYSDRIVE}\sip\sipcodec\t_csipexpiresheader.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipexpiresheader.script
+
+RUN_UTILS CopyFile  z:\sip\sipcodec\t_csipexpiresheader.ini      ${SYSDRIVE}\sip\sipcodec\t_csipexpiresheader.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipcodec\t_csipexpiresheader.ini

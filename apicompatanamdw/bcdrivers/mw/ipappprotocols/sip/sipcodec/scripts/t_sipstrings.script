@@ -1,0 +1,131 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_sipstrings
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_sipstrings
+//
+// Tests all public elements of the SIPStrings
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for SIPStrings
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+START_TESTCASE              t_sipstrings-0001
+//! @SYMTestCaseID          t_sipstrings-0001
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        28/09/2009
+//! @SYMAPI                 SIPStrings::OpenL()
+//! @SYMTestCaseDesc        Open and close SIP Codec string pool. 
+//! @SYMTestActions         1. Open SIP Codec string pool.
+//!                         2. Close SIP Codec string pool.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Open and close SIP Codec string pool without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_sipstrings.ini
+        CREATE_OBJECT       SIPStrings                    sipstrings
+        COMMAND             sipstrings                    OpenL
+        COMMAND             sipstrings                    Close
+    END_TEST_BLOCK
+END_TESTCASE t_sipstrings-0001
+
+
+START_TESTCASE              t_sipstrings-0002
+//! @SYMTestCaseID          t_sipstrings-0002
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        28/09/2009
+//! @SYMAPI                 SIPStrings::Pool()
+//! @SYMTestCaseDesc        Get the string pool used by SIP Codec. 
+//! @SYMTestActions         1. Open SIP Codec string pool.
+//!                         2. Get the string pool.
+//!                         3. Close SIP Codec string pool.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get the string pool without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_sipstrings.ini
+        CREATE_OBJECT       SIPStrings                    sipstrings
+        COMMAND             sipstrings                    OpenL
+        COMMAND             sipstrings                    Pool
+        COMMAND             sipstrings                    Close
+    END_TEST_BLOCK
+END_TESTCASE t_sipstrings-0002
+
+
+START_TESTCASE              t_sipstrings-0003
+//! @SYMTestCaseID          t_sipstrings-0003
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        28/09/2009
+//! @SYMAPI                 SIPStrings::Table()
+//! @SYMTestCaseDesc        Get the string table used by SIP Codec. 
+//! @SYMTestActions         1. Open SIP Codec string pool.
+//!                         2. Get the string table.
+//!                         3. Close SIP Codec string pool.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get the string table without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_sipstrings.ini
+        CREATE_OBJECT       SIPStrings                    sipstrings
+        COMMAND             sipstrings                    OpenL
+        COMMAND             sipstrings                    Table
+        COMMAND             sipstrings                    Close
+    END_TEST_BLOCK
+END_TESTCASE t_sipstrings-0003
+
+
+START_TESTCASE              t_sipstrings-0004
+//! @SYMTestCaseID          t_sipstrings-0004
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        28/09/2009
+//! @SYMAPI                 SIPStrings::StringF()
+//! @SYMTestCaseDesc        Get the case-insensitive string specified in the original string table. 
+//! @SYMTestActions         1. Open SIP Codec string pool.
+//!                         2. Get the case-insensitive string with 0, 1, 21, 24.
+//!                         3. Close SIP Codec string pool.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Get case-insensitive string as expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_sipstrings.ini
+        CREATE_OBJECT       SIPStrings                    sipstrings
+        COMMAND             sipstrings                    OpenL
+        COMMAND             sipstrings                    StringF         t_sipstrings-0004-StringF_command01
+        COMMAND             sipstrings                    StringF         t_sipstrings-0004-StringF_command02
+        COMMAND             sipstrings                    StringF         t_sipstrings-0004-StringF_command03
+        COMMAND             sipstrings                    StringF         t_sipstrings-0004-StringF_command04
+        COMMAND             sipstrings                    Close
+    END_TEST_BLOCK
+END_TESTCASE t_sipstrings-0004
+
+
+
+
+
+

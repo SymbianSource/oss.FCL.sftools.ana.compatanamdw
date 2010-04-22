@@ -1,0 +1,66 @@
+/*
+* Copyright (c) 2002 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ?Description
+*
+*/
+
+
+TARGET          IsvTelephonyTest.dll
+TARGETTYPE      dll
+UID             0x1000008D 0x101FB3E7
+
+#if defined(EKA2)
+CAPABILITY      ReadDeviceData ReadUserData Location NetworkServices
+VENDORID        0
+#endif
+
+DEFFILE         IsvTelephonyTest.def
+
+SOURCEPATH      ../src
+SOURCE          IsvTelephonyTest.cpp
+SOURCE          IsvTelephonyTestCases.cpp
+SOURCE          IsvTelephonyTestEngine.cpp
+SOURCE          IsvTelephonyTestParser.cpp
+
+#ifdef SBSV2
+	APP_LAYER_SYSTEMINCLUDE
+	USERINCLUDE     ../inc 
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#else // SBSV2 not defined
+	APP_LAYER_SYSTEMINCLUDE
+	USERINCLUDE     ../inc 
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#endif // SBSV2
+
+LIBRARY         euser.lib
+LIBRARY         stiftestinterface.lib
+LIBRARY         estor.lib 
+LIBRARY         etel3rdparty.lib
+
+LANG            SC
+

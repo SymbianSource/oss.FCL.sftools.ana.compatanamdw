@@ -1,0 +1,10 @@
+<books xmlns="http://www.w3.org/2001/books20/book" xmlns:nv="http://www.w3.org/2002/01/novel">
+	<nv:book type="nov">
+		<autor no="1.0">
+			<name>Jan</name>
+			<adress>Cracow</adress>
+			<male/>
+		</autor>
+		<title>Test</title>
+	</nv:book>
+</books>

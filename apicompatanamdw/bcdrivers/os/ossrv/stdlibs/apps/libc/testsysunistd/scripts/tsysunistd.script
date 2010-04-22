@@ -1,0 +1,55 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tsysunistd
+LOAD_SUITE tsysunistd
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tsysunistd  ftruncate_file
+RUN_TEST_STEP !Result=0 5 tsysunistd  ftruncate_dir
+RUN_TEST_STEP !Result=0 5 tsysunistd  ftruncate_num
+RUN_TEST_STEP !Result=0 5 tsysunistd  ftruncate_siz
+RUN_TEST_STEP !Result=0 5 tsysunistd  fchdir_dir
+RUN_TEST_STEP !Result=0 5 tsysunistd  fchdir_file
+RUN_TEST_STEP !Result=0 5 tsysunistd  fchdir_num
+RUN_TEST_STEP !Result=0 5 tsysunistd  fdatasync_file  \tstdapis\tsysunistd.ini Section_fdatasync_fileL_1
+RUN_TEST_STEP !Result=0 5 tsysunistd  fdatasync_file  \tstdapis\tsysunistd.ini Section_fdatasync_fileL_2
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpagesize
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpriority
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpriority_other \tstdapis\tsysunistd.ini Section_getpriority_otherL_1
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpriority_other \tstdapis\tsysunistd.ini Section_getpriority_otherL_2
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpriority_other \tstdapis\tsysunistd.ini Section_getpriority_otherL_3
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpriority_other \tstdapis\tsysunistd.ini Section_getpriority_otherL_4
+RUN_TEST_STEP !Result=0 5 tsysunistd  getpriority_other \tstdapis\tsysunistd.ini Section_getpriority_otherL_5
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_get  \tstdapis\tsysunistd.ini Section_setpriority_getL
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_high  \tstdapis\tsysunistd.ini Section_setpriority_highL
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other_lower  \tstdapis\tsysunistd.ini Section_setpriority_other_lowerL
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other_higher  \tstdapis\tsysunistd.ini Section_setpriority_other_higherL
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other  \tstdapis\tsysunistd.ini Section_setpriority_otherL_1
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other  \tstdapis\tsysunistd.ini Section_setpriority_otherL_2
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other  \tstdapis\tsysunistd.ini Section_setpriority_otherL_3
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other  \tstdapis\tsysunistd.ini Section_setpriority_otherL_4
+RUN_TEST_STEP !Result=0 5 tsysunistd  setpriority_other  \tstdapis\tsysunistd.ini Section_setpriority_otherL_5
+RUN_TEST_STEP !Result=0 5 tsysunistd  nice_within_range \tstdapis\tsysunistd.ini Section_nice_within_rangeL
+RUN_TEST_STEP !Result=0 5 tsysunistd  nice_more_than_highest  \tstdapis\tsysunistd.ini Section_nice_more_than_highestL
+RUN_TEST_STEP !Result=0 5 tsysunistd  nice_less_than_lowest \tstdapis\tsysunistd.ini Section_nice_less_than_lowestL
+RUN_TEST_STEP !Result=0 5 tsysunistd  pathconf_valid
+RUN_TEST_STEP !Result=0 5 tsysunistd  pathconf_invalid
+RUN_TEST_STEP !Result=0 5 tsysunistd  uname
+RUN_TEST_STEP !Result=0 5 tsysunistd  uname_null
+
+
+

@@ -1,0 +1,98 @@
+//
+// Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tdouble_blr
+LOAD_SUITE tdouble_blr
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_1
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_2
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_3
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_4
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_9
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_10
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_11
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_12
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_13
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_14
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_15
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_16
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_17
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_18
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_19
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_20
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_21
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_22
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_23
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_24
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_25
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_26
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_27
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_28
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_29
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_30
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_31
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_32
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_33
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_34
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_35
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_36
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_37
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_38
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_39
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_40
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_41
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_42
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_43
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_44
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_45
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_46
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_47
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_48
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_49
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_50
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_51
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_52
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_54
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_55
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_60
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_61
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_62
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_63
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_72
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_73
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_74
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_75
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_110
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_111
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_112
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_113
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_114
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_115
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_116
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_117
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_118
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_119
+RUN_TEST_STEP !Result=0 5 tdouble_blr  pow_test \tstdapis\tdouble_blr.ini Section_pow_test_129
+
+
+
+
+
+
+
+
+

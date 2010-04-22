@@ -1,0 +1,65 @@
+//
+// Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all twcharapi
+LOAD_SUITE twcharapi
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 twcharapi twseekdir	\tstdapis\twcharapi.ini Section1
+RUN_TEST_STEP !Result=0 5 twcharapi twseekdir	\tstdapis\twcharapi.ini Section1_1
+
+RUN_TEST_STEP !Result=0 5 twcharapi twtelldir	\tstdapis\twcharapi.ini Section2
+RUN_TEST_STEP !Result=0 5 twcharapi twtelldir	\tstdapis\twcharapi.ini Section2_1
+
+RUN_TEST_STEP !Result=0 5 twcharapi twasctime   \tstdapis\twcharapi.ini Section3
+RUN_TEST_STEP !Result=0 5 twcharapi twasctime   \tstdapis\twcharapi.ini Section3_1
+RUN_TEST_STEP !Result=0 5 twcharapi twasctime   \tstdapis\twcharapi.ini Section3_2
+RUN_TEST_STEP !Result=0 5 twcharapi twasctime   \tstdapis\twcharapi.ini Section3_3
+
+//RUN_TEST_STEP !Result=0 5 twcharapi twctime	\tstdapis\twcharapi.ini Section4
+//RUN_TEST_STEP !Result=0 5 twcharapi twctime	\tstdapis\twcharapi.ini Section4_1
+//RUN_TEST_STEP !Result=0 5 twcharapi twctime	\tstdapis\twcharapi.ini Section4_2
+
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcat	\tstdapis\twcharapi.ini Section5
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcat	\tstdapis\twcharapi.ini Section5_1
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcat	\tstdapis\twcharapi.ini Section5_2
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcat	\tstdapis\twcharapi.ini Section5_3
+
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcpy	\tstdapis\twcharapi.ini Section6
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcpy	\tstdapis\twcharapi.ini Section6_1
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcpy	\tstdapis\twcharapi.ini Section6_2
+RUN_TEST_STEP !Result=0 5 twcharapi twcslcpy	\tstdapis\twcharapi.ini Section6_3
+
+RUN_TEST_STEP !Result=0 5 twcharapi twsetlocale	\tstdapis\twcharapi.ini Section7
+RUN_TEST_STEP !Result=0 5 twcharapi twsetlocale	\tstdapis\twcharapi.ini Section7_1
+RUN_TEST_STEP !Result=0 5 twcharapi twsetlocale	\tstdapis\twcharapi.ini Section7_2
+RUN_TEST_STEP !Result=0 5 twcharapi twsetlocale	\tstdapis\twcharapi.ini Section7_3
+RUN_TEST_STEP !Result=0 5 twcharapi twsetlocale	\tstdapis\twcharapi.ini Section7_4
+
+RUN_TEST_STEP !Result=0 5 twcharapi twperror	
+
+RUN_TEST_STEP !Result=0 5 twcharapi twcserror	\tstdapis\twcharapi.ini Section8
+RUN_TEST_STEP !Result=0 5 twcharapi twcserror	\tstdapis\twcharapi.ini Section8_1
+
+RUN_TEST_STEP !Result=0 5 twcharapi twfindfirst	
+RUN_TEST_STEP !Result=0 5 twcharapi twfindclose	
+
+//RUN_TEST_STEP !Result=0 5 twcharapi twsetlocale1
+RUN_TEST_STEP !Result=0 5 twcharapi twfindfirst1
+RUN_TEST_STEP !Result=0 5 twcharapi twfindnext1
+
+RUN_TEST_STEP !Result=0 5 twcharapi wcreat2
+RUN_TEST_STEP !Result=0 5 twcharapi wpopen3_1

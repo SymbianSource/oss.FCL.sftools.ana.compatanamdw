@@ -1,0 +1,2018 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName		MM-ECM-PublicApi
+//! @SYMScriptTestEnvironment	This test script requires a basic ROM with either a test Camera implementation
+//!				or hardware that has one or more cameras.
+/////////////////////////////////////////////////////////////////////
+// MM-ECM-PublicApi.script
+//
+// Tests all public elements of the CCamera class
+// as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CCamera.
+// Negative testing is performed to confirm that correct errors are returned when incorrect parameters are given.
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE	T_Camera
+
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0003
+//! @SYMTestCaseID		MM-ECM-PublicApi-0003
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		25/11/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests start viewfinder bitmaps
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), ViewFinderActive(), StartViewFinderBitmapsL(), ViewFinderActive(), StopViewFinder(), PowerOff(), Release()
+//! @SYMTestActions		Call to viewfinder  bitmaps starts vf ok
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Camera is initialised and viewfinder bitmaps started ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0003-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0003-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	ViewFinderActive	MM-ECM-PublicApi-0003-001-ViewFinderActive_command06
+		COMMAND		camera1	StartViewFinderBitmapsL
+		COMMAND		camera1	ViewFinderActive	MM-ECM-PublicApi-0003-001-ViewFinderActive_command08
+		DELAY	5000000
+		COMMAND		camera1	StopViewFinder
+		COMMAND		camera1	ViewFinderActive	MM-ECM-PublicApi-0003-001-ViewFinderActive_command11
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0003
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0006
+//! @SYMTestCaseID		MM-ECM-PublicApi-0006
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		25/11/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Test video recording
+//! @SYMTestActions		Initialise the camera , enumerate video properties and
+//!				use it to record some video then stop the recording
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), NewDuplicateL(), PowerOff(), Release()
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Camera is initialised and a new duplicate created ok
+//!				using MObserver interface
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		CREATE_OBJECT	CCamera	camera2
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0006-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0006-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera2	NewDuplicateL		MM-ECM-PublicApi-0006-001-NewDuplicateL_command07
+		DELAY	3000000
+		COMMAND		camera2	PowerOff
+		COMMAND		camera2	Release
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0006
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0009
+//! @SYMTestCaseID		MM-ECM-PublicApi-0009
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), Handle(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormat16bitRGB444
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0009-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0009-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	Handle
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0009-001-PrepareImageCaptureL_command07
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0009-001-CaptureImage_command08
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0009
+
+START_TESTCASE 			MM-ECM-PublicApi-0010
+//! @SYMTestCaseID		MM-ECM-PublicApi-0010
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Test taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatMonochrome
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0010-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0010-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0010-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0010-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0010
+
+START_TESTCASE 			MM-ECM-PublicApi-0011
+//! @SYMTestCaseID		MM-ECM-PublicApi-0011
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormat16BitRGB565
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0011-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0011-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0011-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0011-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0011
+
+START_TESTCASE 			MM-ECM-PublicApi-0012
+//! @SYMTestCaseID		MM-ECM-PublicApi-0012
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormat32BitRGB888
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0012-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0012-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0012-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0012-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE	 		MM-ECM-PublicApi-0012
+
+START_TESTCASE 			MM-ECM-PublicApi-0013
+//! @SYMTestCaseID		MM-ECM-PublicApi-0013
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatJpeg
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0013-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0013-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0013-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0013-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0013
+
+START_TESTCASE 			MM-ECM-PublicApi-0014
+//! @SYMTestCaseID		MM-ECM-PublicApi-0014
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatExif
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults 	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0014-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0014-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0014-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0014-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0014
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0018
+//! @SYMTestCaseID		MM-ECM-PublicApi-0018
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatUserDefined
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0018-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0018-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0018-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0018-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0018
+
+START_TESTCASE 			MM-ECM-PublicApi-0019
+//! @SYMTestCaseID		MM-ECM-PublicApi-0019
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatYUV420Interleaved
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0019-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0019-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0019-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0019-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0019
+
+START_TESTCASE 			MM-ECM-PublicApi-0020
+//! @SYMTestCaseID		MM-ECM-PublicApi-0020
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatYUV422Reversed
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0020-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0020-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0020-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	CaptureImage		MM-ECM-PublicApi-0020-001-CaptureImage_command07
+		OUTSTANDING
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0020
+
+START_TESTCASE 			MM-ECM-PublicApi-0021
+//! @SYMTestCaseID		MM-ECM-PublicApi-0021
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatYUV420
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0021-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0021-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0021-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0021
+
+START_TESTCASE 			MM-ECM-PublicApi-0022
+//! @SYMTestCaseID		MM-ECM-PublicApi-0022
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a stilll image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), PowerOff(), Release(),
+//! @SYMTestActions		Take a picture using EFormatYUV422Reversed
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0022-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0022-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0022-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0022
+
+START_TESTCASE 			MM-ECM-PublicApi-0023
+//! @SYMTestCaseID		MM-ECM-PublicApi-0023
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatYUV444
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0023-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0023-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0023-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0023
+
+START_TESTCASE 			MM-ECM-PublicApi-0024
+//! @SYMTestCaseID		MM-ECM-PublicApi-0024
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatYUV420SemiPlanar
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0024-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0024-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0024-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+	END_TEST_BLOCK
+END_TESTCASE			MM-ECM-PublicApi-0024
+
+START_TESTCASE 			MM-ECM-PublicApi-0025
+//! @SYMTestCaseID		MM-ECM-PublicApi-0025
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), PrepareImageCaptureL(), PowerOff(), Release()
+//! @SYMTestActions		Take a picture using EFormatFbsBitmapColor16MU
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0025-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0025-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0025-001-PrepareImageCaptureL_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0025
+
+START_TESTCASE 			MM-ECM-PublicApi-0026
+//! @SYMTestCaseID		MM-ECM-PublicApi-0026
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Tests taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), SetExposureL(), Exposure(), PowerOff(), Release()
+//! @SYMTestActions		Test the SetExposureL and GetExposure methods with all enums
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0026-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0026-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command06
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command07
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command08
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command09
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command10
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command11
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command12
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command13
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command14
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command15
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command16
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command17
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command18
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command19
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command20
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command21
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command22
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command23
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command24
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command25
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command26
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command27
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command28
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command29
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command30
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command31
+		COMMAND		camera1	SetExposureL		MM-ECM-PublicApi-0026-001-SetExposureL_command32
+		COMMAND		camera1	Exposure		MM-ECM-PublicApi-0026-001-Exposure_command33
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0026
+
+START_TESTCASE 			MM-ECM-PublicApi-0027
+//! @SYMTestCaseID		MM-ECM-PublicApi-0027
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Test the flash
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), SetFlashL(), Flash(), PowerOff(), Release()
+//! @SYMTestActions		Test the SetFlashL and GetFlash methods with all enums
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0027-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0027-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command06
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command07
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command08
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command09
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command10
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command11
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command12
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command13
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command14
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command15
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command16
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command17
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command18
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command19
+		COMMAND		camera1	SetFlashL		MM-ECM-PublicApi-0027-001-SetFlashL_command20
+		COMMAND		camera1	Flash			MM-ECM-PublicApi-0027-001-Flash_command21
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0027
+
+START_TESTCASE 			MM-ECM-PublicApi-0028
+//! @SYMTestCaseID		MM-ECM-PublicApi-0028
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		08/12/2005
+//! @SYMTestCaseDependencies	setup_t_multimedia.script
+//! @SYMTestCaseDesc		Test white balance functionality
+//!				Uses API elements: CamerasAvailable(), NewL(), Reserve(), PowerOn(), CameraInfo(), SetWhiteBalanceL(), WhiteBalance(), PowerOff(), Release()
+//! @SYMTestActions		Test the SetWhiteBalanceL and GetWhiteBalance methods with all enums
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	100	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0028-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0028-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command06
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command07
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command08
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command09
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command10
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command11
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command12
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command13
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command14
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command15
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command16
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command17
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command18
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command19
+		COMMAND		camera1	SetWhiteBalanceL	MM-ECM-PublicApi-0028-001-SetWhiteBalanceL_command20
+		COMMAND		camera1	WhiteBalance		MM-ECM-PublicApi-0028-001-WhiteBalance_command21
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0028
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0033
+//! @SYMTestCaseID		MM-ECM-PublicApi-0033
+//! @SYMAPI			CCamera
+//! @SYMAuthor			Matthew Flowers
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Create a camera object, using an out-of-range camera index, with MCameraObserver.
+//!				Uses API elements: NewL().
+//! @SYMTestActions    		1. Create camera object using out-of-range camera index.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0033-001-CamerasAvailable_command01
+		COMMAND	!Error=-5	camera1	NewL			MM-ECM-PublicApi-0033-001-NewL_command02
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0033
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0037
+//! @SYMTestCaseID		MM-ECM-PublicApi-0037
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Set zoom factor lower than minimum value.
+//!				Uses API elements: NewL(), SetZoomFactorL().
+//! @SYMTestActions    		1. Create camera object. 2. Set zoom factor lower than minimum value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0037-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0037-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	SetZoomFactorL		MM-ECM-PublicApi-0037-001-SetZoomFactorL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0037
+
+START_TESTCASE 			MM-ECM-PublicApi-0038
+//! @SYMTestCaseID		MM-ECM-PublicApi-0038
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Set zoom factor higher than maximum value.
+//!				Uses API elements: NewL(), SetZoomFactorL().
+//! @SYMTestActions    		1. Create camera object. 2. Set zoom factor higher than maximum value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0038-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0038-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	SetZoomFactorL		MM-ECM-PublicApi-0038-001-SetZoomFactorL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0038
+
+START_TESTCASE 			MM-ECM-PublicApi-0039
+//! @SYMTestCaseID		MM-ECM-PublicApi-0039
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Set digital zoom factor lower than minimum value.
+//!				Uses API elements: NewL(), SetDigitalZoomFactorL().
+//! @SYMTestActions    		1. Create camera object. 2. Set digital zoom factor lower than minimum value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrInUse is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0039-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0039-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	SetDigitalZoomFactorL	MM-ECM-PublicApi-0039-001-SetDigitalZoomFactorL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0039
+
+START_TESTCASE 			MM-ECM-PublicApi-0040
+//! @SYMTestCaseID		MM-ECM-PublicApi-0040
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Set digital zoom factor higher than maximum value.
+//!				Uses API elements: NewL(), SetDigitalZoomFactorL().
+//! @SYMTestActions    		1. Create camera object. 2. Set digital zoom factor higher than maximum value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrInUse is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0040-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0040-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	SetDigitalZoomFactorL	MM-ECM-PublicApi-0040-001-SetDigitalZoomFactorL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0040
+
+START_TESTCASE 			MM-ECM-PublicApi-0061
+//! @SYMTestCaseID		MM-ECM-PublicApi-0061
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Start View Finder Bitmaps without powering on, with no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), StartViewFinderBitmapsL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera.
+//!				3. Start View Finder Bitmaps.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotReady is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0061-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0061-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	ViewFinderActive	MM-ECM-PublicApi-0061-001-ViewFinderActive_command05
+		COMMAND	!Error=-18	camera1	StartViewFinderBitmapsL
+		DELAY	5000000
+		COMMAND			camera1	StopViewFinder
+		COMMAND			camera1	ViewFinderActive	MM-ECM-PublicApi-0061-001-ViewFinderActive_command09
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0061
+
+START_TESTCASE 			MM-ECM-PublicApi-0062
+//! @SYMTestCaseID		MM-ECM-PublicApi-0062
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Start View Finder Bitmaps without reserving, with no clipped rectangle.
+//!				Uses API elements: NewL(), StartViewFinderBitmapsL().
+//! @SYMTestActions    		1. Create camera object. 2. Start View Finder Bitmaps.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrInUse is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0062-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0062-001-NewL_command02
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	ViewFinderActive	MM-ECM-PublicApi-0062-001-ViewFinderActive_command04
+		COMMAND	!Error=-14	camera1	StartViewFinderBitmapsL
+		DELAY	5000000
+		COMMAND			camera1	StopViewFinder
+		COMMAND			camera1	ViewFinderActive	MM-ECM-PublicApi-0062-001-ViewFinderActive_command08
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0062
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0075
+//! @SYMTestCaseID		MM-ECM-PublicApi-0075
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture without powering on, with valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera.
+//!				3. Prepare Image Capture specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0075-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0075-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	Handle
+		COMMAND			camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0075-001-PrepareImageCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0075
+
+START_TESTCASE 			MM-ECM-PublicApi-0076
+//! @SYMTestCaseID		MM-ECM-PublicApi-0076
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture without reserving, with valid clipped rectangle.
+//!				Uses API elements: NewL(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2. Prepare Image Capture specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0076-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0076-001-NewL_command02
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0076-001-PrepareImageCaptureL_command04
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0076
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0078
+//! @SYMTestCaseID		MM-ECM-PublicApi-0078
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture  with invalid image format, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Image Capture with invalid image format, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0078-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0078-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0078-001-PrepareImageCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0078
+
+START_TESTCASE 			MM-ECM-PublicApi-0079
+//! @SYMTestCaseID		MM-ECM-PublicApi-0079
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture  with size index lower than minimum, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Image Capture with size index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0079-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0079-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0079-001-PrepareImageCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0079
+
+START_TESTCASE 			MM-ECM-PublicApi-0080
+//! @SYMTestCaseID		MM-ECM-PublicApi-0080
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture  with size index lower than minimum, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Image Capture with size index lower than minimum, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0080-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0080-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0080-001-PrepareImageCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0080
+
+START_TESTCASE 			MM-ECM-PublicApi-0082
+//! @SYMTestCaseID		MM-ECM-PublicApi-0082
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture with size index higher than maximum, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Image Capture with size index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0082-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0082-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0082-001-PrepareImageCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0082
+
+START_TESTCASE 			MM-ECM-PublicApi-0083
+//! @SYMTestCaseID		MM-ECM-PublicApi-0083
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Image Capture with size index higher than maximum, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareImageCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Image Capture with size index higher than maximum, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0083-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0083-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareImageCaptureL	MM-ECM-PublicApi-0083-001-PrepareImageCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0083
+
+START_TESTCASE 			MM-ECM-PublicApi-0084
+//! @SYMTestCaseID		MM-ECM-PublicApi-0084
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Capture Sizes with size index lower than minimum.
+//!				Uses API elements: NewL(), EnumerateCaptureSizes().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Capture Sizes with size index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero capture size is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0084-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0084-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	Handle
+		COMMAND		camera1	EnumerateCaptureSizes	MM-ECM-PublicApi-0084-001-EnumerateCaptureSizes_command07
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0084
+
+START_TESTCASE 			MM-ECM-PublicApi-0085
+//! @SYMTestCaseID		MM-ECM-PublicApi-0085
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Capture Sizes with size index higher than maximum.
+//!				Uses API elements: NewL(), EnumerateCaptureSizes().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Capture Sizes with size index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero capture size is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0085-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0085-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	Handle
+		COMMAND		camera1	EnumerateCaptureSizes	MM-ECM-PublicApi-0085-001-EnumerateCaptureSizes_command07
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0085
+
+START_TESTCASE 			MM-ECM-PublicApi-0090
+//! @SYMTestCaseID		MM-ECM-PublicApi-0090
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture without powering on, with valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera.
+//!				3. Prepare Video Capture specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0090-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0090-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0090-001-PrepareVideoCaptureL_command05
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0090
+
+START_TESTCASE 			MM-ECM-PublicApi-0091
+//! @SYMTestCaseID		MM-ECM-PublicApi-0091
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture without reserving, with valid clipped rectangle.
+//!				Uses API elements: NewL(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2. Prepare Video Capture specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0091-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0091-001-NewL_command02
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0091-001-PrepareVideoCaptureL_command04
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0091
+
+START_TESTCASE 			MM-ECM-PublicApi-0092
+//! @SYMTestCaseID		MM-ECM-PublicApi-0092
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture  with invalid Video format, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with invalid Video format.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0092-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0092-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0092-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0092
+
+START_TESTCASE 			MM-ECM-PublicApi-0093
+//! @SYMTestCaseID		MM-ECM-PublicApi-0093
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture  with invalid Video format, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with invalid Video format, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0093-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0093-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0093-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0093
+
+START_TESTCASE 			MM-ECM-PublicApi-0094
+//! @SYMTestCaseID		MM-ECM-PublicApi-0094
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture  with size index lower than minimum, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with size index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0094-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0094-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0094-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0094
+
+START_TESTCASE 			MM-ECM-PublicApi-0095
+//! @SYMTestCaseID		MM-ECM-PublicApi-0095
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture  with size index lower than minimum, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with size index lower than minimum, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0095-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0095-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0095-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0095
+
+START_TESTCASE 			MM-ECM-PublicApi-0096
+//! @SYMTestCaseID		MM-ECM-PublicApi-0096
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with size index higher than maximum, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with size index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0096-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0096-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0096-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0096
+
+START_TESTCASE 			MM-ECM-PublicApi-0097
+//! @SYMTestCaseID		MM-ECM-PublicApi-0097
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with size index higher than maximum, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with size index higher than maximum, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0097-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0097-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0097-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0097
+
+START_TESTCASE 			MM-ECM-PublicApi-0098
+//! @SYMTestCaseID		MM-ECM-PublicApi-0098
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture  with rate index lower than minimum, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with rate index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0098-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0098-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0098-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0098
+
+START_TESTCASE 			MM-ECM-PublicApi-0099
+//! @SYMTestCaseID		MM-ECM-PublicApi-0099
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture  with rate index lower than minimum, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with rate index lower than minimum, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0099-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0099-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0099-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0099
+
+START_TESTCASE 			MM-ECM-PublicApi-0100
+//! @SYMTestCaseID		MM-ECM-PublicApi-0100
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with rate index higher than maximum, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with rate index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0100-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0100-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0100-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0100
+
+START_TESTCASE 			MM-ECM-PublicApi-0101
+//! @SYMTestCaseID		MM-ECM-PublicApi-0101
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with rate index higher than maximum, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with rate index higher than maximum, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0101-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0101-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0101-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0101
+
+START_TESTCASE 			MM-ECM-PublicApi-0102
+//! @SYMTestCaseID		MM-ECM-PublicApi-0102
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with invalid number of buffers, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with invalid number of buffers.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0102-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0102-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0102-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0102
+
+START_TESTCASE 			MM-ECM-PublicApi-0103
+//! @SYMTestCaseID		MM-ECM-PublicApi-0103
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with invalid number of buffers, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with invalid number of buffers, specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNone is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0103-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0103-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0103-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0103
+
+START_TESTCASE 			MM-ECM-PublicApi-0104
+//! @SYMTestCaseID		MM-ECM-PublicApi-0104
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with invalid frames per buffer value, and no clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with invalid frames per buffer value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0104-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0104-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND	!Error=-5	camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0104-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0104
+
+START_TESTCASE 			MM-ECM-PublicApi-0105
+//! @SYMTestCaseID		MM-ECM-PublicApi-0105
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Prepare Video Capture with invalid frames per buffer value, and valid clipped rectangle.
+//!				Uses API elements: NewL(), Reserve(), PowerOn(), PrepareVideoCaptureL().
+//! @SYMTestActions    		1. Create camera object. 2, Reserve camera. 3. Power on.
+//!				4. Prepare Video Capture with invalid frames per buffer value specifying a rectangle.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrNotSupported is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0105-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0105-001-NewL_command02
+		COMMAND			camera1	Reserve
+		OUTSTANDING
+		COMMAND			camera1	PowerOn
+		OUTSTANDING
+		COMMAND			camera1	CameraInfo
+		COMMAND			camera1	PrepareVideoCaptureL	MM-ECM-PublicApi-0105-001-PrepareVideoCaptureL_command06
+		COMMAND			camera1	PowerOff
+		COMMAND			camera1	Release
+		COMMAND			camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0105
+
+START_TESTCASE 			MM-ECM-PublicApi-0107
+//! @SYMTestCaseID		MM-ECM-PublicApi-0107
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Sizes with size index lower than minimum.
+//!				Uses API elements: NewL(), EnumerateVideoFrameSizes().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Sizes with size index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame size is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0107-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0107-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameSizes	MM-ECM-PublicApi-0107-001-EnumerateVideoFrameSizes_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0107
+
+START_TESTCASE 			MM-ECM-PublicApi-0108
+//! @SYMTestCaseID		MM-ECM-PublicApi-0108
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Sizes with size index higher than maximum.
+//!				Uses API elements: NewL(), EnumerateVideoFrameSizes().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Sizes with size index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame size is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0108-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0108-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameSizes	MM-ECM-PublicApi-0108-001-EnumerateVideoFrameSizes_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0108
+
+START_TESTCASE 			MM-ECM-PublicApi-0110
+//! @SYMTestCaseID		MM-ECM-PublicApi-0110
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Rates with size index lower than minimum.
+//!				Uses API elements: NewL(), EnumerateVideoFrameRates().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Rates with size index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame rate is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0110-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0110-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameRates	MM-ECM-PublicApi-0110-001-EnumerateVideoFrameRates_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0110
+
+START_TESTCASE 			MM-ECM-PublicApi-0111
+//! @SYMTestCaseID		MM-ECM-PublicApi-0111
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Rates with size index higher than maximum.
+//!				Uses API elements: NewL(), EnumerateVideoFrameRates().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Rates with size index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame rate is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0111-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0111-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameRates	MM-ECM-PublicApi-0111-001-EnumerateVideoFrameRates_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0111
+
+START_TESTCASE 			MM-ECM-PublicApi-0113
+//! @SYMTestCaseID		MM-ECM-PublicApi-0113
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Rates with rate index lower than minimum.
+//!				Uses API elements: NewL(), EnumerateVideoFrameRates().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Rates with rate index lower than minimum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame rate is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0113-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0113-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameRates	MM-ECM-PublicApi-0113-001-EnumerateVideoFrameRates_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0113
+
+START_TESTCASE 			MM-ECM-PublicApi-0114
+//! @SYMTestCaseID		MM-ECM-PublicApi-0114
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Rates with rate index higher than maximum.
+//!				Uses API elements: NewL(), EnumerateVideoFrameRates().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Rates with rate index higher than maximum.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame rate is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0114-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0114-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameRates	MM-ECM-PublicApi-0114-001-EnumerateVideoFrameRates_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0114
+
+START_TESTCASE 			MM-ECM-PublicApi-0115
+//! @SYMTestCaseID		MM-ECM-PublicApi-0115
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Enumerate Video Frame Rates with invalid exposure mode.
+//!				Uses API elements: NewL(), EnumerateVideoFrameRates().
+//! @SYMTestActions    		1. Create camera object. 2. Enumerate Video Frame Rates with invalid exposure mode.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Zero frame rates are returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable		MM-ECM-PublicApi-0115-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL				MM-ECM-PublicApi-0115-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	EnumerateVideoFrameRates	MM-ECM-PublicApi-0115-001-EnumerateVideoFrameRates_command06
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0115
+
+START_TESTCASE 			MM-ECM-PublicApi-0116
+//! @SYMTestCaseID		MM-ECM-PublicApi-0116
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Set Jpeg Quality below minimum value.
+//!				Uses API elements: NewL(), SetJpegQuality(), JpegQuality().
+//! @SYMTestActions    		1. Create camera object. 2. Set valid Jpeg Quality. 3. Set Jpeg Quality below minimum value.
+//!				4. Check that Jpeg Quality is the valid value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Invalid Jpeg Quality is ignored and no error is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0116-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0116-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	SetJpegQuality		MM-ECM-PublicApi-0116-001-SetJpegQuality_command06
+		COMMAND		camera1	JpegQuality		MM-ECM-PublicApi-0116-001-JpegQuality_command07
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0116
+
+START_TESTCASE 			MM-ECM-PublicApi-0117
+//! @SYMTestCaseID		MM-ECM-PublicApi-0117
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		25/01/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Set Jpeg Quality above maximum value.
+//!				Uses API elements: NewL(), SetJpegQuality(), JpegQuality().
+//! @SYMTestActions    		1. Create camera object. 2. Set valid Jpeg Quality. 3. Set Jpeg Quality above maximum value.
+//!				4. Check that Jpeg Quality is the valid value.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Invalid Jpeg Quality is ignored and no error is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0117-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0117-001-NewL_command02
+		COMMAND		camera1	Reserve
+		OUTSTANDING
+		COMMAND		camera1	PowerOn
+		OUTSTANDING
+		COMMAND		camera1	CameraInfo
+		COMMAND		camera1	SetJpegQuality		MM-ECM-PublicApi-0117-001-SetJpegQuality_command06
+		COMMAND		camera1	JpegQuality		MM-ECM-PublicApi-0117-001-JpegQuality_command07
+		COMMAND		camera1	PowerOff
+		COMMAND		camera1	Release
+		COMMAND		camera1	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0117
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0120
+//! @SYMTestCaseID		MM-ECM-PublicApi-0120
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		06/04/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Create duplicate camera and test start viewfinder bitmaps
+//!				Uses API elements: CamerasAvailable(), NewL(), NewDuplicateL(), Reserve(), PowerOn(), CameraInfo(), ViewFinderActive(), StartViewFinderBitmapsL(), ViewFinderActive(), StopViewFinder(), PowerOff(), Release()
+//! @SYMTestActions		Dulicate a camera and start viewfinder bitmaps
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Camera is duplicated and viewfinder bitmaps started ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		CREATE_OBJECT	CCamera	camera2
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0120-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0120-001-NewL_command02
+		COMMAND		camera2	NewDuplicateL		MM-ECM-PublicApi-0120-001-NewDuplicateL_command04
+		COMMAND		camera2	Reserve
+		OUTSTANDING
+		COMMAND		camera2	PowerOn
+		OUTSTANDING
+		COMMAND		camera2	CameraInfo
+		COMMAND		camera2	ViewFinderActive	MM-ECM-PublicApi-0120-001-ViewFinderActive_command08
+		COMMAND		camera2	StartViewFinderBitmapsL
+		COMMAND		camera2	ViewFinderActive	MM-ECM-PublicApi-0120-001-ViewFinderActive_command10
+		DELAY	5000000
+		COMMAND		camera2	StopViewFinder
+		COMMAND		camera2	ViewFinderActive	MM-ECM-PublicApi-0120-001-ViewFinderActive_command13
+		COMMAND		camera2	PowerOff
+		COMMAND		camera2	Release
+		COMMAND		camera2	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0120
+
+START_TESTCASE 			MM-ECM-PublicApi-0122
+//! @SYMTestCaseID		MM-ECM-PublicApi-0122
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		06/04/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Create duplicate camera and test taking a still image
+//!				Uses API elements: CamerasAvailable(), NewL(), NewDuplicateL(), Reserve(), PowerOn(), CameraInfo(), Handle(), PrepareImageCaptureL(), CaptureImage(), PowerOff(), Release()
+//! @SYMTestActions		Dulicate a camera and take a picture using EFormat16bitRGB444
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults  	Picture taken ok
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		CREATE_OBJECT	CCamera	camera2
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0122-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0122-001-NewL_command02
+		COMMAND		camera2	NewDuplicateL		MM-ECM-PublicApi-0122-001-NewDuplicateL_command04
+		COMMAND		camera2	Reserve
+		OUTSTANDING
+		COMMAND		camera2	PowerOn
+		OUTSTANDING
+		COMMAND		camera2	CameraInfo
+		COMMAND		camera2	Handle
+		COMMAND		camera2	PrepareImageCaptureL	MM-ECM-PublicApi-0122-001-PrepareImageCaptureL_command09
+		COMMAND		camera2	CaptureImage		MM-ECM-PublicApi-0122-001-CaptureImage_command10
+		OUTSTANDING
+		COMMAND		camera2	PowerOff
+		COMMAND		camera2	Release
+		COMMAND		camera2	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0122
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0124
+//! @SYMTestCaseID		MM-ECM-PublicApi-0124
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		06/04/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Create duplicate camera and test the flash
+//!				Uses API elements: CamerasAvailable(), NewL(), NewDuplicateL(), Reserve(), PowerOn(), CameraInfo(), SetFlashL(), Flash(), PowerOff(), Release()
+//! @SYMTestActions		Dulicate a camera and test the SetFlashL and GetFlash methods with all enums
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	Flash functionality works ok.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera		\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		CREATE_OBJECT	CCamera	camera2
+		COMMAND		camera1	CamerasAvailable	MM-ECM-PublicApi-0124-001-CamerasAvailable_command01
+		COMMAND		camera1	NewL			MM-ECM-PublicApi-0124-001-NewL_command02
+		COMMAND		camera2	NewDuplicateL		MM-ECM-PublicApi-0124-001-NewDuplicateL_command04
+		COMMAND		camera2	Reserve
+		OUTSTANDING
+		COMMAND		camera2	PowerOn
+		OUTSTANDING
+		COMMAND		camera2	CameraInfo
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command08
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command09
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command10
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command11
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command12
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command13
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command14
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command15
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command16
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command17
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command18
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command19
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command20
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command21
+		COMMAND		camera2	SetFlashL		MM-ECM-PublicApi-0124-001-SetFlashL_command22
+		COMMAND		camera2	Flash			MM-ECM-PublicApi-0124-001-Flash_command23
+		COMMAND		camera2	PowerOff
+		COMMAND		camera2	Release
+		COMMAND		camera2	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0124
+
+
+START_TESTCASE 			MM-ECM-PublicApi-0126
+//! @SYMTestCaseID		MM-ECM-PublicApi-0126
+//! @SYMAPI			CCamera
+//! @SYMAuthor			James Mechen
+//! @SYMCreationDate		06/04/2006
+//! @SYMTestCaseDependencies	setup-MM-ECM-PublicApi.script
+//! @SYMTestCaseDesc		Create duplicate camera and try to power on without calling Reserve.
+//!				Uses API elements: CamerasAvailable(), NewL(), NewDuplicateL(), PowerOn().
+//! @SYMTestActions    		1. Create duplicate camera object. 2. Power on camera.
+//! @SYMTestStatus		Implemented
+//! @SYMTestPriority		High
+//! @SYMTestExpectedResults	KErrInUse is returned.
+//! @SYMTestType		CIT
+	START_TEST_BLOCK	10	T_Camera			\multimedia\MM-ECM-PublicApi.ini
+		CREATE_OBJECT	CCamera	camera1
+		CREATE_OBJECT	CCamera	camera2
+		COMMAND			camera1	CamerasAvailable	MM-ECM-PublicApi-0126-001-CamerasAvailable_command01
+		COMMAND			camera1	NewL			MM-ECM-PublicApi-0126-001-NewL_command02
+		COMMAND			camera2	NewDuplicateL		MM-ECM-PublicApi-0126-001-NewDuplicateL_command04
+		COMMAND	!AsyncError=-14	camera2	PowerOn
+		OUTSTANDING
+		COMMAND			camera2	PowerOff
+		COMMAND			camera2	Release
+		COMMAND			camera2	~
+	END_TEST_BLOCK
+END_TESTCASE 			MM-ECM-PublicApi-0126
+

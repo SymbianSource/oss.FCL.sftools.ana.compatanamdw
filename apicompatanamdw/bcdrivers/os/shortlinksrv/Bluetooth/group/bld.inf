@@ -1,0 +1,34 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+#include "../testsuites/group/bld.inf"
+#include "../T_BTSockAddrAPI/group/bld.inf"
+//#include "../T_BTSockAPI/group/bld.inf"
+//#include "../T_BTSdpAPI/group/bld.inf"
+
+PRJ_TESTEXPORTS
+
+../scripts/setup_t_bluetooth.script		/epoc32/winscw/c/bluetooth/setup_t_bluetooth.script
+../scripts/t_bluetooth.script					/epoc32/winscw/c/bluetooth/t_bluetooth.script
+../config/t_bluetooth.tcs							/epoc32/winscw/c/bluetooth/t_bluetooth.tcs
+
+
+//Cfg files
+CommDbWintap.xml											/epoc32/winscw/c/bluetooth/CommDbWintap.xml
+CommDbNtras.xml												/epoc32/winscw/c/bluetooth/CommDbNtras.xml
+

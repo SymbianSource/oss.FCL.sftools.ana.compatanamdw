@@ -1,0 +1,29 @@
+//
+// Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tftw
+LOAD_SUITE tftw
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw \tstdapis\tftw.ini Section_ftw_nonexistent_dir
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw \tstdapis\tftw.ini Section_ftw_long_dir_name
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw \tstdapis\tftw.ini Section_ftw_null
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw2 \tstdapis\tftw.ini Section_negative_ndirs
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw3
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw4 \tstdapis\tftw.ini Section_ftw_invalid_path
+RUN_TEST_STEP !Result=0 5 tftw  TestFtw5
+
+

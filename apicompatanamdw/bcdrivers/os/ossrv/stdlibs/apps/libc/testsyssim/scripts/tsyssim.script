@@ -1,0 +1,43 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tsyssim
+LOAD_SUITE tsyssim
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tsyssim  getgrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  setgrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  geteffgrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  seteffgrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  setregrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  getusrid
+RUN_TEST_STEP !Result=0 5 tsyssim  setusrid
+RUN_TEST_STEP !Result=0 5 tsyssim  geteffusrid
+RUN_TEST_STEP !Result=0 5 tsyssim  seteffusrid
+RUN_TEST_STEP !Result=0 5 tsyssim  setreusrid
+RUN_TEST_STEP !Result=0 5 tsyssim  getpgrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  setpgrpid
+RUN_TEST_STEP !Result=0 5 tsyssim  getprocgrp
+RUN_TEST_STEP !Result=0 5 tsyssim  setprocgrp
+RUN_TEST_STEP !Result=0 5 tsyssim  getgrps
+RUN_TEST_STEP !Result=0 5 tsyssim  setsessid
+RUN_TEST_STEP !Result=0 5 tsyssim  getpprocid
+RUN_TEST_STEP !Result=0 5 tsyssim  filemask
+RUN_TEST_STEP !Result=0 5 tsyssim  lchowner
+RUN_TEST_STEP !Result=0 5 tsyssim  initgrps
+RUN_TEST_STEP !Result=0 5 tsyssim  schedyield
+RUN_TEST_STEP !Result=0 5 tsyssim  getproioritymax
+RUN_TEST_STEP !Result=0 5 tsyssim  getproioritymin

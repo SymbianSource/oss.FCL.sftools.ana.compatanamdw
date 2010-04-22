@@ -1,0 +1,114 @@
+//
+// Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+
+RUN_UTILS MkDir		${SYSDRIVE}\sip\sipclient\
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csip.script 				${SYSDRIVE}\sip\sipclient\t_csip.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csip.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csip.ini 				${SYSDRIVE}\sip\sipclient\t_csip.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csip.ini
+
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipconnection.script 				${SYSDRIVE}\sip\sipclient\t_csipconnection.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipconnection.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipconnection.ini 					${SYSDRIVE}\sip\sipclient\t_csipconnection.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipconnection.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipconnection-ne.script 				${SYSDRIVE}\sip\sipclient\t_csipconnection-ne.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipconnection.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipconnection-ne.ini 					${SYSDRIVE}\sip\sipclient\t_csipconnection-ne.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipconnection-ne.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\send-sip-request-master.script 				${SYSDRIVE}\sip\sipclient\send-sip-request-master.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\send-sip-request-master.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\send-sip-request-master.ini 					${SYSDRIVE}\sip\sipclient\send-sip-request-master.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\send-sip-request-master.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\receive-sip-request-slave.script 				${SYSDRIVE}\sip\sipclient\receive-sip-request-slave.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\receive-sip-request-slave.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\receive-sip-request-slave.ini 					${SYSDRIVE}\sip\sipclient\receive-sip-request-slave.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\receive-sip-request-slave.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_httpdigest.script 				${SYSDRIVE}\sip\sipclient\t_httpdigest.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_httpdigest.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_httpdigest.ini 					${SYSDRIVE}\sip\sipclient\t_httpdigest.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_httpdigest.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiphttpdigest.script 				${SYSDRIVE}\sip\sipclient\t_csiphttpdigest.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiphttpdigest.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiphttpdigest.ini 					${SYSDRIVE}\sip\sipclient\t_csiphttpdigest.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiphttpdigest.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiphttpdigest-ne.script 				${SYSDRIVE}\sip\sipclient\t_csiphttpdigest-ne.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiphttpdigest-ne.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiphttpdigest-ne.ini 					${SYSDRIVE}\sip\sipclient\t_csiphttpdigest-ne.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiphttpdigest-ne.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipdialog.script 				${SYSDRIVE}\sip\sipclient\t_csipdialog.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipdialog.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipdialog.ini 					${SYSDRIVE}\sip\sipclient\t_csipdialog.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipdialog.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipregistrationbinding.script 				${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipregistrationbinding.ini 				${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipregistrationbinding-ne.script 				${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding-ne.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding-ne.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipregistrationbinding-ne.ini 				${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding-ne.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipregistrationbinding-ne.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipresponseelements.script 		${SYSDRIVE}\sip\sipclient\t_csipresponseelements.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipresponseelements.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipresponseelements.ini 		${SYSDRIVE}\sip\sipclient\t_csipresponseelements.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipresponseelements.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipreferdialogassoc.script 		${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipreferdialogassoc.ini 		${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipreferdialogassoc-ne.script 		${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc-ne.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc-ne.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csipreferdialogassoc-ne.ini 		${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc-ne.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csipreferdialogassoc-ne.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiprefresh.script 		${SYSDRIVE}\sip\sipclient\t_csiprefresh.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiprefresh.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiprefresh.ini 		${SYSDRIVE}\sip\sipclient\t_csiprefresh.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiprefresh.ini
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiprefresh-ne.script 		${SYSDRIVE}\sip\sipclient\t_csiprefresh-ne.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiprefresh-ne.script
+
+RUN_UTILS CopyFile	z:\sip\sipclient\t_csiprefresh-ne.ini 		${SYSDRIVE}\sip\sipclient\t_csiprefresh-ne.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\sip\sipclient\t_csiprefresh-ne.ini

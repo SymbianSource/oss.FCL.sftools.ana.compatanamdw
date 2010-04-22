@@ -1,0 +1,112 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_sendsiprequest.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           5000
+
+
+START_TESTCASE              send-sip-request-master-0004
+//! @SYMTestCaseID          send-sip-request-master-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::SendRequestL(CSIPRequestElements *aElements, CSIPRefresh &aRefresh)
+//! @SYMTestCaseDesc        Creates SIP request and sends it to the given destination. The function must not be used with 
+//!                         SIP requests that creates SIP dialog associations or must be sent within SIP dialog association. 
+//!                         This provokes the Non-invite state machine. This function must be used if the user has created the 
+//!                         registration binding.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and CSIPRefresh.
+//!                         5.Wait for the registration response from SIP stack
+//!                         6.Construct message elements for SIP MESSAGE.
+//!                         7.Send SIP MESSAGE.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\send-sip-request-master.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+        CREATE_OBJECT       CSIPAddress                   address
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPRefresh                   reqrefresh
+        CREATE_OBJECT       CSIPExpiresHeader             expiresheader
+        CREATE_OBJECT       CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      send-sip-request-master-0004-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      send-sip-request-master-0004-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   send-sip-request-master-0004-DecodeL_command03
+        COMMAND             address                       DecodeL                   send-sip-request-master-0004-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      send-sip-request-master-0004-NewL_command05
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      send-sip-request-master-0004-NewL_command06
+        COMMAND				httpdigest					  NewL                      send-sip-request-master-0004-NewL_Command07
+        COMMAND             binding                       RegisterL                 send-sip-request-master-0004-RegisterL_command08
+        COMMAND             httpdigest                    WaitForChallengeReceived  send-sip-request-master-0004-WaitForChallengeReceived_Command09
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			send-sip-request-master-0004-SetCredentialsL_Command10
+        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0004-WaitForIncomingResponse_command11
+        OUTSTANDING
+        COMMAND             expiresheader                 NewL                      send-sip-request-master-0004-NewL_command12
+        COMMAND             reqtoheader                   DecodeL                   send-sip-request-master-0004-DecodeL_command13
+        COMMAND             reqfromheader                 DecodeL                   send-sip-request-master-0004-DecodeL_command14
+        COMMAND             requestelements               NewL                      send-sip-request-master-0004-NewL_command15
+        COMMAND             requestelements               SetMethodL                send-sip-request-master-0004-SetMethodL_command16
+        COMMAND             requestelements               MessageElements           send-sip-request-master-0004-MessageElements_command17
+        COMMAND             messageelements               SetUserHeadersL           send-sip-request-master-0004-SetUserHeadersL_command18
+        COMMAND             contenttypeheader             NewL                      send-sip-request-master-0004-NewL_command19
+        COMMAND             messageelements               SetContentL               send-sip-request-master-0004-SetContentL_command20 
+        COMMAND             requestelements               SetFromHeaderL            send-sip-request-master-0004-SetFromHeaderL_command21
+        COMMAND             requestelements               SetToHeaderL              send-sip-request-master-0004-SetToHeaderL_command22
+        COMMAND             reqrefresh                    NewL
+        COMMAND             sipconnection                 SendRequestL              send-sip-request-master-0004-SendRequestL_command23
+        COMMAND             sipconnection                 WaitForIncomingResponse   send-sip-request-master-0004-WaitForIncomingResponse_command24
+        OUTSTANDING
+        COMMAND             toheader                      ~
+        COMMAND             address                       ~
+        COMMAND             contactheader                 ~
+        COMMAND             refresh                       ~
+        COMMAND             httpdigest                    ~
+        COMMAND             binding                       ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             requestelements               ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             reqtoheader                   ~
+        COMMAND             reqfromheader                 ~
+        COMMAND             reqrefresh                    ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      send-sip-request-master-0004
+

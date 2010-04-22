@@ -1,0 +1,32 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tseminit
+LOAD_SUITE tseminit
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tseminit TestSem273
+RUN_TEST_STEP !Result=0 5 tseminit TestSem274
+//RUN_TEST_STEP !Result=0 5 tseminit TestSem689
+//RUN_TEST_STEP !Result=0 5 tseminit TestSem690
+//RUN_TEST_STEP !Result=0 5 tseminit TestSem691
+//RUN_TEST_STEP !Result=0 5 tseminit TestSem692
+RUN_TEST_STEP !Result=0 5 tseminit TestSem693
+RUN_TEST_STEP !Result=0 5 tseminit TestSem694
+RUN_TEST_STEP !Result=0 5 tseminit TestSem695
+//RUN_TEST_STEP !Result=0 5 tseminit TestSem696
+
+

@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<doc xmlns:pre1="www.test.uri" doc="ATTR_value" ID="1" pre1:IDD="2">test content<![CDATA[test < test2 & 
+> ;]]><!--test comment--><?test test value?><testPref:doc xmlns:testPref="testNamespace"/></doc>

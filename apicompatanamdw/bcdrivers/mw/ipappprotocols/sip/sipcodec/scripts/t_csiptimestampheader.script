@@ -1,0 +1,276 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csiptimestampheader
+//
+// Tests all public elements of the t_csiptimestampheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPTimestampHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csiptimestampheader-0001
+//! @SYMTestCaseID          t_csiptimestampheader-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::CSIPTimestampHeader(TReal) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPTimestampHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Delete the CSIPTimestampHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0001-NewL_Command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0001-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0001
+
+START_TESTCASE              t_csiptimestampheader-0002
+//! @SYMTestCaseID          t_csiptimestampheader-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPTimestampHeader from textual representation of the header's value part.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP, and construct CSIPTimestampHeader object using DecodeL.
+//!                         3. Delete the CSIPTimestampHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        COMMAND             sip                     NewL             t_csiptimestampheader-0002-NewL_Command01
+        COMMAND             siptimestampheader      DecodeL          t_csiptimestampheader-0002-DecodeL_Command02
+        COMMAND             siptimestampheader      ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0002
+
+START_TESTCASE              t_csiptimestampheader-0003
+//! @SYMTestCaseID          t_csiptimestampheader-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::Timestamp()
+//! @SYMTestCaseDesc        Gets the timestamp from the "Timestamp" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Get the timestamp of CSIPTimestampHeader object
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned timestamp is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0003-NewL_Command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0003-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      Timestamp               t_csiptimestampheader-0003-Timestamp_Command03
+        COMMAND             siptimestampheader      ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0003
+
+START_TESTCASE              t_csiptimestampheader-0004
+//! @SYMTestCaseID          t_csiptimestampheader-0004
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::SetTimestamp(TReal)
+//! @SYMTestCaseDesc        Sets the timestamp in the "Timestamp" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Set timestamp to CSIPTimestampHeader object and check the value just set.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned timestamp is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0004-NewL_Command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0004-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      SetTimestamp            t_csiptimestampheader-0004-SetTimestamp_Command03
+        COMMAND             siptimestampheader      Timestamp               t_csiptimestampheader-0004-Timestamp_Command04
+        COMMAND             siptimestampheader      ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0004
+
+START_TESTCASE              t_csiptimestampheader-0005
+//! @SYMTestCaseID          t_csiptimestampheader-0005
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::Delay()
+//! @SYMTestCaseDesc        Gets the delay from the "Timestamp" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Check the Delay value.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned delay is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIP                   sip
+        CREATE_OBJECT       CSIPTimestampHeader    siptimestampheader
+        COMMAND             sip                    NewL                     t_csiptimestampheader-0005-NewL_Command01
+        COMMAND             siptimestampheader     CSIPTimestampHeader      t_csiptimestampheader-0005-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader     HasDelay                 t_csiptimestampheader-0005-HasDelay_Command03
+        COMMAND             siptimestampheader     Delay                    t_csiptimestampheader-0005-Delay_Command04
+        COMMAND             siptimestampheader     SetDelay                 t_csiptimestampheader-0005-SetDelay_Command05
+        COMMAND             siptimestampheader     HasDelay                 t_csiptimestampheader-0005-HasDelay_Command06
+        COMMAND             siptimestampheader     Delay                    t_csiptimestampheader-0005-Delay_Command07
+        COMMAND             siptimestampheader     ~
+        COMMAND             sip                    ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0005
+
+START_TESTCASE              t_csiptimestampheader-0010
+//! @SYMTestCaseID          t_csiptimestampheader-0010
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::Name()
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Get name of the CSIPTimestampHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Name() can be called successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIP                    sip
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0010-NewL_Command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0010-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      Name
+        COMMAND             siptimestampheader      ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0010
+
+START_TESTCASE              t_csiptimestampheader-0011
+//! @SYMTestCaseID          t_csiptimestampheader-0011
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::ToTextValueL()
+//! @SYMTestCaseDesc        Encodes the header's value into its textual representation.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPTimestampHeader object.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Encodes the header's value into its textual representation.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The object can be converted to text representation successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIPTimestampHeader                      siptimestampheader
+        CREATE_OBJECT       CSIP                    sip
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0011-NewL_Command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0011-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      ToTextValueL            t_csiptimestampheader-0011-ToTextValueL_command03
+        COMMAND             siptimestampheader      ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0011
+
+START_TESTCASE              t_csiptimestampheader-0012
+//! @SYMTestCaseID          t_csiptimestampheader-0012
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a deep-copy of this header object.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPTimestampHeader objects.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Clone the CSIPTimestampHeader object to 2nd one and check the 2nd one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults CloneL can be called successfully and the clone is same as original one.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader1
+        CREATE_OBJECT       CSIP                    sip
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0012-NewL_Command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0012-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      SetDelay                t_csiptimestampheader-0012-SetDelay_Command03
+        COMMAND             siptimestampheader      CloneL                  t_csiptimestampheader-0012-CloneL_command03
+        COMMAND             siptimestampheader1     HasDelay                t_csiptimestampheader-0012-HasDelay_command06
+        COMMAND             siptimestampheader1     Delay                   t_csiptimestampheader-0012-Delay_command07
+        COMMAND             siptimestampheader1     Timestamp               t_csiptimestampheader-0012-Timestamp_command08
+        COMMAND             siptimestampheader      ~
+        COMMAND             siptimestampheader1     ~
+        COMMAND             sip                     ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0012
+
+START_TESTCASE              t_csiptimestampheader-0013
+//! @SYMTestCaseID          t_csiptimestampheader-0013
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        20/10/2009
+//! @SYMAPI                 CSIPTimestampHeader::InternalizeValueL()
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPTimestampHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPTimestampHeader objects.
+//!                         2. Construct CSIP and CSIPTimestampHeader object.
+//!                         3. Externalize 1st CSIPTimestampHeader object, then internalize 2nd one from the 1st one and check if the two are the same.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults A CSIPTimestampHeader object can be created by internalizing from a file. The new one is same as the original one which externalizes to a file.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csiptimestampheader.ini
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader
+        CREATE_OBJECT       CSIPTimestampHeader     siptimestampheader1
+        CREATE_OBJECT       CSIP                    sip
+        COMMAND             sip                     NewL                    t_csiptimestampheader-0013-NewL_command01
+        COMMAND             siptimestampheader      CSIPTimestampHeader     t_csiptimestampheader-0013-CSIPTimestampHeader_Command02
+        COMMAND             siptimestampheader      SetDelay                t_csiptimestampheader-0013-SetDelay_Command03
+        COMMAND             siptimestampheader      ExternalizeL            t_csiptimestampheader-0013-ExternalizeL_command04
+        COMMAND             siptimestampheader1     InternalizeValueL       t_csiptimestampheader-0013-InternalizeValueL_command05
+        COMMAND             siptimestampheader1     HasDelay                t_csiptimestampheader-0013-HasDelay_command06
+        COMMAND             siptimestampheader1     Delay                   t_csiptimestampheader-0013-Delay_command07
+        COMMAND             siptimestampheader1     Timestamp               t_csiptimestampheader-0013-Timestamp_command08
+        COMMAND             siptimestampheader      ~
+        COMMAND             siptimestampheader1     ~
+        COMMAND             sip                     ~ 
+    END_TEST_BLOCK
+END_TESTCASE      t_csiptimestampheader-0013

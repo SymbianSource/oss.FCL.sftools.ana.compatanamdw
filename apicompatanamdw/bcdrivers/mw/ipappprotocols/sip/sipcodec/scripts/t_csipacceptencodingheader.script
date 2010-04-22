@@ -1,0 +1,238 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csipacceptencodingheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipacceptencodingheader
+//
+// Tests all public elements of the CSIPAcceptEncodingHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPAcceptEncodingHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+// ---------- API defined in CSIPAcceptEncodingHeader ---------- //
+START_TESTCASE              t_csipacceptencodingheader-0001
+//! @SYMTestCaseID          t_csipacceptencodingheader-0001
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPAcceptEncodingHeader* NewL(const TDesC8&)
+//! @SYMTestCaseDesc        Constructs a CSIPAcceptEncodingHeader from textual representation of the header's value part.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAcceptEncodingHeader object.
+//!                         3. Check codings of CSIPAcceptEncodingHeader object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: NewL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader      sipacceptencodingheader
+        COMMAND             sip                           NewL                   t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader       NewL                   t_csipacceptencodingheader-0001-NewL_Command02
+        COMMAND             sipacceptencodingheader       Codings                t_csipacceptencodingheader-0001-Codings_Command03
+        COMMAND             sipacceptencodingheader       ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0001
+
+START_TESTCASE              t_csipacceptencodingheader-0002
+//! @SYMTestCaseID          t_csipacceptencodingheader-0002
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPAcceptEncodingHeader* NewLC(const TDesC8&)
+//! @SYMTestCaseDesc        Constructs a CSIPAcceptEncodingHeader from textual representation of the header's value part.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAcceptEncodingHeader object.
+//!                         3. Check codings of CSIPAcceptEncodingHeader object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: NewLC() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader      sipacceptencodingheader
+        COMMAND             sip                           NewL                   t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader       NewLC                  t_csipacceptencodingheader-0002-NewLC_Command02
+        COMMAND             sipacceptencodingheader       Codings                t_csipacceptencodingheader-0002-Codings_Command03
+        COMMAND             sipacceptencodingheader       ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0002
+
+START_TESTCASE              t_csipacceptencodingheader-0003
+//! @SYMTestCaseID          t_csipacceptencodingheader-0003
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static RPointerArray<CSIPAcceptEncodingHeader> CSIPAcceptEncodingHeader::DecodeL(const TDesC8&)
+//! @SYMTestCaseDesc        Constructs array of CSIPAcceptEncodingHeader from textual representation of the header's value part. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct array of CSIPAcceptEncodingHeader by calling CSIPAcceptEncodingHeader::DecodeL().
+//!                         3. Check codings of CSIPAcceptEncodingHeader object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: DecodeL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader      sipacceptencodingheader
+        CREATE_OBJECT       CSIPAcceptEncodingHeader      sipacceptencodingheader1
+        COMMAND             sip                           NewL                   t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader       DecodeL                t_csipacceptencodingheader-0003-DecodeL_Command02
+        COMMAND             sipacceptencodingheader       Codings                t_csipacceptencodingheader-0003-Codings_Command03
+        COMMAND             sipacceptencodingheader1      Codings                t_csipacceptencodingheader-0003-Codings_Command04
+        COMMAND             sipacceptencodingheader       ~
+        COMMAND             sipacceptencodingheader1      ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0003
+
+
+START_TESTCASE              t_csipacceptencodingheader-0004
+//! @SYMTestCaseID          t_csipacceptencodingheader-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 const TDesC8& CSIPAcceptEncodingHeader::Codings() const, CSIPAcceptEncodingHeader::SetCodingsL(const TDesC8& aCodings)
+//! @SYMTestCaseDesc        Get the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAcceptEncodingHeader object.
+//!                         3. Sets the codings in the "Accept-Encoding" header.
+//!                         4. Gets the codings from the "Accept-Encoding" header.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: "Accept-Encoding" header is retrieved expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader      sipacceptencodingheader
+        COMMAND             sip                           NewL                t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader       NewL                t_csipacceptencodingheader-0004-NewL_Command02
+        COMMAND             sipacceptencodingheader       SetCodingsL         t_csipacceptencodingheader-0004-SetCodingsL_Command03
+        COMMAND             sipacceptencodingheader       Codings             t_csipacceptencodingheader-0004-Codings_Command04
+        COMMAND             sipacceptencodingheader       ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0004
+
+
+START_TESTCASE              t_csipacceptencodingheader-0005
+//! @SYMTestCaseID          t_csipacceptencodingheader-0005
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 TReal CSIPAcceptEncodingHeader::QParameter() const, void CSIPAcceptEncodingHeader::SetQParameterL(TReal aQValue)
+//! @SYMTestCaseDesc        Sets the "q"-parameter value, gets the value of "q"-parameter.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAcceptEncodingHeader objects.
+//!                         3. Sets the "q"-parameter value.
+//!                         4. Gets the value of "q"-parameter.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: "q"-parameter value header is retrieved expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader      sipacceptencodingheader
+        COMMAND             sip                           NewL                t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader       NewL                t_csipacceptencodingheader-0005-NewL_Command02
+        COMMAND             sipacceptencodingheader       SetQParameterL      t_csipacceptencodingheader-0005-SetQParameterL_Command03
+        COMMAND             sipacceptencodingheader       QParameter          t_csipacceptencodingheader-0005-QParameter_Command04
+        COMMAND             sipacceptencodingheader       ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0005
+
+START_TESTCASE              t_csipacceptencodingheader-0006
+//! @SYMTestCaseID          t_csipacceptencodingheader-0006
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 static CSIPHeaderBase* CSIPAcceptEncodingHeader::InternalizeValueL(RReadStream &), RStringF CSIPAcceptEncodingHeader::Name()
+//! @SYMTestCaseDesc        Construct an instance of a CSIPAcceptEncodingHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPAcceptEncodingHeader object.
+//!                         3. Externalize the CSIPAcceptEncodingHeader to file.
+//!                         4. Construct a CSIPAcceptEncodingHeader by calling CSIPAcceptEncodingHeader::InternalizeValueL() from file.
+//!                         5. Get the name and header's value.
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's name are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader             sipacceptencodingheader
+        CREATE_OBJECT       CSIPAcceptEncodingHeader             sipacceptencodingheader1
+        COMMAND             sip                                  NewL                   t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader              NewL                   t_csipacceptencodingheader-0006-NewL_Command02
+        COMMAND             sipacceptencodingheader              ExternalizeL           t_csipacceptencodingheader-0006-ExternalizeL_Command03
+        COMMAND             sipacceptencodingheader1             InternalizeValueL      t_csipacceptencodingheader-0006-InternalizeValueL_Command04
+        COMMAND             sipacceptencodingheader1             Name                   t_csipacceptencodingheader-0006-Name_Command05
+        COMMAND             sipacceptencodingheader1             ~
+        COMMAND             sipacceptencodingheader              ~
+        COMMAND             sip                                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0006
+
+START_TESTCASE              t_csipacceptencodingheader-0007
+//! @SYMTestCaseID          t_csipacceptencodingheader-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/10/2009
+//! @SYMAPI                 CSIPHeaderBase* CSIPAcceptEncodingHeader::CloneL() const
+//! @SYMTestCaseDesc        Construct an instance of a CSIPAcceptEncodingHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPAcceptEncodingHeader object.
+//!                         3. Clone the CSIPAcceptEncodingHeader to another CSIPAcceptEncodingHeader object.
+//!                         4. Check the name of the newly generated CSIPAcceptEncodingHeader object.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. CloneL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipacceptencodingheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAcceptEncodingHeader             sipacceptencodingheader
+        CREATE_OBJECT       CSIPAcceptEncodingHeader             sipacceptencodingheader1
+        COMMAND             sip                                  NewL                   t_csipacceptencodingheader-0000-NewL_Command01
+        COMMAND             sipacceptencodingheader              NewL                   t_csipacceptencodingheader-0007-NewL_Command02
+        COMMAND             sipacceptencodingheader              SetQParameterL         t_csipacceptencodingheader-0007-SetQParameterL_Command03
+        COMMAND             sipacceptencodingheader              CloneL                 t_csipacceptencodingheader-0007-CloneL_Command04
+        COMMAND             sipacceptencodingheader1             Codings                t_csipacceptencodingheader-0007-Codings_Command05
+        COMMAND             sipacceptencodingheader1             QParameter             t_csipacceptencodingheader-0007-QParameter_Command06
+        COMMAND             sipacceptencodingheader1             ~
+        COMMAND             sipacceptencodingheader              ~
+        COMMAND             sip                                  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipacceptencodingheader-0007

@@ -1,0 +1,155 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+///////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 2007-2008 Symbian Software Ltd. All rights reserved.
+//
+// Copies t_sfsrv files from rom (or simulated rom in case of emulator) to ${SYSDRIVE} to make
+// it easier to manually run tests from ${SYSDRIVE}
+///////////////////////////////////////////////////////////////////////////////
+
+RUN_UTILS MkDir	${SYSDRIVE}\base\
+RUN_UTILS MkDir	${SYSDRIVE}\base\armv5\
+RUN_UTILS MkDir	${SYSDRIVE}\base\winscw\
+RUN_UTILS MkDir	${SYSDRIVE}\base\t_sfsrv\
+
+// copy script files
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi.script				${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi.tcs				${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.script		${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-ANY.script		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-ANY.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-ANY.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-ANY.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-ANY.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-ANY.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Files-PublicApi-ANY.script		${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-ANY.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-ANY.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Files-PublicApi-ANY.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-ANY.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-ANY.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Misc-PublicApi-ANY.script			${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-ANY.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-ANY.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Misc-PublicApi-ANY.tcs			${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-ANY.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-ANY.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi-OS.script			${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-OS.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-OS.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi-OS.tcs			${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-OS.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-OS.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-RAM.script		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-RAM.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-RAM.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-RAM.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-RAM.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-RAM.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Files-PublicApi-RAM.script		${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-RAM.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-RAM.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Files-PublicApi-RAM.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-RAM.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-RAM.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Misc-PublicApi-RAM.script			${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-RAM.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-RAM.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Misc-PublicApi-RAM.tcs			${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-RAM.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-RAM.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.script		${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi-ROM.script			${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-ROM.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-ROM.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi-ROM.tcs			${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-ROM.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-ROM.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-REM.script		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-REM.tcs		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM.tcs
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.script	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.script
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.script
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.tcs	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.tcs
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.tcs
+
+// copy ini data file
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-ANY.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-ANY.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-ANY.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-ANY.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Files-PublicApi-ANY.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-ANY.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-ANY.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Misc-PublicApi-ANY.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-ANY.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-ANY.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi-OS.ini				${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-OS.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-OS.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-RAM.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-RAM.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-RAM.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Files-PublicApi-RAM.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-RAM.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Files-PublicApi-RAM.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Misc-PublicApi-RAM.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-RAM.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Misc-PublicApi-RAM.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Mounts-PublicApi-RAM.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-PublicApi-ROM.ini				${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-ROM.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-PublicApi-ROM.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-REM.ini			${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM.ini
+
+RUN_UTILS CopyFile	z:\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.ini		${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\PBASE-F32-RFS-Drives-PublicApi-REM-manual.ini
+
+RUN_UTILS CopyFile	z:\base\base_f32_env.ini					${SYSDRIVE}\base\base_f32_env.ini
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\base_f32_env.ini
+
+// copy other data files
+
+RUN_UTILS CopyFile	z:\base\t_sfsrv\test.txt						${SYSDRIVE}\base\t_sfsrv\test.txt
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\t_sfsrv\test.txt
+
+RUN_UTILS CopyFile	z:\base\t_sfsrv\USBLOAD.ZIP					${SYSDRIVE}\base\t_sfsrv\USBLOAD.ZIP
+RUN_UTILS MakeReadWrite	${SYSDRIVE}\base\t_sfsrv\USBLOAD.ZIP

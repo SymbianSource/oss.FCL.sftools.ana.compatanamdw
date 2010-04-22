@@ -1,0 +1,63 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tpthread
+LOAD_SUITE tpthread
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_1
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_2
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_3
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_4
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_5
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_6
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_7
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_8
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_9
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_10
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_11
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_12
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_13
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_14
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_15
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_16
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_17
+RUN_TEST_STEP !Result=0 5 tpthread PThreadBasicApisTest  \tstdapis\tpthread.ini Section_PThreadBasicApisTest_18
+
+RUN_TEST_STEP !Result=0 5 tpthread TestMultiplePThread \tstdapis\tpthread.ini Section_TestMultiplePThread_1
+RUN_TEST_STEP !Result=0 5 tpthread TestMultiplePThread \tstdapis\tpthread.ini Section_TestMultiplePThread_2
+RUN_TEST_STEP !Result=0 5 tpthread TestMultiplePThread \tstdapis\tpthread.ini Section_TestMultiplePThread_3
+
+RUN_TEST_STEP !Result=0 5 tpthread SocketReadAndWritePThread \tstdapis\tpthread.ini Section_SocketReadAndWritePThread_1
+RUN_TEST_STEP !Result=0 5 tpthread SocketReadAndWritePThread \tstdapis\tpthread.ini Section_SocketReadAndWritePThread_2
+
+RUN_TEST_STEP !Result=0 5 tpthread FileReadAndWritePThread \tstdapis\tpthread.ini Section_FileReadAndWritePThread_1
+RUN_TEST_STEP !Result=0 5 tpthread FileReadAndWritePThread \tstdapis\tpthread.ini Section_FileReadAndWritePThread_2
+
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_1
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_2
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_3
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_4
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_5
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_6
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_7
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_8
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_9
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_10
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_11
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_12
+RUN_TEST_STEP !Result=0 5 tpthread PThreadSchedTest \tstdapis\tpthread.ini Section_PThreadSchedTest_13
+RUN_TEST_STEP !Result=0 5 tpthread PThreadJoinTest \tstdapis\tpthread.ini Section_PThreadSchedTest_13

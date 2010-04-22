@@ -1,0 +1,196 @@
+/*
+* Copyright (c) 2007-2008 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+t_btsdpapi.iby													/epoc32/rom/include/t_BTSdpAPI.iby
+t_btsdpapi_binaries.iby											/epoc32/rom/include/t_BTSdpAPI_binaries.iby
+t_btsdpapi_testdata.iby											/epoc32/rom/include/t_BTSdpAPI_testdata.iby
+
+../pkg/t_btsdpapi.pkg											/epoc32/pkg/t_BTSdpAPI.pkg
+../pkg/t_btsdpapi.bat											/epoc32/pkg/t_BTSdpAPI.bat
+
+../scripts/setup-BTSDP-PublicApi.script							z:/bluetooth/sdp/setup-BTSDP-PublicApi.script
+//T_SdpAgent
+//Unconnected common script for pkg
+../scripts/BTSDP-PublicApi-Unconnected.script				/epoc32/pkg/BTSDP-PublicApi-Unconnected.script
+../config/BTSDP-PublicApi-Unconnected.tcs					/epoc32/pkg/BTSDP-PublicApi-Unconnected.tcs
+
+//Unconnected tests
+../scripts/BTSDP-Agent-PublicApi-Unconnected.script				/epoc32/pkg/BTSDP-Agent-PublicApi-Unconnected.script
+../config/BTSDP-Agent-PublicApi-Unconnected.tcs					/epoc32/pkg/BTSDP-Agent-PublicApi-Unconnected.tcs
+../scripts/BTSDP-Agent-PublicApi-Unconnected.script				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Unconnected.script
+../config/BTSDP-Agent-PublicApi-Unconnected.tcs					z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Unconnected.tcs
+
+../testdata/BTSDP-Agent-PublicApi-Unconnected.ini				/epoc32/pkg/BTSDP-Agent-PublicApi-Unconnected.ini
+../testdata/BTSDP-Agent-PublicApi-Unconnected.ini				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Unconnected.ini
+
+//Active side
+../scripts/BTSDP-Agent-PublicApi-Active-Master.script			/epoc32/pkg/BTSDP-Agent-PublicApi-Active-Master.script
+../config/BTSDP-Agent-PublicApi-Active-Master.tcs				/epoc32/pkg/BTSDP-Agent-PublicApi-Active-Master.tcs
+../scripts/BTSDP-Agent-PublicApi-Active-Master.script			z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Active-Master.script
+../config/BTSDP-Agent-PublicApi-Active-Master.tcs				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Active-Master.tcs
+../scripts/BTSDP-Agent-PublicApi-Active-Slave.script			/epoc32/pkg/BTSDP-Agent-PublicApi-Active-Slave.script
+../config/BTSDP-Agent-PublicApi-Active-Slave.tcs				/epoc32/pkg/BTSDP-Agent-PublicApi-Active-Slave.tcs
+../scripts/BTSDP-Agent-PublicApi-Active-Slave.script			z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Active-Slave.script
+../config/BTSDP-Agent-PublicApi-Active-Slave.tcs				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Active-Slave.tcs
+
+../testdata/BTSDP-Agent-PublicApi-Active-Master.ini				/epoc32/pkg/BTSDP-Agent-PublicApi-Active-Master.ini
+../testdata/BTSDP-Agent-PublicApi-Active-Master.ini				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Active-Master.ini
+../testdata/BTSDP-Agent-PublicApi-Active-Slave.ini				/epoc32/pkg/BTSDP-Agent-PublicApi-Active-Slave.ini
+../testdata/BTSDP-Agent-PublicApi-Active-Slave.ini				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Active-Slave.ini
+
+//Passive side
+../scripts/BTSDP-Agent-PublicApi-Passive-Slave.script			/epoc32/pkg/BTSDP-Agent-PublicApi-Passive-Slave.script
+../config/BTSDP-Agent-PublicApi-Passive-Slave.tcs				/epoc32/pkg/BTSDP-Agent-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-Agent-PublicApi-Passive-Slave.script			z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Passive-Slave.script
+../config/BTSDP-Agent-PublicApi-Passive-Slave.tcs				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-Agent-PublicApi-Passive-Master.script			/epoc32/pkg/BTSDP-Agent-PublicApi-Passive-Master.script
+../config/BTSDP-Agent-PublicApi-Passive-Master.tcs				/epoc32/pkg/BTSDP-Agent-PublicApi-Passive-Master.tcs
+../scripts/BTSDP-Agent-PublicApi-Passive-Master.script			z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Passive-Master.script
+../config/BTSDP-Agent-PublicApi-Passive-Master.tcs				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Passive-Master.tcs
+
+../testdata/BTSDP-Agent-PublicApi-Passive-Slave.ini				/epoc32/pkg/BTSDP-Agent-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-Agent-PublicApi-Passive-Slave.ini				z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-Agent-PublicApi-Passive-Master.ini			/epoc32/pkg/BTSDP-Agent-PublicApi-Passive-Master.ini
+../testdata/BTSDP-Agent-PublicApi-Passive-Master.ini			z:/bluetooth/sdp/BTSDP-Agent-PublicApi-Passive-Master.ini
+
+
+//UCC List (CSdpAttrValueString, CSdpAttrValueDES, DEA, CSdpAttrValueUUID, TSdpIntBuf)
+
+//Unconnected tests
+../scripts/BTSDP-Lists-PublicApi-Unconnected.script				/epoc32/pkg/BTSDP-Lists-PublicApi-Unconnected.script
+../config/BTSDP-Lists-PublicApi-Unconnected.tcs					/epoc32/pkg/BTSDP-Lists-PublicApi-Unconnected.tcs
+../scripts/BTSDP-Lists-PublicApi-Unconnected.script				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Unconnected.script
+../config/BTSDP-Lists-PublicApi-Unconnected.tcs					z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Unconnected.tcs
+
+../testdata/BTSDP-Lists-PublicApi-Unconnected.ini				/epoc32/pkg/BTSDP-Lists-PublicApi-Unconnected.ini
+../testdata/BTSDP-Lists-PublicApi-Unconnected.ini				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Unconnected.ini
+
+//Active side
+../scripts/BTSDP-Lists-PublicApi-Active-Master.script			/epoc32/pkg/BTSDP-Lists-PublicApi-Active-Master.script
+../config/BTSDP-Lists-PublicApi-Active-Master.tcs				/epoc32/pkg/BTSDP-Lists-PublicApi-Active-Master.tcs
+../scripts/BTSDP-Lists-PublicApi-Active-Master.script			z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Active-Master.script
+../config/BTSDP-Lists-PublicApi-Active-Master.tcs				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Active-Master.tcs
+../scripts/BTSDP-Lists-PublicApi-Active-Slave.script			/epoc32/pkg/BTSDP-Lists-PublicApi-Active-Slave.script
+../config/BTSDP-Lists-PublicApi-Active-Slave.tcs				/epoc32/pkg/BTSDP-Lists-PublicApi-Active-Slave.tcs
+../scripts/BTSDP-Lists-PublicApi-Active-Slave.script			z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Active-Slave.script
+../config/BTSDP-Lists-PublicApi-Active-Slave.tcs				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Active-Slave.tcs
+
+../testdata/BTSDP-Lists-PublicApi-Active-Master.ini				/epoc32/pkg/BTSDP-Lists-PublicApi-Active-Master.ini
+../testdata/BTSDP-Lists-PublicApi-Active-Master.ini				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Active-Master.ini
+../testdata/BTSDP-Lists-PublicApi-Active-Slave.ini				/epoc32/pkg/BTSDP-Lists-PublicApi-Active-Slave.ini
+../testdata/BTSDP-Lists-PublicApi-Active-Slave.ini				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Active-Slave.ini
+
+//Passive side
+../scripts/BTSDP-Lists-PublicApi-Passive-Slave.script			/epoc32/pkg/BTSDP-Lists-PublicApi-Passive-Slave.script
+../config/BTSDP-Lists-PublicApi-Passive-Slave.tcs				/epoc32/pkg/BTSDP-Lists-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-Lists-PublicApi-Passive-Slave.script			z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Passive-Slave.script
+../config/BTSDP-Lists-PublicApi-Passive-Slave.tcs				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-Lists-PublicApi-Passive-Master.script			/epoc32/pkg/BTSDP-Lists-PublicApi-Passive-Master.script
+../config/BTSDP-Lists-PublicApi-Passive-Master.tcs				/epoc32/pkg/BTSDP-Lists-PublicApi-Passive-Master.tcs
+../scripts/BTSDP-Lists-PublicApi-Passive-Master.script			z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Passive-Master.script
+../config/BTSDP-Lists-PublicApi-Passive-Master.tcs				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Passive-Master.tcs
+
+../testdata/BTSDP-Lists-PublicApi-Passive-Slave.ini				/epoc32/pkg/BTSDP-Lists-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-Lists-PublicApi-Passive-Slave.ini				z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-Lists-PublicApi-Passive-Master.ini			/epoc32/pkg/BTSDP-Lists-PublicApi-Passive-Master.ini
+../testdata/BTSDP-Lists-PublicApi-Passive-Master.ini			z:/bluetooth/sdp/BTSDP-Lists-PublicApi-Passive-Master.ini
+
+//CSdpSearchPattern
+
+//Unconnected tests
+../scripts/BTSDP-SearchPattern-PublicApi-Unconnected.script		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Unconnected.script
+../config/BTSDP-SearchPattern-PublicApi-Unconnected.tcs			/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Unconnected.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Unconnected.script		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Unconnected.script
+../config/BTSDP-SearchPattern-PublicApi-Unconnected.tcs			z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Unconnected.tcs
+
+../testdata/BTSDP-SearchPattern-PublicApi-Unconnected.ini		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Unconnected.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Unconnected.ini		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Unconnected.ini
+
+//Active side
+../scripts/BTSDP-SearchPattern-PublicApi-Active-Master.script	/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Active-Master.script
+../config/BTSDP-SearchPattern-PublicApi-Active-Master.tcs		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Active-Master.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Active-Master.script	z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Active-Master.script
+../config/BTSDP-SearchPattern-PublicApi-Active-Master.tcs		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Active-Master.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Active-Slave.script	/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Active-Slave.script
+../config/BTSDP-SearchPattern-PublicApi-Active-Slave.tcs		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Active-Slave.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Active-Slave.script	z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Active-Slave.script
+../config/BTSDP-SearchPattern-PublicApi-Active-Slave.tcs		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Active-Slave.tcs
+
+../testdata/BTSDP-SearchPattern-PublicApi-Active-Master.ini		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Active-Master.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Active-Master.ini		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Active-Master.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Active-Slave.ini		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Active-Slave.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Active-Slave.ini		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Active-Slave.ini
+
+//Passive side
+../scripts/BTSDP-SearchPattern-PublicApi-Passive-Slave.script	/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Passive-Slave.script
+../config/BTSDP-SearchPattern-PublicApi-Passive-Slave.tcs		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Passive-Slave.script	z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Passive-Slave.script
+../config/BTSDP-SearchPattern-PublicApi-Passive-Slave.tcs		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Passive-Master.script	/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Passive-Master.script
+../config/BTSDP-SearchPattern-PublicApi-Passive-Master.tcs		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Passive-Master.tcs
+../scripts/BTSDP-SearchPattern-PublicApi-Passive-Master.script	z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Passive-Master.script
+../config/BTSDP-SearchPattern-PublicApi-Passive-Master.tcs		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Passive-Master.tcs
+
+../testdata/BTSDP-SearchPattern-PublicApi-Passive-Slave.ini		/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Passive-Slave.ini		z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Passive-Master.ini	/epoc32/pkg/BTSDP-SearchPattern-PublicApi-Passive-Master.ini
+../testdata/BTSDP-SearchPattern-PublicApi-Passive-Master.ini	z:/bluetooth/sdp/BTSDP-SearchPattern-PublicApi-Passive-Master.ini
+
+
+//RSdpDatabase
+
+//Active side
+../scripts/BTSDP-Database-PublicApi-Active-Master.script		/epoc32/pkg/BTSDP-Database-PublicApi-Active-Master.script
+../config/BTSDP-Database-PublicApi-Active-Master.tcs			/epoc32/pkg/BTSDP-Database-PublicApi-Active-Master.tcs
+../scripts/BTSDP-Database-PublicApi-Active-Master.script		z:/bluetooth/sdp/BTSDP-Database-PublicApi-Active-Master.script
+../config/BTSDP-Database-PublicApi-Active-Master.tcs			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Active-Master.tcs
+../scripts/BTSDP-Database-PublicApi-Active-Slave.script			/epoc32/pkg/BTSDP-Database-PublicApi-Active-Slave.script
+../config/BTSDP-Database-PublicApi-Active-Slave.tcs				/epoc32/pkg/BTSDP-Database-PublicApi-Active-Slave.tcs
+../scripts/BTSDP-Database-PublicApi-Active-Slave.script			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Active-Slave.script
+../config/BTSDP-Database-PublicApi-Active-Slave.tcs				z:/bluetooth/sdp/BTSDP-Database-PublicApi-Active-Slave.tcs
+
+../testdata/BTSDP-Database-PublicApi-Active-Master.ini			/epoc32/pkg/BTSDP-Database-PublicApi-Active-Master.ini
+../testdata/BTSDP-Database-PublicApi-Active-Master.ini			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Active-Master.ini
+../testdata/BTSDP-Database-PublicApi-Active-Slave.ini			/epoc32/pkg/BTSDP-Database-PublicApi-Active-Slave.ini
+../testdata/BTSDP-Database-PublicApi-Active-Slave.ini			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Active-Slave.ini
+
+//Passive side
+../scripts/BTSDP-Database-PublicApi-Passive-Slave.script		/epoc32/pkg/BTSDP-Database-PublicApi-Passive-Slave.script
+../config/BTSDP-Database-PublicApi-Passive-Slave.tcs			/epoc32/pkg/BTSDP-Database-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-Database-PublicApi-Passive-Slave.script		z:/bluetooth/sdp/BTSDP-Database-PublicApi-Passive-Slave.script
+../config/BTSDP-Database-PublicApi-Passive-Slave.tcs			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Passive-Slave.tcs
+../scripts/BTSDP-Database-PublicApi-Passive-Master.script		/epoc32/pkg/BTSDP-Database-PublicApi-Passive-Master.script
+../config/BTSDP-Database-PublicApi-Passive-Master.tcs			/epoc32/pkg/BTSDP-Database-PublicApi-Passive-Master.tcs
+../scripts/BTSDP-Database-PublicApi-Passive-Master.script		z:/bluetooth/sdp/BTSDP-Database-PublicApi-Passive-Master.script
+../config/BTSDP-Database-PublicApi-Passive-Master.tcs			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Passive-Master.tcs
+
+../testdata/BTSDP-Database-PublicApi-Passive-Slave.ini			/epoc32/pkg/BTSDP-Database-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-Database-PublicApi-Passive-Slave.ini			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Passive-Slave.ini
+../testdata/BTSDP-Database-PublicApi-Passive-Master.ini			/epoc32/pkg/BTSDP-Database-PublicApi-Passive-Master.ini
+../testdata/BTSDP-Database-PublicApi-Passive-Master.ini			z:/bluetooth/sdp/BTSDP-Database-PublicApi-Passive-Master.ini
+
+//Common
+../testdata/testdata.txt										/epoc32/pkg/testdata.txt
+../testdata/testdata.txt										z:/bluetooth/sdp/testdata.txt
+
+//UCC Control Channel ini file (for both the Sync Service and TestDriver service)
+../testdata/UccControlChannelConfig.ini							z:/bluetooth/sdp/UccControlChannelConfig.ini
+
+PRJ_TESTMMPFILES
+T_BTSdpAPI.mmp

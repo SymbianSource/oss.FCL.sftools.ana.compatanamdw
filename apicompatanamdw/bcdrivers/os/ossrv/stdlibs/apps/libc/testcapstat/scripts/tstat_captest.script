@@ -1,0 +1,157 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+CONSECUTIVE
+START_TESTCASE OE-001
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap1.exe
+LOAD_SUITE tstat_cap1
+RUN_TEST_STEP   !Result=13 tstat_cap1 mkdirsys
+END_TESTCASE OE-001
+
+
+START_TESTCASE OE-002
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap2.exe
+LOAD_SUITE tstat_cap2
+RUN_TEST_STEP !Result=13 tstat_cap2 mkdirsys
+END_TESTCASE OE-002
+
+START_TESTCASE OE-003
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap3.exe
+LOAD_SUITE tstat_cap3
+RUN_TEST_STEP !Result=13 tstat_cap3 mkdirprivate
+END_TESTCASE OE-003
+
+START_TESTCASE OE-004
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap4.exe
+LOAD_SUITE tstat_cap4
+RUN_TEST_STEP !Result=13 tstat_cap4 mkdirprivate
+END_TESTCASE OE-004
+
+
+START_TESTCASE OE-005
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap5.exe
+LOAD_SUITE tstat_cap5
+RUN_TEST_STEP !Result=13   tstat_cap5 lstatsys
+END_TESTCASE OE-005
+
+START_TESTCASE OE-006
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap6.exe
+LOAD_SUITE tstat_cap6
+RUN_TEST_STEP  tstat_cap6 lstatsys
+END_TESTCASE OE-006
+
+START_TESTCASE OE-007
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap7.exe
+LOAD_SUITE tstat_cap7
+RUN_TEST_STEP !Result=13 tstat_cap7 lstatprivate
+END_TESTCASE OE-007
+
+
+START_TESTCASE OE-008
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap8.exe
+LOAD_SUITE tstat_cap8
+RUN_TEST_STEP tstat_cap8 lstatprivate
+END_TESTCASE OE-008
+
+
+START_TESTCASE OE-009
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap9.exe
+LOAD_SUITE tstat_cap9
+RUN_TEST_STEP  !Result=13 tstat_cap9 statsys
+END_TESTCASE OE-009
+
+
+START_TESTCASE OE-0010
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap10.exe
+LOAD_SUITE tstat_cap10
+RUN_TEST_STEP !Result=13 tstat_cap3 statsys
+END_TESTCASE OE-009
+
+
+START_TESTCASE OE-0011
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap11.exe
+LOAD_SUITE tstat_cap11
+RUN_TEST_STEP !Result=13 tstat_cap11 statprivate
+END_TESTCASE OE-0011
+
+
+START_TESTCASE OE-0012
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap12.exe
+LOAD_SUITE tstat_cap12
+RUN_TEST_STEP !Result=13  tstat_cap3 statprivate
+END_TESTCASE OE-008
+
+
+START_TESTCASE OE-0013
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap13.exe
+LOAD_SUITE tstat_cap13
+RUN_TEST_STEP !Result=13 tstat_cap13 mkfifosys
+END_TESTCASE OE-008
+
+
+
+
+START_TESTCASE OE-0014
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap14.exe
+LOAD_SUITE tstat_cap14
+RUN_TEST_STEP  !Result=13 tstat_cap14 mkfifosys
+END_TESTCASE OE-0014
+
+
+START_TESTCASE OE-0015
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap15.exe
+LOAD_SUITE tstat_cap15
+RUN_TEST_STEP !Result=13 tstat_cap15 mkfifoprivate
+END_TESTCASE OE-0015
+
+
+START_TESTCASE OE-0016
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap16.exe
+LOAD_SUITE tstat_cap16
+RUN_TEST_STEP !Result=13 tstat_cap16 mkfifoprivate
+END_TESTCASE OE-0016
+
+
+
+START_TESTCASE OE-0017
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap17.exe
+LOAD_SUITE tstat_cap17
+RUN_TEST_STEP !Result=13  tstat_cap17 chmodsys
+END_TESTCASE OE-0017
+
+
+START_TESTCASE OE-0018
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap18.exe
+LOAD_SUITE tstat_cap18
+RUN_TEST_STEP !Result=13  tstat_cap18 chmodsys
+END_TESTCASE OE-0018
+
+
+START_TESTCASE OE-0019
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000000  tstat_cap19.exe
+LOAD_SUITE tstat_cap19
+RUN_TEST_STEP !Result=13  tstat_cap19 chmodprivate
+END_TESTCASE OE-0019
+
+START_TESTCASE OE-0020
+RUN_PROGRAM -1 setcap.exe tstatcap.exe 000800  tstat_cap20.exe
+LOAD_SUITE tstat_cap20
+RUN_TEST_STEP !Result=13 tstat_cap20 chmodprivate
+END_TESTCASE OE-0020
+
+

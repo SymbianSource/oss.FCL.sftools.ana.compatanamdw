@@ -1,0 +1,59 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csipmessageelements-ne.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           2000
+
+
+START_TESTCASE t_csipmessageelements-ne-0001
+//! @SYMTestCaseID          t_csipmessageelements-ne-0001
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        08/27/2009
+//! @SYMAPI                 CSIPMessageElements::SetContentL(HBufC8 *, CSIPContentTypeHeader *)
+//!                         CSIPMessageElements::Content()
+//!                         CSIPMessageElements::ContentType()
+//!                         CSIPMessageElements::ExtractContent()
+//! @SYMTestCaseDesc        Creates a CSIPMessageElements object.
+//! @SYMTestActions         1. Creates a CSIPMessageElements object
+//!                         2. Create a CSIPContentTypeHeader object
+//!                         3. Set SIP fromheader
+//!                         4. Get SIP fromheader
+//!                         5. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Content type header is set and got successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                \SIP\sipclient\t_csipmessageelements-ne.ini
+        CREATE_OBJECT       CSIPMessageElements           sipmessageelements
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       CSIPContentTypeHeader         contenttypeheader1
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL              t_csipmessageelements-ne-0001-NewL_Command01
+        COMMAND             sipmessageelements            NewL
+        COMMAND             contenttypeheader             NewL              t_csipmessageelements-ne-0001-NewL_Command02
+        COMMAND !Error=-6   sipmessageelements            SetContentL       t_csipmessageelements-ne-0001-SetContentL_Command03
+        COMMAND !Error=-6   sipmessageelements            SetContentL       t_csipmessageelements-ne-0001-SetContentL_Command04
+        COMMAND             sipmessageelements            ~
+        COMMAND             contenttypeheader             ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipmessageelements-ne-0001

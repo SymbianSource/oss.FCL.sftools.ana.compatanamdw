@@ -1,0 +1,34 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+CONSECUTIVE
+
+RUN_PROGRAM -1 setcap.exe tsocketcap.exe 000000  tsocket_cap1.exe
+LOAD_SUITE tsocket_cap1
+RUN_TEST_STEP !Result=13  5 tsocket_cap1 UDP
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  TCP
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  UDPAccept
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  ListenUdp
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  SendMsgRecvMsg
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  ListenUsingFileDescriptor
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  AcceptUsingFileDescriptor
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  RecvUsingFileDescriptor
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  SendUsingFileDescriptor
+RUN_TEST_STEP !Result=13 5 tsocket_cap1  SendToUsingFileDescriptor
+
+

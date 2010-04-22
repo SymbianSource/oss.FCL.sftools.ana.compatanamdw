@@ -1,0 +1,114 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName               t_csipservertransaction
+//! @SYMScriptTestEnvironment       This test script requires a basic ROM. An Echo server listening on ports 10007 and 10008.
+//                                  The communicaion to the server is established using the default connection.
+//                                  The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation            The test suites are fully automated using TestDriver and Testexecute
+
+
+LOAD_SUITE   t_sipclientapi
+DELAY     2000
+
+
+START_TESTCASE              receive-sip-request-slave-0004
+//! @SYMTestCaseID          receive-sip-request-slave-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        08/03/2009
+//! @SYMAPI                 CSIPConnection::
+//! @SYMTestCaseDesc        Dummy receiver for CSIPConnection::SendRequestL object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPProfileRegistry object with the CSIP object.
+//!                         3. Create a CSIPManagedProfileRegistry object.
+//!                         4. Instantiate a new profile with default values for given type. 
+//!                         5. Set profile KSIPAccessPointId parameter. 
+//!                         6. Set profile KSIPUserAor parameter. 
+//!                         7. Set profile KSIPProviderName parameter. 
+//!                         8. Set profile KSIPSigComp parameter. 
+//!                         9. Set profile KSIPAutoRegistration parameter. 
+//!                         10.Set profile KSIPDefaultProfile parameter. 
+//!                         11.Set profile KSIPSecurityNegotiation parameter. 
+//!                         12.Set profile KSIPRegistrar and KSIPServerAddress parameters. 	
+//!                         13.Save new profile to the persistent storage.
+//!                         14.Get the default profile.
+//!                         15.Enable the  profile.
+//!                         16.Create a CSIPConnection object.
+//!                         17.Wait for the incoming request.
+//!                         18.Create a CSIPResponseElements object.
+//!                         19.Send response to server.
+//!                         20.Disable the profile.
+//!                         21.Remove the SIP profile from the persistent storage.
+//!                         22.Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The profile is cloned successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    200  t_sipclientapi            \SIP\sipclient\receive-sip-request-slave.ini
+        CREATE_OBJECT   CSIP                          sip
+        CREATE_OBJECT   CSIPProfileRegistry           sipprofileregistry
+        CREATE_OBJECT   CSIPManagedProfileRegistry    sipmanagedprofileregistry
+        CREATE_OBJECT   CSIPManagedProfile            sipmanagedprofile
+        CREATE_OBJECT   CSIPProfile                   sipprofile
+        CREATE_OBJECT   CSIPConnection                sipconnection
+        CREATE_OBJECT   CSIPServerTransaction         sipservertransaction
+        CREATE_OBJECT   CSIPResponseElements          sipresponseelements
+        CREATE_OBJECT   CSIPRequestElements           siprequestelements
+        COMMAND         sip                           NewL                receive-sip-request-slave-0001-NewL_command01
+        COMMAND         sipprofileregistry            NewL                receive-sip-request-slave-0001-NewL_command02
+        COMMAND         sipmanagedprofileregistry     NewL
+        COMMAND         sipmanagedprofileregistry     CreateL             receive-sip-request-slave-0001-CreateL_command04
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command05
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command06
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command07
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command08
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command09
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command10
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command11
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command12
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command13
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command14
+        COMMAND         sipmanagedprofile             SetParameter        receive-sip-request-slave-0001-SetParameter_command15
+        COMMAND         sipmanagedprofileregistry     SaveL               receive-sip-request-slave-0001-SaveL_command13
+        OUTSTANDING
+        COMMAND         sipprofileregistry            DefaultProfileL     receive-sip-request-slave-0001-DefaultProfileL_command14
+        COMMAND         sipprofileregistry            EnableL             receive-sip-request-slave-0001-EnableL_command15
+        OUTSTANDING
+        COMMAND         sipconnection                 NewL                receive-sip-request-slave-0001-NewL_command16
+        OUTSTANDING
+        COMMAND         sipconnection                 WaitForIncomingRequest  receive-sip-request-slave-0001-WaitForIncomingReq_command17
+        OUTSTANDING
+        COMMAND         sipservertransaction          RequestElements     receive-sip-request-slave-0001-RequestElements_command18  
+        COMMAND         sipservertransaction          ResponseAllowed     receive-sip-request-slave-0001-ResponseAllowed_command19
+        COMMAND         sipresponseelements           NewL                receive-sip-request-slave-0001-NewL_command20
+        COMMAND         sipservertransaction          SendResponseL       receive-sip-request-slave-0001-SendResponseL_command21
+        OUTSTANDING
+        COMMAND         sipprofileregistry            Disable             receive-sip-request-slave-0001-Disable_command22
+        OUTSTANDING
+        COMMAND         sipmanagedprofileregistry     DestroyL            receive-sip-request-slave-0001-DestroyL_command23
+        OUTSTANDING
+        COMMAND         siprequestelements            ~
+        COMMAND         sipresponseelements           ~
+        COMMAND         sipservertransaction          ~
+        COMMAND         sipconnection                 ~
+        COMMAND         sipprofile                    ~
+        COMMAND         sipmanagedprofile             ~
+        COMMAND         sipmanagedprofileregistry     ~
+        COMMAND         sipprofileregistry            ~
+        COMMAND         sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE                receive-sip-request-slave-0004
+

@@ -1,0 +1,81 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+*
+*/
+
+
+PRJ_TESTEXPORTS
+t_btsockapi.iby														/epoc32/rom/include/t_btsockapi.iby
+t_btsockapi_binaries.iby											/epoc32/rom/include/t_btsockapi_binaries.iby
+t_btsockapi_testdata.iby											/epoc32/rom/include/t_btsockapi_testdata.iby
+
+../pkg/t_btsockapi.pkg												/epoc32/pkg/t_btsockapi.pkg
+../pkg/tbtsockapi.bat												/epoc32/pkg/tbtsockapi.bat
+
+//Unconnected tests
+../scripts/BT-USER-SOCK-PublicApi-Unconnected.script				/epoc32/pkg/BT-USER-SOCK-PublicApi-Unconnected.script
+../config/BT-USER-SOCK-PublicApi-Unconnected.tcs				/epoc32/pkg/BT-USER-SOCK-PublicApi-Unconnected.tcs
+../testdata/BT-USER-SOCK-PublicApi-Unconnected.ini					/epoc32/pkg/BT-USER-SOCK-PublicApi-Unconnected.ini
+
+//Active Side
+../scripts/BT-USER-SOCK-PublicApi-Active-Master.script				/epoc32/pkg/BT-USER-SOCK-PublicApi-Active-Master.script
+../config/BT-USER-SOCK-PublicApi-Active-Master.tcs				/epoc32/pkg/BT-USER-SOCK-PublicApi-Active-Master.tcs
+../scripts/BT-USER-SOCK-PublicApi-Active-Slave.script				/epoc32/pkg/BT-USER-SOCK-PublicApi-Active-Slave.script
+../config/BT-USER-SOCK-PublicApi-Active-Slave.tcs				/epoc32/pkg/BT-USER-SOCK-PublicApi-Active-Slave.tcs
+
+../testdata/BT-USER-SOCK-PublicApi-Active-Master.ini				/epoc32/pkg/BT-USER-SOCK-PublicApi-Active-Master.ini
+../testdata/BT-USER-SOCK-PublicApi-Active-Slave.ini					/epoc32/pkg/BT-USER-SOCK-PublicApi-Active-Slave.ini
+
+//Passive side
+../scripts/BT-USER-SOCK-PublicApi-Passive-Master.script				/epoc32/pkg/BT-USER-SOCK-PublicApi-Passive-Master.script
+../config/BT-USER-SOCK-PublicApi-Passive-Master.tcs				/epoc32/pkg/BT-USER-SOCK-PublicApi-Passive-Master.tcs
+../scripts/BT-USER-SOCK-PublicApi-Passive-Slave.script				/epoc32/pkg/BT-USER-SOCK-PublicApi-Passive-Slave.script
+../config/BT-USER-SOCK-PublicApi-Passive-Slave.tcs				/epoc32/pkg/BT-USER-SOCK-PublicApi-Passive-Slave.tcs
+
+../testdata/BT-USER-SOCK-PublicApi-Passive-Master.ini				/epoc32/pkg/BT-USER-SOCK-PublicApi-Passive-Master.ini
+../testdata/BT-USER-SOCK-PublicApi-Passive-Slave.ini				/epoc32/pkg/BT-USER-SOCK-PublicApi-Passive-Slave.ini
+
+
+//Common
+../scripts/setup-BT-USER-SOCK-PublicApi.script						z:/bluetooth/setup-BT-USER-SOCK-PublicApi.script
+
+//Unconnected tests
+../scripts/BT-USER-SOCK-PublicApi-Unconnected.script				z:/bluetooth/BT-USER-SOCK-PublicApi-Unconnected.script
+../config/BT-USER-SOCK-PublicApi-Unconnected.tcs				z:/bluetooth/BT-USER-SOCK-PublicApi-Unconnected.tcs
+../testdata/BT-USER-SOCK-PublicApi-Unconnected.ini					z:/bluetooth/BT-USER-SOCK-PublicApi-Unconnected.ini
+
+//Active Side
+../scripts/BT-USER-SOCK-PublicApi-Active-Master.script				z:/bluetooth/BT-USER-SOCK-PublicApi-Active-Master.script
+../config/BT-USER-SOCK-PublicApi-Active-Master.tcs				z:/bluetooth/BT-USER-SOCK-PublicApi-Active-Master.tcs
+../scripts/BT-USER-SOCK-PublicApi-Active-Slave.script				z:/bluetooth/BT-USER-SOCK-PublicApi-Active-Slave.script
+../config/BT-USER-SOCK-PublicApi-Active-Slave.tcs				z:/bluetooth/BT-USER-SOCK-PublicApi-Active-Slave.tcs
+
+../testdata/BT-USER-SOCK-PublicApi-Active-Master.ini				z:/bluetooth/BT-USER-SOCK-PublicApi-Active-Master.ini
+../testdata/BT-USER-SOCK-PublicApi-Active-Slave.ini					z:/bluetooth/BT-USER-SOCK-PublicApi-Active-Slave.ini
+
+//Passive side
+../scripts/BT-USER-SOCK-PublicApi-Passive-Master.script				z:/bluetooth/BT-USER-SOCK-PublicApi-Passive-Master.script
+../config/BT-USER-SOCK-PublicApi-Passive-Master.tcs				z:/bluetooth/BT-USER-SOCK-PublicApi-Passive-Master.tcs
+../scripts/BT-USER-SOCK-PublicApi-Passive-Slave.script				z:/bluetooth/BT-USER-SOCK-PublicApi-Passive-Slave.script
+../config/BT-USER-SOCK-PublicApi-Passive-Slave.tcs				z:/bluetooth/BT-USER-SOCK-PublicApi-Passive-Slave.tcs
+
+../testdata/BT-USER-SOCK-PublicApi-Passive-Master.ini				z:/bluetooth/BT-USER-SOCK-PublicApi-Passive-Master.ini
+../testdata/BT-USER-SOCK-PublicApi-Passive-Slave.ini				z:/bluetooth/BT-USER-SOCK-PublicApi-Passive-Slave.ini
+
+//UCC Control Channel ini file (for both the Sync Servcie and TestDriver service)
+../testdata/UccControlChannelConfig.ini								z:/bluetooth/UccControlChannelConfig.ini
+
+PRJ_TESTMMPFILES
+T_BTSockAPI.mmp

@@ -1,0 +1,217 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName  t_sendsiprequest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csipalloweventsheader.script
+
+LOAD_SUITE      t_sipcodecapi
+DELAY           2000
+
+START_TESTCASE t_csipalloweventsheader-0001
+//! @SYMTestCaseID          t_csipalloweventsheader-0001
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/13/2009
+//! @SYMAPI                 CSipAllowEventsHeader::NewL(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader           sipalloweventsheader
+        COMMAND             sipalloweventsheader            NewL            t_csipalloweventsheader-0001-NewL_Command01
+        COMMAND             sipalloweventsheader            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipalloweventsheader-0001
+
+START_TESTCASE t_csipalloweventsheader-0002
+//! @SYMTestCaseID          t_csipalloweventsheader-0002
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/13/2009
+//! @SYMAPI                 CSipAllowEventsHeader::NewLC(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader           sipalloweventsheader
+        COMMAND             sipalloweventsheader            NewLC            t_csipalloweventsheader-0002-NewLC_Command01
+        COMMAND             sipalloweventsheader            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipalloweventsheader-0002
+
+START_TESTCASE t_csipalloweventsheader-0003
+//! @SYMTestCaseID          t_csipalloweventsheader-0003
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/13/2009
+//! @SYMAPI                 CSipAllowEventsHeader::DecodeL(const TDesC8&)
+//!                         CSipAllowEventsHeader::ToTextValueL()
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. Decode the header value
+//!                         3. Get the header value
+//!                         4. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader           sipalloweventsheader
+        COMMAND             sipalloweventsheader            DecodeL            t_csipalloweventsheader-0003-DecodeL_Command01
+        COMMAND             sipalloweventsheader            ToTextValueL       t_csipalloweventsheader-0003-ToTextValueL_Command02
+        COMMAND             sipalloweventsheader            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipalloweventsheader-0003
+
+START_TESTCASE t_csipalloweventsheader-0004
+//! @SYMTestCaseID          t_csipalloweventsheader-0004
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/13/2009
+//! @SYMAPI                 CSipAllowEventsHeader::EventPackage()
+//                          CSipAllowEventsHeader::SetEventPackageL()
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. GetEventPackage
+//!                         3. SetEventPackage
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults Event Package is set and gotten successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader           sipalloweventsheader
+        COMMAND             sipalloweventsheader            NewL                   t_csipalloweventsheader-0004-NewL_Command01
+        COMMAND             sipalloweventsheader            EventPackage           t_csipalloweventsheader-0004-EventPackage_Command02
+        COMMAND             sipalloweventsheader            SetEventPackageL       t_csipalloweventsheader-0004-SetEventPackageL_Command03
+        COMMAND             sipalloweventsheader            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipalloweventsheader-0004
+
+
+START_TESTCASE t_csipalloweventsheader-0005
+//! @SYMTestCaseID          t_csipalloweventsheader-0005
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/13/2009
+//! @SYMAPI                 CSipAllowEventsHeader::EventTemplates()
+//                          CSipAllowEventsHeader::SetEventTemplatesL()
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. SetEventTemplates
+//!                         3. GetEventTemplates
+//!                         4. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults Event Templates is set and gotten successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader           sipalloweventsheader
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                   t_csipalloweventsheader-0000-NewL_command01
+        COMMAND             sipalloweventsheader            NewL                     t_csipalloweventsheader-0005-NewL_Command01
+        COMMAND             sipalloweventsheader            SetEventTemplatesL       t_csipalloweventsheader-0005-SetEventTemplatesL_Command02
+        COMMAND             sipalloweventsheader            EventTemplates           [t_csipalloweventsheader-0005-EventTemplates_Command03]
+        COMMAND             sipalloweventsheader            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csipalloweventsheader-0005
+
+
+START_TESTCASE              t_csipalloweventsheader-0006
+//! @SYMTestCaseID          t_csipalloweventsheader-0006
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSipAllowEventsHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. SetEventTemplates
+//!                         3. GetEventTemplates
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader         sipalloweventsheader
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                   t_csipalloweventsheader-0000-NewL_command01
+        COMMAND             sipalloweventsheader          DecodeL                t_csipalloweventsheader-0006-DecodeL_Command02
+        COMMAND             sipalloweventsheader          ExternalizeL           t_csipalloweventsheader-0006-ExternalizeL_command03
+        COMMAND             sipalloweventsheader          InternalizeValueL      t_csipalloweventsheader-0006-InternalizeValueL_command04
+        COMMAND             sipalloweventsheader          ToTextValueL           t_csipalloweventsheader-0006-ToTextValueL_command05
+        COMMAND             sipalloweventsheader          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipalloweventsheader-0006
+
+START_TESTCASE              t_csipalloweventsheader-0007
+//! @SYMTestCaseID          t_csipalloweventsheader-0007
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSipAllowEventsHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. Clone the instance
+//!                         2. Destroys the 2 object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPAllowEventsHeader object is cloned sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader         sipalloweventsheader
+        CREATE_OBJECT       CSIPAllowEventsHeader         sipalloweventsheader2
+        COMMAND             sipalloweventsheader          DecodeL                t_csipalloweventsheader-0006-DecodeL_Command02
+        COMMAND             sipalloweventsheader          CloneL                 t_csipalloweventsheader-0007-CloneL_command02
+        COMMAND             sipalloweventsheader2          ToTextValueL           t_csipalloweventsheader-0006-ToTextValueL_command05
+        COMMAND             sipalloweventsheader          ~
+        COMMAND             sipalloweventsheader2         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipalloweventsheader-0007
+
+START_TESTCASE              t_csipalloweventsheader-0008
+//! @SYMTestCaseID          t_csipalloweventsheader-0008
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSipAllowEventsHeader::Name()
+//! @SYMTestCaseDesc        Creates a CSIPAllowEventsHeader object.
+//! @SYMTestActions         1. Creates a CSIPAllowEventsHeader object
+//!                         2. Get the name
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPAllowEventsHeader object name is gotten sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csipalloweventsheader.ini
+        CREATE_OBJECT       CSIPAllowEventsHeader         sipalloweventsheader
+	  CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                   t_csipalloweventsheader-0000-NewL_command01
+        COMMAND             sipalloweventsheader          NewL                   t_csipalloweventsheader-0008-NewL_command01
+        COMMAND             sipalloweventsheader          Name                   t_csipalloweventsheader-0008-Name_command02
+        COMMAND             sipalloweventsheader          ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipalloweventsheader-0008
+
+

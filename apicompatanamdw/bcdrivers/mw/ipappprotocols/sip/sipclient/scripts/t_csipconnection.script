@@ -1,0 +1,323 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName   t_csipclient
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipconnection
+//
+// Tests all public elements of the CSIPConnection
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPConnection
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipclientapi
+DELAY   2000
+
+START_TESTCASE              t_csipconnection-0001
+//! @SYMTestCaseID          t_csipconnection-0001
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        31/07/2009
+//! @SYMAPI                 CSIPConnection::NewL()
+//! @SYMTestCaseDesc        Starting the SIP Client and then closing the SIP client
+//! @SYMTestActions         1. Create a CSIP object and a CSIPConnection object.
+//!                         2. Construct CSIP and CSIPConnection object.
+//!                         3. Delete the CSIPConnecton object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPConnection                      sipconnection
+        COMMAND             sip                                 NewL             t_csipconnection-0001-NewL_Command01
+        COMMAND             sipconnection                       NewL             t_csipconnection-0001-NewL_Command02
+        OUTSTANDING
+        COMMAND             sipconnection                       ~
+        COMMAND             sip                                 ~
+
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0001
+
+START_TESTCASE              t_csipconnection-0002
+//! @SYMTestCaseID          t_csipconnection-0002
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::NewLC()
+//! @SYMTestCaseDesc        Starting the SIP Client and then closing the SIP client
+//! @SYMTestActions         1. Create a CSIP object and a CSIPConnection object.
+//!                         2. Construct CSIP and CSIPConnection object.
+//!                         3. Delete the CSIPConnecton object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPConnection                      sipconnection
+        COMMAND             sip                                 NewLC             t_csipconnection-0002-NewL_Command01
+        COMMAND             sipconnection                       NewLC             t_csipconnection-0002-NewL_Command02
+        OUTSTANDING
+        COMMAND             sipconnection                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0002
+
+START_TESTCASE              t_csipconnection-0003
+//! @SYMTestCaseID          t_csipconnection-0003
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::State()
+//! @SYMTestCaseDesc        Gets current state of the connection.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPConnection object.
+//!                         2. Construct CSIP and CSIPConnection object.
+//!                         3. Get current state of the connection.
+//!                         3. Delete the CSIPConnecton object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPConnection                      sipconnection
+        COMMAND             sip                                 NewLC             t_csipconnection-0003-NewL_Command01
+        COMMAND             sipconnection                       NewLC             t_csipconnection-0003-NewL_Command02
+        OUTSTANDING
+        COMMAND             sipconnection                       State             t_csipconnection-0003-NewL_Command03
+        COMMAND             sipconnection                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0003
+
+START_TESTCASE              t_csipconnection-0004
+//! @SYMTestCaseID          t_csipconnection-0004
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::FetchRegistrationsL(CSIPRequestElements *aElements)
+//! @SYMTestCaseDesc        Creates SIP REGISTER request and sends it to the given destination. User must no define any Contact or Expires-headers 
+//!                         in the provided elements.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and CSIPRefresh.
+//!                         5.Wait for the registration response from SIP stack
+//!                         6.Construct message elements for SIP MESSAGE.
+//!                         7.Send SIP MESSAGE.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    60 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPRequestElements           requestelements
+        CREATE_OBJECT       CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       CSIPHttpDigest                httpdigest
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        COMMAND             sip                           NewL                      t_csipconnection-0004-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0004-NewL_command02
+        OUTSTANDING
+        COMMAND             requestelements               NewL                      t_csipconnection-0004-NewL_command03
+        COMMAND             reqfromheader                 DecodeL                   t_csipconnection-0004-DecodeL_command04
+        COMMAND             requestelements               SetFromHeaderL            t_csipconnection-0004-SetFromHeaderL_command05
+        COMMAND             httpdigest                    NewL                      t_csipconnection-0004-NewL_command05
+        COMMAND             refresh                       NewL
+        COMMAND             sipconnection                 FetchRegistrationsL       t_csipconnection-0004-FetchRegistrationsL_command06
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csipconnection-0004-WaitForChallengeReceived_command07
+        OUTSTANDING
+        COMMAND             httpdigest                    SetCredentialsL           t_csipconnection-0004-SetCredentialsL_command08
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csipconnection-0004-WaitForIncomingResponse_command09
+        OUTSTANDING
+        COMMAND             requestelements               ~
+        COMMAND             reqfromheader                 ~
+        COMMAND             httpdigest                    ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0004
+
+START_TESTCASE              t_csipconnection-0005
+//! @SYMTestCaseID          t_csipconnection-0005
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::IapId()
+//! @SYMTestCaseDesc        Gets Iap-id used for this connection.
+//! @SYMTestActions         1.Create object for CSIP, CSIPConnection.
+//!                         2.Instantiate objects.
+//!                         3.Get Iap-id used for this connection, and compare it with expected result.
+//!                         4.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        COMMAND             sip                           NewL                      t_csipconnection-0005-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0005-NewL_command02
+        OUTSTANDING
+        COMMAND             sipconnection                 IapId                     t_csipconnection-0005-IapId_command03
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0005
+
+START_TESTCASE              t_csipconnection-0006
+//! @SYMTestCaseID          t_csipconnection-0006
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIP* CSIPConnection::SIP()
+//! @SYMTestCaseDesc        Gets SIP server handle.
+//! @SYMTestActions         1.Create object for CSIP, CSIPConnection.
+//!                         2.Instantiate objects.
+//!                         3.Gets SIP server handle.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIP                          sip1
+        COMMAND             sip                           NewL                      t_csipconnection-0006-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0006-NewL_command02
+        OUTSTANDING
+        COMMAND             sipconnection                 SIP                       t_csipconnection-0006-SIP_command03
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0006
+
+START_TESTCASE              t_csipconnection-0007
+//! @SYMTestCaseID          t_csipconnection-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 const CSIP* CSIPConnection::SIP()
+//! @SYMTestCaseDesc        Gets SIP server handle.
+//! @SYMTestActions         1.Create object for CSIP, CSIPConnection.
+//!                         2.Instantiate objects.
+//!                         3.Gets SIP server handle.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIP                          sip1
+        COMMAND             sip                           NewL                      t_csipconnection-0007-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0007-NewL_command02
+        OUTSTANDING
+        COMMAND             sipconnection                 SIP                       t_csipconnection-0007-SIP_command03
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0007
+
+START_TESTCASE              t_csipconnection-0008
+//! @SYMTestCaseID          t_csipconnection-0008
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::SetOptL(TUint aOptionName, TUint aOptionLevel, const TDesC8 &aOption=KNullDesC8)
+//! @SYMTestCaseDesc        Sets a RSocket option used for all the sockets used for sending SIP requests and responses in this CSIPConnection.
+//! @SYMTestActions         1.Create object for CSIP, CSIPConnection.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Sets a RSocket option.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIP                          sip1
+        COMMAND             sip                           NewL                      t_csipconnection-0008-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0008-NewL_command02
+        OUTSTANDING
+        COMMAND             sipconnection                 SetOptL                   t_csipconnection-0008-SetOptL_command03
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0008
+
+START_TESTCASE              t_csipconnection-0009
+//! @SYMTestCaseID          t_csipconnection-0009
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::SetOptL(TUint aOptionName, TUint aOptionLevel, TInt aOption);
+//! @SYMTestCaseDesc        Sets a RSocket option used for all the sockets used for sending SIP requests and responses in this CSIPConnection.
+//! @SYMTestActions         1.Create object for CSIP, CSIPConnection.
+//!                         2.Instantiate objects.
+//!                         3.Sets a RSocket option.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIP                          sip1
+        COMMAND             sip                           NewL                      t_csipconnection-0009-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0009-NewL_command02
+        OUTSTANDING
+        COMMAND             sipconnection                 SetOptL                   t_csipconnection-0009-SetOptL_command03
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0009
+
+START_TESTCASE              t_csipconnection-0010
+//! @SYMTestCaseID          t_csipconnection-0010
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        28/08/2009
+//! @SYMAPI                 CSIPConnection::GetLocalAddrL(TInetAddr &aAddr);
+//! @SYMTestCaseDesc        Gets the local IP address of this CSIPConnection that is used by the SIP implementation.
+//! @SYMTestActions         1.Create object for CSIP, CSIPConnection.
+//!                         2.Instantiate objects.
+//!                         3.Gets the local IP address of this CSIPConnection that is used by the SIP implementation.
+//!                         12.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipclientapi                     \SIP\sipclient\t_csipconnection.ini
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIP                          sip1
+        COMMAND             sip                           NewL                      t_csipconnection-0010-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csipconnection-0010-NewL_command02
+        OUTSTANDING
+        COMMAND             sipconnection                 GetLocalAddrL             t_csipconnection-0010-GetLocalAddrL_command03
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csipconnection-0010

@@ -1,0 +1,38 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tmmap
+LOAD_SUITE tmmap -SharedData
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_1
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_2
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_3
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_4
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_5
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_6
+RUN_TEST_STEP !Result=0 5 tmmap  memmap \tstdapis\tmmap.ini Section_memmap_7
+RUN_TEST_STEP !Result=0 5 tmmap  memmap1 \tstdapis\tmmap.ini Section_memmap1_1
+RUN_TEST_STEP !Result=0 5 tmmap  memmap2 \tstdapis\tmmap.ini Section_memmap2_1
+RUN_TEST_STEP !Result=0 5 tmmap  memmap2 \tstdapis\tmmap.ini Section_memmap2_2
+RUN_TEST_STEP !Result=0 5 tmmap  memmap3 \tstdapis\tmmap.ini Section_memmap3_1
+RUN_TEST_STEP !Result=0 5 tmmap  memmap3 \tstdapis\tmmap.ini Section_memmap3_2
+RUN_TEST_STEP !Result=0 5 tmmap  memmap3 \tstdapis\tmmap.ini Section_memmap3_3
+RUN_TEST_STEP !Result=0 5 tmmap  memmap3 \tstdapis\tmmap.ini Section_memmap3_4
+RUN_TEST_STEP !Result=0 5 tmmap  memmap4 \tstdapis\tmmap.ini Section_memmap4_1
+RUN_TEST_STEP !Result=0 5 tmmap  memmap4 \tstdapis\tmmap.ini Section_memmap4_2
+RUN_TEST_STEP !Result=0 5 tmmap  memmap4 \tstdapis\tmmap.ini Section_memmap4_3
+RUN_TEST_STEP !Result=0 5 tmmap  memmap5 \tstdapis\tmmap.ini Section_memmap5

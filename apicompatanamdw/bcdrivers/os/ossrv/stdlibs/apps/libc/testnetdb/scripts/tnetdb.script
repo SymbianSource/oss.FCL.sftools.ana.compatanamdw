@@ -1,0 +1,62 @@
+//
+// Copyright (c) 2006-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tnetdb
+LOAD_SUITE tnetdb
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tnetdb  GetprotobynameTest \tstdapis\tnetdb.ini Section_GetprotobynameTest_1
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetprotobynameTest \tstdapis\tnetdb.ini Section_GetprotobynameTest_2
+RUN_TEST_STEP !Result=0 5 tnetdb  GetprotobynumberTest \tstdapis\tnetdb.ini Section_GetprotobynumberTest_1
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetprotobynumberTest \tstdapis\tnetdb.ini Section_GetprotobynumberTest_2
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbynameTest \tstdapis\tnetdb.ini Section_GetservbynameTest_1
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetservbynameTest \tstdapis\tnetdb.ini Section_GetservbynameTest_2
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbynameTest \tstdapis\tnetdb.ini Section_GetservbynameTest_3
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbynameTest \tstdapis\tnetdb.ini Section_GetservbynameTest_4
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbynameTest \tstdapis\tnetdb.ini Section_GetservbynameTest_5
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbyportTest \tstdapis\tnetdb.ini Section_GetservbyportTest_1
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbyportTest \tstdapis\tnetdb.ini Section_GetservbyportTest_2
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetservbyportTest \tstdapis\tnetdb.ini Section_GetservbyportTest_3
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbyportTest \tstdapis\tnetdb.ini Section_GetservbyportTest_4
+RUN_TEST_STEP !Result=0 5 tnetdb  GetservbyportTest \tstdapis\tnetdb.ini Section_GetservbyportTest_5
+RUN_TEST_STEP !Result=0 5 tnetdb  SetserventTest \tstdapis\tnetdb.ini Section_SetserventTest 
+RUN_TEST_STEP !Result=0 5 tnetdb  GetserventTest
+RUN_TEST_STEP !Result=0 5 tnetdb  EndserventTest    
+RUN_TEST_STEP !Result=0 5 tnetdb  Gai_strerrorTest \tstdapis\tnetdb.ini Section_Gai_strerrorTest_1
+RUN_TEST_STEP !Result=-2 5 tnetdb  Gai_strerrorTest \tstdapis\tnetdb.ini Section_Gai_strerrorTest_2
+RUN_TEST_STEP !Result=0 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_1
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_2
+RUN_TEST_STEP !Result=0 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_3
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_4
+RUN_TEST_STEP !Result=-2 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_5
+RUN_TEST_STEP !Result=0 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_6
+RUN_TEST_STEP !Result=0 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_7
+RUN_TEST_STEP !Result=0 5 tnetdb  GetaddrinfoTest \tstdapis\tnetdb.ini Section_GetaddrinfoTest_8
+RUN_TEST_STEP !Result=0 5 tnetdb  GetnameinfoTest \tstdapis\tnetdb.ini Section_GetnameinfoTest
+RUN_TEST_STEP !Result=0 5 tnetdb  GethostbynameTest
+RUN_TEST_STEP !Result=0 5 tnetdb  GethostbynameNegativeTest
+RUN_TEST_STEP !Result=0 5 tnetdb  FreeaddrinfoTest
+RUN_TEST_STEP !Result=0 5 tnetdb  GetHostByNameLocalHost
+RUN_TEST_STEP !Result=0 5 tnetdb  GethostbyaddrTest \tstdapis\tnetdb.ini Section_GethostbyaddrTest
+ced -i c:\ethernetced.xml
+RUN_TEST_STEP !Result=0 5 tnetdb  GetnameinfoTest1 \tstdapis\tnetdb.ini Section_GetnameinfoTest1
+
+ 
+
+ 
+
+
+

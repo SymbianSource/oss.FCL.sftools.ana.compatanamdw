@@ -1,0 +1,36 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tdb_blr
+LOAD_SUITE tdb_blr
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrgid_pos \tstdapis\tdb_blr.ini Section_getgrgid_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrgid_neg \tstdapis\tdb_blr.ini Section_getgrgid_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrnam_pos \tstdapis\tdb_blr.ini Section_getgrnam_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrnam_neg \tstdapis\tdb_blr.ini Section_getgrnam_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrgid_r_pos \tstdapis\tdb_blr.ini Section_getgrgid_r_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrgid_r_neg \tstdapis\tdb_blr.ini Section_getgrgid_r_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrnam_r_pos \tstdapis\tdb_blr.ini Section_getgrnam_r_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getgrnam_r_neg \tstdapis\tdb_blr.ini Section_getgrnam_r_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwuid_pos \tstdapis\tdb_blr.ini Section_getpwuid_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwuid_neg \tstdapis\tdb_blr.ini Section_getpwuid_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwnam_pos \tstdapis\tdb_blr.ini Section_getpwnam_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwnam_neg \tstdapis\tdb_blr.ini Section_getpwnam_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwuid_r_pos \tstdapis\tdb_blr.ini Section_getpwuid_r_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwuid_r_neg \tstdapis\tdb_blr.ini Section_getpwuid_r_neg
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwnam_r_pos \tstdapis\tdb_blr.ini Section_getpwnam_r_pos
+RUN_TEST_STEP !Result=0 5 tdb_blr getpwuid_r_neg \tstdapis\tdb_blr.ini Section_getpwuid_r_neg

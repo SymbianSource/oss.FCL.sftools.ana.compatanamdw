@@ -1,0 +1,262 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName  t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csiprouteheader.script
+
+LOAD_SUITE      t_sipcodecapi
+DELAY           2000
+
+START_TESTCASE t_csiprouteheader-0001
+//! @SYMTestCaseID          t_csiprouteheader-0001
+//! @SYMAuthor              Dorothy Zhang   
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::NewL(CSIPAddress*)
+//! @SYMTestCaseDesc        Creates a CSIPRouteHeader object.
+//! @SYMTestActions         1. Creates a CSIPRouteHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIPRouteHeader                     siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprouteheader-0001-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csiprouteheader-0001-NewL_Command02
+        COMMAND             siprouteheader                      NewL             t_csiprouteheader-0001-NewL_Command03
+        COMMAND             siprouteheader                      ~
+        COMMAND             sip                                 ~
+        COMMAND             sipaddress                          ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprouteheader-0001
+
+START_TESTCASE t_csiprouteheader-0002
+//! @SYMTestCaseID          t_csiprouteheader-0002
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::NewLC(CSIPAddress*)
+//! @SYMTestCaseDesc        Creates a CSIPRouteHeader object.
+//! @SYMTestActions         1. Creates a CSIPRouteHeader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIPRouteHeader           siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprouteheader-0002-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csiprouteheader-0002-NewL_Command02
+        COMMAND             siprouteheader                      NewLC            t_csiprouteheader-0002-NewLC_Command03
+        COMMAND             siprouteheader                      ~
+        COMMAND             sip                                 ~
+        COMMAND             sipaddress                          ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csiprouteheader-0002
+
+START_TESTCASE t_csiprouteheader-0003
+//! @SYMTestCaseID          t_csiprouteheader-0003
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::DecodeL(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPRouteHeader object.
+//! @SYMTestActions         1. Creates a CSIPRouteHeader object
+//!                         2. Decode the header value
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIPRouteHeader           siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprouteheader-0003-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csiprouteheader-0003-NewL_Command02
+        COMMAND             siprouteheader                      DecodeL          t_csiprouteheader-0003-DecodeL_Command03
+        COMMAND             siprouteheader                      ~
+        COMMAND             sipaddress                          ~
+        END_TEST_BLOCK
+END_TESTCASE		    t_csiprouteheader-0003
+
+
+START_TESTCASE              t_csiprouteheader-0004
+//! @SYMTestCaseID          t_csiprouteheader-0004
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Creates a CSIPRouteHeader object.
+//! @SYMTestActions         1. Creates a CSIPRouteHeader object
+//!                         2. Externalize the value to a file
+//!                         3. Internalize the value from a file
+//!                         4. Check the instance via get the name
+//!                         5. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIPRouteHeader           siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprouteheader-0004-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csiprouteheader-0004-NewL_Command02
+        COMMAND             siprouteheader            NewL                      t_csiprouteheader-0004-NewL_Command03
+        COMMAND             siprouteheader          ExternalizeL           t_csiprouteheader-0004-ExternalizeL_command04
+        COMMAND             siprouteheader          InternalizeValueL      t_csiprouteheader-0004-InternalizeValueL_command05
+        COMMAND             siprouteheader          Name                     t_csiprouteheader-0004-Name_command06      
+        COMMAND             siprouteheader            ~
+        COMMAND             sip                                ~
+        COMMAND             sipaddress                         ~
+        END_TEST_BLOCK
+END_TESTCASE t_csiprouteheader-0004
+
+START_TESTCASE              t_csiprouteheader-0005
+//! @SYMTestCaseID          t_csiprouteheader-0005
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a CSIPRouteHeader object.
+//! @SYMTestActions         1. Creates a CSIPRouteHeader object
+//!                         2. Clone the instance
+//!                         2. Destroys the 2 object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPRouteHeader object is cloned sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRouteHeader         siprouteheader
+        CREATE_OBJECT       CSIPRouteHeader         siprouteheader2
+        COMMAND             sip                                 NewL             t_csiprouteheader-0005-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csiprouteheader-0005-NewL_Command02
+        COMMAND             siprouteheader          NewL                   t_csiprouteheader-0005-NewL_Command03
+        COMMAND             siprouteheader          CloneL                 t_csiprouteheader-0005-CloneL_command04
+        COMMAND             siprouteheader2         Name                   t_csiprouteheader-0005-Name_command05
+        COMMAND             siprouteheader          ~
+        COMMAND             siprouteheader2         ~
+        COMMAND             sip                                ~
+        COMMAND             sipaddress                         ~
+        END_TEST_BLOCK
+END_TESTCASE t_csiprouteheader-0005
+
+START_TESTCASE              t_csiprouteheader-0006
+//! @SYMTestCaseID          t_csiprouteheader-0006
+//! @SYMAuthor              Dorothy Zhang
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::Name()
+//! @SYMTestCaseDesc        Creates a CSIPRouteHeader object.
+//! @SYMTestActions         1. Creates a CSIPRouteHeader object
+//!                         2. Get the name
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPRouteHeader object name is gotten sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIPRouteHeader           siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprouteheader-0006-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csiprouteheader-0006-NewL_Command02
+        COMMAND             siprouteheader            NewL            t_csiprouteheader-0006-NewL_Command03
+        COMMAND             siprouteheader            Name            t_csiprouteheader-0006-Name_Command04
+        COMMAND             siprouteheader            ~
+        COMMAND             sip                                ~
+        COMMAND             sipaddress                         ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprouteheader-0006
+
+//***********Defined in CSIPRouteHeaderBase*************//
+START_TESTCASE              t_csiprouteheader-0007
+//! @SYMTestCaseID          t_csiprouteheader-0007
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::SetSIPAddressL(CSIPAddress*), const CSIPAddress{ref} CSIPRouteHeader::SIPAddress() const
+//! @SYMTestCaseDesc        Set and get SIP address with CSIPRouteHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPRouteHeader object.
+//!                         3. Set SIP address.
+//!                         4. Get SIP address and check the result.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Commands are executed without error, and returned result is as expected 
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                       \SIP\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRouteHeader                     siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPAddress                         sipaddress2
+        COMMAND             sip                                 NewL                t_csiprouteheader-0000-NewL_Command01
+        COMMAND             sipaddress                          NewL                t_csiprouteheader-0007-NewL_Command02
+        COMMAND             siprouteheader                      NewL                t_csiprouteheader-0007-NewL_Command03
+        COMMAND             sipaddress1                         NewL                t_csiprouteheader-0007-NewL_Command04
+        COMMAND             siprouteheader                      SetSIPAddressL      t_csiprouteheader-0007-SetSIPAddressL_Command05
+        COMMAND             sipaddress2                         NewL                t_csiprouteheader-0007-NewL_Command06
+        COMMAND             siprouteheader                      SIPAddress          t_csiprouteheader-0007-SIPAddress_Command07
+        COMMAND             sipaddress2                         Uri8                t_csiprouteheader-0007-Uri8_Command08
+        COMMAND             siprouteheader                      ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprouteheader-0007
+
+START_TESTCASE              t_csiprouteheader-0008
+//! @SYMTestCaseID          t_csiprouteheader-0008
+//! @SYMAuthor              Jasper Li
+//! @SYMCreationDate        11/11/2009
+//! @SYMAPI                 CSIPRouteHeader::SetSIPAddressL(CSIPAddress*), CSIPAddress{ref} CSIPRouteHeader::SIPAddress()
+//! @SYMTestCaseDesc        Set and get SIP address with CSIPRouteHeader object.
+//! @SYMTestActions         1. Construct a CSIP object 
+//!                         2. Construct a CSIPRouteHeader object.
+//!                         3. Set SIP address.
+//!                         4. Get SIP address and check the result.
+//!                         5. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults Commands are executed without error, and returned result is as expected 
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                       \SIP\sipcodec\t_csiprouteheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRouteHeader                     siprouteheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIPAddress                         sipaddress1
+        CREATE_OBJECT       CSIPAddress                         sipaddress2
+        COMMAND             sip                                 NewL                t_csiprouteheader-0000-NewL_Command01
+        COMMAND             sipaddress                          NewL                t_csiprouteheader-0008-NewL_Command02
+        COMMAND             siprouteheader                      NewL                t_csiprouteheader-0008-NewL_Command03
+        COMMAND             sipaddress1                         NewL                t_csiprouteheader-0008-NewL_Command04
+        COMMAND             siprouteheader                      SetSIPAddressL      t_csiprouteheader-0008-SetSIPAddressL_Command05
+        COMMAND             sipaddress2                         NewL                t_csiprouteheader-0008-NewL_Command06
+        COMMAND             siprouteheader                      SIPAddress          t_csiprouteheader-0008-SIPAddress_Command07
+        COMMAND             sipaddress2                         Uri8                t_csiprouteheader-0008-Uri8_Command08
+        COMMAND             siprouteheader                      ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprouteheader-0008

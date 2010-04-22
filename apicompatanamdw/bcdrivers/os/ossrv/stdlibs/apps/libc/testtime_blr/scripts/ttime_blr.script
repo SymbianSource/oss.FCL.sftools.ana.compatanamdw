@@ -1,0 +1,83 @@
+//
+// Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all ttime_blr
+LOAD_SUITE ttime_blr
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 ttime_blr asctime_test_all \tstdapis\ttime_blr.ini Section_asctime_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr asctime_test_null
+
+RUN_TEST_STEP !Result=0 5 ttime_blr localtime_test_all \tstdapis\ttime_blr.ini Section_time_test_1
+RUN_TEST_STEP !Result=0 5 ttime_blr localtime_test_all \tstdapis\ttime_blr.ini Section_time_test_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr mktime_test_null
+
+RUN_TEST_STEP !Result=0 5 ttime_blr mktime_test_epoch
+
+RUN_TEST_STEP !Result=0 5 ttime_blr mktime_test_extreme
+
+RUN_TEST_STEP !Result=0 5 ttime_blr ctime_test_all \tstdapis\ttime_blr.ini Section_ctime_test_1
+RUN_TEST_STEP !Result=0 5 ttime_blr ctime_test_all \tstdapis\ttime_blr.ini Section_ctime_test_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr difftime_test_all \tstdapis\ttime_blr.ini Section_difftime_test_allL_1
+RUN_TEST_STEP !Result=0 5 ttime_blr difftime_test_all \tstdapis\ttime_blr.ini Section_difftime_test_allL_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr difftime_test_extreme
+
+RUN_TEST_STEP !Result=0 5 ttime_blr tzset_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr asctime_r_all \tstdapis\ttime_blr.ini Section_asctime_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr asctime_r_null
+
+RUN_TEST_STEP !Result=0 5 ttime_blr localtime_r_all \tstdapis\ttime_blr.ini Section_time_test_1
+RUN_TEST_STEP !Result=0 5 ttime_blr localtime_r_all \tstdapis\ttime_blr.ini Section_time_test_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr ctime_r_all \tstdapis\ttime_blr.ini Section_ctime_test_1
+RUN_TEST_STEP !Result=0 5 ttime_blr ctime_r_all \tstdapis\ttime_blr.ini Section_ctime_test_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_getres_pos_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_getres_neg_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_getcpuid_pos_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_getcpuid_neg_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_gettime_pos_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_gettime_neg_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_settime_pos_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr clock_settime_neg_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr adjtime_pos_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr adjtime_neg_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr gmtime_test_all \tstdapis\ttime_blr.ini Section_time_test_1
+RUN_TEST_STEP !Result=0 5 ttime_blr gmtime_test_all \tstdapis\ttime_blr.ini Section_time_test_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr gmtime_r_all \tstdapis\ttime_blr.ini Section_time_test_1
+RUN_TEST_STEP !Result=0 5 ttime_blr gmtime_r_all \tstdapis\ttime_blr.ini Section_time_test_2
+
+RUN_TEST_STEP !Result=0 5 ttime_blr getoffset_test \tstdapis\ttime_blr.ini Section_getoffset_test
+
+RUN_TEST_STEP !Result=0 5 ttime_blr getrule_test \tstdapis\ttime_blr.ini Section_getrule_test
+RUN_TEST_STEP !Result=0 5 ttime_blr tzset1

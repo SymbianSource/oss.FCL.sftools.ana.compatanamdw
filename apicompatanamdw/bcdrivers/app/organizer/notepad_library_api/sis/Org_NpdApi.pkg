@@ -1,0 +1,42 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+; Languages
+; =========
+&EN
+
+; Name, UID for installation, Maj.Ver., Min.Ver., Variant, FLAG TO SPECIFY UNICODE, System component
+; ==================================================================================================
+#{"notepad library api Test"},(0x101FB3E7),1,0,1,TYPE=SA
+[0x101F7961],3,*,*,{"Series60ProductID"}
+
+
+; Localised Vendor name
+%{"Nokia-EN"}
+
+; Unique Vendor name
+:"Nokia"
+
+"\epoc32\release\armv5\urel\TestNpdApi.dll"      						-"!:\sys\bin\TestNpdApi.dll"
+"\epoc32\winscw\c\TestNpdApi.txt"                           -"c:\testing\data\TestNpdApi.txt"
+"\epoc32\winscw\c\testframework\testframework_npd.ini"      -"c:\TestFramework\testframework_npd.ini"
+"\epoc32\winscw\c\testframework\TestNpdApi.cfg"             -"c:\TestFramework\TestNpdApi.cfg"
+"\epoc32\winscw\c\testframework\ui_TestNpdApi.cfg"          -"c:\TestFramework\ui_TestNpdApi.cfg"
+"\epoc32\winscw\c\npd_c.bat"																-"!:\npd.bat"
+
+
+
+; eof
+

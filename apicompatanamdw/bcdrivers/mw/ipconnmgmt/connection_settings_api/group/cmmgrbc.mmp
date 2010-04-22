@@ -1,0 +1,62 @@
+/*
+* Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:
+* MMP file for Connection Settings API binary compatibility
+* tests (hardcoded STIF test module).
+*
+*/
+
+// Configuration file to set build environment settings
+#include "../inc/cmmgrbc.cfg"
+
+TARGET          cmmgrbc.dll
+TARGETTYPE      dll
+UID             0x1000008D 0x101FB3E7
+
+CAPABILITY      ALL -TCB
+VENDORID        0x101FB657
+/* Remove comments and replace 0x00000000 with correct secure id */
+// SECUREID     0x00000000
+
+//TARGETPATH      /sys/bin
+DEFFILE         cmmgrbc.def
+
+USERINCLUDE     ../inc
+
+SYSTEMINCLUDE   /epoc32/include
+SYSTEMINCLUDE   /epoc32/include/mw
+SYSTEMINCLUDE   /epoc32/include/platform
+#ifndef CMMGRBC_S60_091_SUPPORT
+SYSTEMINCLUDE   /epoc32/include/middleware
+SYSTEMINCLUDE   /epoc32/include/oem
+SYSTEMINCLUDE   /epoc32/include/domain/osextensions
+#endif // CMMGRBC_S60_091_SUPPORT
+
+SOURCEPATH      ../src
+
+SOURCE          cmmgrbc.cpp
+SOURCE          cmmgrbctestindex.cpp
+SOURCE          cmmgrbctestsmanager.cpp
+SOURCE          cmmgrbctestsdest.cpp
+SOURCE          cmmgrbctestsconnmethod.cpp
+
+LIBRARY         euser.lib
+LIBRARY         stiftestinterface.lib
+LIBRARY         stiftestengine.lib
+LIBRARY         cmmanager.lib
+#ifndef CMMGRBC_S60_101_SUPPORT
+LIBRARY         egul.lib
+#endif // CMMGRBC_S60_101_SUPPORT
+
+// End of file

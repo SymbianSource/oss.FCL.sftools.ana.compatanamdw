@@ -1,0 +1,31 @@
+<o-ex:rights
+   xmlns:o-ex="http://odrl.net/1.1/ODRL-EX"
+   xmlns:o-dd="http://odrl.net/1.1/ODRL-DD"
+   xmlns:ds="http://www.w3.org/2000/09/xmldsig#/"
+>
+  <o-ex:context>
+    <o-dd:version>1.0</o-dd:version>
+  </o-ex:context>
+  <o-ex:agreement>
+    <o-ex:asset>
+      <o-ex:context>
+        <o-dd:uid>cid:20031218151354-1753390406@foo.bar</o-dd:uid>
+      </o-ex:context>
+      <ds:KeyInfo>
+        <ds:KeyValue>/NXRUbkows6vyRSMr/+Nzg==</ds:KeyValue>
+      </ds:KeyInfo>
+    </o-ex:asset>
+    <o-ex:permission>
+      <o-dd:display>
+         <o-ex:constraint>
+            <o-dd:interval>P0Y1M0DT0H0M0S</o-dd:interval>
+         </o-ex:constraint>
+      </o-dd:display>
+      <o-dd:print>
+         <o-ex:constraint>
+            <o-dd:interval>P0Y1M0DT0H0M0S</o-dd:interval>
+         </o-ex:constraint>
+      </o-dd:print>
+    </o-ex:permission>
+  </o-ex:agreement>
+</o-ex:rights>

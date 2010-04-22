@@ -1,0 +1,68 @@
+//
+// Copyright (c) 2007-2008 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tmisc
+LOAD_SUITE tmisc
+
+CONSECUTIVE
+RUN_TEST_STEP !Result=0 5 tmisc TestMaxFopen
+RUN_TEST_STEP !Result=0 -1 tmisc  TestPipeReadWrite
+RUN_TEST_STEP !Result=0 -1 tmisc  TestFileReadWrite
+RUN_TEST_STEP !Result=0 5 tmisc test_fileoper \tstdapis\tmisc.ini 
+RUN_TEST_STEP !Result=0 -1 tmisc TestPosixSpawn
+
+RUN_TEST_STEP !Result=0 5 tmisc test_random \tstdapis\tmisc.ini 
+RUN_TEST_STEP !Result=0 5 tmisc test_realloc \tstdapis\tmisc.ini
+RUN_TEST_STEP !Result=0 5 tmisc test_nanosleep \tstdapis\tmisc.ini 
+
+RUN_TEST_STEP !Result=0 5 tmisc test_stdio \tstdapis\tmisc.ini 
+RUN_TEST_STEP !Result=0 5 tmisc TestSysConf 
+RUN_TEST_STEP !Result=0 5 tmisc TestScandir
+RUN_TEST_STEP !Result=0 5 tmisc TestReaddir
+RUN_TEST_STEP !Result=0 5 tmisc TestDiropr
+RUN_TEST_STEP !Result=0 5 tmisc TestWOpendir
+RUN_TEST_STEP !Result=0 5 tmisc TestWDiropr
+RUN_TEST_STEP !Result=0 20 tmisc TestFMScalls
+//RUN_TEST_STEP !Result=0 5 tmisc TestGetDirEntries
+RUN_TEST_STEP !Result=0 5 tmisc TestAlphasort
+RUN_TEST_STEP !Result=0 5 tmisc TestPosixSpawn1 
+RUN_TEST_STEP !Result=0 -1 tmisc TestAbort1
+RUN_TEST_STEP !Result=0 -1 tmisc TestExit1
+RUN_TEST_STEP !Result=0 -1 tmisc TestExit2
+RUN_TEST_STEP !Result=0 -1 tmisc TestExitE1
+RUN_TEST_STEP !Result=0 -1 tmisc TestExit3
+RUN_TEST_STEP !Result=0 4 tmisc TestExit4
+RUN_TEST_STEP !Result=0 4 tmisc TestExit5
+RUN_TEST_STEP !Result=0 4 tmisc TestExit6
+RUN_TEST_STEP !Result=0 5 tmisc TestSystem0
+RUN_TEST_STEP !Result=0 5 tmisc TestSystem1
+RUN_TEST_STEP !Result=0 -1 tmisc TestSystem2
+RUN_TEST_STEP !Result=0 20 tmisc TestWaitpid1
+RUN_TEST_STEP !Result=0 10 tmisc TestWaitpid2
+RUN_TEST_STEP !Result=0 10 tmisc TestWaitpid3
+RUN_TEST_STEP !Result=0 -1 tmisc  semoptest16
+RUN_TEST_STEP !Result=0 -1 tmisc  semoptest17
+RUN_TEST_STEP !Result=0 -1 tmisc  semoptest18
+RUN_TEST_STEP !Result=0 -1 tmisc  semoptest19
+RUN_TEST_STEP !Result=0 -1 tmisc  semoptest20
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopen3FdTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopenFdTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestSystemFdTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopen3FdTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPosixSpawnFdTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopen3PipeReadTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopen3PipeWriteTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopenPipeReadTransfer
+RUN_TEST_STEP !Result=0 10 tmisc  TestPopenPipeWriteTransfer

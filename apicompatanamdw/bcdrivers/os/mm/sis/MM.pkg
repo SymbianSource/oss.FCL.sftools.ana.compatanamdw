@@ -1,0 +1,179 @@
+;
+; Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+;
+; Install file for T_MdaAudioConvertUtility.exe
+;
+
+; Languages - 
+&EN
+
+; Installation header
+; UID is the app's UID
+#{"T_MMCommon"},(0x20000F70),1,0,0
+
+;%{"Vendor-EN"}
+;:"Symbian"
+
+; Localised Vendor name
+%{"Nokia"}
+
+; Unique Vendor name
+:"Nokia"
+
+;T_ImageEncoder
+"\Epoc32\release\armv5\urel\T_ImageEncoder.exe"-"!:\sys\bin\T_ImageEncoder.exe"
+"\Epoc32\winscw\c\multimedia\enc.bat"-"!:\multimedia\enc.bat"
+"\Epoc32\winscw\c\multimedia\MM-ICL-ENCDE-PublicApi.script"-"!:\multimedia\MM-ICL-ENCDE-PublicApi.script"
+"\Epoc32\winscw\c\multimedia\MM-ICL-ENCDE-PublicApi.tcs"-"!:\multimedia\MM-ICL-ENCDE-PublicApi.tcs"
+"\Epoc32\winscw\c\multimedia\MM-ICL-ENCDE-PublicApi.ini"-"!:\multimedia\MM-ICL-ENCDE-PublicApi.ini"
+"\Epoc32\Data\z\multimedia\t_imageencoder\enc1bit.mbm"-"!:\multimedia\t_imageencoder\enc1bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imageencoder\enc2bit.mbm"-"!:\multimedia\t_imageencoder\enc2bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imageencoder\enc4bit.mbm"-"!:\multimedia\t_imageencoder\enc4bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imageencoder\enc8bit.mbm"-"!:\multimedia\t_imageencoder\enc8bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imageencoder\enc16bit.mbm"-"!:\multimedia\t_imageencoder\enc16bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imageencoder\enc24bit.mbm"-"!:\multimedia\t_imageencoder\enc24bit.mbm"
+
+
+;T_ImageDecoder
+"\Epoc32\release\armv5\urel\T_ImageDecoder.exe"-"!:\sys\bin\T_ImageDecoder.exe"
+"\Epoc32\winscw\c\multimedia\dec.bat"-"!:\multimedia\dec.bat"
+"\Epoc32\winscw\c\multimedia\MM-ICL-DECDE-PublicApi.script"-"!:\multimedia\MM-ICL-DECDE-PublicApi.script"
+"\Epoc32\winscw\c\multimedia\MM-ICL-DECDE-PublicApi.tcs"-"!:\multimedia\MM-ICL-DECDE-PublicApi.tcs"
+"\Epoc32\winscw\c\multimedia\MM-ICL-DECDE-PublicApi.ini"-"!:\multimedia\MM-ICL-DECDE-PublicApi.ini"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.apm"-"!:\multimedia\t_imagedecoder\24bit.apm"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bit.bmp"-"!:\multimedia\t_imagedecoder\1bit.bmp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\4bit.bmp"-"!:\multimedia\t_imagedecoder\4bit.bmp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\8bit.bmp"-"!:\multimedia\t_imagedecoder\8bit.bmp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.bmp"-"!:\multimedia\t_imagedecoder\24bit.bmp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.clp"-"!:\multimedia\t_imagedecoder\24bit.clp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bit.gif"-"!:\multimedia\t_imagedecoder\1bit.gif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\2bit.gif"-"!:\multimedia\t_imagedecoder\2bit.gif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\4bit.gif"-"!:\multimedia\t_imagedecoder\4bit.gif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\6bit.gif"-"!:\multimedia\t_imagedecoder\6bit.gif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\8bit.gif"-"!:\multimedia\t_imagedecoder\8bit.gif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\commented.gif"-"!:\multimedia\t_imagedecoder\commented.gif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\4bit.ico"-"!:\multimedia\t_imagedecoder\4bit.ico"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\8bit.ico"-"!:\multimedia\t_imagedecoder\8bit.ico"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\8bit.jpg"-"!:\multimedia\t_imagedecoder\8bit.jpg"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.jpg"-"!:\multimedia\t_imagedecoder\24bit.jpg"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\thumbnail.jpg"-"!:\multimedia\t_imagedecoder\thumbnail.jpg"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\commented.jpg"-"!:\multimedia\t_imagedecoder\commented.jpg"
+"\Epoc32\Data\z\multimedia\t_imagedecoder\dec1bit.mbm"-"!:\multimedia\t_imagedecoder\dec1bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imagedecoder\dec2bit.mbm"-"!:\multimedia\t_imagedecoder\dec2bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imagedecoder\dec4bit.mbm"-"!:\multimedia\t_imagedecoder\dec4bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imagedecoder\dec8bit.mbm"-"!:\multimedia\t_imagedecoder\dec8bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imagedecoder\dec16bit.mbm"-"!:\multimedia\t_imagedecoder\dec16bit.mbm"
+"\Epoc32\Data\z\multimedia\t_imagedecoder\dec24bit.mbm"-"!:\multimedia\t_imagedecoder\dec24bit.mbm"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.mng"-"!:\multimedia\t_imagedecoder\24bit.mng"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bit.ota"-"!:\multimedia\t_imagedecoder\1bit.ota"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bit.png"-"!:\multimedia\t_imagedecoder\1bit.png"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\4bit.png"-"!:\multimedia\t_imagedecoder\4bit.png"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\8bit.png"-"!:\multimedia\t_imagedecoder\8bit.png"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.png"-"!:\multimedia\t_imagedecoder\24bit.png"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bitG3.tif"-"!:\multimedia\t_imagedecoder\1bitG3.tif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bitG4.tif"-"!:\multimedia\t_imagedecoder\1bitG4.tif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bit.tif"-"!:\multimedia\t_imagedecoder\1bit.tif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\4bit.tif"-"!:\multimedia\t_imagedecoder\4bit.tif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\8bit.tif"-"!:\multimedia\t_imagedecoder\8bit.tif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.tif"-"!:\multimedia\t_imagedecoder\24bit.tif"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\1bit.wbmp"-"!:\multimedia\t_imagedecoder\1bit.wbmp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\24bit.wmf"-"!:\multimedia\t_imagedecoder\24bit.wmf"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\corrupted.bmp"-"!:\multimedia\t_imagedecoder\corrupted.bmp"
+"\Epoc32\winscw\c\multimedia\t_imagedecoder\partial.bmp"-"!:\multimedia\t_imagedecoder\partial.bmp"
+
+;T_MdaAudioConvertUtility
+"\Epoc32\release\armv5\urel\T_MdaAudioConvertUtility.exe"-"!:\sys\bin\T_MdaAudioConvertUtility.exe"
+"\Epoc32\winscw\c\multimedia\tacu.bat"-"!:\multimedia\tacu.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI.script"-"!:\multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI.tcs"-"!:\multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI.ini"-"!:\multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI.ini"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioconvertutility\note.wav"-"!:\multimedia\t_mdaaudioconvertutility\note.wav"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioconvertutility\corrupted.wav"-"!:\multimedia\t_mdaaudioconvertutility\corrupted.wav"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioconvertutility\note.raw"-"!:\multimedia\t_mdaaudioconvertutility\note.raw"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioconvertutility\explode.wav"-"!:\multimedia\t_mdaaudioconvertutility\explode.wav"
+
+
+;T_MdaAudioInputStream
+"\Epoc32\release\armv5\urel\T_MdaAudioInputStream.exe"-"!:\sys\bin\T_MdaAudioInputStream.exe"
+"\Epoc32\winscw\c\multimedia\tais.bat"-"!:\multimedia\tais.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-INPT-PublicAPI.script"-"!:\multimedia\MM-MMF-ACLNT-INPT-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-INPT-PublicAPI.tcs"-"!:\multimedia\MM-MMF-ACLNT-INPT-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-INPT-PublicAPI.ini"-"!:\multimedia\MM-MMF-ACLNT-INPT-PublicAPI.ini"
+
+
+;T_MdaAudioOutputStream
+"\Epoc32\release\armv5\urel\T_MdaAudioOutputStream.exe"-"!:\sys\bin\T_MdaAudioOutputStream.exe"
+"\Epoc32\winscw\c\multimedia\taos.bat"-"!:\multimedia\taos.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-OUTPT-PublicAPI.script"-"!:\multimedia\MM-MMF-ACLNT-OUTPT-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-OUTPT-PublicAPI.tcs"-"!:\multimedia\MM-MMF-ACLNT-OUTPT-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-OUTPT-PublicAPI.ini"-"!:\multimedia\MM-MMF-ACLNT-OUTPT-PublicAPI.ini"
+"\Epoc32\winscw\c\multimedia\t_mdaaudiooutputstream\MM-MMF-ACLNT-OUTPT-PublicAPI.raw"-"!:\multimedia\t_mdaaudiooutputstream\MM-MMF-ACLNT-OUTPT-PublicAPI.raw"
+
+;T_MdaAudioPlayerUtility
+"\Epoc32\release\armv5\urel\T_MdaAudioPlayerUtility.exe"-"!:\sys\bin\T_MdaAudioPlayerUtility.exe"
+"\Epoc32\winscw\c\multimedia\tapu.bat"-"!:\multimedia\tapu.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-PLYR-PublicAPI.script"-"!:\multimedia\MM-MMF-ACLNT-PLYR-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-PLYR-PublicAPI.tcs"-"!:\multimedia\MM-MMF-ACLNT-PLYR-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-PLYR-PublicAPI.ini"-"!:\multimedia\MM-MMF-ACLNT-PLYR-PublicAPI.ini"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioplayerutility\test.wav"-"!:\multimedia\t_mdaaudioplayerutility\test.wav"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioplayerutility\test.bad"-"!:\multimedia\t_mdaaudioplayerutility\test.bad"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioplayerutility\test_err.wav"-"!:\multimedia\t_mdaaudioplayerutility\test_err.wav"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioplayerutility\empty.wav"-"!:\multimedia\t_mdaaudioplayerutility\empty.wav"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioplayerutility\answeringmachine.wav"-"!:\multimedia\t_mdaaudioplayerutility\answeringmachine.wav"
+"\Epoc32\winscw\c\multimedia\t_mdaaudioplayerutility\explode.au"-"!:\multimedia\t_mdaaudioplayerutility\explode.au"
+
+;T_MdaAudioRecorderUtility
+"\Epoc32\release\armv5\urel\T_MdaAudioRecorderUtility.exe"-"!:\sys\bin\T_MdaAudioRecorderUtility.exe"
+"\Epoc32\winscw\c\multimedia\taru.bat"-"!:\multimedia\taru.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-RCRDR-PublicAPI.script"-"!:\multimedia\MM-MMF-ACLNT-RCRDR-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-RCRDR-PublicAPI.tcs"-"!:\multimedia\MM-MMF-ACLNT-RCRDR-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-RCRDR-PublicAPI.ini"-"!:\multimedia\MM-MMF-ACLNT-RCRDR-PublicAPI.ini"
+"\Epoc32\winscw\c\multimedia\T_MdaAudioRecorderUtility\pcm16stereo8khz.wav"-"!:\multimedia\T_MdaAudioRecorderUtility\pcm16stereo8khz.wav"
+"\Epoc32\winscw\c\multimedia\T_MdaAudioRecorderUtility\corrupted.wav"-"!:\multimedia\T_MdaAudioRecorderUtility\corrupted.wav"
+
+;T_MdaAudioToneUtility
+"\Epoc32\release\armv5\urel\T_MdaAudioToneUtility.exe"-"!:\sys\bin\T_MdaAudioToneUtility.exe"
+"\Epoc32\winscw\c\multimedia\tmdtone.bat"-"!:\multimedia\tmdtone.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-TONE-PublicAPI.script"-"!:\multimedia\MM-MMF-ACLNT-TONE-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-TONE-PublicAPI.tcs"-"!:\multimedia\MM-MMF-ACLNT-TONE-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-ACLNT-TONE-PublicAPI.ini"-"!:\multimedia\MM-MMF-ACLNT-TONE-PublicAPI.ini"
+"\Epoc32\winscw\c\multimedia\t_audiotoneutility\sequence1.sqn"-"!:\multimedia\t_audiotoneutility\sequence1.sqn"
+"\Epoc32\winscw\c\multimedia\t_audiotoneutility\sequence2.sqn"-"!:\multimedia\t_audiotoneutility\sequence2.sqn"
+"\Epoc32\winscw\c\multimedia\t_audiotoneutility\badsequence.sqn"-"!:\multimedia\t_audiotoneutility\badsequence.sqn"
+
+;T_MidiClientUtility
+"\Epoc32\release\armv5\urel\T_MidiClientUtility.exe"-"!:\sys\bin\T_MidiClientUtility.exe"
+"\Epoc32\winscw\c\multimedia\tmidi.bat"-"!:\multimedia\tmidi.bat"
+"\Epoc32\winscw\c\multimedia\MM-MMF-MIDI-PublicAPI.script"-"!:\multimedia\MM-MMF-MIDI-PublicAPI.script"
+"\Epoc32\winscw\c\multimedia\MM-MMF-MIDI-PublicAPI.tcs"-"!:\multimedia\MM-MMF-MIDI-PublicAPI.tcs"
+"\Epoc32\winscw\c\multimedia\MM-MMF-MIDI-PublicAPI.ini"-"!:\multimedia\MM-MMF-MIDI-PublicAPI.ini"
+"\Epoc32\winscw\c\multimedia\t_midiclientutility\midi.mid"-"!:\multimedia\t_midiclientutility\midi.mid"
+"\Epoc32\winscw\c\multimedia\t_midiclientutility\textmidi.mid"-"!:\multimedia\t_midiclientutility\textmidi.mid"
+"\Epoc32\winscw\c\multimedia\t_midiclientutility\soundbank.gm"-"!:\multimedia\t_midiclientutility\soundbank.gm"
+
+;T_Camera
+"\Epoc32\release\armv5\urel\T_Camera.exe"-"!:\sys\bin\T_Camera.exe"
+"\Epoc32\winscw\c\multimedia\tcamera.bat"-"!:\multimedia\tcamera.bat"
+"\Epoc32\winscw\c\multimedia\MM-ECM-PublicApi.script"-"!:\multimedia\MM-ECM-PublicApi.script"
+"\Epoc32\winscw\c\multimedia\MM-ECM-PublicApi.tcs"-"!:\multimedia\MM-ECM-PublicApi.tcs"
+"\Epoc32\winscw\c\multimedia\MM-ECM-PublicApi.ini"-"!:\multimedia\MM-ECM-PublicApi.ini"
+"\Epoc32\winscw\c\multimedia\102070CC.txt"-"!:\102070CC.txt"
+
+; Required files
+; None
+
+; Component .sis files
+; None

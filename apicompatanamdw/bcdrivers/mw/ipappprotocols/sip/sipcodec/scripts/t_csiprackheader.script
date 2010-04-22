@@ -1,0 +1,371 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName   t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM. An SIP server listening on ports 5060.
+//        The communicaion to the server is established using the default connection.
+//        The supplied commsdat is set up to use NTRAS on Emulator as well as on H/W.
+//! @SYMScriptAutomation  The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csiprackheader
+//
+// Tests all public elements of the t_csiprackheader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPRAckHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE  t_sipcodecapi
+DELAY   2000
+
+START_TESTCASE              t_csiprackheader-0001
+//! @SYMTestCaseID          t_csiprackheader-0001
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::NewL(TUint, TUint, RStringF) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPRAckHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Delete the CSIPRAckHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0001-NewL_Command01
+        COMMAND             siprackheader                       NewL             t_csiprackheader-0001-NewL_Command02
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0001
+
+START_TESTCASE              t_csiprackheader-0002
+//! @SYMTestCaseID          t_csiprackheader-0002
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::NewLC(TUint, TUint, RStringF) 
+//! @SYMTestCaseDesc        Construct and destruct CSIPRAckHeader object.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Delete the CSIPRAckHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0002-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0002-NewLC_Command02
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0002
+
+START_TESTCASE              t_csiprackheader-0003
+//! @SYMTestCaseID          t_csiprackheader-0003
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::DecodeL(const TDesC8{ref})
+//! @SYMTestCaseDesc        Constructs a CSIPRAckHeader from textual representation of the header's value part.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP, and construct CSIPRAckHeader object using DecodeL.
+//!                         3. Delete the CSIPRAckHeader object.
+//!                         4. Delete the CSIP object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0003-NewL_Command01
+        COMMAND             siprackheader                       DecodeL          t_csiprackheader-0003-DecodeL_Command02
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0003
+
+START_TESTCASE              t_csiprackheader-0004
+//! @SYMTestCaseID          t_csiprackheader-0004
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::Seq()
+//! @SYMTestCaseDesc        Gets the sequence number from the "RAck" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Get the seq of CSIPRAckHeader object
+//!                         4. Delete all objects
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned seq is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0004-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0004-NewLC_Command02
+        COMMAND             siprackheader                       Seq              t_csiprackheader-0004-Seq_Command03
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0004
+
+START_TESTCASE              t_csiprackheader-0005
+//! @SYMTestCaseID          t_csiprackheader-0005
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::SetSeq(TUint)
+//! @SYMTestCaseDesc        Sets the sequence number in the "RAck" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Set seq to CSIPRAckHeader object and check the value just set.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned seq is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0005-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0005-NewLC_Command02
+        COMMAND             siprackheader                       SetSeq           t_csiprackheader-0005-SetSeq_Command03
+        COMMAND             siprackheader                       Seq              t_csiprackheader-0005-Seq_Command04
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0005
+
+START_TESTCASE              t_csiprackheader-0006
+//! @SYMTestCaseID          t_csiprackheader-0006
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::CSeqNum()
+//! @SYMTestCaseDesc        Gets the sequence number from the "RAck" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Check the CSeqNum value.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned seq is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0006-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0006-NewLC_Command02
+        COMMAND             siprackheader                       CSeqNum          t_csiprackheader-0006-CSeqNum_Command03
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0006
+
+START_TESTCASE              t_csiprackheader-0007
+//! @SYMTestCaseID          t_csiprackheader-0007
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::SetCSeqNum(TUint)
+//! @SYMTestCaseDesc        Sets the sequence number in the "RAck" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Set CSeqNum of CSIPRAckHeader object and check the value just set.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned seq is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0007-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0007-NewLC_Command02
+        COMMAND             siprackheader                       SetCSeqNum       t_csiprackheader-0007-SetCSeqNum_Command03
+        COMMAND             siprackheader                       CSeqNum          t_csiprackheader-0007-CSeqNum_Command04
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0007
+
+START_TESTCASE              t_csiprackheader-0008
+//! @SYMTestCaseID          t_csiprackheader-0008
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::Method()
+//! @SYMTestCaseDesc        Gets the method from the "RAck" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Get the method of CSIPRAckHeader object and check it.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned method is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0008-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0008-NewLC_Command02
+        COMMAND             siprackheader                       Method           t_csiprackheader-0008-Method_Command03
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0008
+
+START_TESTCASE              t_csiprackheader-0009
+//! @SYMTestCaseID          t_csiprackheader-0009
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::SetMethod(RStringF)
+//! @SYMTestCaseDesc        Sets the method in the "RAck" header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Set method to CSIPRAckHeader object and check the value just set.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The returned method is as expected.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0009-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0009-NewLC_Command02
+        COMMAND             siprackheader                       SetMethodL       t_csiprackheader-0009-SetMethodL_Command03
+        COMMAND             siprackheader                       Method           t_csiprackheader-0009-Method_Command04
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0009
+
+START_TESTCASE              t_csiprackheader-0010
+//! @SYMTestCaseID          t_csiprackheader-0010
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::Name()
+//! @SYMTestCaseDesc        Gets the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Get name of the CSIPRAckHeader object.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                      \SIP\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        COMMAND             sip                                 NewL             t_csiprackheader-0010-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0010-NewLC_Command02
+        COMMAND             siprackheader                       Name
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0010
+
+START_TESTCASE              t_csiprackheader-0011
+//! @SYMTestCaseID          t_csiprackheader-0011
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::ToTextValueL()
+//! @SYMTestCaseDesc        Encodes the header's value into its textual representation.
+//! @SYMTestActions         1. Create a CSIP object and a CSIPRAckHeader object.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Encodes the header's value into its textual representation.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprackheader-0011-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0011-NewLC_Command02
+        COMMAND             siprackheader                       ToTextValueL     t_csiprackheader-0011-ToTextValueL_command03
+        COMMAND             siprackheader                       ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0011
+
+START_TESTCASE              t_csiprackheader-0012
+//! @SYMTestCaseID          t_csiprackheader-0012
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::CloneL()
+//! @SYMTestCaseDesc        Creates a deep-copy of this header object.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPRAckHeader objects.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Clone the CSIPRAckHeader object to 2nd one and check the 2nd one is same as 1st one.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader1
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csiprackheader-0012-NewL_Command01
+        COMMAND             siprackheader                       NewLC            t_csiprackheader-0012-NewLC_Command02
+        COMMAND             siprackheader                       CloneL           t_csiprackheader-0012-CloneL_command03
+        COMMAND             siprackheader1                      Seq              t_csiprackheader-0012-Seq_command04
+        COMMAND             siprackheader1                      CSeqNum          t_csiprackheader-0012-CSeqNum_command05
+        COMMAND             siprackheader1                      Method           t_csiprackheader-0012-Method_command06
+        COMMAND             siprackheader                       ~
+        COMMAND             siprackheader1                      ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0012
+
+START_TESTCASE              t_csiprackheader-0013
+//! @SYMTestCaseID          t_csiprackheader-0013
+//! @SYMAuthor              Felix Rao
+//! @SYMCreationDate        15/10/2009
+//! @SYMAPI                 CSIPRAckHeader::InternalizeValueL()
+//! @SYMTestCaseDesc        Constructs an instance of a CSIPRAckHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object and 2 CSIPRAckHeader objects.
+//!                         2. Construct CSIP and CSIPRAckHeader object.
+//!                         3. Externalize 1st CSIPRAckHeader object, then internalize 2nd one from the 1st one and check if the two are the same.
+//!                         4. Delete all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Codec can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi             \sip\sipcodec\t_csiprackheader.ini
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader
+        CREATE_OBJECT       CSIPRAckHeader                      siprackheader1
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL                        t_csiprackheader-0013-NewL_command01
+        COMMAND             siprackheader                       NewL                        t_csiprackheader-0013-NewL_command02
+        COMMAND             siprackheader                       ExternalizeL                t_csiprackheader-0013-ExternalizeL_command03
+        COMMAND             siprackheader1                      InternalizeValueL           t_csiprackheader-0013-InternalizeValueL_command04
+        COMMAND             siprackheader1                      Seq                         t_csiprackheader-0013-Seq_command05
+        COMMAND             siprackheader1                      CSeqNum                     t_csiprackheader-0013-CSeqNum_command06
+        COMMAND             siprackheader1                      Method                      t_csiprackheader-0013-Method_command07
+        COMMAND             siprackheader                       ~
+        COMMAND             siprackheader1                      ~
+        COMMAND             sip                                 ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprackheader-0013

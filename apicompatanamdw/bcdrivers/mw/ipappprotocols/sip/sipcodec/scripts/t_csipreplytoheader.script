@@ -1,0 +1,208 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csipreplytoheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipreplytoheader
+//
+// Tests all public elements of the CSIPReplyToHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPReplyToHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+
+START_TESTCASE              t_csipreplytoheader-0001
+//! @SYMTestCaseID          t_csipreplytoheader-0001
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPReplyToHeader::NewL(CSIPAddress *)
+//! @SYMTestCaseDesc        Create a new instance of CSIPReplyToHeader. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAddress object.
+//!                         3. Create a CSIPReplyToHeader object with the CSIPAddress object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: NewL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipreplytoheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAddress                   sipaddress
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader
+        COMMAND             sip                           NewL                   t_csipreplytoheader-0000-NewL_command01
+        COMMAND             sipaddress                    NewL                   t_csipreplytoheader-0001-NewL_command02
+        COMMAND             sipreplytoheader              NewL                   t_csipreplytoheader-0001-NewL_command03
+        COMMAND             sipreplytoheader              ~
+        COMMAND             sipaddress                    ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipreplytoheader-0001
+
+
+START_TESTCASE              t_csipreplytoheader-0002
+//! @SYMTestCaseID          t_csipreplytoheader-0002
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPReplyToHeader::NewLC(CSIPAddress *)
+//! @SYMTestCaseDesc        Create a new instance of CSIPReplyToHeader. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPAddress object.
+//!                         3. Create a CSIPReplyToHeader object with the CSIPAddress object.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: NewLC() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipreplytoheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPAddress                   sipaddress
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader
+        COMMAND             sip                           NewL                   t_csipreplytoheader-0000-NewL_command01
+        COMMAND             sipaddress                    NewL                   t_csipreplytoheader-0002-NewL_command02
+        COMMAND             sipreplytoheader              NewLC                  t_csipreplytoheader-0002-NewLC_command03
+        COMMAND             sipreplytoheader              ~
+        COMMAND             sipaddress                    ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipreplytoheader-0002
+
+
+START_TESTCASE              t_csipreplytoheader-0003
+//! @SYMTestCaseID          t_csipreplytoheader-0003
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPReplyToHeader::DecodeL(const TDesC8 &)
+//! @SYMTestCaseDesc        Constructs a CSIPReplyToHeader from textual representation of the header's value part. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPReplyToHeader by calling CSIPReplyToHeader::DecodeL().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: DecodeL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipreplytoheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader
+        COMMAND             sip                           NewL                   t_csipreplytoheader-0000-NewL_command01
+        COMMAND             sipreplytoheader              DecodeL                t_csipreplytoheader-0000-DecodeL_command02
+        COMMAND             sipreplytoheader              ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipreplytoheader-0003
+
+
+START_TESTCASE              t_csipreplytoheader-0004
+//! @SYMTestCaseID          t_csipreplytoheader-0004
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPReplyToHeader::Name()
+//! @SYMTestCaseDesc        Get the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPReplyToHeader object.
+//!                         3. Get the full name of the header.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The retrieved name is expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipreplytoheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader
+        COMMAND             sip                           NewL                   t_csipreplytoheader-0000-NewL_command01
+        COMMAND             sipreplytoheader              DecodeL                t_csipreplytoheader-0000-DecodeL_command02
+        COMMAND             sipreplytoheader              Name                   t_csipreplytoheader-0004-Name_command03
+        COMMAND             sipreplytoheader              ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipreplytoheader-0004
+
+
+START_TESTCASE              t_csipreplytoheader-0005
+//! @SYMTestCaseID          t_csipreplytoheader-0005
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPReplyToHeader::CloneL()
+//! @SYMTestCaseDesc        Create a deep-copy of this CSIPHeaderBase object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPReplyToHeader objects.
+//!                         3. Create a deep-copy of this CSIPHeaderBase object by calling CSIPReplyToHeader::CloneL().
+//!                         4. Compare two CSIPReplyToHeader objects.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. CloneL() is called without errors;
+//!                          2. Step 4 returns ETrue.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipreplytoheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader1
+        COMMAND             sip                           NewL                   t_csipreplytoheader-0000-NewL_command01
+        COMMAND             sipreplytoheader              DecodeL                t_csipreplytoheader-0000-DecodeL_command02
+        COMMAND             sipreplytoheader              CloneL                 t_csipreplytoheader-0005-CloneL_command03
+
+        COMMAND             sipreplytoheader1             ~
+        COMMAND             sipreplytoheader              ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipreplytoheader-0005
+
+
+START_TESTCASE              t_csipreplytoheader-0006
+//! @SYMTestCaseID          t_csipreplytoheader-0006
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        19/10/2009
+//! @SYMAPI                 CSIPReplyToHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Construct an instance of a CSIPReplyToHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPReplyToHeader by calling CSIPReplyToHeader::InternalizeValueL().
+//!                         3. Get the name and header's value.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipreplytoheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader
+        CREATE_OBJECT       CSIPReplyToHeader             sipreplytoheader1
+        COMMAND             sip                           NewL                   t_csipreplytoheader-0000-NewL_command01
+        COMMAND             sipreplytoheader              DecodeL                t_csipreplytoheader-0000-DecodeL_command02
+        COMMAND             sipreplytoheader              ExternalizeL           t_csipreplytoheader-0006-ExternalizeL_command03
+        COMMAND             sipreplytoheader1             InternalizeValueL      t_csipreplytoheader-0006-InternalizeValueL_command04
+        COMMAND             sipreplytoheader1             Name                   t_csipreplytoheader-0006-Name_command05
+        COMMAND             sipreplytoheader1             ~
+        COMMAND             sipreplytoheader              ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipreplytoheader-0006
+

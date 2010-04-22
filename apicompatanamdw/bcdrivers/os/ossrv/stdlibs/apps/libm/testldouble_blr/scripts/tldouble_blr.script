@@ -1,0 +1,1042 @@
+//
+// Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tldouble_blr
+LOAD_SUITE tldouble_blr
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  cbrtl_test \tstdapis\tldouble_blr.ini Section_cbrtl_test_10
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ceill_test \tstdapis\tldouble_blr.ini Section_ceill_test_9
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfl_test \tstdapis\tldouble_blr.ini Section_erfl_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  erfcl_test \tstdapis\tldouble_blr.ini Section_erfcl_test_9
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_2
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_9
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expl_test \tstdapis\tldouble_blr.ini Section_expl_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  exp2l_test \tstdapis\tldouble_blr.ini Section_exp2l_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  expm1l_test \tstdapis\tldouble_blr.ini Section_expm1l_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fabsl_test \tstdapis\tldouble_blr.ini Section_fabsl_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ilogbl_test \tstdapis\tldouble_blr.ini Section_ilogbl_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j0l_test \tstdapis\tldouble_blr.ini Section_j0l_test_13
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  j1l_test \tstdapis\tldouble_blr.ini Section_j1l_test_10
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lrintl_test \tstdapis\tldouble_blr.ini Section_lrintl_test_10
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llrintl_test \tstdapis\tldouble_blr.ini Section_llrintl_test_20
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logl_test \tstdapis\tldouble_blr.ini Section_logl_test_10
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log10l_test \tstdapis\tldouble_blr.ini Section_log10l_test_12
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  log1pl_test \tstdapis\tldouble_blr.ini Section_log1pl_test_9
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  logbl_test \tstdapis\tldouble_blr.ini Section_logbl_test_9
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lroundl_test \tstdapis\tldouble_blr.ini Section_lroundl_test_17
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_21
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_22
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_23
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_24
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_25
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_26
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_27
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_28
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_29
+RUN_TEST_STEP !Result=0 5 tldouble_blr  llroundl_test \tstdapis\tldouble_blr.ini Section_llroundl_test_30
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  rintl_test \tstdapis\tldouble_blr.ini Section_rintl_test_10
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sqrtl_test \tstdapis\tldouble_blr.ini Section_sqrtl_test_14
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  truncl_test \tstdapis\tldouble_blr.ini Section_truncl_test_17
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y0l_test \tstdapis\tldouble_blr.ini Section_y0l_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  y1l_test \tstdapis\tldouble_blr.ini Section_y1l_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  significandl_test \tstdapis\tldouble_blr.ini Section_significandl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  significandl_test \tstdapis\tldouble_blr.ini Section_significandl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  significandl_test \tstdapis\tldouble_blr.ini Section_significandl_test_3
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  floorl_test \tstdapis\tldouble_blr.ini Section_floorl_test_9
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nearbyintl_test \tstdapis\tldouble_blr.ini Section_nearbyintl_test_9
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isinfl_test \tstdapis\tldouble_blr.ini Section_isinfl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isinfl_test \tstdapis\tldouble_blr.ini Section_isinfl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isinfl_test \tstdapis\tldouble_blr.ini Section_isinfl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isinfl_test \tstdapis\tldouble_blr.ini Section_isinfl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isinfl_test \tstdapis\tldouble_blr.ini Section_isinfl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isinfl_test \tstdapis\tldouble_blr.ini Section_isinfl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnanl_test \tstdapis\tldouble_blr.ini Section_isnanl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnanl_test \tstdapis\tldouble_blr.ini Section_isnanl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnanl_test \tstdapis\tldouble_blr.ini Section_isnanl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnanl_test \tstdapis\tldouble_blr.ini Section_isnanl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnanl_test \tstdapis\tldouble_blr.ini Section_isnanl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnanl_test \tstdapis\tldouble_blr.ini Section_isnanl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_21
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_22
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_23
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fdiml_test \tstdapis\tldouble_blr.ini Section_fdiml_test_24
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_14
+//RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_15
+//RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmaxl_test \tstdapis\tldouble_blr.ini Section_fmaxl_test_18
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fminl_test \tstdapis\tldouble_blr.ini Section_fminl_test_21
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmodl_test \tstdapis\tldouble_blr.ini Section_fmodl_test_13
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  hypotl_test \tstdapis\tldouble_blr.ini Section_hypotl_test_19
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remainderl_test \tstdapis\tldouble_blr.ini Section_remainderl_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nextafterl_test \tstdapis\tldouble_blr.ini Section_nextafterl_test_13
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  nexttowardl_test \tstdapis\tldouble_blr.ini Section_nexttowardl_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  copysignl_test \tstdapis\tldouble_blr.ini Section_copysignl_test_16
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_21
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_22
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_23
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_24
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_25
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_26
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_27
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_28
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_29
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_30
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_31
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_32
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_33
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_34
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_35
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_36
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_37
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_38
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_39
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_40
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_41
+RUN_TEST_STEP !Result=0 5 tldouble_blr  jnl_test \tstdapis\tldouble_blr.ini Section_jnl_test_42
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_21
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_22
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_23
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_24
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_25
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_26
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_27
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_28
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_29
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_30
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_31
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_32
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_33
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_34
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_35
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ynl_test \tstdapis\tldouble_blr.ini Section_ynl_test_36
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_21
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_22
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_23
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_24
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_25
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_26
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_27
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_28
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_29
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_30
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_31
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_32
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_33
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_34
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_35
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_36
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_37
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_38
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbl_test \tstdapis\tldouble_blr.ini Section_scalbl_test_39
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalbnl_test \tstdapis\tldouble_blr.ini Section_scalbnl_test_8
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_8
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_53
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_56
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_57
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_58
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_59
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_64
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_65
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_66
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_67
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_68
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_69
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_70
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_71
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_76
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_77
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_78
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_79
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_80
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_81
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_82
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_83
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_84
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_85
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_86
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_87
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_88
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_89
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_90
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_91
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_92
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_93
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_94
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_95
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_96
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_97
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_98
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_99
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_100
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_101
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_102 
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_103
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_104
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_105
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_106
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_107
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_108
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_109
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_120
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_121
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_122
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_123
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_124
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_125
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_126
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_127
+RUN_TEST_STEP !Result=0 5 tldouble_blr  powl_test \tstdapis\tldouble_blr.ini Section_powl_test_128
+
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acosl_test \tstdapis\tldouble_blr.ini Section_acosl_test_13
+
+
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acoshl_test \tstdapis\tldouble_blr.ini Section_acoshl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acoshl_test \tstdapis\tldouble_blr.ini Section_acoshl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acoshl_test \tstdapis\tldouble_blr.ini Section_acoshl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acoshl_test \tstdapis\tldouble_blr.ini Section_acoshl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  acoshl_test \tstdapis\tldouble_blr.ini Section_acoshl_test_5
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinl_test \tstdapis\tldouble_blr.ini Section_asinl_test_12
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinhl_test \tstdapis\tldouble_blr.ini Section_asinhl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinhl_test \tstdapis\tldouble_blr.ini Section_asinhl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinhl_test \tstdapis\tldouble_blr.ini Section_asinhl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinhl_test \tstdapis\tldouble_blr.ini Section_asinhl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinhl_test \tstdapis\tldouble_blr.ini Section_asinhl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  asinhl_test \tstdapis\tldouble_blr.ini Section_asinhl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanl_test \tstdapis\tldouble_blr.ini Section_atanl_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atanhl_test \tstdapis\tldouble_blr.ini Section_atanhl_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  Cosl_test \tstdapis\tldouble_blr.ini Section_Cosl_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fpclassifyl_test \tstdapis\tldouble_blr.ini Section_fpclassifyl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fpclassifyl_test \tstdapis\tldouble_blr.ini Section_fpclassifyl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fpclassifyl_test \tstdapis\tldouble_blr.ini Section_fpclassifyl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fpclassifyl_test \tstdapis\tldouble_blr.ini Section_fpclassifyl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fpclassifyl_test \tstdapis\tldouble_blr.ini Section_fpclassifyl_test_5
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  coshl_test \tstdapis\tldouble_blr.ini Section_coshl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  coshl_test \tstdapis\tldouble_blr.ini Section_coshl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  coshl_test \tstdapis\tldouble_blr.ini Section_coshl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  coshl_test \tstdapis\tldouble_blr.ini Section_coshl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  coshl_test \tstdapis\tldouble_blr.ini Section_coshl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  coshl_test \tstdapis\tldouble_blr.ini Section_coshl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinl_test \tstdapis\tldouble_blr.ini Section_sinl_test_11
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  sinhl_test \tstdapis\tldouble_blr.ini Section_sinhl_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanl_test \tstdapis\tldouble_blr.ini Section_tanl_test_7
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  tanhl_test \tstdapis\tldouble_blr.ini Section_tanhl_test_10
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_19
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_20
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_21
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_22
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_23
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_24
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_25
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_26
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_27
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_28
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_29
+RUN_TEST_STEP !Result=0 5 tldouble_blr  atan2l_test \tstdapis\tldouble_blr.ini Section_atan2l_test_30
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  fmal_test \tstdapis\tldouble_blr.ini Section_fmal_test_16
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isfinitel_test \tstdapis\tldouble_blr.ini Section_isfinitel_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isfinitel_test \tstdapis\tldouble_blr.ini Section_isfinitel_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isfinitel_test \tstdapis\tldouble_blr.ini Section_isfinitel_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isfinitel_test \tstdapis\tldouble_blr.ini Section_isfinitel_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isfinitel_test \tstdapis\tldouble_blr.ini Section_isfinitel_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isfinitel_test \tstdapis\tldouble_blr.ini Section_isfinitel_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnormall_test \tstdapis\tldouble_blr.ini Section_isnormall_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnormall_test \tstdapis\tldouble_blr.ini Section_isnormall_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnormall_test \tstdapis\tldouble_blr.ini Section_isnormall_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnormall_test \tstdapis\tldouble_blr.ini Section_isnormall_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnormall_test \tstdapis\tldouble_blr.ini Section_isnormall_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  isnormall_test \tstdapis\tldouble_blr.ini Section_isnormall_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  signbitl_test \tstdapis\tldouble_blr.ini Section_signbitl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  signbitl_test \tstdapis\tldouble_blr.ini Section_signbitl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  signbitl_test \tstdapis\tldouble_blr.ini Section_signbitl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  signbitl_test \tstdapis\tldouble_blr.ini Section_signbitl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  signbitl_test \tstdapis\tldouble_blr.ini Section_signbitl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  signbitl_test \tstdapis\tldouble_blr.ini Section_signbitl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  ldexpl_test \tstdapis\tldouble_blr.ini Section_ldexpl_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  roundl_test \tstdapis\tldouble_blr.ini Section_roundl_test_12
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  scalblnl_test \tstdapis\tldouble_blr.ini Section_scalblnl_test_8
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  finitel_test \tstdapis\tldouble_blr.ini Section_finitel_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  finitel_test \tstdapis\tldouble_blr.ini Section_finitel_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  finitel_test \tstdapis\tldouble_blr.ini Section_finitel_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  finitel_test \tstdapis\tldouble_blr.ini Section_finitel_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  finitel_test \tstdapis\tldouble_blr.ini Section_finitel_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  finitel_test \tstdapis\tldouble_blr.ini Section_finitel_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_11
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_12
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_13
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_14
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_15
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_16
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_17
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_18
+RUN_TEST_STEP !Result=0 5 tldouble_blr  dreml_test \tstdapis\tldouble_blr.ini Section_dreml_test_19
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  modfl_test \tstdapis\tldouble_blr.ini Section_modfl_test_10
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  frexpl_test \tstdapis\tldouble_blr.ini Section_frexpl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  frexpl_test \tstdapis\tldouble_blr.ini Section_frexpl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  frexpl_test \tstdapis\tldouble_blr.ini Section_frexpl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  frexpl_test \tstdapis\tldouble_blr.ini Section_frexpl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  frexpl_test \tstdapis\tldouble_blr.ini Section_frexpl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  frexpl_test \tstdapis\tldouble_blr.ini Section_frexpl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquol_test \tstdapis\tldouble_blr.ini Section_remquol_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquol_test \tstdapis\tldouble_blr.ini Section_remquol_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquol_test \tstdapis\tldouble_blr.ini Section_remquol_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquol_test \tstdapis\tldouble_blr.ini Section_remquol_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquol_test \tstdapis\tldouble_blr.ini Section_remquol_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquol_test \tstdapis\tldouble_blr.ini Section_remquol_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquo_remcheckl_test \tstdapis\tldouble_blr.ini Section_remquo_remcheckl_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquo_remcheckl_test \tstdapis\tldouble_blr.ini Section_remquo_remcheckl_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquo_remcheckl_test \tstdapis\tldouble_blr.ini Section_remquo_remcheckl_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquo_remcheckl_test \tstdapis\tldouble_blr.ini Section_remquo_remcheckl_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquo_remcheckl_test \tstdapis\tldouble_blr.ini Section_remquo_remcheckl_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  remquo_remcheckl_test \tstdapis\tldouble_blr.ini Section_remquo_remcheckl_test_6
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  gammal_test \tstdapis\tldouble_blr.ini Section_gammal_test_9
+
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_1
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_2
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_3
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_4
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_5
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_6
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_7
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_8
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_9
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_10
+RUN_TEST_STEP !Result=0 5 tldouble_blr  lgammal_test \tstdapis\tldouble_blr.ini Section_lgammal_test_11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

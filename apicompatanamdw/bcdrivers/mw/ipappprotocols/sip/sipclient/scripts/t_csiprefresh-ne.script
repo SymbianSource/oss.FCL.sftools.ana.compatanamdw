@@ -1,0 +1,189 @@
+//
+// Copyright (c) 20006-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_csiprefresh
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csiprefresh.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           2000
+
+// ****************************************************************************
+// CSIPRefresh class
+// ****************************************************************************
+START_TESTCASE t_csiprefresh-ne-0001 
+//! @SYMTestCaseID          t_csiprefresh-ne-0001
+//! @SYMAPI                 CSIPrefresh::IntervalL() with expected error -17711
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Creates SIPRefresh and delete it.
+//! @SYMTestActions         1.Create a SIPrefresh.
+//!							2.Call CSIPRefresh::IntervalL() with expected error -17711.
+//!                         3.Destruct object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPrefresh successfully and delete it successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        	300   t_sipclientapi          \sip\sipclient\t_csiprefresh-ne.ini
+        CREATE_OBJECT			CSIPRefresh				  refresh
+		COMMAND					refresh					  NewL
+		COMMAND					refresh					  State
+		COMMAND !Error=-17711   refresh					  IntervalL
+        COMMAND					refresh					  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefresh-ne-0001
+
+START_TESTCASE t_csiprefresh-ne-0002 
+//! @SYMTestCaseID          t_csiprefresh-ne-0002
+//! @SYMAPI                 CSIPrefresh::SetIntervalL() with expected error -17711
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Creates SIPRefresh and delete it.
+//! @SYMTestActions         1.Create a SIPrefresh.
+//!                         2.Call CSIPRefresh::SetIntervalL() with expected error -17711.
+//!							3.Destruct object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPrefresh successfully and delete it successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        	300   t_sipclientapi          \sip\sipclient\t_csiprefresh-ne.ini
+        CREATE_OBJECT			CSIPRefresh				  refresh
+		COMMAND					refresh					  NewL
+		COMMAND					refresh					  State
+		COMMAND !Error=-17711	refresh					  SetIntervalL		t_csiprefresh-ne-0002-SetIntervalL_command03
+        COMMAND					refresh					  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefresh-ne-0002
+
+START_TESTCASE t_csiprefresh-ne-0003 
+//! @SYMTestCaseID          t_csiprefresh-ne-0003
+//! @SYMAPI                 CSIPrefresh::TerminateL() with expected error -17703
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Creates SIPRefresh and delete it.
+//! @SYMTestActions         1.Create a SIPrefresh.
+//!                         2.Call CSIPRefresh::TerminateL() with expected error -17703.
+//!							3.Destruct object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPrefresh successfully and delete it successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        	300   t_sipclientapi          \sip\sipclient\t_csiprefresh-ne.ini
+        CREATE_OBJECT			CSIPRefresh				  refresh
+		COMMAND					refresh					  NewL
+		COMMAND					refresh					  State
+		COMMAND !Error=-17703	refresh					  TerminateL	    		t_csiprefresh-ne-0003-TerminateL_command03
+        COMMAND					refresh					  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefresh-ne-0003
+
+START_TESTCASE t_csiprefresh-ne-0004 
+//! @SYMTestCaseID          t_csiprefresh-ne-0004
+//! @SYMAPI                 CSIPrefresh::UpdateL() with expected error -17703
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        10/09/2009
+//! @SYMTestCaseDesc        Creates SIPRefresh and delete it.
+//! @SYMTestActions         1.Create a SIPrefresh.
+//!                         2.Call CSIPRefresh::UpdateL() with expected error -17703.
+//!							3.Destruct object.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPrefresh successfully and delete it successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        	300   t_sipclientapi          \sip\sipclient\t_csiprefresh-ne.ini
+        CREATE_OBJECT			CSIPRefresh				  refresh
+		COMMAND					refresh					  NewL
+		COMMAND					refresh					  State
+		COMMAND !Error=-17703	refresh					  UpdateL	    		t_csiprefresh-ne-0004-UpdateL_command03
+        COMMAND					refresh					  ~
+    END_TEST_BLOCK
+END_TESTCASE t_csiprefresh-ne-0004
+
+START_TESTCASE              t_csiprefresh-ne-0005
+//! @SYMTestCaseID          t_csiprefresh-ne-0005
+//! @SYMAuthor              Simon Zhang
+//! @SYMCreationDate        14/09/2009
+//! @SYMAPI                 CSIPRefresh::UpdateL() & CSIPRefresh::TerminateL() with expected error -17709
+//! @SYMTestCaseDesc         
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding and objects for SIP MESSAGE.
+//!                         2.Instantiate objects preparing for registration.
+//!                         3.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection
+//!                         4.Send registration request with object of CSIPRequestElements and CSIPRefresh.
+//!                         5.Wait for the registration response from SIP stack.
+//!							6.Call CSIPRefresh::UpdateL() with expected error -17709.
+//!							7.Call CSIPRefresh::TerminateL() with expected error -17709.
+//!                         8.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults The SIP Client can start and close successfully without causing any panic
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 	t_sipclientapi                     \SIP\sipclient\t_csiprefresh-ne.ini
+        CREATE_OBJECT       	CSIPToHeader                  toheader
+        CREATE_OBJECT       	CSIPAddress                   address
+        CREATE_OBJECT       	CSIPContactHeader             contactheader
+        CREATE_OBJECT       	CSIPRefresh                   refresh
+        CREATE_OBJECT       	CSIPRegistrationBinding       binding
+        CREATE_OBJECT       	CSIPMessageElements           messageelements
+        CREATE_OBJECT       	CSIPConnection                sipconnection
+        CREATE_OBJECT       	CSIP                          sip
+        CREATE_OBJECT       	CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       	CSIPRequestElements           requestelements
+        CREATE_OBJECT       	CSIPToHeader                  reqtoheader
+        CREATE_OBJECT       	CSIPFromHeader                reqfromheader
+        CREATE_OBJECT       	CSIPContentTypeHeader         contenttypeheader
+        CREATE_OBJECT       	CSIPRefresh                   reqrefresh
+        CREATE_OBJECT       	CSIPExpiresHeader             expiresheader
+        CREATE_OBJECT       	CSIPHttpDigest				  httpdigest
+        COMMAND             	sip                           NewL                      t_csiprefresh-ne-0005-NewL_command01                          
+        COMMAND             	sipconnection                 NewL                      t_csiprefresh-ne-0005-NewL_command02
+        OUTSTANDING    
+        COMMAND             	toheader                      DecodeL                   t_csiprefresh-ne-0005-DecodeL_command03
+        COMMAND             	address                       DecodeL                   t_csiprefresh-ne-0005-DecodeL_command04 
+        COMMAND             	contactheader                 NewL                      t_csiprefresh-ne-0005-NewL_command05
+        COMMAND             	refresh                       NewL    
+        COMMAND             	binding                       NewL                      t_csiprefresh-ne-0005-NewL_command06
+        COMMAND					httpdigest					  NewL                      t_csiprefresh-ne-0005-NewL_Command07
+        COMMAND             	binding                       RegisterL                 t_csiprefresh-ne-0005-RegisterL_command08
+        COMMAND             	httpdigest                    WaitForChallengeReceived  t_csiprefresh-ne-0005-WaitForChallengeReceived_Command09
+        OUTSTANDING
+        COMMAND					httpdigest					  SetCredentialsL			t_csiprefresh-ne-0005-SetCredentialsL_Command10
+        COMMAND             	sipconnection                 WaitForIncomingResponse   t_csiprefresh-ne-0005-WaitForIncomingResponse_command11
+        OUTSTANDING
+		COMMAND !Error=-17709	refresh				  		  UpdateL		    		t_csiprefresh-ne-0005-UpdateL_command12
+		COMMAND !Error=-17709	refresh				  		  TerminateL	    		t_csiprefresh-ne-0005-TerminateL_command13	
+		COMMAND             	toheader                      ~
+        COMMAND             	address                       ~
+        COMMAND             	contactheader                 ~
+        COMMAND             	refresh                       ~
+        COMMAND             	httpdigest                    ~
+        COMMAND             	binding                       ~
+        COMMAND             	contenttypeheader             ~
+        COMMAND             	requestelements               ~
+        COMMAND            		contenttypeheader             ~
+        COMMAND             	reqtoheader                   ~
+        COMMAND             	reqfromheader                 ~
+        COMMAND             	reqrefresh                    ~
+        COMMAND             	sipconnection                 ~
+        COMMAND             	sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE      t_csiprefresh-ne-0005

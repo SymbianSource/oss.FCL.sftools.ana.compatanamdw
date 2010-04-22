@@ -1,0 +1,148 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+            xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <s:Header>
+    <a:Action s:mustUnderstand="1" u:Id="_1">
+      http://schemas.xmlsoap.org/ws/2005/02/rm/CreateSequence
+    </a:Action>
+    <a:ReplyTo u:Id="_2">
+      <a:Address>
+        http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous
+      </a:Address>
+    </a:ReplyTo>
+    <a:MessageID u:Id="_3">
+      urn:uuid:35de74b1-d237-4af7-bb4b-0c0add9d4190
+    </a:MessageID>
+    <a:To s:mustUnderstand="1" u:Id="_4">
+      http://172.30.178.39/SecureReliableMessaging/SecureReliableOneWay.svc
+    </a:To>
+    <o:Security s:mustUnderstand="1"
+                xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+      <u:Timestamp u:Id="uuid-5df39133-c58e-4b83-9b86-e20bf5efe563-15">
+        <u:Created>2005-11-02T23:38:04.691Z</u:Created>
+        <u:Expires>2005-11-02T23:43:04.691Z</u:Expires>
+      </u:Timestamp>
+      <c:SecurityContextToken u:Id="uuid-8930d45e-14b0-42f5-b415-6b4ee115b943-7"
+                              xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <c:Identifier>
+          urn:uuid:8e6a3a95-fd1b-4c24-96d4-28e875025ff7
+        </c:Identifier>
+      </c:SecurityContextToken>
+      <!-- START: Key derived from SCT-Key used for signing. -->
+      <c:DerivedKeyToken u:Id="uuid-5df39133-c58e-4b83-9b86-e20bf5efe563-12"
+                         xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="#uuid-8930d45e-14b0-42f5-b415-6b4ee115b943-7" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>16</c:Length>
+        <c:Nonce>lCO/qhHek2+0qiFPEwdeLw==</c:Nonce>
+      </c:DerivedKeyToken>
+      <!-- END: Key derived from SCT-Key used for signing. -->
+      <!-- START: Key derived from SCT-Key used for encryption. -->
+      <c:DerivedKeyToken u:Id="uuid-5df39133-c58e-4b83-9b86-e20bf5efe563-13"
+                         xmlns:c="http://schemas.xmlsoap.org/ws/2005/02/sc">
+        <o:SecurityTokenReference>
+          <o:Reference URI="#uuid-8930d45e-14b0-42f5-b415-6b4ee115b943-7" />
+        </o:SecurityTokenReference>
+        <c:Offset>0</c:Offset>
+        <c:Length>16</c:Length>
+        <c:Nonce>rMICQZ+A6CWApF3/j6XauA==</c:Nonce>
+      </c:DerivedKeyToken>
+      <!-- END: Key derived from SCT-Key used for encryption. -->
+      <!-- START: List of encrypted elements. -->
+      <e:ReferenceList xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:DataReference URI="#_5" />
+      </e:ReferenceList>
+      <!-- END: List of encrypted elements. -->
+      <!-- START: Unencrypted version of the signature element. -->
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+          <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+          <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#hmac-sha1" />
+          <Reference URI="#_0">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>4TtD2i67wEzhAa7D03YcWe+P7R4=</DigestValue>
+          </Reference>
+          <Reference URI="#_1">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>24mSCumg1R3wRRrmfDF34/nvQU8=</DigestValue>
+          </Reference>
+          <Reference URI="#_2">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>aF7hmVRuE93WcW8oz8jWiwtcwNo=</DigestValue>
+          </Reference>
+          <Reference URI="#_3">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>adjdHRpv1AKJ03gnwlUufDCZpbc=</DigestValue>
+          </Reference>
+          <Reference URI="#_4">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>jyneyiFQzdrbMF6IpwdA+2XzAfk=</DigestValue>
+          </Reference>
+          <Reference URI="#uuid-ff348436-ba42-41ea-bec2-2f1138f29623-15">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+            <DigestValue>dZffDYjiuImr2qJhY2gNKwI6sWo=</DigestValue>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue>wjwwY7Rn+xkZf5Jwhch2uweIvho=</SignatureValue>
+        <KeyInfo>
+          <!-- START: Reference to a key derived from SCT-Key used for signing. -->
+          <o:SecurityTokenReference>
+            <o:Reference URI="#uuid-ff348436-ba42-41ea-bec2-2f1138f29623-12"></o:Reference>
+          </o:SecurityTokenReference>
+          <!-- END: Reference to a key derived from SCT-Key used for signing. -->
+        </KeyInfo>
+      </Signature>
+      <!-- END: Unencrypted version of the signature element. -->
+      <!-- START: Encrypted version of the signature element. -->
+      <e:EncryptedData Id="_5"
+                       Type="http://www.w3.org/2001/04/xmlenc#Element"
+                       xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" />
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <!-- START: Reference to a key derived from SCT-Key used for encryption. -->
+          <o:SecurityTokenReference>
+            <o:Reference URI="#uuid-5df39133-c58e-4b83-9b86-e20bf5efe563-13" />
+          </o:SecurityTokenReference>
+          <!-- END: Reference to a key derived from SCT-Key used for encryption. -->
+        </KeyInfo>
+        <e:CipherData>
+          <e:CipherValue>...ZcvsNevmqwXR+PWiZSZ4SDIWJEJYo7//</e:CipherValue>
+        </e:CipherData>
+      </e:EncryptedData>
+      <!-- END: Encrypted version of the signature element. -->
+    </o:Security>
+  </s:Header>
+  <s:Body>
+    <CreateSequence xmlns="http://schemas.xmlsoap.org/ws/2005/02/rm">
+      <AcksTo>
+        <Address xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+          http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous
+        </Address>
+      </AcksTo>
+      <o:SecurityTokenReference xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+        <o:Reference URI="urn:uuid:8e6a3a95-fd1b-4c24-96d4-28e875025ff7"
+                     ValueType="http://schemas.xmlsoap.org/ws/2005/02/sc/sct" />
+      </o:SecurityTokenReference>
+    </CreateSequence>
+  </s:Body>
+</s:Envelope>

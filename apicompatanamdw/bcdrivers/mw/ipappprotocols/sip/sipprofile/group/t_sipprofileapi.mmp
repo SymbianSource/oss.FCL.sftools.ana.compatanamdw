@@ -1,0 +1,74 @@
+/*
+* Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*
+*/
+
+
+TARGET			t_sipprofileapi.exe
+TARGETTYPE		exe
+UID				0x1000007A 0x20003710
+VENDORID		0x70000001
+
+CAPABILITY		All -Tcb
+
+SOURCE			../../common/src/DataWrapperBase.cpp 
+SOURCE 			../../common/src/T_SIPUtil.cpp
+SOURCE			../../common/src/UtilityClearPanicDlg.cpp
+SOURCE			../../sipclient/src/t_csip.cpp
+SOURCE			../../sipclient/src/t_csipconnection.cpp
+SOURCE			../../sipclient/src/t_csiprefresh.cpp
+SOURCE			../../sipclient/src/t_csiptransactionbase.cpp
+SOURCE			../../sipclient/src/t_csipclienttransaction.cpp
+SOURCE			../../sipclient/src/t_csipregistrationbinding.cpp
+SOURCE          ../../sipclient/src/t_csiprequestelements.cpp
+SOURCE          ../../sipclient/src/t_csipresponseelements.cpp
+SOURCE          ../../sipclient/src/t_csipmessageelements.cpp
+SOURCE          ../../sipclient/src/t_csipdialogassocbase.cpp
+SOURCE          ../../sipclient/src/t_csipinvitedialogassoc.cpp
+SOURCE          ../src/t_sipprofileapiserver.cpp 
+SOURCE          ../src/t_sipprofileblock.cpp
+SOURCE			../src/t_csipprofile.cpp
+SOURCE			../src/t_csipprofileregistrybase.cpp
+SOURCE			../src/t_csipprofileregistry.cpp
+SOURCE			../src/t_csipmanagedprofileregistry.cpp
+SOURCE			../src/t_csipmanagedprofile.cpp
+
+USERINCLUDE		../inc
+USERINCLUDE		../../common/inc
+USERINCLUDE		../../sipclient/inc
+USERINCLUDE		../../sipcodec/inc
+
+SYSTEMINCLUDE	/epoc32/include
+SYSTEMINCLUDE	/epoc32/include/test
+SYSTEMINCLUDE   /epoc32/include/ecom
+SYSTEMINCLUDE   /epoc32/include/libc/
+
+LIBRARY			euser.lib
+LIBRARY			efsrv.lib
+LIBRARY			bafl.lib
+LIBRARY			sipprofilecli.lib
+LIBRARY			testexecuteutils.lib
+LIBRARY			testexecutelogclient.lib
+LIBRARY			commsdat.lib
+LIBRARY			commdb.lib
+LIBRARY			insock.lib
+LIBRARY			netmeta.lib
+LIBRARY			iniparser.lib
+LIBRARY         charconv.lib 
+LIBRARY			sipclient.lib 
+LIBRARY			apengine.lib 
+LIBRARY			sipcodec.lib 
+LIBRARY			inetprotutil.lib 
+LIBRARY			libc.lib 

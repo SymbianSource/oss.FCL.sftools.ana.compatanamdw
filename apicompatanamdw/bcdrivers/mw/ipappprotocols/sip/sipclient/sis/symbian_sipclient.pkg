@@ -1,0 +1,149 @@
+;
+; Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+; All rights reserved.
+; This component and the accompanying materials are made available
+; under the terms of "Eclipse Public License v1.0"
+; which accompanies this distribution, and is available
+; at the URL "http://www.eclipse.org/legal/epl-v10.html".
+;
+; Initial Contributors:
+; Nokia Corporation - initial contribution.
+;
+; Contributors:
+;
+; Description:
+;
+;
+; Install file for t_sipclientapi.exe
+;
+
+; Languages - 
+&EN
+
+; Installation header
+; UID is the app's UID
+#{"t_sipclientapi"},(0x20003711),1,0,0
+
+;%{"Vendor-EN"}
+;:"Nokia"
+
+; Localised Vendor name
+%{"Nokia"}
+
+; Unique Vendor name
+:"Nokia"
+
+
+"\epoc32\release\armv5\urel\t_sipclientapi.exe"-"!:\sys\bin\t_sipclientapi.exe"
+"\epoc32\release\armv5\urel\sipclientresolverplugin.dll"-"!:\sys\bin\sipclientresolverplugin.dll"
+"\epoc32\data\z\resource\plugins\sipclientresolverplugin.rsc"-"!:\resource\plugins\sipclientresolverplugin.rsc"
+"\epoc32\data\z\private\10003a3f\import\apps\t_sipclientapi_reg.rsc"-"!:\private\10003a3f\import\apps\t_sipclientapi_reg.rsc"
+
+"\epoc32\winscw\c\sip\sipclient\recv.bat"-"!:\sip\sipclient\recv.bat"
+"\epoc32\winscw\c\sip\sipclient\send.bat"-"!:\sip\sipclient\send.bat"
+"\epoc32\winscw\c\sip\sipclient\t_sipclient.bat"-"!:\sip\sipclient\t_sipclient.bat"
+
+
+"\epoc32\winscw\c\sip\sipclient\receive-sip-request-slave.script"-"!:\sip\sipclient\receive-sip-request-slave.script"
+"\epoc32\winscw\c\sip\sipclient\receive-sip-request-slave.ini"-"!:\sip\sipclient\receive-sip-request-slave.ini"
+"\epoc32\winscw\c\sip\sipclient\send-sip-request-master.script"-"!:\sip\sipclient\send-sip-request-master.script"
+"\epoc32\winscw\c\sip\sipclient\send-sip-request-master.ini"-"!:\sip\sipclient\send-sip-request-master.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csip.script"-"!:\sip\sipclient\t_csip.script"
+"\epoc32\winscw\c\sip\sipclient\t_csip.ini"-"!:\sip\sipclient\t_csip.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipconnection.script"-"!:\sip\sipclient\t_csipconnection.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipconnection.ini"-"!:\sip\sipclient\t_csipconnection.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipconnection-ne.script"-"!:\sip\sipclient\t_csipconnection-ne.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipconnection-ne.ini"-"!:\sip\sipclient\t_csipconnection-ne.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipdialog.script"-"!:\sip\sipclient\t_csipdialog.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipdialog.ini"-"!:\sip\sipclient\t_csipdialog.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csiphttpdigest.script"-"!:\sip\sipclient\t_csiphttpdigest.script"
+"\epoc32\winscw\c\sip\sipclient\t_csiphttpdigest.ini"-"!:\sip\sipclient\t_csiphttpdigest.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csiphttpdigest-ne.script"-"!:\sip\sipclient\t_csiphttpdigest-ne.script"
+"\epoc32\winscw\c\sip\sipclient\t_csiphttpdigest-ne.ini"-"!:\sip\sipclient\t_csiphttpdigest-ne.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipreferdialogassoc.script"-"!:\sip\sipclient\t_csipreferdialogassoc.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipreferdialogassoc.ini"-"!:\sip\sipclient\t_csipreferdialogassoc.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipreferdialogassoc-ne.script"-"!:\sip\sipclient\t_csipreferdialogassoc-ne.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipreferdialogassoc-ne.ini"-"!:\sip\sipclient\t_csipreferdialogassoc-ne.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipresponseelements.script"-"!:\sip\sipclient\t_csipresponseelements.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipresponseelements.ini"-"!:\sip\sipclient\t_csipresponseelements.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csiprequestelements.script"-"!:\sip\sipclient\t_csiprequestelements.script"
+"\epoc32\winscw\c\sip\sipclient\t_csiprequestelements.ini"-"!:\sip\sipclient\t_csiprequestelements.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipmessageelements.script"-"!:\sip\sipclient\t_csipmessageelements.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipmessageelements.ini"-"!:\sip\sipclient\t_csipmessageelements.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipmessageelements-ne.script"-"!:\sip\sipclient\t_csipmessageelements-ne.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipmessageelements-ne.ini"-"!:\sip\sipclient\t_csipmessageelements-ne.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipregistrationbinding.script"-"!:\sip\sipclient\t_csipregistrationbinding.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipregistrationbinding.ini"-"!:\sip\sipclient\t_csipregistrationbinding.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csipregistrationbinding-ne.script"-"!:\sip\sipclient\t_csipregistrationbinding-ne.script"
+"\epoc32\winscw\c\sip\sipclient\t_csipregistrationbinding-ne.ini"-"!:\sip\sipclient\t_csipregistrationbinding-ne.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csiprefresh.script"-"!:\sip\sipclient\t_csiprefresh.script"
+"\epoc32\winscw\c\sip\sipclient\t_csiprefresh.ini"-"!:\sip\sipclient\t_csiprefresh.ini"
+"\epoc32\winscw\c\sip\sipclient\t_csiprefresh-ne.script"-"!:\sip\sipclient\t_csiprefresh-ne.script"
+"\epoc32\winscw\c\sip\sipclient\t_csiprefresh-ne.ini"-"!:\sip\sipclient\t_csiprefresh-ne.ini"
+
+
+"\epoc32\winscw\c\sip\sipclient\r001.bat"-"!:\sip\sipclient\r001.bat"
+"\epoc32\winscw\c\sip\sipclient\r002.bat"-"!:\sip\sipclient\r002.bat"
+"\epoc32\winscw\c\sip\sipclient\r003.bat"-"!:\sip\sipclient\r003.bat"
+"\epoc32\winscw\c\sip\sipclient\r004.bat"-"!:\sip\sipclient\r004.bat"
+"\epoc32\winscw\c\sip\sipclient\r005.bat"-"!:\sip\sipclient\r005.bat"
+"\epoc32\winscw\c\sip\sipclient\r006.bat"-"!:\sip\sipclient\r006.bat"
+"\epoc32\winscw\c\sip\sipclient\r007.bat"-"!:\sip\sipclient\r007.bat"
+"\epoc32\winscw\c\sip\sipclient\r101.bat"-"!:\sip\sipclient\r101.bat"
+"\epoc32\winscw\c\sip\sipclient\r102.bat"-"!:\sip\sipclient\r102.bat"
+"\epoc32\winscw\c\sip\sipclient\r103.bat"-"!:\sip\sipclient\r103.bat"
+"\epoc32\winscw\c\sip\sipclient\r104.bat"-"!:\sip\sipclient\r104.bat"
+"\epoc32\winscw\c\sip\sipclient\r105.bat"-"!:\sip\sipclient\r105.bat"
+"\epoc32\winscw\c\sip\sipclient\r106.bat"-"!:\sip\sipclient\r106.bat"
+"\epoc32\winscw\c\sip\sipclient\r107.bat"-"!:\sip\sipclient\r107.bat"
+
+"\epoc32\winscw\c\sip\sipclient\s001.bat"-"!:\sip\sipclient\s001.bat"
+"\epoc32\winscw\c\sip\sipclient\s002.bat"-"!:\sip\sipclient\s002.bat"
+"\epoc32\winscw\c\sip\sipclient\s003.bat"-"!:\sip\sipclient\s003.bat"
+"\epoc32\winscw\c\sip\sipclient\s004.bat"-"!:\sip\sipclient\s004.bat"
+"\epoc32\winscw\c\sip\sipclient\s005.bat"-"!:\sip\sipclient\s005.bat"
+"\epoc32\winscw\c\sip\sipclient\s006.bat"-"!:\sip\sipclient\s006.bat"
+"\epoc32\winscw\c\sip\sipclient\s007.bat"-"!:\sip\sipclient\s007.bat"
+"\epoc32\winscw\c\sip\sipclient\s101.bat"-"!:\sip\sipclient\s101.bat"
+"\epoc32\winscw\c\sip\sipclient\s102.bat"-"!:\sip\sipclient\s102.bat"
+"\epoc32\winscw\c\sip\sipclient\s103.bat"-"!:\sip\sipclient\s103.bat"
+"\epoc32\winscw\c\sip\sipclient\s104.bat"-"!:\sip\sipclient\s104.bat"
+"\epoc32\winscw\c\sip\sipclient\s105.bat"-"!:\sip\sipclient\s105.bat"
+"\epoc32\winscw\c\sip\sipclient\s106.bat"-"!:\sip\sipclient\s106.bat"
+"\epoc32\winscw\c\sip\sipclient\s107.bat"-"!:\sip\sipclient\s107.bat"
+
+"\epoc32\winscw\c\sip\sipclient\r001.script"-"!:\sip\sipclient\r001.script"
+"\epoc32\winscw\c\sip\sipclient\r002.script"-"!:\sip\sipclient\r002.script"
+"\epoc32\winscw\c\sip\sipclient\r003.script"-"!:\sip\sipclient\r003.script"
+"\epoc32\winscw\c\sip\sipclient\r004.script"-"!:\sip\sipclient\r004.script"
+"\epoc32\winscw\c\sip\sipclient\r005.script"-"!:\sip\sipclient\r005.script"
+"\epoc32\winscw\c\sip\sipclient\r006.script"-"!:\sip\sipclient\r006.script"
+"\epoc32\winscw\c\sip\sipclient\r007.script"-"!:\sip\sipclient\r007.script"
+"\epoc32\winscw\c\sip\sipclient\r101.script"-"!:\sip\sipclient\r101.script"
+"\epoc32\winscw\c\sip\sipclient\r102.script"-"!:\sip\sipclient\r102.script"
+"\epoc32\winscw\c\sip\sipclient\r103.script"-"!:\sip\sipclient\r103.script"
+"\epoc32\winscw\c\sip\sipclient\r104.script"-"!:\sip\sipclient\r104.script"
+"\epoc32\winscw\c\sip\sipclient\r105.script"-"!:\sip\sipclient\r105.script"
+"\epoc32\winscw\c\sip\sipclient\r106.script"-"!:\sip\sipclient\r106.script"
+"\epoc32\winscw\c\sip\sipclient\r107.script"-"!:\sip\sipclient\r107.script"
+
+"\epoc32\winscw\c\sip\sipclient\s001.script"-"!:\sip\sipclient\s001.script"
+"\epoc32\winscw\c\sip\sipclient\s002.script"-"!:\sip\sipclient\s002.script"
+"\epoc32\winscw\c\sip\sipclient\s003.script"-"!:\sip\sipclient\s003.script"
+"\epoc32\winscw\c\sip\sipclient\s004.script"-"!:\sip\sipclient\s004.script"
+"\epoc32\winscw\c\sip\sipclient\s005.script"-"!:\sip\sipclient\s005.script"
+"\epoc32\winscw\c\sip\sipclient\s006.script"-"!:\sip\sipclient\s006.script"
+"\epoc32\winscw\c\sip\sipclient\s007.script"-"!:\sip\sipclient\s007.script"
+"\epoc32\winscw\c\sip\sipclient\s101.script"-"!:\sip\sipclient\s101.script"
+"\epoc32\winscw\c\sip\sipclient\s102.script"-"!:\sip\sipclient\s102.script"
+"\epoc32\winscw\c\sip\sipclient\s103.script"-"!:\sip\sipclient\s103.script"
+"\epoc32\winscw\c\sip\sipclient\s104.script"-"!:\sip\sipclient\s104.script"
+"\epoc32\winscw\c\sip\sipclient\s105.script"-"!:\sip\sipclient\s105.script"
+"\epoc32\winscw\c\sip\sipclient\s106.script"-"!:\sip\sipclient\s106.script"
+"\epoc32\winscw\c\sip\sipclient\s107.script"-"!:\sip\sipclient\s107.script"
+
+; Required files
+; None
+
+; Component .sis files
+; None

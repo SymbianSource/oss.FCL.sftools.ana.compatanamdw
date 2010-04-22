@@ -1,0 +1,130 @@
+/*TYPE TESTCLASS*//*
+* Copyright (c) 2002 - 2007 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description:  ?Description
+*
+*/
+
+
+#if defined(__S60_)
+        // To get the APP_LAYER_SYSTEMINCLUDE-definition
+        //#include <domain/osextensions/platform_paths.hrh>
+        #include <platform_paths.hrh>
+#endif
+
+TARGET          BCTestDRMHelperLib.dll
+TARGETTYPE      dll
+UID             0x1000008D 0x101FB3E3
+
+CAPABILITY      ALL -TCB
+/* Remove comments and replace 0x00000000 with correct vendor id */
+// VENDORID     0x00000000
+/* Remove comments and replace 0x00000000 with correct secure id */
+// SECUREID     0x00000000
+
+//TARGETPATH      ?target_path
+DEFFILE         BCTestDRMHelperLib.def
+
+#if 0
+#ifdef SBSV2
+	USERINCLUDE     ../inc 
+
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#else // SBSV2 not defined
+	USERINCLUDE     ../inc 
+
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#endif // SBSV2
+#endif
+
+	USERINCLUDE     ../inc 
+  SYSTEMINCLUDE   /epoc32/include 
+  SYSTEMINCLUDE   /epoc32/include/internal
+#if defined(__S60_)
+    APP_LAYER_SYSTEMINCLUDE
+#endif // __S60_
+
+
+	SOURCEPATH      ../src
+
+SOURCE          BCTestDRMHelperLib.cpp
+SOURCE          BCTestDRMHelperLibBlocks.cpp
+
+//RESOURCE        resource_file
+//RESOURCE        resource_file2
+
+LIBRARY         euser.lib
+LIBRARY         stiftestinterface.lib
+LIBRARY         stiftestengine.lib
+LIBRARY  apgrfx.lib 
+LIBRARY  avkon.lib
+LIBRARY  euser.lib
+LIBRARY  apparc.lib
+LIBRARY  cone.lib
+LIBRARY  eikcore.lib 
+LIBRARY  eikcoctl.lib
+LIBRARY  eikctl.lib
+LIBRARY  etext.lib 
+LIBRARY  egul.lib
+LIBRARY  ws32.lib
+LIBRARY  bafl.lib
+LIBRARY  commonengine.lib
+LIBRARY  gdi.lib
+LIBRARY  drmhelper.lib
+LIBRARY  efsrv.lib
+LIBRARY  apmime.lib
+LIBRARY  caf.lib
+LIBRARY  cafutils.lib
+LIBRARY  eiksrv.lib
+LIBRARY  aknnotify.lib
+LIBRARY  eikdlg.lib 
+
+LANG            SC
+
+/*
+START WINS      
+?wins_specific_information
+END
+
+START MARM
+?marm_specific_information
+END
+*/
+// Other possible keywords:
+ 
+// DOCUMENT     ?file, that is not compiled, but added to MSVC project workspace (i.e. release notes)
+/*
+START BITMAP ?target
+TARGETPATH   ?emulated_path_on_target_machine
+HEADER
+SOURCE       ?color_depth ?source_bitmap
+END
+*/
+// DEFFILE ?filename
+// AIF ?filename
+
+// End of File

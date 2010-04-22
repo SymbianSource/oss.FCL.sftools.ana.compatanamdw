@@ -1,0 +1,97 @@
+/*
+* Copyright (c) 2006 Nokia Corporation and/or its subsidiary(-ies).
+* All rights reserved.
+* This component and the accompanying materials are made available
+* under the terms of "Eclipse Public License v1.0"
+* which accompanies this distribution, and is available
+* at the URL "http://www.eclipse.org/legal/epl-v10.html".
+*
+* Initial Contributors:
+* Nokia Corporation - initial contribution.
+*
+* Contributors:
+*
+* Description: 
+*     Build mmp file
+*     
+*
+*/
+
+
+TARGET  NPPluginAPITest.dll
+
+TARGETTYPE      PLUGIN
+
+UID             0x10009D8D 0xA000018C
+TARGETPATH /apps/plugin
+
+SOURCEPATH ../src
+
+CAPABILITY NetworkServices LocalServices ReadUserData WriteUserData ReadDeviceData WriteDeviceData SwEvent UserEnvironment DRM NetworkControl
+
+VENDORID   0
+
+#if defined(WINSCW)
+deffile ../BWINSCW/NPPLUGINAPITEST.def
+#elif defined(ARMCC)
+deffile ../EABI/NPPLUGINAPITEST.def
+#endif
+
+START BITMAP allbitmaps.mbm
+#if defined(WINSCW)
+TARGETPATH ../../winscw/c/pluginapitest
+#else
+TARGETPATH ../../data/z/resource/apps
+#endif
+HEADER
+SOURCEPATH ../gfx
+SOURCE c24 redflower.bmp blueflower.bmp
+END
+
+
+USERINCLUDE ../src
+USERINCLUDE ../inc
+
+#ifdef SBSV2
+	APP_LAYER_SYSTEMINCLUDE
+	USERINCLUDE     ../inc 
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#else // SBSV2 not defined
+	APP_LAYER_SYSTEMINCLUDE
+	USERINCLUDE     ../inc 
+	#if defined(__S60_)
+	    APP_LAYER_SYSTEMINCLUDE
+	#else // __S60_ not defined
+	    SYSTEMINCLUDE   /epoc32/include 
+	    SYSTEMINCLUDE   /epoc32/include/internal
+	#endif // __S60_
+
+	SOURCEPATH      ../src
+#endif // SBSV2
+
+SYSTEMINCLUDE /epoc32/include/libc
+SYSTEMINCLUDE /epoc32/include/ecom
+SYSTEMINCLUDE ../inc
+
+SOURCE E32NpDllEntryPoint.cpp
+SOURCE pluginapi.cpp
+SOURCE pluginapiecommain.cpp
+SOURCE pluginapiecominst.cpp
+
+SOURCEPATH      ../Data
+START RESOURCE A000018C.rss
+
+TARGET NPPluginAPITest.rsc
+
+END
+
+LIBRARY euser.lib estlib.lib cone.lib fbscli.lib efsrv.lib 
+LIBRARY ecom.lib flogger.lib
+

@@ -1,0 +1,214 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName        t_csipcallidheader
+//! @SYMScriptTestEnvironment    This test script requires a basic ROM. 
+//! @SYMScriptAutomation    The test suites are fully automated using TestDriver and Testexecute
+
+/////////////////////////////////////////////////////////////////////
+// t_csipcallidheader
+//
+// Tests all public elements of the CSIPCallIDHeader
+// classes as a means of confidence that the APIs work as expected.
+//
+// The purpose is to provide a regression test suite of PublishedAll APIs for CSIPCallIDHeader
+// The tests are fully automated.
+/////////////////////////////////////////////////////////////////////
+
+LOAD_SUITE    t_sipcodecapi
+DELAY        2000
+
+START_TESTCASE              t_csipcallidheader-0001
+//! @SYMTestCaseID          t_csipcallidheader-0001
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPCallIDHeader::DecodeL(const TDesC8 &)
+//! @SYMTestCaseDesc        Constructs a CSIPCallIDHeader from textual representation of the header's value part. 
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPCallIDHeader by calling CSIPCallIDHeader::DecodeL().
+//!                         3. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: DecodeL() is called without errors.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcallidheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader
+        COMMAND             sip                           NewL                   t_csipcallidheader-0000-NewL_command01
+        COMMAND             sipcallidheader               DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader               ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcallidheader-0001
+
+
+START_TESTCASE              t_csipcallidheader-0002
+//! @SYMTestCaseID          t_csipcallidheader-0002
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPCallIDHeader::Name()
+//! @SYMTestCaseDesc        Get the full name of the header.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPCallIDHeader object.
+//!                         3. Get the full name of the header.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The retrieved name is expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcallidheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader
+        COMMAND             sip                           NewL                   t_csipcallidheader-0000-NewL_command01
+        COMMAND             sipcallidheader               DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader               Name                   t_csipcallidheader-0002-Name_command03
+        COMMAND             sipcallidheader               ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcallidheader-0002
+
+
+START_TESTCASE              t_csipcallidheader-0003
+//! @SYMTestCaseID          t_csipcallidheader-0003
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPCallIDHeader::ToTextValueL()
+//! @SYMTestCaseDesc        Encode the header's value into its textual representation.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPCallIDHeader object.
+//!                         2. Get the the header's value.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The retrieved header's value is expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcallidheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader
+        COMMAND             sip                           NewL                   t_csipcallidheader-0000-NewL_command01
+        COMMAND             sipcallidheader               DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader               ToTextValueL           t_csipcallidheader-0003-ToTextValueL_command03
+        COMMAND             sipcallidheader               ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcallidheader-0003
+
+
+START_TESTCASE              t_csipcallidheader-0004
+//! @SYMTestCaseID          t_csipcallidheader-0004
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPCallIDHeader::operator==(const CSIPCallIDHeader &)
+//! @SYMTestCaseDesc        Compare this instance to another "Call-ID" header object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create two identical CSIPCallIDHeader objects.
+//!                         3. Create another CSIPCallIDHeader object with the different parameter.
+//!                         4. Compare the first and the second CSIPCallIDHeader objects.
+//!                         5. Compare the first and the third CSIPCallIDHeader objects.
+//!                         6. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. Step 4 returns ETrue;
+//!                          2. Step 5 returns EFalse.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcallidheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader1
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader2
+        COMMAND             sip                           NewL                   t_csipcallidheader-0000-NewL_command01
+        COMMAND             sipcallidheader               DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader1              DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader2              DecodeL                t_csipcallidheader-0004-DecodeL_command04
+        COMMAND             sipcallidheader               ==                     t_csipcallidheader-0004-Compare_command05
+        COMMAND             sipcallidheader               ==                     t_csipcallidheader-0004-Compare_command06
+        COMMAND             sipcallidheader2              ~
+        COMMAND             sipcallidheader1              ~
+        COMMAND             sipcallidheader               ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcallidheader-0004
+
+
+START_TESTCASE              t_csipcallidheader-0005
+//! @SYMTestCaseID          t_csipcallidheader-0005
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPCallIDHeader::CloneL()
+//! @SYMTestCaseDesc        Create a deep-copy of this CSIPHeaderBase object.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Create a CSIPCallIDHeader objects.
+//!                         3. Create a deep-copy of this CSIPHeaderBase object by calling CSIPCallIDHeader::CloneL().
+//!                         4. Compare two CSIPCallIDHeader objects.
+//!                         5. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. CloneL() is called without errors;
+//!                          2. Step 4 returns ETrue.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcallidheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader1
+        COMMAND             sip                           NewL                   t_csipcallidheader-0000-NewL_command01
+        COMMAND             sipcallidheader               DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader               CloneL                 t_csipcallidheader-0005-CloneL_command03
+        COMMAND             sipcallidheader               ==                     t_csipcallidheader-0005-Compare_command04
+        COMMAND             sipcallidheader1              ~
+        COMMAND             sipcallidheader               ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcallidheader-0005
+
+
+START_TESTCASE              t_csipcallidheader-0006
+//! @SYMTestCaseID          t_csipcallidheader-0006
+//! @SYMAuthor              Forbes Fu
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPCallIDHeader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Construct an instance of a CSIPCallIDHeader from a RReadStream.
+//! @SYMTestActions         1. Create a CSIP object.
+//!                         2. Construct a CSIPCallIDHeader by calling CSIPCallIDHeader::InternalizeValueL().
+//!                         3. Get the name and header's value.
+//!                         4. Destroy all objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipcodecapi          \sip\sipcodec\t_csipcallidheader.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader
+        CREATE_OBJECT       CSIPCallIDHeader              sipcallidheader1
+        COMMAND             sip                           NewL                   t_csipcallidheader-0000-NewL_command01
+        COMMAND             sipcallidheader               DecodeL                t_csipcallidheader-0000-DecodeL_command02
+        COMMAND             sipcallidheader               ExternalizeL           t_csipcallidheader-0006-ExternalizeL_command03
+        COMMAND             sipcallidheader1              InternalizeValueL      t_csipcallidheader-0006-InternalizeValueL_command04
+        COMMAND             sipcallidheader1              Name                   t_csipcallidheader-0006-Name_command05
+        COMMAND             sipcallidheader1              ToTextValueL           t_csipcallidheader-0006-ToTextValueL_command06
+        COMMAND             sipcallidheader1              ~
+        COMMAND             sipcallidheader               ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE t_csipcallidheader-0006
+

@@ -1,0 +1,82 @@
+//
+// Copyright (c) 2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all twchar
+LOAD_SUITE twchar
+
+CONSECUTIVE
+
+RUN_TEST_STEP !Result=0 5 twchar  wcsupr1
+RUN_TEST_STEP !Result=0 5 twchar  wcsupr2
+RUN_TEST_STEP !Result=0 5 twchar  wcsupr3
+RUN_TEST_STEP !Result=0 5 twchar  wcsupr4
+RUN_TEST_STEP !Result=0 5 twchar  wcsupr5
+RUN_TEST_STEP !Result=0 5 twchar  wcsupr6
+RUN_TEST_STEP !Result=0 5 twchar  wcslwr1
+RUN_TEST_STEP !Result=0 5 twchar  wcslwr2
+RUN_TEST_STEP !Result=0 5 twchar  wcslwr3
+RUN_TEST_STEP !Result=0 5 twchar  wcslwr4
+RUN_TEST_STEP !Result=0 5 twchar  wcslwr5
+RUN_TEST_STEP !Result=0 5 twchar  wcslwr6
+RUN_TEST_STEP !Result=0 5 twchar  wcsrev1
+RUN_TEST_STEP !Result=0 5 twchar  wcsrev2
+RUN_TEST_STEP !Result=0 5 twchar  wcsrev3
+RUN_TEST_STEP !Result=0 5 twchar  wcsrev4
+RUN_TEST_STEP !Result=0 5 twchar  wcsrev5
+RUN_TEST_STEP !Result=0 5 twchar  wcsrev6
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp1 
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp2
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp3
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp4
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp5
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp6
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp7
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp8
+RUN_TEST_STEP !Result=0 5 twchar  wcsicmp9
+RUN_TEST_STEP !Result=0 5 twchar  wcsset1
+RUN_TEST_STEP !Result=0 5 twchar  wcsset2
+RUN_TEST_STEP !Result=0 5 twchar  wcsset3
+RUN_TEST_STEP !Result=0 5 twchar  wcsset4
+RUN_TEST_STEP !Result=0 5 twchar  wcsnset1
+RUN_TEST_STEP !Result=0 5 twchar  wcsnset2
+RUN_TEST_STEP !Result=0 5 twchar  wcsnset3
+RUN_TEST_STEP !Result=0 5 twchar  wcsnset4
+RUN_TEST_STEP !Result=0 5 twchar  wcsnset5
+//RUN_TEST_STEP !Result=0 5 twchar  wcsnset6
+RUN_TEST_STEP !Result=0 5 twchar  wstrtime1
+RUN_TEST_STEP !Result=0 5 twchar  wstrtime2
+RUN_TEST_STEP !Result=0 5 twchar  wstrdate1
+RUN_TEST_STEP !Result=0 5 twchar  wstrdate2
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp1
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp2
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp3
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp4
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp5
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp6
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp7
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp8
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicmp9
+RUN_TEST_STEP !Result=0 5 twchar  wcsicoll1
+RUN_TEST_STEP !Result=0 5 twchar  wcsicoll2
+RUN_TEST_STEP !Result=0 5 twchar  wcsicoll3
+RUN_TEST_STEP !Result=0 5 twchar  wcsncoll1
+RUN_TEST_STEP !Result=0 5 twchar  wcsncoll2
+RUN_TEST_STEP !Result=0 5 twchar  wcsncoll3
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicoll1
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicoll2
+RUN_TEST_STEP !Result=0 5 twchar  wcsnicoll3
+RUN_TEST_STEP !Result=0 5 twchar  wtmpnam1
+RUN_TEST_STEP !Result=0 5 twchar  wtmpnam2
+

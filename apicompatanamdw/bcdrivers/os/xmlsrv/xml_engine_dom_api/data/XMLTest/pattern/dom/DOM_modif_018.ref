@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doc xmlns="http://test.pl" xmlns:testns="http://test.com" xmlns:_pr1="http://test.test.pl" attr1="test">
+  <test1>
+    <element/>
+    <testns:element/>
+  </test1>
+  <testns:test2 xmlns:testns2="http://test.com.pl">
+    <testns:element/>
+    <testns:wrong/>
+    <testns2:element3/>
+  </testns:test2>
+  <test3/>
+  <test4 testns:attr2="1">
+    <element/>
+    <testns:element/>
+  </test4>
+  <test5 xmlns:testns2="http://test.com.pl">
+    <testns2:element3/>
+    <_pr1:element3/>
+  </test5>
+</doc>

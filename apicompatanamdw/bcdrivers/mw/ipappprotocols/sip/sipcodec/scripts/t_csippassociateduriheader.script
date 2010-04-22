@@ -1,0 +1,187 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description: 
+//
+//
+//! @file
+//! @SYMTestSuiteName  t_sipcodecapi
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csippassociateduriheader.script
+
+LOAD_SUITE      t_sipcodecapi
+DELAY           2000
+
+START_TESTCASE t_csippassociateduriheader-0001
+//! @SYMTestCaseID          t_csippassociateduriheader-0001
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/20/2009
+//! @SYMAPI                 CSIPPAssociatedURIheader::NewL(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPPAssociatedURIheader object.
+//! @SYMTestActions         1. Creates a CSIPPAssociatedURIheader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csippassociateduriheader.ini
+        CREATE_OBJECT       CSIPPAssociatedURIHeader           sippassociateduriheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csippassociateduriheader-0001-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csippassociateduriheader-0001-NewL_Command02
+        COMMAND             sippassociateduriheader             NewL             t_csippassociateduriheader-0001-NewL_Command03
+        COMMAND             sippassociateduriheader            ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csippassociateduriheader-0001
+
+START_TESTCASE t_csippassociateduriheader-0002
+//! @SYMTestCaseID          t_csippassociateduriheader-0002
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/20/2009
+//! @SYMAPI                 CSIPPAssociatedURIheader::NewLC(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPPAssociatedURIheader object.
+//! @SYMTestActions         1. Creates a CSIPPAssociatedURIheader object
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csippassociateduriheader.ini
+        CREATE_OBJECT       CSIPPAssociatedURIHeader           sippassociateduriheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csippassociateduriheader-0002-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csippassociateduriheader-0002-NewL_Command02
+        COMMAND             sippassociateduriheader            NewLC            t_csippassociateduriheader-0002-NewLC_Command03
+        COMMAND             sippassociateduriheader            ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csippassociateduriheader-0002
+
+START_TESTCASE t_csippassociateduriheader-0003
+//! @SYMTestCaseID          t_csippassociateduriheader-0003
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        10/20/2009
+//! @SYMAPI                 CSIPPAssociatedURIheader::DecodeL(const TDesC8&)
+//! @SYMTestCaseDesc        Creates a CSIPPAssociatedURIheader object.
+//! @SYMTestActions         1. Creates a CSIPPAssociatedURIheader object
+//!                         2. Decode the header value
+//!                         3. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        Low
+//! @SYMTestExpectedResults The the object is created successfully.
+//! @SYMTestType            CIT
+    START_TEST_BLOCK    100 t_sipcodecapi                     \SIP\sipcodec\t_csippassociateduriheader.ini
+        CREATE_OBJECT       CSIPPAssociatedURIHeader           sippassociateduriheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csippassociateduriheader-0003-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csippassociateduriheader-0003-NewL_Command02
+        COMMAND             sippassociateduriheader            DecodeL            t_csippassociateduriheader-0003-DecodeL_Command03
+        COMMAND             sippassociateduriheader            ~
+    END_TEST_BLOCK
+END_TESTCASE		    t_csippassociateduriheader-0003
+
+
+START_TESTCASE              t_csippassociateduriheader-0004
+//! @SYMTestCaseID          t_csippassociateduriheader-0004
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPPAssociatedURIheader::InternalizeValueL(RReadStream &)
+//! @SYMTestCaseDesc        Creates a CSIPPAssociatedURIheader object.
+//! @SYMTestActions         1. Creates a CSIPPAssociatedURIheader object
+//!                         2. Externalize the value to a file
+//!                         3. Internalize the value from a file
+//!                         4. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: 1. InternalizeValueL() is called without errors;
+//!                          2. The retrieved name and header's value are expected.
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csippassociateduriheader.ini
+        CREATE_OBJECT       CSIPPAssociatedURIHeader           sippassociateduriheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csippassociateduriheader-0004-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csippassociateduriheader-0004-NewL_Command02
+        COMMAND             sippassociateduriheader            NewL              t_csippassociateduriheader-0004-NewL_Command03
+        COMMAND             sippassociateduriheader          ExternalizeL           t_csippassociateduriheader-0004-ExternalizeL_command04
+        COMMAND             sippassociateduriheader          InternalizeValueL      t_csippassociateduriheader-0004-InternalizeValueL_command05
+        COMMAND             sippassociateduriheader            ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csippassociateduriheader-0004
+
+START_TESTCASE              t_csippassociateduriheader-0005
+//! @SYMTestCaseID          t_csippassociateduriheader-0005
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPPAssociatedURIheader::CloneL()
+//! @SYMTestCaseDesc        Creates a CSIPPAssociatedURIheader object.
+//! @SYMTestActions         1. Creates a CSIPPAssociatedURIheader object
+//!                         2. Clone the instance
+//!                         2. Destroys the 2 object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPPAssociatedURIheader object is cloned sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csippassociateduriheader.ini
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        CREATE_OBJECT       CSIPPAssociatedURIHeader         sippassociateduriheader
+        CREATE_OBJECT       CSIPPAssociatedURIHeader         sippassociateduriheader2
+        COMMAND             sip                                 NewL             t_csippassociateduriheader-0005-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csippassociateduriheader-0005-NewL_Command02
+        COMMAND             sippassociateduriheader          NewL                   t_csippassociateduriheader-0005-NewL_Command03
+        COMMAND             sippassociateduriheader          CloneL                 t_csippassociateduriheader-0005-CloneL_command04
+        COMMAND             sippassociateduriheader2         Name                   t_csippassociateduriheader-0005-Name_command05
+        COMMAND             sippassociateduriheader          ~
+        COMMAND             sippassociateduriheader2         ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csippassociateduriheader-0005
+
+START_TESTCASE              t_csippassociateduriheader-0006
+//! @SYMTestCaseID          t_csippassociateduriheader-0006
+//! @SYMAuthor              Cherry Song
+//! @SYMCreationDate        12/10/2009
+//! @SYMAPI                 CSIPPAssociatedURIheader::Name()
+//! @SYMTestCaseDesc        Creates a CSIPPAssociatedURIheader object.
+//! @SYMTestActions         1. Creates a CSIPPAssociatedURIheader object
+//!                         2. Get the name
+//!                         2. Destroys the object
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: The CSIPPAssociatedURIheader object name is gotten sucessfully
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        100   t_sipcodecapi          \sip\sipcodec\t_csippassociateduriheader.ini
+        CREATE_OBJECT       CSIPPAssociatedURIHeader           sippassociateduriheader
+        CREATE_OBJECT       CSIPAddress                         sipaddress
+        CREATE_OBJECT       CSIP                                sip
+        COMMAND             sip                                 NewL             t_csippassociateduriheader-0006-NewL_Command01
+        COMMAND             sipaddress                          NewL             t_csippassociateduriheader-0006-NewL_Command02
+        COMMAND             sippassociateduriheader            NewL            t_csippassociateduriheader-0006-NewL_Command03
+        COMMAND             sippassociateduriheader            Name            t_csippassociateduriheader-0006-Name_Command04
+        COMMAND             sippassociateduriheader            ~
+        COMMAND             sip                                ~
+    END_TEST_BLOCK
+END_TESTCASE t_csippassociateduriheader-0006
+
+

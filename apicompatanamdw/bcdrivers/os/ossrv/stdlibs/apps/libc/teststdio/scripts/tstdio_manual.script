@@ -1,0 +1,49 @@
+//
+// Copyright (c) 2006-2007 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+PRINT Run all tstdio
+LOAD_SUITE tstdio
+
+CONSECUTIVE
+
+//printf manual tests
+RUN_TEST_STEP !Result=0 5 tstdio printfTest1L \tstdapis\tstdio.ini Section_printfTest1L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest2L \tstdapis\tstdio.ini Section_printfTest2L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest3L \tstdapis\tstdio.ini Section_printfTest3L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest4L \tstdapis\tstdio.ini Section_printfTest4L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest5L \tstdapis\tstdio.ini Section_printfTest5L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest6L \tstdapis\tstdio.ini Section_printfTest6L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest7L \tstdapis\tstdio.ini Section_printfTest7L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest8L \tstdapis\tstdio.ini Section_printfTest8L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest9L \tstdapis\tstdio.ini Section_printfTest9L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest10L \tstdapis\tstdio.ini Section_printfTest10L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest11L \tstdapis\tstdio.ini Section_printfTest11L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest12L \tstdapis\tstdio.ini Section_printfTest12L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest13L \tstdapis\tstdio.ini Section_printfTest13L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest14L \tstdapis\tstdio.ini Section_printfTest14L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest15L \tstdapis\tstdio.ini Section_printfTest15L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest16L \tstdapis\tstdio.ini Section_printfTest16L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest17L \tstdapis\tstdio.ini Section_printfTest17L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest18L \tstdapis\tstdio.ini Section_printfTest18L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest19L \tstdapis\tstdio.ini Section_printfTest19L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest20L \tstdapis\tstdio.ini Section_printfTest20L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest21L \tstdapis\tstdio.ini Section_printfTest21L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest22L \tstdapis\tstdio.ini Section_printfTest22L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest23L \tstdapis\tstdio.ini Section_printfTest23L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest24L \tstdapis\tstdio.ini Section_printfTest24L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest25L \tstdapis\tstdio.ini Section_printfTest25L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest26L \tstdapis\tstdio.ini Section_printfTest26L
+RUN_TEST_STEP !Result=0 5 tstdio printfTest27L \tstdapis\tstdio.ini Section_printfTest27L
+//RUN_TEST_STEP !Result=0 5 tstdio Testsprintf1

@@ -1,0 +1,50 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+CONSECUTIVE
+
+START_TESTCASE OE-001
+PRINT --------  Testing utimes ,Capability set to None
+RUN_PROGRAM -1 setcap.exe tsystimecap.exe 000000  tsystime_cap1.exe
+LOAD_SUITE tsystime_cap1
+RUN_TEST_STEP   !Result=13 tsystime_cap1 utimessys
+END_TESTCASE OE-001
+
+
+START_TESTCASE OE-002
+PRINT --------  Testing utimes ,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe tsystimecap.exe 000800  tsystime_cap2.exe
+LOAD_SUITE tsystime_cap2
+RUN_TEST_STEP !Result=13 tsystime_cap2 utimessys
+END_TESTCASE OE-002
+
+START_TESTCASE OE-003
+PRINT --------  Testing utimes ,Capability set to None
+RUN_PROGRAM -1 setcap.exe tsystimecap.exe 000000  tsystime_cap3.exe
+LOAD_SUITE tsystime_cap3
+RUN_TEST_STEP !Result=13 tsystime_cap3 utimesprivate
+END_TESTCASE OE-003
+
+START_TESTCASE OE-004
+PRINT --------  Testing utimes,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe tsystimecap.exe 000800  tsystime_cap4.exe
+LOAD_SUITE tsystime_cap4
+RUN_TEST_STEP !Result=13 tsystime_cap4 utimesprivate
+END_TESTCASE OE-004
+
+

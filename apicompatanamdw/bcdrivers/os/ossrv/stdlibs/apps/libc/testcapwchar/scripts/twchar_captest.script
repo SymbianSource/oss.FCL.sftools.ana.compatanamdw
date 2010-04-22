@@ -1,0 +1,330 @@
+//
+// Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+// Copyright (c) 2006 Symbian Software Ltd.  All rights reserved.
+//
+CONSECUTIVE
+
+START_TESTCASE OE-001
+PRINT --------  Testing wfopen sys,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap1.exe
+LOAD_SUITE twchar_cap1
+RUN_TEST_STEP   !Result=13 twchar_cap1 wfopensys
+END_TESTCASE OE-001
+
+
+START_TESTCASE OE-002
+PRINT --------  Testing wfopensys  API  ,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap2.exe
+LOAD_SUITE twchar_cap2
+RUN_TEST_STEP  twchar_cap2 wfopensys
+END_TESTCASE OE-002
+
+START_TESTCASE OE-003
+PRINT --------  Testing wfopen  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap3.exe
+LOAD_SUITE twchar_cap3
+RUN_TEST_STEP !Result=13 twchar_cap3 wfopenprivate
+END_TESTCASE OE-003
+
+START_TESTCASE OE-004
+PRINT --------  Testing wfopen  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap4.exe
+LOAD_SUITE twchar_cap4
+RUN_TEST_STEP twchar_cap4 wfopenprivate
+END_TESTCASE OE-004
+
+
+START_TESTCASE OE-005
+PRINT --------  Testing wmkdir  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap5.exe
+LOAD_SUITE twchar_cap5
+RUN_TEST_STEP !Result=13 twchar_cap5 wmkdirsys
+END_TESTCASE OE-005
+
+START_TESTCASE OE-006
+PRINT --------  Testing wmkdir  API ,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap6.exe
+LOAD_SUITE twchar_cap6
+RUN_TEST_STEP !Result=13 twchar_cap6 wmkdirsys
+END_TESTCASE OE-006
+
+START_TESTCASE OE-007
+PRINT --------  Testing wmkdir  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap7.exe
+LOAD_SUITE twchar_cap7
+RUN_TEST_STEP !Result=13 twchar_cap7 wmkdirprivate
+END_TESTCASE OE-007
+
+
+START_TESTCASE OE-008
+PRINT --------  Testing wmkdir  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap8.exe
+LOAD_SUITE twchar_cap8
+RUN_TEST_STEP !Result=13 twchar_cap8 wmkdirprivate
+END_TESTCASE OE-008
+
+
+START_TESTCASE OE-009
+PRINT --------  Testing wchdir  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap9.exe
+LOAD_SUITE twchar_cap9
+RUN_TEST_STEP !Result=13  twchar_cap9 wchdirsys
+END_TESTCASE OE-009
+
+
+START_TESTCASE OE-0010
+PRINT --------  Testing wchdir  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap10.exe
+LOAD_SUITE twchar_cap10
+RUN_TEST_STEP twchar_cap10 wchdirsys
+END_TESTCASE OE-0010
+
+
+START_TESTCASE OE-0011
+PRINT --------  Testing wchdir API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap11.exe
+LOAD_SUITE twchar_cap11
+RUN_TEST_STEP!Result=13 twchar_cap11 wchdirprivate
+END_TESTCASE OE-0011
+
+
+START_TESTCASE OE-0012
+PRINT --------  Testing wchdir  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap12.exe
+LOAD_SUITE twchar_cap12
+RUN_TEST_STEP  twchar_cap12 wchdirprivate
+END_TESTCASE OE-0012
+
+
+START_TESTCASE OE-0013
+PRINT --------  Testing wchmod  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap13.exe
+LOAD_SUITE twchar_cap13
+RUN_TEST_STEP !Result=13  twchar_cap13 wchmodsys
+END_TESTCASE OE-0013
+
+
+
+
+START_TESTCASE OE-0014
+PRINT --------  Testing wchmod  API ,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap14.exe
+LOAD_SUITE twchar_cap14
+RUN_TEST_STEP !Result=13  twchar_cap14 wchmodsys
+END_TESTCASE OE-0014
+
+
+START_TESTCASE OE-0015
+PRINT --------  Testing wchmod  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap15.exe
+LOAD_SUITE twchar_cap15
+RUN_TEST_STEP !Result=13 twchar_cap15 wchmodprivate
+END_TESTCASE OE-0015
+
+
+START_TESTCASE OE-0016
+PRINT --------  Testing wchmod  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap16.exe
+LOAD_SUITE twchar_cap16
+RUN_TEST_STEP !Result=13 twchar_cap16 wchmodprivate
+END_TESTCASE OE-0016
+
+
+
+START_TESTCASE OE-0017
+PRINT --------  Testing wrename  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap17.exe
+LOAD_SUITE twchar_cap17
+RUN_TEST_STEP !Result=13 twchar_cap17 wrenameprivate
+END_TESTCASE OE-0017
+
+
+START_TESTCASE OE-0018
+PRINT --------  Testing wrename  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap18.exe
+LOAD_SUITE twchar_cap18
+RUN_TEST_STEP !Result=13 twchar_cap18 wrenameprivate
+END_TESTCASE OE-0018
+
+
+START_TESTCASE OE-0019
+PRINT --------  Testing waccess  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap19.exe
+LOAD_SUITE twchar_cap19
+RUN_TEST_STEP !Result=13 twchar_cap19 waccessprivate
+END_TESTCASE OE-0019
+
+
+START_TESTCASE OE-0020
+PRINT --------  Testing waccess  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap20.exe
+LOAD_SUITE twchar_cap20
+RUN_TEST_STEP   twchar_cap20 waccessprivate
+END_TESTCASE OE-0020
+
+
+
+START_TESTCASE OE-0021
+PRINT --------  Testing wopen  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap21.exe
+LOAD_SUITE twchar_cap21
+RUN_TEST_STEP !Result=13  twchar_cap21 wopensys
+END_TESTCASE OE-0021
+
+START_TESTCASE OE-0022
+PRINT --------  Testing wopen  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap22.exe
+LOAD_SUITE twchar_cap22
+RUN_TEST_STEP  twchar_cap22 wopensys
+END_TESTCASE OE-0022
+
+
+START_TESTCASE OE-0023
+PRINT --------  Testing wopen  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap23.exe
+LOAD_SUITE twchar_cap23
+RUN_TEST_STEP !Result=13 twchar_cap23 wopenprivate
+END_TESTCASE OE-0023
+
+START_TESTCASE OE-0024
+PRINT --------  Testing wopen  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap24.exe
+LOAD_SUITE twchar_cap24
+RUN_TEST_STEP twchar_cap24 wopenprivate
+END_TESTCASE OE-0024
+
+
+START_TESTCASE OE-0025
+PRINT --------  Testing wunlink  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap25.exe
+LOAD_SUITE twchar_cap25
+RUN_TEST_STEP  !Result=13 twchar_cap25 wunlinksys
+END_TESTCASE OE-0025
+
+START_TESTCASE OE-0026
+PRINT --------  Testing wunlink  API ,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap26.exe
+LOAD_SUITE twchar_cap26
+RUN_TEST_STEP  !Result=13 twchar_cap26 wunlinksys
+END_TESTCASE OE-0026
+
+
+
+START_TESTCASE OE-0027
+PRINT --------  Testing wunlink  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap27.exe
+LOAD_SUITE twchar_cap27
+RUN_TEST_STEP  !Result=13 twchar_cap27 wunlinkprivate
+END_TESTCASE OE-0027
+
+
+START_TESTCASE OE-0028
+PRINT --------  Testing wunlink  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap28.exe
+LOAD_SUITE twchar_cap28
+RUN_TEST_STEP !Result=13 twchar_cap28 wunlinkprivate
+END_TESTCASE OE-0028
+
+
+
+START_TESTCASE OE-0029
+PRINT --------  Testing wstat  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap29.exe
+LOAD_SUITE twchar_cap29
+RUN_TEST_STEP  twchar_cap29 wstatsys
+END_TESTCASE OE-0029
+
+
+
+
+
+START_TESTCASE OE-0030
+PRINT --------  Testing wstat  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap30.exe
+LOAD_SUITE twchar_cap30
+RUN_TEST_STEP twchar_cap11 wstatsys
+END_TESTCASE OE-0030
+
+
+START_TESTCASE OE-0031
+PRINT --------  Testing wstat  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap31.exe
+LOAD_SUITE twchar_cap31
+RUN_TEST_STEP twchar_cap31 wstatprivate
+END_TESTCASE OE-0031
+
+
+START_TESTCASE OE-0032
+PRINT --------  Testing wstat  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap32.exe
+LOAD_SUITE twchar_cap32
+RUN_TEST_STEP !Result=13  twchar_cap32 wstatprivate
+END_TESTCASE OE-0032
+
+
+
+
+START_TESTCASE OE-0033
+PRINT --------  Testing wrmdir  API ,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap33.exe
+LOAD_SUITE twchar_cap33
+RUN_TEST_STEP  !Result=13   twchar_cap33 wrmdirsys
+END_TESTCASE OE-0033
+
+
+START_TESTCASE OE-0034
+PRINT --------  Testing wrmdir  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap34.exe
+LOAD_SUITE twchar_cap34
+RUN_TEST_STEP !Result=13 twchar_cap34 wrmdirsys
+END_TESTCASE OE-0034
+
+
+START_TESTCASE OE-0035
+PRINT --------  Testing wrmdir  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap35.exe
+LOAD_SUITE twchar_cap35
+RUN_TEST_STEP !Result=13  twchar_cap35 wrmdirprivate
+END_TESTCASE OE-0035
+
+
+
+START_TESTCASE OE-0036
+PRINT --------  Testing wrmdir  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap36.exe
+LOAD_SUITE twchar_cap36
+RUN_TEST_STEP !Result=13  twchar_cap36 wrmdirprivate
+END_TESTCASE OE-0036
+
+
+START_TESTCASE OE-0037
+PRINT --------  Testing waccess  API,Capability set to AllFiles
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000800  twchar_cap37.exe
+LOAD_SUITE twchar_cap37
+RUN_TEST_STEP twchar_cap37 waccesssys
+END_TESTCASE OE-0037
+
+
+
+START_TESTCASE OE-0038
+PRINT --------  Testing waccess  API,Capability set to None
+RUN_PROGRAM -1 setcap.exe twcharcap.exe 000000  twchar_cap38.exe
+LOAD_SUITE twchar_cap38
+RUN_TEST_STEP !Result=13  twchar_cap38 waccessprivate
+END_TESTCASE OE-0038
+
+

@@ -1,0 +1,797 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//! @file
+//! @SYMTestSuiteName  t_csiphttpdigest
+//! @SYMScriptTestEnvironment This test script requires a basic ROM.
+
+///////////////////////////////////////////////////////////////////////////////
+// t_csiphttpdigest.script
+
+LOAD_SUITE      t_sipclientapi
+DELAY           2000
+
+// ****************************************************************************
+// CSIPHttpDigest class
+// ****************************************************************************
+START_TESTCASE CSIPHTTPDIGEST_001 
+//! @SYMTestCaseID          t_csiphttpdigest_001
+//! @SYMAPI                 Create CSIPHttpDigest object
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIPHttpDigest with MSIPHttpDigestChallengeObserver.
+//! @SYMTestActions         1.Instantiate a new CSIP object with UID.
+//!                         2.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver.
+//!							3.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPHttpDigest successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_001-NewL_command01                          
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_001-NewL_command02
+        COMMAND				httpdigest					  ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_001
+
+START_TESTCASE CSIPHTTPDIGEST_002 
+//! @SYMTestCaseID          t_csiphttpdigest_002
+//! @SYMAPI                 Create CSIPHttpDigest object
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIPHttpDigest with MSIPHttpDigestChallengeObserver.
+//! @SYMTestActions         1.Instantiate a new CSIP object with UID.
+//!                         2.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver.
+//!							3.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPHttpDigest successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_002-NewL_command01                          
+        COMMAND				httpdigest					  NewLC						t_csiphttpdigest_002-NewLC_command02
+        COMMAND				httpdigest					  ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_002
+
+
+START_TESTCASE CSIPHTTPDIGEST_003 
+//! @SYMTestCaseID          t_csiphttpdigest_003
+//! @SYMAPI                 Create CSIPHttpDigest object
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIPHttpDigest with MSIPHttpDigestChallengeObserver2.
+//! @SYMTestActions         1.Instantiate a new CSIP object with UID.
+//!                         2.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							3.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPHttpDigest successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_003-NewL_command01                          
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_003-NewL_command02
+        COMMAND				httpdigest					  ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_003
+
+START_TESTCASE CSIPHTTPDIGEST_004 
+//! @SYMTestCaseID          t_csiphttpdigest_004
+//! @SYMAPI                 Create CSIPHttpDigest object
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIPHttpDigest with MSIPHttpDigestChallengeObserver2.
+//! @SYMTestActions         1.Instantiate a new CSIP object with UID.
+//!                         2.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							3.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPHttpDigest successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_004-NewL_command01                          
+        COMMAND				httpdigest					  NewLC						t_csiphttpdigest_004-NewLC_command02
+        COMMAND				httpdigest					  ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_004
+
+START_TESTCASE CSIPHTTPDIGEST_005 
+//! @SYMTestCaseID          t_csiphttpdigest_005
+//! @SYMAPI                 Set Credentials to the sip server
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIP Set Credentials request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							10.Send registration request.
+//!							11.Wait for server call back ChallengeReceived()
+//!							12.SetCredentialsL with an outbound proxy ,servers's realm, user's name, and user's password
+//!                         13.Wait for the incoming response
+//!                         14.Query the registration state
+//!                         15.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_005-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_005-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_005-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_005-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_005-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_005-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_005-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csiphttpdigest_005-NewL_command09
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_005-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_005-RegisterL_command11
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_005-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csiphttpdigest_005-SetCredentialsL_command13
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csiphttpdigest_005-WaitForIncomingResponse_command14
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csiphttpdigest_005-IsContextActive_command15
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_005
+
+
+START_TESTCASE CSIPHTTPDIGEST_006 
+//! @SYMTestCaseID          t_csiphttpdigest_006
+//! @SYMAPI                 Set Credentials to the sip server
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIP Set Credentials request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Send registration request.
+//!							10.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							11.Wait for server call back ChallengeReceived()
+//!							12.SetCredentialsL with servers's realm, user's name, and user's password
+//!                         13.Wait for the incoming response
+//!                         14.Query the registration state
+//!                         15.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_006-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_006-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_006-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_006-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_006-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_006-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_006-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csiphttpdigest_006-NewL_command09
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_006-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_006-RegisterL_command11
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_006-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csiphttpdigest_006-SetCredentialsL_command13
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csiphttpdigest_006-WaitForIncomingResponse_command14
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csiphttpdigest_006-IsContextActive_command15
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_006
+
+START_TESTCASE CSIPHTTPDIGEST_007 
+//! @SYMTestCaseID          t_csiphttpdigest_007
+//! @SYMAPI                 Set Credentials to the sip server
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIP Set Credentials request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							8.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							9.Send registration request.
+//!							10.Wait for server call back ChallengeReceived()
+//!							11.SetCredentialsL with a clienttransaction object, an outbound proxy, servers's realm, user's name, and user's password
+//!                         12.Wait for the incoming response
+//!                         13.Query the registration state
+//!                         14.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction1
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_007-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_007-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_007-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_007-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_007-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_007-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_007-NewL_command07 
+        COMMAND             binding                       NewL                      t_csiphttpdigest_007-NewL_command08
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_007-NewL_command09
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_007-RegisterL_command10
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_007-WaitForChallengeReceived_command11
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csiphttpdigest_007-SetCredentialsL_command12
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csiphttpdigest_007-WaitForIncomingResponse_command13
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csiphttpdigest_007-IsContextActive_command14
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             clienttransaction1            ~
+        COMMAND             clienttransaction             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_007
+
+
+START_TESTCASE CSIPHTTPDIGEST_008
+//! @SYMTestCaseID          t_csiphttpdigest_008
+//! @SYMAPI                 Set Credentials to the sip server
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Creates SIP Set Credentials request.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							10.Send registration request.
+//!							11.Wait for server call back ChallengeReceived()
+//!							12.SetCredentialsL with a clienttransaction object, an outbound proxy, servers's realm, user's name, and user's password
+//!                         13.Wait for the incoming response
+//!                         14.Query the registration state
+//!                         15.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRefresh                   refresh1
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_008-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_008-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_008-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_008-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_008-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_008-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_008-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csiphttpdigest_008-NewL_command09
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_008-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_008-RegisterL_command11
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_008-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csiphttpdigest_008-SetCredentialsL_command13
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csiphttpdigest_008-WaitForIncomingResponse_command14
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csiphttpdigest_008-IsContextActive_command15
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             refresh1                      ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_008
+
+
+START_TESTCASE CSIPHTTPDIGEST_009 
+//! @SYMTestCaseID          t_csiphttpdigest_009
+//! @SYMAPI                 RemoveCredentials(const TDesC8 &)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Removes all set credentials for the realm.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							10.Send registration request.
+//!							11.Wait for server call back ChallengeReceived()
+//!							12.SetCredentialsL with a clienttransaction object, an outbound proxy, servers's realm, user's name, and user's password
+//!                         13.Wait for the incoming response
+//!                         14.Query the registration state
+//!                         15.Removes all set credentials for the realm.
+//!                         16.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction1
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_009-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_009-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_009-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_009-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_009-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_009-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_009-NewL_command07 
+        COMMAND             binding                       NewL                      t_csiphttpdigest_009-NewL_command08
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_009-NewL_command09
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_009-RegisterL_command10
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_009-WaitForChallengeReceived_command11
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csiphttpdigest_009-SetCredentialsL_command12
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csiphttpdigest_009-WaitForIncomingResponse_command13
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csiphttpdigest_009-IsContextActive_command14
+        COMMAND				httpdigest					  RemoveCredentials         t_csiphttpdigest_009-RemoveCredentials_command15
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             clienttransaction1            ~
+        COMMAND             clienttransaction             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_009
+
+
+START_TESTCASE CSIPHTTPDIGEST_010 
+//! @SYMTestCaseID          t_csiphttpdigest_010
+//! @SYMAPI                 RemoveCredentials()
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Removes all set credentials for the user.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							10.Send registration request.
+//!							11.Wait for server call back ChallengeReceived()
+//!							12.SetCredentialsL with a clienttransaction object, an outbound proxy, servers's realm, user's name, and user's password
+//!                         13.Wait for the incoming response
+//!                         14.Query the registration state
+//!                         15.Removes all set credentials for the user.
+//!                         16.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRefresh                   refresh1
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_010-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_010-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_010-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_010-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_010-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_010-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_010-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csiphttpdigest_010-NewL_command09
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_010-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_010-RegisterL_command11
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_010-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  SetCredentialsL			t_csiphttpdigest_010-SetCredentialsL_command13
+        COMMAND             sipconnection                 WaitForIncomingResponse   t_csiphttpdigest_010-WaitForIncomingResponse_command14
+        OUTSTANDING
+        COMMAND             binding                       IsContextActive           t_csiphttpdigest_010-IsContextActive_command15
+        COMMAND				httpdigest					  RemoveCredentials         t_csiphttpdigest_010-RemoveCredentials_command16
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             refresh1                      ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_010
+
+
+START_TESTCASE CSIPHTTPDIGEST_011
+//! @SYMTestCaseID          t_csiphttpdigest_011
+//! @SYMAPI                 SetObserver(MSIPHttpDigestChallengeObserver2)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Replaces the MSIPHttpDigestChallengeObserver with MSIPHttpDigestChallengeObserver2
+//! @SYMTestActions         1.Instantiate a new CSIP object with UID.
+//!                         2.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver.
+//!							3.Replaces the MSIPHttpDigestChallengeObserver with MSIPHttpDigestChallengeObserver2
+//!							4.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPHttpDigest successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_011-NewL_command01                          
+        COMMAND				httpdigest					  NewLC						t_csiphttpdigest_011-NewLC_command02
+        COMMAND				httpdigest					  SetObserver				t_csiphttpdigest_011-SetObserver_command03
+        COMMAND				httpdigest					  ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_011
+
+
+START_TESTCASE CSIPHTTPDIGEST_012
+//! @SYMTestCaseID          t_csiphttpdigest_012
+//! @SYMAPI                 SetObserver(MSIPHttpDigestChallengeObserver)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Replaces the MSIPHttpDigestChallengeObserver2 with MSIPHttpDigestChallengeObserver
+//! @SYMTestActions         1.Instantiate a new CSIP object with UID.
+//!                         2.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver.
+//!							3.Replaces the MSIPHttpDigestChallengeObserver2 with MSIPHttpDigestChallengeObserver
+//!							4.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Create a SIPHttpDigest successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_012-NewL_command01                          
+        COMMAND				httpdigest					  NewLC						t_csiphttpdigest_012-NewLC_command02
+        COMMAND				httpdigest					  SetObserver				t_csiphttpdigest_012-SetObserver_command03
+        COMMAND				httpdigest					  ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_012
+
+
+START_TESTCASE CSIPHTTPDIGEST_013 
+//! @SYMTestCaseID          t_csiphttpdigest_013
+//! @SYMAPI                 IgnoreChallenge(const TDesC8  &)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Removes all set credentials for the user.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							10.Send registration request.
+//!							11.Wait for server call back ChallengeReceived()
+//!							12.IgnoreChallenge with realm name
+//!                         13.Wait for the error occurring
+//!                         14.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: SIP setting credentials is successful. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction1
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_013-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_013-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_013-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_013-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_013-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_013-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_013-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csiphttpdigest_013-NewL_command09
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_013-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_013-RegisterL_command11
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_013-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  IgnoreChallenge			t_csiphttpdigest_013-IgnoreChallenge_command13
+        COMMAND             sipconnection                 WaitForErrorOccured  t_csiphttpdigest_013-DoCmdWaitForErrorOccured_command14
+        OUTSTANDING
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             clienttransaction1            ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_013
+
+START_TESTCASE CSIPHTTPDIGEST_014
+//! @SYMTestCaseID          t_csiphttpdigest_014
+//! @SYMAPI                 IgnoreChallenge(const CSIPClientTransaction &,const TDesC8  &)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Removes all set credentials for the user.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							8.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							9.Send registration request.
+//!							10.Wait for server call back ChallengeReceived()
+//!							11.IgnoreChallenge with realm name
+//!                         12.Wait for the error occurring
+//!                         13.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Ignore the server's challenge successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction1
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_014-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_014-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_014-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_014-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_014-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_014-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_014-NewL_command07 
+        COMMAND             binding                       NewL                      t_csiphttpdigest_014-NewL_command08
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_014-NewL_command09
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_014-RegisterL_command10
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_014-WaitForChallengeReceived_command11
+        OUTSTANDING
+        COMMAND				httpdigest					  IgnoreChallenge			t_csiphttpdigest_014-IgnoreChallenge_command12
+        COMMAND             sipconnection                 WaitForErrorOccured  t_csiphttpdigest_014-DoCmdWaitForErrorOccured_command13
+        OUTSTANDING
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             clienttransaction1            ~
+        COMMAND             clienttransaction             ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_014
+
+START_TESTCASE CSIPHTTPDIGEST_015
+//! @SYMTestCaseID          t_csiphttpdigest_015
+//! @SYMAPI                 IgnoreChallenge(const CSIPRefresh &,const TDesC8  &)
+//! @SYMAuthor              Jason Lin
+//! @SYMCreationDate        04/09/2009
+//! @SYMTestCaseDesc        Removes all set credentials for the user.
+//! @SYMTestActions         1.Create object for CSIPToHeader, CSIPRouteHeader, CSIPAddress, CSIPContactHeader, CSIPRefresh, CSIPHttpDigest,CSIP,
+//!                           CSIPConnection, CSIPClientTransaction, CSIPMessageElements, CSIPRegistrationBinding
+//!                         2.Instantiate a new CSIP object with UID.
+//!                         3.Instantiate a new CSIPConnection object with CSIP object and IAP name.
+//!                         4.Create a SIPToHeader.
+//!                         5.Create a SIPContactHeader.
+//!                         6.Create a SIPRouteHeader.
+//!                         7.Create a SIPRefresh.
+//!                         8.Create SIP registration binding using SIPToHeader, SIPContactHeader, SIPRouteHeader, SIPRefresh and SIPConnection.
+//!							9.Create a SIPHttpDigest using MSIPHttpDigestChallengeObserver2.
+//!							10.Send registration request.
+//!							11.Wait for server call back ChallengeReceived(CSIPRefresh,const TDesC8 &)
+//!							12.IgnoreChallenge with realm name
+//!                         13.Wait for the error occurring
+//!                         14.Destruct objects.
+//! @SYMTestStatus          Implemented
+//! @SYMTestPriority        High
+//! @SYMTestExpectedResults: Ignore the server's challenge successfully. 
+//! @SYMTestType            CIT
+
+    START_TEST_BLOCK        300   t_sipclientapi          \sip\sipclient\t_csiphttpdigest.ini
+        CREATE_OBJECT       CSIPToHeader                  toheader
+	  	CREATE_OBJECT       CSIPRouteHeader               routeheader
+        CREATE_OBJECT       CSIPAddress                   address
+	  	CREATE_OBJECT       CSIPAddress                   address2
+        CREATE_OBJECT       CSIPContactHeader             contactheader
+        CREATE_OBJECT       CSIPRefresh                   refresh
+        CREATE_OBJECT       CSIPRegistrationBinding       binding
+        CREATE_OBJECT       CSIPMessageElements           messageelements
+        CREATE_OBJECT       CSIPConnection                sipconnection
+        CREATE_OBJECT       CSIP                          sip
+        CREATE_OBJECT       CSIPClientTransaction         clienttransaction
+        CREATE_OBJECT       CSIPRefresh                   refresh1
+        CREATE_OBJECT		CSIPHttpDigest				  httpdigest
+        COMMAND             sip                           NewL                      t_csiphttpdigest_015-NewL_command01                          
+        COMMAND             sipconnection                 NewL                      t_csiphttpdigest_015-NewL_command02
+        OUTSTANDING    
+        COMMAND             toheader                      DecodeL                   t_csiphttpdigest_015-DecodeL_command03
+        COMMAND             address                       DecodeL                   t_csiphttpdigest_015-DecodeL_command04 
+        COMMAND             contactheader                 NewL                      t_csiphttpdigest_015-NewL_command05 
+        COMMAND             address2                      DecodeL                   t_csiphttpdigest_015-DecodeL_command06
+        COMMAND             routeheader                   NewL                      t_csiphttpdigest_015-NewL_command07 
+        COMMAND             refresh                       NewL    
+        COMMAND             binding                       NewL                      t_csiphttpdigest_015-NewL_command09
+        COMMAND				httpdigest					  NewL						t_csiphttpdigest_015-NewL_command10
+        COMMAND             binding                       RegisterL                 t_csiphttpdigest_015-RegisterL_command11
+
+        COMMAND             httpdigest                    WaitForChallengeReceived  t_csiphttpdigest_015-WaitForChallengeReceived_command12
+        OUTSTANDING
+        COMMAND				httpdigest					  IgnoreChallenge			t_csiphttpdigest_015-IgnoreChallenge_command13
+        COMMAND             sipconnection                 WaitForErrorOccured  t_csiphttpdigest_015-DoCmdWaitForErrorOccured_command14
+        OUTSTANDING
+        COMMAND             binding                       ~
+        COMMAND				httpdigest					  ~
+        COMMAND             refresh1                      ~
+        COMMAND             clienttransaction             ~
+        COMMAND             refresh                       ~
+        COMMAND             sipconnection                 ~
+        COMMAND             sip                           ~
+    END_TEST_BLOCK
+END_TESTCASE CSIPHTTPDIGEST_015

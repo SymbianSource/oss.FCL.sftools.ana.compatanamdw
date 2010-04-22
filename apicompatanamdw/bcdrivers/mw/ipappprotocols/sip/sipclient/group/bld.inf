@@ -1,0 +1,140 @@
+//
+// Copyright (c) 2005-2009 Nokia Corporation and/or its subsidiary(-ies).
+// All rights reserved.
+// This component and the accompanying materials are made available
+// under the terms of "Eclipse Public License v1.0"
+// which accompanies this distribution, and is available
+// at the URL "http://www.eclipse.org/legal/epl-v10.html".
+//
+// Initial Contributors:
+// Nokia Corporation - initial contribution.
+//
+// Contributors:
+//
+// Description:
+//
+//
+
+PRJ_TESTEXPORTS
+
+../scripts/setup-sipclient.script         	/epoc32/winscw/c/sip/sipclient/setup-sipclient.script  
+
+../scripts/t_csip.script                    	/epoc32/winscw/c/sip/sipclient/t_csip.script
+../testdata/t_csip.ini                      	/epoc32/winscw/c/sip/sipclient/t_csip.ini 
+
+../scripts/t_csipconnection.script          	/epoc32/winscw/c/sip/sipclient/t_csipconnection.script
+../testdata/t_csipconnection.ini              	/epoc32/winscw/c/sip/sipclient/t_csipconnection.ini 
+
+../scripts/t_csipconnection-ne.script           /epoc32/winscw/c/sip/sipclient/t_csipconnection-ne.script
+../testdata/t_csipconnection-ne.ini             /epoc32/winscw/c/sip/sipclient/t_csipconnection-ne.ini 
+
+../scripts/send-sip-request-master.script     	/epoc32/winscw/c/sip/sipclient/send-sip-request-master.script
+../testdata/send-sip-request-master.ini       	/epoc32/winscw/c/sip/sipclient/send-sip-request-master.ini 
+
+../scripts/receive-sip-request-slave.script   	/epoc32/winscw/c/sip/sipclient/receive-sip-request-slave.script
+../testdata/receive-sip-request-slave.ini     	/epoc32/winscw/c/sip/sipclient/receive-sip-request-slave.ini 
+
+../scripts/t_csipdialog.script   			/epoc32/winscw/c/sip/sipclient/t_csipdialog.script
+../testdata/t_csipdialog.ini     			/epoc32/winscw/c/sip/sipclient/t_csipdialog.ini 
+
+../scripts/t_csiprequestelements.script   	/epoc32/winscw/c/sip/sipclient/t_csiprequestelements.script
+../testdata/t_csiprequestelements.ini     	/epoc32/winscw/c/sip/sipclient/t_csiprequestelements.ini 
+
+../scripts/t_csipresponseelements.script   	/epoc32/winscw/c/sip/sipclient/t_csipresponseelements.script
+../testdata/t_csipresponseelements.ini     	/epoc32/winscw/c/sip/sipclient/t_csipresponseelements.ini 
+
+../scripts/t_csipreferdialogassoc.script   	/epoc32/winscw/c/sip/sipclient/t_csipreferdialogassoc.script
+../testdata/t_csipreferdialogassoc.ini     	/epoc32/winscw/c/sip/sipclient/t_csipreferdialogassoc.ini 
+
+../scripts/t_csipreferdialogassoc-ne.script   	/epoc32/winscw/c/sip/sipclient/t_csipreferdialogassoc-ne.script
+../testdata/t_csipreferdialogassoc-ne.ini     	/epoc32/winscw/c/sip/sipclient/t_csipreferdialogassoc-ne.ini 
+
+../scripts/t_csiphttpdigest.script   		/epoc32/winscw/c/sip/sipclient/t_csiphttpdigest.script
+../testdata/t_csiphttpdigest.ini     		/epoc32/winscw/c/sip/sipclient/t_csiphttpdigest.ini 
+
+../scripts/t_csiphttpdigest-ne.script   		/epoc32/winscw/c/sip/sipclient/t_csiphttpdigest-ne.script
+../testdata/t_csiphttpdigest-ne.ini     		/epoc32/winscw/c/sip/sipclient/t_csiphttpdigest-ne.ini 
+
+../scripts/t_csipmessageelements.script   	/epoc32/winscw/c/sip/sipclient/t_csipmessageelements.script
+../testdata/t_csipmessageelements.ini     	/epoc32/winscw/c/sip/sipclient/t_csipmessageelements.ini 
+
+../scripts/t_csipmessageelements-ne.script   	/epoc32/winscw/c/sip/sipclient/t_csipmessageelements-ne.script
+../testdata/t_csipmessageelements-ne.ini     	/epoc32/winscw/c/sip/sipclient/t_csipmessageelements-ne.ini 
+
+../scripts/t_csipregistrationbinding.script   	/epoc32/winscw/c/sip/sipclient/t_csipregistrationbinding.script
+../testdata/t_csipregistrationbinding.ini     	/epoc32/winscw/c/sip/sipclient/t_csipregistrationbinding.ini 
+
+../scripts/t_csipregistrationbinding-ne.script  /epoc32/winscw/c/sip/sipclient/t_csipregistrationbinding-ne.script
+../testdata/t_csipregistrationbinding-ne.ini    /epoc32/winscw/c/sip/sipclient/t_csipregistrationbinding-ne.ini 
+
+../scripts/t_csiprefresh.script   			/epoc32/winscw/c/sip/sipclient/t_csiprefresh.script
+../testdata/t_csiprefresh.ini     			/epoc32/winscw/c/sip/sipclient/t_csiprefresh.ini 
+
+../scripts/t_csiprefresh-ne.script   		/epoc32/winscw/c/sip/sipclient/t_csiprefresh-ne.script
+../testdata/t_csiprefresh-ne.ini     		/epoc32/winscw/c/sip/sipclient/t_csiprefresh-ne.ini 
+
+../scripts/r001.script 						/epoc32/winscw/c/sip/sipclient/r001.script
+../scripts/r002.script 						/epoc32/winscw/c/sip/sipclient/r002.script
+../scripts/r003.script 						/epoc32/winscw/c/sip/sipclient/r003.script
+../scripts/r004.script 						/epoc32/winscw/c/sip/sipclient/r004.script
+../scripts/r005.script 						/epoc32/winscw/c/sip/sipclient/r005.script
+../scripts/r006.script 						/epoc32/winscw/c/sip/sipclient/r006.script
+../scripts/r007.script 						/epoc32/winscw/c/sip/sipclient/r007.script
+../scripts/r101.script 						/epoc32/winscw/c/sip/sipclient/r101.script
+../scripts/r102.script 						/epoc32/winscw/c/sip/sipclient/r102.script
+../scripts/r103.script 						/epoc32/winscw/c/sip/sipclient/r103.script
+../scripts/r104.script 						/epoc32/winscw/c/sip/sipclient/r104.script
+../scripts/r105.script 						/epoc32/winscw/c/sip/sipclient/r105.script
+../scripts/r106.script 						/epoc32/winscw/c/sip/sipclient/r106.script
+../scripts/r107.script 						/epoc32/winscw/c/sip/sipclient/r107.script
+
+../scripts/s001.script 						/epoc32/winscw/c/sip/sipclient/s001.script
+../scripts/s002.script 						/epoc32/winscw/c/sip/sipclient/s002.script
+../scripts/s003.script 						/epoc32/winscw/c/sip/sipclient/s003.script
+../scripts/s004.script 						/epoc32/winscw/c/sip/sipclient/s004.script
+../scripts/s005.script 						/epoc32/winscw/c/sip/sipclient/s005.script
+../scripts/s006.script 						/epoc32/winscw/c/sip/sipclient/s006.script
+../scripts/s007.script 						/epoc32/winscw/c/sip/sipclient/s007.script
+../scripts/s101.script 						/epoc32/winscw/c/sip/sipclient/s101.script
+../scripts/s102.script 						/epoc32/winscw/c/sip/sipclient/s102.script
+../scripts/s103.script 						/epoc32/winscw/c/sip/sipclient/s103.script
+../scripts/s104.script 						/epoc32/winscw/c/sip/sipclient/s104.script
+../scripts/s105.script 						/epoc32/winscw/c/sip/sipclient/s105.script
+../scripts/s106.script 						/epoc32/winscw/c/sip/sipclient/s106.script
+../scripts/s107.script 						/epoc32/winscw/c/sip/sipclient/s107.script
+
+r001.bat 						/epoc32/winscw/c/sip/sipclient/r001.bat
+r002.bat 						/epoc32/winscw/c/sip/sipclient/r002.bat
+r003.bat 						/epoc32/winscw/c/sip/sipclient/r003.bat
+r004.bat 						/epoc32/winscw/c/sip/sipclient/r004.bat
+r005.bat 						/epoc32/winscw/c/sip/sipclient/r005.bat
+r006.bat 						/epoc32/winscw/c/sip/sipclient/r006.bat
+r007.bat 						/epoc32/winscw/c/sip/sipclient/r007.bat
+r101.bat 						/epoc32/winscw/c/sip/sipclient/r101.bat
+r102.bat 						/epoc32/winscw/c/sip/sipclient/r102.bat
+r103.bat 						/epoc32/winscw/c/sip/sipclient/r103.bat
+r104.bat 						/epoc32/winscw/c/sip/sipclient/r104.bat
+r105.bat 						/epoc32/winscw/c/sip/sipclient/r105.bat
+r106.bat 						/epoc32/winscw/c/sip/sipclient/r106.bat
+r107.bat 						/epoc32/winscw/c/sip/sipclient/r107.bat
+
+s001.bat 						/epoc32/winscw/c/sip/sipclient/s001.bat
+s002.bat 						/epoc32/winscw/c/sip/sipclient/s002.bat
+s003.bat 						/epoc32/winscw/c/sip/sipclient/s003.bat
+s004.bat 						/epoc32/winscw/c/sip/sipclient/s004.bat
+s005.bat 						/epoc32/winscw/c/sip/sipclient/s005.bat
+s006.bat 						/epoc32/winscw/c/sip/sipclient/s006.bat
+s007.bat 						/epoc32/winscw/c/sip/sipclient/s007.bat
+s101.bat 						/epoc32/winscw/c/sip/sipclient/s101.bat
+s102.bat 						/epoc32/winscw/c/sip/sipclient/s102.bat
+s103.bat 						/epoc32/winscw/c/sip/sipclient/s103.bat
+s104.bat 						/epoc32/winscw/c/sip/sipclient/s104.bat
+s105.bat 						/epoc32/winscw/c/sip/sipclient/s105.bat
+s106.bat 						/epoc32/winscw/c/sip/sipclient/s106.bat
+s107.bat 						/epoc32/winscw/c/sip/sipclient/s107.bat
+
+recv.bat						/epoc32/winscw/c/sip/sipclient/recv.bat
+send.bat						/epoc32/winscw/c/sip/sipclient/send.bat
+
+PRJ_TESTMMPFILES
+t_sipclientapi.mmp
