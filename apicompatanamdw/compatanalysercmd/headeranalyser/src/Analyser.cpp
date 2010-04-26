@@ -83,7 +83,6 @@ Analyser::Analyser(char** args, int argc) : iCPPParser(NULL)
     iCmdLine = new CommandLine(args, argc);
     iUseBaselinePlatformData = false;   
     iUseCurrentPlatformData = false;
-    iUseForcedHeaders = true;
     iBasePlatformData = 0;
     iProductPlatformData = 0;
 }
@@ -914,7 +913,7 @@ void Analyser::AnalyzePlatforms(PlatformHeaders& pfHeaders, PlatformHeaders& uns
 				// Exclude "iInvalidFiles" from bundle analysis. Analyse them only singly. 
 				if( invalid.size() )
 				{
-					for( int i=0 ; i < invalid.size() ; i++ )
+					for( int i=0 ; i < (int)invalid.size() ; i++ )
 					{
 					
 						PlatformHeaders::iterator pairIter = FindHeaderPair(invalid[i].first, pfHeaders);
@@ -1130,12 +1129,9 @@ void Analyser::AnalyzePlatforms(PlatformHeaders& pfHeaders, PlatformHeaders& uns
 			parser2->setTemp(iParams.getParameter(TEMPDIR));
 
 			// Set forced headers 
-			if(iUseForcedHeaders)
-			{
-				parser->setForcedHeaders(iForcedBaselineHeaders);
-				parser2->setForcedHeaders(iForcedCurrentHeaders);
-			}
-
+			parser->setForcedHeaders(iForcedBaselineHeaders);
+			parser2->setForcedHeaders(iForcedCurrentHeaders);
+			
 			if (createThread)
 			{		
 				//if the number of threads in this group has reached pre-defined max count, destroy all the threads in this group before creating one.
@@ -1299,7 +1295,6 @@ int Analyser::analyse()
 	// Local variable instantiation
 	int ret = 0;
 	iHeaderSetInUse = false;
-	iUseForcedHeaders = true;
 	iUseThread = false;
 	string epocroot;
 	int bundlesize = 1;
@@ -1404,7 +1399,7 @@ int Analyser::analyse()
 	for(; removedbegin != removedend; removedbegin++)
 	{
 		string filename = *removedbegin;
-		report.addIssue(filename, "", EIssueIdentityFile, EIssueTypeRemoval, ESeverityBBCBreak, ESeveritySCBreak, "", 0, "","");
+		report.addIssue(filename, "", EIssueIdentityFile, EIssueTypeRemoval, ESeverityBBCBreak, ESeveritySCBreak, "", 0,"", "","");
 	}
 
 	int issues = 0;
@@ -1483,7 +1478,7 @@ int Analyser::analyse()
 	report.finishReport();
 
 	// List number of files which had compilation errors and could not be compiled	
-	if ( _current_files + excludedHeaderSize < _total_files )
+	if ( _current_files + (int)excludedHeaderSize < _total_files )
 		cout << "\n" << ( _total_files - (_current_files + excludedHeaderSize) ) <<"  files out of " << _total_files << " had some issues and could not be analysed.\n" << endl;
 
 	// Wrap up the run and print statistics
@@ -1568,17 +1563,12 @@ void Analyser::AnalyseHeaders(const vector<pair<string, string> >& headerList, i
 				{
 					if( basebegin != baseend )
 					{
-						if(!iUseForcedHeaders)
-						{
-							//Add compilation error to the report
-							string compilationError = iCompErrTxt;
-							report.addIssue((*basebegin), "", EIssueIdentityFile, EIssueTypeCompilationError, ESeverityBBCBreak, ESeveritySCBreak, "", 0,
-								(*currentbegin),compilationError);
-							issues++;						
-						}
-						else
-							unsuccessfulHeaders.push_back(pair<string,string>(*basebegin,*currentbegin));
-							
+						//Add compilation error to the report
+						string compilationError = iCompErrTxt;
+						report.addIssue((*basebegin), "", EIssueIdentityFile, EIssueTypeCompilationError, ESeverityBBCBreak, ESeveritySCBreak, "", 0,"",
+							(*currentbegin),compilationError);
+						issues++;
+
 						compErrors++;
 					}
 				}
@@ -1592,17 +1582,11 @@ void Analyser::AnalyseHeaders(const vector<pair<string, string> >& headerList, i
 						curfilename.push_back(*currentbegin);
 						if (!AnalyseBundle(basefilename,curfilename,report, issues))
 						{
-							if(!iUseForcedHeaders)
-							{
-								//Add compilation error to the report						
-								string compilationError = iCompErrTxt;
-								report.addIssue((*basebegin), "", EIssueIdentityFile, EIssueTypeCompilationError, ESeverityBBCBreak, ESeveritySCBreak, "", 0,
-									(*currentbegin),compilationError);
-								issues++;								
-							}
-							else
-								unsuccessfulHeaders.push_back(pair<string,string>(*basebegin,*currentbegin));
-							
+							//Add compilation error to the report						
+							string compilationError = iCompErrTxt;
+							report.addIssue((*basebegin), "", EIssueIdentityFile, EIssueTypeCompilationError, ESeverityBBCBreak, ESeveritySCBreak, "", 0,"",
+								(*currentbegin),compilationError);
+							issues++;								
 							compErrors++;
 						}
 						basebegin++;
@@ -1618,16 +1602,7 @@ void Analyser::AnalyseHeaders(const vector<pair<string, string> >& headerList, i
 		processedcount++;
 	}
 	
-	if( compErrors > 0 && iUseForcedHeaders )
-	{
-		iUseForcedHeaders = false;
-		issues = 0;
-		compErrors = 0;   
-		AnalyseHeaders(unsuccessfulHeaders, 1, report, issues, compErrors);
-		iUseForcedHeaders = true;
-	}
-	
-	if (iNotRemovedFiles.size() != 0)
+    if (iNotRemovedFiles.size() != 0)
 	{            
 		list<string> tempvar;
 		list<string>::iterator removefile = iNotRemovedFiles.begin();
@@ -1678,7 +1653,6 @@ bool Analyser::AnalyseBundle(const stringvector& basefilenames,
 		// Set temp directory for parser
 		parser->setTemp(iParams.getParameter(TEMPDIR));
 		// Set forced headers
-		if(iUseForcedHeaders)
 		parser->setForcedHeaders(iForcedBaselineHeaders);
 		// Wrap allocated memory to an auto_ptr to get it deallocated properly.
 		baseAutoPtr.reset(parser);                                  
@@ -1694,7 +1668,6 @@ bool Analyser::AnalyseBundle(const stringvector& basefilenames,
 		// Set temp directory for parser
 		parser2->setTemp(iParams.getParameter(TEMPDIR));
 		// Set forced headers
-		if(iUseForcedHeaders)
 		parser2->setForcedHeaders(iForcedCurrentHeaders);
 		// Wrap allocated memory to an auto_ptr to get it deallocated properly.
 		currAutoPtr.reset(parser2);
@@ -1765,7 +1738,7 @@ bool Analyser::AnalyseBundle(const stringvector& basefilenames,
 			{
 				string macroname = duplicatedbegin2->first;
 				int lineNo = atoi(duplicatedbegin2->second.c_str());
-				report.addIssue(filename, macroname, EIssueIdentityMacro, EIssueTypeNotAnalysed, ESeverityInformative, ESeveritySCInformative, "", lineNo, "", "");
+				report.addIssue(filename, macroname, EIssueIdentityMacro, EIssueTypeNotAnalysed, ESeverityInformative, ESeveritySCInformative, "", lineNo, "","", "");
 				issues++;
 			}
 		}
@@ -1784,7 +1757,7 @@ bool Analyser::AnalyseBundle(const stringvector& basefilenames,
 			{
 				string macroname = duplicatedbegin2->first;
 				int lineNo = atoi(duplicatedbegin2->second.c_str());
-				report.addIssue("", macroname, EIssueIdentityMacro, EIssueTypeNotAnalysed, ESeverityInformative, ESeveritySCInformative, "", lineNo, filename, "");
+				report.addIssue("", macroname, EIssueIdentityMacro, EIssueTypeNotAnalysed, ESeverityInformative, ESeveritySCInformative, "", lineNo,"", filename, "");
 				issues++;
 			}
 		}
@@ -1806,7 +1779,7 @@ bool Analyser::AnalyseBundle(const stringvector& basefilenames,
 				string macroname = removedbegin2->first;
 				//int lineNo = atoi(removedbegin2->second.c_str());
 				// No need to pass the line no in removed case.
-				report.addIssue(basefilename, macroname, EIssueIdentityMacro, EIssueTypeRemoval, ESeverityPossibleBBCBreak, ESeveritySCBreak, "", 0, currentfilename, "");
+				report.addIssue(basefilename, macroname, EIssueIdentityMacro, EIssueTypeRemoval, ESeverityPossibleBBCBreak, ESeveritySCBreak, "", 0,"", currentfilename, "");
 				issues++;
 			}
 		}
@@ -1828,7 +1801,7 @@ bool Analyser::AnalyseBundle(const stringvector& basefilenames,
 				string macroname = changedbegin2->first;
 				string newcode = changedbegin2->second.first.second;
 				int lineNo = atoi(changedbegin2->second.second.c_str());
-				report.addIssue(basefilename, macroname, EIssueIdentityMacro, EIssueTypeChange, ESeverityPossibleBBCBreak, ESeveritySCNULL, newcode, lineNo, currentfilename, "");
+				report.addIssue(basefilename, macroname, EIssueIdentityMacro, EIssueTypeChange, ESeverityPossibleBBCBreak, ESeveritySCNULL, newcode, lineNo, "",currentfilename, "");
 				issues++;
 			}
 		}
@@ -2646,7 +2619,7 @@ void Analyser::ParseAndCompareResourceFiles(vector<pair< string, string> >& reso
 					{
 						// file does not exists in curdir
 						report.addIssue(baseResource.RHFileName, includes.at(out).first, EIssueIdentityFile, 
-							EIssueTypeRemoval,ESeverityBBCBreak,ESeveritySCNULL, "", 0, curResource.RHFileName,"");
+							EIssueTypeRemoval,ESeverityBBCBreak,ESeveritySCNULL, "", 0, "",curResource.RHFileName,"");
 						break;
 					}
 				}
@@ -2654,7 +2627,7 @@ void Analyser::ParseAndCompareResourceFiles(vector<pair< string, string> >& reso
 				{
 					// add issue, as field is removed in current file.
 					report.addIssue(baseResource.RHFileName, bString, EIssueIdentityField, 
-						EIssueTypeRemoval,ESeverityNULL,ESeveritySCBreak, "", 0, curResource.RHFileName,"");
+						EIssueTypeRemoval,ESeverityNULL,ESeveritySCBreak, "", 0, "",curResource.RHFileName,"");
 				}
 			}
 
@@ -3197,7 +3170,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 									string cVal = curStruct.members.at(cInner).elementValue;
 									int lineNo = curStruct.members.at(cInner).lineNo;
 									report.addIssue(baseResource.RHFileName, bVal, EIssueIdentityStructMember, EIssueTypeChangeInInitialisation, 
-										ESeverityNULL, ESeveritySCBreak, cVal, lineNo,curResource.RHFileName,"");
+										ESeverityNULL, ESeveritySCBreak, cVal, lineNo,"",curResource.RHFileName,"");
 								} 
 							}
 							else
@@ -3207,7 +3180,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 								string cType = curStruct.members.at(cInner).elementType;
 								int lineNo = curStruct.members.at(cInner).lineNo;
 								report.addIssue(baseResource.RHFileName, bType, EIssueIdentityStructMember, EIssueTypeChangeInType, 
-									ESeverityNULL, ESeveritySCBreak, cType, lineNo,curResource.RHFileName,"");
+									ESeverityNULL, ESeveritySCBreak, cType, lineNo,"",curResource.RHFileName,"");
 							}
 
 							break;
@@ -3221,7 +3194,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 						string bMember = baseStruct.structName + "::" + baseStruct.members.at(bInner).elementName;
 						int lineNo = curStruct.lineNo;
 						report.addIssue(baseResource.RHFileName, bMember, EIssueIdentityStructMember, EIssueTypeRemoval, 
-							ESeverityNULL,ESeveritySCBreak, "", lineNo,curResource.RHFileName,"");
+							ESeverityNULL,ESeveritySCBreak, "", lineNo,"",curResource.RHFileName,"");
 					}
 				}// loop base struct member
 
@@ -3232,7 +3205,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 		{ 
 			//Add issue struct not found
 			report.addIssue(baseResource.RHFileName, baseStruct.structName, EIssueIdentityStruct, EIssueTypeRemoval, 
-				ESeverityNULL, ESeveritySCBreak, "", 0,curResource.RHFileName,"");
+				ESeverityNULL, ESeveritySCBreak, "", 0,"",curResource.RHFileName,"");
 		}
 	}//loop base structs
 
@@ -3311,7 +3284,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 									int lineNo = curEnum.enums.at(inner).lineNo;
 
 									report.addIssue(baseResource.RHFileName, baseEnumVal, EIssueIdentityEnumerationValue, EIssueTypeChangeInInitialisation, 
-										ESeverityNULL, ESeveritySCBreak, curEnumVal, lineNo,curResource.RHFileName,"");
+										ESeverityNULL, ESeveritySCBreak, curEnumVal, lineNo,"",curResource.RHFileName,"");
 								}
 							}
 							break;
@@ -3324,7 +3297,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 						string bMemName = baseEnum.enumName +"::" + baseEnum.enums.at(outer).enumMemName;
 						int lineNo = curEnum.lineNo;
 						report.addIssue(baseResource.RHFileName, bMemName, EIssueIdentityEnumerationValue, EIssueTypeRemoval, 
-							ESeverityNULL, ESeveritySCBreak, "", lineNo,curResource.RHFileName,"");
+							ESeverityNULL, ESeveritySCBreak, "", lineNo,"",curResource.RHFileName,"");
 
 					}
 				}// loop base mems
@@ -3339,7 +3312,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 			string bEnum = baseEnum.enumName;
 			string cEnum = curEnum.enumName;
 			report.addIssue(baseResource.RHFileName, bEnum, EIssueIdentityEnumerationValue, EIssueTypeRemoval, 
-				ESeverityNULL, ESeveritySCBreak, cEnum, 0,curResource.RHFileName,"");
+				ESeverityNULL, ESeveritySCBreak, cEnum, 0,"",curResource.RHFileName,"");
 		}
 	}//base enums
 
@@ -3366,7 +3339,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 						int lineNo = cEnumMem.lineNo;
 
 						report.addIssue(baseResource.RHFileName, baseEnumVal, EIssueIdentityEnumerationValue, EIssueTypeChangeInInitialisation, 
-							ESeverityNULL, ESeveritySCBreak, curEnumVal, lineNo,curResource.RHFileName,"");
+							ESeverityNULL, ESeveritySCBreak, curEnumVal, lineNo,"",curResource.RHFileName,"");
 					}
 					break;
 				}
@@ -3376,7 +3349,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 				// add issue enum mem mising
 				string bMemName = "::" + bEnumMem.enumMemName;
 				report.addIssue(baseResource.RHFileName, bMemName, EIssueIdentityEnumerationValue, EIssueTypeRemoval, 
-					ESeverityNULL, ESeveritySCBreak, "", 0,curResource.RHFileName,"");
+					ESeverityNULL, ESeveritySCBreak, "", 0,"",curResource.RHFileName,"");
 			}
 		}
 	}
@@ -3398,7 +3371,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 				{
 					//add issue macro value mismatch
 					report.addIssue(baseResource.RHFileName, baseMacro.macroName, EIssueIdentityMacro, EIssueTypeChange, 
-						ESeverityNULL, ESeveritySCBreak, curMacro.macroVal, curMacro.lineNo,curResource.RHFileName,"");
+						ESeverityNULL, ESeveritySCBreak, curMacro.macroVal, curMacro.lineNo,"",curResource.RHFileName,"");
 				}
 				break; // macro name matched
 			}
@@ -3409,7 +3382,7 @@ void Analyser::compareResources(ResourceContent &baseResource, ResourceContent &
 		{
 			// add issue macro not found
 			report.addIssue(baseResource.RHFileName, baseMacro.macroName, EIssueIdentityMacro, EIssueTypeRemoval, 
-				ESeverityNULL, ESeveritySCBreak, "", 0,curResource.RHFileName,"");
+				ESeverityNULL, ESeveritySCBreak, "", 0,"",curResource.RHFileName,"");
 		}
 	}
 

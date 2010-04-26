@@ -822,19 +822,19 @@ int BBCAnalyser::analyseTrees(DOMNode* baseline, DOMNode* current,const list< pa
         {
             // Serious problem, the analysed file is not in the GCCXML output
             iReport.addIssue(fileit->first,"", EIssueIdentityFile, EIssueTypeEmpty, 
-            BCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), SCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), "", 0, fileit->second, "");
+            BCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), SCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), "", 0, "",fileit->second, "");
         }
         else if ( !bfilefound[i] )
         {
             // Serious problem, the analysed file is not in the GCCXML output
             iReport.addIssue(fileit->first,"", EIssueIdentityFile, EIssueTypeEmpty, 
-            BCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), SCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), "", 0, fileit->second, "");
+            BCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), SCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), "", 0, "",fileit->second, "");
         }
         else if ( !cfilefound[i])
         {
             // Serious problem, the analysed file is not in the GCCXML output
             iReport.addIssue(fileit->first,"", EIssueIdentityFile, EIssueTypeEmpty, 
-				    BCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), SCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), "", 0, fileit->second, "",false);
+				    BCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), SCseverityAccessible<EIssueIdentityFile,EIssueTypeEmpty>(true), "", 0, "",fileit->second, "");
         }
     }
 
@@ -926,7 +926,7 @@ int UnderConstructionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterato
 
     if (report)
     {
-        AddIssue<EIssueIdentityFile, EIssueTypeUnderConstruction>(&baseline, baseline,0);
+        AddIssue<EIssueIdentityFile, EIssueTypeUnderConstruction>(&baseline, baseline,0,"");
     }
     return 1;
 }
@@ -939,7 +939,7 @@ int UnderConstructionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterato
 //
 int UnderConstructionNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator current)
 {
-    AddIssue<EIssueIdentityFile,EIssueTypeUnderConstruction>(&baseline,baseline,0);
+    AddIssue<EIssueIdentityFile,EIssueTypeUnderConstruction>(&baseline,baseline,0,"");
     return 1;
 }
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -964,7 +964,7 @@ int VariableNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeItera
     DOMNode* node = NodeAnalysis::findNode(baseline,current);
     if ( !node )
     {
-        AddIssue<EIssueIdentityVariable, EIssueTypeRemoval>(&baseline, baseline,0);
+        AddIssue<EIssueIdentityVariable, EIssueTypeRemoval>(&baseline, baseline,0,"");
         return 1;
     }
     current.current = node;
@@ -987,8 +987,16 @@ int VariableNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
     int ret = 0;
 
 	int lineNo = 0;
+	string issueLoc;
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
+	const XMLCh* fnameNode= current.GetAttribute(KXMLFileIdString);
+	if( fnameNode!= NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool ret1 = fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
 
     if ( IsAnonymousType(baseline) )
     {
@@ -1018,7 +1026,7 @@ int VariableNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
         {
             if (report)
             {
-                AddIssue<EIssueIdentityVariable, EIssueTypeChangeInType>(&baseline, current,lineNo);
+                AddIssue<EIssueIdentityVariable, EIssueTypeChangeInType>(&baseline, current,lineNo,issueLoc);
             }
             ++ret;
         }
@@ -1032,7 +1040,7 @@ int VariableNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
             {
                 if (report)
                 {
-                    AddIssue<EIssueIdentityVariable, EIssueTypeChangeInType>(&baseline, current,lineNo);
+                    AddIssue<EIssueIdentityVariable, EIssueTypeChangeInType>(&baseline, current,lineNo,issueLoc);
                 }
                 ++ret;
             }
@@ -1046,7 +1054,7 @@ int VariableNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
         {
             if (report)
             {
-                AddIssue<EIssueIdentityVariable, EIssueTypeChangeInType>(&baseline, current,lineNo);
+                AddIssue<EIssueIdentityVariable, EIssueTypeChangeInType>(&baseline, current,lineNo,issueLoc);
             }
             ++ret;
         }
@@ -1057,7 +1065,7 @@ int VariableNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
     {
         if (report)
         {
-            AddIssue<EIssueIdentityVariable, EIssueTypeChangeInInitialisation>(&baseline, current,lineNo);
+            AddIssue<EIssueIdentityVariable, EIssueTypeChangeInInitialisation>(&baseline, current,lineNo,issueLoc);
         }
         ++ret;
     }
@@ -1067,7 +1075,7 @@ int VariableNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
         if (report)
         {
             //AddIssue<iIdentity,EIssueTypeAccess>(&baseline, current);
-			AddIssue<EIssueIdentityVariable,EIssueTypeAccess>(&baseline, current,lineNo);
+			AddIssue<EIssueIdentityVariable,EIssueTypeAccess>(&baseline, current,lineNo,issueLoc);
         }
         ret += 1;
     }
@@ -1104,13 +1112,14 @@ int EnumNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator 
         for (i = 0; i < enumchildcount; ++i)
         {
 			int lineNo = 0;
+			string issueLoc;
             HANodeIterator enumchildit(baseline);
             enumchildit.current = enumchilds->item(i);
             
             DOMNode* node = NodeAnalysis::findNode(enumchildit,current);
             if ( !node )
             {
-                AddIssue<EIssueIdentityEnumerationValue,EIssueTypeRemoval>(&enumchildit, enumchildit, 0, baseline.GetAttribute(KXMLFileIdString));
+                AddIssue<EIssueIdentityEnumerationValue,EIssueTypeRemoval>(&enumchildit, enumchildit, 0, "", baseline.GetAttribute(KXMLFileIdString));
                 ++ret;
                 continue;
             }
@@ -1118,10 +1127,17 @@ int EnumNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator 
 			DOMNode* parentnode = node->getParentNode();
 			const XMLCh* lineNumber = GetAttribute(parentnode,KXMLLineString);
 			lineNo = atoi(toString(lineNumber).c_str());
+			const XMLCh* fnameNode= current.GetAttribute(KXMLFileIdString);
+			if( fnameNode!= NULL)
+			{
+				HANodeIterator fileNode(current);
+				bool ret1 = fileNode.FindNodeById(fnameNode);
+				issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+			}
 
             if ( !CheckEnumValue(enumchildit,current) )
             {
-                AddIssue<EIssueIdentityEnumerationValue,EIssueTypeChangeInInitialisation>(&enumchildit, current, lineNo, baseline.GetAttribute(KXMLFileIdString));
+                AddIssue<EIssueIdentityEnumerationValue,EIssueTypeChangeInInitialisation>(&enumchildit, current, lineNo, issueLoc,baseline.GetAttribute(KXMLFileIdString));
                 ++ret;
             }
 			HANodeIterator currentparent(current);
@@ -1129,7 +1145,7 @@ int EnumNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator 
 			{
 				if ( !CheckAccessModifier(baseline,currentparent) )
 				{
-					AddIssue<EIssueIdentityEnumerationValue,EIssueTypeAccess>(&enumchildit, current, lineNo, baseline.GetAttribute(KXMLFileIdString));
+					AddIssue<EIssueIdentityEnumerationValue,EIssueTypeAccess>(&enumchildit, current, lineNo, issueLoc, baseline.GetAttribute(KXMLFileIdString));
 					++ret;
 				}
 			}
@@ -1141,7 +1157,7 @@ int EnumNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator 
          DOMNode* node = NodeAnalysis::findNode(baseline,current);
         if ( !node )
         {
-            AddIssue<EIssueIdentityEnumeration,EIssueTypeRemoval>(&baseline, baseline,0);
+            AddIssue<EIssueIdentityEnumeration,EIssueTypeRemoval>(&baseline, baseline,0,"");
             return 1;
         }
         current.current = node;
@@ -1178,15 +1194,23 @@ int EnumNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, bo
 
     int ret = 0;
 	int lineNo = 0;
+	string issueLoc;
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if( fnameNode!= NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool ret1 = fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
 
     //{KXMLAlignString,ESimpleAttribute}
     if ( !CompareAttributes(baseline,current,KXMLAlignString,ESimpleAttribute) )
     {
         if (report)
         {
-            AddIssue<EIssueIdentityEnumeration,EIssueTypeAlign>(&baseline, current,lineNo);
+            AddIssue<EIssueIdentityEnumeration,EIssueTypeAlign>(&baseline, current,lineNo,issueLoc);
         }
         ++ret;
     }
@@ -1196,7 +1220,7 @@ int EnumNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, bo
     {
         if (report)
         {
-            AddIssue<EIssueIdentityEnumeration,EIssueTypeSize>(&baseline, current,lineNo);
+            AddIssue<EIssueIdentityEnumeration,EIssueTypeSize>(&baseline, current,lineNo,issueLoc);
         }
         ++ret;
     }
@@ -1206,7 +1230,7 @@ int EnumNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, bo
         if (report)
         {
             //AddIssue<iIdentity,EIssueTypeAccess>(&baseline, current);
-			AddIssue<EIssueIdentityEnumeration, EIssueTypeAccess>(&baseline, current,lineNo);
+			AddIssue<EIssueIdentityEnumeration, EIssueTypeAccess>(&baseline, current,lineNo,issueLoc);
         }
         ++ret;
     }
@@ -1235,7 +1259,7 @@ int EnumNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, bo
                 {
                     if (report)
                     {
-                        AddIssue<EIssueIdentityEnumeration,EIssueTypeChange>(&baseline, current,lineNo);
+                        AddIssue<EIssueIdentityEnumeration,EIssueTypeChange>(&baseline, current,lineNo,issueLoc);
                     }
                     ++ret;
                     return ret;
@@ -1250,7 +1274,7 @@ int EnumNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, bo
 
             if (report)
             {
-				AddIssue<EIssueIdentityEnumerationValue,EIssueTypeRemoval>(&baseline, current,lineNo);
+				AddIssue<EIssueIdentityEnumerationValue,EIssueTypeRemoval>(&baseline, current,lineNo,issueLoc);
             }
             ++ret;
             return ret;
@@ -1305,7 +1329,7 @@ int FunctionNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeItera
         if ( !node )
         {
 			//AddIssue<iFuncType,EIssueTypeRemoval>(&baseline, baseline);
-            AddIssueFunction<EIssueTypeRemoval>(&baseline,iFuncType,baseline,0);
+            AddIssueFunction<EIssueTypeRemoval>(&baseline,iFuncType,baseline,0,"");
             return 1;
         }
         current.current = node;
@@ -1334,8 +1358,16 @@ int FunctionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
 //<!ATTLIST FunctionType returns IDREF #REQUIRED>
 
 	int lineNo = 0;
+	string issueLoc;
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if( fnameNode!= NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool ret1 = fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
 
     const XMLCh* attributeValue = current.GetAttribute(KXMLAttributeString);                            
     if (
@@ -1351,7 +1383,7 @@ int FunctionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
     {
         if (report)
         {
-			AddIssueFunction<EIssueTypeRemoval>(&baseline,iFuncType,baseline,0);
+			AddIssueFunction<EIssueTypeRemoval>(&baseline,iFuncType,baseline,0,"");
 
         }
         ++ret;
@@ -1366,7 +1398,7 @@ int FunctionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
         ++ret;
         if (report)
         {
-			AddIssueFunction<EIssueTypeParam>(&baseline,iFuncType,current,lineNo);
+			AddIssueFunction<EIssueTypeParam>(&baseline,iFuncType,current,lineNo,issueLoc);
         }
     }
     else
@@ -1409,16 +1441,25 @@ int FunctionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
 					currentsize = currentalign;
 				}
 
-				if ( !Equals(baselinesize,currentsize) || !Equals(baselinealign, currentalign) ||
-					!CompareAttributes(baselinechildit,currentchildit,KXMLDefaultString,EOptionalSimpleAttribute))
+				if ( !Equals(baselinesize,currentsize) || !Equals(baselinealign, currentalign) )
 				{
-                    ++ret;
-                    if (report)
-                    {
-                        //AddIssue<iFuncType,EIssueTypeParam>(&baseline, current);
-						AddIssueFunction<EIssueTypeParam>(&baseline,iFuncType,current,lineNo);
-                    }
-                    break;
+					++ret;
+					if (report)
+					{
+						//AddIssue<iFuncType,EIssueTypeParam>(&baseline, current);
+						AddIssueFunction<EIssueTypeParam>(&baseline,iFuncType,current,lineNo,issueLoc);
+					}
+					break;
+				}
+				// if default value is changed then it should be reported as informative
+				if(!CompareAttributes(baselinechildit,currentchildit,KXMLDefaultString,EOptionalSimpleAttribute))
+				{
+					++ret;
+					if (report)
+					{
+						AddIssueFunction<EIssueTypeDefaultParam>(&baseline,iFuncType,current,lineNo,issueLoc);
+					}
+					break;
 				}
             }
 
@@ -1431,7 +1472,7 @@ int FunctionNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current
         ++ret;
         if (report)
         {
-			AddIssueFunction<EIssueTypeReturn>(&baseline,iFuncType,current,lineNo);
+			AddIssueFunction<EIssueTypeReturn>(&baseline,iFuncType,current,lineNo,issueLoc);
         }
     }
 
@@ -1461,7 +1502,7 @@ int TypedefNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterat
      DOMNode* node = NodeAnalysis::findNode(baseline,current);
     if ( !node )
     {
-        AddIssue<EIssueIdentityTypedef,EIssueTypeRemoval>(&baseline, baseline,0);
+        AddIssue<EIssueIdentityTypedef,EIssueTypeRemoval>(&baseline, baseline,0,"");
         return 1;
     }
     current.current = node;
@@ -1483,8 +1524,16 @@ int TypedefNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current,
   //<Typedef id="_9" name="TOmaInt" type="_8" context="_1" location="f0:108" file="f0" line="108"/>
 
 	int lineNo = 0;
+	string issueLoc;
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if( fnameNode != NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool retval= fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
 
     int ret = 0;
 
@@ -1492,7 +1541,7 @@ int TypedefNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current,
     {
         if (report)
         {
-            AddIssue<EIssueIdentityTypedef,EIssueTypeChange>(&baseline, current,lineNo);
+            AddIssue<EIssueIdentityTypedef,EIssueTypeChange>(&baseline, current,lineNo,issueLoc);
         }
         ++ret;
     }
@@ -1501,7 +1550,7 @@ int TypedefNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current,
     {
         if (report)
         {
-            AddIssue<EIssueIdentityTypedef,EIssueTypeChange>(&baseline, current,lineNo);
+            AddIssue<EIssueIdentityTypedef,EIssueTypeChange>(&baseline, current,lineNo,issueLoc);
         }
         ++ret;
     }
@@ -1525,7 +1574,7 @@ int TypedefNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current,
 		{
 			if (report)
 			{
-				AddIssue<EIssueIdentityTypedef,EIssueTypeChange>(&baseline, current,lineNo);
+				AddIssue<EIssueIdentityTypedef,EIssueTypeChange>(&baseline, current,lineNo,issueLoc);
 			}
 			++ret;
 		}
@@ -1536,7 +1585,7 @@ int TypedefNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current,
         if (report)
         {
             //AddIssue<iIdentity,EIssueTypeAccess>(&baseline, current);
-            AddIssue<EIssueIdentityTypedef,EIssueTypeAccess>(&baseline, current,lineNo);
+            AddIssue<EIssueIdentityTypedef,EIssueTypeAccess>(&baseline, current,lineNo,issueLoc);
         }
         ret += 1;
     }
@@ -1612,7 +1661,7 @@ int UnionNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator
 
     if ( !node )
     {
-        AddIssue<EIssueIdentityUnion,EIssueTypeRemoval>(&baseline, baseline,0);
+        AddIssue<EIssueIdentityUnion,EIssueTypeRemoval>(&baseline, baseline,0,"");
         return 1;
     }
     current.current = node;
@@ -1753,6 +1802,15 @@ int ClassNodeAnalysis::compareField(HANodeIterator baseline, HANodeIterator curr
 	TIssueIdentity identity = EIssueIdentityField;
 	bool accessthroughinline = false;
 
+	string issueLoc;
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if( fnameNode!= NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool ret1 = fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
+
 	if ( !CheckAccessibility(baseline,accessthroughinline,basemember.iAccess) )
 	{
 		identity = EIssueIdentityFieldInaccessible;
@@ -1764,7 +1822,8 @@ int ClassNodeAnalysis::compareField(HANodeIterator baseline, HANodeIterator curr
 			ret++;
 			if ( report )
 			{
-				AddIssueField<EIssueTypeOffset>(&baseline,identity, currentfield,currentmember.iLineNo,NULL,basemember);
+				AddIssueField<EIssueTypeOffset>(&baseline,identity, currentfield,currentmember.iLineNo,
+					issueLoc,NULL,basemember);
 			}
 			else
 			{
@@ -1802,7 +1861,8 @@ int ClassNodeAnalysis::compareField(HANodeIterator baseline, HANodeIterator curr
 		{
 			if (report)
 			{
-				AddIssueField<EIssueTypeChangeInType>(&baseline,identity, currentfield,currentmember.iLineNo,NULL,basemember);
+				AddIssueField<EIssueTypeChangeInType>(&baseline,identity, currentfield,currentmember.iLineNo,
+					issueLoc, NULL,basemember);
 			}
 			ret++;
 		}
@@ -1822,7 +1882,8 @@ int ClassNodeAnalysis::compareField(HANodeIterator baseline, HANodeIterator curr
 			{
 				if (report)
 				{
-					AddIssueField<EIssueTypeChangeInType>(&baseline,identity, currentfield,currentmember.iLineNo,NULL,basemember);
+					AddIssueField<EIssueTypeChangeInType>(&baseline,identity, currentfield,currentmember.iLineNo,
+						issueLoc,NULL,basemember);
 				}
 				++ret;
             }
@@ -1837,7 +1898,8 @@ int ClassNodeAnalysis::compareField(HANodeIterator baseline, HANodeIterator curr
 			ret++;
 			if ( report )
 			{
-				AddIssueField<EIssueTypeChangeInType>(&baseline,identity, currentfield,currentmember.iLineNo,NULL,basemember);
+				AddIssueField<EIssueTypeChangeInType>(&baseline,identity, currentfield,currentmember.iLineNo,
+					issueLoc,NULL,basemember);
 			}
 			else
 			{
@@ -1853,7 +1915,8 @@ int ClassNodeAnalysis::compareField(HANodeIterator baseline, HANodeIterator curr
 				ret++;
 				if ( report )
 				{
-					AddIssueField<EIssueTypeSize>(&baseline,identity, currentfield,currentmember.iLineNo,NULL,basemember);
+					AddIssueField<EIssueTypeSize>(&baseline,identity, currentfield,currentmember.iLineNo,
+						issueLoc,NULL,basemember);
 				}
 				else
 				{
@@ -1915,6 +1978,15 @@ int ClassNodeAnalysis::compareNonvirtualFunctions( HANodeIterator baseline,
 	const XMLCh* parenLinenumber = current.GetAttribute( KXMLLineString);
 	parentLineNo = atoi(toString(parenLinenumber).c_str());
 
+	string parentIssueLoc;
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if(fnameNode != NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool ret1 = fileNode.FindNodeById(fnameNode);
+		parentIssueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
+
     // Build method maps for baseline and current platform's classes:
     MethodMatchMap baseMap;    
     vector<DOMNode*>::const_iterator i = bexportedMethods.begin();
@@ -1961,7 +2033,7 @@ int ClassNodeAnalysis::compareNonvirtualFunctions( HANodeIterator baseline,
                 // Function signatures do not match
                 HANodeIterator removedMethod(baseline);
                 removedMethod.current = baseFunc->first;
-                AddIssueFunction<EIssueTypeRemoval>(&removedMethod, identity, removedMethod,parentLineNo);            
+                AddIssueFunction<EIssueTypeRemoval>(&removedMethod, identity, removedMethod,parentLineNo,parentIssueLoc);            
                 ++ret;
             }
             else if( baseFunc->second.returnValueMatch == false )
@@ -1969,7 +2041,7 @@ int ClassNodeAnalysis::compareNonvirtualFunctions( HANodeIterator baseline,
 				// Function return values do not match
 				HANodeIterator removedMethod(baseline);
 				removedMethod.current = baseFunc->first;
-				AddIssueFunction<EIssueTypeReturn>(&removedMethod,identity, removedMethod,lineNo);                
+				AddIssueFunction<EIssueTypeReturn>(&removedMethod,identity, removedMethod,lineNo,parentIssueLoc);                
 				++ret;
 			}
         }
@@ -2002,6 +2074,8 @@ int ClassNodeAnalysis::compareNonvirtualFunctions(
 	vector<DOMNode*>::const_iterator bIter = bexportedMethods.begin();        
 	for( ; bIter != bexportedMethods.end(); ++bIter )
 	{
+		int baseCount = 0;
+		int currCount = 0;
 		MethodMatchMap::iterator baseMapIter = baseMap.find(*bIter);
 		assert(baseMapIter != baseMap.end());
 		if( baseMapIter->second.signatureMatch )
@@ -2010,178 +2084,290 @@ int ClassNodeAnalysis::compareNonvirtualFunctions(
 		}
 		HANodeIterator basemethod(baseline);        
 		basemethod.current = *bIter;
+            
+		vector<DOMNode*>::const_iterator cIter = cexportedMethods.begin(); 
+		const XMLCh* baseMathodID = basemethod->getNodeName();
+        const XMLCh* basenameatt;
+		const XMLCh* basereturnatt;
+		const XMLCh* basemangledatt;
+		if(Equals(baseMathodID,KXMLMethodString))
+		{
+			basenameatt = basemethod.GetAttribute(KXMLNameString);
+			HANodeIterator baseReturMathod(basemethod);
+			bool ret = baseReturMathod.FindNodeById(basemethod.GetAttribute(KXMLReturnsString));
+			basereturnatt = baseReturMathod.GetAttribute(KXMLNameString);
+			basemangledatt = basemethod.GetAttribute(KXMLMangledString);
+		}
+		for( ; cIter != cexportedMethods.end(); ++cIter)            
+		{                
+			HANodeIterator currentmethod(current);
+			currentmethod.current = *cIter;
+			const XMLCh* lineNumber1 = GetAttribute(currentmethod.current,KXMLLineString);
+			lineNo1 = atoi(toString(lineNumber1).c_str());
+			
+			string issueLoc;
+			const XMLCh* fnameNode = currentmethod.GetAttribute(KXMLFileIdString);
+			if( fnameNode!= NULL)
+			{
+				HANodeIterator fileNode(currentmethod);
+				bool retval = fileNode.FindNodeById(fnameNode);
+				issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+			}
 
-		//Check the accessibility
-		if ( CheckAccessibility(basemethod) )
-		{            
-			vector<DOMNode*>::const_iterator cIter = cexportedMethods.begin();   
+			MethodMatchMap::iterator currMapIter = currMap.find(*cIter);
+            
+			const XMLCh* curMathodID = currentmethod->getNodeName();
+			if(Equals(curMathodID,KXMLMethodString))
+			{
+				HANodeIterator curReturMathod(currentmethod);
+				bool ret1 = curReturMathod.FindNodeById(currentmethod.GetAttribute(KXMLReturnsString));
+				const XMLCh* curReturnatt = curReturMathod.GetAttribute(KXMLNameString); 
 
+				// check for overloaded function, first time matching the name, return type and signature
+				if(	Equals(baseMathodID,KXMLMethodString)&&
+					Equals(basenameatt, currentmethod.GetAttribute(KXMLNameString)) && 
+					Equals(basereturnatt, curReturnatt) && 
+					Equals(basemangledatt, currentmethod.GetAttribute(KXMLMangledString)) )
+				{
+					baseCount++;// match found
+				}
+
+				
+			}			
+
+			if( currMapIter != currMap.end() && 
+				currMapIter->second.signatureMatch == false &&
+				compareMethodsSignature(basemethod, currentmethod, **comparator) )
+			{                    
+				if( comparatorRound==CONSTFILTER_COMPARATOR )
+				{                        
+					// if one of the parameter has changed from non-const to const
+					ret++;
+					if(report)
+					{
+						//add the issue as it is a source compatibility break
+						AddIssueFunction<EIssueTypeParamConst>(&basemethod,identity,currentmethod,lineNo1,issueLoc);
+					}
+
+					//make signature and return value true so that the issue is not reported again
+					if( baseMapIter != baseMap.end() )
+						baseMapIter->second.signatureMatch = true;
+					currMapIter->second.signatureMatch = true;
+
+					baseMapIter->second.returnValueMatch = true;
+					currMapIter->second.returnValueMatch = true;
+					break;
+				}
+
+				else if( comparatorRound==CONSTFILTER2_COMPARATOR )
+				{                        
+					// if one of the parameter has changed from const to non-const
+					ret++;
+					if(report)
+					{
+						//add the issue as it is a source compatibility break
+						AddIssueFunction<EIssueTypeParamConst2>(&basemethod,identity,currentmethod,lineNo1,issueLoc);
+					}
+
+					//make signature and return value true so that the issue is not reported again
+					if( baseMapIter != baseMap.end() )
+						baseMapIter->second.signatureMatch = true;
+					currMapIter->second.signatureMatch = true;
+
+					baseMapIter->second.returnValueMatch = true;
+					currMapIter->second.returnValueMatch = true;
+					break;
+				}
+
+				if( baseMapIter != baseMap.end() )
+					baseMapIter->second.signatureMatch = true;
+				currMapIter->second.signatureMatch = true;
+				//Check also the default parameter values
+				DOMElement * baselineelement = static_cast<DOMElement*>(basemethod.current);
+				DOMNodeList* baselinechilds = baselineelement->getChildNodes();
+				DOMElement * currentelement = static_cast<DOMElement*>(currentmethod.current);
+				DOMNodeList* currentchilds = currentelement->getChildNodes();
+
+				XMLSize_t childcount = baselinechilds->getLength();
+
+				unsigned int i = 0;
+				for (i = 0; i < childcount; ++i)
+				{
+					DOMNode* baselinechild = baselinechilds->item(i);
+					HANodeIterator baselinechildit(baseline);
+					baselinechildit.current = baselinechild;
+
+					DOMNode* currentchild = currentchilds->item(i);
+					HANodeIterator currentchildit(current);
+					currentchildit.current = currentchild;
+
+					short nodetype = baselinechildit->getNodeType();
+					if (nodetype == DOMNode::ELEMENT_NODE)
+					{
+						const XMLCh * baselinesize = FindAttributeValueForType(baselinechildit,KXMLSizeString);
+						const XMLCh * currentsize = FindAttributeValueForType(currentchildit,KXMLSizeString);
+
+						const XMLCh * baselinealign = FindAttributeValueForType(baselinechildit,KXMLAlignString);
+						const XMLCh * currentalign = FindAttributeValueForType(currentchildit,KXMLAlignString);
+
+						if ( !baselinesize )
+						{
+							baselinesize = baselinealign;
+						}
+
+						if ( !currentsize )
+						{
+							currentsize = currentalign;
+						}
+
+						if ( !Equals(baselinesize,currentsize) || !Equals(baselinealign, currentalign) )
+						{
+							++ret;
+							if (report)
+							{
+								AddIssueFunction<EIssueTypeParam>(&basemethod,identity,currentmethod,lineNo1,issueLoc);
+							}
+							break;
+						}
+						// if default value is changed then it should be reported as informative
+						if(!CompareAttributes(baselinechildit,currentchildit,KXMLDefaultString,EOptionalSimpleAttribute))
+						{
+							++ret;
+							if (report)
+							{
+								AddIssueFunction<EIssueTypeDefaultParam>(&basemethod,identity,currentmethod,lineNo1,issueLoc);
+							}
+							break;
+						}
+					}
+				}
+
+				// Check function return values
+				const ComparatorVector& cmps = ComparatorFactory::Instance().GetComparators();       
+				ComparatorVector::const_iterator retComparator = cmps.begin();
+				int retComparatorRound = 1;
+				for ( ; retComparator != cmps.end(); retComparator++ )
+				{
+					if ( compareMethodsReturn(basemethod,currentmethod, **retComparator) )
+					{ 
+						if( retComparatorRound==CONSTFILTER_COMPARATOR )
+						{                       
+							// if the return value has changed from const to non-const
+							ret++;
+							if(report)
+							{
+								//add the issue as it is a source compatibility break
+								AddIssueFunction<EIssueTypeReturnConst>(&basemethod,identity,currentmethod,lineNo1,issueLoc);
+							}
+						}
+						else if( retComparatorRound==CONSTFILTER2_COMPARATOR )
+						{                       
+							// if the return calue has changed from non-const to const
+							ret++;
+							if(report)
+							{
+								//add the issue as it is a source compatibility break
+								AddIssueFunction<EIssueTypeReturnConst2>(&basemethod,identity,currentmethod,lineNo1,issueLoc);
+							}
+						}         
+
+						baseMapIter->second.returnValueMatch = true;
+						currMapIter->second.returnValueMatch = true;
+						break;
+					}
+					retComparatorRound++;
+				}
+
+
+				if ( !CheckAccessModifier(basemethod,currentmethod) )
+				{
+					if (report)
+					{
+						AddIssueFunction<EIssueTypeAccess>(&basemethod,identity, currentmethod,lineNo1,issueLoc);
+					}
+					++ret;
+				}
+				break;
+			}
+		} // end of cuurent mathod loop
+		// check for overloaded function in current having same name and return type with diff signature
+		if (baseCount) 
+		{
+			currCount++;
+			cIter = cexportedMethods.begin(); 
+			int lineNo;
+			string fileName;
 			for( ; cIter != cexportedMethods.end(); ++cIter)            
 			{                
 				HANodeIterator currentmethod(current);
 				currentmethod.current = *cIter;
-				const XMLCh* lineNumber1 = GetAttribute(currentmethod.current,KXMLLineString);
-				lineNo1 = atoi(toString(lineNumber1).c_str());
 
-				MethodMatchMap::iterator currMapIter = currMap.find(*cIter);
+				const XMLCh* curMathodID = currentmethod->getNodeName();
+				if(Equals(curMathodID,KXMLMethodString))
+				{
+					HANodeIterator curReturMathod(currentmethod);
+					bool ret1 = curReturMathod.FindNodeById(currentmethod.GetAttribute(KXMLReturnsString));
+					const XMLCh* curReturnatt = curReturMathod.GetAttribute(KXMLNameString); 
 
-                if( currMapIter != currMap.end() && 
-                    currMapIter->second.signatureMatch == false &&
-                    compareMethodsSignature(basemethod, currentmethod, **comparator) )
-                {                    
-                    if( comparatorRound==CONSTFILTER_COMPARATOR )
-                    {                        
-                        // if one of the parameter has changed from non-const to const
-                        ret++;
-                        if(report)
-                        {
-                            //add the issue as it is a source compatibility break
-                            AddIssueFunction<EIssueTypeParamConst>(&basemethod,identity,currentmethod,lineNo1);
-                        }
-                        
-                        //make signature and return value true so that the issue is not reported again
-                        if( baseMapIter != baseMap.end() )
-                            baseMapIter->second.signatureMatch = true;
-                        currMapIter->second.signatureMatch = true;
-                        
-                        baseMapIter->second.returnValueMatch = true;
-                        currMapIter->second.returnValueMatch = true;
-                        break;
-                    }
-                    
-                    else if( comparatorRound==CONSTFILTER2_COMPARATOR )
-                    {                        
-                        // if one of the parameter has changed from const to non-const
-                        ret++;
-                        if(report)
-                        {
-                            //add the issue as it is a source compatibility break
-							AddIssueFunction<EIssueTypeParamConst2>(&basemethod,identity,currentmethod,lineNo1);
-                        }
-                        
-                        //make signature and return value true so that the issue is not reported again
-                        if( baseMapIter != baseMap.end() )
-                            baseMapIter->second.signatureMatch = true;
-                        currMapIter->second.signatureMatch = true;
-                        
-                        baseMapIter->second.returnValueMatch = true;
-                        currMapIter->second.returnValueMatch = true;
-                        break;
-                    }
-                    
-                    if( baseMapIter != baseMap.end() )
-                        baseMapIter->second.signatureMatch = true;
-                    currMapIter->second.signatureMatch = true;
-                    //Check also the default parameter values
-                    DOMElement * baselineelement = static_cast<DOMElement*>(basemethod.current);
-                    DOMNodeList* baselinechilds = baselineelement->getChildNodes();
-                    DOMElement * currentelement = static_cast<DOMElement*>(currentmethod.current);
-                    DOMNodeList* currentchilds = currentelement->getChildNodes();
-                        
-                    XMLSize_t childcount = baselinechilds->getLength();
-                    
-                    unsigned int i = 0;
-                    for (i = 0; i < childcount; ++i)
-                    {
-                        DOMNode* baselinechild = baselinechilds->item(i);
-                        HANodeIterator baselinechildit(baseline);
-                        baselinechildit.current = baselinechild;
-                         
-                        DOMNode* currentchild = currentchilds->item(i);
-                        HANodeIterator currentchildit(current);
-                        currentchildit.current = currentchild;
-                                
-                        short nodetype = baselinechildit->getNodeType();
-                        if (nodetype == DOMNode::ELEMENT_NODE)
-                        {
-                            const XMLCh * baselinesize = FindAttributeValueForType(baselinechildit,KXMLSizeString);
-                            const XMLCh * currentsize = FindAttributeValueForType(currentchildit,KXMLSizeString);
-                               
-                            const XMLCh * baselinealign = FindAttributeValueForType(baselinechildit,KXMLAlignString);
-                            const XMLCh * currentalign = FindAttributeValueForType(currentchildit,KXMLAlignString);
-                                  
-                            if ( !baselinesize )
-                            {
-                                baselinesize = baselinealign;
-                            }
-                                 
-                            if ( !currentsize )
-                            {
-                                currentsize = currentalign;
-                            }
-                                 
-                            if ( !Equals(baselinesize,currentsize) || !Equals(baselinealign, currentalign) ||
-                                 !CompareAttributes(baselinechildit,currentchildit,KXMLDefaultString,EOptionalSimpleAttribute))
-                            {
-                                 ++ret;
-                                 if (report)
-                                 {
-									AddIssueFunction<EIssueTypeParam>(&basemethod,identity,currentmethod,lineNo1);
-                                 }
-                                 break;
-                            }
-                        }
-                    }
-                    
-                    // Check function return values
-                    const ComparatorVector& cmps = ComparatorFactory::Instance().GetComparators();       
-                    ComparatorVector::const_iterator retComparator = cmps.begin();
-                    int retComparatorRound = 1;
-                    for ( ; retComparator != cmps.end(); retComparator++ )
-                    {
-                        if ( compareMethodsReturn(basemethod,currentmethod, **retComparator) )
-                        { 
-                            if( retComparatorRound==CONSTFILTER_COMPARATOR )
-                            {                       
-                                // if the return value has changed from const to non-const
-                                ret++;
-                                if(report)
-                                {
-                                    //add the issue as it is a source compatibility break
-									AddIssueFunction<EIssueTypeReturnConst>(&basemethod,identity,currentmethod,lineNo1);
-                                }
-                            }
-                            else if( retComparatorRound==CONSTFILTER2_COMPARATOR )
-                            {                       
-                                // if the return calue has changed from non-const to const
-                                ret++;
-                                if(report)
-                                {
-                                    //add the issue as it is a source compatibility break
-									AddIssueFunction<EIssueTypeReturnConst2>(&basemethod,identity,currentmethod,lineNo1);
-                                }
-                            }         
-                            
-                            baseMapIter->second.returnValueMatch = true;
-                            currMapIter->second.returnValueMatch = true;
-                            break;
-                        }
-                        retComparatorRound++;
-                    }
-                    
-                                    
-                    if ( !CheckAccessModifier(basemethod,currentmethod) )
-                    {
-                        if (report)
-                        {
-							AddIssueFunction<EIssueTypeAccess>(&basemethod,identity, currentmethod,lineNo1);
-                        }
-                        ++ret;
-                    }
-                    break;
-                }
-            }
-        }
-        else
-        {
-            // Not accessible, can be marked as matching.
-            if( baseMapIter != baseMap.end() )
-            {
-                baseMapIter->second.signatureMatch = true;
-                baseMapIter->second.returnValueMatch = true;
-            }
-        }
-    }
+					const XMLCh* lineNumber1 = GetAttribute(currentmethod.current,KXMLLineString);
+			        lineNo = atoi(toString(lineNumber1).c_str());
+					const XMLCh* fnameNode = currentmethod.GetAttribute(KXMLFileIdString);
+					if(fnameNode != NULL)
+					{
+						HANodeIterator filenode1(currentmethod); 
+						ret1 = filenode1.FindNodeById(fnameNode);
+						fileName = toString(filenode1.GetAttribute(KXMLNameString));
+					}
+
+					if(Equals(basenameatt, currentmethod.GetAttribute(KXMLNameString)) && 
+						Equals(basereturnatt, curReturnatt ) &&
+						!Equals(basemangledatt, currentmethod.GetAttribute(KXMLMangledString)) )
+					{					
+						currCount++;// overloaded function found in current
+						break;
+					}
+				}				
+			}
+
+			//Now check if the function is overloaded in base also or not .
+			if(currCount > 1)
+			{
+				vector<DOMNode*>::const_iterator baseInnerIter = bexportedMethods.begin();        
+				for( ; baseInnerIter != bexportedMethods.end(); ++baseInnerIter )
+				{
+					HANodeIterator bmethod(baseline);
+					bmethod.current = *baseInnerIter;
+
+					const XMLCh* bMathodID = bmethod->getNodeName();
+					if(Equals(bMathodID,KXMLMethodString))
+					{
+						HANodeIterator returMathod(bmethod);
+						bool ret1 = returMathod.FindNodeById(bmethod.GetAttribute(KXMLReturnsString));
+						const XMLCh* returnatt = returMathod.GetAttribute(KXMLNameString); 
+
+						if(Equals(basenameatt, bmethod.GetAttribute(KXMLNameString)) && 
+							Equals(basereturnatt, returnatt) &&
+							!Equals(basemangledatt, bmethod.GetAttribute(KXMLMangledString)) )
+						{					
+							baseCount++;// overloaded function found in base
+							break;
+						}
+					}
+				}
+
+				// Report the overloaded function only if it first time overloaded
+				if(baseCount == 1)
+				{
+					ret++;
+					if(report)
+					{
+						//add the issue as it is a binary compatibility break
+						AddIssue<EIssueIdentityExportedFunction,EIssueTypeOverload>(&basemethod, basemethod,lineNo,fileName);
+					}
+				}
+			}
+		}
+	}//end of base exported mathod loop
         
     // Recursive call with next comparator (if any) and updated method maps.
     const ComparatorVector& cmps = ComparatorFactory::Instance().GetComparators();
@@ -2247,6 +2433,15 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
 
+	string issueLoc;
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if(fnameNode != NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool retval = fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
+
 	// If you don't like to see the issue about base size when the size has changed
 	// uncomment the test below
 
@@ -2281,7 +2476,8 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
 					{
 						if (report)
 						{
-							AddIssue<EIssueIdentityVirtualTablePointer,EIssueTypeOffset>(&baseline,current,lineNo,NULL,bfields[i]);							
+							AddIssue<EIssueIdentityVirtualTablePointer,EIssueTypeOffset>(&baseline,current,
+								lineNo,issueLoc,NULL,bfields[i]);							
 						}
 						++ret;
 					}
@@ -2316,7 +2512,8 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
                 {
                     if (report)
                     {
-                        AddIssue<EIssueIdentityField,EIssueTypeAccess>(&baseline, currentfield,cfields[ii].iLineNo,NULL,bfields[i]);
+                        AddIssue<EIssueIdentityField,EIssueTypeAccess>(&baseline, currentfield,cfields[ii].iLineNo,
+							issueLoc,NULL,bfields[i]);
                     }
                     ++ret;
                 }
@@ -2352,7 +2549,8 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
 			{
 				if (report)
 				{
-					AddIssue<EIssueIdentityVirtualTablePointer,EIssueTypeRemoval>(&baseline,current,lineNo,NULL,bfields[i]);							
+					AddIssue<EIssueIdentityVirtualTablePointer,EIssueTypeRemoval>(&baseline,current,lineNo,
+						issueLoc,NULL,bfields[i]);							
 				}
 				continue;
 			}
@@ -2366,11 +2564,13 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
 				{
 					if (fieldAccessible[i])
 					{
-						AddIssue<EIssueIdentityField,EIssueTypeRemoval>(&baseline, basefield,lineNo,NULL,bfields[i]);
+						AddIssue<EIssueIdentityField,EIssueTypeRemoval>(&baseline, basefield,lineNo,
+							issueLoc,NULL,bfields[i]);
 					}
 					else
 					{
-						AddIssue<EIssueIdentityFieldInaccessible,EIssueTypeRemoval>(&baseline, basefield,lineNo,NULL,bfields[i]);
+						AddIssue<EIssueIdentityFieldInaccessible,EIssueTypeRemoval>(&baseline, basefield,lineNo,
+							issueLoc,NULL,bfields[i]);
 					}
 				}
 				++ret;
@@ -2409,7 +2609,8 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
 			{
 				if (report)
 				{
-					AddIssue<EIssueIdentityVirtualTablePointer,EIssueTypeAddition>(&baseline,current,lineNo,NULL,cfields[i]);							
+					AddIssue<EIssueIdentityVirtualTablePointer,EIssueTypeAddition>(&baseline,current,lineNo,
+						issueLoc,NULL,cfields[i]);							
 				}
 				continue;
 			}
@@ -2418,7 +2619,8 @@ int ClassNodeAnalysis::compareFields(HANodeIterator baseline,HANodeIterator curr
             currentfield.current = cfields[i].iNode;
             if (report && iReportAddedMembers)
             {
-                AddIssue<EIssueIdentityField,EIssueTypeAddition>(&current, currentfield,cfields[i].iLineNo,NULL,cfields[i]);
+                AddIssue<EIssueIdentityField,EIssueTypeAddition>(&current, currentfield,cfields[i].iLineNo,
+					issueLoc,NULL,cfields[i]);
             }
             ++ret;
         }
@@ -2523,13 +2725,21 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
 
 	int parentLineNo = 0;
 	int lineNo = 0;
+	string parentIssueLoc;
 	const XMLCh* parentlineNumber = current.GetAttribute(KXMLLineString);
 	parentLineNo = atoi(toString(parentlineNumber).c_str());
-
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if(fnameNode != NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool retval = fileNode.FindNodeById(fnameNode);
+		parentIssueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
 	if ( 0 != compareVirtualTables(baseline,current,basevtable,currentvtable,report) )
 	{
         // Virtual table has been changed.
-		AddIssue<EIssueIdentityVirtualTable,EIssueTypeChange>(&baseline, current, parentLineNo, NULL, "[Primary-vtable]");	
+		AddIssue<EIssueIdentityVirtualTable,EIssueTypeChange>(&baseline, current, parentLineNo,
+			parentIssueLoc, NULL, "[Primary-vtable]");	
 	}
 
 	vector<pair<DOMNode*,int> > bvirtualMethodsWithIndex;
@@ -2559,9 +2769,17 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
             currentmethod.current = cvirtualMethodsWithIndex[ii].first;
             
 			lineNo = 0;
+			string issueLoc;
 			const XMLCh* lineNumber = currentmethod.GetAttribute(KXMLLineString);
 			lineNo = atoi(toString(lineNumber).c_str());
-                if ( compareMethodsSignature(basemethod,currentmethod, **defaultcomparator) )
+			const XMLCh* fnameNode = currentmethod.GetAttribute(KXMLFileIdString);
+			if( fnameNode!= NULL)
+			{
+				HANodeIterator fileNode1(currentmethod);
+				bool retval = fileNode1.FindNodeById(fnameNode);
+				issueLoc = toString(fileNode1.GetAttribute(KXMLNameString));
+			}
+            if ( compareMethodsSignature(basemethod,currentmethod, **defaultcomparator) )
             {
                 virtualMethodFound[ii] = true;
                 if (bvirtualMethodsWithIndex[i].second != cvirtualMethodsWithIndex[ii].second)
@@ -2571,7 +2789,8 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
                     // and the binary compatibility is broken.
                     if (report)
                     {
-						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeOrderChange>(&basemethod, currentmethod,lineNo);
+						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeOrderChange>(&basemethod, currentmethod,
+							lineNo,issueLoc);
 					}
                     ++ret;
                 }
@@ -2614,13 +2833,24 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
 							currentsize = currentalign;
 						}
 
-						if ( !Equals(baselinesize,currentsize) || !Equals(baselinealign, currentalign) ||
-							!CompareAttributes(baselinechildit,currentchildit,KXMLDefaultString,EOptionalSimpleAttribute))
+						if ( !Equals(baselinesize,currentsize) || !Equals(baselinealign, currentalign) )
 						{
 							++ret;
 							if (report)
 							{
-								AddIssue<EIssueIdentityVirtualFunction,EIssueTypeParam>(&basemethod,currentmethod, lineNo);
+								AddIssue<EIssueIdentityVirtualFunction,EIssueTypeParam>(&basemethod,currentmethod,
+									lineNo,issueLoc);
+							}
+							break;
+						}
+						// if default value is changed then it should be reported as informative
+						if(!CompareAttributes(baselinechildit,currentchildit,KXMLDefaultString,EOptionalSimpleAttribute))
+						{
+							++ret;
+							if (report)
+							{
+								AddIssue<EIssueIdentityVirtualFunction,EIssueTypeDefaultParam>(&basemethod,currentmethod, 
+									lineNo,issueLoc);
 							}
 							break;
 						}
@@ -2631,7 +2861,7 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
                 {
                     if (report)
                     {
-						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeReturn>(&basemethod, currentmethod,lineNo);
+						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeReturn>(&basemethod, currentmethod,lineNo,issueLoc);
                     }
                     ++ret;
                 }
@@ -2640,7 +2870,7 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
                 {
                     if (report)
                     {
-						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeAccess>(&basemethod, currentmethod,lineNo);
+						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeAccess>(&basemethod, currentmethod,lineNo,issueLoc);
                     }
                     ++ret;
                 }
@@ -2674,7 +2904,8 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
 			{				
 				if (report)
 				{
-					AddIssue<EIssueIdentityVirtualFunction,EIssueTypeRemoval>(&basemethod, basemethod,parentLineNo);
+					AddIssue<EIssueIdentityVirtualFunction,EIssueTypeRemoval>(&basemethod, basemethod,
+						parentLineNo,parentIssueLoc);
 				}
 				++ret;
 			}
@@ -2689,19 +2920,35 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
             currentmethod.current = cvirtualMethodsWithIndex[i].first;
 
 			lineNo = 0;
+			string issueLoc;
 			const XMLCh* lineNumber = currentmethod.GetAttribute(KXMLLineString);
 			lineNo = atoi(toString(lineNumber).c_str());
+			const XMLCh* fnameNode = currentmethod.GetAttribute(KXMLFileIdString);
+			if( fnameNode!= NULL)
+			{
+				HANodeIterator fileNode1(currentmethod);
+				bool retval = fileNode1.FindNodeById(fnameNode);
+				issueLoc = toString(fileNode1.GetAttribute(KXMLNameString));
+			}
 			//Check the base vtable for entry for this function
             unsigned int baseindex = cvirtualMethodsWithIndex[i].second;
 			
 			if ( (baseindex < basevtable.size()) && (basevtable[baseindex].first == GenerateFunctionSignature(currentmethod)) )
-			{
-				//This is a new overwrite and we should report this if the class is derivable
-				if (ClassIsDerivable(baseline))
+			{				
+				// New rule is added for Q_OBJECT macro defining virtual functions.
+				// Do - add the Q_OBJECT macro to a class if the class already inherits from QObject ,
+				// should not report as overridden.
+				if( basevtable[baseindex].first == __Q_OBJECT_METAOBJECT__
+					|| basevtable[baseindex].first == __Q_OBJECT_METACALL__
+					|| basevtable[baseindex].first == __Q_OBJECT_METACAST__ )
 				{
+				}
+				else if(ClassIsDerivable(baseline))
+				{//This is a new overwrite and we should report this if the class is derivable
 					if (report)
 					{
-						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeNewOverride>(&currentmethod, currentmethod,lineNo);
+						AddIssue<EIssueIdentityVirtualFunction,EIssueTypeNewOverride>(&currentmethod, currentmethod,
+							lineNo,issueLoc);
 					}
 					++ret;
 				}
@@ -2713,7 +2960,8 @@ int ClassNodeAnalysis::compareVirtualFunctions(HANodeIterator baseline,HANodeIte
 				// then generate virtual table for them and search for the function signature from them
 				if (report)
 				{
-					AddIssue<EIssueIdentityVirtualFunction,EIssueTypeAddition>(&currentmethod, currentmethod,lineNo);
+					AddIssue<EIssueIdentityVirtualFunction,EIssueTypeAddition>(&currentmethod, currentmethod,
+						lineNo,issueLoc);
 				}
 				++ret;
 			}
@@ -2740,10 +2988,18 @@ int ClassNodeAnalysis::compareBaseSizes(HANodeIterator baseline, HANodeIterator 
 			int lineNo = 0;
 			const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 			lineNo = atoi(toString(lineNumber).c_str());
+			string issueLoc;
+			const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+			if(fnameNode != NULL)
+			{
+				HANodeIterator fileNode(current);
+				bool retval = fileNode.FindNodeById(fnameNode);
+				issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+			}
 			++ret;
 			if (report)
 			{		
-				AddIssueClass<EIssueTypeBaseSize>(&baseline,iIdentity, current,lineNo);
+				AddIssueClass<EIssueTypeBaseSize>(&baseline,iIdentity, current,lineNo,issueLoc);
 			}
 		}
 	}
@@ -2835,8 +3091,16 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
     XMLSize_t currentchildcount = currentchilds->getLength();
 
 	int lineNo = 0;
+	string issueLoc;
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if(fnameNode!= NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool retval = fileNode.FindNodeById(fnameNode);
+		issueLoc = toString(fileNode.GetAttribute(KXMLNameString));
+	}
     if ( baselinechildcount == currentchildcount )
     {
 		unsigned int i = 0;
@@ -2871,7 +3135,8 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
 							string vtablename = "[";
 							vtablename += basename;
 							vtablename += "-vtable]";
-							AddIssue<EIssueIdentityVirtualTable,EIssueTypeChange>(&baseline, current, lineNo, NULL, vtablename);
+							AddIssue<EIssueIdentityVirtualTable,EIssueTypeChange>(&baseline, current, 
+								lineNo, issueLoc,NULL, vtablename);
 						}
 					
 					}
@@ -2881,7 +3146,7 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
 						//Virtuality differs
 						if (report)
 						{
-							AddIssueClass<EIssueTypeInheritance>(&baseline,iIdentity, current,lineNo);
+							AddIssueClass<EIssueTypeInheritance>(&baseline,iIdentity, current,lineNo,issueLoc);
 						}
 						++ret;
 					}
@@ -2892,7 +3157,8 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
 						{
 							string subobjectname = "[" + basename;
 							subobjectname += "]";
-							AddIssue<EIssueIdentitySubobject,EIssueTypeOffset>(&baseline,current,lineNo, NULL,subobjectname);
+							AddIssue<EIssueIdentitySubobject,EIssueTypeOffset>(&baseline,current,lineNo, 
+								issueLoc,NULL,subobjectname);
 						}
 						++ret;
 					}
@@ -2907,7 +3173,7 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
                     //base class removed from inheritance
 					string subobjectname = "[" + basename;
 					subobjectname += "]";
-					AddIssue<EIssueIdentitySubobject,EIssueTypeRemoval>(&baseline,current,lineNo, NULL,subobjectname);
+					AddIssue<EIssueIdentitySubobject,EIssueTypeRemoval>(&baseline,current,lineNo,issueLoc,NULL,subobjectname);
 				}
 				++ret;
 			}
@@ -2917,7 +3183,7 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
         //Different amount of bases
         if (report)
         {
-			AddIssueClass<EIssueTypeInheritance>(&baseline,iIdentity, current,lineNo);
+			AddIssueClass<EIssueTypeInheritance>(&baseline,iIdentity, current,lineNo,issueLoc);
         }
         ++ret;
 
@@ -2953,7 +3219,7 @@ int ClassNodeAnalysis::compareBases(HANodeIterator baseline,HANodeIterator curre
 				{
 					string subobjectname = "[" + basename;
 					subobjectname += "]";
-					AddIssue<EIssueIdentitySubobject,EIssueTypeRemoval>(&baseline,current,lineNo, NULL,subobjectname);
+					AddIssue<EIssueIdentitySubobject,EIssueTypeRemoval>(&baseline,current,lineNo,issueLoc,NULL,subobjectname);
 				}
 				++ret;
 			}
@@ -2999,7 +3265,7 @@ int ClassNodeAnalysis::FindNodeAndAnalyse(HANodeIterator baseline,HANodeIterator
     if ( !node )
     {
         //AddIssue<>(&baseline,EIssue_class_removal);
-        AddIssue<EIssueIdentityClass,EIssueTypeRemoval>(&baseline, baseline,0);
+        AddIssue<EIssueIdentityClass,EIssueTypeRemoval>(&baseline, baseline,0,"");
         return 1;
     }
     current.current = node;
@@ -3022,6 +3288,14 @@ int ClassNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, b
 	int lineNo = 0;
 	const XMLCh* lineNumber = current.GetAttribute(KXMLLineString);
 	lineNo = atoi(toString(lineNumber).c_str());
+    string issueLoc;
+	const XMLCh* fnameNode = current.GetAttribute(KXMLFileIdString);
+	if( fnameNode!= NULL)
+	{
+		HANodeIterator fileNode(current);
+		bool retval = fileNode.FindNodeById(fnameNode);
+		issueLoc =toString(fileNode.GetAttribute(KXMLNameString)); 
+	}
 
     const XMLCh* baseanalysisstatus = baseline.GetAttribute(KXMLBBCAnalysisStatus);
 
@@ -3069,7 +3343,7 @@ int ClassNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, b
         }
         else
         {            
-			AddIssueClass<EIssueTypeNotAnalysed>(&baseline,iIdentity, baseline,0);
+			AddIssueClass<EIssueTypeNotAnalysed>(&baseline,iIdentity, baseline,0,issueLoc);
             ret = 1;
         }
     }
@@ -3081,7 +3355,7 @@ int ClassNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, b
         {
             if (report)
             {         
-				AddIssueClass<EIssueTypeAccess>(&baseline,iIdentity, current,lineNo);
+				AddIssueClass<EIssueTypeAccess>(&baseline,iIdentity, current,lineNo,issueLoc);
             }
             ret += 1;
         }
@@ -3090,13 +3364,13 @@ int ClassNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, b
 		// Check if the class has virtual bases
 		if ( baseline.CheckForBooleanAttribute(KXMLBBCVirtualInheritanceString) )
 		{
-			AddIssueClass<EIssueTypeVirtualBases>(&baseline,iIdentity, current,lineNo);
+			AddIssueClass<EIssueTypeVirtualBases>(&baseline,iIdentity, current,lineNo,issueLoc);
 			++ret;
 		}
 
 		if ( current.CheckForBooleanAttribute(KXMLBBCVirtualInheritanceString) )
 		{
-			AddIssueClass<EIssueTypeVirtualBases>(&current,iIdentity, current,lineNo);
+			AddIssueClass<EIssueTypeVirtualBases>(&current,iIdentity, current,lineNo,issueLoc);
 			++ret;
 		}
 
@@ -3108,7 +3382,7 @@ int ClassNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, b
             {
                 if (report)
                 {                    
-					AddIssueClass<EIssueTypeAlign>(&baseline,iIdentity, current,lineNo);
+					AddIssueClass<EIssueTypeAlign>(&baseline,iIdentity, current,lineNo,issueLoc);
                     iReportAddedMembers = true;
                 }
                 ret += 1;
@@ -3118,7 +3392,7 @@ int ClassNodeAnalysis::Analyse(HANodeIterator baseline,HANodeIterator current, b
             {
                 if (report)
                 {                 
-					AddIssueClass<EIssueTypeSize>(&baseline,iIdentity, current,lineNo);
+					AddIssueClass<EIssueTypeSize>(&baseline,iIdentity, current,lineNo,issueLoc);
                     iReportAddedMembers = true;
                 }
                 ret += 1;

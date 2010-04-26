@@ -120,7 +120,8 @@ public:
                 const string& aFQName, const TIssueIdentity& aIdentityId, 
                 const TIssueType& aTypeId, const TBCSeverity& aBCSeverityId, 
                 const TSCSeverity& aSCSeverityId, const string& aIgnoreInformation,
-                int aLineNumber, const string& aCompareFileName, const string& aCompilationError, bool alineNoNeeded = true);
+                int aLineNumber, const string& issueLoc,const string& aCompareFileName, 
+				const string& aCompilationError);
 private:
     /**
     * Preprocess issue list. Remove removed subclasses and merges similar issues

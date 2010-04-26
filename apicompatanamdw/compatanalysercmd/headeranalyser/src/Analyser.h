@@ -421,9 +421,6 @@ private:
     //! String containing forced current file names
     string                      iForcedCurrentHeaders;
 
-    //! Flag to check whether to use forced headers
-    bool iUseForcedHeaders;
-
     //! Parameter to analyser
     AnalyserParams              iParams;
 

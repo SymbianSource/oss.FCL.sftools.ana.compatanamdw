@@ -31,15 +31,16 @@ using namespace std;
 XERCES_CPP_NAMESPACE_USE
 
 template <TIssueType IssueType>
-void AddIssueFunction(const HANodeIterator* self,TIssueIdentity funcType, const HANodeIterator& ignorenode, int lineNo, const XMLCh* fileid=NULL)
+void AddIssueFunction(const HANodeIterator* self,TIssueIdentity funcType, const HANodeIterator& ignorenode, int lineNo, 
+					  const string& issueloc, const XMLCh* fileid=NULL)
 {
 	switch (funcType)
 	{
 	case EIssueIdentityExportedFunction:
-		AddIssue<EIssueIdentityExportedFunction,IssueType>(self,ignorenode,lineNo,fileid);
+		AddIssue<EIssueIdentityExportedFunction,IssueType>(self,ignorenode,lineNo,issueloc,fileid);
 		break;
 	case EIssueIdentityInlineFunction:
-		AddIssue<EIssueIdentityInlineFunction,IssueType>(self,ignorenode,lineNo,fileid);
+		AddIssue<EIssueIdentityInlineFunction,IssueType>(self,ignorenode,lineNo,issueloc,fileid);
 		break;
 	default:
 		assert(false);

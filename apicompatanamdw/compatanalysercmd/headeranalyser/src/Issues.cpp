@@ -138,6 +138,9 @@ const char* KIssueTypeChangeInInitialisation = "has changed its initialisation v
 const char* KIssueTypeNewOverride = "overridden in derivable class";
 //const char* KIssueTypeRemovedOverride = "removed override in derivable class";
 const char* KIssueTypeEmpty = "contains nothing to be analysed";
+const char* KIssueTypeDefaultParam = "has changed one of its default parameters";
+const char* KIssueTypeOverload = "has been overloaded";
+
 
 // Table of the issue type descriptions
 const char* KIssueTypeDesc[EIssueTypeCount] = 
@@ -166,7 +169,9 @@ const char* KIssueTypeDesc[EIssueTypeCount] =
     KIssueTypeParamConst,
     KIssueTypeParamConst2,
 	KIssueTypeReturnConst,
-    KIssueTypeReturnConst2    
+    KIssueTypeReturnConst2,
+	KIssueTypeDefaultParam,
+	KIssueTypeOverload
 };
 
 template <typename T>
@@ -555,6 +560,45 @@ template <> string ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeParam>(co
 	return ignoreinfo;
 }
 
+//	Param,                    
+//	ESeverityInformative,        
+template <> TBCSeverity BCseverityAccessible<EIssueIdentityExportedFunction,EIssueTypeDefaultParam>(bool accessible)
+{
+	return ESeverityInformative;
+}
+template <> string ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeDefaultParam>(const HANodeIterator& baseline,const HANodeIterator& current)
+{
+    string ignoreinfo=KIgnoreInfoNone;
+    DOMElement * element = static_cast<DOMElement*>(current.current);
+    DOMNodeList* childs = element->getChildNodes();
+    
+    XMLSize_t childcount = childs->getLength();
+
+    unsigned int i = 0;
+    for (i = 0; i < childcount; ++i)
+    {
+        DOMNode* child = childs->item(i);
+        HANodeIterator childit(current);
+        childit.current = child;
+
+        short nodetype = childit->getNodeType();
+        if (nodetype == DOMNode::ELEMENT_NODE)
+        {
+            const XMLCh * defaultval = childit.GetAttribute(KXMLDefaultString);
+            if ( defaultval )
+            {
+                ignoreinfo += toString(defaultval);
+            }
+            else
+            {
+            }
+            ignoreinfo += ";";
+        }
+
+    }
+	return ignoreinfo;
+}
+
 //	Param non-const to const,                    
 //	ESeverityNULL,        
 template <> TBCSeverity BCseverityAccessible<EIssueIdentityExportedFunction,EIssueTypeParamConst>(bool accessible)
@@ -748,6 +792,22 @@ template <> string ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeAccess>(c
 	return ignoreinfo;
 }
 
+//	Overloaded function,                               	
+//	ESeverityBBCBreak,                 
+template <> TBCSeverity BCseverityAccessible<EIssueIdentityExportedFunction,EIssueTypeOverload>(bool accessible)
+{
+	if ( !accessible )
+	{
+		return ESeverityNULL;
+	}
+	return ESeverityBBCBreak;
+}
+template <> string ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeOverload>(const HANodeIterator& baseline,const HANodeIterator& current)
+{
+	string ignoreinfo=KIgnoreInfoNone;
+	return ignoreinfo;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //EIssueIdentityInlineFunction,
 //   Removal,                  
@@ -778,6 +838,17 @@ template <> TBCSeverity BCseverityAccessible<EIssueIdentityInlineFunction,EIssue
 template <> string ignoreInfo<EIssueIdentityInlineFunction,EIssueTypeParam>(const HANodeIterator& baseline,const HANodeIterator& current)
 {
 	return ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeParam>(baseline,current);
+}
+
+//	Param,                    
+//	ESeverityInformative,     
+template <> TBCSeverity BCseverityAccessible<EIssueIdentityInlineFunction,EIssueTypeDefaultParam>(bool accessible)
+{
+	return ESeverityInformative;
+}
+template <> string ignoreInfo<EIssueIdentityInlineFunction,EIssueTypeDefaultParam>(const HANodeIterator& baseline,const HANodeIterator& current)
+{
+	return ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeDefaultParam>(baseline,current);
 }
 
 //	Param non-const to const,                    
@@ -941,6 +1012,17 @@ template <> string ignoreInfo<EIssueIdentityVirtualFunction,EIssueTypeParam>(con
 	return ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeParam>(baseline,current);
 }
 
+//	Param,                    
+//	ESeverityInformative,  
+
+template <> TBCSeverity BCseverityAccessible<EIssueIdentityVirtualFunction,EIssueTypeDefaultParam>(bool accessible)
+{	
+	return ESeverityInformative;
+}
+template <> string ignoreInfo<EIssueIdentityVirtualFunction,EIssueTypeDefaultParam>(const HANodeIterator& baseline,const HANodeIterator& current)
+{
+	return ignoreInfo<EIssueIdentityExportedFunction,EIssueTypeDefaultParam>(baseline,current);
+}
 //	Return,                   
 //	ESeverityBBCBreak,     
 template <> TBCSeverity BCseverityAccessible<EIssueIdentityVirtualFunction,EIssueTypeReturn>(bool accessible)
@@ -1999,6 +2081,16 @@ template <> TSCSeverity SCseverityAccessible<EIssueIdentityExportedFunction,EIss
 	}
 	return ESeveritySCBreak;
 }
+//	Param,                    
+//	ESeveritySCInformative,        
+template <> TSCSeverity SCseverityAccessible<EIssueIdentityExportedFunction,EIssueTypeDefaultParam>(bool accessible)
+{
+	if ( !accessible )
+	{
+		return ESeveritySCNULL;
+	}
+	return ESeveritySCInformative;
+}
 
 //	Param non-const to const,                    
 //	ESeveritySCBreak, 
@@ -2066,7 +2158,12 @@ template <> TSCSeverity SCseverityAccessible<EIssueIdentityExportedFunction,EIss
 	return ESeveritySCBreak;
 }
 
-
+//	Overloaded function,                               	
+//	ESeveritySCNULL,                 
+template <> TSCSeverity SCseverityAccessible<EIssueIdentityExportedFunction,EIssueTypeOverload>(bool accessible)
+{
+	return ESeveritySCNULL;
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //EIssueIdentityInlineFunction,
 //   Removal,                  
@@ -2089,6 +2186,17 @@ template <> TSCSeverity SCseverityAccessible<EIssueIdentityInlineFunction,EIssue
 		return ESeveritySCNULL;
 	}
 	return ESeveritySCBreak;
+}
+
+//	Param,                    
+//	ESeveritySCInformative,     
+template <> TSCSeverity SCseverityAccessible<EIssueIdentityInlineFunction,EIssueTypeDefaultParam>(bool accessible)
+{
+	if ( !accessible )
+	{
+		return ESeveritySCNULL;
+	}
+	return ESeveritySCInformative;
 }
 
 //	Param non-const to const,                    
@@ -2157,7 +2265,6 @@ template <> TSCSeverity SCseverityAccessible<EIssueIdentityInlineFunction,EIssue
 	return ESeveritySCBreak;
 }
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //EIssueIdentityExportedVirtualFunction,
 //   Removal,                  
@@ -2206,7 +2313,16 @@ template <> TSCSeverity SCseverityAccessible<EIssueIdentityVirtualFunction,EIssu
 	}
 	return ESeveritySCBreak;
 }
-
+//	Param,                    
+//	ESeveritySCInformative,  
+template <> TSCSeverity SCseverityAccessible<EIssueIdentityVirtualFunction,EIssueTypeDefaultParam>(bool accessible)
+{
+	if ( !accessible )
+	{
+		return ESeveritySCNULL;
+	}
+	return ESeveritySCInformative;
+}
 //	Return,                   
 //	ESeveritySCBreak,     
 template <> TSCSeverity SCseverityAccessible<EIssueIdentityVirtualFunction,EIssueTypeReturn>(bool accessible)

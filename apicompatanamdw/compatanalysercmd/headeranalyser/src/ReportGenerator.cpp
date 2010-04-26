@@ -222,16 +222,6 @@ int ReportGenerator::addIssue(ReportIssue* aIssue)
 
 			 TIssueIdentity id = issue->IdentityId();
 			 TIssueType type = issue->TypeId();
-			 if( id == EIssueIdentityFile && type == EIssueTypeEmpty)
-			 {
-				 notAnalysed = true;
-				 lineInfoNeed = issue->LineInfoNeeded();
-				 break;
-			 }
-		}
-		if(lineInfoNeed == false)
-		{
-			aIssue->SetLineNumber(0);
 		}
         if( v->insert(pair<const ReportIssue*, ReportIssue*>(aIssue,aIssue)).second == false )
         {
@@ -257,25 +247,40 @@ int ReportGenerator::addIssue(const string& aFile,
                 const string& aFQName, const TIssueIdentity& aIdentityId, 
                 const TIssueType& aTypeId, const TBCSeverity& aBCSeverityId, 
                 const TSCSeverity& aSCSeverityId, const string& aIgnoreInformation, 
-                int aLineNumber, const string& aCompareFileName, const string& aCompilationError, bool alineNoNeeded )
+                int aLineNumber, const string& aIssueLoc, const string& aCompareFileName, 
+                const string& aCompilationError )
 {
+	ReportIssue* issue;
 	string fqName = aFQName;
 	int loc = fqName.find(__FUN_MANGLED__);
 	if(loc != -1)
 	{
-	fqName = fqName.substr(0,loc);
+		fqName = fqName.substr(0,loc);
 	}
-    ReportIssue* issue = new ReportIssue(0, aFile, fqName, 
-			aIdentityId, aTypeId, aBCSeverityId, aSCSeverityId, aIgnoreInformation, 
-            aLineNumber, aCompareFileName, aCompilationError, alineNoNeeded );
+	string::size_type dirSepInd = aIssueLoc.find_first_of("\\/");
+	string isslueloc(aIssueLoc);
+	if( dirSepInd != string::npos && isslueloc.at(dirSepInd) != DIR_SEPARATOR )
+	{
+		// We need to convert to proper dir-separator
+		replaceChar(isslueloc, isslueloc.at(dirSepInd), DIR_SEPARATOR);
+	}
+	if(isslueloc == aCompareFileName)
+		issue = new ReportIssue(0, aFile, fqName, 
+		aIdentityId, aTypeId, aBCSeverityId, aSCSeverityId, aIgnoreInformation, 
+		aLineNumber, "", aCompareFileName, aCompilationError);
 
-    /*return*/
-    int ret = addIssue(issue);
-    if( ret == -1)
-    {
-        delete issue;
-    }
-    return ret;
+	else
+		issue = new ReportIssue(0, aFile, fqName, 
+		aIdentityId, aTypeId, aBCSeverityId, aSCSeverityId, aIgnoreInformation, 
+		aLineNumber, isslueloc, aCompareFileName, aCompilationError);
+
+	/*return*/
+	int ret = addIssue(issue);
+	if( ret == -1)
+	{
+		delete issue;
+	}
+	return ret;
 }
 
 // ----------------------------------------------------------------------------
@@ -1123,7 +1128,11 @@ DOMElement* ReportGenerator::createIssueNode(ReportIssue& aIssue)
     // issue ignore finder field
     childvec.push_back(createSimpleTextNode(NODE_ISSUELIST_HEADERFILE_ISSUE_IGNOREINFORMATION, aIssue.IgnoreInformationDescription().c_str()));
     
-    // issue linenumber field
+    // issue location field
+	if(aIssue.IssueLocation().size() != 0)
+		childvec.push_back(createSimpleTextNode(NODE_ISSUELIST_HEADERFILE_ISSUE_ISSUELOC, aIssue.IssueLocation().c_str()));
+
+	// issue linenumber field
     childvec.push_back(createSimpleTextNode(NODE_ISSUELIST_HEADERFILE_ISSUE_LINENUMBER, aIssue.LineNumber()));
     
     // issue extrainformation field

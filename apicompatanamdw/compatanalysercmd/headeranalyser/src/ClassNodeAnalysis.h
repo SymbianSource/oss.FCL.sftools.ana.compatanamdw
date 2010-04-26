@@ -37,18 +37,19 @@ XERCES_CPP_NAMESPACE_USE
 
 
 template <TIssueType IssueType>
-void AddIssueClass(const HANodeIterator* self,TIssueIdentity classType, const HANodeIterator& ignorenode, int lineNo, const XMLCh* fileid=NULL)
+void AddIssueClass(const HANodeIterator* self,TIssueIdentity classType, const HANodeIterator& ignorenode, int lineNo, 
+				   const string& issueloc,const XMLCh* fileid=NULL)
 {
 	switch (classType)
 	{
     case EIssueIdentityClass:
-		AddIssue<EIssueIdentityClass,IssueType>(self,ignorenode,lineNo,fileid);
+		AddIssue<EIssueIdentityClass,IssueType>(self,ignorenode,lineNo,issueloc,fileid);
 		break;
     case EIssueIdentityStruct:
-		AddIssue<EIssueIdentityStruct,IssueType>(self,ignorenode,lineNo,fileid);
+		AddIssue<EIssueIdentityStruct,IssueType>(self,ignorenode,lineNo,issueloc,fileid);
 		break;
     case EIssueIdentityUnion:
-		AddIssue<EIssueIdentityUnion,IssueType>(self,ignorenode,lineNo,fileid);
+		AddIssue<EIssueIdentityUnion,IssueType>(self,ignorenode,lineNo,issueloc,fileid);
 		break;
 	default:
 		assert(false);
@@ -58,15 +59,16 @@ void AddIssueClass(const HANodeIterator* self,TIssueIdentity classType, const HA
 }
 
 template <TIssueType IssueType>
-void AddIssueField(const HANodeIterator* self,TIssueIdentity classType, const HANodeIterator& ignorenode, int lineNo, const XMLCh* fileid=NULL, const string name = "")
+void AddIssueField(const HANodeIterator* self,TIssueIdentity classType, const HANodeIterator& ignorenode, int lineNo, 
+				   const string& issueLoc, const XMLCh* fileid=NULL, const string name = "")
 {
 	switch (classType)
 	{
     case EIssueIdentityField:
-		AddIssue<EIssueIdentityField,IssueType>(self,ignorenode,lineNo,fileid,name);
+		AddIssue<EIssueIdentityField,IssueType>(self,ignorenode,lineNo,issueLoc,fileid,name);
 		break;
     case EIssueIdentityFieldInaccessible:
-		AddIssue<EIssueIdentityFieldInaccessible,IssueType>(self,ignorenode,lineNo,fileid, name);
+		AddIssue<EIssueIdentityFieldInaccessible,IssueType>(self,ignorenode,lineNo,issueLoc,fileid, name);
 		break;
 	default:
 		assert(false);
@@ -84,15 +86,16 @@ void AddIssueField(const HANodeIterator* self,TIssueIdentity classType, const HA
 * @param name reference to name
 */
 template <TIssueType IssueType>
-void AddIssueField(const HANodeIterator* self,TIssueIdentity classType, const HANodeIterator& ignorenode, int lineNo,const XMLCh* fileid, const DataMember & name)
+void AddIssueField(const HANodeIterator* self,TIssueIdentity classType, const HANodeIterator& ignorenode, int lineNo,
+				   const string& issueLoc, const XMLCh* fileid, const DataMember & name)
 {
 	switch (classType)
 	{
     case EIssueIdentityField:
-		AddIssue<EIssueIdentityField,IssueType>(self,ignorenode,lineNo,fileid,name);
+		AddIssue<EIssueIdentityField,IssueType>(self,ignorenode,lineNo,issueLoc,fileid,name);
 		break;
     case EIssueIdentityFieldInaccessible:
-		AddIssue<EIssueIdentityFieldInaccessible,IssueType>(self,ignorenode,lineNo,fileid, name);
+		AddIssue<EIssueIdentityFieldInaccessible,IssueType>(self,ignorenode,lineNo,issueLoc,fileid, name);
 		break;
 	default:
 		assert(false);

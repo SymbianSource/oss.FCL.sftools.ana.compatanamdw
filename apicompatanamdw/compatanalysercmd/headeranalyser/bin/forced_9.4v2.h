@@ -37,3 +37,9 @@ typedef long n_time;
 #ifndef __int64
 #define __int64  long
 #endif
+
+// QT exported macros
+#undef Q_DECL_EXPORT
+#define Q_DECL_EXPORT __THIS_IS_EXPORTED__
+#undef Q_DECL_IMPORT
+#define Q_DECL_IMPORT __THIS_IS_EXPORTED__

@@ -372,7 +372,8 @@ DOMNodeList* HANodeIterator::GetElementsByTagName(const XMLCh* tag) const
 // Add issue found in analysis
 // ----------------------------------------------------------------------------
 //
-void HANodeIterator::addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TBCSeverity bcseverity, TSCSeverity scseverity, string ignoreinfo, const XMLCh* fileid, const string name,int lineNumber) const
+void HANodeIterator::addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TBCSeverity bcseverity, TSCSeverity scseverity, string ignoreinfo, const XMLCh* fileid,
+							  const string name,int lineNumber,const string issueloc) const
     {
     bool lFlag = false;
     if ( !fileid )
@@ -387,15 +388,6 @@ void HANodeIterator::addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TB
     string compareFileName("");
 
     list< pair<string,string> >::const_iterator it = iFilesToAnalyse.begin();
-
-    /*int linenumber = 0;
-    const XMLCh* strlinenumber = this->GetAttribute(KXMLLineString);
-
-    if ( strlinenumber )
-    {
-        linenumber = atoi(toString(strlinenumber).c_str());
-    }
-   */
     string filename(toString(file.first));
 
     string::size_type dirSepInd = filename.find_first_of("\\/");
@@ -403,7 +395,7 @@ void HANodeIterator::addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TB
     {
         // We need to convert to proper dir-separator
         replaceChar(filename, filename.at(dirSepInd), DIR_SEPARATOR);
-    }
+    }	
 
     for (; it != iFilesToAnalyse.end(); ++it)
     {
@@ -433,13 +425,13 @@ void HANodeIterator::addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TB
         if ( iBaselineNode )
         {
             this->iReport.addIssue(filename, 
-                fqname, aIdentityId, aTypeId, bcseverity, scseverity, ignoreinfo, lineNumber,
+                fqname, aIdentityId, aTypeId, bcseverity, scseverity, ignoreinfo, lineNumber,issueloc,
                 compareFileName, "");
         }
         else
         {
             this->iReport.addIssue(compareFileName, 
-                fqname, aIdentityId, aTypeId, bcseverity, scseverity, ignoreinfo, lineNumber,
+                fqname, aIdentityId, aTypeId, bcseverity, scseverity, ignoreinfo, lineNumber,issueloc,
                 filename, "");
         }
     }

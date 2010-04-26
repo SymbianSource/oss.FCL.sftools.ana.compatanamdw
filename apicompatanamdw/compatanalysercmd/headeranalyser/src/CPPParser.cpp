@@ -45,6 +45,8 @@ XERCES_CPP_NAMESPACE_USE
 const int KMaxFilenameLength = 512;
 const int KMaxDirLength=1024;
 
+#define MAX_ARRAY_COUNT 200
+
 // The C++ parser executable
 #ifdef __WIN__
 static const char* GCCXML_COMMAND = "ha_gccxml_cc1plus ";
@@ -466,123 +468,532 @@ int CPPParser::PreprocessH(string aFilename, string aVersion, vector<string>& he
 // CPPParser::HandleExports
 // ----------------------------------------------------------------------------
 //
+
 int CPPParser::HandleExports(string aFilename, string aVersion)
 {
-    int ret = 0;
-    string ofilename = aFilename + ".2";
-    
-    ifstream input(aFilename.c_str(), ios::in);
-    ofstream output(ofilename.c_str(), ios::out);
-    iOutputFilename = ofilename;
-    char c;
-    string toflush = "";
-    unsigned int matches = 0;
-    string tofind = STR_EXPORT_HACK;
-    string attribstr = STR_ATTRIBUTE_STR;
-    string outputBuffer;
-    outputBuffer.reserve(PREPROCESS_BUFFERSIZE);
-    int state = EStateSearching;
-    bool purevirtual = false;
-    bool possiblepurevirtual = false;
-    while (input.get(c))
-    {
-        if (outputBuffer.length() >= PREPROCESS_BUFFERSIZE)
-        {
-            output << outputBuffer;
-            outputBuffer = "";
-        }
-        if (state == EStateSearching)
-        {
-            if (c == tofind.at(matches))
-            {
-                matches++;
-                toflush += c;
-            } else 
-            {
-                matches = 0;
-                if (!toflush.empty())
-                {
-                    outputBuffer += toflush;
-                    toflush = "";
-                }
-                outputBuffer += c;
-            }
-            if (matches == tofind.length())
-            {
-                toflush = "";
-                state = EStateReplacing;
-                matches = 0;
-            }
-        } else if (state == EStateReplacing)
-        {
-            if (c == '=')
-            {
-                if (possiblepurevirtual == true && !toflush.empty())
-                {
-                    outputBuffer += toflush;
-                    toflush = "";
-                }
-                possiblepurevirtual = true;
-                toflush += c;
-            } else if (possiblepurevirtual == true && c!= ';')
-            {
-                if (c == ' ')
-                {
-                    toflush += c;
-                } else if (c == '\t')
-                {
-                    toflush += c;
-                } else if (c == '0')
-                {
-                    toflush += c;
-                    purevirtual = true;
-                } else
-                {
-                    outputBuffer += toflush;
-                    outputBuffer += c;
-                    toflush = "";
-                    possiblepurevirtual = false;
-                    purevirtual = false;
-                }
-            } else if (c == ';')
-            {
-                state = EStateSearching;
-                if (purevirtual)
-                {
-                } else if (possiblepurevirtual)
-                {
-                    outputBuffer += toflush;
-                    toflush = "";
-                }
+	int ret = 0;
+	string ofilename = aFilename + ".2";
 
-                outputBuffer += " ";
-                outputBuffer += attribstr;
-                if (!toflush.empty())
-                {
-                    outputBuffer += " ";
-                    outputBuffer += toflush;
-                    toflush = "";
-                }
-                possiblepurevirtual = false;
-                purevirtual = false;
-                outputBuffer += ';';
-            } else
-            {
-                outputBuffer += c;
-            }
-        } else if (state == EStateReplaceDone)
-        {
+	ifstream input(aFilename.c_str(), ios::in);
+	ofstream output(ofilename.c_str(), ios::out);
+	iOutputFilename = ofilename;
+	char c;
+	string toflush = "";
+	string flush = "";
+	unsigned int matches = 0;
+	string tofind = STR_EXPORT_HACK;
+	string attribstr = STR_ATTRIBUTE_STR;
+	string outputBuffer;
+	outputBuffer.reserve(PREPROCESS_BUFFERSIZE);
+	int state = EStateSearching;
+	char stackArray[MAX_ARRAY_COUNT] = {'\0'};
+	int arryPos = 0;
+	
+	string isClass = "class";
+	string isEnum = "enum";
+	string isStruct = "struct";
+	string isUnion = "union";
+	string isInline = "inline";
 
-        }
+	unsigned int clsPos = 0;
+	unsigned int enmPos = 0;
+	unsigned int strctPos = 0;
+	unsigned int inlinePos = 0;
+	unsigned int unionPos = 0;
+	char arraychar = '\0';
 
-    }
-    if (outputBuffer.length() != 0)
-    {
-        output << outputBuffer;
-    }
-    return ret;
+	unsigned int bufPos = 0;
+	
+	string temp;
+	string buf;
+	
+	bool possibleVirtualFunc = false;
+	bool virtualFunc = false;
+	bool ignorecheck = false;
+	while (input.get(c))
+	{
+		ignorecheck = false;
+		if (outputBuffer.length() >= PREPROCESS_BUFFERSIZE)
+		{
+			output << outputBuffer;
+			outputBuffer = "";
+		}
+       // Get the bufferpos
+		bufPos = (unsigned int)outputBuffer.length()-1;
+
+		// delete buf (class\enum\struct) entry if next letter is not space
+ 		if ( buf.length() > 0 && state == EStateReplacing && (c != ' ' && c != '\t' && int(c) != 10))
+		{
+			buf = "";
+		}
+		if( c == isClass.at(clsPos))
+		{
+			if( clsPos == 0 ) // searching for class keyword with space before and after
+			{
+				if(outputBuffer == "" || outputBuffer.at(bufPos) == ' ' || outputBuffer.at(bufPos) == '\t'
+					|| int(outputBuffer.at(bufPos)) == 10 || int(outputBuffer.at(bufPos)) == 32 )
+					clsPos++;
+			}
+			else
+				clsPos++;
+		}			
+			
+		else
+			clsPos = 0;
+		if (clsPos == isClass.length()) // keyword found 
+		{
+			clsPos = 0;
+			buf = isClass;
+			ignorecheck = true; // in the current iteration don't match buf string with class\enum\struct keyword
+			                    // as keyword may be part of some word like " classification" 
+		}
+
+		if( c == isUnion.at(unionPos))
+		{
+			if( unionPos == 0 ) // searching for union keyword with space before and after
+			{
+				if(outputBuffer == "" || outputBuffer.at(bufPos) == ' ' || outputBuffer.at(bufPos) == '\t'
+					|| int(outputBuffer.at(bufPos)) == 10 || int(outputBuffer.at(bufPos)) == 32 )
+					unionPos++;
+			}
+			else
+				unionPos++;
+		}			
+			
+		else
+			unionPos = 0;
+		if (unionPos == isUnion.length()) // keyword found 
+		{
+			unionPos = 0;
+			buf = isUnion;
+			ignorecheck = true; // in the current iteration don't match buf string with class\enum\struct\union keyword
+			                    // as keyword may be part of some word like " classification" 
+		}
+
+		if(c == isStruct.at(strctPos))// searching for struct keyword with space before and after
+		{
+			if( strctPos == 0 )
+			{
+				if(outputBuffer == "" || outputBuffer.at(bufPos) == ' ' || outputBuffer.at(bufPos) == '\t'
+					|| int(outputBuffer.at(bufPos)) == 10 )
+					strctPos++;
+			}
+			else
+				strctPos++;
+		}
+		else
+			strctPos = 0;
+
+		if(strctPos == isStruct.length())
+		{
+			strctPos = 0;
+			buf = isStruct;
+			ignorecheck = true; // in the current iteration don't match buf string with class\enum\struct keyword
+			                    // as keyword may be part of some word like " structural" 
+		}
+
+		if(c == isEnum.at(enmPos) )// searching for enum keyword with space before and after
+		{
+			if( enmPos == 0 )
+			{
+				if(outputBuffer == "" || outputBuffer.at(bufPos) == ' ' || outputBuffer.at(bufPos) == '\t'
+					|| int(outputBuffer.at(bufPos)) == 10 )
+					enmPos++;
+			}
+			else
+				enmPos++;
+		}
+		else
+			enmPos = 0;
+
+		if( enmPos == isEnum.length())
+		{
+			enmPos = 0;
+			buf = isEnum;
+			ignorecheck = true;// in the current iteration don't match buf string with class\enum\struct keyword
+			                    // as keyword may be part of some word like " enumuration" 
+		}
+
+		if (state == EStateSearching)
+		{
+			memset(stackArray,'\0',MAX_ARRAY_COUNT);
+			if (c == tofind.at(matches))
+			{
+				matches++;
+				toflush += c;
+			} else 
+			{
+				matches = 0;
+				if (!toflush.empty())
+				{
+					outputBuffer += toflush;
+					toflush = "";
+				}
+				outputBuffer += c;
+				
+				if(buf.length() > 0 && ignorecheck == false && (c != ' ' && c != '\t' 
+					&& int(c) != 10 ))
+				{
+					buf = "";
+					arraychar = '\0';
+				}
+			}
+			if (matches == tofind.length())
+			{
+				toflush = "";
+				state = EStateReplacing; // export keyword match found, so make the stae as replacing
+				matches = 0;
+			}
+		} else if (state == EStateReplacing)
+		{  
+			// under a exported class,for a function the exported keyword is present,it should be deleted.
+			if (c == tofind.at(matches))
+			{
+				matches++;
+				toflush += c;
+				if (matches == tofind.length())
+				{
+					toflush = "";
+					matches = 0;					
+				}
+				continue;
+			} else 
+			{
+				matches = 0;
+				if (!toflush.empty())
+				{
+					outputBuffer += toflush;
+					toflush = "";
+				}		
+			}
+			
+		
+			if(c == isInline.at(inlinePos))
+			{
+				if( inlinePos == 0 )// searching for inline keyword with space before and after
+				{
+					if(outputBuffer == "" || outputBuffer.at(bufPos) == ' ' || outputBuffer.at(bufPos) == '\t'
+						|| int(outputBuffer.at(bufPos)) == 10 )
+						inlinePos++;
+				}
+				else
+					inlinePos++;
+			}		
+			else
+				inlinePos = 0;
+			
+			if( inlinePos == isInline.length())
+			{
+				inlinePos = 0;
+				buf = isInline;
+
+			}
+
+			if ( buf.length() > 0 && (c == ' ' || c == '\t' || int(c) == 10))
+			{
+				if (buf == isClass)
+				{
+					arraychar = 'c';
+				}
+				if (buf == isStruct )
+				{
+					arraychar = 's';
+				}
+				if (buf == isEnum)
+				{
+					arraychar = 'e';
+				}
+				if(buf == isUnion)
+				{
+					arraychar = 'u';
+				}
+				if(buf == isInline) 
+				{
+					stackArray[arryPos] = 'i'; // place inline keyword in stack
+					arryPos++;
+				}
+				
+				buf = "";
+				if(temp.length() > 0) 
+					temp = "";
+			}
+			else if (c == '{')
+			{
+				// place the keyword in stack for class\enum\struct
+				if(arraychar != '\0')
+				{
+					stackArray[arryPos] = arraychar;
+					arraychar = '\0';
+					arryPos++;
+				}				
+				stackArray[arryPos] = c;				
+                arryPos++;
+
+				if(temp.length() > 0) 
+					temp = "";
+			}
+			else if(c== '}')
+			{
+				temp = "";
+				bool ignore = false;
+				// can be end of class\enum\struct				
+				for (int i = arryPos-1; i >= 0; i-- )
+				{
+
+					if (stackArray[i] == '{' ) 
+					{
+						if( stackArray[i-1] != 'c' && stackArray[i-1] != 's' 
+							&& stackArray[i-1] != 'e' && stackArray[i-1] != 'u')
+							// check if the function is inline
+						{
+
+							ignore = true;
+							break;
+						}
+					}
+				}
+				if(ignore == false)
+					temp = c;
+				
+				stackArray[arryPos] = c;
+                arryPos++;
+
+				if(temp == "")
+				{
+					int openbraceCount = 0;
+					int closebracecount = 0;
+
+					// if it is end of a function then delete the entry from stack
+					// and it is ofcourse not a exported function, 
+					//will definitely be a inline function with or without "inline" keyword
+					bool deleteEntry = false;
+					int setpos = 0;
+					// get the pos after class\struct\enum started
+					for(int i = arryPos; i >= 0; i--)
+					{
+						if(stackArray[i] == '{')
+						{
+							deleteEntry = true;
+							if (stackArray[i-1] == 'c' || stackArray[i-1] == 's' 
+								|| stackArray[i-1] == 'e' || stackArray[i-1] == 'u')
+							{
+								setpos = i+1;								
+								break;
+							}							
+						}
+					}
+					// find the end pos of the non exported function by matching the open and close flower brace count.
+					if(deleteEntry)
+					{
+						deleteEntry = false;
+						for(int i = setpos; i <= arryPos; i++ )
+						{						
+							if(stackArray[i] == '{')
+								openbraceCount++;
+							else if(stackArray[i] == '}')
+								closebracecount++;
+						}
+						if(openbraceCount > 0 && openbraceCount == closebracecount )
+						{
+							deleteEntry = true;// need to delete the non exported function entry from stack now
+						}
+					}
+					// noe delete the non exported entry and re arrange the stack
+					if(deleteEntry)
+					{
+						for(int pos = setpos; pos <= arryPos; pos++ )
+							stackArray[pos] = '\0';
+
+						arryPos = setpos;
+					}
+				}
+				
+			}
+			else if ( (c == '=' && stackArray[arryPos-1] == ')') ||
+                      (c == '0' && stackArray[arryPos-1] == '=') ||
+					  (c == '(' || c == ')' )||
+					  ( possibleVirtualFunc == true ||virtualFunc == true)
+					 ) // can be a virtual function or normal function which might be exported
+			{
+				if(temp.length() > 0) 
+					temp = "";
+
+				if( (possibleVirtualFunc == true && (  c!= '0' && c != ' ' && c != '\t' && int(c) != 10) ) ||
+					(virtualFunc == true && (c!= ';' && c != ' ' && c != '\t' && int(c) != 10)) )
+				{ // if other than space and '0', then set posVirtual func to false
+					// or if other than space and ';', then set Virtual func to false
+					outputBuffer += flush;
+					outputBuffer += c;
+					flush = "";
+					possibleVirtualFunc = false;
+					virtualFunc = false;
+					continue;
+				}
+
+				else if( c == '=') // possible virtual function
+				{
+					flush = c;
+					possibleVirtualFunc = true;
+					virtualFunc = false;
+					stackArray[arryPos] = c;
+					arryPos++;
+					continue;
+				}
+				else if (possibleVirtualFunc == true)
+				{				
+					flush += c;
+					if ( c == '0')
+					{
+						virtualFunc = true; // pure virtual function
+						possibleVirtualFunc = false;
+						stackArray[arryPos] = c;
+						arryPos++;
+					}					
+					continue;
+				}
+				else if (c == '(' || c == ')')
+				{
+					flush = "";
+					stackArray[arryPos] = c;
+					arryPos++;
+				}
+				
+			} 
+			
+			if (c == ';')
+			{
+				arraychar = '\0';
+				// first check for inline function and delete the entry from stack for this func
+				bool isinline = false;
+				bool nonExpFun = false;
+				bool removeEntry = false;
+
+				for (int i = arryPos-1; i >= 0; i-- )
+				{
+					if ( stackArray[i] == 'i') // inline function with inline keyword
+						isinline = true;
+					
+					else if (stackArray[i] == '{')// check if the function is inline
+					{
+						if (stackArray[i-1] != 'c' && stackArray[i-1] != 's' 
+							  && stackArray[i-1] != 'e' && stackArray[i-1] != 'u')
+							nonExpFun = true;
+					}
+				}
+
+				// end of struct/class/enum
+				if (stackArray[arryPos-1] == '}' && temp == "}"   ) 
+				{
+					//if(!isinline && !nonExpFun)
+					{
+					int cnt = arryPos-1;
+					bool flag = false;
+					for (int i = cnt; i>=0; i--)
+					{
+						if (stackArray[i] == 'c' || stackArray[i] == 's' 
+							   || stackArray[i] == 'e' || stackArray[i] == 'u')
+						{
+							flag = true;
+						}	
+						stackArray[i] = '\0';		
+						arryPos--;
+						if( flag )	
+						{
+							break;
+						}
+					}
+					outputBuffer += c;
+					temp = "";
+
+					if(stackArray[0] == '\0') // check if exported class\struct is ended .. 
+						                      // set state to searching and continue;
+						state = EStateSearching;
+					continue;
+					}
+				}				
+				
+				if(stackArray[arryPos-1] == '('&& nonExpFun == false && isinline == false) 
+					// not function, can be a for loop, so reset the stackArray ...
+				{				
+					outputBuffer += c;
+					removeEntry = true;
+				}
+				else if(stackArray[arryPos-1] == ')'  ) 
+					// some exported function can be "abcd( xyz(0), pqr(0))"
+				{	
+					if( nonExpFun == false && isinline == false )
+					{
+						outputBuffer += " ";
+						outputBuffer += attribstr;
+					}
+					outputBuffer += c;	
+					if (nonExpFun == false)
+					removeEntry = true;
+				}			
+				else if( (stackArray[arryPos-1] == '0' && stackArray[arryPos-2] == '=' && virtualFunc == true) )
+				{ // can be a virtual function or normal function which is definitely exported
+					if(!isinline && !nonExpFun)
+					{
+						outputBuffer += " ";
+						outputBuffer += attribstr;
+						outputBuffer += " ";
+					}					
+					outputBuffer += flush;					
+					outputBuffer += c;
+					flush = "";
+					if(nonExpFun == false)
+						removeEntry = true;
+					virtualFunc = false;
+				}
+				else	
+				{
+					outputBuffer += c;
+				}
+
+				if(removeEntry == true)
+				{
+					int cnt = arryPos-1;
+					bool flag = false;
+					for (int i = cnt; i>=0; i--)
+					{
+						if (stackArray[i] == '{' && 
+							(stackArray[i-1] == 'c' || stackArray[i-1] == 's' 
+							|| stackArray[i-1] == 'e' || stackArray[i-1] == 'u') )
+							flag = true;
+
+						if(flag == false)
+						{
+							stackArray[i] = '\0';	
+							arryPos--;
+						}
+					}
+				}
+	
+				if(stackArray[0] == '\0')
+					state = EStateSearching;				
+			} 
+			else
+			{
+				if(  virtualFunc == true )
+				{
+					outputBuffer += flush;					
+					flush = "";
+                    virtualFunc = false;
+				}
+				outputBuffer += c;
+			}
+		} else if (state == EStateReplaceDone)
+		{
+
+		}
+
+	}
+	if (outputBuffer.length() != 0)
+	{
+		output << outputBuffer;
+	}
+	return ret;
 }
-
 
 // ----------------------------------------------------------------------------
 // CPPParser::ReplaceExport

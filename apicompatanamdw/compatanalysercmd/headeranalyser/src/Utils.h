@@ -36,6 +36,9 @@ using namespace std;
 #define _XX(s) XMLString::release(&s)
 
 #define __FUN_MANGLED__ "__MANGLED__"
+#define __Q_OBJECT_METAOBJECT__ "metaObject( ) const"
+#define __Q_OBJECT_METACALL__ "qt_metacall( ::QMetaObject::Call, int, void** )"
+#define __Q_OBJECT_METACAST__ "qt_metacast(  const char* )"
 
 // Mostly used for implementation of headeranalyser
 enum TValue

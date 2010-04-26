@@ -27,11 +27,11 @@
 BASELINE_NAME=SDK 3rd Edition
 
 # Root directory for files in baseline directory. It's a mandatory parameter.
-BASELINE_SDK_DIR=C:\Series60\devices\S60_5th_Edition_SDK_v1.0
+BASELINE_SDK_DIR=C:\Symbian\9.1\S60_3rd_MR\
 
 # S60 version of baseline set.It can be any of the following
-# 5.0, 5.1, 5.2, SF1, SF2
-BASELINE_SDK_S60_VERSION=5.0
+# 3.0, 3.1, 3.2, 5.0, 5.1, 5.2, SF1, SF2
+BASELINE_SDK_S60_VERSION=3.0
 
 # Name for current file set
 CURRENT_NAME=RnD SDK wk26
@@ -40,8 +40,8 @@ CURRENT_NAME=RnD SDK wk26
 CURRENT_SDK_DIR=X:\
 
 # S60 version of current set.It can be any of the following
-# 5.0, 5.1, 5.2, SF1, SF2
-CURRENT_SDK_S60_VERSION=5.1
+# 3.0, 3.1, 3.2, 5.0, 5.1, 5.2, SF1, SF2
+CURRENT_SDK_S60_VERSION=3.1
 
 
 ########## OPTIONAL COMMON PARAMETERS 
@@ -118,11 +118,6 @@ TOOLCHAIN_PATH=
 # ‘;’ can be input.
 BASELINE_BUILDTARGET=
 CURRENT_BUILDTARGET=
-
-# Target build type of the import libraries (eg urel/udeb). Defaults to
-# urel.
-BASELINE_BUILDTYPE=
-CURRENT_BUILDTYPE=
 
 # Analyse any other import library directory than from under \epoc32\release.
 # This will override target builds mentioned above. Multiple names separated 

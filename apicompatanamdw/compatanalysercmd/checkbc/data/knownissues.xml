@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2009-11-27</listversion>
+  <listversion>2010-02-14</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
-	<os><osversion>3.2</osversion><buildweek>2009wk46</buildweek></os>
-	<os><osversion>5.0</osversion><buildweek>2009wk46</buildweek></os>
+	<os><osversion>3.2</osversion><buildweek>2010wk02</buildweek></os>
+	<os><osversion>5.0</osversion><buildweek>2010wk04</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2009wk46</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk04</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -56,6 +56,10 @@
       	<status>OK</status>
       	<comment>Class CImConvertHeader and TImCodecB64WithLineBreaks marked as internal component.</comment>
       </version>
+      <version checksum="LpF5YfqACF-9B">
+      	<status>OK</status>
+      	<comment>Removed components marked as internal component and moved to cimconvertheader.h.</comment>
+      </version>
    </headerfile>
    
     <headerfile name="stdapis\stlport\stl\msl_string.h">
@@ -64,6 +68,21 @@
       	<comment>File contains nothing to be analysed.</comment>
       </version>
    </headerfile>
+   
+   <headerfile name="applications\cpbkselectfielddlg.h">
+       <version checksum="BrMz-jBDhUbzR">
+      	<status>NOK</status>
+      	<comment>Size of class CPbkSelectFieldDlg has changed. It's a BC break. </comment>
+      </version>
+   </headerfile>
+   
+   <headerfile name="app\cpbkselectfielddlg.h">
+       <version checksum="BrMz-jBDhUbzR">
+      	<status>NOK</status>
+      	<comment>Size of class CPbkSelectFieldDlg has changed. It's a BC break. </comment>
+      </version>
+   </headerfile>
+   
    <headerfile name="caf\data.h">
        <version checksum="hAqmyPRCjBLCv">
       	<status>OK</status>
@@ -325,12 +344,20 @@
       	<status>OK</status>
       	<comment> CApaAppFinder and TApaAppCapability::Internalize7_0L( ::RReadStream) marked as deprecated. The published All TApaAppEntry class is reclassified as internalComponent. It's not a BC break.</comment>
       </version>
+      <version checksum="m53Qn2rCYK5Aa">
+      	<status>OK</status>
+      	<comment> CApaAppFinder and TApaAppCapability::Internalize7_0L( ::RReadStream) marked as deprecated. The published All TApaAppEntry class is reclassified as internalComponent. It's not a BC break, CApaAppServiceInfoArray moved to apaidpartner.h</comment>
+      </version>
    </headerfile>
    
       <headerfile name="apasvst.h">
        <version checksum="Ww303n5B+I26w">
       	<status>OK</status>
       	<comment>Removal of unused exported StartupApaServer(MApaAppStarter ) function is approved and changing the parameter of IMPORT_C TInt ApaServThreadStart(TAny* )is approved. It's not a BC break.</comment>
+      </version>
+      <version checksum="Ww303n5A9gZOa">
+      	<status>OK</status>
+      	<comment>1)Removal of unused exported StartupApaServer(MApaAppStarter ) function is approved and changing the parameter of IMPORT_C TInt ApaServThreadStart(TAny* )is approved. 2) NameApaServServerThread()marked internal and promoted to apaidpartner.h and NameApaServStartSemaphore() marked as internal and moved to apainternal.h</comment>
       </version>
    </headerfile>
    
@@ -475,7 +502,16 @@
       <status>OK</status>
       <comment>Class has default public constructor, so overriding a virtual funtion is not allowed.But this change has been done to fix a bug. Studied and approved.</comment>
     </version>
+    <version checksum="w6AeBCZBhyNRy">
+      <status>OK</status>
+      <comment>Class has default public constructor, so overriding a virtual funtion is not allowed.But this change has been done to fix a bug. Studied and approved.</comment>
+    </version>
+     <version checksum="z0TLjzwBhyNRy">
+      <status>OK</status>
+      <comment>Class has default public constructor, so overriding a virtual funtion is not allowed.But this change has been done to fix a bug. Studied and approved.</comment>
+    </version>
   </headerfile>
+  
    <headerfile name="_sipcodecdefs.h">
     <version checksum="KhNActGAxetVp">
       <status>OK</status>
@@ -514,6 +550,10 @@
     <version checksum="OxqYJSJAWEwi1">
       <status>OK</status>
       <comment>Various enum members removed.Studied and approved</comment>
+    </version>
+    <version checksum="OxqYJSJAeMmuS">
+      <status>OK</status>
+      <comment>1)Constant KNullConfigDaemonConfigureNetwork marked internal. 2)Enum TConnectionLayer marked internal and other enum members removed are approved</comment>
     </version>
   </headerfile>
 
@@ -587,6 +627,10 @@
       <status>OK</status>
       <comment>All removed constants are internal or deprecated..</comment>
     </version>
+     <version checksum="HoHnUnMBy7UD4">
+      <status>OK</status>
+      <comment>All removed constants are internal or deprecated and moved to apainternal.h </comment>
+    </version>
   </headerfile>
   <headerfile name="apgdoor.h">
     <version checksum="Gn4jJ9FAQuYDB">
@@ -639,7 +683,12 @@
       <status>OK</status>
       <comment>Part of internal tech.</comment>
     </version>
+    <version checksum="YJAHCSGCKtpjA">
+      <status>OK</status>
+      <comment>Removed constants, class and enum are part of internal tech.</comment>
+    </version>
   </headerfile>  
+  
   <headerfile name="apadbase.h">
     <version checksum="fonxBFDDvghWj">
       <status>OK</status>
@@ -930,6 +979,14 @@
       <status>NOK</status>
       <comment>exported function removed (::RSqlStatement::ParamName( ::TInt, ::TPtrC ).</comment>
     </version>
+    <version checksum="bUvZkpACyJx-3">
+      <status>NOK</status>
+      <comment>exported function removed (::RSqlStatement::ParamName( ::TInt, ::TPtrC ).</comment>
+    </version>
+     <version checksum="fYrQfPhAG-wUS">
+      <status>OK</status>
+      <comment>Class TSqlResourceTester is marked as internal tech.</comment>
+    </version>
   </headerfile> 
   
   <headerfile name="mw\aknsconstants.hrh">
@@ -1010,6 +1067,22 @@
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
     <version checksum="p2k62AuChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="0bUS2-VChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="VrlRnUwChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="V-8mlF5Chv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="wUMUHfhChv9Aq">
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
@@ -1238,6 +1311,18 @@
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
+     <version checksum="x7unSjDChv9Aq">
+      <status>OK</status>
+      <comment>Only the enum indicating the max value has changed.</comment>
+    </version>
+     <version checksum="TIATLJQChv9Aq">
+      <status>OK</status>
+      <comment>Only the enum indicating the max value has changed.</comment>
+    </version>
+    <version checksum="GL5tJNoChv9Aq">
+      <status>OK</status>
+      <comment>Only the enum indicating the max value has changed.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="stdapis\stlport\wrap_std\h\strstream.h">
@@ -1342,6 +1427,10 @@
       <status>OK</status>
       <comment>File has compilation issues.</comment>
     </version>
+    <version checksum="Tx-vQZBA2c321">
+      <status>OK</status>
+      <comment>File has compilation issues.</comment>
+    </version>
  </headerfile>
 
 <headerfile name="stdapis\stlport\runtime\new.h">
@@ -1358,8 +1447,12 @@
     </version>
  </headerfile>
 
-<headerfile name="stdapis\stlport\new.h">
+ <headerfile name="stdapis\stlport\new.h">
     <version checksum="zdvtAckA2c321">
+      <status>OK</status>
+      <comment>File has compilation issues.</comment>
+    </version>
+    <version checksum="zisvgJQA2c321">
       <status>OK</status>
       <comment>File has compilation issues.</comment>
     </version>
@@ -1367,6 +1460,10 @@
 
 <headerfile name="stdapis\stlport\mem.h">
     <version checksum="pW+KQurA2c321">
+      <status>OK</status>
+      <comment>File has compilation issues.</comment>
+    </version>
+    <version checksum="pUINr7cA2c321">
       <status>OK</status>
       <comment>File has compilation issues.</comment>
     </version>
@@ -1410,6 +1507,10 @@
 
 <headerfile name="stdapis\stlport\config\stl_mwerks.h">
     <version checksum="szhNYlAA2c321">
+      <status>OK</status>
+      <comment>File has compilation issues.</comment>
+    </version>
+    <version checksum="wtPZmmoA2c321">
       <status>OK</status>
       <comment>File has compilation issues.</comment>
     </version>
@@ -1499,7 +1600,20 @@
       <status>OK</status>
       <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
+     <version checksum="7jPw5ieCDYpFr">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
+    <version checksum="xZ7YytUCpI8Kg">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
+    <version checksum="rVTAhw3Dq33iB">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
    </headerfile>
+   
    <headerfile name="pdrstore.h">
     <version checksum="*******D4DlXl">
       <status>OK</status>
@@ -1524,14 +1638,23 @@
     <version checksum="DGZHIfmBW5DEY">
       <status>OK</status>
       <comment>All concerned classes are marked as internal component</comment>
-    </version> 
+    </version>
+    <version checksum="GjT2yFMDAc1ah">
+      <status>OK</status>
+      <comment>All concerned classes (CPageText,CPageTextEntry,CPdrGc,CPdrModelInfo,CPdrResources,CPdrTypefaceStore,TTypefaceFontsEntry) are marked as internal tech.</comment>
+    </version>  
     </headerfile> 
      <headerfile name="pdrport.h">
     <version checksum="oIwU-uzAO2P+M">
       <status>OK</status>
       <comment>All concerned classes are marked as internal component</comment>
     </version> 
+    <version checksum="oIwU-uzBB-hrz">
+      <status>OK</status>
+      <comment>All concerned classes are marked as internal component</comment>
+    </version> 
     </headerfile>
+    
   <headerfile name="remcon\remconclient.h">
     <version checksum="-awNQHADs-3T4">
       <status>OK</status>
@@ -1718,6 +1841,10 @@
       <status>OK</status>
       <comment>Guard macro changed..</comment>
     </version>
+    <version checksum="UAIn8MzCgFwrF">
+      <status>OK</status>
+      <comment>Guard macro changed and TApaAppServerPanic marked as internal and moved to apainternal.h</comment>
+    </version>
    </headerfile>
    
    <headerfile name="apdatahandler.h">
@@ -1776,17 +1903,31 @@
       <status>OK</status>
       <comment>Enum values are not removed.A name has been given to a nameless enumeration</comment>
     </version>
+    <version checksum="0xgBLE3A0ezXW">
+      <status>OK</status>
+      <comment>Enum values are not removed.A name has been given to a nameless enumeration, MinApplicationStackSize() marked as internal and moved to apainternal.h</comment>
+    </version>
   </headerfile>
   <headerfile name="apgicnfl.h">
     <version checksum="dxOGNblCQwf19">
       <status>OK</status>
       <comment>Parameters in "removed" function have been const'd, which is ok.</comment>
     </version>
+    <version checksum="2BdVAFHBp460C">
+      <status>OK</status>
+      <comment>CApaRegistrationResourceFileWriter moved to apgicnflpartner.h, CApaResourceFileWriterBase and CApaLocalisableResourceFileWriter promoted and moved to apgicnflpartner.h</comment>
+    </version>
   </headerfile>
   <headerfile name="apgwgnam.h">
     <version checksum="xIpxrrCApfbjw">
       <status>OK</status>
       <comment>Parameters in "removed" function have been const'd, which is ok.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="apgctl.h">
+    <version checksum="8CApf0pB1AsGL">
+      <status>OK</status>
+      <comment>Class CApaSystemControlList moved to apgctllist.h</comment>
     </version>
   </headerfile>
 
@@ -1817,6 +1958,10 @@
     <version checksum="tOJx+uUBUvRSm">
       <status>OK</status>
       <comment>1) Offset for private data members have changed. Some of these are used in public inline functions. However, class marked @internalTechnology, so ok. 2) Typedef has not changed.</comment>
+    </version>
+    <version checksum="yt2HoJHCdJuST">
+      <status>OK</status>
+      <comment>KDataArrayGranularity marked internal and moved to apmpan.h</comment>
     </version>
   </headerfile>
 
@@ -1857,6 +2002,13 @@
     <version checksum="oLUAbqNDw9Vo4">
       <status>OK</status>
       <comment>Enum added at the end. Only the enum indicating the max value has changed.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="cntsync.h">
+    <version checksum="5iyxRI3CiK1vI">
+      <status>OK</status>
+      <comment>Components marked as internal and moved and promoted to cntsyncecom.h</comment>
     </version>
   </headerfile>
 
@@ -1918,7 +2070,12 @@
       <status>OK</status>
       <comment>1.Addition of data member iFlags2 is ok, since there is no change in class size.Flag iTASShdAlarm_2 is being used by internal alaram object.2.Inline function is replaced with generic function.</comment>
     </version>
+    <version checksum="uyZ0M2pCFJd5T">
+      <status>OK</status>
+      <comment>1.Addition of data member iFlags2 is ok, since there is no change in class size.Flag iTASShdAlarm_2 is being used by internal alaram object.2.Inline function is replaced with generic function. 4)KAlarmServerPubSubCategory and KMissingAlarmPubSubKey and struct TMissedAlarmPubSubData moved to ASShdAlarmCal.h</comment>
+    </version>
    </headerfile>
+   
   <headerfile name="mw\avkon.hrh">
    <version checksum="PUv1gKjAAxN-G">
       <status>OK</status>
@@ -1969,6 +2126,22 @@
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
     <version checksum="xIkM40QBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="zaxRQ21BG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="0kz4M3YBXoPfH">
+      <status>NOK</status>
+      <comment>1)Some macro defintions get changed(/ is changed to \), it is ok 2) Enum TAknSctTableNaviButtons not part of 5.0 public SDK but part of N97 public SDK. Removal of enum value under investigation.</comment>
+    </version>
+    <version checksum="3idzaxjBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+     <version checksum="5NwZYztBG9pRn">
       <status>OK</status>
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
@@ -2084,6 +2257,10 @@
     <version checksum="QAGh--GCbakRY">
       <status>OK</status>
       <comment>All removed constants are marked as internal tech.</comment>
+    </version>
+    <version checksum="QAGh--GA-HSrd">
+      <status>OK</status>
+      <comment>Constants marked as internal tech moved to tmsvbioinfo.h and constants marked published partner moved to biomessageuids.h</comment>
     </version>
   </headerfile>
   <headerfile name="basicanimation.h">
@@ -2224,6 +2401,10 @@
       <status>OK</status>
       <comment>Removed constants are moved to included header..</comment>
     </version>
+     <version checksum="-9Rnui5BIIlSF">
+      <status>OK</status>
+      <comment>Removed constants are marked as internaland moved to tmsvbioinfo.h</comment>
+    </version>
   </headerfile>
   
   <headerfile name="bif.h">
@@ -2235,8 +2416,12 @@
   
   <headerfile name="cmsvattachment.h">
     <version checksum="Ixq77D6A3IBne">
-      <status>NOK</status>
-      <comment>Removal of constant KEpocMimeTypeDrm still under investigation</comment>
+      <status>OK</status>
+      <comment>KEpocMimeTypeDrm moved to TMsvPackedNotifierRequest.h </comment>
+    </version>
+    <version checksum="Ixq77D6A3IBne">
+      <status>OK</status>
+      <comment>KEpocMimeTypeDrm moved to TMsvPackedNotifierRequest.h </comment>
     </version>
   </headerfile>
   
@@ -2245,19 +2430,35 @@
       <status>NOK</status>
       <comment>Removal of constants still under investigation</comment>
     </version>
+    <version checksum="vcGSV7wDn3ARQ">
+      <status>NOK</status>
+      <comment>Removal of constant KCoeCustomColorsArrayValue still under investigation. All other macros and enum are marked as internal</comment>
+    </version>
+     <version checksum="6D7hP7LBWbGsJ">
+      <status>OK</status>
+      <comment>Enum and removed macros are marked as internal tech.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="biodb.h">
     <version checksum="Oc7Jxy6BXLcSb">
-      <status>NOK</status>
-      <comment>Classes MBifChangeObserver and CBifChangeObserver moved to bifchangeobserver.h. Removal of KUidBioDBDll is still under investigation.</comment>
+      <status>OK</status>
+      <comment>Classes MBifChangeObserver and CBifChangeObserver moved to bifchangeobserver.h, KUidBioDBDll marked as internal.</comment>
+    </version>
+     <version checksum="Oc7Jxy6Ajof60">
+      <status>OK</status>
+      <comment>Classes MBifChangeObserver and CBifChangeObserver moved to bifchangeobserver.h, KUidBioDBDll marked as internal and deleted.</comment>
     </version>
   </headerfile>
   
   <headerfile name="cacheman.h">
     <version checksum="U42PkiTBPoPih">
-      <status>NOK</status>
-      <comment>Classes CImEntryFinder,CImFinder- internal,CImMessageCount,CImMessageFinder,CImPruneMessage marked as internal. Removal of KMiutWildCard still under investigation </comment>
+      <status>OK</status>
+      <comment>Classes CImEntryFinder,CImFinder- internal,CImMessageCount,CImMessageFinder,CImPruneMessage, KMiutWildCard marked as internal. </comment>
+    </version>
+    <version checksum="U42PkiTBdkgC1">
+      <status>OK</status>
+      <comment>1)Classes CImEntryFinder,CImFinder,CImMessageCounter,CImMessageFinder are marked as internal and  moved to cimfinder.h.2)Class CImPruneMessage moved to cimprunemessage.h 3)KMiutWildCard marked as internal. </comment>
     </version>
   </headerfile>
   
@@ -2269,6 +2470,10 @@
      <version checksum="X0E0ttZDAMKKy">
       <status>OK</status>
       <comment>TBaSoundPriorityDecoder is marked as internal component..</comment>
+    </version>
+    <version checksum="X0E0ttZCXTCzu">
+      <status>OK</status>
+      <comment>TBaSoundPriorityDecoder is marked as internal component and constant KSystemSoundRepositoryUID moved to bassnduid.h</comment>
     </version>
   </headerfile>
   <headerfile name="bidi.h">
@@ -2282,12 +2487,21 @@
       <status>OK</status>
       <comment>Removed macros are marked as internal tech..</comment>
     </version>
+    <version checksum="Nnft4mBBaiKM9">
+      <status>OK</status>
+      <comment>Removed macros and constants are marked as internal tech and moved to coeerrorconsts.h</comment>
+    </version>
   </headerfile>
   <headerfile name="coemain.h">
     <version checksum="p6Ra7HxDFI5ux">
       <status>OK</status>
       <comment>Concerned class is marked as deprecated..</comment>
     </version>
+    <version checksum="tunN0p7BC0BKL">
+      <status>OK</status>
+      <comment>Concerned class is marked as deprecated and moved to coescheduler.h.</comment>
+    </version>
+    
     <version checksum="*******DzNmJM">
       <status>OK</status>
       <comment>The inline functions are private.</comment>
@@ -2360,6 +2574,10 @@
       <status>OK</status>
       <comment>1.Classes CBitwiseBitmap,TRgb24bit and TLineScanningPosition are marked as internalcomponent. 2.other removed macros are marked as internal component.</comment>
     </version>
+    <version checksum="iyLb8v7C1cU5I">
+      <status>OK</status>
+      <comment>CBitwiseBitmap,KCompressionBookMarkThreshold,KMaxBitmapHandleBufferSize,KNumBytesPerBitmapHandle,TLineScanningPosition,TRgb24bit and removed constants are marked as internal component..</comment>
+    </version>
   </headerfile>
 
   <headerfile name="bitstd.h">
@@ -2383,6 +2601,10 @@
       <status>OK</status>
       <comment>CFbsBitGcExtraData is marked as internal component.</comment>
     </version>
+    <version checksum="BwtXlXeBbEPEa">
+      <status>OK</status>
+      <comment>CFbsBitGcExtraData is marked as internal componentand moved to bitgcextradata.h.</comment>
+    </version>
   </headerfile>  
   
    <headerfile name="brctlinterface.h">
@@ -2391,6 +2613,10 @@
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
     <version checksum="M5x0-t4AEcoqQ">
+      	<status>OK</status>
+      	<comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+      </version>
+       <version checksum="g6mVBduA3ENPt">
       	<status>OK</status>
       	<comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
       </version>
@@ -2420,6 +2646,10 @@
       <status>OK</status>
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
+    <version checksum="g6mVBduBfFckK">
+      <status>OK</status>
+      <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+    </version>
     </headerfile>
     
     <headerfile name="mw\brctlinterface.h">
@@ -2428,6 +2658,10 @@
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
     <version checksum="g66ayXVBfFckK">
+      <status>OK</status>
+      <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+    </version>
+    <version checksum="g6mVBduBfFckK">
       <status>OK</status>
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
@@ -2468,6 +2702,10 @@
     <version checksum="tsNzM0TBrZHQs">
       <status>OK</status>
       <comment>The removed key was for the old browser, and was accidentally left in the SDK. Removing it will thus have no impact on third parties.</comment>
+    </version>
+    <version checksum="1gfQbvIARRi+I">
+      <status>OK</status>
+      <comment>Removal of macro KBrowserNGScriptLog is studied..</comment>
     </version>
   </headerfile>
 
@@ -2533,6 +2771,10 @@
       <status>OK</status>
       <comment>TBTL2CAPOptions::KL2CAPNegotiatedOutboundMTU is used for outbound MTU size </comment>
     </version>
+    <version checksum="YBNzwDtACttDB">
+      <status>OK</status>
+      <comment>1)Except macro KBasebandSlotTime, other constants and classes are marked as internal tech.KBasebandSlotTime is moved to included header btbasebandpolicy.h 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="btsdp.h">
@@ -2555,11 +2797,29 @@
       <status>OK</status>
       <comment>Include guard macro has changed, which is ok.</comment>
     </version>
+    <version checksum="IJ+72V8DXv6UV">
+      <status>OK</status>
+      <comment>Removed constants are marked as internal and moved to c32comm_internal.h</comment>
+    </version>
   </headerfile>
   <headerfile name="btdevice.h">
     <version checksum="WF4hRGgB2Tmyh">
       <status>OK</status>
       <comment>All removed constants are marked as internal tech..</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="btmtmcmds.h">
+    <version checksum="GbepCBqCip1om">
+      <status>OK</status>
+      <comment>Removal of the header is fine since it contains only an internal component.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="vprop.h">
+    <version checksum="v5dePndBof3lX">
+      <status>OK</status>
+      <comment>1) CParserPropertyValueBinaryFile moved to vpropbinaryfile.h. 2)KMaxGeneratedfilenamelen and KRandomnumberlen marked as internal.</comment>
     </version>
   </headerfile>
   
@@ -2572,6 +2832,10 @@
   
   <headerfile name="mw\cecombrowserplugininterface.h">
     <version checksum="Ii+Q1JEA2c321">
+      <status>OK</status>
+      <comment>File has compilation error. It's not a BC Break.</comment>
+    </version>
+    <version checksum="IiRpHFVA2c321">
       <status>OK</status>
       <comment>File has compilation error. It's not a BC Break.</comment>
     </version>
@@ -2702,6 +2966,10 @@
       <status>OK</status>
       <comment>File is depreicated since v9.1.</comment>
     </version>
+     <version checksum="VQLT+ajDn+r0J">
+      <status>OK</status>
+      <comment>File is depreicated since v9.1.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="cenrepnotifyhandler.h">
@@ -2752,6 +3020,10 @@
       <status>OK</status>
       <comment>The change to the constant is ok.</comment>
     </version>
+    <version checksum="w1bDIw2Aqvht3">
+      <status>OK</status>
+      <comment>The change to the constant is ok.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="middleware\cdownloadmgruiuserinteractions.h">
@@ -2775,6 +3047,10 @@
       <status>OK</status>
       <comment>Changing the value of constant KSisxApplication is not break bc.</comment>
     </version>
+    <version checksum="w1bDIw2Aqvht3">
+      <status>OK</status>
+      <comment>Changing the value of constant KSisxApplication is not break bc.</comment>
+    </version>
   </headerfile>
   
    <headerfile name="mw\cdownloadmgruiuserinteractions.h">
@@ -2787,6 +3063,10 @@
       <comment>Changing the value of constant KSisxApplication is not break bc.</comment>
     </version>
     <version checksum="w2ed+47Aqvht3">
+      <status>OK</status>
+      <comment>Changing the value of constant KSisxApplication is not break bc.</comment>
+    </version>
+    <version checksum="w1bDIw2Aqvht3">
       <status>OK</status>
       <comment>Changing the value of constant KSisxApplication is not break bc.</comment>
     </version>
@@ -2825,6 +3105,13 @@
     </version>
   </headerfile>
   
+  <headerfile name="charconv.h">
+    <version checksum="V7b88nyAts45T">
+      <status>NOK</status>
+      <comment>Extra data member added , so class size should be changed. Tool is not commenting anything like this. Needs further analysis..</comment>
+    </version>
+  </headerfile>
+  
    <headerfile name="applications\clkdatetimeview.h">
     <version checksum="86U3hD5BTgfY5">
       <status>NOK</status>
@@ -2859,6 +3146,13 @@
     <version checksum="vysEk8xCFK6-l">
       <status>OK</status>
       <comment>File inclusion macro has changed, which is ok.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="cntfield.h">
+    <version checksum="0JKJDx+DG9mdG">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to cntfield_internal.h</comment>
     </version>
   </headerfile>
   
@@ -2914,6 +3208,10 @@
       <status>OK</status>
       <comment>1) CContactActiveBase, CContactActiveCompress and CContactActiveRecover are not intended for instantiation through new operator. 2) CContactDatabase's HandleDatabaseEventL()'s should not be used by (and is not useful for) third parties. 3) The changed/removed enumerations are private. 4) None of the moved datamembers are used in inline functions.</comment>
     </version>
+    <version checksum="eu0Ngr1A2ULWh">
+      <status>OK</status>
+      <comment>CContactEcomPhoneNumberParser and CContactPhoneNumberParser moved to cntphonenumparser.h,KUidEcomCntPhoneNumberParserInterface promoted and moved to cntphonenumparser.h. 2)MConverterCallBack internal and moved to cntconvertercallback.h 3)Other removed components are marked as internal and moved to cntdb_internal.h. </comment>
+    </version>
   </headerfile>
   
   <headerfile name="cntdef.h">
@@ -2927,6 +3225,10 @@
     <version checksum="UMJbBatAgxgwJ">
       <status>OK</status>
       <comment>Virtual functions ExternalizeL and InternalizeL have been added to several classes. Since classes are only instantiable through NewL-functions, this is ok.</comment>
+    </version>
+    <version checksum="xP+uXCmD2fcWf">
+      <status>OK</status>
+      <comment>Component marked as internal.</comment>
     </version>
   </headerfile>
   
@@ -3062,6 +3364,10 @@
       <status>NOK</status>
       <comment>1.Enum variable inserted in between. This needs to be fixed. 2. Macros removed are either internal or moved to commsdat_partner.h. 3. Macro END_ATTRIBUTE_TABLE_BASE_N used to implement virtual functions from MMetaData interface which is an internal component. </comment>
     </version>
+    <version checksum="7fU7tKNB2XrZq">
+      <status>NOK</status>
+      <comment>1.Enum variable inserted in between. This needs to be fixed. 2. Macros removed are either internal or moved to commsdat_partner.h. 3. Macro END_ATTRIBUTE_TABLE_BASE_N used to implement virtual functions from MMetaData interface which is an internal component.4)Removal of KCDMaskGenericTableName under investigation </comment>
+    </version>
   </headerfile>
 
   <headerfile name="commsdatutils.h">
@@ -3132,6 +3438,14 @@
       <status>OK</status>
       <comment>Many macros and constants removed. 1. Removal of CDMA based macros is Studied and approved. 2. Removal of WLAN related macros is ok as they are marked internal. 3. Removal of KCDTypeNameRecordTag and KCDTypeNameRecordName already studied and approved. </comment>
     </version>
+    <version checksum="0l8xrAYCzugGR">
+      <status>OK</status>
+      <comment>Many macros and constants removed. 1. Removal of CDMA based macros is Studied and approved. 2. Removal of WLAN related macros is ok as they are marked internal. 3. KCDTypeNameRecordTag and KCDTypeNameRecordName Mmoved to metadatabase.h. </comment>
+    </version>
+    <version checksum="68PtNfXCzugGR">
+      <status>OK</status>
+      <comment>Many macros and constants removed. 1. Removal of CDMA based macros is Studied and approved. 2. Removal of WLAN related macros is ok as they are marked internal. 3. KCDTypeNameRecordTag and KCDTypeNameRecordName Mmoved to metadatabase.h. </comment>
+    </version>
   </headerfile>
 
   <headerfile name="commsdattypesv1_1.h">
@@ -3187,6 +3501,14 @@
       <status>OK</status>
       <comment>1.Classes marked as internal. 2. Class CCDDefaultWCDMARecord moved to commsdattypesv1_1_partner.h </comment>
     </version>
+    <version checksum="PMN1ffhCscP0x">
+      <status>OK</status>
+      <comment>1.Classes marked as internal and moved to commsdattypesv1_1_internal.h 2. Class CCDDefaultWCDMARecord moved to commsdattypesv1_1_partner.h </comment>
+    </version>
+    <version checksum="SbgqSD-Bju9w9">
+      <status>OK</status>
+      <comment>1.class CCDAgentLookupRecord,CCDEAPSecRecord,CCDEAPTLSRecord,CCDEapAkaProtocolRecord,CCDEapSimProtocolRecord,CCDLEAPRecord,CCDSecureSocketRecord,CCDTunEAPRecord,CCDWLANServiceExtRecord is marked as internal component .2 .CCDBaseSecRecord is marked as internal component. 3. All CDMA references removal are studied and approved. 4.offset of public accessed data field(iDefaultSnap and iPromptForSnap) changed. it is a bc break. But all are related to CDMA and removal of these are approved.</comment>
+    </version>
   </headerfile>
   
 
@@ -3227,6 +3549,20 @@
     </version>
   </headerfile>
   
+   <headerfile name="conlist.h">
+    <version checksum="1l9LlXTCIE1mx">
+      <status>OK</status>
+      <comment>ConverterListUtil marked as internal and moved to coninternal.h.</comment>
+    </version>
+  </headerfile>
+  
+   <headerfile name="conarc.h">
+    <version checksum="ziVl3+vCE+gWd">
+      <status>OK</status>
+      <comment>Removed constants marked as internal and moved to coninternal.h.</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="comms-infras\cs_api_ext.h">
     <version checksum="-543TkxCip1om">
       <status>OK</status>
@@ -3235,6 +3571,10 @@
   </headerfile>
   <headerfile name="ct\ccttokentype.h">
     <version checksum="IvZlhU8AfymiX">
+      <status>OK</status>
+      <comment>File is marked as @internal technology.</comment>
+    </version>
+    <version checksum="IvZlhU8Aspsp0">
       <status>OK</status>
       <comment>File is marked as @internal technology.</comment>
     </version>
@@ -3264,14 +3604,15 @@
       <comment>KEComErrLast must be modified when error codes are added/deleted.</comment>
     </version>
     <version checksum="SxGt5n8DfiC8R">
-      <status>NOK</status>
-      <comment>Removal of constants KEComErrAlreadyReceiving, KEComErrDriveNotFound, KEComErrIndexEntryNotFound,KEComErrInstantiationPointerNotAvailable,KEComErrInstantiationPointerNotFound,KEComErrInvalidIIC,KEComErrInvalidRegistryData, KEComErrInvalidUnloadPolicy under investigation. 2. Changing the initialisation value of KEComErrNotFoundScanTimer is ok as it is not returned by symbian.</comment>
+      <status>OK</status>
+      <comment>Removal of constants KEComErrAlreadyReceiving, KEComErrDriveNotFound, KEComErrIndexEntryNotFound,KEComErrInstantiationPointerNotAvailable,KEComErrInstantiationPointerNotFound,KEComErrInvalidIIC,KEComErrInvalidRegistryData, KEComErrInvalidUnloadPolicy is ok as they are made internal due to header split. 2. Changing the initialisation value of KEComErrNotFoundScanTimer is ok as it is not returned by symbian.</comment>
     </version>
     <version checksum="Sx-Zb+JDfiC8R">
-      <status>NOK</status>
-      <comment>Removal of constants KEComErrAlreadyReceiving, KEComErrDriveNotFound, KEComErrIndexEntryNotFound,KEComErrInstantiationPointerNotAvailable,KEComErrInstantiationPointerNotFound,KEComErrInvalidIIC,KEComErrInvalidRegistryData, KEComErrInvalidUnloadPolicy under investigation. 2. Changing the initialisation value of KEComErrNotFoundScanTimer is ok as it is not returned by symbian.</comment>
+      <status>OK</status>
+      <comment>Removal of constants KEComErrAlreadyReceiving, KEComErrDriveNotFound, KEComErrIndexEntryNotFound,KEComErrInstantiationPointerNotAvailable,KEComErrInstantiationPointerNotFound,KEComErrInvalidIIC,KEComErrInvalidRegistryData, KEComErrInvalidUnloadPolicy is ok as they are made internal due to header split. They are moved to EComInternalErrorCodes.h. 2. Changing the initialisation value of KEComErrNotFoundScanTimer is ok as it is not returned by symbian.</comment>
     </version>
   </headerfile>
+  
   <headerfile name="des.h">
     <version checksum="PrBAKcqB00ybv">
       <status>OK</status>
@@ -3434,6 +3775,10 @@
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
+    <version checksum="aivuwBvD+fqUp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="d32locd.h">
@@ -3469,12 +3814,30 @@
       <status>OK</status>
       <comment>Class size changed.Studied and approved</comment>
     </version>
+     <version checksum="VKsnPe+AwhwsL">
+      <status>NOK</status>
+      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="datastor.h">
     <version checksum="C3+w9ZZDs7Sid">
       <status>OK</status>
       <comment>Though the constant has changed, it is marked @internal component. So this is OK.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="dns_qry.h">
+    <version checksum="QFfWuXbByLvZ1">
+      <status>OK</status>
+      <comment>Removed component is marked @internal component and moved to dns_qry_internal.h.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="d32dbms.h">
+    <version checksum="mTZgNyhDPkEUg">
+      <status>OK</status>
+      <comment>Removed component is marked @internal component and moved to d32dbmsconstants.h</comment>
     </version>
   </headerfile>
   
@@ -3498,6 +3861,10 @@
     <version checksum="LTnDXPZCBwHPg">
       <status>OK</status>
       <comment>1.SessionType changed its field type from TInt to TUint8 to accomodate other new variables, it's ok.2. Concerned class and enum are marked as internal tech</comment>
+    </version>
+    <version checksum="LTnDXPZC2oXjI">
+      <status>OK</status>
+      <comment>1.SessionType changed its field type from TInt to TUint8 to accomodate other new variables, it's ok.2. Concerned class and enum are marked as internal tech and moved to e32base_private.h</comment>
     </version>
   </headerfile>
 
@@ -3558,6 +3925,14 @@
       <status>OK</status>
       <comment>TChunkCreateAttributes is part of internal technology..</comment>
     </version>
+    <version checksum="AVmjDHYDgleml">
+      <status>OK</status>
+      <comment>Removed components are marked as internal.</comment>
+    </version>
+    <version checksum="FvovPaHDgleml">
+      <status>OK</status>
+      <comment>Removed components are marked as internal.</comment>
+    </version>
   </headerfile>
 
 <headerfile name="e32const.h">
@@ -3589,6 +3964,10 @@
       <status>OK</status>
       <comment>KRealFormatTypeFlagsMask changed its value.Mask is widened to allow new format option KRealInjectiveLimit.</comment>
     </version>
+    <version checksum="YCVjR4nCH5Xr9">
+      <status>OK</status>
+      <comment>KRealFormatTypeFlagsMask changed its value.Mask is widened to allow new format option KRealInjectiveLimit.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="e32def.h">
@@ -3609,6 +3988,10 @@
       <comment>Removed macros are marked as internal and deprecated or moved to e32def_private.h.</comment>
     </version>
     <version checksum="X1OLzfqCqxSEI">
+      <status>OK</status>
+      <comment>Removed macros are marked as internal and deprecated or moved to e32def_private.h.</comment>
+    </version>
+    <version checksum="X1OLzfqBKG9QF">
       <status>OK</status>
       <comment>Removed macros are marked as internal and deprecated or moved to e32def_private.h.</comment>
     </version>
@@ -3646,6 +4029,10 @@
     <version checksum="JpXG-E+Clbuds">
       <status>OK</status>
       <comment>Bug with unions in HeaderAnalyser.</comment>
+    </version>
+    <version checksum="lxYzwhqCSLTSc">
+      <status>OK</status>
+      <comment>1.Nameless union modified to include a new member.  The union is in protected section --> should be OK.2.Spare data member is replaced.</comment>
     </version>
   </headerfile>
   
@@ -3699,6 +4086,10 @@
       <comment>File is marked @internalTechnology.</comment>
     </version>
     <version checksum="7Wni5CPBDo5Z-">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
+    <version checksum="WA+tNQNBDo5Z-">
       <status>OK</status>
       <comment>File is marked @internalTechnology.</comment>
     </version>
@@ -3767,11 +4158,19 @@
       <status>OK</status>
       <comment>Class is moved to split header.</comment>
     </version>
+    <version checksum="zMG6uXSAgDaFA">
+      <status>OK</status>
+      <comment>Class is moved to split header eikautomenutitlearray.h.</comment>
+    </version>
   </headerfile>
   <headerfile name="eikdef.h">
     <version checksum="Y9sYTICAZteqC">
       <status>OK</status>
       <comment>KEikEditableControlBorder is moved to uikon/eikdefconst.h .Other macors are marked as internal tech.</comment>
+    </version>
+     <version checksum="Y9sYTICBCWe98">
+      <status>OK</status>
+      <comment>Constants marked as internal or moved to eikdefconst.h</comment>
     </version>
   </headerfile>
   <headerfile name="eikdoc.h">
@@ -3791,6 +4190,10 @@
       <status>OK</status>
       <comment>Both concerned classes are moved to split header..</comment>
     </version>
+    <version checksum="YG6xyT0CDzvWy">
+      <status>OK</status>
+      <comment>Both concerned classes and KEikBubbleHelpUid are moved to split header eikmischelp.h.</comment>
+    </version>
   </headerfile>
   <headerfile name="mmf\common\mmfdurationinfocustomcommands.h">
     <version checksum="LZGKMtnCr9PHu">
@@ -3801,6 +4204,10 @@
       <status>OK</status>
       <comment>All removed classes are moved to included header.</comment>
     </version>
+    <version checksum="LaF001OAF55TR">
+      <status>OK</status>
+      <comment>1)classes CMMFDurationInfoCustomCommandParser2, KUidInterfaceMMFDurationInfoControl2 and MMMFDurationInfoCustomCommandImplementor2 are moved to mmfdurationinfocustomcommandsimpl.h 2)Enum TMMFDurationInfoMessages marked internal.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="mctcertapps.h">
@@ -3808,7 +4215,19 @@
       <status>OK</status>
       <comment>File is marked as internal tech.</comment>
     </version>
+    <version checksum="pTJ6gE2Balf2Y">
+      <status>OK</status>
+      <comment>File is marked as internal tech and constants moved to mctcertappinterface.h.</comment>
+    </version>
   </headerfile>
+  
+  <headerfile name="mmf\common\mmfdrmcustomcommands.h">
+    <version checksum="CclpigTBshjkY">
+      <status>OK</status>
+      <comment>Enum TMMFDRMControlMessages marked internal.</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="mcustomcommand.h">
     <version checksum="F23yaVqC-8tTt">
       <status>OK</status>
@@ -3847,12 +4266,51 @@
       <status>OK</status>
       <comment>class CIclRecognizerUtil is marked as internal tech..</comment>
     </version>
+    <version checksum="JF2Cr5eAmbO4D">
+      <status>OK</status>
+      <comment>class CIclRecognizerUtil is marked as internal tech and moved to iclrecognizerutil.h.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="e32power.h">
     <version checksum="a3-l3qbCtmLYc">
       <status>OK</status>
       <comment>New enum added at the end. Onlt the max value has changed. This is ok.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="http\rhttpsession.h">
+    <version checksum="tqyXwlcC3EOTe">
+      <status>OK</status>
+      <comment>Function SetupDefaultProxyFromCommsDatL marked internal.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="hlplch.h">
+    <version checksum="S9NkxD1AQ4Lqd">
+      <status>OK</status>
+      <comment>1)Class CHlpCmdLine and constant KMaxCmdLineLength, KHelpLauncherResource marked as internal and moved to hlplch_internal.h</comment>
+    </version>
+  </headerfile>
+
+  <headerfile name="hlpmodel.h">
+    <version checksum="w8DtmYhCU3jt7">
+      <status>OK</status>
+      <comment>Removal of constants is ok as it is marked internal and moved to hlpmodel_internal.h</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="ecamimageprocessing.h">
+    <version checksum="9+zfYT7DEHpJO">
+      <status>OK</status>
+      <comment>Removed constants marked as internal or moved to ecamimageprocessingconst.h</comment>
+    </version>
+  </headerfile>
+  
+   <headerfile name="icl\imagecodec.h">
+    <version checksum="5mqs3XLDKTeK+">
+      <status>OK</status>
+      <comment>Class TImageParameterData marked as internal</comment>
     </version>
   </headerfile>
 
@@ -3932,6 +4390,10 @@
       <status>OK</status>
       <comment>1.RChunk::TAttribs is marked @internalTechnology.2. Spare data member has been replaced.</comment>
     </version>
+    <version checksum="ltcxqVTDSpQwB">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to e32std_private.h </comment>
+    </version>
   </headerfile>
   
   <headerfile name="e32std.inl">
@@ -3977,6 +4439,10 @@
     <version checksum="f5YwWwMBWQjzV">
       <status>OK</status>
       <comment>All removed class is marked as prototype, deleted enum is marked as internal..</comment>
+    </version>
+    <version checksum="f5YwWwMDdOsR4">
+      <status>OK</status>
+      <comment>1)Removed consts marked as internal and moved to ecamdef.h 2) MCameraBuffer2 and MReserveObserver moved to ecamconst.h. </comment>
     </version>
   </headerfile>
   
@@ -4100,7 +4566,20 @@
       <status>OK</status>
       <comment>CEikCbaButton is marked as internal tech..</comment>
     </version>
+    <version checksum="OSIcTF+Dn5GWI">
+      <status>OK</status>
+      <comment>CEikCbaButton is marked as internal tech..</comment>
+    </version>
+    <version checksum="YhddW5jDn5GWI">
+      <status>OK</status>
+      <comment>CEikCbaButton is marked as internal tech..</comment>
+    </version>
+    <version checksum="begCIbqDn5GWI">
+      <status>OK</status>
+      <comment>CEikCbaButton is marked as internal tech..</comment>
+    </version>
   </headerfile>
+  
   <headerfile name="icl\icl_uids.hrh">
     <version checksum="o-AWvJvDXPa3M">
       <status>OK</status>
@@ -4199,6 +4678,10 @@
       <status>OK</status>
       <comment>KUikonLibraryUid is marked as internal component.</comment>
     </version>
+    <version checksum="FNBGnNDCRP999">
+      <status>OK</status>
+      <comment>KUikonLibraryUid is marked as internal component and EikLibraryEntryPoint is moved to eikenvinterface.h .</comment>
+    </version>
   </headerfile>
 
   <headerfile name="eikkwin.h">
@@ -4212,6 +4695,23 @@
     <version checksum="*******DY+Hdv">
       <status>OK</status>
       <comment>This function did not have an implementation (ie. it was not really exported). So it cannot have been used by third parties and it is ok to remove it.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="mw\eiklbx.h">
+    <version checksum="viLk5tSABHMYs">
+      <status>OK</status>
+      <comment>Class has default public constructor,so overriding a virtual function is not allowed.But it won't affect 3rd party application.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="stdapis\sys\socket.h">
+    <version checksum="qO5QKWdCWwiBy">
+      <status>OK</status>
+      <comment>Tool issue. Tool is comparing two irrelevant files.</comment>
+    </version>
+    <version checksum="qs+Z5msCWwiBy">
+      <status>OK</status>
+      <comment>Tool issue. Tool is comparing two irrelevant files.</comment>
     </version>
   </headerfile>
 
@@ -4263,6 +4763,10 @@
       <status>OK</status>
       <comment>Removed constants marked @internalComponent.</comment>
     </version>
+    <version checksum="Hve9Ib0DOGIqE">
+      <status>OK</status>
+      <comment>Removed constant marked @internalComponent and moved to eikscchange.h</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\eikon.hrh">
@@ -4280,6 +4784,13 @@
     <version checksum="Fx85oFgAxetVp">
       <status>OK</status>
       <comment>File contains only #include</comment>
+    </version>
+  </headerfile>
+  
+  	<headerfile name="eikfctry.h">
+    <version checksum="Z2xug1bASqqdh">
+      <status>OK</status>
+      <comment>Enum values moved to eikctrlstatus.h</comment>
     </version>
   </headerfile>
   
@@ -4388,6 +4899,18 @@
     <version checksum="wKQ77frCw5aGM">
       <status>OK</status>
       <comment>All enum members added to the end.</comment>
+    </version>
+    <version checksum="IDmujfVCw5aGM">
+      <status>OK</status>
+      <comment>Previous enum-values are intact. so no break .</comment>
+    </version>
+    <version checksum="1cu9xe5Cw5aGM">
+      <status>OK</status>
+      <comment>Previous enum-values are intact. so no break .</comment>
+    </version>
+    <version checksum="NfbhrWeCw5aGM">
+      <status>OK</status>
+      <comment>Previous enum-values are intact. so no break .</comment>
     </version>
    </headerfile>
   
@@ -4736,12 +5259,23 @@
       <status>OK</status>
       <comment>1. CSubConParameterBundle is moved to included header. 2.Internally subobject SMetaDataECom,RSessionBase,RSubSessionBase are intact. 3.KCommsNetworkLayerId is moved to included header 4.Connection build number,Major connection version number and minor version number constants are internal component 5.TSockIO,TSockIOBufC marked as internal component</comment>
     </version>
+    <version checksum="c8DCqLrBDF4CT">
+      <status>OK</status>
+      <comment>1. CSubConParameterBundle is moved to included header es_sock_partner.h. 2.Internally subobject SMetaDataECom,RSessionBase,RSubSessionBase are intact. 3.KCommsNetworkLayerId is moved to included header 4.Connection build number,Major connection version number, KInternalIoctlBit and minor version number constants are internal component 5.TSockIO,TSockIOBufC marked as internal component</comment>
+    </version>
   </headerfile>
 
   <headerfile name="etelmm.h">
     <version checksum="*******C2JDUn">
       <status>OK</status>
       <comment>Cut-down version of these classes are provided for compilation consistency. They cannot be used as such.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="es_enum.h">
+    <version checksum="XFh4kpFC6qd+B">
+      <status>OK</status>
+      <comment>All removed components markes as internal and moved to es_enum_internal.h</comment>
     </version>
   </headerfile>
   
@@ -4832,6 +5366,18 @@
     <version checksum="1dhGouNDmzhGJ">
       <status>OK</status>
       <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech </comment>
+    </version>
+    <version checksum="1dhGouNAIo0Fo">
+      <status>OK</status>
+      <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
+    </version>
+    <version checksum="2JvRuaLAIo0Fo">
+      <status>OK</status>
+      <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
+    </version>
+    <version checksum="AxN+w+YAIo0Fo">
+      <status>OK</status>
+      <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
     </version>
   </headerfile>
   
@@ -4946,16 +5492,20 @@
       <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. </comment>
     </version>
     <version checksum="vrghzuhAn1cXm">
-      <status>NOK</status>
-      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ).Not Ok. 4. Inline function removed. Under investigation. 5. function signature of CFileCB::InitL changed, it is a bc break. </comment>
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4. Inline function removed. Under investigation. 5. function signature of CFileCB::InitL changed. Its ok as the API is not usable outside the file server.  </comment>
     </version>
     <version checksum="1s5YgYWAn1cXm">
-      <status>NOK</status>
-      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ).Not Ok. 4. Inline function removed. Under investigation. 5. function signature of CFileCB::InitL changed, it is a bc break. </comment>
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ).. 4. Inline function removed. Under investigation. 5. function signature of CFileCB::InitL changed. Its ok as the API is not usable outside the file server.  </comment>
     </version>
     <version checksum="eGuZnJODsPeYN">
-      <status>NOK</status>
-      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ).Not Ok. 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed, it is a bc break. NOK part:-1.class ::CMountCB::MFileClamp  removed.2.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 3.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 4.Class has been removed ::SFileShareLock5.Class has been removed ::TDismountParams6.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )7. inline function from class CFileCB removed.</comment>
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed,:-1.class ::CMountCB::MFileClamp  removed.2.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 3.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 4.Class has been removed ::SFileShareLock5.Class has been removed ::TDismountParams6.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )7. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server. </comment>
+    </version>
+    <version checksum="oJQHOMLDsPeYN">
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed,:-1.class ::CMountCB::MFileClamp  removed.2.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 3.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 4.Class has been removed ::SFileShareLock5.Class has been removed ::TDismountParams6.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )7. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server. </comment>
     </version>
   </headerfile>
   
@@ -4998,6 +5548,10 @@
       <status>OK</status>
       <comment>File is marked @internalTechnology.</comment>
     </version>
+    <version checksum="R9JmAkEDY5ptF">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="f32ver.h">
@@ -5011,7 +5565,12 @@
       <status>OK</status>
       <comment>MGulLogicalBorder is marked as internal tech..</comment>
     </version>
+    <version checksum="znQ-et8ACxZLV">
+      <status>OK</status>
+      <comment>MGulLogicalBorder and GulTls is marked as internal tech..</comment>
+    </version>
   </headerfile>
+  
   <headerfile name="oem\browseruisdkcrkeys.h">
     <version checksum="M4xnw+eBrZHQs">
       <status>OK</status>
@@ -5036,6 +5595,10 @@
     <version checksum="jKUitlYBrZHQs">
       <status>OK</status>
       <comment>The removed key was for the old browser, and was accidentally left in the SDK. Removing it will thus have no impact on third parties.</comment>
+    </version>
+    <version checksum="1gfQbvIARRi+I">
+      <status>OK</status>
+      <comment>Changing the value of constant KBrowserNGScriptLog will have no impact on third parties </comment>
     </version>
     
   </headerfile>
@@ -5082,6 +5645,10 @@
       <status>OK</status>
       <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component. </comment>
     </version>
+    <version checksum="bEe4y98AD1i7s">
+      <status>OK</status>
+      <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component. </comment>
+    </version>
   </headerfile>
   
   <headerfile name="fbsmessage.h">
@@ -5120,6 +5687,10 @@
     <version checksum="kq3tU6MD5simj">
       <status>OK</status>
       <comment>Changed Enum marked @internal component.</comment>
+    </version>
+    <version checksum="ea1xd3-Cip1om">
+      <status>OK</status>
+      <comment>Everything in this file is marked as internal component.So, removal of this file won't break any bc..</comment>
     </version>
   </headerfile>
 
@@ -5198,6 +5769,14 @@
       <status>NOK</status>
       <comment>Exported functions removed.</comment>
     </version>
+     <version checksum="uAyKaHiCAFtFq">
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved.</comment>
+    </version>
+     <version checksum="2lkauK2BB+edd">
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="frmtlay.h">
@@ -5230,6 +5809,10 @@
       <comment>1. Reserved virtual function has been replaced with  another virtual function MFormCustomDraw::DrawText2.TLayDocTextSource is part of internal component.3.Changed offset data fields are not used in any inline function..</comment>
     </version>
     <version checksum="iIgtCr2AwneO+">
+      <status>OK</status>
+      <comment>1. Reserved virtual function has been replaced with  another virtual function MFormCustomDraw::DrawText2.TLayDocTextSource is part of internal component.3.Changed offset data fields are not used in any inline function..</comment>
+    </version>
+    <version checksum="iIgtCr2C7lOBB">
       <status>OK</status>
       <comment>1. Reserved virtual function has been replaced with  another virtual function MFormCustomDraw::DrawText2.TLayDocTextSource is part of internal component.3.Changed offset data fields are not used in any inline function..</comment>
     </version>
@@ -5334,6 +5917,10 @@
       <status>OK</status>
       <comment>1) OK to replace reserved exported virtual functions with real functions. </comment>
     </version>
+		<version checksum="TE3WO9IAV8vtb">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to gdistructs.h or gdiconsts.h</comment>
+    </version>
   </headerfile>
 
   <headerfile name="gdi.inl">
@@ -5342,6 +5929,14 @@
       <comment>It is fine to remove inline functions, as long as the original ones still work.</comment>
     </version>
   </headerfile>
+  
+  <headerfile name="frmconst.h">
+    <version checksum="ILNzlpmCYhnMe">
+      <status>OK</status>
+      <comment>Removed constants are marked as internal.</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="gsmumsg.h">
     <version checksum="OFRcC9ZCG2pUd">
       <status>OK</status>
@@ -5374,6 +5969,13 @@
     <version checksum="vxcIRzRBjorbb">
       <status>OK</status>
       <comment>Include guard macro changed.</comment>
+    </version>
+ </headerfile>
+ 
+ <headerfile name="faxdefn.h">
+    <version checksum="4fIqSzpAVy62d">
+      <status>OK</status>
+      <comment>Removed constant marked as internal and moved to fax_reversebytes.h</comment>
     </version>
  </headerfile>
 
@@ -5471,31 +6073,43 @@
       <status>OK</status>
       <comment>Enum member name changed.</comment>
     </version>
+    <version checksum="LsH6tQdBnEZ8+">
+      <status>OK</status>
+      <comment>Enum member name changed.</comment>
+    </version>
   </headerfile>
    
   <headerfile name="imconnection.h">  
   	<version checksum="A6PYArqCip1om">
-      <status>NOK</status>
-      <comment>File removed</comment>
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
+    </version>
+    <version checksum="A58G+dWCip1om">
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
     </version>
   </headerfile>
   <headerfile name="imerrors.h">  
   	<version checksum="uW0uN-sCip1om">
-      <status>NOK</status>
-      <comment>File removed</comment>
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
     </version>
   </headerfile>
   <headerfile name="imlauncherplugin.h">  
   	<version checksum="hHvqvraCip1om">
-      <status>NOK</status>
-      <comment>File removed</comment>
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
+    </version>
+    <version checksum="hF04QThCip1om">
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
     </version>
   </headerfile>
   
   <headerfile name="imclient.h">  
   	<version checksum="oqS+NCGCip1om">
-      <status>NOK</status>
-      <comment>File removed</comment>
+      <status>OK</status>
+      <comment>File removed. But it does not pose a problem since its not use by third party developers</comment>
     </version>
   </headerfile>
   <headerfile name="hash.h">
@@ -5557,12 +6171,29 @@
       <status>OK</status>
       <comment>Include gaurd macro changed.</comment>
     </version>
+    <version checksum="lJY6bGOAc1jyM">
+      <status>OK</status>
+      <comment>Include gaurd macro changed.</comment>
+    </version>
   </headerfile>
   
    <headerfile name="libc\sys\types.h">
     <version checksum="Mz8bv0GDK09gg">
       <status>OK</status>
       <comment>All macros are marked as internal all.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="libc\netinet\in.h">
+    <version checksum="rrr8igBA2c321">
+      <status>OK</status>
+      <comment>Compilation error..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="libc\netinet\tcp.h">
+    <version checksum="2S7-xg2A2c321">
+      <status>OK</status>
+      <comment>Compilation error..</comment>
     </version>
   </headerfile>
 
@@ -5848,8 +6479,8 @@
   </headerfile>
   <headerfile name="imcmutil.h">
     <version checksum="3NhB+K4CGjhg8">
-      <status>NOK</status>
-      <comment>1.Class CImEmailAutoSend marked as internal component.2.iteral KMsvAutoSendExe removed.constant KMsvAutoSendExeUid removed. Under investigation.</comment>
+      <status>OK</status>
+      <comment>1.Class CImEmailAutoSend marked as internal component.2.Literal KMsvAutoSendExe and constant KMsvAutoSendExeUid marked as intrernal</comment>
     </version>
   </headerfile>
   <headerfile name="mmf\common\mmfbase.h">
@@ -5875,7 +6506,12 @@
       <status>OK</status>
       <comment>KMiutEmptyString macro removed. It is ok.</comment>
     </version>
+    <version checksum="hWbBOvaC60bBM">
+      <status>OK</status>
+      <comment>All removed constants marked internal and moved to timrfc822datefield.h.</comment>
+    </version>
   </headerfile>
+  
   <headerfile name="libc\unistd.h">
     <version checksum="Eb4J8OKAxetVp">
       <status>OK</status>
@@ -5891,6 +6527,41 @@
     <version checksum="gsbDVkTDaVGgY">
       <status>OK</status>
       <comment>Macro removed. Should not be a problem.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="logeng.h">
+    <version checksum="n5+44jWAFhAkf">
+      <status>OK</status>
+      <comment>Constants removed marked internal or moved to logengevents.h.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mda\common\base.hrh">
+    <version checksum="xx7PTwwAJ8K+x">
+      <status>NOK</status>
+      <comment>Removal of macro is under investigation.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="lbsfields.h">
+    <version checksum="8wqcyJGDkC+YD">
+      <status>OK</status>
+      <comment>Class TPositionFieldIndex marked as internal and moved to lbsfieldindex.h</comment>
+    </version>
+    <version checksum="8wqcyJGA1rk2U">
+      <status>OK</status>
+      <comment>Class TPositionFieldIndex marked as internal and moved to lbsfieldindex.h</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="in_sock.h">
+    <version checksum="2b6C58ZBXew7H">
+      <status>OK</status>
+      <comment>Removed constants marked as internal</comment>
+    </version>
+    <version checksum="43pAkETBXew7H">
+      <status>OK</status>
+      <comment>Removed constants marked as internal</comment>
     </version>
   </headerfile>
 
@@ -5912,6 +6583,10 @@
     <version checksum="qifozPiD25ZTk">
       <status>OK</status>
       <comment>Type TContactItemID has been changed to TLogContactItemID and moved from file cntdef.h to file logcntdef.h.  Both the old and the new definition are identical (typedef TInt) --> OK</comment>
+    </version>
+    <version checksum="GJbpvT7DJR8P+">
+      <status>OK</status>
+      <comment>Removed constants marked as internal and moved to logwraplimits.h</comment>
     </version>
   </headerfile>
   <headerfile name="logwrap.inl">
@@ -5942,7 +6617,12 @@
       <status>OK</status>
       <comment>Concerned class is moved to included header..</comment>
     </version>
+    <version checksum="1eXe9jFA-4KkI">
+      <status>OK</status>
+      <comment>1)Class CMMFCustomCommandParserManager is moved to mmfcustomcommandparsermanager.h. 2) Removed constants marked as internal</comment>
+    </version>
   </headerfile>
+  
   <headerfile name="mdopplerobserver.h">
   <version checksum="dwNSe9KCgwCaa">
       <status>OK</status>
@@ -6117,13 +6797,22 @@
       <status>OK</status>
       <comment>CImConvertCharconv and KDefaultPlainCharset moved to included header.</comment>
     </version>
+    <version checksum="94ZjAFlBHyCWr">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to cimconvertcharconv.h</comment>
+    </version>
   </headerfile>
   <headerfile name="miutmsg.h">
     <version checksum="XnG7mHBDAHGav">
       <status>OK</status>
       <comment>All concerned classes moved to included header..</comment>
     </version>
+    <version checksum="XnG7mHBAFwkrg">
+      <status>OK</status>
+      <comment>All removed classes and constants marked internal and moved to cimmessagepart.h.</comment>
+    </version>
   </headerfile>
+  
   <headerfile name="metadatabase.h">
     <version checksum="uuJwCnoAvTwAx">
       <status>OK</status>
@@ -6142,6 +6831,10 @@
       <comment>Removal of References of class CCDCDMA2000PacketServiceRecord has been studied and approved..</comment>
     </version>
     <version checksum="EuttrvzBCV38H">
+      <status>OK</status>
+      <comment>1.CMDBBinFieldBase,CMDBNumFieldBase,cCMDBRecordLinkBasemCMDBTextFieldBase:-class is marked as  internal component2.CData( ) :- is marked as internal component.3.CDMA support removed.</comment>
+    </version>
+    <version checksum="EuttrvzCx1Yg5">
       <status>OK</status>
       <comment>1.CMDBBinFieldBase,CMDBNumFieldBase,cCMDBRecordLinkBasemCMDBTextFieldBase:-class is marked as  internal component2.CData( ) :- is marked as internal component.3.CDMA support removed.</comment>
     </version>
@@ -6263,6 +6956,10 @@
       <status>OK</status>
       <comment>classes CMMFControllerProxyServer,CMMFControllerProxySession,CMMFControllerProxyShutdown,CMMFEventReceiver and macro KMMFControllerProxyVersion marked as internal tech..</comment>
     </version>
+    <version checksum="jx6HzWDDPGdTQ">
+      <status>OK</status>
+      <comment>classes CMMFControllerProxyServer,CMMFControllerProxySession,CMMFControllerProxyShutdown,CMMFEventReceiver and macro KMMFControllerProxyVersion and enum TMMFControllerProxyMessages amd removed constants marked as internal tech.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="mmf\common\mmfipc.h">
@@ -6284,9 +6981,17 @@
       <status>OK</status>
       <comment>Classes CMMFStereoToMonoConverter,CMMFChannelAndSampleRateConverter,CMMFChannelAndSampleRateConverterFactory,CMMFMonoToMonoRateConverter,CMMFMonoToStereoConverter,CMMFMonoToStereoRateConverter,CMMFStereoToMonoRateConverter,CMMFStereoToStereoRateConverter marked as internal all.</comment>
     </version>
+    <version checksum="WIn3r6YBDC9gV">
+      <status>OK</status>
+      <comment>Classes CMMFStereoToMonoConverter,CMMFChannelAndSampleRateConverter,CMMFChannelAndSampleRateConverterFactory,CMMFMonoToMonoRateConverter,CMMFMonoToStereoConverter,CMMFMonoToStereoRateConverter,CMMFStereoToMonoRateConverter,CMMFStereoToStereoRateConverter marked as internal all.</comment>
+    </version>
   </headerfile>
   <headerfile name="s32file.h">
     <version checksum="zmbgSHtCq0EfE">
+      <status>OK</status>
+      <comment>Macro DEFAULT_FILE_BUF_SIZE is used for constant ,which is marked as internal component..</comment>
+    </version>
+    <version checksum="zmbgSHtAAm65u">
       <status>OK</status>
       <comment>Macro DEFAULT_FILE_BUF_SIZE is used for constant ,which is marked as internal component..</comment>
     </version>
@@ -6323,6 +7028,31 @@
       <status>OK</status>
       <comment>Compilation error. It's not BC break.</comment>
     </version>
+    <version checksum="EZgUllqA2c321">
+      <status>OK</status>
+      <comment>Compilation error. It's not BC break.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="redircli.h">
+    <version checksum="6x2o16ECICEWB">
+      <status>OK</status>
+      <comment>Class RRedirSession2 marked as internal.</comment>
+    </version>
+  </headerfile>
+  
+   <headerfile name="miut_err.h">
+    <version checksum="pJ6vOU0CXJkJE">
+      <status>OK</status>
+      <comment>Enum TImcmPanic marked as internal and moved to miut_errconsts.h</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="pushentry.h">
+    <version checksum="OFga2ZpD2IS7F">
+      <status>OK</status>
+      <comment>1)Enum TPushMsgStatus,TPushEntryPanic marked internal. 2)Removal of KPushPanicMoniker is not a problem as it is marked as internal</comment>
+    </version>
   </headerfile>
   
 	<headerfile name="mmf\common\mmfcontrollerpluginresolver.h">
@@ -6333,6 +7063,10 @@
     <version checksum="TJ2ekSWDL3IW5">
       <status>OK</status>
       <comment>Class is marked as internalAll.</comment>
+    </version>
+     <version checksum="TJ2ekSWAmz12g">
+      <status>OK</status>
+      <comment>Classes CMmfRecognizerUtil and TaggedDataParser is marked as internalAll.</comment>
     </version>
   </headerfile>
   
@@ -6502,6 +7236,10 @@
       <status>OK</status>
       <comment>1) MObexNotify has been moved to mobexnotify.h, but is marked @internalTechnology so no need to check manually. 2) Class not derivable by third parties, so the signature of ConstuctL() does not matter. 3) The signatures of TransportUp() and TransportDown() have changed, but they are marked @internalTechnology. </comment>
     </version>
+    <version checksum="sMpYiN8BE7oCR">
+      <status>NOK</status>
+      <comment>Concerned class is not designed for user derivation, and cannot be instantiated in itself.But other classes e.g.CObexClient and CObexServer of same dll could use these class, and thus changing the v-table of aforementioned classes, so it is  a bc break. </comment>
+    </version>
   </headerfile>
 
   <headerfile name="obexclient.h">
@@ -6513,12 +7251,21 @@
       <status>OK</status>
       <comment>Signature of a private virtual function has changed. This is fine, since the class cannot be derived from.</comment>
     </version>
+    <version checksum="qWG0W6hBpkT1c">
+      <status>NOK</status>
+      <comment>V-table layout change has  propagated.Needs to fix the Cobex class.</comment>
+    </version>
+    
   </headerfile>
 
   <headerfile name="obexconstants.h">
     <version checksum="J-tWnIOBIY23S">
       <status>OK</status>
       <comment>Marked @internalAll.</comment>
+    </version>
+     <version checksum="1GsVPPbBq3hsp">
+      <status>OK</status>
+      <comment>Constants Marked @internalAll.</comment>
     </version>
   </headerfile>
 
@@ -6541,6 +7288,10 @@
     <version checksum="Dtn3mTrCwTer0">
       <status>OK</status>
       <comment>IMPORT keyword removed from destructor. Class CObexServer is non-sharable class..</comment>
+    </version>
+    <version checksum="-ZjONbeDwncc8">
+      <status>NOK</status>
+      <comment>V-table layout change has  propagated to derived class CObexServer.Needs to fix the Cobex class. IMPORT_C keyword removed from the destructor.</comment>
     </version>
   </headerfile>
 
@@ -6581,11 +7332,11 @@
    <headerfile name="osextensions\sensrvgeneralproperties.h">
     <version checksum="3r4Fwx-AYwMSa">
       <status>NOK</status>
-      <comment>Changing the initialisation value  of const KSensrvPropIdPower is  a bc break. </comment>
+      <comment>Changing the initialisation value  of const KSensrvPropIdPower is  a bc break.Applicable after 5.0 product </comment>
     </version>
     <version checksum="8e1U4CqAYwMSa">
       <status>NOK</status>
-      <comment>Changing the initialisation value  of const KSensrvPropIdPower is  a bc break. </comment>
+      <comment>Changing the initialisation value  of const KSensrvPropIdPower is  a bc break.Applicable after 5.0 product</comment>
     </version>
    </headerfile>
    
@@ -6602,12 +7353,12 @@
   
   <headerfile name="sensrvgeneralproperties.h">
     <version checksum="3r4Fwx-AYwMSa">
-      <status>OK</status>
-      <comment>Changing the initialisation value  of const KSensrvPropIdPower is not a bc break. </comment>
+      <status>NOK</status>
+      <comment>Changing the initialisation value  of const KSensrvPropIdPower is not a bc break.Applicable after 5.0 product</comment>
     </version>
     <version checksum="8eE0oqaAYwMSa">
-      <status>OK</status>
-      <comment>Changing the initialisation value  of const KSensrvPropIdPower is not a bc break. </comment>
+      <status>NOK</status>
+      <comment>Changing the initialisation value  of const KSensrvPropIdPower is not a bc break.Applicable after 5.0 product. </comment>
     </version>
   </headerfile>
   
@@ -6735,6 +7486,14 @@
     <version checksum="GDEsLL8Am--2L">
       <status>OK</status>
       <comment>1.Macro guard changed. 2.TOpenFontMetrics::iBaselineCorrection is added, and reserved data member has been used, thus alignment of class changed. 3. Virtual function COpenFontRasterizer::ExtendedInterface( ::TUid, ::TAny* ) added in place of reserved funtion. NO break. 4..TOpenFontAttachment is marked as internal component </comment>
+    </version>
+    <version checksum="GDEsLL8CVDNQL">
+      <status>OK</status>
+      <comment>1)Data type of COpenFont::iMetrics is still the same. 2)Constants and enum TOpenFontAttachment is marked as internal component. 3)Class COpenFontRasterizer moved to openfontrasterizer.h 4)TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added. In both classes, reserved data member has been used, thus alignment of class changed.</comment>
+    </version>
+    <version checksum="ddNb69PCVDNQL">
+      <status>OK</status>
+      <comment>1)Data type of COpenFont::iMetrics is still the same. 2)Constants and enum TOpenFontAttachment is marked as internal component. 3)Class COpenFontRasterizer moved to openfontrasterizer.h 4)TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added. In both classes, reserved data member has been used, thus alignment of class changed.</comment>
     </version>
   </headerfile>
   
@@ -6903,6 +7662,14 @@
       <status>OK</status>
       <comment>Enum member added at last..</comment>
     </version>
+    <version checksum="g07kAcUDWwxNJ">
+      <status>OK</status>
+      <comment>Enum member added at last..</comment>
+    </version>
+    <version checksum="h9KK6vWDWwxNJ">
+      <status>OK</status>
+      <comment>Enum member added at last..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\ptikeymappings.h">
@@ -6938,17 +7705,44 @@
       <status>OK</status>
       <comment>Removal of macro _STLP_BIG_ENDIAN . It is ok. </comment>
     </version>
+    <version checksum="dYUqCwCB8fU0i">
+      <status>OK</status>
+      <comment>Removal of macros is ok as it is seting for GCCE compiler/. </comment>
+    </version>
   </headerfile>
+   <headerfile name="stdapis\stlport\config\stl_gcce.h">
+   	 <version checksum="dYUqCwCB8fU0i">
+      <status>OK</status>
+      <comment>Removal of macros is ok as it is seting for GCCE compiler/. </comment>
+    </version>
+  </headerfile>
+   	
    <headerfile name="osextensions\stdapis\stlport\config\stl_rvct.h">
     <version checksum="5hiKjSUA8m-W-">
       <status>OK</status>
       <comment>Removal of macro _STLP_BIG_ENDIAN . It is ok. </comment>
     </version>
+    <version checksum="dYCUbOUB8fU0i">
+      <status>OK</status>
+      <comment>Removed macros belongs to ARM RVCT compiler settings. Its not a problem. </comment>
+    </version>
   </headerfile>
+  
+  <headerfile name="stdapis\stlport\config\stl_rvct.h">
+  	 <version checksum="dYCUbOUB8fU0i">
+      <status>OK</status>
+      <comment>Removed macros belongs to ARM RVCT compiler settings. Its not a problem. </comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="osextensions\stdapis\stlport\config\stl_winscw.h">
     <version checksum="g1F48m1A8m-W-">
       <status>OK</status>
       <comment>Removal of macro _STLP_BIG_ENDIAN . It is ok. </comment>
+    </version>
+    <version checksum="OX0-Z3rCmEfUk">
+      <status>OK</status>
+      <comment>All the removed macros were used for metroworks codewarrior. Hence it is ok. </comment>
     </version>
   </headerfile>
   
@@ -6956,6 +7750,25 @@
     <version checksum="UP+C8rAAj1a0x">
       <status>OK</status>
       <comment>"Reserved" private data member replaced with a real one. "Reserved" data member is of course not used in any inline functions.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="stdapis\stlport\config\stl_winscw.h">
+    <version checksum="OX0-Z3rCmEfUk">
+      <status>OK</status>
+      <comment>All the removed macros were used for metroworks codewarrior. Hence it is ok.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="osextensions\stdapis\stlport\config\stl_epoc.h">
+    <version checksum="-F0vdVaDQGU7L">
+      <status>OK</status>
+      <comment>Removed macros are settings for compiler.Hence is not a problem</comment>
+    </version>
+  </headerfile>
+  <headerfile name="stdapis\stlport\config\stl_epoc.h">
+    <version checksum="-F0vdVaDQGU7L">
+      <status>OK</status>
+      <comment>Removed macros are settings for compiler.Hence is not a problem</comment>
     </version>
   </headerfile>
 
@@ -7078,6 +7891,18 @@
       <comment>File has compilation errors.It's ok</comment>
     </version>
   </headerfile>
+  <headerfile name="stdapis\stlport\stl\_cwchar.h">
+    <version checksum="FCXvVMyADHf+G">
+      <status>OK</status>
+      <comment>There is no change in files.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="osextensions\stdapis\stlport\stl\_cwchar.h">
+    <version checksum="FCXvVMyADHf+G">
+      <status>OK</status>
+      <comment>There is no change in files.</comment>
+    </version>
+  </headerfile>
   
    <headerfile name="osextensions\stdapis\glib-2.0\gobject\gboxed.h">
     <version checksum="7uzghDVA2c321">
@@ -7090,11 +7915,28 @@
       <status>OK</status>
       <comment>These removal of macros are studied and approved.</comment>
     </version>
+    <version checksum="KvYRoobByU3n-">
+      <status>OK</status>
+      <comment>These removal of macros are studied and approved.</comment>
+    </version>
+    <version checksum="KvYRoobA3lOY4">
+      <status>OK</status>
+      <comment>These removal of macros could result in sourc break.There is no bc break.</comment>
+    </version>
   </headerfile>
+  
    <headerfile name="osextensions\stdapis\stlport\stl\_config.h">
     <version checksum="KvYRoobD8H-i6">
       <status>OK</status>
       <comment>These removal of macros are studied and approved.</comment>
+    </version>
+     <version checksum="KvYRoobByU3n-">
+      <status>OK</status>
+      <comment>Macros belong to compiler settings. Removal is not a problem.</comment>
+    </version>
+    <version checksum="KvYRoobA3lOY4">
+      <status>OK</status>
+      <comment>Macros belong to compiler settings. Removal is not a problem.</comment>
     </version>
   </headerfile>
   
@@ -7194,11 +8036,31 @@
       <status>OK</status>
       <comment>Virtual function added to non sharable class. It's ok</comment>
     </version>
+    <version checksum="Iz2hBc5C5kPTj">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
+     <version checksum="Iy+N5mdCnUzol">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
+     <version checksum="PdPGM78CnUzol">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
   </headerfile>
   <headerfile name="mw\cdownloadmgruidownloadslist.h">
     <version checksum="Iz2hBc5C5kPTj">
       <status>NOK</status>
       <comment>Virtual function added in between,so v-table changed.</comment>
+    </version>
+     <version checksum="Iy+N5mdCnUzol">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok.</comment>
+    </version>
+    <version checksum="PdPGM78CnUzol">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok.</comment>
     </version>
   </headerfile>
    <headerfile name="cdownloadmgruidownloadslist.h">
@@ -7214,7 +8076,16 @@
       <status>OK</status>
       <comment>The new secondary base class is ok, as class is not derivable and there are no changes to the positions of the existing virtual functions. As an effect of this the class size has also changed. This is also not a problem, as the class has no constructor and the vtable is not exported (NONSHARABLE_CLASS), so there is no way to instantiate the class in a third party application.</comment>
     </version>
+    <version checksum="Iz2hBc5C5kPTj">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
+    <version checksum="Iy+N5mdCnUzol">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
   </headerfile>
+  
   <headerfile name="mw\cdownloadmgruidownloadslist.h">
     <version checksum="8DiRkxNAKydBP">
       <status>NOK</status>
@@ -7237,9 +8108,17 @@
       <status>NOK</status>
       <comment>Parameter of virtual function has been changed.</comment>
     </version>
+    <version checksum="xJcfw3YBHoOZc">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>    
   </headerfile>
   <headerfile name="mw\downloadslistdlgobserver.h">
     <version checksum="pu6AOFvBHoOZc">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
+    <version checksum="xJcfw3YBHoOZc">
       <status>OK</status>
       <comment>Virtual function added to non sharable class. It's ok</comment>
     </version>
@@ -7422,11 +8301,21 @@
     <version checksum="T3g9f5NA2c321">
       <status>OK</status>
       <comment>File has compilation errors</comment>
-    </version>    
+    </version>  
+    <version checksum="Tx-vQZBA2c321">
+      <status>OK</status>
+      <comment>File has compilation errors</comment>
+    </version>  
   </headerfile>
   
   <headerfile name="osextensions\stdapis\stlport\fstream.h">
     <version checksum="vpHMY01A2c321">
+      <status>OK</status>
+      <comment>File has compilation errors</comment>
+    </version>
+  </headerfile>
+  <headerfile name="stdapis\resolv.h">
+    <version checksum="O7qa9zpA2c321">
       <status>OK</status>
       <comment>File has compilation errors</comment>
     </version>
@@ -7460,9 +8349,17 @@
       <status>OK</status>
       <comment>File has compilation errors</comment>
     </version>
+    <version checksum="pUINr7cA2c321">
+      <status>OK</status>
+      <comment>File has compilation errors</comment>
+    </version>
   </headerfile>
   <headerfile name="osextensions\stdapis\stlport\new.h">
     <version checksum="zdvtAckA2c321">
+      <status>OK</status>
+      <comment>File has compilation errors</comment>
+    </version>
+    <version checksum="zisvgJQA2c321">
       <status>OK</status>
       <comment>File has compilation errors</comment>
     </version>
@@ -7499,6 +8396,18 @@
   </headerfile>
   <headerfile name="osextensions\stdapis\stlport\using\h\iostream.h">
     <version checksum="dTdrP3WA2c321">
+      <status>OK</status>
+      <comment>File has compilation errors</comment>
+    </version>
+  </headerfile>
+   <headerfile name="osextensions\stdapis\stlport\runtime\exception.h">
+    <version checksum="ot0YftmA2c321">
+      <status>OK</status>
+      <comment>File has compilation errors</comment>
+    </version>
+  </headerfile>
+  <headerfile name="osextensions\stdapis\stlport\runtime\typeinfo.h">
+    <version checksum="xMbWXOVA2c321">
       <status>OK</status>
       <comment>File has compilation errors</comment>
     </version>
@@ -7945,7 +8854,11 @@
   <headerfile name="vtoken.h">
      <version checksum="RuLt8A4CXMELf">
       <status>NOK</status>
-      <comment>Under investigation.</comment>
+      <comment>Constant removed.</comment>
+    </version>
+    <version checksum="RuLt8A4CXMELf">
+      <status>NOK</status>
+      <comment>Constant removed.</comment>
     </version>
    </headerfile>
   
@@ -8125,10 +9038,23 @@
     </version>
   </headerfile>
   
+  <headerfile name="txtetext.h">
+   <version checksum="JL96NkKBw8tzs">
+      <status>OK</status>
+      <comment>constants marked as internal and moved to txtclipboard.h or txtetext_internal.h</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="stdapis\staticlibinit_gcce.h">
     <version checksum="MvSC7wQAxetVp">
       <status>OK</status>
       <comment>File contains only #defines.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="txtfmlyr.h">
+    <version checksum="t7cEg-bBo7z0D">
+      <status>OK</status>
+      <comment>KNormalParagraphStyleUid marked as internal and moved to txtfmlyr_internal.h.</comment>
     </version>
   </headerfile>
   
@@ -8168,6 +9094,10 @@
     <version checksum="Sisi+MEADh8rm">
       <status>OK</status>
       <comment>Guard macro changed.</comment>
+    </version>
+     <version checksum="LGJSe55CRzSIR">
+      <status>OK</status>
+      <comment>KClipboardUidTypeRichText, KClipboardUidTypeRichTextWithStyles, KRichTextMarkupDataUid, KRichTextStyleDataUid marked as internal</comment>
     </version>
   </headerfile>
   
@@ -8212,6 +9142,10 @@
       <status>OK</status>
       <comment>Removal of macro __sfileno(p) and __sputc(c,p) should be ok, since macro definition is replaced before compilation..</comment>
     </version>
+    <version checksum="o2yARV9AYOa7p">
+      <status>OK</status>
+      <comment> Macro definition of __sfileno(p)is changed to normal exported function definition IMPORT_C int __sfileno(FILE* p)..</comment>
+    </version>  
   </headerfile>
     
    <headerfile name="stdapis\sys\_null.h">
@@ -8258,6 +9192,15 @@
       <status>OK</status>
       <comment> 1.__func__ Macro has been changed. It's not a BC break. 2. __GNUC_PREREQ__(ma,mi) and __IDSTRING(name,string) ,__offsetof macro have been put into #ifdef, so it won't be cause since code is complining properly.</comment>
     </version>
+     <version checksum="oxZc1L1BL7l5O">
+      <status>OK</status>
+      <comment> 1.__func__ Macro has been changed from NULL to "". It's not a BC break. 2. __offsetof macro have been put into #ifdef, so it won't be cause since code is complining properly.</comment>
+    </version>
+    <version checksum="cr3UXTnBL7l5O">
+      <status>OK</status>
+      <comment> 1.__func__ Macro has been changed from NULL to "". It's not a BC break. 2. __offsetof macro have been put into #ifdef, so it won't be cause since code is complining properly.</comment>
+    </version>
+    
   </headerfile>
   
   <headerfile name="stdapis\sys\errno.h">
@@ -8754,11 +9697,19 @@
       <status>OK</status>
       <comment>Field is intended for internal use..</comment>
     </version>
+    <version checksum="RZEohOGC7g+pw">
+      <status>OK</status>
+      <comment>Field is intended for internal use..</comment>
+    </version>
   </headerfile>
    <headerfile name="centralrepository.h">
     <version checksum="sU83vuLBRdNo6">
-      <status>NOK</status>
-      <comment>CRepository::TransactionState( ) is exported function..</comment>
+      <status>OK</status>
+      <comment>CRepository::TransactionState( ) is marked as internal. Hence its ok</comment>
+    </version>
+    <version checksum="sU83vuLDppyX2">
+      <status>OK</status>
+      <comment>CRepository::TransactionState( ),CRepository::SetGetParameters( const ::TIpcArgs ) is  marked as internal. 2)KCentRepFindBufSize is internal and moved to centralrepositoryinternal.h. </comment>
     </version>
   </headerfile>
     
@@ -8771,6 +9722,10 @@
       <status>OK</status>
       <comment>Classes moved to ssl_compatibility.h. Classes are marked @internalAll, so no need to verify compatibility manually.</comment>
     </version>
+        <version checksum="TiyKP-hD9yF7g">
+      <status>OK</status>
+      <comment> 1. CSSLFactory,CSSLTimers,MSSLSocketNotify,SSLGlobals, CSSLProviderBase and TSSLConnectStatus are internal components.2. Removed constants are either interna or present in ssl_internal.h.Not a BC break..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="ecamadvsettings.h">
@@ -8782,6 +9737,10 @@
       <status>OK</status>
       <comment>Exported function ::CCamera::CCameraAdvancedSettings::StartContinuousZoomL( ::CCamera::CCameraAdvancedSettings::TContinuousZoomType, ::CCamera::CCameraAdvancedSettings::TZoomDirection ) and CCamera::CCameraAdvancedSettings::StopContinuousZoom( ) have been removed.Removal is approved.</comment>
     </version>
+    <version checksum="6R8WXkVBGC8Aa">
+      <status>OK</status>
+      <comment>Exported function ::CCamera::CCameraAdvancedSettings::StartContinuousZoomL( ::CCamera::CCameraAdvancedSettings::TContinuousZoomType, ::CCamera::CCameraAdvancedSettings::TZoomDirection ) and CCamera::CCameraAdvancedSettings::StopContinuousZoom( ) have been removed.Removal is approved.3) Removed constants marked as internal</comment>
+    </version>
   </headerfile>
   
   <headerfile name="securesocket.h">
@@ -8792,6 +9751,10 @@
     <version checksum="e-UbW5vCfDAXx">
       <status>OK</status>
       <comment>1.Contant KSecureSocketPanic removed,but this constant is not used by anybody. 2.Class CSecureSocketLibraryLoader and class TSecSocketProtocol are marked as internal all</comment>
+    </version>
+    <version checksum="e-UbW5vB6yfcv">
+      <status>OK</status>
+      <comment>1 KSecureSocketPanic removed,but this constant is not used by anybody, other removed constants marked as internal 2.Class CSecureSocketLibraryLoader,TSecureSocketGlobals and class TSecSocketProtocol are marked as internal all</comment>
     </version>
     
   </headerfile>
@@ -9021,6 +9984,13 @@
       <comment>symbian_os_v9.2.hrh is not a part of public SDK.</comment>
     </version>
    </headerfile>
+   
+   <headerfile name="vcard.h">
+    <version checksum="2oMOcaSAJblxW">
+      <status>OK</status>
+      <comment>CParserVCard3 marked as internal.</comment>
+    </version>
+   </headerfile>
 
 	<headerfile name="versit.h">
     <version checksum="*******AG0zPO">
@@ -9039,12 +10009,23 @@
       <status>OK</status>
       <comment>return type changed from TBool to TInt.</comment>
     </version>
+    <version checksum="JbZkWsjAzFgso">
+      <status>OK</status>
+      <comment>return type changed from TBool to TInt, TVersitParserPanic,CVersitTLSContainer, CLineReaderExtension, KTLSVars marked as internal.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="vobserv.h">
     <version checksum="NTegsQhCAQgne">
       <status>OK</status>
       <comment>Reserved virtual function replaced with real one. This is ok.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="smuthdr.h">
+    <version checksum="N+P-ZQFC5GegY">
+      <status>OK</status>
+      <comment>TMsvSmsEntry present in tmsvsmsentry.h</comment>
     </version>
   </headerfile>
 
@@ -9101,7 +10082,12 @@
       <status>OK</status>
       <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
     </version>
+     <version checksum="v+OlconAwxj4E">
+      <status>OK</status>
+      <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
+    </version>
     </headerfile>
+    
     <headerfile name="mtsr.h">
     <version checksum="*******BKs-dY">
       <status>OK</status>
@@ -9111,17 +10097,30 @@
       <status>OK</status>
       <comment>Class CInstalledMtmGroupArray is moved to included header..</comment>
     </version>
+     <version checksum="72wVzJWDoh0II">
+      <status>OK</status>
+      <comment>Class CInstalledMtmGroupArraymarked internal..</comment>
+    </version>
     </headerfile>
+    
     <headerfile name="schinfo.h">
     <version checksum="GNI7cFeBx8BwV">
       <status>OK</status>
       <comment>Classes TScheduleInfo  and TScheduleSettings are marked as internalAll..</comment>
+    </version>
+     <version checksum="GNI7cFeBBiPfo">
+      <status>OK</status>
+      <comment>Classes TScheduleInfo,TTaskSchedulerCondition,TScheduleSettings and enum TConditionType are marked as internalAll..</comment>
     </version>
     </headerfile>
     <headerfile name="smsclnt.h">
     <version checksum="YlgDP94AaV8Qf">
       <status>OK</status>
       <comment>All concerned constants are marked as internal component..</comment>
+    </version>
+    <version checksum="c8SkqTLBJJY5m">
+      <status>OK</status>
+      <comment>All concerned constants are marked as internal component and KUidMsgSmsEditorAppVal present in tmsvsmsentry.h.</comment>
     </version>
     </headerfile>
     <headerfile name="smut.h">
@@ -9141,7 +10140,12 @@
       <status>OK</status>
       <comment>Guard macro changed.</comment>
     </version>
+    <version checksum="sobFUQUCip1om">
+      <status>OK</status>
+      <comment>spriteanimationclient.h contains only an internal component. Hence removal is not a problem</comment>
+    </version>
     </headerfile>
+    
   <headerfile name="w32click.h">
     <version checksum="9B6LDONCZXQiC">
       <status>OK</status>
@@ -9150,6 +10154,10 @@
     <version checksum="x8Dqf4wCZXQiC">
       <status>OK</status>
       <comment>Class TPointerEventData size changed.Studied and approved.</comment>
+    </version>
+    <version checksum="x8Dqf4wC+IY6q">
+      <status>OK</status>
+      <comment>Class TPointerEventData included in graphics/pointereventdata.h.</comment>
     </version>
     </headerfile>
     <headerfile name="mtmdef.hrh">
@@ -9170,6 +10178,10 @@
       <comment>Enum(TMdaPriorityPreference ) type parameter is changed to int type.</comment>
     </version>
     <version checksum="3lItXMRCg+JL6">
+      <status>OK</status>
+      <comment>Enum(TMdaPriorityPreference ) type parameter is changed to int type.</comment>
+    </version>
+    <version checksum="8RTp-gMCg+JL6">
       <status>OK</status>
       <comment>Enum(TMdaPriorityPreference ) type parameter is changed to int type.</comment>
     </version>
@@ -9227,11 +10239,19 @@
     <version checksum="RKv-K3VBYC9kw">
       <status>OK</status>
       <comment>1.AnimCommand is marked as internal component. 2.TSizeMode is marked as internal comp.3.All removed value of enum type TSpriteFlags are marked as internal component. 4.enum values are either moved to included header textcursor.h or marked as internal component.5. struct TWsGraphicMessageHeaderEvent is marked as internal comp. 6.All exported functions made as const. Not a BC break.</comment>
+    </version>   
+    <version checksum="RKv-K3VCv3FCb">
+      <status>OK</status>
+      <comment>1.AnimCommand is marked as internal component. 2.TSizeMode is marked as internal comp.3.All removed value of enum type TSpriteFlags are marked as internal component. 4.enum values are either moved to included header textcursor.h or marked as internal component.5. struct TWsGraphicMessageHeaderEvent is marked as internal comp. 6.All exported functions made as const.7) Constant KWSERVServerNamemarked as internal. Not a BC break.</comment>
     </version>     
   </headerfile>
 
   <headerfile name="x509certext.h">
     <version checksum="NN5KYG8DxuvhT">
+      <status>OK</status>
+      <comment>File itself is marked as internal..</comment>
+    </version>
+    <version checksum="NN5KYG8CG8FhR">
       <status>OK</status>
       <comment>File itself is marked as internal..</comment>
     </version>
@@ -9247,6 +10267,48 @@
     <version checksum="nicJMSaDNB2yq">
       <status>OK</status>
       <comment>Include guard macro has changed.ok.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="securitydefs.h">
+    <version checksum="ZcYkmvtCyrbQX">
+      <status>OK</status>
+      <comment>Contants persent in securitydefsconst.h.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="mmf\common\mmfvideo.h">
+    <version checksum="CLlA2nnAJHK6j">
+      <status>OK</status>
+      <comment>Class TVideoPlayRateCapabilities and enum TVideoQualitymoved to mmfvideoenums.h.</comment>
+    </version>
+  </headerfile>
+  
+   <headerfile name="msvruids.h">
+    <version checksum="SnQtnTcCSP3-u">
+      <status>OK</status>
+      <comment>All removed constants marked internal.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="sacls.h">
+    <version checksum="BAmHTtQARE4oh">
+      <status>OK</status>
+      <comment>Constant KUidJmiLatestInstallation present SaClsDefines.h.Others marked internal</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="vwsdef.h">
+    <version checksum="aRzPdvuBITl+G">
+      <status>OK</status>
+      <comment>Removed macros marked as internal or moved to partner header</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="viewcli.h">
+    <version checksum="k56y5I0C7-0CX">
+      <status>OK</status>
+      <comment>CVwsSessionWrapper, SVwsCommandLine and TVwsPanic marked as internal</comment>
     </version>
   </headerfile>
 
@@ -9292,6 +10354,14 @@
       <status>OK</status>
       <comment>KPKCS9MaxEmailAddressLength changed its value.It's ok </comment>
     </version>
+     <version checksum="hTSD2HfBzii1i">
+      <status>OK</status>
+      <comment>KPKCS9MaxEmailAddressLength changed its value.It's ok </comment>
+    </version>
+    <version checksum="haRpJnyBzii1i">
+      <status>OK</status>
+      <comment>KPKCS9MaxEmailAddressLength changed its value.It's ok </comment>
+    </version>
   </headerfile>  
   
   <headerfile name="aknsconstants.h">
@@ -9314,6 +10384,10 @@
       <comment>No size change as spare data field used. It's ok </comment>
     </version>
     <version checksum="UtWyArIBtCXSS">
+      <status>OK</status>
+      <comment>No size change as spare data field used. It's ok </comment>
+    </version>
+    <version checksum="athKKcJBtCXSS">
       <status>OK</status>
       <comment>No size change as spare data field used. It's ok </comment>
     </version>
@@ -9475,6 +10549,10 @@
       <status>OK</status>
       <comment>Compilation fails due to dependence on prtypes.h, which has compilation issues. To fix, fix prtypes.h.</comment>
     </version>
+    <version checksum="EZgUllqA2c321">
+      <status>OK</status>
+      <comment>Compilation fails due to dependence on prtypes.h, which has compilation issues. To fix, fix prtypes.h.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="popsmbx.h">
@@ -9551,6 +10629,10 @@
       <status>OK</status>
       <comment>Compilation fails due to dependence on prtypes.h, which has compilation issues. To fix, fix prtypes.h.</comment>
     </version>
+    <version checksum="EZgUllqA2c321">
+      <status>OK</status>
+      <comment>Compilation fails due to dependence on prtypes.h, which has compilation issues. To fix, fix prtypes.h.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="akniconutils.h">
@@ -9564,6 +10646,23 @@
     <version checksum="CXbLCTxBZ7cN8">
       <status>OK</status>
       <comment>Guard macro removed. It's ok </comment>
+    </version>
+  </headerfile>
+  
+   <headerfile name="osextensions\stdapis\stlport\config\stl_confix.h">
+    <version checksum="e6bHth-CP8gFu">
+      <status>OK</status>
+      <comment>Guard macro modified. It's ok </comment>
+    </version>
+    <version checksum="e6bHth-CP8gFu">
+      <status>OK</status>
+      <comment>Removed macros belong to compiler settings. Hence not a problem </comment>
+    </version>
+  </headerfile>
+  <headerfile name="stdapis\stlport\config\stl_confix.h">
+  	<version checksum="e6bHth-CP8gFu">
+      <status>OK</status>
+      <comment>Removed macros belong to comiler settings. Hence not a problem </comment>
     </version>
   </headerfile>
   
@@ -9596,13 +10695,28 @@
     </version>
   </headerfile>
   
+  <headerfile name="apmstd.h">
+    <version checksum="xC-Hq6RBwa0Lv">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to apmpan.h</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="middleware\cecombrowserplugininterface.h">
     <version checksum="Ii+Q1JEA2c321">
       <status>OK</status>
       <comment> File has compilation errors</comment>
     </version>
+    <version checksum="IiRpHFVA2c321">
+      <status>OK</status>
+      <comment> File has compilation errors</comment>
+    </version>
+    <version checksum="IiRpHFVA2c321">
+      <status>OK</status>
+      <comment> File has compilation errors</comment>
+    </version>
+   </headerfile>
     
-  </headerfile>
   <headerfile name="oem\cecombrowserplugininterface.h">
     <version checksum="Ii+Q1JEA2c321">
       <status>OK</status>
@@ -9626,12 +10740,30 @@
       <status>OK</status>
       <comment>New parameter to constructor of TBTPinCodeEntryNotifierParams. It's an approved break. </comment>
     </version>
+    <version checksum="-mx9kAlCOzrms">
+      <status>OK</status>
+      <comment>Removed components moved to BTExtNotifiersPartner.h </comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\eikcapc.h">
     <version checksum="B2ShVuaDDxekF">
       <status>OK</status>
       <comment>Data field changed from const  CEikDialogPage* to CEikDialogPage*. It's not a BC break.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="bt_subscribe.h">
+    <version checksum="ukGXlgMCnGpFT">
+      <status>OK</status>
+      <comment>Constants moved to bt_subscribe_partner.h</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="cctcertinfo.h">
+    <version checksum="4Na-sLiBKveIa">
+      <status>OK</status>
+      <comment>Deleted constants marked as internal.</comment>
     </version>
   </headerfile>
   
@@ -9669,6 +10801,13 @@
     </version>
   </headerfile>
   
+   <headerfile name="txtstyle.h">
+    <version checksum="b5iD+R-DRjnas">
+      <status>OK</status>
+      <comment> KUserDefinedParagraphStyleUid marked internal.</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="mw\eikcapc.h">
     <version checksum="B2ShVuaDDxekF">
       <status>OK</status>
@@ -9695,6 +10834,17 @@
     </version>
   </headerfile>
   
+  <headerfile name="securityerr.h">
+   <version checksum="fr+JUg-B1X848">
+      <status>OK</status>
+      <comment> KErrTotalLossOfEntropy marked as internal. </comment>
+    </version>
+    <version checksum="iPjAIgzB1X848">
+      <status>OK</status>
+      <comment> KErrTotalLossOfEntropy marked as internal. </comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="variant\symbian_os.hrh">
     <version checksum="QnOFE8JDSDevB">
       <status>OK</status>
@@ -9712,8 +10862,119 @@
       <status>OK</status>
       <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
     </version>
+     <version checksum="+Rx0VcFDSDevB">
+      <status>OK</status>
+      <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
+    </version>
+    <version checksum="AHuSfWSDSDevB">
+      <status>OK</status>
+      <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
+    </version>
   </headerfile>
   
+  
+  <library name = "libstdcpp">
+  	<issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSdD9Ev</funcname>
+				    <funcpos>97</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSiD9Ev</funcname>
+				    <funcpos>103</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSoD9Ev</funcname>
+				    <funcpos>111</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt13basic_fstreamIcSt11char_traitsIcEED9Ev</funcname>
+				    <funcpos>213</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt13basic_fstreamIwSt11char_traitsIwEED9Ev</funcname>
+				    <funcpos>219</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt13basic_istreamIwSt11char_traitsIwEED9Ev</funcname>
+				    <funcpos>225</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt13basic_ostreamIwSt11char_traitsIwEED9Ev</funcname>
+				    <funcpos>233</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt14basic_iostreamIwSt11char_traitsIwEED9Ev</funcname>
+				    <funcpos>245</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt10istrstreamD9Ev</funcname>
+				    <funcpos>1002</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt10ostrstreamD9Ev</funcname>
+				    <funcpos>1006</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>_ZNSt9strstreamD9Ev</funcname>
+				    <funcpos>1014</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Tool issue as mangled name appears in the report</comment>
+			</issue>
+			</library>
+			
    <library name = "clkdatetimeview">
    			  <issue>
 				    <typeid>3</typeid>
@@ -9803,6 +11064,14 @@
 				    <sc_severity>SC Break</sc_severity>
 				     <status>OK</status>
 				    <comment>This removal is approved.</comment>
+			</issue>
+			<issue>
+				    <typeid>13</typeid>
+				    <typeinfo>DLL is missing in current SDK</typeinfo>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				      <status>OK</status>
+				    <comment>Deprecated since S60 3.0.</comment>
 			</issue>
     </library>
    
@@ -9926,8 +11195,8 @@
 				    <funcpos>88</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Function BioMessage( ) is used to return a reference to the BIO wrapper which isnot part of SDK. </comment>
 			</issue>
 			<issue>
 				    <typeid>13</typeid>
@@ -9943,8 +11212,8 @@
 				    <funcpos>89</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Returns a reference to the GSM wrapper which is not part of SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -9952,8 +11221,8 @@
 				    <funcpos>90</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Function SmsMessage( ) is used to return a reference to the SMS wrapper which is not part of SDK. </comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -9961,8 +11230,8 @@
 				    <funcpos>91</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Returns a reference to the CDMA wrapper which is not part of SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -9970,8 +11239,8 @@
 				    <funcpos>92</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Used to Get the current message type which is not part of SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -9979,8 +11248,8 @@
 				    <funcpos>93</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Function marked as internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10006,8 +11275,8 @@
 				    <funcpos>96</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Function SmsMessage( ) is used to return a reference to the SMS wrapper which is not part of SDK. </comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10015,8 +11284,8 @@
 				    <funcpos>97</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10024,8 +11293,8 @@
 				    <funcpos>98</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10033,8 +11302,8 @@
 				    <funcpos>99</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10042,8 +11311,8 @@
 				    <funcpos>100</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				 <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10051,8 +11320,8 @@
 				    <funcpos>101</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10060,8 +11329,8 @@
 				    <funcpos>102</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10069,8 +11338,8 @@
 				    <funcpos>103</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10078,8 +11347,8 @@
 				    <funcpos>104</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10087,8 +11356,8 @@
 				    <funcpos>105</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10096,8 +11365,8 @@
 				    <funcpos>106</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10105,8 +11374,8 @@
 				    <funcpos>107</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10114,8 +11383,8 @@
 				    <funcpos>108</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10123,8 +11392,8 @@
 				    <funcpos>109</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10132,8 +11401,8 @@
 				    <funcpos>110</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10159,8 +11428,8 @@
 				    <funcpos>113</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10168,8 +11437,8 @@
 				    <funcpos>114</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10177,8 +11446,8 @@
 				    <funcpos>115</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10186,8 +11455,8 @@
 				    <funcpos>116</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10195,8 +11464,8 @@
 				    <funcpos>117</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10204,8 +11473,8 @@
 				    <funcpos>118</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10213,8 +11482,8 @@
 				    <funcpos>119</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10222,8 +11491,8 @@
 				    <funcpos>120</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10231,8 +11500,8 @@
 				    <funcpos>121</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10240,8 +11509,8 @@
 				    <funcpos>122</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10249,8 +11518,8 @@
 				    <funcpos>123</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10258,8 +11527,8 @@
 				    <funcpos>124</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10267,8 +11536,8 @@
 				    <funcpos>125</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10276,8 +11545,8 @@
 				    <funcpos>126</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function is internal component</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10285,8 +11554,8 @@
 				    <funcpos>127</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				<status>OK</status>
+				    <comment>This item is not part of the S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10294,8 +11563,8 @@
 				    <funcpos>128</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10303,8 +11572,8 @@
 				    <funcpos>129</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10312,8 +11581,8 @@
 				    <funcpos>130</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10321,8 +11590,8 @@
 				    <funcpos>131</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10330,8 +11599,8 @@
 				    <funcpos>132</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10339,8 +11608,8 @@
 				    <funcpos>133</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10348,8 +11617,8 @@
 				    <funcpos>134</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				      <status>OK</status>
+				    <comment>This item is not part of the S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10357,8 +11626,8 @@
 				    <funcpos>135</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10366,8 +11635,8 @@
 				    <funcpos>136</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				      <status>OK</status>
+				    <comment>This item is not part of the S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10375,8 +11644,8 @@
 				    <funcpos>137</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				        <status>OK</status>
+				    <comment>This item is not part of the S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10384,8 +11653,8 @@
 				    <funcpos>138</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				      <status>OK</status>
+				    <comment>This item is not part of the S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10393,8 +11662,8 @@
 				    <funcpos>139</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				       <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10402,8 +11671,8 @@
 				    <funcpos>140</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10411,8 +11680,8 @@
 				    <funcpos>141</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10420,8 +11689,8 @@
 				    <funcpos>142</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10429,8 +11698,8 @@
 				    <funcpos>143</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10438,8 +11707,8 @@
 				    <funcpos>144</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10447,8 +11716,8 @@
 				    <funcpos>145</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10456,8 +11725,8 @@
 				    <funcpos>146</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10465,8 +11734,8 @@
 				    <funcpos>147</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10474,8 +11743,8 @@
 				    <funcpos>148</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10483,8 +11752,8 @@
 				    <funcpos>149</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10492,8 +11761,8 @@
 				    <funcpos>150</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10501,8 +11770,8 @@
 				    <funcpos>151</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10510,8 +11779,8 @@
 				    <funcpos>152</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10519,8 +11788,8 @@
 				    <funcpos>153</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10528,8 +11797,8 @@
 				    <funcpos>154</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10537,8 +11806,8 @@
 				    <funcpos>155</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10546,8 +11815,8 @@
 				    <funcpos>156</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10555,8 +11824,8 @@
 				    <funcpos>157</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10564,8 +11833,8 @@
 				    <funcpos>158</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10591,8 +11860,8 @@
 				    <funcpos>161</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10600,8 +11869,8 @@
 				    <funcpos>162</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10609,8 +11878,8 @@
 				    <funcpos>163</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10618,8 +11887,8 @@
 				    <funcpos>164</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10627,8 +11896,8 @@
 				    <funcpos>165</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10636,8 +11905,8 @@
 				    <funcpos>166</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10645,8 +11914,8 @@
 				    <funcpos>167</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10654,8 +11923,8 @@
 				    <funcpos>168</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10663,8 +11932,8 @@
 				    <funcpos>169</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10672,8 +11941,8 @@
 				    <funcpos>170</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10681,8 +11950,8 @@
 				    <funcpos>171</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10690,8 +11959,8 @@
 				    <funcpos>172</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10699,8 +11968,8 @@
 				    <funcpos>173</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10708,8 +11977,8 @@
 				    <funcpos>174</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10717,8 +11986,8 @@
 				    <funcpos>175</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10726,8 +11995,8 @@
 				    <funcpos>176</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10735,8 +12004,8 @@
 				    <funcpos>177</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10744,8 +12013,8 @@
 				    <funcpos>178</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10753,8 +12022,8 @@
 				    <funcpos>179</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			
 			  <issue>
@@ -10763,8 +12032,8 @@
 				    <funcpos>180</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10772,8 +12041,8 @@
 				    <funcpos>181</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10781,8 +12050,8 @@
 				    <funcpos>182</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10790,8 +12059,8 @@
 				    <funcpos>183</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10799,8 +12068,8 @@
 				    <funcpos>184</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10808,8 +12077,8 @@
 				    <funcpos>185</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10817,8 +12086,8 @@
 				    <funcpos>186</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Function BioMessage( ) is used to return a reference to the BIO wrapper which isnot part of SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10826,8 +12095,8 @@
 				    <funcpos>187</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Returns a reference to the GSM wrapper which is not part of SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10844,8 +12113,8 @@
 				    <funcpos>189</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Returns a reference to the CDMA wrapper which is not part of SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10853,8 +12122,8 @@
 				    <funcpos>190</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10862,8 +12131,8 @@
 				    <funcpos>191</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10871,8 +12140,8 @@
 				    <funcpos>192</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10880,8 +12149,8 @@
 				    <funcpos>193</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10889,8 +12158,8 @@
 				    <funcpos>194</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10898,8 +12167,8 @@
 				    <funcpos>195</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10907,8 +12176,8 @@
 				    <funcpos>196</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10916,8 +12185,8 @@
 				    <funcpos>197</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10925,8 +12194,8 @@
 				    <funcpos>198</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10934,8 +12203,8 @@
 				    <funcpos>199</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10943,8 +12212,8 @@
 				    <funcpos>200</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10952,8 +12221,8 @@
 				    <funcpos>201</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10961,8 +12230,8 @@
 				    <funcpos>202</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10970,8 +12239,8 @@
 				    <funcpos>203</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10979,8 +12248,8 @@
 				    <funcpos>204</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				   <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10988,8 +12257,8 @@
 				    <funcpos>205</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -10997,8 +12266,8 @@
 				    <funcpos>206</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11006,8 +12275,8 @@
 				    <funcpos>207</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				  <status>OK</status>
+				    <comment>Removed function provided CDMA support. Hence its ok</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11015,8 +12284,8 @@
 				    <funcpos>208</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11024,8 +12293,8 @@
 				    <funcpos>209</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11033,8 +12302,8 @@
 				    <funcpos>210</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11042,8 +12311,8 @@
 				    <funcpos>211</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11051,8 +12320,8 @@
 				    <funcpos>212</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11060,8 +12329,8 @@
 				    <funcpos>213</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK..</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11069,8 +12338,8 @@
 				    <funcpos>214</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11078,8 +12347,8 @@
 				    <funcpos>215</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11087,8 +12356,8 @@
 				    <funcpos>216</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11096,8 +12365,8 @@
 				    <funcpos>217</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11105,8 +12374,8 @@
 				    <funcpos>218</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11114,8 +12383,8 @@
 				    <funcpos>219</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11123,8 +12392,8 @@
 				    <funcpos>220</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11132,8 +12401,8 @@
 				    <funcpos>221</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11141,8 +12410,8 @@
 				    <funcpos>222</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11150,8 +12419,8 @@
 				    <funcpos>223</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11159,8 +12428,8 @@
 				    <funcpos>224</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11168,8 +12437,8 @@
 				    <funcpos>225</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11177,8 +12446,8 @@
 				    <funcpos>226</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK..</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11186,8 +12455,8 @@
 				    <funcpos>227</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK..</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11195,8 +12464,8 @@
 				    <funcpos>228</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11204,8 +12473,8 @@
 				    <funcpos>229</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11213,8 +12482,8 @@
 				    <funcpos>230</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11222,8 +12491,8 @@
 				    <funcpos>231</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK..</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11231,8 +12500,8 @@
 				    <funcpos>232</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11240,8 +12509,8 @@
 				    <funcpos>233</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11249,8 +12518,8 @@
 				    <funcpos>234</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Derived from TMsvMessageSms which is not part of S60 SDK..</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11258,8 +12527,8 @@
 				    <funcpos>235</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11267,8 +12536,8 @@
 				    <funcpos>236</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11276,8 +12545,8 @@
 				    <funcpos>237</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11285,8 +12554,8 @@
 				    <funcpos>238</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 				    
 			</issue>
 			  <issue>
@@ -11295,8 +12564,8 @@
 				    <funcpos>239</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				      <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11304,8 +12573,8 @@
 				    <funcpos>240</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11313,8 +12582,8 @@
 				    <funcpos>241</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11322,8 +12591,8 @@
 				    <funcpos>242</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				     <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11331,8 +12600,8 @@
 				    <funcpos>243</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11340,8 +12609,8 @@
 				    <funcpos>244</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11349,8 +12618,8 @@
 				    <funcpos>245</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11358,8 +12627,8 @@
 				    <funcpos>246</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11367,8 +12636,8 @@
 				    <funcpos>247</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11376,8 +12645,8 @@
 				    <funcpos>248</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>TSmsMessageSettingsCdma is not part of S60 SDK</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11385,8 +12654,8 @@
 				    <funcpos>249</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11394,8 +12663,8 @@
 				    <funcpos>250</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11403,8 +12672,8 @@
 				    <funcpos>251</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11412,8 +12681,8 @@
 				    <funcpos>252</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11421,8 +12690,8 @@
 				    <funcpos>253</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11430,8 +12699,8 @@
 				    <funcpos>254</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11439,8 +12708,8 @@
 				    <funcpos>255</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				     <status>OK</status>
+				    <comment>This item is not part of the S60 SDK.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11448,8 +12717,8 @@
 				    <funcpos>256</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11457,8 +12726,8 @@
 				    <funcpos>257</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed</comment>
+				    <status>OK</status>
+				    <comment>Deleted exported function part of internal technology</comment>
 			</issue>
   </library>
    
@@ -15725,6 +16994,24 @@
    
    
    <library name="imcm">
+   <issue>
+				    <typeid>4</typeid>
+				    <funcname>typeinfo for CImEmailAutoSend</funcname>
+				    <funcpos>592</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Internal class</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>vtable for CImEmailAutoSend</funcname>
+				    <funcpos>623</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Internal class</comment>
+			</issue>
    <issue>
 				    <typeid>3</typeid>
 				    <funcname>CImEmailOperation::CreateReplyL(TRequestStatus&amp;, CMsvSession&amp;, long, long, unsigned int, unsigned int const&amp;, TUid, int, int)</funcname>
@@ -21449,8 +22736,8 @@
 				    <funcpos>77</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-        		<comment>Method is exported.It is a break.</comment>
+				    <status>OK</status>
+        		<comment>TransactionState() marked as internal.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -21471,8 +22758,8 @@
 				    <funcpos>67</funcpos>
 				    <bc_severity>Possible BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-        		<comment>Funtion signature changed.</comment>
+				    <status>OK</status>
+        		<comment>Function signature changed.Removal is justified since the API cannot be used outside the file server.</comment>
 			</issue>
 			  <issue>
 				    <typeid>6</typeid>
@@ -21481,8 +22768,8 @@
 				    <funcpos>192</funcpos>
 				    <bc_severity>Possible BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-        		<comment>Exported function removed.</comment>
+				    <status>OK</status>
+        		<comment>Function signature changed.Removal is justified since the API cannot be used outside the file server.</comment>
 			</issue>
 			  <issue>
 				    <typeid>6</typeid>
@@ -21491,8 +22778,8 @@
 				    <funcpos>193</funcpos>
 				    <bc_severity>Possible BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-        		<comment>Exported function removed.</comment>
+				    <status>OK</status>
+        		<comment>Function signature changed.Removal is justified since the API cannot be used outside the file server.</comment>
 			</issue>
 			  <issue>
 				    <typeid>6</typeid>
@@ -21501,8 +22788,8 @@
 				    <funcpos>194</funcpos>
 				    <bc_severity>Possible BBC Break</bc_severity>
 				    <sc_severity>Possible SC Break</sc_severity>
-				    <status>NOK</status>
-        		<comment>Exported function removed.</comment>
+				    <status>OK</status>
+        		<comment>Function signature changed.Removal is justified since the API cannot be used outside the file server.</comment>
 			</issue>
  </library>
   <library name="apparc">
@@ -26189,6 +27476,213 @@
       <status>OK</status>
 	    <comment>Class TTextHeaderUtils is not part of the public SDK.</comment>
     </issue>
+<issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldPart::NewL(THTTPHdrVal)</funcname>
+				    <funcpos>92</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldPart::AddParamL(CHeaderFieldParam*)</funcname>
+				    <funcpos>93</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldParam::NewL(RStringF, THTTPHdrVal)</funcname>
+				    <funcpos>139</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldPartIter::AtEnd()</funcname>
+				    <funcpos>146</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldPartIter::First()</funcname>
+				    <funcpos>147</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldPartIter::operator()()</funcname>
+				    <funcpos>148</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldPartIter::operator++()</funcname>
+				    <funcpos>149</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldParamIter::AtEnd()</funcname>
+				    <funcpos>154</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldParamIter::First()</funcname>
+				    <funcpos>155</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldParamIter::~THeaderFieldParamIter()</funcname>
+				    <funcpos>156</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldParamIter::~THeaderFieldParamIter()</funcname>
+				    <funcpos>157</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldParamIter::operator()()</funcname>
+				    <funcpos>158</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>THeaderFieldParamIter::operator++()</funcname>
+				    <funcpos>159</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldPart::Parameters() const</funcname>
+				    <funcpos>208</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldPart::NumParameters() const</funcname>
+				    <funcpos>209</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldPart::Value() const</funcname>
+				    <funcpos>210</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldParam::Name() const</funcname>
+				    <funcpos>223</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>CHeaderFieldParam::Value() const</funcname>
+				    <funcpos>224</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>typeinfo for CHeaderFieldPart</funcname>
+				    <funcpos>255</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>typeinfo for CHeaderFieldParam</funcname>
+				    <funcpos>256</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>vtable for CHeaderFieldPart</funcname>
+				    <funcpos>267</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>vtable for CHeaderFieldParam</funcname>
+				    <funcpos>268</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>RHTTPSession::SetupDefaultProxyFromCommsDatL()</funcname>
+				    <funcpos>284</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status> OK </status>
+				    <comment>SetupDefaultProxyFromCommsDatL( ) is an internal component </comment>
+			</issue>
   </library>
 
   <library name="imageconversion">

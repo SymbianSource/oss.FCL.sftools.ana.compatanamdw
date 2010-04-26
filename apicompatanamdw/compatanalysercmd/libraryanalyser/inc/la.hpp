@@ -56,8 +56,8 @@
 
 using namespace std;
 
-#define LA_VERSION "3.3.2"
-#define LA_DATE "1st December 2009"
+#define LA_VERSION "3.3.3"
+#define LA_DATE "15th February 2010"
 #define LA_REPORT_FORMAT_VERSION "1.1"
 #define TEMP_FILENAME "la-temp.txt"
 #define REPORT_TAB_CHAR '\t'

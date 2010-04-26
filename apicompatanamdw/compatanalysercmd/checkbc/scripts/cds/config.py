@@ -18,7 +18,7 @@
 
 # This is used as in platform's xml-description as a version-id.
 # By default, the version string is used also in report and error log filenames.
-# Allowed values are: '5.0', '5.1' and '5.2'
+# Allowed values are: '3.0', '3.1', 3.2', '5.0', '5.1' and '5.2'
 PLATFORM_VERSION = '5.0'
 BUILD = 'wk26_2008'
 
@@ -80,9 +80,9 @@ LOG_FILENAME = TOOL_DIR + '\\results\\scanner.log'
 API_INFO_NEEDED = 'yes'
 
 # --- OPTIONAL IF API INFO NEEDED, MENTION THE SDK INDEX,
-# --- ex: for 5.0 release_index 155,
-# ---     for 5.1 sdk, release_index 154
-# ---     for 5.2 release_index 150
+# --- ex: For 3.2 sdk , release_index 132 , for 5.0 release_index 155,
+# ---     for 5.1 sdk, release_index 154 and for 5.2 release_index 150.
+# ---     for 3.0 and 3.1 sdks, keep release index 12
 #If not mentioned, then any release will be taken.
 #Else while generating the platform data script , we can get the updated release index from kevlar for each sdk.
 

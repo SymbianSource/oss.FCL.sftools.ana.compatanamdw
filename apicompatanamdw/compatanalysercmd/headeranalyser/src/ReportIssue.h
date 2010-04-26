@@ -114,6 +114,8 @@ enum TIssueType
     EIssueTypeParamConst2,
 	EIssueTypeReturnConst,
     EIssueTypeReturnConst2,
+	EIssueTypeDefaultParam,
+	EIssueTypeOverload,
     EIssueTypeCount
 };
 
@@ -137,6 +139,7 @@ public:
     * @param aSCSeverityId source compatibility severity of the issue found
     * @param aIgnoreInformation information needed for ignoring the issue
     * @param aLineNumber line where the issue is
+	* @param aIssueLoc filename where the issue is
     * @param aCompareFileName
 	* @param aCompilationError
     */
@@ -144,7 +147,8 @@ public:
                 const string& aFQName, const TIssueIdentity& aIssueIdentityId, 
                 const TIssueType& aIssueTypeId, const TBCSeverity& aBCSeverityId, 
                 const TSCSeverity& aSCSeverityId, const string& aIgnoreInformation,
-                int aLineNumber, const string& aCompareFileName, const string& aCompilationError = "", bool alineNoNeeded = true);
+                int aLineNumber, const string& aIssueLoc, const string& aCompareFileName, 
+				const string& aCompilationError = "", bool alineNoNeeded = true);
 
 
     /**
@@ -289,6 +293,13 @@ public:
     int LineNumber() const;
 
 	void SetLineNumber(const int lineNumber);
+
+	/**
+    * Get issue location file name
+    * @return file name string
+    */
+
+	const string& IssueLocation() const;
     
     /**
     * Get compare filename
@@ -300,8 +311,6 @@ public:
     * Return reson behind the compilation error
     */ 
     const string& CompilationError() const;
-
-	const bool& LineInfoNeeded();
     
 
 private:
@@ -332,13 +341,15 @@ private:
     //! Line number
     int            iLineNumber;
 
+	//! Compare filename
+    string         iIssueLoc;
+
     //! Compare filename
     string         iCompareFileName;
 
 	//! Cause of compilation error
     string         iCompilationError;
 
-	bool           iLineNoNeeded;
 
 };
 

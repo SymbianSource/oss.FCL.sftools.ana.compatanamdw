@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- 
+- Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+- All rights reserved.
+- This component and the accompanying materials are made available
+- under the terms of the License "Eclipse Public License v1.0"
+- which accompanies this distribution, and is available
+- at the URL "http://www.eclipse.org/legal/epl-v10.html".
+- 
+- Initial Contributors:
+- Nokia Corporation - initial contribution.
+- 
+- Contributors:
+- 
+- Description:
+- 
+-->
 <!--GUIDELINES-->
 <!--PLEASE DO NOT MODIFY THIS FILE-->
 <!--MODIFICATION OF THIS FILE MAY RESULT INCONSISTENT OUTPUT-->
@@ -7,11 +23,40 @@
     <dataversion>6</dataversion>
     <!--SUPPORTED SDK VERSIONS-->
     <supportedversions>
+        <version>3.0</version>
+        <version>3.1</version>
+        <version>3.2</version>
         <version>5.0</version>
         <version>5.1</version>
         <version>5.2</version>
+        <version>sf1</version>
+        <version>sf2</version>
     </supportedversions>
     <!--DEFAULT SYSTEM INCLUDES OF EACH VERSION-->
+    <sys_includes version="3.0">
+        <inc>epoc32\include</inc>
+        <inc>epoc32\include\ecom</inc>
+        <inc>epoc32\include\oem</inc>
+        <inc>epoc32\include\libc</inc>
+    </sys_includes>
+    <sys_includes version="3.1">
+        <inc>epoc32\include</inc>
+        <inc>epoc32\include\ecom</inc>
+        <inc>epoc32\include\oem</inc>
+        <inc>epoc32\include\libc</inc>
+    </sys_includes>
+    <sys_includes version="3.2">
+        <inc>epoc32\include</inc>
+        <inc>epoc32\include\ecom</inc>
+        <inc>epoc32\include\oem</inc>
+        <inc>epoc32\include\libc</inc>
+        <inc>epoc32\include\middleware</inc>
+        <inc>epoc32\include\domain\middleware</inc>
+        <inc>epoc32\include\osextensions</inc>
+        <inc>epoc32\include\domain\osextensions</inc>
+        <inc>epoc32\include\applications</inc>
+        <inc>epoc32\include\domain\applications</inc>
+    </sys_includes>
     <sys_includes version="5.0">
         <inc>epoc32\include</inc>
         <inc>epoc32\include\ecom</inc>
@@ -88,15 +133,73 @@
         <inc>epoc32\include\platform\mw\loc\sc</inc>
         <inc>epoc32\include\platform\app\loc\sc</inc>
     </sys_includes>
+    <sys_includes version="SF1">
+        <inc>epoc32\include</inc>
+        <inc>epoc32\include\ecom</inc>
+        <inc>epoc32\include\oem</inc>
+        <inc>epoc32\include\libc</inc>
+        <inc>epoc32\include\middleware</inc>
+        <inc>epoc32\include\domain\middleware</inc>
+        <inc>epoc32\include\osextensions</inc>
+        <inc>epoc32\include\domain\osextensions</inc>
+        <inc>epoc32\include\applications</inc>
+        <inc>epoc32\include\domain\applications</inc>
+        <inc>epoc32\include\domain\middleware\loc</inc>
+        <inc>epoc32\include\domain\osextensions\loc</inc>
+        <inc>epoc32\include\domain\applications\loc</inc>
+        <inc>epoc32\include\domain\middleware\loc\sc</inc>
+        <inc>epoc32\include\domain\osextensions\loc\sc</inc>
+        <inc>epoc32\include\domain\applications\loc\sc</inc>
+        <inc>epoc32\include\mw</inc>
+        <inc>epoc32\include\platform\mw</inc>
+        <inc>epoc32\include\platform</inc>
+        <inc>epoc32\include\app</inc>
+        <inc>epoc32\include\platform\app</inc>
+        <inc>epoc32\include\platform\loc</inc>
+        <inc>epoc32\include\platform\mw\loc</inc>
+        <inc>epoc32\include\platform\app\loc</inc>
+        <inc>epoc32\include\platform\loc\sc</inc>
+        <inc>epoc32\include\platform\mw\loc\sc</inc>
+        <inc>epoc32\include\platform\app\loc\sc</inc>
+    </sys_includes>
+    <sys_includes version="SF2">
+        <inc>epoc32\include</inc>
+        <inc>epoc32\include\ecom</inc>
+        <inc>epoc32\include\oem</inc>
+        <inc>epoc32\include\libc</inc>
+        <inc>epoc32\include\middleware</inc>
+        <inc>epoc32\include\domain\middleware</inc>
+        <inc>epoc32\include\osextensions</inc>
+        <inc>epoc32\include\domain\osextensions</inc>
+        <inc>epoc32\include\applications</inc>
+        <inc>epoc32\include\domain\applications</inc>
+        <inc>epoc32\include\domain\middleware\loc</inc>
+        <inc>epoc32\include\domain\osextensions\loc</inc>
+        <inc>epoc32\include\domain\applications\loc</inc>
+        <inc>epoc32\include\domain\middleware\loc\sc</inc>
+        <inc>epoc32\include\domain\osextensions\loc\sc</inc>
+        <inc>epoc32\include\domain\applications\loc\sc</inc>
+        <inc>epoc32\include\mw</inc>
+        <inc>epoc32\include\platform\mw</inc>
+        <inc>epoc32\include\platform</inc>
+        <inc>epoc32\include\app</inc>
+        <inc>epoc32\include\platform\app</inc>
+        <inc>epoc32\include\platform\loc</inc>
+        <inc>epoc32\include\platform\mw\loc</inc>
+        <inc>epoc32\include\platform\app\loc</inc>
+        <inc>epoc32\include\platform\loc\sc</inc>
+        <inc>epoc32\include\platform\mw\loc\sc</inc>
+        <inc>epoc32\include\platform\app\loc\sc</inc>
+    </sys_includes>
     <!--SUPPORTED FILE TYPES-->
     <filetypes>
-    		<type>h</type>
-    		<type>hrh</type>
-    		<type>mbg</type>
-    		<type>rsg</type>
-    		<type>hpp</type>
-    		<type>pan</type>
-    		<type>rh</type>
+    		<type>*.h</type>
+    		<type>*.hrh</type>
+    		<type>*.mbg</type>
+    		<type>*.rsg</type>
+    		<type>*.pan</type>
+    		<type>*.hpp</type>
+    		<type>*.rh</type>
     </filetypes>
     <!--SUPPORTED BUILD TARGETS BY CHECKBC-->
     <buildtargets>

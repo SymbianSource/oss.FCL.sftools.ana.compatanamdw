@@ -190,8 +190,11 @@ public:
     * @param ignoreinfo reason to ignore
     * @param fileid ID of the file
     * @param name filename
+	* @param lineNumber where the issue is
+    * @param issueloc in which file the issue is
     */
-    void addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TBCSeverity bcseverity, TSCSeverity scseverity, string ignoreinfo, const XMLCh* fileid, const string name, int lineNumber) const;
+    void addIssue(TIssueIdentity aIdentityId, TIssueType aTypeId, TBCSeverity bcseverity, TSCSeverity scseverity, 
+		string ignoreinfo, const XMLCh* fileid, const string name, int lineNumber,const string issueloc) const;
 
     /**
     * Check if this node is in the file that is currently analysed
@@ -270,7 +273,8 @@ bool CheckAccessibility(HANodeIterator classNode, bool & exposedByInline, TAcces
 
 
 template<TIssueIdentity Identity,TIssueType IssueType> 
-void AddIssue(const HANodeIterator* self, const HANodeIterator& ignorenode, int lineNumber, const XMLCh* fileid, const DataMember & data)
+void AddIssue(const HANodeIterator* self, const HANodeIterator& ignorenode, int lineNumber, const string& aIssueLoc, 
+			  const XMLCh* fileid, const DataMember & data)
 {
     bool exposedByInline=false;
     CheckAccessibility(*self,exposedByInline,data.iAccess);
@@ -278,11 +282,12 @@ void AddIssue(const HANodeIterator* self, const HANodeIterator& ignorenode, int 
 	TBCSeverity sev = BCseverityAccessible<Identity,IssueType>(!exposedByInline);
 	TSCSeverity scsev = SCseverityAccessible<Identity,IssueType>(!exposedByInline);
 	string ign = ignoreInfo<Identity,IssueType>(*self,ignorenode);
-	self->addIssue(Identity,IssueType,sev,scsev,ign,fileid, data.iName,lineNumber);
+	self->addIssue(Identity,IssueType,sev,scsev,ign,fileid, data.iName,lineNumber,aIssueLoc);
 }
 
 template<TIssueIdentity Identity,TIssueType IssueType> 
-void AddIssue(const HANodeIterator* self, const HANodeIterator& ignorenode, int lineNumber, const XMLCh* fileid=NULL, const string namepostfix="")
+void AddIssue(const HANodeIterator* self, const HANodeIterator& ignorenode, int lineNumber, const string& aIssueLoc, 
+			  const XMLCh* fileid=NULL, const string namepostfix="")
 {
     bool exposedByInline=false;
     CheckAccessibility(*self,exposedByInline);
@@ -290,7 +295,7 @@ void AddIssue(const HANodeIterator* self, const HANodeIterator& ignorenode, int 
 	TBCSeverity sev = BCseverityAccessible<Identity,IssueType>(!exposedByInline);
 	TSCSeverity scsev = SCseverityAccessible<Identity,IssueType>(!exposedByInline);
 	string ign = ignoreInfo<Identity,IssueType>(*self,ignorenode);
-	self->addIssue(Identity,IssueType,sev,scsev,ign,fileid, namepostfix,lineNumber);
+	self->addIssue(Identity,IssueType,sev,scsev,ign,fileid, namepostfix,lineNumber,aIssueLoc);
 }
 
 #endif

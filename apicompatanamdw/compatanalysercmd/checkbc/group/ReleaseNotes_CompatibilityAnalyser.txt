@@ -1,29 +1,29 @@
 ===============================================================================
 
-RELEASE NOTES - COMPATIBILITY ANALYSER v2.8.3
-RELEASED 2nd December 2009 
-
-SUPPORTS S60 5.0+
+RELEASE NOTES - COMPATIBILITY ANALYSER v2.8.4
+RELEASED 16th February 2010 
 
 ===============================================================================
 
 Product Description:
 ====================
 
-Compatibility Analyser compares a set of files in two different versions of S60
+Compatibility Analyser compares a set of files in two different versions of Symbian
 releases against predefined Binary Compatibility (BC) criteria, and reports any
 changes that affect BC. The analysis is done on header files or import
-libraries of the platform. Preserving BC is central in S60 development to
-ensure that any executable that was built against an older version (for
-example, S60 5.0 platform) can be run without changes on a newer version of the
-platform (for example, S60 5.1 onwards). The comparison is made between a
-baseline version of an S60 release (for example, a Public SDK from Forum Nokia)
+libraries of the platform. Preserving BC is central in Symbian development to
+ensure that any executable that was built against an older version can be run without 
+changes on a newer version of the platform .The comparison is made between a
+baseline version of an Symbian release (for example, a Public SDK from Forum Nokia)
 and a newer, current SDK version that needs to be verified. Compatibility
 reports can be filtered so that they compare the found issues against a known
 issues file. This file (knownissues.xml) contains information on whether or not
-the same BC problems have occurred before in the S60 Platform and what should
+the same BC problems have occurred before in the Symbian Platform and what should
 be done about them.
 
+Compatibility Analyser uses three additional utilities for the analysis process,
+HeaderAnalyser, LibraryAnalyser and BCFilter. Please see the release notes of
+those tools for details.
 
 Main Features:
 ==============
@@ -36,31 +36,33 @@ Main Features:
 
 ===============================================================================
 
-What's New in v2.8.3
+What's New in v2.8.4
 ====================
-- Change: In HA:- Multiple threading logic is made configurable. By default it is disabled. 
-  "-usethread" is the param. If not mentioned in HA command option, threading logic will be disabled.
-- Checkbc.py supports Multiple thread using Config param.
-  For Public vs Rnd SDK analysis or for small no of header analysis (<3000), set the "USE_THREAD" in config_template as "true".
-  For Rnd vs Rnd sdk analysis or large no. of headers analysis, keep the "USE_THREAD" as "false" or empty.  
-- Fix: In HA:- For overloaded functions, the mangled attribute wil also be checked with functiion name present in gccxml output.
-- Fix: In HA:- For GCC XML compilation, __GNUC__ macro should be enabled instead of __GCCE__.
-- Fix: In HA:- The CA core toolset throws error when executed from desktop
-- Fix: In HA:- When issue reported as "file cannot be analysed", set the line No to 0 in report.
-- Stylesheet is updated with the fix reported by PMO and is having the severity wise sorting also.
-- Updated HeaderAnalyser to version 1.6.3
-- Updated LibraryAnalyser to version 3.3.2
-- Updated BCFilter to version 1.3.1
-- Nokia copyright changes are updated in source codes.
-- Updated knownissues.xml
+CA supports QT headers and libraries analysis on Symbian.
 
+- Change: In HA:- CA:Re-write the HandleExports() logic in HA to support both Symbian and Qt exported logic
+- Change: In HA:- QT: Rules implementation
+                      1) default arguement value change
+                      2) exported function analysis irrespective of its accessibility
+                      3)first time over loaded function
+- Change: In HA:- Symbian_os.hrh should be included for all round of compilation. Investigated and solved the issue.
+- Fix: In HA:- Symian Headers split issue : LineNumber Changes with issue file loc done.
+- Change: In LA:- RVCT-4 ToolChain support in Library Analyser.
+- Change: In CheckBC:- Implemented the logic to use the common data gloabal_data.xml file created.
+- Change: In CheckBC:- 5.2 platformdata file updated with TB9.2 wk02 2010 content along with QT dependency info.
+- Change: In CheckBC:- Validation of build target logic changed. Remove the build type option for ure/udeb. Only urel is supported
+- Fix: In CheckBC:- Validation of given SDK dir is needed while taking the DLLs from the respective release folder.
+- Updated HeaderAnalyser to version 1.6.4
+- Updated LibraryAnalyser to version 3.3.3
+- Updated knownissues.xml
 
 ===============================================================================
 
 Installation Notes:
 ===================
-Compatibility Analyser is part of the FTS package. It is available under 
-fts\compatibilityanalyser\ directory.
+Compatibility Analyser is part of the BCTools package. It is preinstalled in
+all Symbian Platform/OEM releases under [EPOCROOT]\epoc32\tools\s60rndtools\bctools
+directory.
 
 ===============================================================================
 
@@ -80,12 +82,36 @@ N/A
 
 Known Issues:
 =============
-N/A
-  
+- From TB9.2 onwards, the epoc32\include\mw\QT folder should be excluded using config_template file.
+  This is required because this Qt folder conttains all the duplicate header entries present in other folders like mw\Qtcore,mw\Qtgui,mw\QtSql etc.
+  The excluded param in config is EXCLUDE_DIR_HEADERS.
+  ex:- EXCLUDE_DIR_HEADERS =Qt
+- CA won't support Qt header analysis for SDK version < 5.2
+- Currently Qt headers are present by dafault in epoc32\include\mw in any TB9.2 sdk.
+  Changes in this location path may result in compilation errors for Qt headers. In that case, platform data file needs to be updated.
+   
 ===============================================================================
 
 Version History:
 ================
+Version 2.8.3 - 2nd December 2009
+--------------------------------
+- Change: In HA:- Multiple threading logic is made configurable. By default it is disabled. 
+  "-usethread" is the param. If not mentioned in HA command option, threading logic will be disabled.
+- Checkbc.py supports Multiple thread using Config param.
+  For Public vs Rnd SDK analysis or for small no of header analysis (<3000), set the "USE_THREAD" in config_template as "true".
+  For Rnd vs Rnd sdk analysis or large no. of headers analysis, keep the "USE_THREAD" as "false" or empty.  
+- Fix: In HA:- For overloaded functions, the mangled attribute wil also be checked with functiion name present in gccxml output.
+- Fix: In HA:- For GCC XML compilation, __GNUC__ macro should be enabled instead of __GCCE__.
+- Fix: In HA:- The CA core toolset throws error when executed from desktop
+- Fix: In HA:- When issue reported as "file cannot be analysed", set the line No to 0 in report.
+- Stylesheet is updated with the fix reported by PMO and is having the severity wise sorting also.
+- Updated HeaderAnalyser to version 1.6.3
+- Updated LibraryAnalyser to version 3.3.2
+- Updated BCFilter to version 1.3.1
+- Nokia copyright changes are updated in source codes.
+- Updated knownissues.xml
+
 Version 2.8.2 - 18th September 2009
 --------------------------------
 - Change: In HA:- HeaderAnalyser should report the line number for each break in a file
@@ -141,18 +167,13 @@ Version 2.7.0 - 7th April 2009
 - Updated LibraryAnalyser to version 3.3.0
 - Updated knownissues.xml
 
-Version 2.6.1 - 2nd March 2009 
---------------------------------
-- Fix: HeaderAnalyser parameter length can be more
-- Updated knownissues.xml
-
 Version 2.6.0 - 17th February 2009 
 --------------------------------
 - Feature: Added support to verify source compatibility breaks
 - Feature: Added support for displaying baseline and curent platform versions
 - Feature: Information to end-user if the issue was found previously but the 
   header has some other unrelated changes
-- Change: Updated include paths for S60 5.1
+- Change: Updated include paths for Symbian SDK 5.1
 - Change: .h;.hrh;.mbg;.rsg;.hpp;.pan are now default file extensions  
 - Change: Harmonized default report filenames with Compatibility Analyser 
   carbide plugin
@@ -176,9 +197,73 @@ Version 2.5.1 - 8th January 2009
 
 Version 2.5.0 - 9th December 2008 
 --------------------------------
-- Contains HeaderAnalyser version 1.3.2
-- Contains OrdinalChecker version 3.1.0
-- Contains BCFilter version 1.2.0
+- Removed checkbc.cmd interface
+- Fix: Exclusion of directory did not work
+- Fix: knownissues.xml provided with the tool should have been the default file
+  for filtering
+- Fix: Report file displays "known issues" "platform versions" even if
+  filtering is not done
+- Updated HeaderAnalyser to version 1.3.2
+- Updated knownissues.xml
+
+Version 2.4.0 - 14th November 2008
+--------------------------------
+- Updated HeaderAnalyser to version 1.3.1
+- Updated knownissues.xml
+
+Version 2.3.0 - 21st October 2008
+--------------------------------
+- Feature: Added support for Symbian SDK 5.1
+- Feature: CheckBC interface now works in Linux environment
+- Feature: Diff view in the report can be now easily closed
+- Fix: Recursive on should been the default setting
+- Fix: Empty paths for files to be filtered where handled incorrectly   
+- Change: Generated reports are now filtered immediately instead of waiting all
+  reports being generated
+- Updated HeaderAnalyser to version 1.3.0
+- Updated OrdinalChecker to version 3.1.0
+- Updated BCFilter to version 1.2.0
+- Updated knownissues.xml
+
+Version 2.2.2 - 3rd October 2008
+--------------------------------
+- Updated knownissues.xml
+
+Version 2.2.1 - 19th September 2008
+-----------------------------------
+- Updated knownissues.xml
+
+Version 2.2.0 - 29th August 2008
+--------------------------------
+- Updated HeaderAnalyser to version 1.2.6
+
+Version 2.1.0 - 20th August 2008
+--------------------------------
+- Feature: Ok cases can be viewed separately in the report file
+- Change: Paths of output report files are now optional. If they are not
+  specified, they will be created under the "reports" directory
+- Change: Diff link in the report opens now in the same window to avoid several
+  problems in different environments
+- Change: Default system include paths are now platform specific
+- Fix: Diff and link to the header file did not work with the Firefox browser
+- Fix: Recursion for header files was handled incorrectly
+- Fix: Exclude dirs functionality for header files was handled incorrectly
+- Fix: Relative paths were not handled correctly
+- Updated HeaderAnalyser to version 1.2.5
+- Updated OrdinalChecker to version 3.0.7
+- Updated BCFilter to version 1.1.6
+- Updated knownissues.xml
+
+Version 2.0.0 - 8th July 2008
+-----------------------------
+- Change: CheckBC has been rebranded as Compatibility Analyser
+- Change: Completely renewed commandline parameters and config file format
+- Change: The new CheckBC interface can now be found from the root level -
+  the old CheckBC interface still exists under the scripts directory for those
+  users who do not yet want to migrate to the new one
+- Updated HeaderAnalyser to version 1.2.4
+- Updated OrdinalChecker to version 3.0.6
+- Updated BCFilter to version 1.1.5
 - Updated knownissues.xml
 
 ===============================================================================

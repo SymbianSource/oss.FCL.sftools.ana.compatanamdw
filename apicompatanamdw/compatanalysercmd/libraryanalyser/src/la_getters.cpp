@@ -303,6 +303,15 @@ void GetSymbolTableWithFromelf(const string& fromelf_location, const string& cfi
                     //previous_ordinal = Str2Int(ms1);
                 }
 
+				//break from the loop before section6 begins this chage is introduced for rvct4
+				boost::regex re4("^.*(SHT_STRTAB).*");
+				boost::cmatch matches1;
+				if (boost::regex_match(tempVector.at(j).c_str(), matches3, re4))
+                {
+					break;
+                }
+            
+
             } //while (j<tempVector.size())
 
       

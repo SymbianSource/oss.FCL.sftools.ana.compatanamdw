@@ -40,8 +40,9 @@ ReportIssue::ReportIssue()
 ReportIssue::ReportIssue(int aIssueId, const string& aFile, 
                 const string& aFQName, const TIssueIdentity& aIdentityId, 
                 const TIssueType& aTypeId, const TBCSeverity& aBCSeverityId, 
-                const TSCSeverity& aSCSeverityId, const string& aIgnoreInformation, 
-                int aLineNumber, const string& aCompareFileName, const string& aCompilationError, bool alineNoNeeded ):
+                const TSCSeverity& aSCSeverityId, const string& aIgnoreInformation,
+                int aLineNumber, const string& aIssueLoc, const string& aCompareFileName, 
+				const string& aCompilationError, bool alineNoNeeded):
     iHeaderFile(aFile),
     iFQName(aFQName),
     iId(aIssueId),
@@ -51,9 +52,9 @@ ReportIssue::ReportIssue(int aIssueId, const string& aFile,
     iIdentityId(aIdentityId),
     iTypeId(aTypeId),
     iLineNumber( aLineNumber ),
+	iIssueLoc(aIssueLoc),
     iCompareFileName( aCompareFileName ),
-	iCompilationError(aCompilationError),
-	iLineNoNeeded(alineNoNeeded)
+	iCompilationError(aCompilationError)
     {
     }
 
@@ -256,6 +257,15 @@ void ReportIssue::SetLineNumber(int lineNumber)
 }
 
 // ----------------------------------------------------------------------------
+// ReportIssue::LineNumber
+// ----------------------------------------------------------------------------
+//
+const string& ReportIssue::IssueLocation() const
+{
+    return iIssueLoc;
+}
+
+// ----------------------------------------------------------------------------
 // ReportIssue::CompareFileName
 // ----------------------------------------------------------------------------
 //
@@ -271,11 +281,6 @@ const string& ReportIssue::CompareFileName() const
 const string& ReportIssue::CompilationError() const
 {
     return iCompilationError;
-}
-
-const bool& ReportIssue::LineInfoNeeded()
-{
-	return iLineNoNeeded;
 }
 
 // ----------------------------------------------------------------------------
@@ -302,6 +307,7 @@ const ReportIssue& ReportIssue::operator=(const ReportIssue& other)
     iIdentityId=other.iIdentityId;
     iTypeId=other.iTypeId;	
     iLineNumber=other.iLineNumber;
+	iIssueLoc=other.iIssueLoc;
     iCompareFileName=other.iCompareFileName;
 	iCompilationError=other.iCompilationError;
 	return (*this);

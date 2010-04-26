@@ -22,16 +22,14 @@ try:
 	import subprocess
 	import platform
 	import urllib
+	import xml.dom.minidom
 except ImportError:
 	python_error()
 	
 #-------------------------Hardcoded values-----------------------------------------
-#Currently hardcoded values, these will be moved to a metadata file later
-#data version denotes compatibility between the tool and carbide plugin
-DATA_VERSION = "6"
 #tool version denotes the version of the core tools package
-TOOL_VERSION = "2.8.3"
-TOOL_DATE = "1st December 2009"
+TOOL_VERSION = "2.8.4"
+TOOL_DATE = "16th February 2010"
 
 #server to be used for downloading Core tools package and knownissues
 SERVER_PATH = "http://"
@@ -47,14 +45,50 @@ DATA_PATH = TOOL_DIR + "data" + os.sep
 EXEC_PATH = TOOL_DIR + "bin" + os.sep
 REPORT_PATH = TOOL_DIR + "reports" + os.sep
 DEFAULT_ISSUES_FILE = TOOL_DIR + "data" + os.sep + "knownissues.xml"
-s60_build_targets = [ 'armv5', 'armv5_abiv2', 'armv6', 'armv6t2', 'armv7a' ]
+GLOBAL_DATA_FILE = TOOL_DIR + "global_data.xml"
 tool_chain = ['gcc','gcce','rvct']
-sdk_version = [ '5.0','5.1','5.2','sf1','sf2']
+
+DATA_VERSION = ''
+ALL_HEADER_SET = ''
+sdk_version = []
+s60_build_targets = []
+sys_includes = {}
+
+doc = xml.dom.minidom.parse(GLOBAL_DATA_FILE)
+
+#data version denotes compatibility between the tool and carbide plugin
+#Read dataversion from global_data.xml
+DATA_VERSION = doc.getElementsByTagName("dataversion")[0].childNodes[0].data
+
+#Read supported filetypes in header analyser from global_data.xml
+for filetype in doc.getElementsByTagName("filetypes")[0].getElementsByTagName("type"):
+   if ALL_HEADER_SET != '':
+      ALL_HEADER_SET += ';'
+   ALL_HEADER_SET += filetype.childNodes[0].data
+
+#Read supported sdk versions from global_data.xml
+for version in doc.getElementsByTagName("supportedversions")[0].getElementsByTagName("version"):
+   sdk_version.append(version.childNodes[0].data)
+
+#Read supported build targets from global_data.xml
+for buildtarget in doc.getElementsByTagName("buildtargets")[0].getElementsByTagName("target"):
+   s60_build_targets.append(buildtarget.childNodes[0].data)
+
+#Read system include paths for supported sdk versions from global_data.xml
+for node in doc.getElementsByTagName("sys_includes"):
+   ver = node.getAttribute("version")
+   includes = []
+   for inc in node.getElementsByTagName("inc"):
+       includes.append(inc.childNodes[0].data)
+   sys_includes[ver] = includes     
 
 #dictionary elements which hold the platform data(CDS) and forced header(symbian macros) information
 #these are available only when the \data and \bin folders respectively are avaliable
 if os.path.exists( DATA_PATH ):
 	platformdata = {
+	"3.0": DATA_PATH + "s60_platform_data_30.xml",
+	"3.1": DATA_PATH + "s60_platform_data_31.xml",
+	"3.2": DATA_PATH + "s60_platform_data_32.xml",
 	"5.0": DATA_PATH + "s60_platform_data_50.xml",
 	"5.1": DATA_PATH + "s60_platform_data_51.xml",
 	"5.2": DATA_PATH + "s60_platform_data_52.xml",
@@ -66,6 +100,9 @@ else:
 	
 if os.path.exists( EXEC_PATH ):	
 	forcedheadersdata = {
+	"3.0": EXEC_PATH + "forced_9.1.h",
+	"3.1": EXEC_PATH + "forced_9.2.h",
+	"3.2": EXEC_PATH + "forced_9.3.h",
 	"5.0": EXEC_PATH + "forced_9.4.h",
 	"5.0v2": EXEC_PATH + "forced_9.4v2.h",
 	"5.1": EXEC_PATH + "forced_9.4v2.h",
@@ -78,6 +115,9 @@ else:
 	
 if os.path.exists( DATA_PATH ):
 	dllXMLdata = {
+	"3.0": DATA_PATH + "s60_dll_data_30.xml",
+	"3.1": DATA_PATH + "s60_dll_data_31.xml",
+	"3.2": DATA_PATH + "s60_dll_data_32.xml",
 	"5.0": DATA_PATH + "s60_dll_data_50.xml",
 	"5.1": DATA_PATH + "s60_dll_data_51.xml",
 	"5.2": DATA_PATH + "s60_dll_data_52.xml",
@@ -86,31 +126,6 @@ if os.path.exists( DATA_PATH ):
 	}
 else:
 	dllXMLdata = {}
-
-#Lists to hold platform dependant system include paths
-sys_hdr_30 = [ '', 'libc', 'oem', 'ecom' ]
-
-sys_hdr_32 = ['middleware', 'domain'+ os.sep +'middleware', 'osextensions', 'domain'+ os.sep +'osextensions', 'applications', 'domain'+ os.sep +'applications']
-sys_hdr_32.extend(sys_hdr_30)
-	
-sys_hdr_50 = ['domain'+ os.sep +'middleware'+ os.sep + 'loc', 'domain'+ os.sep +'osextensions'+ os.sep +'loc', 'domain'+ os.sep +'applications' + os.sep + 'loc',
-				  'domain'+ os.sep +'middleware'+ os.sep +'loc'+ os.sep +'sc', 'domain'+ os.sep +'osextensions'+ os.sep +'loc'+ os.sep +'sc',
-				  'domain'+ os.sep +'applications'+ os.sep +'loc'+ os.sep +'sc']
-sys_hdr_50.extend(sys_hdr_30)
-sys_hdr_50.extend(sys_hdr_32)
-
-sys_hdr_51 = ['mw', 'platform'+ os.sep + 'mw', 'platform', 'app','platform'+ os.sep + 'app', 'platform'+ os.sep + 'loc', 'platform'+ os.sep + 'mw' + os.sep + 'loc',
-              'platform'+ os.sep + 'app' + os.sep + 'loc', 'platform'+ os.sep + 'loc' + os.sep + 'sc', 'platform'+ os.sep + 'mw' + os.sep + 'loc' + os.sep +'sc',
-              'platform'+ os.sep + 'app' + os.sep + 'loc' + os.sep +'sc']
-sys_hdr_51.extend(sys_hdr_50)
-
-sys_includes = {
-	"5.0": sys_hdr_50,
-	"5.1": sys_hdr_51,
-	"5.2": sys_hdr_51,
-	"SF1": sys_hdr_51,
-	"SF2": sys_hdr_51
-	}
 
 #set of binaries in the Core tools set, this is windows specific, to be added for linux support
 if os.name == 'nt':
@@ -126,9 +141,6 @@ else:
 HEADER_REPORT = "Headers_CompatibilityReport"
 LIBRARY_REPORT = "Libraries_CompatibilityReport"
 
-#-------------------------Global Definitions------------------------------------------
-#defines set of file types analysed supported in header analyser
-ALL_HEADER_SET = '*.h;*.hrh;*.mbg;*.rsg;*.pan;*.hpp;*.rh'
 #true if checkbc is called from carbide plugin,
 #this make additional info available to STDOUT and STDEERR
 CARBIDE_PLUGIN = False
@@ -326,9 +338,9 @@ class HeaderAnalyser:
 			
 		for i in sys_includes[ip_data["BASELINE_SDK_S60_VERSION"]]:
 			if(ip_data["BASELINE_SDK_DIR"] == os.sep):
-			  tmp.append( os.sep + "epoc32" + os.sep + "include" + os.sep + i )
+			  tmp.append( os.sep + i )
 			else:
-			  tmp.append( ip_data["BASELINE_SDK_DIR"] + os.sep + "epoc32" + os.sep + "include" + os.sep + i )
+			  tmp.append( ip_data["BASELINE_SDK_DIR"] + os.sep + i )
 			
 		for i in tmp:	
 			try:
@@ -354,9 +366,9 @@ class HeaderAnalyser:
 					
 		for i in sys_includes[ip_data["CURRENT_SDK_S60_VERSION"]]:
 			if(ip_data["CURRENT_SDK_DIR"] == os.sep):
-			  tmp.append( os.sep + "epoc32" + os.sep + "include" + os.sep + i )
+			  tmp.append( os.sep + i )
 			else:
-			  tmp.append( ip_data["CURRENT_SDK_DIR"] + os.sep + "epoc32" + os.sep + "include" + os.sep + i )
+			  tmp.append( ip_data["CURRENT_SDK_DIR"] + os.sep + i )
 		
 		for i in tmp:			
 			try:
@@ -580,36 +592,15 @@ class LibraryAnalyser:
 		if not getdata( ip_data, "CURRENT_SDK_DIR"):
 			raise InputError(["confMP", "current importlib directory missing" + os.linesep, False])
 			
-		self.args["TEMP"] = ["-temp", quotep( ip_data["TEMP"] )]
-		
-		if getdata( ip_data, "BASELINE_BUILDTYPE"):
-			validateBulidType(ip_data["BASELINE_BUILDTYPE"],True)
-			basebldtype = ip_data["BASELINE_BUILDTYPE"]
-		else:
-			basebldtype = 'urel'
-				
-		if getdata( ip_data, "CURRENT_BUILDTYPE"):
-			validateBulidType(ip_data["CURRENT_BUILDTYPE"],False)		
-			curbldtype = ip_data["CURRENT_BUILDTYPE"]
-		else:
-			curbldtype = 'urel'
-			
-		if basebldtype == "" and curbldtype == "":
-			basebldtype = 'urel'
-			curbldtype = 'urel'
-		else:
-			if basebldtype == "":
-				basebldtype = curbldtype
-			else:
-				curbldtype = basebldtype
+		self.args["TEMP"] = ["-temp", quotep( ip_data["TEMP"] )]		
 
 		if getdata(	dllXMLdata, ip_data["BASELINE_SDK_S60_VERSION"] ):
 			baseDlldata = dllXMLdata[ip_data["BASELINE_SDK_S60_VERSION"]]
 		if getdata(	dllXMLdata, ip_data["CURRENT_SDK_S60_VERSION"] ):
 			currDlldata = dllXMLdata[ip_data["CURRENT_SDK_S60_VERSION"]]
 		
-		dbasebuild = GetBuildTarget(ip_data["BASELINE_SDK_DIR"],validate(baseDlldata),ip_data["TEMP"],basebldtype)
-		dcurrentbuild = GetBuildTarget(ip_data["CURRENT_SDK_DIR"],validate(currDlldata),ip_data["TEMP"],curbldtype)
+		dbasebuild = GetBuildTarget(ip_data["BASELINE_SDK_DIR"],validate(baseDlldata),ip_data["TEMP"])
+		dcurrentbuild = GetBuildTarget(ip_data["CURRENT_SDK_DIR"],validate(currDlldata),ip_data["TEMP"])
 		
 		if getdata( ip_data, "BASELINE_BUILDTARGET"):
 			basebuild = ip_data["BASELINE_BUILDTARGET"]
@@ -662,9 +653,9 @@ class LibraryAnalyser:
 		else:
 			for target in basebuild.split(';'):
 				if(ip_data["BASELINE_SDK_DIR"] == os.sep):
-					dllBasetmp.append(os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + basebldtype)
+					dllBasetmp.append(os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + 'urel')
 				else:
-					dllBasetmp.append(ip_data["BASELINE_SDK_DIR"] + os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + basebldtype)	
+					dllBasetmp.append(ip_data["BASELINE_SDK_DIR"] + os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + 'urel')	
 		
 		if getdata( ip_data, "BASELINE_IMPORTDLLS"):
 			if(ip_data["BASELINE_IMPORTDLLS"] == os.sep):
@@ -718,9 +709,9 @@ class LibraryAnalyser:
 		else:
 			for target in currentbuild.split(';'):
 				if(ip_data["CURRENT_SDK_DIR"] == os.sep):
-					dllCurrtmp.append(os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + curbldtype)
+					dllCurrtmp.append(os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + 'urel')
 				else:
-					dllCurrtmp.append(ip_data["CURRENT_SDK_DIR"] + os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + curbldtype)
+					dllCurrtmp.append(ip_data["CURRENT_SDK_DIR"] + os.sep + 'epoc32' + os.sep + 'release' + os.sep + target + os.sep + 'urel')
 	
 		if getdata( ip_data, "CURRENT_IMPORTDLLS"):
 			if(ip_data["CURRENT_IMPORTDLLS"] == os.sep):
@@ -1130,7 +1121,7 @@ def getdata( mydict, key):
 	return ''
 
 #return default build target from Rnd SDK and "" from Public SDK
-def GetBuildTarget(sdk,dlldata,temp_path,bld_type):
+def GetBuildTarget(sdk,dlldata,temp_path):
 	bldtarget = ""
 	path = ""
 	xmlFile = open (dlldata);
@@ -1139,11 +1130,12 @@ def GetBuildTarget(sdk,dlldata,temp_path,bld_type):
 
 	dll_file = temp_path + os.sep + "dll.txt"
 	dir_err_file = temp_path + os.sep + "dir_err.txt"	
+	
 	for target in s60_build_targets:
 		if sdk == os.sep:
-			path = quote(os.sep+'epoc32'+os.sep+'release'+os.sep+target+os.sep+bld_type+os.sep)
+			path = quote(os.sep+'epoc32'+os.sep+'release'+os.sep+target+os.sep+'urel'+os.sep)
 		else:
-			path = quote(sdk+os.sep+'epoc32'+os.sep+'release'+os.sep+target+os.sep+bld_type+os.sep)
+			path = quote(validateTargetPath(sdk+os.sep+'epoc32'+os.sep+'release'+os.sep+target+os.sep+'urel')+os.sep)
 		if not os.path.exists(path):
 			pass
 		
@@ -1208,24 +1200,11 @@ def validateBulidTarget(bldtarget,baseline):
 			else:
 				raise InputError(["confIP", "CURRENT_BUILDTARGET\n", False]) 
 
-def validateBulidType(buildtype,baseline):
-	bldTypelist = ['urel','udeb']
-	found = False
-	for i in bldTypelist:
-		if(i == buildtype.lower()):
-			found = True
-			break
-	if found == False:
-		if( baseline == True):
-			raise InputError(["confIP", "BASELINE_BUILDTYPE\n", False]) 
-		else:
-			raise InputError(["confIP", "CURRENT_BUILDTYPE\n", False]) 
-	
-	
-	
-	
-	
-	
+def validateTargetPath(path):
+	if not os.path.exists(path):
+		tmp = os.path.abspath(path)
+		path = tmp
+	return os.path.normpath(os.path.abspath(path))
 	
 			 
 #---------------------------Other funcs---------------------------------------------	
