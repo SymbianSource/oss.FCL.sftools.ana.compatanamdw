@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-02-14</listversion>
+  <listversion>2010-07-23</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
-	<os><osversion>3.2</osversion><buildweek>2010wk02</buildweek></os>
-	<os><osversion>5.0</osversion><buildweek>2010wk04</buildweek></os>
+	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
+	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk04</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk29</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -46,6 +46,12 @@
       </version>
    </headerfile>
    <headerfile name="obex\internal\obextransportconstants.h">
+       <version checksum="ci-sIZjDmQPUA">
+      	<status>OK</status>
+      	<comment>file is marked as internal tech.</comment>
+      </version>
+   </headerfile>
+   <headerfile name="platform\mw\obex\internal\obextransportconstants.h">
        <version checksum="ci-sIZjDmQPUA">
       	<status>OK</status>
       	<comment>file is marked as internal tech.</comment>
@@ -61,6 +67,18 @@
       	<comment>Removed components marked as internal component and moved to cimconvertheader.h.</comment>
       </version>
    </headerfile>
+   <headerfile name="app\imcvcodc.h">
+   <version checksum="LpF5YfqACF-9B">
+      	<status>OK</status>
+      	<comment>Removed components marked as internal component and moved to cimconvertheader.h.</comment>
+      </version>
+   </headerfile>
+   <headerfile name="mw\apselect.h">
+   <version checksum="D5mhWHjC7BgFl">
+      	<status>OK</status>
+      	<comment>File itself is marked as deprecated..</comment>
+      </version>
+   </headerfile>
    
     <headerfile name="stdapis\stlport\stl\msl_string.h">
        <version checksum="qYQw59PAxetVp">
@@ -68,7 +86,18 @@
       	<comment>File contains nothing to be analysed.</comment>
       </version>
    </headerfile>
-   
+    <headerfile name="animationcmd.h">
+       <version checksum="Tzh5knvCip1om">
+      	<status>OK</status>
+      	<comment>Everything in this file is marked as internalcomponent..</comment>
+      </version>
+   </headerfile>
+   <headerfile name="apfdef.h">
+       <version checksum="30yqLzKCip1om">
+      	<status>OK</status>
+      	<comment>Everything in this file is marked as internalcomponent..</comment>
+      </version>
+   </headerfile>
    <headerfile name="applications\cpbkselectfielddlg.h">
        <version checksum="BrMz-jBDhUbzR">
       	<status>NOK</status>
@@ -136,46 +165,82 @@
       </version>
    </headerfile>
    <headerfile name="xmlenguserdata.h">
-<version checksum="CTnDet2ALeg6A">
+		<version checksum="CTnDet2ALeg6A">
       <status>OK</status>
       <comment>Header moved to xml/dom/xmlenguserdata.h.  Not a bc break.</comment>
     </version>
-</headerfile>
+    <version checksum="CTnDet2AmtrDG">
+      <status>OK</status>
+      <comment>1.Header moved to xml/dom/xmlenguserdata.h.  Not a bc break.2.Guard macro changed</comment>
+    </version>
+	</headerfile>
 
-<headerfile name="xmlengoutputstream.h">
-<version checksum="CjkGCN0B-pGjn">
+	<headerfile name="xmlengoutputstream.h">
+		<version checksum="CjkGCN0B-pGjn">
       <status>OK</status>
       <comment>Header moved to xml/dom/xmlengoutputstream.h.  Not a bc break.</comment>
     </version>
-</headerfile>
+    <version checksum="CC4A1hFBNWI8w">
+      <status>OK</status>
+      <comment>1.class moved to xml/dom/xmlengoutputstream.h.  Not a bc break.2.Guard macro changed.</comment>
+    </version>
+    <version checksum="CjkGCN0AQBvaW">
+      <status>OK</status>
+      <comment>1.class  moved to xml/dom/xmlengoutputstream.h.  Not a bc break.2.Guard macro changed.</comment>
+    </version>
+	</headerfile>
 
 <headerfile name="xmlengnodefilter.h">
-<version checksum="CYqWrv5AXoCsC">
+	<version checksum="CYqWrv5AXoCsC">
       <status>OK</status>
       <comment>Header moved to xml/dom/xmlengnodefilter.h.  Not a bc break.</comment>
+    </version>
+    <version checksum="CYqWrv5C+3rsu">
+      <status>OK</status>
+      <comment>Header moved to xml/dom/xmlengnodefilter.h.  Not a bc break.</comment>
+    </version>
+    <version checksum="CYqWrv5A6glXQ">
+      <status>OK</status>
+      <comment>1.Header moved to xml/dom/xmlengnodefilter.h.  Not a bc break.2.Guard macro changed</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengdomimplementation.h">
-<version checksum="C3fnhbXD2Sqn0">
+	<version checksum="C3fnhbXD2Sqn0">
+      <status>OK</status>
+      <comment>Header moved to xml/dom/xmlengdomimplementation.h. and function close ( with default argument ) is split into parameter type and function 	without arguments. Not a BC break</comment>
+    </version>
+    <version checksum="C3fnhbXAoN+Cg">
+      <status>OK</status>
+      <comment>1.Header moved to xml/dom/xmlengdomimplementation.h. and function close ( with default argument ) is split into parameter type and function 	without arguments. Not a BC break .2.Adding an overloaded function is not a bc break.</comment>
+    </version>
+    <version checksum="C3fnhbXAwvItZ">
       <status>OK</status>
       <comment>Header moved to xml/dom/xmlengdomimplementation.h. and function close ( with default argument ) is split into parameter type and function 	without arguments. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengdocument.h">
-<version checksum="CRcbgdQDjSC0A">
+		<version checksum="CRcbgdQDjSC0A">
+      <status>OK</status>
+      <comment>Header moved to xml/dom/xmlengdocument.h and return value of GetDataContainerList changed from void to int. Not a BC break.</comment>
+    </version>
+    <version checksum="CRcbgdQCogqfo">
       <status>OK</status>
       <comment>Header moved to xml/dom/xmlengdocument.h and return value of GetDataContainerList changed from void to int. Not a BC break.</comment>
     </version>
 </headerfile>
 
-<headerfile name="xmlengdataserializer.h">
-<version checksum="CqpPLPNATytCi">
+	<headerfile name="xmlengdataserializer.h">
+		<version checksum="CqpPLPNATytCi">
       <status>OK</status>
       <comment>Header moved to xml/dom/xmlengdataserializer.h. Not a BC break</comment>
     </version>
-</headerfile>
+    <version checksum="CqpPLPNC9sSQC">
+      <status>OK</status>
+      <comment>1.Header moved to xml/dom/xmlengdataserializer.h. Not a BC break.2.Guard macro added.</comment>
+    </version>
+	</headerfile>
 
 <headerfile name="xml\xmlframeworkerrors.h">
 <version checksum="DG3ZQOYBJjfq6">
@@ -185,132 +250,192 @@
 </headerfile>
 
 <headerfile name="xmlengtext.h">
-<version checksum="CC4A1hFBRN5sE">
+	<version checksum="CC4A1hFBRN5sE">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CC4A1hFBNWI8w">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengserializationoptions.h">
-<version checksum="DCb6-YoCjk2iM">
+	<version checksum="DCb6-YoCjk2iM">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="DCb6-YoAcaAyq">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengprocessinginstruction.h">
-<version checksum="DF8JAHYBhcw5i">
+	<version checksum="DF8JAHYBhcw5i">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="DF8JAHYD2ojfq">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengnodelist_impl.h">
-<version checksum="ClQQcpDC3eGWV">
+	<version checksum="ClQQcpDC3eGWV">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="ClQQcpDByKVMD">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengnodelist.h">
-<version checksum="CRMB82WDQcTXr">
+	<version checksum="CRMB82WDQcTXr">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CRMB82WArp8Lx">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengnode.h">
-<version checksum="CDYnFY6Dn4yDW">
+	<version checksum="CDYnFY6Dn4yDW">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CDYnFY6AFAglA">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengnamespace.h">
-<version checksum="CWxAwhiA-+C8o">
+	<version checksum="CWxAwhiA-+C8o">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CWxAwhiBtq7k8">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengfilecontainer.h">
-<version checksum="CnctmKxAwp5-Q">
+	<version checksum="CnctmKxAwp5-Q">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CnctmKxA+IxXD">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengerrors.h">
-<version checksum="CJl9AelAyJRqp">
+	<version checksum="CJl9AelAyJRqp">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CJl9AelDptgkV">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengentityreference.h">
-<version checksum="Cs1U16cCfsZ6T">
+		<version checksum="Cs1U16cCfsZ6T">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="Cs1U16cAJ6X16">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengelement.h">
-<version checksum="CORy-voDsPfu0">
+	<version checksum="CORy-voDsPfu0">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CORy-voBFRRZ2">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengdomparser.h">
-<version checksum="CWXIb8UDWW+Ys">
+	<version checksum="CWXIb8UDWW+Ys">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CWXIb8UDbhPNm">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
-
-
 <headerfile name="xmlengdom.h">
-<version checksum="B8Zm0RuBaRDsx">
+	<version checksum="B8Zm0RuBaRDsx">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="B8Zm0RuBMbe-+">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
-
-
 <headerfile name="xmlengdocumentfragment.h">
-<version checksum="CxiKjemAJHPlF">
+	<version checksum="CxiKjemAJHPlF">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CxiKjemAOkED-">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
-
-
 <headerfile name="xmlengdatacontainer.h">
-<version checksum="Cnp3rHqD1iI9f">
+	<version checksum="Cnp3rHqD1iI9f">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    	<version checksum="Cnp3rHqDl7PIQ">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
-
-
 <headerfile name="xmlengcomment.h">
-<version checksum="CMpkSiwB4CfVl">
+	<version checksum="CMpkSiwB4CfVl">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CMpkSiwBrsG44">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
-
-
 <headerfile name="xmlengchunkcontainer.h">
-<version checksum="Co+n35IASQMq2">
+	<version checksum="Co+n35IASQMq2">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="Co+n35IDw06cR">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
-
-
 <headerfile name="xmlengcharacterdata.h">
-<version checksum="CmPqFK-C1iVso">
+	<version checksum="CmPqFK-C1iVso">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CmPqFK-BsDuCc">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
@@ -318,26 +443,43 @@
 
 
 <headerfile name="xmlengcdatasection.h">
-<version checksum="CgkWunIBqSXuT">
+		<version checksum="CgkWunIBqSXuT">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CgkWunIDs1evp">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
 <headerfile name="xmlengbinarycontainer.h">
-<version checksum="CvdpY3zBdYkzj">
+		<version checksum="CvdpY3zBdYkzj">
+      <status>OK</status>
+      <comment>Guard macro removed. Not a BC break</comment>
+    </version>
+    <version checksum="CvdpY3zA0AuPd">
       <status>OK</status>
       <comment>Guard macro removed. Not a BC break</comment>
     </version>
 </headerfile>
 
-<headerfile name="xmlengattr.h">
-<version checksum="CC1c8WrB7h8b4">
-      <status>OK</status>
-      <comment>Guard macro removed. Not a BC break</comment>
-    </version>
-</headerfile>
-
+	<headerfile name="xmlengattr.h">
+			<version checksum="CC1c8WrB7h8b4">
+	      <status>OK</status>
+	      <comment>Guard macro removed. Not a BC break</comment>
+	    </version>
+	    <version checksum="CC1c8WrC0h2-1">
+	      <status>OK</status>
+	      <comment>Guard macro removed. Not a BC break</comment>
+	    </version>
+	</headerfile>
+	<headerfile name="app\clmklandmarkselectordlg.h">
+	<version checksum="7VAWqT7BuZ0h+">
+	      <status>OK</status>
+	      <comment>New member function added. </comment>
+	    </version>
+	</headerfile>
    
    <headerfile name="apaid.h">
        <version checksum="m53Qn2rDV2jn2">
@@ -348,9 +490,26 @@
       	<status>OK</status>
       	<comment> CApaAppFinder and TApaAppCapability::Internalize7_0L( ::RReadStream) marked as deprecated. The published All TApaAppEntry class is reclassified as internalComponent. It's not a BC break, CApaAppServiceInfoArray moved to apaidpartner.h</comment>
       </version>
+      <version checksum="m53Qn2rD9iQE4">
+      	<status>OK</status>
+      	<comment>1. Class CApaAppFinder is marked as deprecated. 2. Externalize7_0L( ::RWriteStream ) const and TApaAppCapability::Internalize7_0L( ::RReadStream ) are marked as deprecated. 3. The published All TApaAppEntry class is reclassified as internalComponent.</comment>
+      </version>
    </headerfile>
-   
-      <headerfile name="apasvst.h">
+   <headerfile name="mw\apaid.h">
+    <version checksum="m53Qn2rCYK5Aa">
+      	<status>OK</status>
+      	<comment> CApaAppFinder and TApaAppCapability::Internalize7_0L( ::RReadStream) marked as deprecated. The published All TApaAppEntry class is reclassified as internalComponent. It's not a BC break, CApaAppServiceInfoArray moved to apaidpartner.h</comment>
+      </version>
+      <version checksum="m53Qn2rD9iQE4">
+      	<status>OK</status>
+      	<comment>1. CApaAppFinder and TApaAppCapability::Internalize7_0L( ::RReadStream) marked as deprecated. The published All TApaAppEntry class is reclassified as internalComponent. It's not a BC break, CApaAppServiceInfoArray moved to apaidpartner.h 2. Addition of an overloaded function is not a bc break.</comment>
+      </version>
+      <version checksum="m53Qn2rBnw1Sa">
+      	<status>OK</status>
+      	<comment>1. CApaAppFinder and TApaAppCapability::Internalize7_0L( ::RReadStream) marked as deprecated. The published All TApaAppEntry class is reclassified as internalComponent. It's not a BC break, KOpenServiceUid,CApaAppServiceInfoArray and TApaAppServiceInfo moved to apaidpartner.h 2. Addition of an overloaded function is not a bc break.3.TApaAppCapability::Externalize7_0L( ::RWriteStream  )  is marked as private member.</comment>
+      </version>
+    </headerfile>
+   <headerfile name="apasvst.h">
        <version checksum="Ww303n5B+I26w">
       	<status>OK</status>
       	<comment>Removal of unused exported StartupApaServer(MApaAppStarter ) function is approved and changing the parameter of IMPORT_C TInt ApaServThreadStart(TAny* )is approved. It's not a BC break.</comment>
@@ -360,7 +519,12 @@
       	<comment>1)Removal of unused exported StartupApaServer(MApaAppStarter ) function is approved and changing the parameter of IMPORT_C TInt ApaServThreadStart(TAny* )is approved. 2) NameApaServServerThread()marked internal and promoted to apaidpartner.h and NameApaServStartSemaphore() marked as internal and moved to apainternal.h</comment>
       </version>
    </headerfile>
-   
+   <headerfile name="platform\mw\apasvst.h">
+    <version checksum="Ww303n5A9gZOa">
+      	<status>OK</status>
+      	<comment>1)Removal of unused exported StartupApaServer(MApaAppStarter ) function is approved and changing the parameter of IMPORT_C TInt ApaServThreadStart(TAny* )is approved. 2) NameApaServServerThread()marked internal and promoted to apaidpartner.h and NameApaServStartSemaphore() marked as internal and moved to apainternal.h</comment>
+      </version>
+   </headerfile>
     <headerfile name="stdapis\stlport\stl\_exception.h">
        <version checksum="AAAAAAAAxetVp">
       	<status>OK</status>
@@ -510,6 +674,10 @@
       <status>OK</status>
       <comment>Class has default public constructor, so overriding a virtual funtion is not allowed.But this change has been done to fix a bug. Studied and approved.</comment>
     </version>
+    <version checksum="0wHb69GBhyNRy">
+      <status>OK</status>
+      <comment>Class has default public constructor, so overriding a virtual funtion is not allowed.But this change has been done to fix a bug. Studied and approved.</comment>
+    </version>
   </headerfile>
   
    <headerfile name="_sipcodecdefs.h">
@@ -589,15 +757,31 @@
       <comment>This overridden function will not be called in applications, which derive from this class and are built with the SDK. Generally, this may cause unexpected behaviour. However, the effects of this particular change have been studied and approved.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="mw\aknradiobuttonsettingpage.h">
+    <version checksum="5Iw2wXVB3U9+q">
+      <status>OK</status>
+      <comment>virtual function overridden in the class.The change can be considered as part of "single click" application migration.  .</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\aknpopupsettingpage.h">
+    <version checksum="qq6ep2yDrn9G6">
+      <status>OK</status>
+      <comment>virtual function overridden in the class. The change can be considered as part of "single click" application migration. .</comment>
+    </version>
+  </headerfile>
   <headerfile name="aknclearer.h">
     <version checksum="-bqb7sODGTJll">
       <status>OK</status>
       <comment>This overridden function will not be called in applications, which derive from this class and are built with the SDK. Generally, this may cause unexpected behaviour. However, the effects of this particular change have been studied and approved.</comment>
     </version>
+  </headerfile>    
+  <headerfile name="middleware\downloadmgrclient.h">
+    <version checksum="x76C4zMAEzLaF">
+      <status>OK</status>
+      <comment>Overloaded function added. It might be a source break..</comment>
+    </version>
   </headerfile>  
-  
-<headerfile name="mw\downloadmgrclient.h">
+	<headerfile name="mw\downloadmgrclient.h">
     <version checksum="w5+w-cfA8hYTQ">
       <status>NOK</status>
       <comment>Class size changed. Since class has public destructor, memory required for an object of this class would be determined during build time only.It is a break.</comment>
@@ -609,6 +793,10 @@
     <version checksum="RV1dRnEAR8hV8">
       <status>OK</status>
       <comment>Part of internal tech.</comment>
+    </version>
+    <version checksum="x76C4zMAEzLaF">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break..</comment>
     </version>
   </headerfile>
   
@@ -632,6 +820,18 @@
       <comment>All removed constants are internal or deprecated and moved to apainternal.h </comment>
     </version>
   </headerfile>
+  <headerfile name="mw\apadef.h">
+  <version checksum="HoHnUnMBy7UD4">
+      <status>OK</status>
+      <comment>All removed constants are internal or deprecated and moved to apainternal.h </comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\apgdoor.h">
+    <version checksum="Gn4jJ9FAQuYDB">
+      <status>OK</status>
+      <comment>All removed constants are marked as internal tech.</comment>
+    </version>
+  </headerfile>
   <headerfile name="apgdoor.h">
     <version checksum="Gn4jJ9FAQuYDB">
       <status>OK</status>
@@ -652,6 +852,10 @@
       <comment>Spare data member is replaced with original data member.</comment>
     </version>
     <version checksum="UtWyArIBtCXSS">
+      <status>OK</status>
+      <comment>Spare data member is replaced with original data member.</comment>
+    </version>
+    <version checksum="XSx-cnFBtCXSS">
       <status>OK</status>
       <comment>Spare data member is replaced with original data member.</comment>
     </version>
@@ -687,9 +891,19 @@
       <status>OK</status>
       <comment>Removed constants, class and enum are part of internal tech.</comment>
     </version>
+    <version checksum="VjLEaXTCKtpjA">
+      <status>OK</status>
+      <comment>Removed constants, class and enum are part of internal tech.</comment>
+    </version>
   </headerfile>  
   
   <headerfile name="apadbase.h">
+    <version checksum="fonxBFDDvghWj">
+      <status>OK</status>
+      <comment>Reserved member renamed.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\apadbase.h">
     <version checksum="fonxBFDDvghWj">
       <status>OK</status>
       <comment>Reserved member renamed.</comment>
@@ -714,8 +928,24 @@
       <comment>Part of internal tech.</comment>
     </version>
   </headerfile>
+  <headerfile name="platform\mw\msvipc.h">
+  	<version checksum="Z2-a7LMDv6Mua">
+      <status>OK</status>
+      <comment>Part of internal tech.</comment>
+    </version>
+    <version checksum="i2GPbMvDv6Mua">
+      <status>OK</status>
+      <comment>Part of internal tech.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="tzlocalizationdatatypes.h">
+    <version checksum="0rbmNDTA7au+1">
+      <status>OK</status>
+      <comment>tzlocalizationdatatypes.h is part of internal tech...</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\tzlocalizationdatatypes.h">
     <version checksum="0rbmNDTA7au+1">
       <status>OK</status>
       <comment>tzlocalizationdatatypes.h is part of internal tech...</comment>
@@ -857,6 +1087,12 @@
       <comment>v-table layout of CLafEdwinCustomDrawBase changed due to change in base class layout. But it is ok, since reserved virtual function has been replaced..</comment>
     </version>
   </headerfile>
+  <headerfile name="platform\mw\lafmain.h">
+    <version checksum="KRUicopBZyyu4">
+      <status>OK</status>
+      <comment>v-table layout of CLafEdwinCustomDrawBase changed due to change in base class layout. But it is ok, since reserved virtual function has been replaced..</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="aknnotifystd.h">
     <version checksum="D-1xugsBA7hej">
@@ -964,6 +1200,10 @@
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
+    <version checksum="0Z7gXeoChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
     </headerfile>	
     
     <headerfile name="sqldb.h">
@@ -984,6 +1224,10 @@
       <comment>exported function removed (::RSqlStatement::ParamName( ::TInt, ::TPtrC ).</comment>
     </version>
      <version checksum="fYrQfPhAG-wUS">
+      <status>OK</status>
+      <comment>Class TSqlResourceTester is marked as internal tech.</comment>
+    </version>
+    <version checksum="fYrQfPhB6IP-C">
       <status>OK</status>
       <comment>Class TSqlResourceTester is marked as internal tech.</comment>
     </version>
@@ -1086,6 +1330,46 @@
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
+     <version checksum="qnrlRufChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="CbSFpGbChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="RE0YzD7Chv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="+0771ILChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="NvqAY70Chv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+     <version checksum="50d0jJBChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="2rzSXlwChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added(to TAknsMinorGenericValue) without changing any of the existing enum values.Enum member (of TAknsMinorSkinValue) name changed,it is not a bc break.</comment>
+    </version>
+    <version checksum="QubLI1HChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="TuJZWHFChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="CS1aM-1Chv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
    </headerfile>
 	
 	 <headerfile name="middleware\aknsconstants.h">
@@ -1108,8 +1392,7 @@
     <version checksum="C5FXvW8Bs74HL">
       <status>OK</status>
       <comment>All are depreciated constants, and changing the name of it is ok.</comment>
-    </version>
-          
+    </version>          
    </headerfile>
    
    <headerfile name="mw\aknsconstants.h">
@@ -1133,7 +1416,12 @@
       <comment>CAknPopupHeadingPane is publised class, so changing the size of class is not allowed since constructor is a public member and thus it is derivable.</comment>
     </version>
    </headerfile>
-
+	<headerfile name="mw\animationmixins.h">
+    <version checksum="SpW1gi1CrPeQ2">
+      <status>OK</status>
+      <comment>Class is marked as internal component..</comment>
+    </version>
+   </headerfile>
 	<headerfile name="middleware\aknsconstants.hrh">
 	  <version checksum="zSurkqfChv9Aq">
       <status>OK</status>
@@ -1320,6 +1608,10 @@
       <comment>Only the enum indicating the max value has changed.</comment>
     </version>
     <version checksum="GL5tJNoChv9Aq">
+      <status>OK</status>
+      <comment>Only the enum indicating the max value has changed.</comment>
+    </version>
+    <version checksum="oFYBT+yChv9Aq">
       <status>OK</status>
       <comment>Only the enum indicating the max value has changed.</comment>
     </version>
@@ -1561,6 +1853,10 @@
   </headerfile>
   
 	<headerfile name="mw\eikedwin.h">
+    <version checksum="3J+prh7DiF-aw">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok.</comment>
+    </version>
     <version checksum="74LGKHYDJFJy-">
       <status>OK</status>
       <comment>CEikEdwinExtension is a private member and thus deleting a member is ok. Since class size of CEikEdwinExtension also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
@@ -1612,6 +1908,26 @@
       <status>OK</status>
       <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
+    <version checksum="ouSIdTBDq33iB">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
+    <version checksum="qhKUxgbCBtglK">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
+    <version checksum="qBalaKQB54YOS">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. </comment>
+    </version>
+    <version checksum="y8EAaaHB54YOS">
+      <status>OK</status>
+      <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. </comment>
+    </version>
+    <version checksum="3mwWFsuAjnezF">
+      <status>OK</status>
+      <comment>All Enum members are marked as internal component. </comment>
+    </version>
    </headerfile>
    
    <headerfile name="pdrstore.h">
@@ -1653,7 +1969,13 @@
       <status>OK</status>
       <comment>All concerned classes are marked as internal component</comment>
     </version> 
-    </headerfile>
+   </headerfile>
+    <headerfile name="remconclient.h">
+	    <version checksum="TzvZF2rASzxrq">
+	      <status>OK</status>
+	      <comment>File has been marked as internal component</comment>
+	    </version>
+	  </headerfile>
     
   <headerfile name="remcon\remconclient.h">
     <version checksum="-awNQHADs-3T4">
@@ -1831,7 +2153,12 @@
       <comment>1. Removal of KUidFileRecognizer16, KUidFileRecognizer are approved.2.Other removed class and constants are marked as internal component.</comment>
     </version>
   </headerfile>
-  
+   <headerfile name="mw\apaflrec.h">
+   <version checksum="bT952jNCpWhzD">
+      <status>OK</status>
+      <comment>1. Removal of KUidFileRecognizer16, KUidFileRecognizer are approved.2.Other removed class and constants are marked as internal component.</comment>
+    </version>
+  </headerfile>
   <headerfile name="apaserverapp.h">
     <version checksum="KiHBDyyDFayDH">
       <status>OK</status>
@@ -1842,6 +2169,12 @@
       <comment>Guard macro changed..</comment>
     </version>
     <version checksum="UAIn8MzCgFwrF">
+      <status>OK</status>
+      <comment>Guard macro changed and TApaAppServerPanic marked as internal and moved to apainternal.h</comment>
+    </version>
+   </headerfile>
+   <headerfile name="platform\mw\apaserverapp.h">
+   <version checksum="UAIn8MzCgFwrF">
       <status>OK</status>
       <comment>Guard macro changed and TApaAppServerPanic marked as internal and moved to apainternal.h</comment>
     </version>
@@ -1892,6 +2225,10 @@
       <status>OK</status>
       <comment>File contains only #defines.</comment>
     </version>
+    <version checksum="NcAQxreCip1om">
+      <status>OK</status>
+      <comment>File contains only #defines.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="apgcli.h">
@@ -1908,12 +2245,24 @@
       <comment>Enum values are not removed.A name has been given to a nameless enumeration, MinApplicationStackSize() marked as internal and moved to apainternal.h</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\apgcli.h">
+  <version checksum="0xgBLE3A0ezXW">
+      <status>OK</status>
+      <comment>Enum values are not removed.A name has been given to a nameless enumeration, MinApplicationStackSize() marked as internal and moved to apainternal.h</comment>
+    </version>
+  </headerfile>
   <headerfile name="apgicnfl.h">
     <version checksum="dxOGNblCQwf19">
       <status>OK</status>
       <comment>Parameters in "removed" function have been const'd, which is ok.</comment>
     </version>
     <version checksum="2BdVAFHBp460C">
+      <status>OK</status>
+      <comment>CApaRegistrationResourceFileWriter moved to apgicnflpartner.h, CApaResourceFileWriterBase and CApaLocalisableResourceFileWriter promoted and moved to apgicnflpartner.h</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\apgicnfl.h">  
+   <version checksum="2BdVAFHBp460C">
       <status>OK</status>
       <comment>CApaRegistrationResourceFileWriter moved to apgicnflpartner.h, CApaResourceFileWriterBase and CApaLocalisableResourceFileWriter promoted and moved to apgicnflpartner.h</comment>
     </version>
@@ -1926,6 +2275,12 @@
   </headerfile>
    <headerfile name="apgctl.h">
     <version checksum="8CApf0pB1AsGL">
+      <status>OK</status>
+      <comment>Class CApaSystemControlList moved to apgctllist.h</comment>
+    </version>
+  </headerfile>
+   <headerfile name="mw\apgctl.h">
+    <version checksum="8CApf0pCaPO7g">
       <status>OK</status>
       <comment>Class CApaSystemControlList moved to apgctllist.h</comment>
     </version>
@@ -1963,6 +2318,10 @@
       <status>OK</status>
       <comment>KDataArrayGranularity marked internal and moved to apmpan.h</comment>
     </version>
+    <version checksum="yt2HoJHATiZsP">
+      <status>OK</status>
+      <comment>1. class CApaDataRecognizer and const KDataArrayGranularity are marked as internalcomponent.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="asaltdefs.h">
@@ -1997,6 +2356,12 @@
       <comment>File contains only #defines.</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\asshdbitflags.h">
+   <version checksum="Bi78tFBAxetVp">
+      <status>OK</status>
+      <comment>File contains only #defines.</comment>
+    </version>
+  </headerfile>
   
    <headerfile name="asshddefs.h">
     <version checksum="oLUAbqNDw9Vo4">
@@ -2011,7 +2376,12 @@
       <comment>Components marked as internal and moved and promoted to cntsyncecom.h</comment>
     </version>
   </headerfile>
-
+ <headerfile name="app\cntsync.h">
+    <version checksum="5iyxRI3BnCiDo">
+      <status>OK</status>
+      <comment>Components marked as internal and moved and promoted to cntsyncecom.h</comment>
+    </version>
+  </headerfile>
   <headerfile name="avkon.rsg">
     <version checksum="RK-cm7hD4bOMZ">
       <status>OK</status>
@@ -2075,7 +2445,12 @@
       <comment>1.Addition of data member iFlags2 is ok, since there is no change in class size.Flag iTASShdAlarm_2 is being used by internal alaram object.2.Inline function is replaced with generic function. 4)KAlarmServerPubSubCategory and KMissingAlarmPubSubKey and struct TMissedAlarmPubSubData moved to ASShdAlarmCal.h</comment>
     </version>
    </headerfile>
-   
+   <headerfile name="mw\asshdalarm.h">
+   <version checksum="uyZ0M2pCFJd5T">
+      <status>OK</status>
+      <comment>1.Addition of data member iFlags2 is ok, since there is no change in class size.Flag iTASShdAlarm_2 is being used by internal alaram object.2.Inline function is replaced with generic function. 4)KAlarmServerPubSubCategory and KMissingAlarmPubSubKey and struct TMissedAlarmPubSubData moved to ASShdAlarmCal.h</comment>
+    </version>
+   </headerfile>
   <headerfile name="mw\avkon.hrh">
    <version checksum="PUv1gKjAAxN-G">
       <status>OK</status>
@@ -2142,6 +2517,30 @@
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
      <version checksum="5NwZYztBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+     <version checksum="Gxa-o+0BG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="MNh5AUCBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="NSHB82nBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="O8qTl2vBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="R5zHjdJBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="a1UmDNRBG9pRn">
       <status>OK</status>
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
@@ -2235,7 +2634,21 @@
       <status>OK</status>
       <comment>Deleted function was used for debug purpose only, so it is not part of production code.</comment>
     </version>
+    <version checksum="WfHi4TOALtay5">
+      <status>OK</status>
+      <comment>Deleted function was used for debug purpose only, so it is not part of production code.2. New overloaded function added.</comment>
+    </version>
   </headerfile>
+  <headerfile name="app\calsession.h">
+  	<version checksum="WfHi4TOC5NPLC">
+      <status>OK</status>
+      <comment>Deleted function was used for debug purpose only, so it is not part of production code.</comment>
+    </version>
+    <version checksum="WfHi4TOALtay5">
+      <status>OK</status>
+      <comment>1.Deleted function was used for debug purpose only, so it is not part of production code.2.Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+   </headerfile>
   
    <headerfile name="bifbase.h">
     <version checksum="CdOMe2QA2c321">
@@ -2253,12 +2666,24 @@
       <comment>TBaCommand is marked as internal component..</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\vwsdef.h">
+    <version checksum="aRzPdvuB3RFzm">
+      <status>OK</status>
+      <comment>1.KErrViewWrongMode,TVwsViewEventBuf,TVwsViewIdAndMessageBuf,KNullViewId are marked as internal component.2.contants (KUidCustomCrossCheck, KUidCustomCrossCheckValue0, and class TVwsViewEvent are moved into vwsdefpartner.h</comment>
+    </version>
+  </headerfile>
    <headerfile name="biouids.h">
     <version checksum="QAGh--GCbakRY">
       <status>OK</status>
       <comment>All removed constants are marked as internal tech.</comment>
     </version>
     <version checksum="QAGh--GA-HSrd">
+      <status>OK</status>
+      <comment>Constants marked as internal tech moved to tmsvbioinfo.h and constants marked published partner moved to biomessageuids.h</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\biouids.h">
+  <version checksum="QAGh--GA-HSrd">
       <status>OK</status>
       <comment>Constants marked as internal tech moved to tmsvbioinfo.h and constants marked published partner moved to biomessageuids.h</comment>
     </version>
@@ -2321,6 +2746,22 @@
       <status>OK</status>
       <comment>Enum added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
+    <version checksum="+nXP19JC302ux">
+      <status>OK</status>
+      <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
+    </version>
+    <version checksum="NOLFpC2C302ux">
+      <status>OK</status>
+      <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
+    </version>
+    <version checksum="bsXr8sQD0VOmL">
+      <status>OK</status>
+      <comment>The enum TBrCtlScriptLog  is required to enable javascript debug messages.</comment>
+    </version>
+    <version checksum="LBQ4ltVC302ux">
+      <status>OK</status>
+      <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
+    </version>
    </headerfile>
  
    <headerfile name="mw\brctldefs.h">
@@ -2333,6 +2774,22 @@
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
     <version checksum="8Z1oDROC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="+nXP19JC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="NOLFpC2C302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="LBQ4ltVC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="Ql1ZQZFC302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
@@ -2394,6 +2851,10 @@
       <status>OK</status>
       <comment>The enum value indicating the maximum number of supported enum values has increased. It's Ok.</comment>
     </version>    
+    <version checksum="+nXP19JC302ux">
+      <status>OK</status>
+      <comment>The enum value indicating the maximum number of supported enum values has increased. It's Ok.</comment>
+    </version> 
    </headerfile>
   
    <headerfile name="bsp.h">
@@ -2406,8 +2867,20 @@
       <comment>Removed constants are marked as internaland moved to tmsvbioinfo.h</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\bsp.h">
+  <version checksum="-9Rnui5BIIlSF">
+      <status>OK</status>
+      <comment>Removed constants are marked as internaland moved to tmsvbioinfo.h</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="bif.h">
+    <version checksum="wCRostfAXGCFs">
+      <status>OK</status>
+      <comment>Removed constants are either no longer used or moved into cpp file. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\bif.h">
     <version checksum="wCRostfAXGCFs">
       <status>OK</status>
       <comment>Removed constants are either no longer used or moved into cpp file. </comment>
@@ -2424,7 +2897,12 @@
       <comment>KEpocMimeTypeDrm moved to TMsvPackedNotifierRequest.h </comment>
     </version>
   </headerfile>
-  
+  <headerfile name="mw\cmsvattachment.h">
+    <version checksum="Ixq77D6A3IBne">
+      <status>OK</status>
+      <comment>KEpocMimeTypeDrm moved to TMsvPackedNotifierRequest.h </comment>
+    </version>
+  </headerfile>
    <headerfile name="coedef.h">
     <version checksum="vcGSV7wAu2s2x">
       <status>NOK</status>
@@ -2435,6 +2913,12 @@
       <comment>Removal of constant KCoeCustomColorsArrayValue still under investigation. All other macros and enum are marked as internal</comment>
     </version>
      <version checksum="6D7hP7LBWbGsJ">
+      <status>OK</status>
+      <comment>Enum and removed macros are marked as internal tech.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\coedef.h">
+  <version checksum="6D7hP7LBWbGsJ">
       <status>OK</status>
       <comment>Enum and removed macros are marked as internal tech.</comment>
     </version>
@@ -2450,7 +2934,12 @@
       <comment>Classes MBifChangeObserver and CBifChangeObserver moved to bifchangeobserver.h, KUidBioDBDll marked as internal and deleted.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="mw\biodb.h">
+  <version checksum="Oc7Jxy6Ajof60">
+      <status>OK</status>
+      <comment>Classes MBifChangeObserver and CBifChangeObserver moved to bifchangeobserver.h, KUidBioDBDll marked as internal and deleted.</comment>
+    </version>
+  </headerfile>
   <headerfile name="cacheman.h">
     <version checksum="U42PkiTBPoPih">
       <status>OK</status>
@@ -2461,7 +2950,12 @@
       <comment>1)Classes CImEntryFinder,CImFinder,CImMessageCounter,CImMessageFinder are marked as internal and  moved to cimfinder.h.2)Class CImPruneMessage moved to cimprunemessage.h 3)KMiutWildCard marked as internal. </comment>
     </version>
   </headerfile>
-  
+  <headerfile name="app\cacheman.h">
+  <version checksum="U42PkiTBdkgC1">
+      <status>OK</status>
+      <comment>1)Classes CImEntryFinder,CImFinder,CImMessageCounter,CImMessageFinder are marked as internal and  moved to cimfinder.h.2)Class CImPruneMessage moved to cimprunemessage.h 3)KMiutWildCard marked as internal. </comment>
+    </version>
+  </headerfile>
   <headerfile name="bassnd.h">
     <version checksum="YA8ODwwDAMKKy">
       <status>OK</status>
@@ -2492,6 +2986,12 @@
       <comment>Removed macros and constants are marked as internal tech and moved to coeerrorconsts.h</comment>
     </version>
   </headerfile>
+   <headerfile name="mw\coeerror.h">
+  <version checksum="Nnft4mBBaiKM9">
+      <status>OK</status>
+      <comment>Removed macros and constants are marked as internal tech and moved to coeerrorconsts.h</comment>
+    </version>
+  </headerfile>
   <headerfile name="coemain.h">
     <version checksum="p6Ra7HxDFI5ux">
       <status>OK</status>
@@ -2500,8 +3000,7 @@
     <version checksum="tunN0p7BC0BKL">
       <status>OK</status>
       <comment>Concerned class is marked as deprecated and moved to coescheduler.h.</comment>
-    </version>
-    
+    </version>    
     <version checksum="*******DzNmJM">
       <status>OK</status>
       <comment>The inline functions are private.</comment>
@@ -2515,6 +3014,12 @@
       <comment>Concerned class is marked as deprecated..</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\coemain.h">
+  	<version checksum="tunN0p7BC0BKL">
+      <status>OK</status>
+      <comment>Concerned class is marked as deprecated and moved to coescheduler.h.</comment>
+    </version>
+   </headerfile>
   <headerfile name="cs_subconevents.h">
     <version checksum="TsUknRnDhKQRa">
       <status>OK</status>
@@ -2605,6 +3110,10 @@
       <status>OK</status>
       <comment>CFbsBitGcExtraData is marked as internal componentand moved to bitgcextradata.h.</comment>
     </version>
+    <version checksum="BwtXlXeDl30FF">
+      <status>OK</status>
+      <comment>1.CFbsBitGcExtraData is marked as internal componentand moved to bitgcextradata.h.2. New member function added.</comment>
+    </version>
   </headerfile>  
   
    <headerfile name="brctlinterface.h">
@@ -2668,6 +3177,10 @@
     </headerfile>
     
   <headerfile name="bttypes.h">
+    <version checksum="LLL0Mz8Ab13qC">
+      <status>OK</status>
+      <comment>1) KBluetoothSimplePairingHashSize, TBluetoothSimplePairingHash, TBluetoothSimplePairingRandomizer, KBluetoothSimplePairingRandomizerSize marked as published partner. 2) Due to header splitting, many constants moved to included header. 3) TBTSupportedFeaturesBits, TBluetoothSupportedCommandsBits marked as internal tech.</comment>
+    </version>
     <version checksum="B6KjwitCPbR4Q">
       <status>OK</status>
       <comment>1.KBTHCIFeaturesBytes is marked as internal technology. 2. Guard macro name changed.</comment>
@@ -2679,6 +3192,10 @@
     <version checksum="LLL0Mz8CnLXjQ">
       <status>OK</status>
       <comment>There is no change in size of class TL2CapConfig.Tool issue.Other constant and enums are marked as internal component.</comment>
+    </version>
+    <version checksum="LLL0Mz8AnM+cU">
+      <status>OK</status>
+      <comment>There is no change in size of class TL2CapConfig.Tool issue.enums are marked as internal component.</comment>
     </version>
   </headerfile>
   <headerfile name="spdiacontrol.h">
@@ -2707,10 +3224,18 @@
       <status>OK</status>
       <comment>Removal of macro KBrowserNGScriptLog is studied..</comment>
     </version>
+    <version checksum="88SV67jARRi+I">
+      <status>OK</status>
+      <comment>Removal of macro KBrowserNGScriptLog is studied..</comment>
+    </version>
   </headerfile>
 
   
   <headerfile name="bt_sock.h">
+    <version checksum="h9XOc8KACttDB">
+      <status>OK</status>
+      <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
     <version checksum="HC-9kaFCuipm9">
       <status>OK</status>
       <comment>TBTL2CAPOptions::KL2CAPNegotiatedOutboundMTU is used for outbound MTU size </comment>
@@ -2775,6 +3300,18 @@
       <status>OK</status>
       <comment>1)Except macro KBasebandSlotTime, other constants and classes are marked as internal tech.KBasebandSlotTime is moved to included header btbasebandpolicy.h 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
     </version>
+    <version checksum="d6roJ5CDNBprT">
+      <status>OK</status>
+      <comment>1). TACLPort,class TACLSockAddr, const KSockBluetoothTypeRawBroadcast and const KSockBluetoothTypeACL are part of internalcompoent. 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
+    <version checksum="d6roJ5CACttDB">
+      <status>OK</status>
+      <comment>1)Except macro KBasebandSlotTime, other constants and classes are marked as internal tech.KBasebandSlotTime is moved to included header btbasebandpolicy.h 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
+    <version checksum="h9XOc8KDNBprT">
+      <status>OK</status>
+      <comment>1). TACLPort,class TACLSockAddr, const KSockBluetoothTypeRawBroadcast and const KSockBluetoothTypeACL are part of internalcompoent. 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="btsdp.h">
@@ -2817,6 +3354,12 @@
   </headerfile>
   
   <headerfile name="vprop.h">
+    <version checksum="v5dePndBof3lX">
+      <status>OK</status>
+      <comment>1) CParserPropertyValueBinaryFile moved to vpropbinaryfile.h. 2)KMaxGeneratedfilenamelen and KRandomnumberlen marked as internal.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="app\vprop.h">
     <version checksum="v5dePndBof3lX">
       <status>OK</status>
       <comment>1) CParserPropertyValueBinaryFile moved to vpropbinaryfile.h. 2)KMaxGeneratedfilenamelen and KRandomnumberlen marked as internal.</comment>
@@ -2871,6 +3414,16 @@
       <comment>Adding virtual functions in classes CAgentData,CAgentImportFile,CAgentManager,CAgentRightsManager were studied and approved..</comment>
     </version>
      <version checksum="uvqgTkcBAlKZF">
+      <status>OK</status>
+      <comment>Adding virtual functions in classes CAgentData,CAgentImportFile,CAgentManager,CAgentRightsManager were studied and approved..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\caf\agentinterface.h">
+  <version checksum="uvqgTkcBAlKZF">
+      <status>OK</status>
+      <comment>Adding virtual functions in classes CAgentData,CAgentImportFile,CAgentManager,CAgentRightsManager were studied and approved..</comment>
+    </version>
+    <version checksum="08yDuYnBAlKZF">
       <status>OK</status>
       <comment>Adding virtual functions in classes CAgentData,CAgentImportFile,CAgentManager,CAgentRightsManager were studied and approved..</comment>
     </version>
@@ -3003,6 +3556,21 @@
       <comment>Memeber is marked as internalAll..</comment>
     </version>
   </headerfile>
+  <headerfile name="app\cntviewbase.h">
+    <version checksum="50fQi+eCSCW-R">
+      <status>OK</status>
+      <comment>Member is marked as internalAll..</comment>
+    </version>
+    <version checksum="50fQi+eC4h5eU">
+      <status>OK</status>
+      <comment>1) Member is marked as internalAll.2) Removal of inline function is ok</comment>
+    </version>
+    <version checksum="7zcTdfuC4h5eU">
+      <status>OK</status>
+      <comment>1) Member is marked as internalAll.2) Removal of inline function is ok</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="cdownloadmgruiuserinteractions.h">
     <version checksum="a9z3Lq2A54HeL">
       <status>OK</status>
@@ -3107,8 +3675,8 @@
   
   <headerfile name="charconv.h">
     <version checksum="V7b88nyAts45T">
-      <status>NOK</status>
-      <comment>Extra data member added , so class size should be changed. Tool is not commenting anything like this. Needs further analysis..</comment>
+      <status>OK</status>
+      <comment>Extra data member added , so class size should be changed. But Class has private constructor. So No BC Impact...</comment>
     </version>
   </headerfile>
   
@@ -3150,6 +3718,12 @@
   </headerfile>
   
   <headerfile name="cntfield.h">
+    <version checksum="0JKJDx+DG9mdG">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to cntfield_internal.h</comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\cntfield.h">
     <version checksum="0JKJDx+DG9mdG">
       <status>OK</status>
       <comment>Removed components marked as internal and moved to cntfield_internal.h</comment>
@@ -3213,6 +3787,16 @@
       <comment>CContactEcomPhoneNumberParser and CContactPhoneNumberParser moved to cntphonenumparser.h,KUidEcomCntPhoneNumberParserInterface promoted and moved to cntphonenumparser.h. 2)MConverterCallBack internal and moved to cntconvertercallback.h 3)Other removed components are marked as internal and moved to cntdb_internal.h. </comment>
     </version>
   </headerfile>
+  <headerfile name="app\cntdb.h">
+  <version checksum="eu0Ngr1A2ULWh">
+      <status>OK</status>
+      <comment>CContactEcomPhoneNumberParser and CContactPhoneNumberParser moved to cntphonenumparser.h,KUidEcomCntPhoneNumberParserInterface promoted and moved to cntphonenumparser.h. 2)MConverterCallBack internal and moved to cntconvertercallback.h 3)Other removed components are marked as internal and moved to cntdb_internal.h. </comment>
+    </version>
+    <version checksum="hOAMjHvA2ULWh">
+      <status>OK</status>
+      <comment>CContactEcomPhoneNumberParser and CContactPhoneNumberParser moved to cntphonenumparser.h,KUidEcomCntPhoneNumberParserInterface promoted and moved to cntphonenumparser.h. 2)MConverterCallBack internal and moved to cntconvertercallback.h 3)Other removed components are marked as internal and moved to cntdb_internal.h. </comment>
+    </version>
+  </headerfile>
   
   <headerfile name="cntdef.h">
     <version checksum="*******AykYGX">
@@ -3227,6 +3811,12 @@
       <comment>Virtual functions ExternalizeL and InternalizeL have been added to several classes. Since classes are only instantiable through NewL-functions, this is ok.</comment>
     </version>
     <version checksum="xP+uXCmD2fcWf">
+      <status>OK</status>
+      <comment>Component marked as internal.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\cntitem.h">
+   <version checksum="xP+uXCmD2fcWf">
       <status>OK</status>
       <comment>Component marked as internal.</comment>
     </version>
@@ -3288,8 +3878,21 @@
       <status>OK</status>
       <comment>Data type of variable changed from RCoeDynamicDataStorage* to CCoeControlStorage*</comment>
     </version>
+    <version checksum="VVkGtNyBgDI+u">
+      <status>OK</status>
+      <comment>Data type of variable changed from RCoeDynamicDataStorage* to CCoeControlStorage*</comment>
+    </version>
   </headerfile>
-
+  <headerfile name="mw\coecntrl.h">
+	<version checksum="VVkGtNyDQXO9D">
+      <status>OK</status>
+      <comment>Data type of variable changed from RCoeDynamicDataStorage* to CCoeControlStorage*</comment>
+    </version>
+    <version checksum="Xm8RBjhBgDI+u">
+      <status>OK</status>
+      <comment>1.Data type of variable changed from RCoeDynamicDataStorage* to CCoeControlStorage*2.Adding an overloaded function is not a bc break.</comment>
+    </version>
+ </headerfile>
   <headerfile name="coecntss.h">
     <version checksum="IEE9UDkBF-mgp">
       <status>OK</status>
@@ -3300,7 +3903,16 @@
       <comment>Both version of files are same..</comment>
     </version>
   </headerfile>
-
+	<headerfile name="platform\comms-infras\metabuffer.h">
+    <version checksum="CHvju0CB9wtpR">
+      <status>OK</status>
+      <comment>File is marked @internaltech.</comment>
+    </version>
+    <version checksum="CHvju0CBkDaof">
+      <status>OK</status>
+      <comment>File is marked @internaltech.</comment>
+    </version>
+  </headerfile>
   <headerfile name="comms-infras\metabuffer.h">
     <version checksum="CHvju0CB9wtpR">
       <status>OK</status>
@@ -3332,6 +3944,16 @@
       <comment>Enum-member has been added in between.So constitutes a break.But this error gets approved .</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\coetextdrawer.h">
+  <version checksum="+hsW1UIBfomLC">
+      <status>OK</status>
+      <comment>"reserved" function has been replaced by real one. This is ok.</comment>
+    </version>
+    <version checksum="+hsW1UIDymXc0">
+      <status>OK</status>
+      <comment>"reserved" function has been replaced by real one. This is ok.</comment>
+    </version>
+   </headerfile>
   <headerfile name="coetextdrawer.h">
   <version checksum="+hsW1UIBfomLC">
       <status>OK</status>
@@ -3342,6 +3964,10 @@
       <comment>A "reserved" function has been replaced by real one. This is ok.</comment>
     </version>
     <version checksum="WA0Mk9rC-WtZ3">
+      <status>OK</status>
+      <comment>A "reserved" function has been replaced by real one. This is ok.</comment>
+    </version>
+    <version checksum="+hsW1UIDymXc0">
       <status>OK</status>
       <comment>A "reserved" function has been replaced by real one. This is ok.</comment>
     </version>
@@ -3365,8 +3991,12 @@
       <comment>1.Enum variable inserted in between. This needs to be fixed. 2. Macros removed are either internal or moved to commsdat_partner.h. 3. Macro END_ATTRIBUTE_TABLE_BASE_N used to implement virtual functions from MMetaData interface which is an internal component. </comment>
     </version>
     <version checksum="7fU7tKNB2XrZq">
-      <status>NOK</status>
-      <comment>1.Enum variable inserted in between. This needs to be fixed. 2. Macros removed are either internal or moved to commsdat_partner.h. 3. Macro END_ATTRIBUTE_TABLE_BASE_N used to implement virtual functions from MMetaData interface which is an internal component.4)Removal of KCDMaskGenericTableName under investigation </comment>
+      <status>OK</status>
+      <comment>1.Enum variable inserted in between. This needs to be fixed. 2. Macros removed are either internal or moved to commsdat_partner.h. 3. Macro END_ATTRIBUTE_TABLE_BASE_N used to implement virtual functions from MMetaData interface which is an internal component.4)There is no change in value of macro KCDMaskGenericTableName  </comment>
+    </version>
+    <version checksum="7fU7tKNB2XrZq">
+      <status>OK</status>
+      <comment>1.Enum variable inserted in between. this is a bc break. But not useful for 3rd party app 2. Macros removed are either internal or moved to commsdat_partner.h. 3. Macro END_ATTRIBUTE_TABLE_BASE_N used to implement virtual functions from MMetaData interface which is an internal component.4)There is no change in value of macro KCDMaskGenericTableName  </comment>
     </version>
   </headerfile>
 
@@ -3376,7 +4006,12 @@
       <comment>File is marked @internalcomponent</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\commsdatutils.h">
+    <version checksum="E1YOb7NC-+Dhd">
+      <status>OK</status>
+      <comment>File is marked @internalcomponent</comment>
+    </version>
+  </headerfile>
   <headerfile name="commsdattypeinfov1_1.h">
     <version checksum="TJe2xppAMTNDE">
       <status>OK</status>
@@ -3555,8 +4190,19 @@
       <comment>ConverterListUtil marked as internal and moved to coninternal.h.</comment>
     </version>
   </headerfile>
-  
-   <headerfile name="conarc.h">
+  <headerfile name="mw\conlist.h">
+    <version checksum="1l9LlXTCIE1mx">
+      <status>OK</status>
+      <comment>ConverterListUtil marked as internal and moved to coninternal.h.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="mw\conarc.h">
+    <version checksum="ziVl3+vCE+gWd">
+      <status>OK</status>
+      <comment>Removed constants marked as internal and moved to coninternal.h.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="conarc.h">
     <version checksum="ziVl3+vCE+gWd">
       <status>OK</status>
       <comment>Removed constants marked as internal and moved to coninternal.h.</comment>
@@ -3584,15 +4230,55 @@
       <status>OK</status>
       <comment>File is marked as @internal tech.</comment>
     </version>
+    <version checksum="rRpr3fICip1om">
+      <status>OK</status>
+      <comment>File is marked as @internal tech.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="stdapis\sys\_timespec.h">
+    <version checksum="HG3xoHgCip1om">
+      <status>OK</status>
+      <comment>File is deleted as the cleaning process..</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="caf\bitset.h">
+    <version checksum="lD5+M11Cip1om">
+      <status>OK</status>
+      <comment>File is marked as published partner and deprecated.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\bluetooth\logger.h">
+    <version checksum="WDAvuPTDeVmMb">
+      <status>OK</status>
+      <comment>File is marked as @internal tech.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\app\hlpconstants.h">
+    <version checksum="flArFs8CkH7vF">
+      <status>OK</status>
+      <comment>File is marked as @internal tech.</comment>
+    </version>
   </headerfile>
   <headerfile name="comms-infras\cs_mobility_apiext.h">
     <version checksum="C8sC9mwBpl--J">
       <status>OK</status>
       <comment>Included the file content in ./comms-infras/es_mobility_apiext.h</comment>
     </version>
+    <version checksum="C8sC9mwCbMkxH">
+      <status>OK</status>
+      <comment>Included the file content in ./comms-infras/es_mobility_apiext.h. Tool issue.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="mmf\common\mmferrors.h">
+    <version checksum="WoXidcFCJnmEo">
+      <status>OK</status>
+      <comment>Guard macro changed..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\mmf\common\mmferrors.h">
     <version checksum="WoXidcFCJnmEo">
       <status>OK</status>
       <comment>Guard macro changed..</comment>
@@ -3624,6 +4310,10 @@
       <status>OK</status>
       <comment>Reserved virtual function replaced with valid virtual function.</comment>
     </version>
+    <version checksum="mJWuupeCE+Waj">
+      <status>OK</status>
+      <comment>Reserved virtual function replaced with valid virtual function.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="comms-infras\api_ext_list.h">
@@ -3636,7 +4326,12 @@
       <comment>Depreciated file.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\comms-infras\api_ext_list.h">
+  <version checksum="TrWX-cVC1uMWz">
+      <status>OK</status>
+      <comment>Depreciated file.</comment>
+    </version>
+  </headerfile>
   <headerfile name="middleware\aknsettingpage.h">
     <version checksum="F62nlZcB55p0d">
       <status>OK</status>
@@ -3647,8 +4342,12 @@
       <comment>This break is already studied and approved.</comment>
     </version>
   </headerfile>
-  
-
+  <headerfile name="mw\confndr.h">
+    <version checksum="AAAAAAAAxetVp">
+      <status>OK</status>
+      <comment>File does not contain anything.</comment>
+    </version>
+  </headerfile>
   <headerfile name="confndr.h">
     <version checksum="AAAAAAAAxetVp">
       <status>OK</status>
@@ -3680,6 +4379,10 @@
       <status>OK</status>
       <comment>The removed enumeration is marked @internalComponent. This header is useless and is meant to be removed.</comment>
     </version>
+    <version checksum="AAAAAAACip1om">
+      <status>OK</status>
+      <comment>File does not contain anything.This header is useless and is meant to be removed</comment>
+    </version>
   </headerfile>
   
   <headerfile name="cpbkdatasaveappui.h">
@@ -3695,7 +4398,12 @@
       <comment>Header inclusion macro changed; this is ok.</comment>
     </version>
   </headerfile>
-
+  <headerfile name="editorundo.h">
+    <version checksum="paYkd0WCip1om">
+      <status>OK</status>
+      <comment>Everything in this file is marked as internal all..</comment>
+    </version>
+  </headerfile>
   <headerfile name="cpbksingleentryfetchdlg.h">
     <version checksum="*******CfNs+I">
       <status>OK</status>
@@ -3780,7 +4488,12 @@
       <comment>Build version information.</comment>
     </version>
   </headerfile>
-
+ <headerfile name="platform\d32comm.h">
+  <version checksum="aivuwBvD+fqUp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+  </headerfile>
   <headerfile name="d32locd.h">
   <version checksum="MJXVjmPDvOcyr">
       <status>OK</status>
@@ -3815,11 +4528,20 @@
       <comment>Class size changed.Studied and approved</comment>
     </version>
      <version checksum="VKsnPe+AwhwsL">
-      <status>NOK</status>
-      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break..</comment>
+      <status>OK</status>
+      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\d32locd.h">
+  	<version checksum="VKsnPe+AwhwsL">
+      <status>OK</status>
+      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
+    </version>
+    <version checksum="VKsnPe+AGIGuB">
+      <status>OK</status>
+      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
+    </version>
+  </headerfile>
   <headerfile name="datastor.h">
     <version checksum="C3+w9ZZDs7Sid">
       <status>OK</status>
@@ -3833,7 +4555,12 @@
       <comment>Removed component is marked @internal component and moved to dns_qry_internal.h.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\dns_qry.h">
+    <version checksum="QFfWuXbByLvZ1">
+      <status>OK</status>
+      <comment>Removed component is marked @internal component and moved to dns_qry_internal.h.</comment>
+    </version>
+  </headerfile>
   <headerfile name="d32dbms.h">
     <version checksum="mTZgNyhDPkEUg">
       <status>OK</status>
@@ -3869,6 +4596,10 @@
   </headerfile>
 
   <headerfile name="e32cmn.h">
+    <version checksum="LNn4Y-LDgleml">
+      <status>OK</status>
+      <comment>1) SRAllocatorBurstFail is not visible due to macro inclusion. This issue is ok. 2) Removed components are marked as internal.</comment>
+    </version>
     <version checksum="zQOVhW4CXMJaa">
       <status>OK</status>
       <comment>Bug in analysis tool - instantiated template classes cannot be "removed".</comment>
@@ -3933,8 +4664,25 @@
       <status>OK</status>
       <comment>Removed components are marked as internal.</comment>
     </version>
+    <version checksum="FvovPaHCJFGCG">
+      <status>OK</status>
+      <comment>KChunkClearByteDefault, KEmulatorImageFlagAllowDllData internal.struct SRAllocatorBurstFail internal.Anonymous enum is provided with a tag TAttributes which is ok.TChunkCreateAttributes is part of internal technology..typedef TDeviceInfo, TInfoName, TKName and TPassword internal.</comment>
+    </version>
+    <version checksum="LNn4Y-LCJFGCG">
+      <status>OK</status>
+      <comment>KChunkClearByteDefault, KEmulatorImageFlagAllowDllData internal.struct SRAllocatorBurstFail internal.Anonymous enum is provided with a tag TAttributes which is ok.TChunkCreateAttributes is part of internal technology..typedef TDeviceInfo, TInfoName, TKName and TPassword internal.</comment>
+    </version>
   </headerfile>
-
+  <headerfile name="e32des8.h">
+    <version checksum="a-vVcxaA+2I5+">
+      <status>OK</status>
+      <comment>The  constant is marked @internalTechnolog.</comment>
+    </version>
+    <version checksum="a-vVcxaCPGDlZ">
+      <status>OK</status>
+      <comment>There is no removal of template classes. tool issue.</comment>
+    </version>
+   </headerfile> 
 <headerfile name="e32const.h">
     <version checksum="7C8GMCFDHGnvg">
       <status>OK</status>
@@ -3968,9 +4716,17 @@
       <status>OK</status>
       <comment>KRealFormatTypeFlagsMask changed its value.Mask is widened to allow new format option KRealInjectiveLimit.</comment>
     </version>
+    <version checksum="YCVjR4nCiJGAH">
+      <status>OK</status>
+      <comment>KModuleVersionNull,KModuleVersionWild marked internal.KProtectedServerNamePrefix present in e32const_private.h</comment>
+    </version>
   </headerfile>
 
   <headerfile name="e32def.h">
+    <version checksum="X98adb2BKG9QF">
+      <status>OK</status>
+      <comment>Removed macros are marked as internal and deprecated or moved to e32def_private.h</comment>
+    </version>
     <version checksum="BnGv7I5DpFXnj">
       <status>OK</status>
       <comment>Baseline was updated to include a definition for __int64 in GCC, as this is needed in several headers. To fix target, copy the __int64 changes from baseline.</comment>
@@ -3994,6 +4750,14 @@
     <version checksum="X1OLzfqBKG9QF">
       <status>OK</status>
       <comment>Removed macros are marked as internal and deprecated or moved to e32def_private.h.</comment>
+    </version>
+    <version checksum="X98adb2BmFjn8">
+      <status>OK</status>
+      <comment>Removed macros/classes are marked as internal and deprecated or moved to e32def_private.h.</comment>
+    </version>
+    <version checksum="X1OLzfqBmFjn8">
+      <status>OK</status>
+      <comment>Removed macros/classes are marked as internal and deprecated or moved to e32def_private.h.</comment>
     </version>
   </headerfile>
 
@@ -4034,7 +4798,11 @@
       <status>OK</status>
       <comment>1.Nameless union modified to include a new member.  The union is in protected section --> should be OK.2.Spare data member is replaced.</comment>
     </version>
-  </headerfile>
+     <version checksum="lxYzwhqAs77Ro">
+      <status>OK</status>
+      <comment>1.Nameless union modified to include a new member.  The union is in protected section --> should be OK.2.Spare data member is replaced.3.Class TScreenInfoV01 present in e32event_private.h</comment>
+    </version>
+   </headerfile>
   
    <headerfile name="e32keys.h">
     <version checksum="7GzFE8ZDH07im">
@@ -4051,7 +4819,19 @@
     </version>
   </headerfile>
   
+  <headerfile name="e32des16.h">
+    <version checksum="Re-E0GlAKHCMS">
+      <status>OK</status>
+      <comment>KShiftDesType16 marked as internal.</comment>
+    </version>
+  </headerfile>
   <headerfile name="comms-infras\netmessages.h">
+    <version checksum="oJ+kFn6CxF9CY">
+      <status>OK</status>
+      <comment>File is marked as internal tech.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\comms-infras\netmessages.h">
     <version checksum="oJ+kFn6CxF9CY">
       <status>OK</status>
       <comment>File is marked as internal tech.</comment>
@@ -4090,6 +4870,14 @@
       <comment>File is marked @internalTechnology.</comment>
     </version>
     <version checksum="WA+tNQNBDo5Z-">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
+    <version checksum="WA+tNQNAcKCLP">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
+    <version checksum="WA+tNQNCfREf6">
       <status>OK</status>
       <comment>File is marked @internalTechnology.</comment>
     </version>
@@ -4163,23 +4951,43 @@
       <comment>Class is moved to split header eikautomenutitlearray.h.</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\eikamnt.h">
+  <version checksum="zMG6uXSAzHj2h">
+      <status>OK</status>
+      <comment>Class is moved to split header eikautomenutitlearray.h.</comment>
+    </version>
+  </headerfile>
   <headerfile name="eikdef.h">
     <version checksum="Y9sYTICAZteqC">
       <status>OK</status>
       <comment>KEikEditableControlBorder is moved to uikon/eikdefconst.h .Other macors are marked as internal tech.</comment>
     </version>
+  </headerfile>
+   <headerfile name="mw\eikdef.h">
      <version checksum="Y9sYTICBCWe98">
       <status>OK</status>
       <comment>Constants marked as internal or moved to eikdefconst.h</comment>
     </version>
   </headerfile>
-  <headerfile name="eikdoc.h">
+    <headerfile name="eikdoc.h">
+    <version checksum="JS0KTe0Crnf+A">
+      <status>OK</status>
+      <comment>KDefaultIconicDoorSize is moved to split header.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\eikdoc.h">
     <version checksum="JS0KTe0Crnf+A">
       <status>OK</status>
       <comment>KDefaultIconicDoorSize is moved to split header.</comment>
     </version>
   </headerfile>
   <headerfile name="eikdebug.h">
+    <version checksum="n060SfDCKnrSi">
+      <status>OK</status>
+      <comment>Class is marked as internal tech..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\mw\eikdebug.h">
     <version checksum="n060SfDCKnrSi">
       <status>OK</status>
       <comment>Class is marked as internal tech..</comment>
@@ -4193,6 +5001,18 @@
     <version checksum="YG6xyT0CDzvWy">
       <status>OK</status>
       <comment>Both concerned classes and KEikBubbleHelpUid are moved to split header eikmischelp.h.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\eikbhelp.h">
+  <version checksum="YG6xyT0CDzvWy">
+      <status>OK</status>
+      <comment>Both concerned classes and KEikBubbleHelpUid are moved to split header eikmischelp.h.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\eikccpu.h">
+  <version checksum="ePWZV+sDUG4ou">
+      <status>NOK</status>
+      <comment>Class size changed .So it is a bc break.</comment>
     </version>
   </headerfile>
   <headerfile name="mmf\common\mmfdurationinfocustomcommands.h">
@@ -4211,6 +5031,10 @@
   </headerfile>
   
   <headerfile name="mctcertapps.h">
+    <version checksum="pTJ6gE2BTQylZ">
+      <status>OK</status>
+      <comment>File is marked as internal tech.</comment>
+    </version>
     <version checksum="pTJ6gE2BQIptL">
       <status>OK</status>
       <comment>File is marked as internal tech.</comment>
@@ -4227,6 +5051,12 @@
       <comment>Enum TMMFDRMControlMessages marked internal.</comment>
     </version>
   </headerfile>
+  <headerfile name="platform\mmf\common\mmfdrmcustomcommands.h">
+    <version checksum="CclpigTBshjkY">
+      <status>OK</status>
+      <comment>Enum TMMFDRMControlMessages marked internal.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="mcustomcommand.h">
     <version checksum="F23yaVqC-8tTt">
@@ -4234,6 +5064,10 @@
       <comment>Concerned class is moved to included header..</comment>
     </version>
     <version checksum="GRe+Co9C-8tTt">
+      <status>OK</status>
+      <comment>Concerned class is moved to included header..</comment>
+    </version>
+    <version checksum="GRe+Co9CbcgfX">
       <status>OK</status>
       <comment>Concerned class is moved to included header..</comment>
     </version>
@@ -4250,6 +5084,10 @@
     <version checksum="K+4GJ-sB62i78">
       <status>OK</status>
       <comment>Include guard macro changed</comment>
+    </version>
+    <version checksum="GofqINpCZKXvB">
+      <status>OK</status>
+      <comment>Concerned class is moved to included header..</comment>
     </version>
   </headerfile>
   
@@ -4278,8 +5116,25 @@
       <comment>New enum added at the end. Onlt the max value has changed. This is ok.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="power.h">
+    <version checksum="MKg1gdZCip1om">
+      <status>OK</status>
+      <comment>Everything is marked as internal component in this file.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="nd_err.h">
+    <version checksum="EGPrv8+Cip1om">
+      <status>OK</status>
+      <comment>File is marked as internal component..</comment>
+    </version>
+  </headerfile>
   <headerfile name="http\rhttpsession.h">
+    <version checksum="tqyXwlcC3EOTe">
+      <status>OK</status>
+      <comment>Function SetupDefaultProxyFromCommsDatL marked internal.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\http\rhttpsession.h">
     <version checksum="tqyXwlcC3EOTe">
       <status>OK</status>
       <comment>Function SetupDefaultProxyFromCommsDatL marked internal.</comment>
@@ -4292,8 +5147,20 @@
       <comment>1)Class CHlpCmdLine and constant KMaxCmdLineLength, KHelpLauncherResource marked as internal and moved to hlplch_internal.h</comment>
     </version>
   </headerfile>
+  <headerfile name="app\hlplch.h">
+    <version checksum="S9NkxD1AQ4Lqd">
+      <status>OK</status>
+      <comment>1)Class CHlpCmdLine and constant KMaxCmdLineLength, KHelpLauncherResource marked as internal and moved to hlplch_internal.h</comment>
+    </version>
+  </headerfile>
 
   <headerfile name="hlpmodel.h">
+    <version checksum="w8DtmYhCU3jt7">
+      <status>OK</status>
+      <comment>Removal of constants is ok as it is marked internal and moved to hlpmodel_internal.h</comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\hlpmodel.h">
     <version checksum="w8DtmYhCU3jt7">
       <status>OK</status>
       <comment>Removal of constants is ok as it is marked internal and moved to hlpmodel_internal.h</comment>
@@ -4340,7 +5207,12 @@
       <comment>1.Removed constants KRomImageFlagPaged and KRomImageFlagUnpaged marked as @internalcomponent.2.iSpare is not intended for use</comment>
     </version>
   </headerfile>
-
+  <headerfile name="platform\e32rom.h">
+   <version checksum="DT6-lwKCFUGxq">
+      <status>OK</status>
+      <comment>1.Removed constants KRomImageFlagPaged and KRomImageFlagUnpaged marked as @internalcomponent.2.iSpare is not intended for use</comment>
+    </version>
+  </headerfile>
   <headerfile name="e32std.h">
     <version checksum="99Dc15RBUjrzm">
       <status>OK</status>
@@ -4402,15 +5274,60 @@
       <comment>The inline function now "returns" TFindHandle::iHandle. This data member contains the same data as the old TFindHandleBase::iFindHandle.</comment>
     </version>
   </headerfile>
-  
-
+  <headerfile name="platform\e32twin.h">
+    <version checksum="wHl88BkDLX1ad">
+      <status>OK</status>
+      <comment>SConsoleKey is marked as internalcomponent.</comment>
+    </version>
+  </headerfile>
   <headerfile name="e32ver.h">
     <version checksum="*******B9a-Pp">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\e32ver.h">
+    <version checksum="mun8HINB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mvx-MC9B9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mvAny83B9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mtGfth3B9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mv5CEtCB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mvng+UzB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="msLUUaYB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mvAfgrPB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+     <version checksum="msTIscmB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="msJhQePB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+  </headerfile>
   <headerfile name="ecam.h">
     <version checksum="0WXCOuyDSkyhn">
       <status>OK</status>
@@ -4443,6 +5360,10 @@
     <version checksum="f5YwWwMDdOsR4">
       <status>OK</status>
       <comment>1)Removed consts marked as internal and moved to ecamdef.h 2) MCameraBuffer2 and MReserveObserver moved to ecamconst.h. </comment>
+    </version>
+    <version checksum="f5YwWwMCPd+WM">
+      <status>OK</status>
+      <comment>1)Removed consts marked as internal and moved to ecamdef.h 2) MCameraBuffer2,TReservedInfo,TECamReserveStatus and MReserveObserver moved to ecamconst.h. 3.TECAMEventFilterScheme is marked as internal all. 4. Other internaltech marked constants are remvoed.5. enum TECAMEventFilterScheme </comment>
     </version>
   </headerfile>
   
@@ -4578,6 +5499,14 @@
       <status>OK</status>
       <comment>CEikCbaButton is marked as internal tech..</comment>
     </version>
+    <version checksum="eueIeI-Dn5GWI">
+      <status>OK</status>
+      <comment>CEikCbaButton is marked as internal tech..</comment>
+    </version>
+    <version checksum="hHuY4lhDn5GWI">
+      <status>OK</status>
+      <comment>CEikCbaButton is marked as internal tech..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="icl\icl_uids.hrh">
@@ -4587,6 +5516,12 @@
     </version>
   </headerfile>
    <headerfile name="eiksrvc.h">
+    <version checksum="0sHG9PRCIa+QL">
+      <status>OK</status>
+      <comment>Typedef is marked as internal component...</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\mw\eiksrvc.h">
     <version checksum="0sHG9PRCIa+QL">
       <status>OK</status>
       <comment>Typedef is marked as internal component...</comment>
@@ -4683,6 +5618,12 @@
       <comment>KUikonLibraryUid is marked as internal component and EikLibraryEntryPoint is moved to eikenvinterface.h .</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\eikenv.h">
+  <version checksum="FNBGnNDCRP999">
+      <status>OK</status>
+      <comment>KUikonLibraryUid is marked as internal component and EikLibraryEntryPoint is moved to eikenvinterface.h .</comment>
+    </version>
+  </headerfile>
 
   <headerfile name="eikkwin.h">
     <version checksum="iCFuEQ5Cip1om">
@@ -4700,6 +5641,22 @@
   
   <headerfile name="mw\eiklbx.h">
     <version checksum="viLk5tSABHMYs">
+      <status>OK</status>
+      <comment>Class has default public constructor,so overriding a virtual function is not allowed.But it won't affect 3rd party application.</comment>
+    </version>
+    <version checksum="yGs+MaaABHMYs">
+      <status>OK</status>
+      <comment>Class has default public constructor,so overriding a virtual function is not allowed.But it won't affect 3rd party application.</comment>
+    </version>
+    <version checksum="0bhzsScABHMYs">
+      <status>OK</status>
+      <comment>Class has default public constructor,so overriding a virtual function is not allowed.But it won't affect 3rd party application.</comment>
+    </version>
+    <version checksum="CtQikN0ABHMYs">
+      <status>OK</status>
+      <comment>Class has default public constructor,so overriding a virtual function is not allowed.But it won't affect 3rd party application.</comment>
+    </version>
+    <version checksum="FYSoQxcABHMYs">
       <status>OK</status>
       <comment>Class has default public constructor,so overriding a virtual function is not allowed.But it won't affect 3rd party application.</comment>
     </version>
@@ -4768,6 +5725,12 @@
       <comment>Removed constant marked @internalComponent and moved to eikscchange.h</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\eiknotapi.h">
+  <version checksum="Hve9Ib0DOGIqE">
+      <status>OK</status>
+      <comment>Removed constant marked @internalComponent and moved to eikscchange.h</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="middleware\eikon.hrh">
     <version checksum="kcsDMtUCbKLRr">
@@ -4788,6 +5751,12 @@
   </headerfile>
   
   	<headerfile name="eikfctry.h">
+    <version checksum="Z2xug1bASqqdh">
+      <status>OK</status>
+      <comment>Enum values moved to eikctrlstatus.h</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\eikfctry.h">
     <version checksum="Z2xug1bASqqdh">
       <status>OK</status>
       <comment>Enum values moved to eikctrlstatus.h</comment>
@@ -4818,7 +5787,12 @@
       <comment>CCommsApiExtReqMsg is marked as prototype.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\comms-infras\api_ext_msg.h">
+  <version checksum="B44Mh38A5Fi0s">
+      <status>OK</status>
+      <comment>CCommsApiExtReqMsg is marked as prototype.</comment>
+    </version>
+  </headerfile>
   <headerfile name="e32hal.h">
     <version checksum="Q9bBeuUDMYnpA">
       <status>OK</status>
@@ -4829,7 +5803,12 @@
       <comment>TDigitiserInfoV02 is marked as prototype.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\e32hal.h">
+  <version checksum="SuackdlDMYnpA">
+      <status>OK</status>
+      <comment>TDigitiserInfoV02 is marked as prototype.</comment>
+    </version>
+  </headerfile >
   
   <headerfile name="avkon.mbg">
     <version checksum="lW17kCfCw5aGM">
@@ -4912,8 +5891,23 @@
       <status>OK</status>
       <comment>Previous enum-values are intact. so no break .</comment>
     </version>
+    <version checksum="6ys-1o0Cw5aGM">
+      <status>OK</status>
+      <comment>Previous enum-values are intact. so no break .</comment>
+    </version>
    </headerfile>
-  
+   <headerfile name="coever.h">
+    <version checksum="KLNcWtkCip1om">
+      <status>OK</status>
+      <comment>Everything is marked as internalcomponent in this file..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="big5.h">
+    <version checksum="Uj9kbbfCip1om">
+      <status>OK</status>
+      <comment>Everything is marked as internalcomponent in this file..</comment>
+    </version>
+  </headerfile>
   <headerfile name="eikon.rsg">
     <version checksum="Fx85oFgAxetVp">
       <status>OK</status>
@@ -5042,6 +6036,12 @@
       <comment>"First unused" enum increased by one. This is OK.</comment>
     </version>
     <version checksum="yBKEJVvBaVT3w">
+      <status>OK</status>
+      <comment>Both constants are marked as internal tech.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\mw\eiksrvs.h">
+  <version checksum="yBKEJVvBaVT3w">
       <status>OK</status>
       <comment>Both constants are marked as internal tech.</comment>
     </version>
@@ -5177,6 +6177,10 @@
       <status>OK</status>
       <comment>File is marked @internaltechnology.</comment>
     </version>
+    <version checksum="DzefEjIARP4UX">
+      <status>OK</status>
+      <comment>File is marked @internaltechnology.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="es_prot.h">
@@ -5216,9 +6220,24 @@
       <status>OK</status>
       <comment>1. Classes CConnectionProvdBase, CSocketServExtBase , MConnectionNotify , TSoOwnerInfo and typedef TSubSessionUniqueId marked as internal. 2. Scope provided for functions JoinSubConnectionL and LeaveSubConnection. Not a BC break.</comment>
     </version>
+    <version checksum="3+a+o8CD07KFZ">
+      <status>OK</status>
+      <comment>1.Classes CConnectionProvdBase, CSocketServExtBase , MConnectionNotify , SocketServExt, SocketTimer,TSoOwnerInfo and typedef TSubSessionUniqueId marked as internal. 2. Scope provided for functions JoinSubConnectionL and LeaveSubConnection. Not a BC break.3.KConnProfileLong, KConnProfileMedium, KConnProfileNone, KGetDataWholeDatagram, KSOLProvider, KSoConnectionInfo, KSoOwnerInfo,KUidEsockExtension,KUidUnicodeProtocolModule,TConnStartType, TESOCKActivePriority, TProtocolServiceInfo, TProtocolType are marked as internal component.</comment>
+    </version>
+  </headerfile>
+ <headerfile name="platform\es_prot.h">
+	<version checksum="3+a+o8CD07KFZ">
+      <status>OK</status>
+      <comment>1.Classes CConnectionProvdBase, CSocketServExtBase , MConnectionNotify , SocketServExt, SocketTimer,TSoOwnerInfo and typedef TSubSessionUniqueId marked as internal. 2. Scope provided for functions JoinSubConnectionL and LeaveSubConnection. Not a BC break.3.KConnProfileLong, KConnProfileMedium, KConnProfileNone, KGetDataWholeDatagram, KSOLProvider, KSoConnectionInfo, KSoOwnerInfo,KUidEsockExtension,KUidUnicodeProtocolModule,TConnStartType, TESOCKActivePriority, TProtocolServiceInfo, TProtocolType are marked as internal component.</comment>
+    </version>
   </headerfile>
 
+
   <headerfile name="es_sock.h">
+    <version checksum="bVFYFXdDKEGeE">
+      <status>OK</status>
+      <comment>1) All constants moved to es_sock_partner.h or es_sock_internal.h. 2) CSubConParameterSet marked as deprecated. 3) TSockIO, TSockIOBufC, TSockOpen,TSockOpenBufC, SOCKET_SERVER_NAME marked as internal components. 4) Internally subobjects RSessionBase and RSubSessionBase are intact, so no change in RSocketServ and RSubConnection. 5) Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
     <version checksum="*******CBWo6N">
       <status>OK</status>
       <comment>Version() was never implemented (ie. never "really" exported), and so cannot have been used by third parties.</comment>
@@ -5263,6 +6282,18 @@
       <status>OK</status>
       <comment>1. CSubConParameterBundle is moved to included header es_sock_partner.h. 2.Internally subobject SMetaDataECom,RSessionBase,RSubSessionBase are intact. 3.KCommsNetworkLayerId is moved to included header 4.Connection build number,Major connection version number, KInternalIoctlBit and minor version number constants are internal component 5.TSockIO,TSockIOBufC marked as internal component</comment>
     </version>
+    <version checksum="c8DCqLrCcTb-+">
+      <status>OK</status>
+      <comment>1.CSubConParameterBundle is moved to included header es_sock_partner.h.2..Connection build number,Major connection version number, KInternalIoctlBit and minor version number constants are internal component.3.TSockIO,TSockIOBufC, TSockOpen,TSockOpenBufC,SOCKET_SERVER_NAME are marked as internal component  4.Internally subobject RSessionBase,RSubSessionBase are intact 5. SubConParameterSet  api is deprecated since v9.6.6.KCOLProvider,KCoEnableCloneOpen,KCoEnumerateConnectionClients,KCoEnumerateConnectionSockets,KCoEnumerateConnectionSockets,KCoGetConnectionSocketInfo,KCommsNetworkLayerId,KConnWriteUserDataBit , KConnReadUserDataBit, KConnInternalOptionBit,KCOLConnection are moved into es_sock_partner.h or es_sock_internal.h. </comment>
+    </version>
+     <version checksum="bVFYFXdAv9sXO">
+      <status>OK</status>
+      <comment>1.CSubConParameterBundle is moved to included header es_sock_partner.h.2..Connection build number,Major connection version number, KInternalIoctlBit and minor version number constants are internal component.3.TSockIO,TSockIOBufC, TSockOpen,TSockOpenBufC,SOCKET_SERVER_NAME are marked as internal component  4.Internally subobject RSessionBase,RSubSessionBase are intact 5. SubConParameterSet  api is deprecated since v9.6.6.KCOLProvider,KCoEnableCloneOpen,KCoEnumerateConnectionClients,KCoEnumerateConnectionSockets,KCoEnumerateConnectionSockets,KCoGetConnectionSocketInfo,KCommsNetworkLayerId,KConnWriteUserDataBit , KConnReadUserDataBit, KConnInternalOptionBit,KCOLConnection are moved into es_sock_partner.h or es_sock_internal.h.6.Addition of an overloaded funtion is not a bc break. </comment>
+    </version>
+     <version checksum="c8DCqLrAqnaOj">
+      <status>OK</status>
+      <comment>1.CSubConParameterBundle is moved to included header es_sock_partner.h 2KConnectionBuildVersionNumber,KConnectionMajorVersionNumber,KConnectionMinorVersionNumber,KInternalIoctlBit are internal component.3.TSockIO,TSockIOBufC, TSockOpen,TSockOpenBufC,SOCKET_SERVER_NAME are marked as internal component  4.Internally subobject RSessionBase,RSubSessionBase are intact, so no change in RSocketServ,  RSubConnection5.KCommsNetworkLayerId, is  moved into es_sock_partner.h or es_sock_internal.h.6.Addition of an overloaded funtion is not a bc break.7. CSubConParameterSet is marked as deprecated.  </comment>
+    </version>
   </headerfile>
 
   <headerfile name="etelmm.h">
@@ -5271,11 +6302,20 @@
       <comment>Cut-down version of these classes are provided for compilation consistency. They cannot be used as such.</comment>
     </version>
   </headerfile>
-  
+   <headerfile name="platform\etelmm.h">
+    <version checksum="6A6gVRoC2JDUn">
+      <status>OK</status>
+      <comment>Cut-down version of these classes(i.e. RMobilePhone,RMobilePhoneStore, RMobileSmsMessaging,RMobileSmsStore) are provided for compilation consistency. They cannot be used as such.</comment>
+    </version>
+  </headerfile>  
   <headerfile name="es_enum.h">
     <version checksum="XFh4kpFC6qd+B">
       <status>OK</status>
       <comment>All removed components markes as internal and moved to es_enum_internal.h</comment>
+    </version>
+    <version checksum="XFh4kpFADlheT">
+      <status>OK</status>
+      <comment>1.All removed components markes as internal and moved to es_enum_internal.h 2. All publishedpartner componet is moved into es_enum_partner.h</comment>
     </version>
   </headerfile>
   
@@ -5305,7 +6345,17 @@
       <comment>File is marked @internalTechnology.</comment>
     </version>
   </headerfile>
-
+ 
+ <headerfile name="platform\f32dbg.h">
+ <version checksum="wlEfFVmDiUaGU">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
+    <version checksum="2Sz2OMGCNEz2t">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
+  </headerfile>
   <headerfile name="f32file.h">
     <version checksum="-QWA6AMAxpD5j">
       <status>OK</status>
@@ -5376,6 +6426,14 @@
       <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
     </version>
     <version checksum="AxN+w+YAIo0Fo">
+      <status>OK</status>
+      <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
+    </version>
+    <version checksum="9p+AAptAIo0Fo">
+      <status>OK</status>
+      <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
+    </version>
+    <version checksum="-fEH6UmAIo0Fo">
       <status>OK</status>
       <comment>1.Reserved private data member replaced with real data member, which is OK.2.TFileState is marked as internal tech. 3) Other removed components moved to f32file_private.h or mraked as internal </comment>
     </version>
@@ -5508,7 +6566,16 @@
       <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed,:-1.class ::CMountCB::MFileClamp  removed.2.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 3.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 4.Class has been removed ::SFileShareLock5.Class has been removed ::TDismountParams6.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )7. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server. </comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\f32fsys.h">
+  	<version checksum="oJQHOMLDsPeYN">
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed,:-1.class ::CMountCB::MFileClamp  removed.2.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 3.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 4.Class has been removed ::SFileShareLock5.Class has been removed ::TDismountParams6.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )7. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server. </comment>
+    </version>
+    <version checksum="uevowhoC3FVcj">
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed 7. field CFormatCB::iBody replaced the reserved field. 8. filed name changed from CFileCB::iLock to CFileCB::iFileLocks8.class ::CMountCB::MFileClamp  removed.9.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 10.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 11.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )12. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server.  </comment>
+    </version>
+  </headerfile>
   <headerfile name="gsmupdu.h">
     <version checksum="gvHB6HQCbpXMk">
       <status>OK</status>
@@ -5553,9 +6620,74 @@
       <comment>File is marked @internalTechnology.</comment>
     </version>
   </headerfile>
-
+  <headerfile name="remconinterfaceselector.h">
+  	<version checksum="pymBGBBASgBkV">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="remconcoreapitarget.h">
+  	<version checksum="G2X0sM9CEhu7P">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\remcon\remconinterfacebase.h">
+  	<version checksum="IXg6NGyBJ9sZS">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\f32image.h">
+  <version checksum="R9JmAkEDY5ptF">
+      <status>OK</status>
+      <comment>File is marked @internalTechnology.</comment>
+    </version>
+  </headerfile>
   <headerfile name="f32ver.h">
     <version checksum="*******AGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\f32ver.h">
+    <version checksum="KngaTAYAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="Kntd0BfAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KnzvnDsAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KnahWVvAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KnnHpFlAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KkI3PpbAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+     <version checksum="KkFwoocAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KmRPpxaAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="Kl3F1ceAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KmY1TwgAGdXEK">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
@@ -5568,6 +6700,18 @@
     <version checksum="znQ-et8ACxZLV">
       <status>OK</status>
       <comment>MGulLogicalBorder and GulTls is marked as internal tech..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\gulbordr.h">
+  <version checksum="znQ-et8ACxZLV">
+      <status>OK</status>
+      <comment>MGulLogicalBorder and GulTls is marked as internal tech..</comment>
+    </version>
+  </headerfile>  
+  <headerfile name="e32math.h">
+  	<version checksum="taZz6cKD-yXgG">
+      <status>OK</status>
+      <comment>DToR funciton removed. There is no implementation of this function.</comment>
     </version>
   </headerfile>
   
@@ -5649,6 +6793,10 @@
       <status>OK</status>
       <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component. </comment>
     </version>
+    <version checksum="bEe4y98DG3I-h">
+      <status>OK</status>
+      <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component.3.Addition of an overloaded funtion is not a bc break. </comment>
+    </version>
   </headerfile>
   
   <headerfile name="fbsmessage.h">
@@ -5693,7 +6841,18 @@
       <comment>Everything in this file is marked as internal component.So, removal of this file won't break any bc..</comment>
     </version>
   </headerfile>
-
+  <headerfile name="platform\fbsmessage.h">
+    <version checksum="kq3tU6MD5simj">
+      <status>OK</status>
+   		<comment>Changed Enum marked @internal component.</comment>
+    </version>
+  </headerfile>
+	<headerfile name="platform\flogger.h">
+    <version checksum="hVi6MKjDBrPiP">
+      <status>OK</status>
+      <comment>File itself is part of internal technology.</comment>
+    </version>
+  </headerfile>
   <headerfile name="flogger.h">
     <version checksum="hVi6MKjDBrPiP">
       <status>OK</status>
@@ -5710,6 +6869,10 @@
     <version checksum="LWm7zxgDvaqBj">
       <status>OK</status>
       <comment>Include gaurd macro changed.</comment>
+    </version>
+     <version checksum="LWm7zxgA01KMF">
+      <status>OK</status>
+      <comment>1.Include gaurd macro changed.2. Overloaded function added</comment>
     </version>
   </headerfile>
   <headerfile name="finditemengine.h">
@@ -5754,26 +6917,38 @@
       <comment>1) DeleteShape() is classified as internal by Symbian, although this is not mentioned in the header file. In addition, it is very unlikely that the function would be of any use to third parties. 2) The modified private data member iOpenFontTypefaceSupportList is not used in any inlines, so changes to it are ok.</comment>
     </version>
     <version checksum="vl7Hh31DfRcif">
-      <status>NOK</status>
-      <comment>Exported functions removed.</comment>
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved.</comment>
     </version>
     <version checksum="Xw7yh7+DfRcif">
-      <status>NOK</status>
-      <comment>Exported functions removed.</comment>
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved</comment>
     </version>
     <version checksum="jMSj2YJDfRcif">
-      <status>NOK</status>
-      <comment>Exported functions removed.</comment>
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved</comment>
     </version>
     <version checksum="mKGVJTZDfRcif">
-      <status>NOK</status>
-      <comment>Exported functions removed.</comment>
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved</comment>
     </version>
      <version checksum="uAyKaHiCAFtFq">
       <status>OK</status>
       <comment>Exported functions removed. But removal is approved.</comment>
     </version>
      <version checksum="2lkauK2BB+edd">
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved.</comment>
+    </version>
+    <version checksum="sAWVPQ3BB+edd">
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved.</comment>
+    </version>
+    <version checksum="jdmaFBgCAFtFq">
+      <status>OK</status>
+      <comment>Exported functions removed. But removal is approved.</comment>
+    </version>
+    <version checksum="bmiX28gDfRcif">
       <status>OK</status>
       <comment>Exported functions removed. But removal is approved.</comment>
     </version>
@@ -5815,6 +6990,10 @@
     <version checksum="iIgtCr2C7lOBB">
       <status>OK</status>
       <comment>1. Reserved virtual function has been replaced with  another virtual function MFormCustomDraw::DrawText2.TLayDocTextSource is part of internal component.3.Changed offset data fields are not used in any inline function..</comment>
+    </version>
+    <version checksum="iIgtCr2CYJ0-1">
+      <status>OK</status>
+      <comment>1. Type of iHighlightExtensions  has changed to pointer type which is not OK , since this data is used in an inline funciton. But this inline function is used for internal purpose.So, there is no  bc break.2. Reserved virtual function has been replaced with  another virtual function MFormCustomDraw::DrawText 3.TLayDocTextSource is part of internal component.4.Changed offset data fields are not used in any inline function..</comment>
     </version>
    </headerfile>
 
@@ -5883,7 +7062,12 @@
       <comment>Header is spilt, thus all classes are available in included header...</comment>
     </version>
    </headerfile>
-   
+   <headerfile name="mw\apparc.h">
+    <version checksum="OTIUNpGB9vGgz">
+      <status>OK</status>
+      <comment>Header is spilt, thus all classes are available in included header...</comment>
+    </version>
+   </headerfile>
    <headerfile name="gdi.h">
     <version checksum="*******CBekRi">
       <status>OK</status>
@@ -5921,8 +7105,53 @@
       <status>OK</status>
       <comment>Removed components marked as internal and moved to gdistructs.h or gdiconsts.h</comment>
     </version>
+    <version checksum="dczvl1FD6DHpj">
+      <status>OK</status>
+      <comment>1.Removed components marked as internal and moved to gdistructs.h or gdiconsts.h 2.Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
   </headerfile>
-
+	<headerfile name="gbk.h">
+    <version checksum="jXj998aCip1om">
+      <status>OK</status>
+      <comment>Eventhing in this file is marked as internalcomponent..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="gb2312.h">
+    <version checksum="aIRTguSCip1om">
+      <status>OK</status>
+      <comment>Eventhing in this file is marked as internalcomponent..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="irs.h">
+    <version checksum="r4dWgLcCip1om">
+      <status>OK</status>
+      <comment>Eventhing in this file is marked as internalcomponent..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="jisx0201.h">
+    <version checksum="cZmkBAXCip1om">
+      <status>OK</status>
+      <comment>Eventhing in this file is marked as internalcomponent..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="jisx0208.h">
+    <version checksum="QaCybicCip1om">
+      <status>OK</status>
+      <comment>Eventhing in this file is marked as internalcomponent..</comment>
+    </version>
+  </headerfile>
+   <headerfile name="jisx0212.h">
+    <version checksum="QZHx6xmCip1om">
+      <status>OK</status>
+      <comment>Eventhing in this file is marked as internalcomponent..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mdaframeinfo.h">
+    <version checksum="Fi6TV6dCip1om">
+      <status>OK</status>
+      <comment>There is no content in this file.</comment>
+    </version>
+  </headerfile>
   <headerfile name="gdi.inl">
     <version checksum="efshGSbBhEQ7A">
       <status>OK</status>
@@ -5934,6 +7163,10 @@
     <version checksum="ILNzlpmCYhnMe">
       <status>OK</status>
       <comment>Removed constants are marked as internal.</comment>
+    </version>
+    <version checksum="ILNzlpmAW12LZ">
+      <status>OK</status>
+      <comment>All removed internal constants are moved into frmconst_internal.h2. TCursorMove is moved into frmconst_partner.h.</comment>
     </version>
   </headerfile>
   
@@ -5963,6 +7196,10 @@
       <status>OK</status>
       <comment>The macros have been moved to EGL\egl.h.</comment>
     </version>
+    <version checksum="LdWKQtiDoEZZE">
+      <status>OK</status>
+      <comment>There is no change in the value of  macros.</comment>
+    </version>
  </headerfile>
 
 	<headerfile name="egl\egltypes.h">
@@ -5983,6 +7220,10 @@
     <version checksum="LZnVAObDlalmE">
       <status>OK</status>
       <comment>Include guard macro changed.Other concerned macros are defined in header GLES/legacy_egl_1_1/egltypes.h</comment>
+    </version>
+    <version checksum="LZnVAObBjorbb">
+      <status>OK</status>
+      <comment>Include guard macro changed.</comment>
     </version>
  </headerfile>
  
@@ -6078,7 +7319,16 @@
       <comment>Enum member name changed.</comment>
     </version>
   </headerfile>
-   
+  <headerfile name="platform\hal_data.h">  
+   <version checksum="LsH6tQdBnEZ8+">
+      <status>OK</status>
+      <comment>Enum member name changed.</comment>
+    </version>
+    <version checksum="XyMUqjOBnEZ8+">
+      <status>OK</status>
+      <comment>Enum member name changed.</comment>
+    </version>
+  </headerfile>   
   <headerfile name="imconnection.h">  
   	<version checksum="A6PYArqCip1om">
       <status>OK</status>
@@ -6158,7 +7408,12 @@
       <comment>Const-ness to function paramter added.It's ok.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\mw\gfxtranseffect\gfxtranseffect.h">
+    <version checksum="FoJDvSCA0I3lP">
+      <status>OK</status>
+      <comment>Const-ness to function paramter added.It's ok.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="mw\senhttptransportproperties.h">
     <version checksum="mPVKBJuAHN0Yn">
@@ -6175,8 +7430,18 @@
       <status>OK</status>
       <comment>Include gaurd macro changed.</comment>
     </version>
+    <version checksum="c6r7sbtCip1om">
+      <status>OK</status>
+      <comment>There is no deletion of the file. Tool issue..</comment>
+    </version>
   </headerfile>
-  
+  <headerfile name="platform\bluetooth\hci\hcitypes.h">
+  <version checksum="lJY6bGOAc1jyM">
+      <status>OK</status>
+      <comment>Include gaurd macro changed.</comment>
+    </version>
+    
+  </headerfile>
    <headerfile name="libc\sys\types.h">
     <version checksum="Mz8bv0GDK09gg">
       <status>OK</status>
@@ -6194,6 +7459,10 @@
     <version checksum="2S7-xg2A2c321">
       <status>OK</status>
       <comment>Compilation error..</comment>
+    </version>
+    <version checksum="2S7-xg2CTltRd">
+      <status>OK</status>
+      <comment>There is no change in the file...</comment>
     </version>
   </headerfile>
 
@@ -6264,6 +7533,10 @@
       <status>OK</status>
       <comment>New value added to a public enum; end marker value changed accordingly --> OK</comment>
     </version>
+    <version checksum="sZjCv58D-Bi9V">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
   </headerfile>
   <headerfile name="imcvtext.h">
     <version checksum="*******Bzr4kE">
@@ -6332,6 +7605,12 @@
       <comment>Under investigation in S60 platform. File contains public APIs, so should not in principle be removed.</comment>
     </version>
   </headerfile>
+  <headerfile name="icl\imagedata.h">
+    <version checksum="UGGRw9CCuIt+q">
+      <status>OK</status>
+      <comment>Concerned method has private scope.</comment>
+    </version>
+  </headerfile>
   <headerfile name="jri.h">
     <version checksum="AAAAAAAAxetVp">
       <status>OK</status>
@@ -6378,7 +7657,12 @@
       <comment>Class HalInternal marked @internalComponent.</comment>
     </version>
   </headerfile>
-
+  <headerfile name="platform\kernel\hal_int.h">
+   <version checksum="+jidzCRAevP6o">
+      <status>OK</status>
+      <comment>Class HalInternal marked @internalComponent.</comment>
+    </version>
+  </headerfile>
   <headerfile name="libc\arpa\nameser.h">
     <version checksum="sput6XqA2c321">
       <status>OK</status>
@@ -6483,6 +7767,12 @@
       <comment>1.Class CImEmailAutoSend marked as internal component.2.Literal KMsvAutoSendExe and constant KMsvAutoSendExeUid marked as intrernal</comment>
     </version>
   </headerfile>
+  <headerfile name="platform\app\imcmutil.h">
+    <version checksum="3NhB+K4CGjhg8">
+      <status>OK</status>
+      <comment>1.Class CImEmailAutoSend marked as internal component.2.Literal KMsvAutoSendExe and constant KMsvAutoSendExeUid marked as intrernal</comment>
+    </version>
+  </headerfile>
   <headerfile name="mmf\common\mmfbase.h">
     <version checksum="0p0DOKoC8NSQe">
       <status>OK</status>
@@ -6511,6 +7801,12 @@
       <comment>All removed constants marked internal and moved to timrfc822datefield.h.</comment>
     </version>
   </headerfile>
+  <headerfile name="app\miuthdr.h">
+  <version checksum="hWbBOvaC60bBM">
+      <status>OK</status>
+      <comment>All removed constants marked internal and moved to timrfc822datefield.h.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="libc\unistd.h">
     <version checksum="Eb4J8OKAxetVp">
@@ -6529,6 +7825,12 @@
       <comment>Macro removed. Should not be a problem.</comment>
     </version>
   </headerfile>
+  <headerfile name="gsmuelem.h">
+    <version checksum="+xdfanxB8jJWS">
+      <status>OK</status>
+      <comment>1.KMOSES,KNETWORK and KSms7BitAlphabetEscapeChar are marked as internal component.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="logeng.h">
     <version checksum="n5+44jWAFhAkf">
@@ -6538,9 +7840,19 @@
   </headerfile>
   <headerfile name="mda\common\base.hrh">
     <version checksum="xx7PTwwAJ8K+x">
-      <status>NOK</status>
-      <comment>Removal of macro is under investigation.</comment>
-    </version>
+      <status>OK</status>
+      <comment>File is part of internaltech..</comment>
+    </version>   
+  </headerfile>
+  <headerfile name="mda\common\base.h">
+    <version checksum="2aQuF-ADMe1st">
+      <status>OK</status>
+      <comment>ASSERT macro removed. 3rd party won't be affected.</comment>
+    </version>   
+     <version checksum="2Y7SFYHDMe1st">
+      <status>OK</status>
+      <comment>ASSERT macro removed. 3rd party won't be affected.</comment>
+    </version> 
   </headerfile>
   
   <headerfile name="lbsfields.h">
@@ -6588,6 +7900,10 @@
       <status>OK</status>
       <comment>Removed constants marked as internal and moved to logwraplimits.h</comment>
     </version>
+    <version checksum="GJbpvT7CxlaZB">
+      <status>OK</status>
+      <comment>Removed constants marked as internal </comment>
+    </version>
   </headerfile>
   <headerfile name="logwrap.inl">
     <version checksum="7w0mMq3Cu2i7O">
@@ -6601,7 +7917,26 @@
       <comment>Header inclusion macro changed. This is ok.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="sipmanagedprofile.h">
+    <version checksum="eySFhhhAH3cR9">
+      <status>OK</status>
+      <comment>Concerned method has private access.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\sipmanagedprofile.h">
+    <version checksum="axiKB4ND2GLLw">
+      <status>OK</status>
+      <comment>constant removed.It is a bc break.Studied and approved.</comment>
+    </version>
+     <version checksum="axiKB4NA5hNYr">
+      <status>OK</status>
+      <comment>1)constant removed.It is a bc break.Studied and approved. 2) Removing the keyword IMPORT_C from private function is ok. </comment>
+    </version>
+    <version checksum="eySFhhhAH3cR9">
+      <status>OK</status>
+      <comment>Concerned method has private access.</comment>
+    </version>
+  </headerfile>
   <headerfile name="maudioeffectobserver.h">
     <version checksum="c72mBEOBV7LFS">
       <status>OK</status>
@@ -6621,8 +7956,21 @@
       <status>OK</status>
       <comment>1)Class CMMFCustomCommandParserManager is moved to mmfcustomcommandparsermanager.h. 2) Removed constants marked as internal</comment>
     </version>
+    <version checksum="1eXe9jFA-4KkI">
+      <status>OK</status>
+      <comment>1)Class CMMFCustomCommandParserManager is moved to mmfcustomcommandparsermanager.h. 2) Removed constants marked as internal 3.enum TMMFControllerMessages is marked as internalcomponent</comment>
+    </version>
+    <version checksum="1eXe9jFD-Y3F4">
+      <status>OK</status>
+      <comment>1)Class CMMFCustomCommandParserManager is moved to mmfcustomcommandparsermanager.h. 2) Removed constants marked as internal 3.enum TMMFControllerMessages is marked as internalcomponent. 3. Adding an overloaded function is not a bc break.</comment>
+    </version>
   </headerfile>
-  
+  <headerfile name="mw\aknbitmapanimation.h">
+  <version checksum="-SKRaAMAEjjG4">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+  </headerfile>
   <headerfile name="mdopplerobserver.h">
   <version checksum="dwNSe9KCgwCaa">
       <status>OK</status>
@@ -6703,7 +8051,12 @@
       <comment>File contains only #defines.</comment>
     </version>
   </headerfile>
-
+  <headerfile name="platform\mda\common\controller.h">
+   <version checksum="B0wbsH7AxetVp">
+      <status>OK</status>
+      <comment>File contains only #defines.</comment>
+    </version>
+  </headerfile>
   <headerfile name="mdaaudiosampleeditor.h">
     <version checksum="DCJBcPuCbJNnD">
       <status>OK</status>
@@ -6755,7 +8108,16 @@
       <comment>File is an @internalTechnology</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\comms-infras\metacontainer.h">
+  <version checksum="CR6LzsdBM7Ifs">
+      <status>OK</status>
+      <comment>File is an @internalTechnology</comment>
+    </version>
+    <version checksum="CR6LzsdDeLkjU">
+      <status>OK</status>
+      <comment>File is an @internalTechnology</comment>
+    </version>
+  </headerfile>
  <headerfile name="comms-infras\metadata.h">
     <version checksum="KI33nYABVAVxQ">
       <status>OK</status>
@@ -6774,18 +8136,48 @@
       <comment>File marked @internalTechnology.</comment>
     </version>
   </headerfile>
+  <headerfile name="platform\comms-infras\metadata.h">
+  <version checksum="B+AxPBdD5lcPb">
+      <status>OK</status>
+      <comment>File marked @internalTechnology.</comment>
+    </version>
+    <version checksum="B+AxPBdCE+cI7">
+      <status>OK</status>
+      <comment>File marked @internalTechnology.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\comms-infras\metatype.h">
+    <version checksum="B-GX-cJAhKFPX">
+      <status>OK</status>
+      <comment>File marked @internalTechnology.</comment>
+    </version>
+    <version checksum="B-GX-cJAlyAWO">
+      <status>OK</status>
+      <comment>File marked @internalTechnology.</comment>
+    </version>
+  </headerfile>  
   <headerfile name="comms-infras\metatype.h">
     <version checksum="B-GX-cJAhKFPX">
       <status>OK</status>
       <comment>File marked @internalTechnology.</comment>
     </version>
-  </headerfile>  
+  </headerfile>
    <headerfile name="commdbconnpref.h">
     <version checksum="FElGCvHBnbSWi">
       <status>OK</status>
       <comment>File is depreciated since v9.1.</comment>
     </version>
   </headerfile> 
+   <headerfile name="platform\comms-infras\metatypevariablelen.h">
+    <version checksum="Cq+eOP0DFn6GM">
+      <status>OK</status>
+      <comment>File marked @internalTechnology.</comment>
+    </version>
+    <version checksum="Cq+eOP0Cwztau">
+      <status>OK</status>
+      <comment>File marked @internalTechnology.</comment>
+    </version>
+  </headerfile>
    <headerfile name="comms-infras\metatypevariablelen.h">
     <version checksum="Cq+eOP0DFn6GM">
       <status>OK</status>
@@ -6802,6 +8194,12 @@
       <comment>Removed components marked as internal and moved to cimconvertcharconv.h</comment>
     </version>
   </headerfile>
+  <headerfile name="app\miutconv.h">
+  <version checksum="94ZjAFlBHyCWr">
+      <status>OK</status>
+      <comment>Removed components marked as internal and moved to cimconvertcharconv.h</comment>
+    </version>
+  </headerfile>
   <headerfile name="miutmsg.h">
     <version checksum="XnG7mHBDAHGav">
       <status>OK</status>
@@ -6812,8 +8210,18 @@
       <comment>All removed classes and constants marked internal and moved to cimmessagepart.h.</comment>
     </version>
   </headerfile>
+  <headerfile name="app\miutmsg.h">
+  <version checksum="XnG7mHBAFwkrg">
+      <status>OK</status>
+      <comment>All removed classes and constants marked internal and moved to cimmessagepart.h.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="metadatabase.h">
+    <version checksum="EuttrvzAEzKuR">
+      <status>OK</status>
+      <comment>1) CMDBBinFieldBase, CMDBNumFieldBase, CMDBRecordLinkBase, CMDBTextFieldBase marked as internal components. 2) Inline function marked as internal component (CommsDat::CMDBElement::CData()).</comment>
+    </version>
     <version checksum="uuJwCnoAvTwAx">
       <status>OK</status>
       <comment>There is no change , issue with template analysis in the tool</comment>
@@ -6971,8 +8379,16 @@
       <status>OK</status>
       <comment>CMmfIpcSession,CMmfIpcServer marked as internal tech..</comment>
     </version>
+    <version checksum="2CBwci1A4lW0M">
+      <status>OK</status>
+      <comment>CMmfIpcServer,CMmfIpcSession, and MmfMessageUtil are marked to internal component..</comment>
+    </version>
   </headerfile>
   <headerfile name="mmf\common\mmfutilities.h">
+    <version checksum="WIn3r6YBLSFK5">
+      <status>OK</status>
+      <comment>Classes CMMFStereoToMonoConverter, CMMFChannelAndSampleRateConverter, CMMFChannelAndSampleRateConverterFactory, CMMFMonoToMonoRateConverter, CMMFMonoToStereoConverter, CMMFMonoToStereoRateConverter, CMMFStereoToMonoRateConverter, CMMFStereoToStereoRateConverter marked as internal all.</comment>
+    </version>
     <version checksum="WIn3r6YA5n6NI">
       <status>OK</status>
       <comment>Class is marked as internalAll.</comment>
@@ -7002,6 +8418,12 @@
       <comment>Enum TMtsrDllIndex is marked as internal component..</comment>
     </version>
   </headerfile>
+   <headerfile name="mw\msvreg.h">
+    <version checksum="zIZfOO7D0NZRJ">
+      <status>OK</status>
+      <comment>Enum TMtsrDllIndex is marked as internal component..</comment>
+    </version>
+  </headerfile>
   <headerfile name="msvstore.h">
     <version checksum="ThAt7mMCpTGE0">
       <status>OK</status>
@@ -7012,7 +8434,17 @@
       <comment>Constant KMsvPlainBodyText8 and KMsvPlainBodyText16 marked as internal component..</comment>
     </version>
    </headerfile>  
+   <headerfile name="mw\msvstore.h">
+    <version checksum="iOB+9dACpTGE0">
+      <status>OK</status>
+      <comment>Constant KMsvPlainBodyText8 and KMsvPlainBodyText16 marked as internal component..</comment>
+    </version>
+   </headerfile>
   <headerfile name="mmf\common\mmfstandardcustomcommands.h">
+    <version checksum="ZC5T0EdAx4+1X">
+      <status>OK</status>
+      <comment>Components moved to mmfstandardcustomcommandsimpl.h or mmfstandardcustomcommandsenums.h due to header splitting.</comment>
+    </version>
     <version checksum="ZDX1RDdCtQY9z">
       <status>OK</status>
       <comment>Class is marked as prototype.</comment>
@@ -7040,8 +8472,20 @@
       <comment>Class RRedirSession2 marked as internal.</comment>
     </version>
   </headerfile>
+  <headerfile name="platform\redircli.h">
+    <version checksum="6x2o16ECICEWB">
+      <status>OK</status>
+      <comment>Class RRedirSession2 marked as internal.</comment>
+    </version>
+  </headerfile>
   
    <headerfile name="miut_err.h">
+    <version checksum="pJ6vOU0CXJkJE">
+      <status>OK</status>
+      <comment>Enum TImcmPanic marked as internal and moved to miut_errconsts.h</comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\miut_err.h">
     <version checksum="pJ6vOU0CXJkJE">
       <status>OK</status>
       <comment>Enum TImcmPanic marked as internal and moved to miut_errconsts.h</comment>
@@ -7054,7 +8498,12 @@
       <comment>1)Enum TPushMsgStatus,TPushEntryPanic marked internal. 2)Removal of KPushPanicMoniker is not a problem as it is marked as internal</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\mw\pushentry.h">
+    <version checksum="OFga2ZpD2IS7F">
+      <status>OK</status>
+      <comment>1)Enum TPushMsgStatus,TPushEntryPanic marked internal. 2)Removal of KPushPanicMoniker is not a problem as it is marked as internal</comment>
+    </version>
+  </headerfile>
 	<headerfile name="mmf\common\mmfcontrollerpluginresolver.h">
     <version checksum="*******C6QURD">
       <status>OK</status>
@@ -7268,6 +8717,18 @@
       <comment>Constants Marked @internalAll.</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\obexconstants.h">
+  <version checksum="1GsVPPbBq3hsp">
+      <status>OK</status>
+      <comment>Constants Marked @internalAll.</comment>
+    </version>
+  </headerfile>
+ <headerfile name="mw\obexserver.h">
+  <version checksum="-ZjONbeCwTer0">
+      <status>OK</status>
+      <comment>The removal of the exported funtion[i.e. default destructor] is not actully a BC break.The DEF file does not contain entries for the destructor of CObexServer</comment>
+    </version>
+  </headerfile>
 
   <headerfile name="obexobjects.h">
     <version checksum="477ftjlAXpqQZ">
@@ -7287,7 +8748,7 @@
     </version>
     <version checksum="Dtn3mTrCwTer0">
       <status>OK</status>
-      <comment>IMPORT keyword removed from destructor. Class CObexServer is non-sharable class..</comment>
+      <comment>The removal of the exported funtion[i.e. default destructor] is not actully a BC break.The DEF file does not contain entries for the destructor of CObexServer.</comment>
     </version>
     <version checksum="-ZjONbeDwncc8">
       <status>NOK</status>
@@ -7439,7 +8900,12 @@
       <comment>Extern variable declaration removed.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\app\obexclientmtm.h">
+    <version checksum="OySaD+NCy5Kaz">
+      <status>OK</status>
+      <comment>Extern variable declaration removed.</comment>
+    </version>
+  </headerfile>
   <headerfile name="oma2agent.h">
     <version checksum="pNSBYTADu7xZg">
       <status>OK</status>
@@ -7455,6 +8921,10 @@
   </headerfile>
   
   <headerfile name="openfont.h">
+    <version checksum="RIak4xJAa0WEe">
+      <status>OK</status>
+      <comment>1) Guard macro changed. 2) TOpenFontCharMetrics::iGlyphBitmapType added, TOpenFontMetrics::iBaselineCorrection added, in both classes (TOpenFontMetrics, TOpenFontCharMetrics), reserved data member has been used, thus alignment of class changed. 3) enum TOpenFontAttachment marked as internal component. 4) KUidShaperFactoryPlunginInterface, KUidOpenFontRasterizerPlunginInterface, KReplacementCharacter, KFillCharacterOffset marked as internal components. 5) Class COpenFontRasterizer moved to openfontrasterizer.h 6) Data member iGlyphCache is marked as internal component. 7) Data type of COpenFont::iMetrics still the same. 8) Removal of private data member iSessionCacheList is allowed, since no inline function is using this. 9) Removal of data member iFile is not allowed, used by 2 inline functions. This bc break has been studied and approved.</comment>
+    </version>
     <version checksum="DUTRkTYD8-mdt">
       <status>OK</status>
       <comment>Data member changed from TBool to TInt. These are compatible in this context.</comment>
@@ -7494,6 +8964,18 @@
     <version checksum="ddNb69PCVDNQL">
       <status>OK</status>
       <comment>1)Data type of COpenFont::iMetrics is still the same. 2)Constants and enum TOpenFontAttachment is marked as internal component. 3)Class COpenFontRasterizer moved to openfontrasterizer.h 4)TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added. In both classes, reserved data member has been used, thus alignment of class changed.</comment>
+    </version>
+    <version checksum="4v41P0mD5WlXt">
+      <status>OK</status>
+      <comment>1. Guard macro changed. 2.TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added., in both classes(TOpenFontMetrics,TOpenFontCharMetrics, reserved data member has been used, thus alignment of class changed.3.enum TOpenFontAttachment is marked as internal component. 4.KUidShaperFactoryPlunginInterface,KUidOpenFontRasterizerPlunginInterface,KReplacementCharacter,KFillCharacterOffset are marked as internalcomponent. 5. Class COpenFontRasterizer moved to openfontrasterizer.h 6.Data member iGlyphCache is marked as internalcomponent. 7.Data type of COpenFont::iMetrics is still the same.8. Removal of private data member iSessionCacheList is allowed, since no inline funciton is using this. 9. Removal of data member iFile is not allowed, used by 2 inline function. It is a bc break. This break is studied and approved.</comment>
+    </version>
+     <version checksum="hQRnz5uD5WlXt">
+      <status>OK</status>
+      <comment>1. Guard macro changed. 2.TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added., in both classes(TOpenFontMetrics,TOpenFontCharMetrics, reserved data member has been used, thus alignment of class changed.3.enum TOpenFontAttachment is marked as internal component. 4.KUidShaperFactoryPlunginInterface,KUidOpenFontRasterizerPlunginInterface,KReplacementCharacter,KFillCharacterOffset are marked as internalcomponent. 5. Class COpenFontRasterizer moved to openfontrasterizer.h 6.Data member iGlyphCache is marked as internalcomponent. 7.Data type of COpenFont::iMetrics is still the same.8. Removal of private data member iSessionCacheList is allowed, since no inline funciton is using this. 9. Removal of data member iFile is not allowed, used by 2 inline function. It is a bc break. This break is studied and approved.</comment>
+    </version>
+    <version checksum="RIak4xJD5WlXt">
+      <status>OK</status>
+      <comment>1. Guard macro changed. 2.TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added., in both classes(TOpenFontMetrics,TOpenFontCharMetrics, reserved data member has been used, thus alignment of class changed.3.enum TOpenFontAttachment is marked as internal component. 4.KUidShaperFactoryPlunginInterface,KUidOpenFontRasterizerPlunginInterface,KReplacementCharacter,KFillCharacterOffset are marked as internalcomponent. 5. Class COpenFontRasterizer moved to openfontrasterizer.h 6.Data member iGlyphCache is marked as internalcomponent. 7.Data type of COpenFont::iMetrics is still the same.8. Removal of private data member iSessionCacheList is allowed, since no inline funciton is using this. 9. Removal of data member iFile is not allowed, used by 2 inline function. It is a bc break. This break is studied and approved.</comment>
     </version>
   </headerfile>
   
@@ -7670,6 +9152,10 @@
       <status>OK</status>
       <comment>Enum member added at last..</comment>
     </version>
+    <version checksum="h8KvyB3DsboMH">
+      <status>OK</status>
+      <comment>Enum member added at last..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\ptikeymappings.h">
@@ -7698,6 +9184,12 @@
     <version checksum="jPYNvoiAxetVp">
       <status>OK</status>
       <comment>File contains only #define. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="unified_editor.h">
+    <version checksum="GSF1pm8Cip1om">
+      <status>OK</status>
+      <comment>Nothing is public in the header.. </comment>
     </version>
   </headerfile>
   <headerfile name="osextensions\stdapis\stlport\config\stl_gcce.h">
@@ -7896,6 +9388,10 @@
       <status>OK</status>
       <comment>There is no change in files.</comment>
     </version>
+     <version checksum="FCXvVMyA2Ha0W">
+      <status>OK</status>
+      <comment>There is no change in files.</comment>
+    </version>
   </headerfile>
   <headerfile name="osextensions\stdapis\stlport\stl\_cwchar.h">
     <version checksum="FCXvVMyADHf+G">
@@ -7922,6 +9418,10 @@
     <version checksum="KvYRoobA3lOY4">
       <status>OK</status>
       <comment>These removal of macros could result in sourc break.There is no bc break.</comment>
+    </version>
+    <version checksum="KvYRoobDXQhtJ">
+      <status>OK</status>
+      <comment>These changes of macros are studied and approved.</comment>
     </version>
   </headerfile>
   
@@ -8048,6 +9548,7 @@
       <status>OK</status>
       <comment>Virtual function added to non sharable class. It's ok</comment>
     </version>
+  
   </headerfile>
   <headerfile name="mw\cdownloadmgruidownloadslist.h">
     <version checksum="Iz2hBc5C5kPTj">
@@ -8081,6 +9582,10 @@
       <comment>Virtual function added to non sharable class. It's ok</comment>
     </version>
     <version checksum="Iy+N5mdCnUzol">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
+      <version checksum="PdPGM78CnUzol">
       <status>OK</status>
       <comment>Virtual function added to non sharable class. It's ok</comment>
     </version>
@@ -8128,6 +9633,10 @@
       <status>OK</status>
       <comment>Virtual function added to non sharable class. It's ok</comment>
     </version>
+    <version checksum="xJcfw3YBHoOZc">
+      <status>OK</status>
+      <comment>Virtual function added to non sharable class. It's ok</comment>
+    </version>
   </headerfile>
   <headerfile name="sendateutils.h">
     <version checksum="d40fbt5BkjC5o">
@@ -8156,6 +9665,12 @@
     <version checksum="nGDLM29BhFUBG">
       <status>OK</status>
       <comment>Header inclusion macro renamed.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="stdapis\fenv.h">
+    <version checksum="ZzhJmSLDaVGgY">
+      <status>OK</status>
+      <comment>SYMBIAN removal could cause Source break. No BC issue.</comment>
     </version>
   </headerfile>
   <headerfile name="t32wld.h">
@@ -8473,23 +9988,90 @@
     </version>
   </headerfile>
   
-  <headerfile name="mw\senservicemanager.h">
-    <version checksum="iqAHPz8BcS25i">
+  <headerfile name="caf\rightsmanager.h">
+    <version checksum="dtDh+uZCZK7rD">
       <status>OK</status>
-      <comment>Since class CSenServiceManager is externally derivable, adding a virtual function would change the v-layout of derived function. But this case has been studied and approved.</comment>
+      <comment>New Overloaded functions added. No BC impact.</comment>
     </version>
   </headerfile>  
+  <headerfile name="platform\caf\rightsmanager.h">
+    <version checksum="dtDh+uZCZK7rD">
+      <status>OK</status>
+      <comment>New Overloaded functions added. No BC impact.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform\caf\manager.h">
+    <version checksum="-sKYRWLCtJIsq">
+      <status>OK</status>
+      <comment>New Overloaded functions added. No BC impact.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="caf\manager.h">
+    <version checksum="1mfutpzCtJIsq">
+      <status>OK</status>
+      <comment>New Overloaded functions added. No BC impact.</comment>
+    </version>
+  </headerfile> 
+  <headerfile name="caf\manager.h">
+    <version checksum="1mfutpzCtJIsq">
+      <status>OK</status>
+      <comment>New Overloaded function added. No BC impact.</comment>
+    </version>
+  </headerfile> 
+  <headerfile name="app\calentryview.h">
+    <version checksum="TYR3U65Bzze8J">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\calinstanceview.h">
+    <version checksum="qrDdDcPBOs0JR">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="app\calcategorymanager.h">
+    <version checksum="+ULFxUxBUkyji">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+  </headerfile> 
+  <headerfile name="app\calentry.h">
+    <version checksum="zNKlf4dClAX1C">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+  </headerfile> 
   <headerfile name="senservicemanager.h">
     <version checksum="fujt1boCP1-Yl">
       <status>OK</status>
       <comment>Since class CSenServiceManager is externally derivable, adding a virtual function would change the v-layout of derived function. But this case has been studied and approved.</comment>
     </version>
+    <version checksum="fujt1boC9+TRn">
+      <status>OK</status>
+      <comment>Since class CSenServiceManager is externally derivable, adding a virtual function would change the v-layout of derived function. But this case has been studied and approved.</comment>
+    </version>
   </headerfile> 
-
+  <headerfile name="mw\senservicemanager.h">
+    <version checksum="iqAHPz8BcS25i">
+      <status>OK</status>
+      <comment>Since class CSenServiceManager is externally derivable, adding a virtual function would change the v-layout of derived function. But this case has been studied and approved.</comment>
+    </version>
+  </headerfile> 
+  <headerfile name="mw\sencredential2.h">
+    <version checksum="+PwX6UaDGozQA">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break..</comment>
+    </version>
+  </headerfile>
   <headerfile name="middleware\ptiengine.h">
     <version checksum="BMBi+JoAZZBtQ">
       <status>OK</status>
       <comment>Inline function is changed to generic function. It is ok.</comment>
+    </version>
+    <version checksum="BMBi+JoAZZBtQ">
+      <status>OK</status>
+      <comment>Inline function is changed to generic function. It is ok. Overloaded funtion addition is not a bc break.</comment>
     </version>
   </headerfile>
   <headerfile name="mw\ptiengine.h">
@@ -8498,6 +10080,10 @@
       <comment>Inline function is changed to generic function. It is ok.</comment>
     </version>
     <version checksum="BJH2MwAAZZBtQ">
+      <status>OK</status>
+      <comment>Inline function is changed to generic function. It is ok.</comment>
+    </version>
+    <version checksum="BJH2MwAAaUn+4">
       <status>OK</status>
       <comment>Inline function is changed to generic function. It is ok.</comment>
     </version>
@@ -8547,6 +10133,10 @@
   </headerfile>
   <headerfile name="sensoapenvelope.h">
    <version checksum="kR2pW2ZAU-J9s">
+      <status>OK</status>
+      <comment>Only Constant names have changed. Value remains the same.</comment>
+    </version>
+    <version checksum="kR2pW2ZBGFsDW">
       <status>OK</status>
       <comment>Only Constant names have changed. Value remains the same.</comment>
     </version>
@@ -8703,7 +10293,58 @@
       <status>OK</status>
       <comment>File contains only include header files.</comment>
     </version>
+     <version checksum="dKAFTYbCbRCMD">
+      <status>OK</status>
+      <comment>Removal issues are coming due to removal of SYMBIAN macro. Source issue..</comment>
+    </version>
   </headerfile>
+  <headerfile name="stdapis\glib-2.0\glib\gbacktrace.h">  
+  	<version checksum="0+BZPDIB1UyZ5">
+      <status>OK</status>
+      <comment>Removal issues are coming due to removal of SYMBIAN macro. Source issue..</comment>
+    </version>
+  </headerfile>  
+  <headerfile name="stdapis\glib-2.0\glib\giochannel.h">  
+  	<version checksum="dQimhvzCFbtTC">
+      <status>OK</status>
+      <comment>Removal issues are coming due to removal of SYMBIAN macro. Source issue..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="stdapis\glib-2.0\glib\gmain.h">  
+  	<version checksum="tA7L6GrBnF1yg">
+      <status>OK</status>
+      <comment>There is no difference between 2 files.Removal issues are coming due to removal of SYMBIAN macro. Source issue..</comment>
+    </version>
+  </headerfile> 
+  <headerfile name="stdapis\liblogger.h">  
+  	<version checksum="gsbDVkTDaVGgY">
+      <status>OK</status>
+      <comment>Removal of SYMBIAN could cause source break.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="stdapis\sys\_iovec.h">  
+  	<version checksum="NF74PTUDaVGgY">
+      <status>OK</status>
+      <comment>Removal of SYMBIAN could cause source break.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="stdapis\math.h">  
+  	<version checksum="f9748a+DaVGgY">
+      <status>OK</status>
+      <comment>Removal of SYMBIAN could cause source break.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="stdapis\glib-2.0\gobject\gparamspecs.h">  
+  	<version checksum="tA7L6GrBnF1yg">
+      <status>OK</status>
+      <comment>There is no difference between 2 files.Removal issues are coming due to removal of SYMBIAN macro. Source issue..</comment>
+    </version>
+    <version checksum="7+NEJsBAhyzc0">
+      <status>OK</status>
+      <comment>There is no difference between 2 files..</comment>
+    </version>
+  </headerfile>
+  
   <headerfile name="stdapis\glib-2.0\glib\galloca.h">
     <version checksum="mUJivo+Bn19hb">
       <status>OK</status>
@@ -8799,9 +10440,36 @@
     <version checksum="mcSRhF6AxetVp">
       <status>OK</status>
       <comment>Both files are same.</comment>
-    </version>    
+    </version>   
+    <version checksum="mcSRhF6A9oK2u">
+      <status>OK</status>
+      <comment>Both files are same.Removal issues are coming due to removal of SYMBIAN macro. Source issue.</comment>
+    </version> 
+  </headerfile>    
+  <headerfile name="stdapis\glib-2.0\glib\gunicode.h">
+   <version checksum="naK-RvCD2Nbaw">
+      <status>OK</status>
+      <comment>Both files are same.Removal issues are coming due to removal of SYMBIAN macro. Source issue.</comment>
+    </version> 
   </headerfile>
-  
+  <headerfile name="stdapis\glib-2.0\glib\gthread.h">
+   <version checksum="OQ4sIvcDRSuvn">
+      <status>OK</status>
+      <comment>Both files are same.Removal issues are coming due to removal of SYMBIAN macro. Source issue.</comment>
+    </version> 
+  </headerfile>
+  <headerfile name="stdapis\glib-2.0\glib\gstrfuncs.h">
+   <version checksum="EkItVOBCq71HX">
+      <status>OK</status>
+      <comment>Both files are same.Removal issues are coming due to removal of SYMBIAN macro. Source issue.</comment>
+    </version> 
+  </headerfile>
+  <headerfile name="stdapis\glib-2.0\glib\gstdio.h">
+   <version checksum="cihzk4PBlBzkD">
+      <status>OK</status>
+      <comment>Both files are same.Removal issues are coming due to removal of SYMBIAN macro. Source issue.</comment>
+    </version> 
+  </headerfile>
   <headerfile name="stdapis\glib-2.0\glib\gmessages.h">
     <version checksum="7o9M8TVBZirgH">
       <status>OK</status>
@@ -8813,6 +10481,10 @@
     <version checksum="N0ZsrjxCsMe4t">
       <status>OK</status>
       <comment>There is no change in files.</comment>
+    </version>
+    <version checksum="MU8YfzmAf7WsQ">
+      <status>OK</status>
+      <comment>Both files are same.Removal issues are coming due to removal of SYMBIAN macro. Source issue.</comment>
     </version>
   </headerfile>  
   
@@ -8853,12 +10525,14 @@
   </headerfile>
   <headerfile name="vtoken.h">
      <version checksum="RuLt8A4CXMELf">
-      <status>NOK</status>
-      <comment>Constant removed.</comment>
-    </version>
-    <version checksum="RuLt8A4CXMELf">
-      <status>NOK</status>
-      <comment>Constant removed.</comment>
+      <status>OK</status>
+      <comment>Constant removed.3rd party code won't be affected.</comment>
+    </version>    
+   </headerfile>
+   <headerfile name="app\vtoken.h">
+     <version checksum="RuLt8A4CXMELf">
+      <status>OK</status>
+      <comment>Constant removed.3rd party code won't be affected.</comment>
     </version>
    </headerfile>
   
@@ -8951,6 +10625,10 @@
       <status>OK</status>
       <comment>File contains only #defines.</comment>
     </version>
+     <version checksum="u7haSZkDkg3tJ">
+      <status>OK</status>
+      <comment>File contains only #defines.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="stdapis\openssl\opensslv.h">
@@ -8968,6 +10646,10 @@
     <version checksum="e2+b8emCwG0J5">
       <status>OK</status>
       <comment>Double macro definitions for SSL_TXT_KRB5_DES_192_CBC3_MD5, SSL_TXT_KRB5_DES_192_CBC3_SHA, SSL_TXT_KRB5_DES_40_CBC_MD5, SSL_TXT_KRB5_DES_40_CBC_SHA, SSL_TXT_KRB5_DES_64_CBC_MD5, SSL_TXT_KRB5_DES_64_CBC_SHA.</comment>
+    </version>
+    <version checksum="gEox5XpD4h8-W">
+      <status>OK</status>
+      <comment>size of struct changed:-Due to addition of some data fields, size of struct ssl_ctx_st,ssl_session_st,ssl_st has been changed..</comment>
     </version>
   </headerfile>
   
@@ -9082,6 +10764,10 @@
       <status>OK</status>
       <comment>Macro removal should be ok.</comment>
     </version>
+    <version checksum="cBLWWlyDaVGgY">
+      <status>OK</status>
+      <comment>SYMBIAN macro removal could cause a source break.</comment>
+    </version>
   </headerfile>
   <headerfile name="txtglobl.h">
     <version checksum="nRKWtm3Bb1xSm">
@@ -9146,6 +10832,14 @@
       <status>OK</status>
       <comment> Macro definition of __sfileno(p)is changed to normal exported function definition IMPORT_C int __sfileno(FILE* p)..</comment>
     </version>  
+    <version checksum="MCKN6DPA9Qp1d">
+      <status>OK</status>
+      <comment>Mentioned exported functions and macros in generated report are present in both files.Tool issue because of dual definition of conditional compilation macros.</comment>
+    </version>
+    <version checksum="MCKN6DPBIVuHQ">
+      <status>OK</status>
+      <comment>Mentioned exported functions and macros in generated report are present in both files.Tool issue because of dual definition of conditional compilation macros.</comment>
+    </version>
   </headerfile>
     
    <headerfile name="stdapis\sys\_null.h">
@@ -9200,7 +10894,15 @@
       <status>OK</status>
       <comment> 1.__func__ Macro has been changed from NULL to "". It's not a BC break. 2. __offsetof macro have been put into #ifdef, so it won't be cause since code is complining properly.</comment>
     </version>
-    
+    <version checksum="THuRswvA7qSsn">
+      <status>OK</status>
+      <comment> 1.__func__ Macro has been changed from NULL to "". It's not a BC break. 2. __offsetof macro have been put into #ifdef, so it won't be cause since code is complining properly.3. Removal of macro SYMBIAN could cause source break.</comment>
+    </version>
+    <version checksum="X3WTPMJBL7l5O">
+      <status>OK</status>
+      <comment> 1.__func__ Macro has been changed from NULL to "". It's not a BC break. 2. __offsetof macro have been put into #ifdef, so it won't be cause since code is complining properly.3. Removal of macro SYMBIAN could cause source break.</comment>
+    </version>
+
   </headerfile>
   
   <headerfile name="stdapis\sys\errno.h">
@@ -9325,9 +11027,16 @@
     </version>
     <version checksum="4CCwQ9xCB+IJG">
       <status>OK</status>
-      <comment>This file is not public.</comment>
+      <comment>This file is not public..</comment>
     </version>
-    
+    <version checksum="4CCwQ9xCB+IJG">
+      <status>OK</status>
+      <comment>Removal of macro could cause source break.</comment>
+    </version>   
+    <version checksum="7Qls9IZBiiALY">
+      <status>OK</status>
+      <comment>Removal of macro could cause source break.</comment>
+    </version>   
   </headerfile>
   
   <headerfile name="stdapis\utmp.h">
@@ -9380,6 +11089,13 @@
     <version checksum="30-lQIjDfjtxD">
       <status>NOK</status>
       <comment>Removal of SYMBIAN macro has changed the type, size and member offset of _GStaticMutex.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="stdapis\glib-2.0\glibconfig.h">
+    <version checksum="30-lQIjDfjtxD">
+      <status>OK</status>
+      <comment>Removal of SYMBIAN macro has changed the type, size and member offset of _GStaticMutex.Source break.</comment>
     </version>
   </headerfile>
   
@@ -9453,7 +11169,12 @@
       <comment>Constants are marked as internal tech..</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="mw\tzdefines.h">
+    <version checksum="PfBHgBGDB2ZEv">
+      <status>OK</status>
+      <comment>Constants are marked as internal tech..</comment>
+    </version>
+  </headerfile>
   <headerfile name="uikon.hrh">
     <version checksum="RAHEg-hDZ0b5a">
       <status>OK</status>
@@ -9470,7 +11191,16 @@
       <comment>All concerned classes are moved to included header..</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\mw\uikon\eiksvfty.h">
+    <version checksum="PxROU9-AQQElf">
+      <status>OK</status>
+      <comment>All concerned classes are moved to included header..</comment>
+    </version>
+    <version checksum="PxROU9-CWbVGi">
+      <status>OK</status>
+      <comment>All concerned classes are moved to included header..</comment>
+    </version>
+  </headerfile>
   <headerfile name="mw\touchfeedback.h">
     <version checksum="jaJeDA-D1unbZ">
       <status>OK</status>
@@ -9677,8 +11407,15 @@
       <status>OK</status>
       <comment>Guard macro changed..</comment>
     </version>
+    <version checksum="PFHYZPiDaLKM+">
+      <status>OK</status>
+      <comment>Guard macro changed..</comment>
+    </version>
+    <version checksum="OlXObydDaLKM+">
+      <status>OK</status>
+      <comment>Guard macro changed..</comment>
+    </version>
   </headerfile>
-  
   
   <headerfile name="remcon\remconserver.h">
    <version checksum="AtmtJKlCip1om">
@@ -9739,7 +11476,11 @@
     </version>
     <version checksum="6R8WXkVBGC8Aa">
       <status>OK</status>
-      <comment>Exported function ::CCamera::CCameraAdvancedSettings::StartContinuousZoomL( ::CCamera::CCameraAdvancedSettings::TContinuousZoomType, ::CCamera::CCameraAdvancedSettings::TZoomDirection ) and CCamera::CCameraAdvancedSettings::StopContinuousZoom( ) have been removed.Removal is approved.3) Removed constants marked as internal</comment>
+      <comment>Exported function ::CCamera::CCameraAdvancedSettings::StartContinuousZoomL( ::CCamera::CCameraAdvancedSettings::TContinuousZoomType, ::CCamera::CCameraAdvancedSettings::TZoomDirection ) and CCamera::CCameraAdvancedSettings::StopContinuousZoom( ) have been removed.Removal is approved.2) Removed constants marked as internal</comment>
+    </version>
+     <version checksum="6R8WXkVCI0Ixf">
+      <status>OK</status>
+      <comment>1.Exported function ::CCamera::CCameraAdvancedSettings::StartContinuousZoomL( ::CCamera::CCameraAdvancedSettings::TContinuousZoomType, ::CCamera::CCameraAdvancedSettings::TZoomDirection ) and CCamera::CCameraAdvancedSettings::StopContinuousZoom( ) have been removed.Removal is approved.2) Removed constants marked as internal 3). all prototype marked constants are moved to ecamadvsettingsconst.h</comment>
     </version>
   </headerfile>
   
@@ -9891,11 +11632,52 @@
       <status>OK</status>
       <comment>Deleted functions are moved to included file bafl/sysutil.h.</comment>
     </version>
+    <version checksum="BrEyptNCvLSvU">
+      <status>OK</status>
+      <comment>Deleted functions are moved to included file bafl/sysutil.h.</comment>
+    </version>
  </headerfile>
 	<headerfile name="apfrec.h">
     <version checksum="LCw9ciYBKEIWg">
       <status>OK</status>
       <comment>1. Removal of function pointer CreateCApaFileRecognizerType is approved.2.Other removed class and constants are marked as internal component.</comment>
+    </version>
+ </headerfile>
+ <headerfile name="platform\mw\apfrec.h">
+    <version checksum="LCw9ciYBKEIWg">
+      <status>OK</status>
+      <comment>1. Removal of function pointer CreateCApaFileRecognizerType is approved.2.Other removed class and constants are marked as internal component.</comment>
+    </version>
+ </headerfile>
+ <headerfile name="stdapis\stlportv5\stl\config\stl_winscw.h">
+    <version checksum="QXkFL0lCGBrJf">
+      <status>OK</status>
+      <comment>Macro removed. It could be a source break, but not bc break.</comment>
+    </version>
+ </headerfile> 
+ <headerfile name="stdapis\stlportv5\stl\config\stl_rvct.h">
+    <version checksum="HVU-Wl2DeXsOY">
+      <status>OK</status>
+      <comment>Macro removed. It could be a source break, but not bc break.</comment>
+    </version>
+ </headerfile> 
+  <headerfile name="stdapis\stlportv5\stl\config\stl_gcce.h">
+    <version checksum="No77lH7AJCnK-">
+      <status>OK</status>
+      <comment>Macro removed. It could be a source break, but not bc break.</comment>
+    </version>
+ </headerfile> 
+ <headerfile name="stdapis\stlportv5\stl\_config_compat_post.h">
+    <version checksum="eWcr6+7BKFWQH">
+      <status>OK</status>
+      <comment>Macro removed. It could be a source break, but not bc break.</comment>
+    </version>
+ </headerfile>
+ 
+ <headerfile name="stdapis\stlportv5\stl\_abbrevs.h">
+    <version checksum="G2pazxfB1UeGS">
+      <status>OK</status>
+      <comment>Macro removed. It could be a source break, but not bc break.</comment>
     </version>
  </headerfile>
  
@@ -9928,6 +11710,14 @@
       <status>OK</status>
       <comment>Class marked @internalComponent.</comment>
     </version>
+    <version checksum="33xzTFjAzL9m8">
+      <status>OK</status>
+      <comment>1.All concerned classes (CTmBufSeg,CTmCode,CTmText, CTmTextLayout, MFormLabelApi, MTmSource,MTmTextDrawExt,RTmParFormat,RTmParFormatLayer,RTmStyle, TTmBullet, TTmCharFormatLayer, TTmCharFormatMask, TTmFormatParam, TTmFormatParamBase, TTmHighlightExtensions,TTmParBorder, TTmParFormatMask, TTmReformatParam, TTmReformatResult, TTmTab ) are marked as internalcomponent. 2. All concerned constants( KFormLabelApiExtensionUid,KTmTextDrawExtId ) are marked as internalcomponent.</comment>
+    </version>
+    <version checksum="33xzTFjCpW1Ye">
+      <status>OK</status>
+      <comment>1.All concerned classes (CTmBufSeg,CTmCode,CTmText, CTmTextLayout, MFormLabelApi, TmSource,MTmTextDrawExt,RTmParFormat,RTmParFormatLayer,RTmStyle, TTmBullet, TTmCharFormatLayer, TTmCharFormatMask, TTmFormatParam, TTmFormatParamBase, ,TTmParBorder, TTmParFormatMask, TTmReformatParam, TTmReformatResult, TTmTab ) are marked as internalcomponent. 2. All concerned constants( KFormLabelApiExtensionUid,KTmTextDrawExtId ) are marked as internalcomponent..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="tz.h">
@@ -9946,6 +11736,16 @@
     <version checksum="9rfXq74BtT9OD">
       <status>OK</status>
       <comment>Header is split and thus class is moved to included header..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="mw\tz.h">
+  <version checksum="9rfXq74BtT9OD">
+      <status>OK</status>
+      <comment>Header is split and thus class is moved to included header..</comment>
+    </version>
+    <version checksum="9rfXq74DEEPZm">
+      <status>OK</status>
+      <comment>1.Header is split and thus class is moved to included header..2.Adding an overloaded function is not a bc break.</comment>
     </version>
   </headerfile>
 
@@ -9977,21 +11777,31 @@
       <comment>File is marked @internalComponent.</comment>
     </version>
   </headerfile>
+   <headerfile name="shiftjis.h">
+    <version checksum="6lzrZ8uCip1om">
+      <status>OK</status>
+      <comment>Everything in the file is marked as  @internalComponent.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="variant\symbian_os_v9.2.hrh">
     <version checksum="Timk1uGCip1om">
       <status>OK</status>
       <comment>symbian_os_v9.2.hrh is not a part of public SDK.</comment>
     </version>
-   </headerfile>
-   
+   </headerfile>   
    <headerfile name="vcard.h">
     <version checksum="2oMOcaSAJblxW">
       <status>OK</status>
       <comment>CParserVCard3 marked as internal.</comment>
     </version>
    </headerfile>
-
+   <headerfile name="app\vcard.h">
+    <version checksum="2oMOcaSAJblxW">
+      <status>OK</status>
+      <comment>CParserVCard3 marked as internal.</comment>
+    </version>
+   </headerfile>
 	<headerfile name="versit.h">
     <version checksum="*******AG0zPO">
       <status>OK</status>
@@ -10014,6 +11824,16 @@
       <comment>return type changed from TBool to TInt, TVersitParserPanic,CVersitTLSContainer, CLineReaderExtension, KTLSVars marked as internal.</comment>
     </version>
   </headerfile>
+  <headerfile name="app\versit.h">
+   <version checksum="JbZkWsjBM2QTw">
+      <status>OK</status>
+      <comment>1.TVersitParserPanic,CVersitTLSContainer, CLineReaderExtension, KTLSVars marked as internal 2.Return type changed from TBool to TInt (ReadLineL(...) ) 3. Panic( ::TVersitParserPanic ) is not visible due to conditional inclusion of macro SYMBIAN_ENABLE_SPLIT_HEADERS.</comment>
+    </version>
+    <version checksum="JbZkWsjBc9bs7">
+      <status>OK</status>
+      <comment>1.TVersitParserPanic,CVersitTLSContainer, CLineReaderExtension, KTLSVars marked as internal 2.Return type changed from TBool to TInt (ReadLineL(...) ) 3. Panic( ::TVersitParserPanic ) is not visible due to conditional inclusion of macro SYMBIAN_ENABLE_SPLIT_HEADERS.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="vobserv.h">
     <version checksum="NTegsQhCAQgne">
@@ -10028,7 +11848,12 @@
       <comment>TMsvSmsEntry present in tmsvsmsentry.h</comment>
     </version>
   </headerfile>
-
+	<headerfile name="app\smuthdr.h">
+    <version checksum="N+P-ZQFC5GegY">
+      <status>OK</status>
+      <comment>TMsvSmsEntry present in tmsvsmsentry.h</comment>
+    </version>
+  </headerfile>
   <headerfile name="vtzrules.h">
     <version checksum="*******AeF6LA">
       <status>OK</status>
@@ -10077,12 +11902,22 @@
       <comment>KUIDCharacterSet is marked as internal component.</comment>
     </version>
     </headerfile>
+    <headerfile name="mw\mtclbase.h">
+     <version checksum="MKNYFKuDlfpSF">
+      <status>OK</status>
+      <comment>KUIDCharacterSet is marked as internal component.</comment>
+    </version>
+    </headerfile>
     <headerfile name="networking\qos3gpp_subconparams.h">
     <version checksum="v+OlconAgHUhb">
       <status>OK</status>
       <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
     </version>
      <version checksum="v+OlconAwxj4E">
+      <status>OK</status>
+      <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
+    </version>
+     <version checksum="01JJWe+Awxj4E">
       <status>OK</status>
       <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
     </version>
@@ -10102,8 +11937,17 @@
       <comment>Class CInstalledMtmGroupArraymarked internal..</comment>
     </version>
     </headerfile>
-    
-    <headerfile name="schinfo.h">
+   <headerfile name="mw\mtsr.h">
+    <version checksum="72wVzJWDoh0II">
+      <status>OK</status>
+      <comment>Class CInstalledMtmGroupArraymarked internal..</comment>
+    </version>
+   </headerfile>
+   <headerfile name="schinfo.h">
+    <version checksum="GNI7cFeA9GKD5">
+      <status>OK</status>
+      <comment>Classes TScheduleInfo, TScheduleSettings and TTaskSchedulerCondition marked as internal.</comment>
+    </version>
     <version checksum="GNI7cFeBx8BwV">
       <status>OK</status>
       <comment>Classes TScheduleInfo  and TScheduleSettings are marked as internalAll..</comment>
@@ -10123,13 +11967,35 @@
       <comment>All concerned constants are marked as internal component and KUidMsgSmsEditorAppVal present in tmsvsmsentry.h.</comment>
     </version>
     </headerfile>
+     <headerfile name="app\smsclnt.h">
+     <version checksum="gDI6a2lBJJY5m">
+      <status>OK</status>
+      <comment>All concerned constants(ie.KSmcmMaxCharsInMessageConcatenated7Bit,KSmcmMaxMessageNumber, KSmcmMaxTotalMsgSize, KSmcmRichTextConstant ) are marked as internal component and KUidMsgSmsEditorAppVal present in tmsvsmsentry.h.</comment>
+    </version>
+    <version checksum="gDI6a2lBs1O1+">
+      <status>OK</status>
+      <comment>1.All concerned constants(ie.KSmcmMaxCharsInMessageConcatenated7Bit,KSmcmMaxMessageNumber, KSmcmMaxTotalMsgSize, KSmcmRichTextConstant ) are marked as internal component and KUidMsgSmsEditorAppVal present in tmsvsmsentry.h.2.Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
+    </headerfile>
     <headerfile name="smut.h">
     <version checksum="dNp3bv1D8ysSI">
       <status>OK</status>
       <comment>Dummy functions has been removed...</comment>
     </version>
     </headerfile>
+     <headerfile name="app\smut.h">
+    <version checksum="dNp3bv1D8ysSI">
+      <status>OK</status>
+      <comment>Dummy functions has been removed...</comment>
+    </version>
+    </headerfile>
     <headerfile name="smutsimparam.h">
+    <version checksum="rEY4O4pA8l0OL">
+      <status>OK</status>
+      <comment>Constant is marked as internal tech.</comment>
+    </version>
+    </headerfile>
+    <headerfile name="app\smutsimparam.h">
     <version checksum="rEY4O4pA8l0OL">
       <status>OK</status>
       <comment>Constant is marked as internal tech.</comment>
@@ -10243,7 +12109,15 @@
     <version checksum="RKv-K3VCv3FCb">
       <status>OK</status>
       <comment>1.AnimCommand is marked as internal component. 2.TSizeMode is marked as internal comp.3.All removed value of enum type TSpriteFlags are marked as internal component. 4.enum values are either moved to included header textcursor.h or marked as internal component.5. struct TWsGraphicMessageHeaderEvent is marked as internal comp. 6.All exported functions made as const.7) Constant KWSERVServerNamemarked as internal. Not a BC break.</comment>
-    </version>     
+    </version>    
+    <version checksum="QouTRqzCv3FCb">
+      <status>OK</status>
+      <comment>1.AnimCommand is marked as internal component. 2.TSizeMode is marked as internal comp.3.All removed value of enum type TSpriteFlags are marked as internal component. 4.enum values are either moved to included header textcursor.h or marked as internal component.5. struct TWsGraphicMessageHeaderEvent is marked as internal comp. 6.All exported functions made as const.7) Constant KWSERVServerNamemarked as internal. Not a BC break.</comment>
+    </version> 
+    <version checksum="meSXtkzAFTd1C">
+      <status>OK</status>
+      <comment>1.AnimCommand is marked as internal component. 2.TSizeMode is marked as internal comp.3.All removed value of enum type TSpriteFlags are marked as internal component. 4.enum values are either moved to included header textcursor.h or marked as internal component.5. struct TWsGraphicMessageHeaderEvent is marked as internal comp. 6.All exported functions made as const.7) Addition of an overloaded function is not a bc break.</comment>
+    </version> 
   </headerfile>
 
   <headerfile name="x509certext.h">
@@ -10278,6 +12152,10 @@
   </headerfile>
   
   <headerfile name="mmf\common\mmfvideo.h">
+    <version checksum="CLlA2nnD5d8rb">
+      <status>OK</status>
+      <comment>Class TVideoPlayRateCapabilities and enum TVideoQuality moved to mmfvideoenums.h.</comment>
+    </version>
     <version checksum="CLlA2nnAJHK6j">
       <status>OK</status>
       <comment>Class TVideoPlayRateCapabilities and enum TVideoQualitymoved to mmfvideoenums.h.</comment>
@@ -10290,9 +12168,19 @@
       <comment>All removed constants marked internal.</comment>
     </version>
   </headerfile>
+  <headerfile name="mw\msvruids.h">
+    <version checksum="SnQtnTcCSP3-u">
+      <status>OK</status>
+      <comment>All removed constants marked internal.</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="sacls.h">
     <version checksum="BAmHTtQARE4oh">
+      <status>OK</status>
+      <comment>Constant KUidJmiLatestInstallation present SaClsDefines.h.Others marked internal</comment>
+    </version>
+    <version checksum="ElK5SdJARE4oh">
       <status>OK</status>
       <comment>Constant KUidJmiLatestInstallation present SaClsDefines.h.Others marked internal</comment>
     </version>
@@ -10311,7 +12199,16 @@
       <comment>CVwsSessionWrapper, SVwsCommandLine and TVwsPanic marked as internal</comment>
     </version>
   </headerfile>
-
+	<headerfile name="mw\viewcli.h">
+    <version checksum="k56y5I0B0No5L">
+      <status>OK</status>
+      <comment>1. CVwsSessionWrapper is moved to viewclipartner.h 2. SVwsCommandLine, TVwsPanic are marked as internalcomponent.</comment>
+    </version>
+    <version checksum="k56y5I0BjSD-o">
+      <status>OK</status>
+      <comment>1. CVwsSessionWrapper is moved to viewclipartner.h 2. SVwsCommandLine, TVwsPanic are marked as internalcomponent.</comment>
+    </version>
+  </headerfile>
   <headerfile name="zlib.h">
     <version checksum="ttXYP8oAxetVp">
       <status>OK</status>
@@ -10334,6 +12231,10 @@
     <version checksum="E3ZzXluA312Ox">
       <status>OK</status>
       <comment>All removed macors are moved to included zlib.h</comment>
+    </version>
+    <version checksum="E3ZzXluDu1X6U">
+      <status>OK</status>
+      <comment>All removed macors(Z_ASCII and ZLIB_VERSION) are moved to included zlib.h</comment>
     </version>
    </headerfile>
   
@@ -10584,12 +12485,21 @@
     </version>
   </headerfile>
   <headerfile name="prcpucfg.h">
+    <version checksum="PiJ4M23DP+xM-">
+      <status>OK</status>
+      <comment>File contains only #defines.</comment>
+    </version>
     <version checksum="PiJ4M23AxetVp">
       <status>OK</status>
       <comment>File contains only #defines.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="mw\prcpucfg.h">
+    <version checksum="PiJ4M23DP+xM-">
+      <status>OK</status>
+      <comment>File contains only #defines.</comment>
+    </version>
+  </headerfile>
    <headerfile name="middleware\prcpucfg.h">
     <version checksum="PiJ4M23AxetVp">
       <status>OK</status>
@@ -10700,6 +12610,10 @@
       <status>OK</status>
       <comment>Removed components marked as internal and moved to apmpan.h</comment>
     </version>
+    <version checksum="xC-Hq6RBjLaRX">
+      <status>OK</status>
+      <comment>1. KDataTypePrioritySystem is moved to apmfndr.h 2. KEpocUrlDataTypeHeader, and KApaAppTypeDes are marked to internalcomponent.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\cecombrowserplugininterface.h">
@@ -10728,8 +12642,11 @@
       <status>OK</status>
       <comment> File has compilation errors</comment>
     </version>
-    
-  </headerfile>
+     <version checksum="IiRpHFVA2c321">
+      <status>OK</status>
+      <comment> File has compilation errors</comment>
+    </version>
+   </headerfile>
   
   <headerfile name="btextnotifiers.h">
     <version checksum="k9639lUCdfIp4">
@@ -10821,6 +12738,14 @@
       <status>OK</status>
      <comment>Data field changed from const  CEikDialogPage* to CEikDialogPage*. It's not a BC break.</comment>
     </version>
+     <version checksum="HjuoGOBDDxekF">
+      <status>OK</status>
+     <comment>Data field changed from const  CEikDialogPage* to CEikDialogPage*. It's not a BC break.</comment>
+    </version>
+    <version checksum="9kIG2vuA7YvUX">
+      <status>OK</status>
+     <comment>1.TWhichEars removed.Private member. 2. All removed fields are private access. None of them is used in any inline function. There is no change in class size.3.Data field changed from const  CEikDialogPage* to CEikDialogPage*. It's not a BC break.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="libc\netinet\ip.h">
@@ -10843,9 +12768,17 @@
       <status>OK</status>
       <comment> KErrTotalLossOfEntropy marked as internal. </comment>
     </version>
+    <version checksum="kbX3JRSB1X848">
+      <status>OK</status>
+      <comment> KErrTotalLossOfEntropy marked as internal. </comment>
+    </version>
   </headerfile>
   
   <headerfile name="variant\symbian_os.hrh">
+    <version checksum="HpE2aDjDSDevB">
+      <status>OK</status>
+      <comment>Macro SYMBIAN_NETWORKING_WIFI present in other header. It's not a BC break. It may be a source break.</comment>
+    </version>
     <version checksum="QnOFE8JDSDevB">
       <status>OK</status>
       <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
@@ -10870,7 +12803,21 @@
       <status>OK</status>
       <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
     </version>
+    <version checksum="CAJ5aYDDSDevB">
+      <status>OK</status>
+      <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
+    </version>
+    <version checksum="E7DeKc5DSDevB">
+      <status>OK</status>
+      <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
+    </version>
   </headerfile>
+  <headerfile name="mw\aknclearer.h">
+    <version checksum="Pz32BhZCDSfxB">
+      <status>OK</status>
+      <comment>Overloading a function is not a BC break. It may be a source break.</comment>
+    </version>
+  </headerfile>    
   
   
   <library name = "libstdcpp">
@@ -11257,8 +13204,8 @@
 				    <funcpos>94</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function remvoed.Studied and approved.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -11266,8 +13213,8 @@
 				    <funcpos>95</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function remvoed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function remvoed.Studied and approved</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -12104,8 +14051,8 @@
 				    <funcpos>188</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status>NOK</status>
-				    <comment>Exported function removed.</comment>
+				    <status>OK</status>
+				    <comment>Exported function removed.Studied and approved.</comment>
 			</issue>
 			  <issue>
 				    <typeid>4</typeid>
@@ -12935,6 +14882,25 @@
 				    <sc_severity>Possible SC Break</sc_severity>
 				    <status>OK</status>
 				    <comment>function name modified.</comment>
+			</issue>
+			<issue>
+				    <typeid>5</typeid>
+				    <newfuncname>RSqlStatement::ParameterName(int, TPtrC16&amp;)</newfuncname>
+				    <newfuncpos>117</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Exported function Inserted.</comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>RSqlStatement::ParamName(int, TPtrC16&amp;)</funcname>
+				    <funcpos>117</funcpos>
+				    <newfuncpos>136</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>ParamName and ParameterName , both methods are same.. </comment>
 			</issue>
    </library>
    <library name="ccon">
@@ -15886,6 +17852,15 @@
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
 				    <status>OK</status>
+        		<comment>CConnectionProvdBase is  marked as internal technology..</comment>
+			</issue>
+			<issue>
+				    <typeid>4</typeid>
+				    <funcname>CCommsProviderBase::DoFetchInterfaceControlL(TSupportedCommsApiExt)</funcname>
+				    <funcpos>332</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				     <status>OK</status>
         		<comment>CConnectionProvdBase is  marked as internal technology..</comment>
 			</issue>
    
@@ -23661,6 +25636,24 @@
 				    <status>OK</status>
 	    			<comment>Nothing is imported in class CAknRecentCharMap.</comment>
 			</issue>
+			<issue>
+				    <typeid>4</typeid>
+				    <funcname>typeinfo for CAknRecentCharMap</funcname>
+				    <funcpos>4152</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+	    			<comment>Nothing is imported in class CAknRecentCharMap.</comment>
+			</issue>
+			  <issue>
+				    <typeid>4</typeid>
+				    <funcname>vtable for CAknRecentCharMap</funcname>
+				    <funcpos>4153</funcpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+	    			<comment>Nothing is imported in class CAknRecentCharMap.</comment>
+			</issue>
   </library>
 
   <library name="bafl">
@@ -27361,8 +29354,8 @@
 				    <newfuncpos>303</newfuncpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>None</sc_severity>
-				    <status>NOK</status>
-				    <comment>Imported function removed.</comment>
+				    <status>OK</status>
+				    <comment>This is visible due to 2 version of def files.</comment>
 				    
 			</issue>
 			<issue>
@@ -27482,7 +29475,7 @@
 				    <funcpos>92</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27491,7 +29484,7 @@
 				    <funcpos>93</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27500,7 +29493,7 @@
 				    <funcpos>139</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27509,7 +29502,7 @@
 				    <funcpos>146</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27518,7 +29511,7 @@
 				    <funcpos>147</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27527,7 +29520,7 @@
 				    <funcpos>148</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27536,7 +29529,7 @@
 				    <funcpos>149</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderField and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27545,7 +29538,7 @@
 				    <funcpos>154</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27554,7 +29547,7 @@
 				    <funcpos>155</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27563,7 +29556,7 @@
 				    <funcpos>156</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27572,7 +29565,7 @@
 				    <funcpos>157</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27581,7 +29574,7 @@
 				    <funcpos>158</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27590,7 +29583,7 @@
 				    <funcpos>159</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Used by CHeaderFieldPart and as such is tightly bound to that class.</comment>
 			</issue>
 			  <issue>
@@ -27599,7 +29592,7 @@
 				    <funcpos>208</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27608,7 +29601,7 @@
 				    <funcpos>209</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27617,7 +29610,7 @@
 				    <funcpos>210</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27626,7 +29619,7 @@
 				    <funcpos>223</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27635,7 +29628,7 @@
 				    <funcpos>224</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27644,7 +29637,7 @@
 				    <funcpos>255</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27653,7 +29646,7 @@
 				    <funcpos>256</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27662,7 +29655,7 @@
 				    <funcpos>267</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldPart is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27671,7 +29664,7 @@
 				    <funcpos>268</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>Class CHeaderFieldParam is not part of the public SDK and not intended for use by clients</comment>
 			</issue>
 			  <issue>
@@ -27680,7 +29673,7 @@
 				    <funcpos>284</funcpos>
 				    <bc_severity>BBC Break</bc_severity>
 				    <sc_severity>SC Break</sc_severity>
-				    <status> OK </status>
+				    <status>OK</status>
 				    <comment>SetupDefaultProxyFromCommsDatL( ) is an internal component </comment>
 			</issue>
   </library>
@@ -39704,4 +41697,21 @@
 			</issue>
 			  
   </library>
+   <library name="egldisplayproperty">
+      <issue>
+        <bc_severity>BBC Break</bc_severity>
+        <sc_severity>SC Break</sc_severity>
+        <typeid>1</typeid>
+        <status>OK</status>
+        <comment>Resolved WONTFIX.</comment>
+      </issue>
+      <issue>
+        <bc_severity>Informative</bc_severity>
+        <sc_severity>None</sc_severity>
+        <typeid>14</typeid>
+        <typeinfo>Baseline DLL is not available for analysis</typeinfo>
+        <status>OK</status>
+        <comment>File was not contributed. It is an accepted break.</comment>
+      </issue>
+    </library>
   </issuelist>
