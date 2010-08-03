@@ -31,7 +31,7 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-07-23</listversion>
+  <listversion>2010-08-02</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
@@ -1370,6 +1370,10 @@
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
+    <version checksum="OQAJDOpChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
    </headerfile>
 	
 	 <headerfile name="middleware\aknsconstants.h">
@@ -1925,6 +1929,10 @@
       <comment>typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok. </comment>
     </version>
     <version checksum="3mwWFsuAjnezF">
+      <status>OK</status>
+      <comment>All Enum members are marked as internal component. </comment>
+    </version>
+     <version checksum="5AbKKQvAjnezF">
       <status>OK</status>
       <comment>All Enum members are marked as internal component. </comment>
     </version>
@@ -2544,6 +2552,10 @@
       <status>OK</status>
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
+    <version checksum="eYzVyTiBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\avkon.hrh">
@@ -2790,6 +2802,10 @@
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
     <version checksum="Ql1ZQZFC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="UAXpMGtC302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
@@ -3309,6 +3325,10 @@
       <comment>1)Except macro KBasebandSlotTime, other constants and classes are marked as internal tech.KBasebandSlotTime is moved to included header btbasebandpolicy.h 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
     </version>
     <version checksum="h9XOc8KDNBprT">
+      <status>OK</status>
+      <comment>1). TACLPort,class TACLSockAddr, const KSockBluetoothTypeRawBroadcast and const KSockBluetoothTypeACL are part of internalcompoent. 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
+     <version checksum="olYC2koDNBprT">
       <status>OK</status>
       <comment>1). TACLPort,class TACLSockAddr, const KSockBluetoothTypeRawBroadcast and const KSockBluetoothTypeACL are part of internalcompoent. 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
     </version>
@@ -5324,6 +5344,10 @@
       <comment>Build version information.</comment>
     </version>
     <version checksum="msJhQePB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mt58LY1B9a-Pp">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
@@ -10511,6 +10535,10 @@
       <status>OK</status>
       <comment>Extra member added to union member of structure ifr_ifru.</comment>
     </version>
+    <version checksum="YsRiz9TA-CiU-">
+      <status>OK</status>
+      <comment>Extra member added to union member of structure ifr_ifru.</comment>
+    </version>
   </headerfile>
   
    <headerfile name="stdapis\netdb.h">
@@ -10519,6 +10547,10 @@
       <comment>Path is changed from z: to generic drive.</comment>
     </version>
     <version checksum="imoIZSkDPe5sW">
+      <status>OK</status>
+      <comment>Removal of _PATH_SERVICES and _PATH_SERVICES_TARGET are studied and approved..</comment>
+    </version>
+    <version checksum="mcC5IIgDPe5sW">
       <status>OK</status>
       <comment>Removal of _PATH_SERVICES and _PATH_SERVICES_TARGET are studied and approved..</comment>
     </version>
