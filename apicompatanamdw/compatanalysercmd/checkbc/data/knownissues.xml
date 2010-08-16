@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-08-02</listversion>
+  <listversion>2010-08-16</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
 	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk29</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk31</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -859,6 +859,10 @@
       <status>OK</status>
       <comment>Spare data member is replaced with original data member.</comment>
     </version>
+    <version checksum="Zm3sK2OBtCXSS">
+      <status>OK</status>
+      <comment>Spare data member is replaced with original data member.</comment>
+    </version>
   </headerfile>
   <headerfile name="middleware\msenproviderpolicy.h">
     <version checksum="uaJHt4oCyqeoq">
@@ -1371,6 +1375,10 @@
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
     <version checksum="OQAJDOpChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="YnyCVR0Chv9Aq">
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
@@ -1935,6 +1943,10 @@
      <version checksum="5AbKKQvAjnezF">
       <status>OK</status>
       <comment>All Enum members are marked as internal component. </comment>
+    </version>
+     <version checksum="5AbKKQvBg8JMw">
+      <status>OK</status>
+      <comment>1.All Enum members are marked as internal component. 2.typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok 3. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
    </headerfile>
    
@@ -2553,6 +2565,10 @@
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
     <version checksum="eYzVyTiBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
+    <version checksum="tVr2QEtBG9pRn">
       <status>OK</status>
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
@@ -3190,6 +3206,10 @@
       <status>OK</status>
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
+    <version checksum="kKKaAR5BLX16n">
+      <status>OK</status>
+      <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+    </version>
     </headerfile>
     
   <headerfile name="bttypes.h">
@@ -3332,6 +3352,10 @@
       <status>OK</status>
       <comment>1). TACLPort,class TACLSockAddr, const KSockBluetoothTypeRawBroadcast and const KSockBluetoothTypeACL are part of internalcompoent. 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
     </version>
+    <version checksum="olYC2koACttDB">
+      <status>OK</status>
+      <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h</comment>
+    </version>    
   </headerfile>
 
   <headerfile name="btsdp.h">
@@ -4561,6 +4585,10 @@
       <status>OK</status>
       <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
     </version>
+    <version checksum="6+vJWplAwhwsL">
+      <status>OK</status>
+      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
+    </version>
   </headerfile>
   <headerfile name="datastor.h">
     <version checksum="C3+w9ZZDs7Sid">
@@ -5351,6 +5379,10 @@
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
+    <version checksum="muLMZ8HB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
   </headerfile>
   <headerfile name="ecam.h">
     <version checksum="0WXCOuyDSkyhn">
@@ -5919,6 +5951,10 @@
       <status>OK</status>
       <comment>Previous enum-values are intact. so no break .</comment>
     </version>
+    <version checksum="fQ9EM5FCw5aGM">
+      <status>OK</status>
+      <comment>Previous enum-values are intact. so no break .</comment>
+    </version>
    </headerfile>
    <headerfile name="coever.h">
     <version checksum="KLNcWtkCip1om">
@@ -6318,6 +6354,10 @@
       <status>OK</status>
       <comment>1.CSubConParameterBundle is moved to included header es_sock_partner.h 2KConnectionBuildVersionNumber,KConnectionMajorVersionNumber,KConnectionMinorVersionNumber,KInternalIoctlBit are internal component.3.TSockIO,TSockIOBufC, TSockOpen,TSockOpenBufC,SOCKET_SERVER_NAME are marked as internal component  4.Internally subobject RSessionBase,RSubSessionBase are intact, so no change in RSocketServ,  RSubConnection5.KCommsNetworkLayerId, is  moved into es_sock_partner.h or es_sock_internal.h.6.Addition of an overloaded funtion is not a bc break.7. CSubConParameterSet is marked as deprecated.  </comment>
     </version>
+    <version checksum="bVFYFXdDxRYO9">
+      <status>OK</status>
+      <comment>1.TSockIO,TSockIOBufC, TSockOpen,TSockOpenBufC,SOCKET_SERVER_NAME are marked as internal component 2..Addition of an overloaded funtion is not a bc break. 3.Internally subobject RSessionBase,RSubSessionBase are intact 4..Connection build number,Major connection version number, KInternalIoctlBit and minor version number constants are internal component.5.KCommsNetworkLayerId is moved into es_sock_partner.h.6.CSubConParameterBundle is moved to included header es_sock_partner.h.7.There is no difference between SMetaDataECom and XParameterSetBase</comment>
+    </version>
   </headerfile>
 
   <headerfile name="etelmm.h">
@@ -6599,6 +6639,10 @@
       <status>OK</status>
       <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed 7. field CFormatCB::iBody replaced the reserved field. 8. filed name changed from CFileCB::iLock to CFileCB::iFileLocks8.class ::CMountCB::MFileClamp  removed.9.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 10.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 11.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )12. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server.  </comment>
     </version>
+    <version checksum="yLqT1zfC3FVcj">
+      <status>OK</status>
+      <comment>1)Private data member CFileShare::iFile used in inline finction has changed offset. But CFileShare is not externally instantiatable. .2. TAsyncReadRequest is part of internal tech. 3.Struct SFileShareLock removed. Class TDismountParams removed.Exported functions removed ClampFlag(),FlushOutstandingDismount( ::TBool* ),SetClampFlag( ::TBool ). 4.Reserved member of class CFormatCB has been replaced. 5.Enum value TDrive::EDismountPending is part of private member. 6.  function signature of CFileCB::InitL changed 7. field CFormatCB::iBody replaced the reserved field. 8. filed name changed from CFileCB::iLock to CFileCB::iFileLocks8.class ::CMountCB::MFileClamp  removed.9.Enumeration has more restricted access level(from public to proteteced) ::CMountCB::TMntCtlLevel 10.Enumeration has more restricted access level(from public to proteteced)  ::CMountCB::TMntCtlOption 11.Imported function removed:-TDrive::ClampFlag( ) ,TDrive::FlushOutstandingDismount( ::TBool* ),:TDrive::SetClampFlag( ::TBool )12. inline function from class CFileCB removed.Its ok as the API is not usable outside the file server.  </comment>
+    </version>
   </headerfile>
   <headerfile name="gsmupdu.h">
     <version checksum="gvHB6HQCbpXMk">
@@ -6715,6 +6759,10 @@
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
+     <version checksum="KkHAepNAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
   </headerfile>
   <headerfile name="gulbordr.h">
     <version checksum="znQ-et8BRjDpH">
@@ -6818,6 +6866,10 @@
       <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component. </comment>
     </version>
     <version checksum="bEe4y98DG3I-h">
+      <status>OK</status>
+      <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component.3.Addition of an overloaded funtion is not a bc break. </comment>
+    </version>
+     <version checksum="gPDzNfBDG3I-h">
       <status>OK</status>
       <comment>1.Inline function is renamed.2.CFbsBitmapAsyncStreamer,KFontBitmapServerUid,KFontBitmapServerUidValue marked as internal component.3.Addition of an overloaded funtion is not a bc break. </comment>
     </version>
@@ -7896,6 +7948,10 @@
       <comment>Removed constants marked as internal</comment>
     </version>
     <version checksum="43pAkETBXew7H">
+      <status>OK</status>
+      <comment>Removed constants marked as internal</comment>
+    </version>
+    <version checksum="FvOwSTlBXew7H">
       <status>OK</status>
       <comment>Removed constants marked as internal</comment>
     </version>
@@ -11940,6 +11996,12 @@
       <comment>KUIDCharacterSet is marked as internal component.</comment>
     </version>
     </headerfile>
+    <headerfile name="platform\app\obexservermtm.h">
+     <version checksum="41LLSOoBLIjcH">
+      <status>NOK</status>
+      <comment>Virtual function ordering changed..</comment>
+    </version>
+    </headerfile>
     <headerfile name="networking\qos3gpp_subconparams.h">
     <version checksum="v+OlconAgHUhb">
       <status>OK</status>
@@ -11950,6 +12012,10 @@
       <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
     </version>
      <version checksum="01JJWe+Awxj4E">
+      <status>OK</status>
+      <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
+    </version>
+    <version checksum="03lPg0GAwxj4E">
       <status>OK</status>
       <comment>Class CSubCon3GPPExtParamsFactory is marked as internal tech..</comment>
     </version>
@@ -11973,6 +12039,10 @@
     <version checksum="72wVzJWDoh0II">
       <status>OK</status>
       <comment>Class CInstalledMtmGroupArraymarked internal..</comment>
+    </version>
+    <version checksum="C-s3GfNAUKMj8">
+      <status>OK</status>
+      <comment>Class CBaseServerMtm internal..</comment>
     </version>
    </headerfile>
    <headerfile name="schinfo.h">
@@ -12843,6 +12913,10 @@
       <status>OK</status>
       <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
     </version>
+    <version checksum="KtqALSrDSDevB">
+      <status>OK</status>
+      <comment> Macro SYMBIAN_NETWORKING_WIFI present in other header . It's not a BC break. It may be a source break. </comment>
+    </version>
   </headerfile>
   <headerfile name="mw\aknclearer.h">
     <version checksum="Pz32BhZCDSfxB">
@@ -13034,6 +13108,13 @@
 				    <newfuncpos>14</newfuncpos>
 				    <status>OK</status>
 				    <comment>Ordinal gets changed.CR approved</comment>
+			</issue>
+			<issue>
+				    <typeid>1</typeid>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>CR approved</comment>
 			</issue>
    </library>
    <library name="worldclient">
