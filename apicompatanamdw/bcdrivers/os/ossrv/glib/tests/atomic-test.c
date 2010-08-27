@@ -11,7 +11,7 @@
 *
 * Contributors:
 *
-* Description:
+* Description: 
 *
 */
 #undef G_DISABLE_ASSERT

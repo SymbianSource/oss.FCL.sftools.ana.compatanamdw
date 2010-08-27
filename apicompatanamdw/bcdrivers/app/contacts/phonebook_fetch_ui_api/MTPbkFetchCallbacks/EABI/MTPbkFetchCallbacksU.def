@@ -1,0 +1,9 @@
+EXPORTS
+	_Z9LibEntryLR13CTestModuleIf @ 1 NONAME
+	_ZTI14CFetchCallback @ 2 NONAME
+	_ZTI16CSimulateKeyBase @ 3 NONAME
+	_ZTI18CSimulateKeyEvents @ 4 NONAME
+	_ZTV14CFetchCallback @ 5 NONAME
+	_ZTV16CSimulateKeyBase @ 6 NONAME
+	_ZTV18CSimulateKeyEvents @ 7 NONAME
+

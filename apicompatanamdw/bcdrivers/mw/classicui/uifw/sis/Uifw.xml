@@ -1,0 +1,340 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Mw/ClassicUi">UIFW API</API>
+<TestFramework type="">UIFW</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the UIFW APIs</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="bctestlauncher.exe">bctestbuttons</Execute>
+<Component name="BCTESTBUTTONS">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTBUTTONS_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTBUTTONS.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesteditor</Execute>
+<Component name="BCTESTEditor">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTEditor_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTEditor.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesteikbctrl</Execute>
+<Component name="BCTESTEIKBCTRL">
+ <Info>
+  <TCCount start_version="52" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTEIKBCTRL_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTEIKBCTRL.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestform</Execute>
+<Component name="BCTESTFORM">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTFORM_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTFORM.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestlist</Execute>
+<Component name="BCTestLIST">
+ <Info>
+  <TCCount start_version="52" end_version="52">10</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTestLIST_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTestLIST.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestnote</Execute>
+<Component name="BCTESTNOTE">
+ <Info>
+  <TCCount start_version="52" end_version="52">8</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTNOTE_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTNOTE.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestscreenclearer</Execute>
+<Component name="BCTESTSCREENCLEARER">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSCREENCLEARER_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSCREENCLEARER.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestsearchfield</Execute>
+<Component name="BCTESTSEARCHFIELD">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSEARCHFIELD_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSEARCHFIELD.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestutilities</Execute>
+<Component name="BCTestUtilities">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTestUtilities_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTestUtilities.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestaknsound</Execute>
+<Component name="BCTESTAKNSOUND">
+ <Info>
+  <TCCount start_version="52" end_version="52">2</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTAKNSOUND_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTAKNSOUND.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestquery</Execute>
+<Component name="BCTestQuery">
+ <Info>
+  <TCCount start_version="52" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTestQuery_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTestQuery.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestpopups</Execute>
+<Component name="BCTESTPOPUPS">
+ <Info>
+  <TCCount start_version="52" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTPOPUPS_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTPOPUPS.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestsettingpage</Execute>
+<Component name="BCTESTSETTINGPAGE">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSETTINGPAGE_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSETTINGPAGE.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestappfrm</Execute>
+<Component name="BCTESTAPPFRM">
+ <Info>
+  <TCCount start_version="52" end_version="52">10</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTAPPFRM_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTAPPFRM.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesteikfrm</Execute>
+<Component name="BCTESTEIKFRM">
+ <Info>
+  <TCCount start_version="52" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTEIKFRM_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTEIKFRM.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestskins</Execute>
+<Component name="BCTESTSKINS">
+ <Info>
+  <TCCount start_version="52" end_version="52">5</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSKINS_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSKINS.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestgrids</Execute>
+<Component name="BCTESTGRIDS">
+ <Info>
+  <TCCount start_version="52" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTGRIDS_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTGRIDS.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestimage</Execute>
+<Component name="BCTESTIMAGE">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTIMAGE_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTIMAGE.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestprivateuifrm</Execute>
+<Component name="BCTESTPRIVATEUIFRM">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTPRIVATEUIFRM_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTPRIVATEUIFRM.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestmisccontrol</Execute>
+<Component name="BCTESTMISCCONTRO">
+ <Info>
+  <TCCount start_version="52" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTMISCCONTROL_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTMISCCONTRO.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestpane</Execute>
+<Component name="BCTESTPANE">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTPANE_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTPANE.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestlabelinfoindicators</Execute>
+<Component name="BCTESTLABELINFOINDICATORS">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTLABELINFOINDICATORS_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTLABELINFOINDICATORS.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestsliderandicons</Execute>
+<Component name="BCTESTSLIDERANDICONS">
+ <Info>
+  <TCCount start_version="52" end_version="52">2</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSLIDERANDICONS_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSLIDERANDICONS.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestcmdlg</Execute>
+<Component name="BCTESTCMDLG">
+ <Info>
+  <TCCount start_version="52" end_version="52">6</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTCMDLG_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTCMDLG.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestserverapp</Execute>
+<Component name="BCTESTSERVERAPP">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSERVERAPP_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSERVERAPP.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestnotifier</Execute>
+<Component name="BCTESTNOTIFIER">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTNOTIFIER_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTNOTIFIER.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestmenu</Execute>
+<Component name="BCTESTMenu">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTMenu_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTMenu.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesteh</Execute>
+<Component name="BCTESTEH">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTEH_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTEH.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestdocandinit</Execute>
+<Component name="BCTESTDOCANDINIT">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTDOCANDINIT_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTDOCANDINIT.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestocr</Execute>
+<Component name="BCTESTOCR">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTOCR_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTOCR.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestmisc</Execute>
+<Component name="BCTESTMISC">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTMISC_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTMISC.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestfontinput</Execute>
+<Component name="BCTESTFONTINPUT">
+ <Info>
+  <TCCount start_version="52" end_version="52">2</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTFONTINPUT_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTFONTINPUT.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestscroller</Execute>
+<Component name="BCTESTscroller">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTscroller_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTscroller.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestvolume</Execute>
+<Component name="BCTESTVOLUME">
+ <Info>
+  <TCCount start_version="52" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTVOLUME_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTVOLUME.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestlocation</Execute>
+<Component name="BCTESTLOCATION">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTLOCATION_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTLOCATION.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestuniteditor</Execute>
+<Component name="BCTESTUNITEDITOR">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\bctestuniteditor_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTUNITEDITOR.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestlocalizer</Execute>
+<Component name="BCTESTLOCALIZER">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTestLocalizer_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTLOCALIZER.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestmisc32</Execute>
+<Component name="BCTESTMISC32">
+ <Info>
+  <TCCount start_version="52" end_version="52">2</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTMISC32_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTMISC32.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestmix50</Execute>
+<Component name="BCTESTMIX50">
+ <Info>
+  <TCCount start_version="52" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTMIX50_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTMIX50.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestpreviewpopup</Execute>
+<Component name="BCTESTPREVIEWPOPUP">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTestPreviewPopup_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTPREVIEWPOPUP.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestservicehandler</Execute>
+<Component name="BCTESTSERVICEHANDLER">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTSERVICEHANDLER_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTSERVICEHANDLER.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestkeylock</Execute>
+<Component name="BCTESTKEYLOCK">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTKEYLOCK_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTKEYLOCK.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestbutton</Execute>
+<Component name="BCTESTBUTTON">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTBUTTON_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTBUTTON.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctestchoicelist</Execute>
+<Component name="BCTESTCHOICELIST">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTCHOICELIST_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTCHOICELIST.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesttoolbar</Execute>
+<Component name="BCTESTTOOLBAR">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTTOOLBAR_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTTOOLBAR.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesttouchpane</Execute>
+<Component name="BCTESTTOUCHPANE">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTTOUCHPANE_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTTOUCHPANE.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="bctestlauncher.exe">bctesttreelist</Execute>
+<Component name="BCTESTTREELIST">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>C:\BCTestLog\BCTESTTREELIST_TestLog.txt</src><dst>e:\bctest\results\CLASSICUI_UIFW_AVKON_BCTESTTREELIST.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

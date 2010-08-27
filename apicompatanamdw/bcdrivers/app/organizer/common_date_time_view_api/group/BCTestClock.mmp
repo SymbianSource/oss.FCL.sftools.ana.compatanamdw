@@ -18,7 +18,7 @@
 
 #if defined(__S60_)
         // To get the OSEXT_LAYER_SYSTEMINCLUDE-definition
-        #include <domain/osextensions/platform_paths.hrh>
+       // #include <domain/osextensions/platform_paths.hrh>
 #endif
 
 TARGET          BCTestClock.dll
@@ -34,37 +34,21 @@ CAPABILITY      ALL -TCB
 //TARGETPATH      ?target_path
 DEFFILE         BCTestClock.def
 
-#ifdef SBSv2
-	USERINCLUDE     ../inc 
+USERINCLUDE     ../inc 
 
-	#if defined(__S60_)
-	    OSEXT_LAYER_SYSTEMINCLUDE
-	#else // __S60_ not defined
-	    SYSTEMINCLUDE   /epoc32/include 
-	    SYSTEMINCLUDE   /epoc32/include/internal
-	#endif // __S60_
+APP_LAYER_SYSTEMINCLUDE
+SYSTEMINCLUDE   /epoc32/include 
+SYSTEMINCLUDE   /epoc32/include/platform
+SYSTEMINCLUDE   /epoc32/include/middleware
+SYSTEMINCLUDE   /epoc32/include/internal
 
-	SOURCEPATH      ../src
-#else // SBSv2 not defined
-	USERINCLUDE     ..\inc 
+SOURCEPATH      ../src
 
-	#if defined(__S60_)
-	    OSEXT_LAYER_SYSTEMINCLUDE
-	#else // __S60_ not defined
-	    SYSTEMINCLUDE   \epoc32\include 
-	    SYSTEMINCLUDE   \epoc32\include\internal
-	#endif // __S60_
-
-SYSTEMINCLUDE   \epoc32\include		
-SYSTEMINCLUDE	\epoc32\include\middleware 	
 SYSTEMINCLUDE	\epoc32\include\domain\middleware 	
 SYSTEMINCLUDE	\epoc32\include\osextensions 	
 SYSTEMINCLUDE	\epoc32\include\domain\osextensions 	
 SYSTEMINCLUDE	\epoc32\include\applications
-SYSTEMINCLUDE   \epoc32\include\internal
 
-	SOURCEPATH      ..\src
-#endif // SBSv2
 
 SOURCE          BCTestClock.cpp
 SOURCE          BCTestClockBlocks.cpp

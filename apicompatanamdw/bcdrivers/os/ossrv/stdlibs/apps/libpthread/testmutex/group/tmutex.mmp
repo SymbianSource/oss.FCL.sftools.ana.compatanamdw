@@ -20,7 +20,7 @@ TARGET      tmutex.exe
 
 CAPABILITY All -TCB
 TARGETTYPE  exe
-UID         0x1000008D 0x2001FC49
+UID         0x1000008D 0x1028308C
 
 SOURCEPATH		../src
 SOURCE			tmutexserver.cpp

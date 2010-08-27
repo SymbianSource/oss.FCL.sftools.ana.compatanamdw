@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCTestPbkVcardImportExport.dll" module="App/Contacts">Phonebook vCard ImportExport API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Contacts Phonebook vCard Import/Export API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>c:\TestFramework\TestFramework_PbkVcardImportExport.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcBCTestPbkVcardImportExport.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Phonebook vCard Import/Export API">
+ <Info>
+  <TCCount start_version="51" end_version="52">11</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Contacts_PbkVcardImportExport.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="LmkSelector.dll" module="App/Location">Landmarks UI Selector API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Location Landmarks UI Selector API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_locsel.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcLmkSelector.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Landmarks UI Selector API">
+ <Info>
+  <TCCount start_version="51" end_version="52">8</TCCount>
+  <Execute command="copylog"><src>c:\logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Location_LmkSelector.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

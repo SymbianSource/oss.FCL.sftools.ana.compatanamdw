@@ -58,6 +58,9 @@ DEFFILE         MTPbkContactEngine.def
 	SOURCEPATH      ../src
 #endif // SBSV2
 
+SYSTEMINCLUDE   /epoc32/include/app
+SYSTEMINCLUDE   /epoc32/include/platform
+
 SOURCE          MTPbkContactEngine.cpp
 SOURCE          MTPbkContactEngineBlocks.cpp
 SOURCE          CContactEngineEventQueue.cpp 

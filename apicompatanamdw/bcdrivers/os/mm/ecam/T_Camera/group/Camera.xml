@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="T_Camera.exe" module="Os/MM">Onboard Camera API</API>
+<TestFramework type="">TEF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Multimedia Onboard Camera API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\data\t_multimedia.ini</src><dst>C:\multimedia\t_multimedia.ini</dst></Execute>
+<Execute command="testexecute.exe"> \multimedia\MM-ECM-PublicApi </Execute>
+<Component name="Onboard Camera API">
+ <Info>
+  <TCCount start_version="51" end_version="52">64</TCCount>
+  <Execute command="copylog"><src>c:\logs\testexecute\testresults.htm</src><dst>e:\BCTest\results\MM_t_camera.htm</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

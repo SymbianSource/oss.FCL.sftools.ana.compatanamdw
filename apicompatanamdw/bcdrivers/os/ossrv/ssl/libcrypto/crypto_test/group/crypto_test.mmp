@@ -29,7 +29,7 @@ VENDORID     0x70000001
 
 DEFFILE         crypto_test.def
 MACRO   SYMBIAN
-
+#include <platform_paths.hrh>
 SOURCEPATH       ..\src
 SOURCE           crypto_test.cpp
 SOURCE           crypto_testBlocks.cpp
@@ -49,7 +49,8 @@ SOURCE           rc4test.c
 SOURCE           rsa_test.c
 SOURCE           shatest.c
 SOURCE           sha1test.c
-
+SOURCE           sha256t.c
+SOURCE           sha512t.c
 
 
 USERINCLUDE     ..\inc 
@@ -65,6 +66,7 @@ SYSTEMINCLUDE   \epoc32\include\internal
 SYSTEMINCLUDE   \epoc32\include\stdapis
 SYSTEMINCLUDE   \epoc32\include\stdapis\openssl
 
+MW_LAYER_SYSTEMINCLUDE
 
 LIBRARY         euser.lib
 LIBRARY         stiftestinterface.lib
@@ -76,3 +78,5 @@ LANG            SC
 
 EPOCALLOWDLLDATA
 
+
+SMPSAFE

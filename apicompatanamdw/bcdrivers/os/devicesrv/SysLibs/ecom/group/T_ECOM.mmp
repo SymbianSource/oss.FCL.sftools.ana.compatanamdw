@@ -37,6 +37,8 @@ USERINCLUDE		../common/inc
 USERINCLUDE		../../common/inc
 
 SYSTEMINCLUDE	/epoc32/include
+SYSTEMINCLUDE	/epoc32/include/platform
+SYSTEMINCLUDE	/epoc32/include/platform/test
 SYSTEMINCLUDE	/epoc32/include/test
 
 LIBRARY			euser.lib

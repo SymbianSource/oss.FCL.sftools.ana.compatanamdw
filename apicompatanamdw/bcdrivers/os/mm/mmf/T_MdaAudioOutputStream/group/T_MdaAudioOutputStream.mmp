@@ -36,7 +36,11 @@ USERINCLUDE		../../../common/inc
 
 SYSTEMINCLUDE	/epoc32/include
 SYSTEMINCLUDE	/epoc32/include/test
+SYSTEMINCLUDE	/epoc32/include/platform/test
+SYSTEMINCLUDE	/epoc32/include/platform
 SYSTEMINCLUDE	/epoc32/include/mmf/plugin
+SYSTEMINCLUDE	/epoc32/include/mmf/common
+
 APP_LAYER_SYSTEMINCLUDE
 
 LIBRARY			euser.lib

@@ -1,0 +1,9 @@
+EXPORTS
+	_Z9LibEntryLR13CTestModuleIf @ 1 NONAME
+	_ZTI11CFixedQueueI23TContactDbObserverEventE @ 2 NONAME
+	_ZTI24CContactEngineEventQueue @ 3 NONAME
+	_ZTIN19CMTPbkContactEngine13CFindObserverE @ 4 NONAME
+	_ZTV11CFixedQueueI23TContactDbObserverEventE @ 5 NONAME
+	_ZTV24CContactEngineEventQueue @ 6 NONAME
+	_ZTVN19CMTPbkContactEngine13CFindObserverE @ 7 NONAME
+

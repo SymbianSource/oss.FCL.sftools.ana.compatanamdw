@@ -1,0 +1,36 @@
+<!--
+-->
+<component>
+		<name>libcrypto_topenssltx509_blr_winsspd_component</name>
+		
+		<testset>
+				<id>libcrypto_topenssltx509_blr</id>
+				<priority>High</priority>
+		
+		<install type="binary">
+				<src>openssl.exe</src>
+				<dst>z:\sys\bin\openssl.exe</dst>
+		</install>
+		<install type="data">
+                		<src>testx509.pem</src>
+                		<dst>C:\testx509.pem</dst>
+    </install>
+    
+
+   <install type="data">
+                		<src>tx509.txt</src>
+                		<dst>c:\tx509.txt</dst>
+    </install>
+    		
+		<execute>
+				<file>Z:\sys\bin\openssl.exe</file>
+				<parameters>c:/tx509.txt</parameters>
+        <result type="common">
+            <file>c:\spd_logs\xml\tx509(3_50_2_6741).xml</file>
+        </result>
+        <timeout>600</timeout>
+		</execute>
+		
+		</testset>
+		
+</component>

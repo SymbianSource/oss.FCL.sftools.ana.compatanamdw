@@ -23,9 +23,11 @@
 #include <e32cons.h>
 #include "BCLogEngineTest.h"
 #include <cntdef.h>
-#include <logwraplimits.h>
-#include <logfilterandeventconstants.hrh>
-#include <logengdurations.h>
+#include <logwrapconst.h>
+#include <e32base.h>
+//#include <logwraplimits.h>
+//#include <logfilterandeventconstants.hrh>
+//#include <logengdurations.h>
 // EXTERNAL DATA STRUCTURES
 //extern  ?external_data;
 
@@ -64,6 +66,12 @@ _LIT(KTestNumber2, "Changed Number");
 _LIT8(KTestData1, "ABCDEFGH");						
 _LIT8(KTestData2, "IJKLMNOPQRSTUVWXYZ");			
 
+const TLogRecentList KLogNullRecentList = -1;
+const TInt KLogMaxDirectionLength = 64;
+const TLogDurationType KLogDurationNone = 0;
+const TLogDurationType KLogDurationValid = 1;
+const TLogDurationType KLogDurationData = 2;
+#define KLogRecentIncomingCalls 1
 // ============================= LOCAL FUNCTIONS ===============================
 // -----------------------------------------------------------------------------
 // Create_Console

@@ -68,13 +68,13 @@ MW_LAYER_SYSTEMINCLUDE
 	#endif // __S60_
 #endif // SBSV2
 
-LIBRARY 		eposmodset.lib
+//LIBRARY 		eposmodset.lib
 LIBRARY         euser.lib
 LIBRARY         estor.lib 
 LIBRARY         stiftestinterface.lib
 LIBRARY         stiftestengine.lib
 LIBRARY         lbt.lib
-LIBRARY         lbtmanager.lib
+//LIBRARY         lbtmanager.lib
 LIBRARY         lbs.lib
 LIBRARY         centralrepository.lib 
 LIBRARY         flogger.lib 

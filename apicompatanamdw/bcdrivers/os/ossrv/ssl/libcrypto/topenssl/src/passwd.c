@@ -11,7 +11,7 @@
 *
 * Contributors:
 *
-* Description:
+* Description: 
 *
 */
 /* apps/passwd.c */

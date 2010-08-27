@@ -1,0 +1,20 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCTestDRMHelperLib.dll" module="Mw/DRM">DRM Helper API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the DRM Helper API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="drmpreconfig.exe"></Execute>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_DRMHelper.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcBCTestDRMHelper.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="DRM Helper API">
+ <Info>
+  <TCCount start_version="51" end_version="52">64</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Drm_Helper.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

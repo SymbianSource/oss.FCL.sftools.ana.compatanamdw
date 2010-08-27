@@ -1,0 +1,36 @@
+<!--
+-->
+<component>
+		<name>libcrypto_topenssltsid_blr_winsspd_component</name>
+		
+		<testset>
+				<id>libcrypto_topenssltsid_blr</id>
+				<priority>High</priority>
+		
+		<install type="binary">
+				<src>openssl.exe</src>
+				<dst>z:\sys\bin\openssl.exe</dst>
+		</install>
+		<install type="data">
+                		<src>testsid.pem</src>
+                		<dst>c:\testsid.pem</dst>
+    </install>
+    
+
+   <install type="data">
+                		<src>tsid.txt</src>
+                		<dst>c:\tsid.txt</dst>
+    </install>
+    		
+		<execute>
+				<file>Z:\sys\bin\openssl.exe</file>
+				<parameters>c:/tsid.txt</parameters>
+        <result type="common">
+            <file>c:\spd_logs\xml\tsid(3_50_2_6740).xml</file>
+        </result>
+        <timeout>600</timeout>
+		</execute>
+		
+		</testset>
+		
+</component>

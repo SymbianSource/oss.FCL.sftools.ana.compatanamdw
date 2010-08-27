@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCLogEngineTest.dll" module="Os/Persistant Data">Log Engine API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Persistant Data Telephony Log Engine API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="ATSInterface.exe"> -testmodule BCLogEngineTest </Execute>
+<Component name="Log Engine API">
+ <Info>
+  <TCCount start_version="51" end_version="52">12</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\PersistentData_LogEngine.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

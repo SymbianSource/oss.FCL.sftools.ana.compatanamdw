@@ -11,7 +11,7 @@
 *
 * Contributors:
 *
-* Description:
+* Description: 
 *
 */
 
@@ -39,6 +39,8 @@ extern int rc4_main(int argc, char *argv[]);
 extern int rsa_main(int argc, char *argv[]);
 extern int sha_main(int argc, char *argv[]);
 extern int sha1_main(int argc, char *argv[]);
+extern int sha256_main(int argc,char **argv);
+extern int sha512_main(int argc,char **argv);
 
 #ifdef __cplusplus
 }

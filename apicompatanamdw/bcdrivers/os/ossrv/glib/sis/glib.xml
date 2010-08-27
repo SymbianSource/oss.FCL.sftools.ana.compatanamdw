@@ -1,0 +1,385 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Os/OsSrv">Glib</API>
+<TestFramework type="">ConsoleApp</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the MRT Glib</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="del">c:\spd_logs\xml\*.xml</Execute>
+<Execute command="accumulator.exe"></Execute>
+<Execute command="array-test.exe"></Execute>
+<Execute command="asyncqueue-test.exe"></Execute>
+<Execute command="atomic-test.exe"></Execute>
+<Execute command="closure-marshal.exe"></Execute>
+<Execute command="closures.exe"></Execute>
+<Execute command="completion-test.exe"></Execute>
+<Execute command="convert-test.exe"></Execute>
+<Execute command="date-test.exe"></Execute>
+<Execute command="defaultiface.exe"></Execute>
+<Execute command="dirname-test.exe"></Execute>
+<Execute command="env-test.exe"></Execute>
+<Execute command="extra_tests.exe"></Execute>
+<Execute command="gio-test.exe"></Execute>
+<Execute command="gvalue-test.exe"></Execute>
+<Execute command="g_test1.exe"></Execute>
+<Execute command="g_test2.exe"></Execute>
+<Execute command="hash-test.exe"></Execute>
+<Execute command="ifacecheck.exe"></Execute>
+<Execute command="ifaceinherit.exe"></Execute>
+<Execute command="ifaceinit.exe"></Execute>
+<Execute command="ifaceproperties.exe"></Execute>
+<Execute command="iochannel-test.exe"></Execute>
+<Execute command="keyfile-test.exe"></Execute>
+<Execute command="list-test.exe"></Execute>
+<Execute command="mainloop-test.exe"></Execute>
+<Execute command="markup-escape-test.exe"></Execute>
+<Execute command="markup-test.exe"></Execute>
+<Execute command="module-test.exe"></Execute>
+<Execute command="node-test.exe"></Execute>
+<Execute command="objects.exe"></Execute>
+<Execute command="objects2.exe"></Execute>
+<Execute command="option-test.exe"></Execute>
+<Execute command="override.exe"></Execute>
+<Execute command="paramspec-test.exe"></Execute>
+<Execute command="patterntest.exe"></Execute>
+<Execute command="properties.exe"></Execute>
+<Execute command="properties2.exe"></Execute>
+<Execute command="qsort-test.exe"></Execute>
+<Execute command="queue-test.exe"></Execute>
+<Execute command="rand-test.exe"></Execute>
+<Execute command="references.exe"></Execute>
+<Execute command="relation-test.exe"></Execute>
+<Execute command="shell-test.exe"></Execute>
+<Execute command="signals-multithread.exe"></Execute>
+<Execute command="signals-singlethread.exe"></Execute>
+<Execute command="slist-test.exe"></Execute>
+<Execute command="strfunc-test.exe"></Execute>
+<Execute command="string-test.exe"></Execute>
+<Execute command="tasyncqueue.exe"></Execute>
+<Execute command="testgdate.exe"></Execute>
+<Execute command="testgdateparser.exe"></Execute>
+<Execute command="testgobject.exe"></Execute>
+<Execute command="thread-test.exe"></Execute>
+<Execute command="threadpool-test.exe"></Execute>
+<Execute command="timeloop-closure.exe"></Execute>
+<Execute command="timeloop.exe"></Execute>
+<Execute command="tmisc.exe"></Execute>
+<Execute command="tnode.exe"></Execute>
+<Execute command="toption.exe"></Execute>
+<Execute command="tscanner.exe"></Execute>
+<Execute command="tslist.exe"></Execute>
+<Execute command="tthread.exe"></Execute>
+<Execute command="ttrash.exe"></Execute>
+<Execute command="ttree.exe"></Execute>
+<Execute command="tunichar.exe"></Execute>
+<Execute command="tutf8.exe"></Execute>
+<Execute command="unichar_test.exe"></Execute>
+<Execute command="unicode-collate.exe"></Execute>
+<Execute command="unicode-encoding.exe"></Execute>
+<Execute command="unicode-normalize.exe"></Execute>
+<Execute command="uri-test.exe"></Execute>
+<Execute command="utf8-pointer.exe"></Execute>
+<Execute command="utf8-validate.exe"></Execute>
+<Execute command="copylog"><src>c:\spd_logs\xml\*.xml</src><dst>e:\BCTest\results\glib\*.xml</dst></Execute>
+<Component name="glib">
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\accumulator.xml</src><dst>e:\BCTest\results\glib\accumulator.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\array-test.xml</src><dst>e:\BCTest\results\glib\array-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\asyncqueue-test.xml</src><dst>e:\BCTest\results\glib\asyncqueue-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\atomic-test.xml</src><dst>e:\BCTest\results\glib\atomic-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\closure-marshal.xml</src><dst>e:\BCTest\results\glib\closure-marshal.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\closures.xml</src><dst>e:\BCTest\results\glib\closures.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\completion-test.xml</src><dst>e:\BCTest\results\glib\completion-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\convert-test.xml</src><dst>e:\BCTest\results\glib\convert-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\date-test.xml</src><dst>e:\BCTest\results\glib\date-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\defaultiface.xml</src><dst>e:\BCTest\results\glib\defaultiface.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\dirname-test.xml</src><dst>e:\BCTest\results\glib\dirname-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\env-test.xml</src><dst>e:\BCTest\results\glib\env-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\extra_tests.xml</src><dst>e:\BCTest\results\glib\extra_tests.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\gio-test.xml</src><dst>e:\BCTest\results\glib\gio-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\gvalue-test.xml</src><dst>e:\BCTest\results\glib\gvalue-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\g_test1.xml</src><dst>e:\BCTest\results\glib\g_test1.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\g_test2.xml</src><dst>e:\BCTest\results\glib\g_test2.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\hash-test.xml</src><dst>e:\BCTest\results\glib\hash-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ifacecheck.xml</src><dst>e:\BCTest\results\glib\ifacecheck.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ifaceinherit.xml</src><dst>e:\BCTest\results\glib\ifaceinherit.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ifaceinit.xml</src><dst>e:\BCTest\results\glib\ifaceinit.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ifaceproperties.xml</src><dst>e:\BCTest\results\glib\ifaceproperties.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\iochannel-test.xml</src><dst>e:\BCTest\results\glib\iochannel-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\keyfile-test.xml</src><dst>e:\BCTest\results\glib\keyfile-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\list-test.xml</src><dst>e:\BCTest\results\glib\list-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\mainloop-test.xml</src><dst>e:\BCTest\results\glib\mainloop-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\markup-escape-test.xml</src><dst>e:\BCTest\results\glib\markup-escape-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\markup-test.xml</src><dst>e:\BCTest\results\glib\markup-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\module-test.xml</src><dst>e:\BCTest\results\glib\module-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\node-test.xml</src><dst>e:\BCTest\results\glib\node-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\objects.xml</src><dst>e:\BCTest\results\glib\objects.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\objects2.xml</src><dst>e:\BCTest\results\glib\objects2.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\option-test.xml</src><dst>e:\BCTest\results\glib\option-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\override.xml</src><dst>e:\BCTest\results\glib\override.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\paramspec-test.xml</src><dst>e:\BCTest\results\glib\paramspec-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\patterntest.xml</src><dst>e:\BCTest\results\glib\patterntest.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\properties.xml</src><dst>e:\BCTest\results\glib\properties.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\properties2.xml</src><dst>e:\BCTest\results\glib\properties2.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\qsort-test.xml</src><dst>e:\BCTest\results\glib\qsort-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\queue-test.xml</src><dst>e:\BCTest\results\glib\queue-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\rand-test.xml</src><dst>e:\BCTest\results\glib\rand-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\references.xml</src><dst>e:\BCTest\results\glib\references.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\relation-test.xml</src><dst>e:\BCTest\results\glib\relation-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\shell-test.xml</src><dst>e:\BCTest\results\glib\shell-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\signals-multithread.xml</src><dst>e:\BCTest\results\glib\signals-multithread.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\signals-singlethread.xml</src><dst>e:\BCTest\results\glib\signals-singlethread.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\slist-test.xml</src><dst>e:\BCTest\results\glib\slist-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\strfunc-test.xml</src><dst>e:\BCTest\results\glib\strfunc-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\string-test.xml</src><dst>e:\BCTest\results\glib\string-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tasyncqueue.xml</src><dst>e:\BCTest\results\glib\tasyncqueue.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testgdate.xml</src><dst>e:\BCTest\results\glib\testgdate.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testgdateparser.xml</src><dst>e:\BCTest\results\glib\testgdateparser.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testgobject.xml</src><dst>e:\BCTest\results\glib\testgobject.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\thread-test.xml</src><dst>e:\BCTest\results\glib\thread-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\threadpool-test.xml</src><dst>e:\BCTest\results\glib\threadpool-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\timeloop-closure.xml</src><dst>e:\BCTest\results\glib\timeloop-closure.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\timeloop.xml</src><dst>e:\BCTest\results\glib\timeloop.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tmisc.xml</src><dst>e:\BCTest\results\glib\tmisc.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tnode.xml</src><dst>e:\BCTest\results\glib\tnode.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\toption.xml</src><dst>e:\BCTest\results\glib\toption.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tscanner.xml</src><dst>e:\BCTest\results\glib\tscanner.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tslist.xml</src><dst>e:\BCTest\results\glib\tslist.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tthread.xml</src><dst>e:\BCTest\results\glib\tthread.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ttrash.xml</src><dst>e:\BCTest\results\glib\ttrash.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ttree.xml</src><dst>e:\BCTest\results\glib\ttree.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tunichar.xml</src><dst>e:\BCTest\results\glib\tunichar.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tutf8.xml</src><dst>e:\BCTest\results\glib\tutf8.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\unichar_test.xml</src><dst>e:\BCTest\results\glib\unichar_test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\unicode-collate.xml</src><dst>e:\BCTest\results\glib\unicode-collate.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\unicode-encoding.xml</src><dst>e:\BCTest\results\glib\unicode-encoding.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\unicode-normalize.xml</src><dst>e:\BCTest\results\glib\unicode-normalize.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\uri-test.xml</src><dst>e:\BCTest\results\glib\uri-test.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\utf8-pointer.xml</src><dst>e:\BCTest\results\glib\utf8-pointer.xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\utf8-validate.xml</src><dst>e:\BCTest\results\glib\utf8-validate.xml</dst></Execute2>
+ </Info>
+</Component>
+</CommandSet>
+</test>

@@ -50,7 +50,9 @@ LOCAL_C void MainL()
     TFileName path( _L("c:\\logs\\TestFramework\\STDLIBS\\Stdlibs_Preconfig.txt"));
     RFile file;
     RFs fileSession;
-    TInt err = fileSession.Connect(); 
+    User::LeaveIfError(fileSession.Connect());
+    CleanupClosePushL (fileSession);
+    TInt err; 
     
     fileSession.MkDirAll(_L("c:\\logs\\TestFramework\\STDLIBS\\"));
     err = file.Replace(fileSession, path, EFileStreamText | EFileWrite);
@@ -66,10 +68,8 @@ LOCAL_C void MainL()
          TPtrC arg = args->Arg(1);
         if( arg.Compare(_L("1")) == 0)
              {
-             RFs rfs;
-             rfs.Connect();
              RFileWriteStream outStream;
-             TInt err = outStream.Replace(rfs, KZoneSettingsFile, EFileWrite|EFileShareAny);
+             TInt err = outStream.Replace(fileSession, KZoneSettingsFile, EFileWrite|EFileShareAny);
              CleanupClosePushL(outStream);
              if(err != KErrNone)
                  {
@@ -104,20 +104,15 @@ LOCAL_C void MainL()
                        else
                            {
                            file.Write(_L8("preconfig result : passed\n"));
-                            }
-                       
-                       
+                           }
                        }
                      }
-                CleanupStack::PopAndDestroy();
-                rfs.Close();
+                CleanupStack::PopAndDestroy();//outStream
              }
          else if( arg.Compare(_L("2")) == 0)
              {
-                 RFs rfs;
-                 rfs.Connect();
                  RFileReadStream inStream;
-                 TInt err = inStream.Open(rfs, KZoneSettingsFile, EFileRead|EFileShareAny);
+                 TInt err = inStream.Open(fileSession, KZoneSettingsFile, EFileRead|EFileShareAny);
                  CleanupClosePushL(inStream);
                  if(err != KErrNone)
                          {
@@ -147,16 +142,16 @@ LOCAL_C void MainL()
                               }
                          }
                  
-                 CleanupStack::PopAndDestroy(); 
-                 rfs.Close();
+                 CleanupStack::PopAndDestroy(); //inStream
                  }
          }
      else
          {
          console->Write(_L("No arg was Passed!\n"));
          }
+     
      CleanupStack::PopAndDestroy(args);
-  
+     CleanupStack::PopAndDestroy();//fileSession
     }
 
 LOCAL_C void DoStartL()

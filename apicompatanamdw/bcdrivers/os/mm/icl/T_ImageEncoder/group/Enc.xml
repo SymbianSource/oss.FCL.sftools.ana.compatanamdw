@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="T_ImageEncoder.exe" module="Os/MM">ImageEncoder API</API>
+<TestFramework type="">TEF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Symbian Image Converter Library API/ImageEncoder</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\data\t_multimedia.ini</src><dst>C:\multimedia\t_multimedia.ini</dst></Execute>
+<Execute command="testexecute.exe"> \multimedia\MM-ICL-ENCDE-PublicApi </Execute>
+<Component name="Image Converter Library API">
+ <Info>
+  <TCCount start_version="51" end_version="52">60</TCCount>
+  <Execute command="copylog"><src>c:\logs\testexecute\testresults.htm</src><dst>e:\bctest\results\MM_ICLEncoder.htm</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

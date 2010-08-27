@@ -1,0 +1,35 @@
+<!--
+-->
+<component>
+		<name>libcrypto_topenssltx5092_blr_winsspd_component</name>
+		
+		<testset>
+				<id>libcrypto_topenssltx5092_blr</id>
+				<priority>High</priority>
+		
+		<install type="binary">
+				<src>openssl.exe</src>
+				<dst>z:\sys\bin\openssl.exe</dst>
+		</install>
+		<install type="data">
+                		<src>v3-cert2.pem</src>
+                		<dst>c:\v3-cert2.pem</dst>
+    </install>
+    
+   <install type="data">
+                		<src>tx5092.txt</src>
+                		<dst>c:\tx5092.txt</dst>
+    </install>
+    		
+		<execute>
+				<file>Z:\sys\bin\openssl.exe</file>
+				<parameters>c:/tx5092.txt</parameters>
+        <result type="common">
+            <file>c:\spd_logs\xml\tx509_2(3_50_2_6743).xml</file>
+        </result>
+        <timeout>600</timeout>
+		</execute>
+		
+		</testset>
+		
+</component>

@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="TestProduct_PlugIn.dll" module="Os/DeviceSrv">ECom Plug-in Architecture API</API>
+<TestFramework type="">TEF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the DeviceSrv ECom Plug-in Architecture API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="testexecute.exe"> \ecom\SYSLIB-ECOM-PublicAPI </Execute>
+<Component name="Ecom Plug-in Architecture API">
+ <Info>
+  <TCCount start_version="51" end_version="52">66</TCCount>
+  <Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\BCTest\results\DeviceSrv_SyslibsECOM.htm</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

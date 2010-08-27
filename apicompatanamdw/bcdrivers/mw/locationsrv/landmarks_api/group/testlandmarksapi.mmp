@@ -66,7 +66,8 @@ USERINCLUDE     ../inc
 	    SYSTEMINCLUDE   /epoc32/include/internal
 	#endif // __S60_
 #endif // SBSV2
-
+SYSTEMINCLUDE   /epoc32/include/platform
+SYSTEMINCLUDE   /epoc32/include/mw
 LIBRARY         euser.lib
 LIBRARY         stiftestinterface.lib
 LIBRARY			eposlandmarks.lib

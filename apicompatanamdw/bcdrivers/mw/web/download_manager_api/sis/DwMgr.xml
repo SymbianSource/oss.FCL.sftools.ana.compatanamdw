@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="DownloadMgrBCTest.dll" module="Mw/Web">Download Manager API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Browser Download Manager API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>c:\testframework\testframework_dwmgr.ini</src><dst>c:\testframework\testframework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule DownloadMgrBCTest -engineini c:\testframework\testframework.ini </Execute>
+<Component name="Download Manager API">
+ <Info>
+  <TCCount start_version="51" end_version="52">48</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Web_DownloadMgrEngine.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

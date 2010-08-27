@@ -1,0 +1,37 @@
+<!--
+-->
+
+<component>
+	<name>libcrypto_blr_winsspd_component</name>
+	<testset>
+		<id>libcrypto_blr_winsspd</id>
+		<priority>High</priority>
+		
+		<stif>
+				<install type="binary">
+				<src>crypto_test.dll</src>
+				<dst>z:\sys\bin\crypto_test.dll</dst>
+			</install>
+				
+			<install type="data">
+				<src>crypto_test.cfg</src>
+				<dst>c:\TestFramework\crypto_test.cfg</dst>
+			</install>
+			<install type="data">
+				<src>evptests.txt</src>
+				<dst>c:\evptests.txt</dst>
+			</install>
+			
+			<install type="data">
+                		<src>Testframework.ini</src>
+                		<dst>c:\testframework\Testframework.ini</dst>
+            		</install>
+     			
+     			<engineini>c:\testframework\Testframework.ini</engineini>
+     		        <run-cases filter="*" timeout="2500">
+     		        </run-cases>
+
+		</stif>		
+	</testset>
+
+</component>

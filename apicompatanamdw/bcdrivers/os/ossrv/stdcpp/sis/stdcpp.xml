@@ -1,0 +1,110 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Os/OsSrv">StdCpp API</API>
+<TestFramework type="Testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the MRT StdCpp</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_cppwrap.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\bccppwrap.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="StdCpp">
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_cppwrap.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtruntime.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\bccsruntimesup.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_csruntime.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtexp.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\BCException.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_exception.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtnons.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\BCNoNamespace.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_nonamespace.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtopenc.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\BCOpenCHeaders.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_opencheaders.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_ocw.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\BCOpenCWrap.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_opencwrap.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtthread.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\bcthread.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_thread.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrttypea.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\BCTypeAttrib.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_typeattrib.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrttypei.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\BCTypeInfo.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_typeinfo.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_ct.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule chartypes -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_chartypes.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtmath.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\tmath_operations.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">145</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_mathoperations.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtmem.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\tmemory.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_tmemory.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_mrtutil.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\tutility.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_utility.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\testframework_wc.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule widecharclassapiBCTest -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">5</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_widecharclass.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_tstl_1.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\tstl_1.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="52">84</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_tstl.txt</dst></Execute>
+ </Info>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_tlocale.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\tlocale.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+ <Info>
+  <TCCount start_version="51" end_version="51">25</TCCount>
+  <TCCount start_version="52" end_version="52">23</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\OsSrv_Stdcpp_tlocale.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

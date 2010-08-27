@@ -1,0 +1,25 @@
+<!--
+-->
+
+<?xml version="1.0"?>
+<testsession>
+	<symbian-version>ssl_crypto_blr_component</symbian-version>
+	<testitem>at</testitem>
+	<resultfile>ATSOUTPUT\testsession_results.xml</resultfile>
+	
+	<component>
+		<factory>Symbian</factory>
+		<testplan>ATSINPUT\components\libcrypto\ssl_crypto_blr_winsspd_component.xml</testplan>	 
+		<target hardware="winsspd" platform="winscw" build="udeb" />
+	</component>	
+	
+	
+	<component>
+		<factory>Symbian</factory>
+		<testplan>ATSINPUT\components\libcrypto\ssl_crypto_blr_hw_component.xml</testplan>	 
+		<target hardware="scarfe" build="urel" />
+	</component>
+	
+	
+</testsession>
+

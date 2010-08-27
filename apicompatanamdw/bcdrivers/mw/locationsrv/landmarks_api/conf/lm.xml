@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="testlandmarksapi.dll" module="Mw/LocationSrv">Landmarks API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Location Landmarks API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_Landmarks.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\testlandmarksapi.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Landmarks API">
+ <Info>
+  <TCCount start_version="51" end_version="52">116</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\LocationSrv_Landmarks.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

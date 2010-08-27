@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="ProEngWrapAPI.dll" module="Mw/AppSupport">Profiles Engine Wrapper API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the AppSup Profiles Engine Wrapper API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\testframework_ProEngWrapAPI.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\ProEngWrapAPI.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Profiles Engine Wrapper API">
+ <Info>
+  <TCCount start_version="51" end_version="52">60</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\AppSupport_ProEngWrapAPI.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

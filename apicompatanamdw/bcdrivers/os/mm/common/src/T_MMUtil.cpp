@@ -18,7 +18,7 @@
 
 #include <e32std.h>
 #include <mmf\common\MmfFourCC.h>
-
+#include "midiclientutility.h"
 //	User Includes
 #include "T_MMUtil.h"
 #include "DataWrapperBase.h"

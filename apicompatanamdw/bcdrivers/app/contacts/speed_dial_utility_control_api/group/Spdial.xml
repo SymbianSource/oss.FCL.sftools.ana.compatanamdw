@@ -1,0 +1,20 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCTestSpeedDial.dll" module="App/Contacts">Speeddial API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Contacts Speeddial API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_Spdial.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="speedDialPreConfig.exe"></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcSpeeddial.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Speeddial API">
+ <Info>
+  <TCCount start_version="51" end_version="52">12</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Contacts_SpeedDial.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

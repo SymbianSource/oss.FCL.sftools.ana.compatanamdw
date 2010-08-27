@@ -1,0 +1,3 @@
+EXPORTS
+	?LibEntryL@@YAPAVCStiftextresolvertest@@XZ @ 1 NONAME ; class CStiftextresolvertest * __cdecl LibEntryL(void)
+

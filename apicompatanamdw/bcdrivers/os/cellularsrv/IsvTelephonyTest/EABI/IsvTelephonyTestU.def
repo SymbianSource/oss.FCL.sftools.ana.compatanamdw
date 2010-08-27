@@ -1,0 +1,8 @@
+EXPORTS
+	_Z9LibEntryLv @ 1 NONAME
+	_Z15SetRequirementsRP16CTestModuleParamRm @ 2 NONAME
+	_ZTI23CIsvTelephonyTestEngine @ 3 NONAME ; #<TI>#
+	_ZTI23CIsvTelephonyTestParser @ 4 NONAME ; #<TI>#
+	_ZTV23CIsvTelephonyTestEngine @ 5 NONAME ; #<VT>#
+	_ZTV23CIsvTelephonyTestParser @ 6 NONAME ; #<VT>#
+

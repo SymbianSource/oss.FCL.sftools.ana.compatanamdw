@@ -132,283 +132,291 @@ CTestStep* CMutexTestServer::CreateTestStep(const TDesC& aStepName)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadMutexLockRecursive)
+	else if(aStepName == KPThreadMutexLockRecursive)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadMutexLockErrorCheck)
+	else if(aStepName == KPThreadMutexLockErrorCheck)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadMutexTimedlock)
+	else if(aStepName == KPThreadMutexTimedlock)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadMutexTrylock)
+	else if(aStepName == KPThreadMutexTrylock)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadMutexUnlock)
+	else if(aStepName == KPThreadMutexUnlock)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadOnce)
+	else if(aStepName == KPThreadOnce)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadMutexattrSettype)
+	else if(aStepName == KPThreadMutexattrSettype)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemInit)
+	else if(aStepName == KSemInit)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemDestroy)
+	else if(aStepName == KSemDestroy)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemTryWait)
+	else if(aStepName == KSemTryWait)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemWait)
+	else if(aStepName == KSemWait)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemTimedWait)
+	else if(aStepName == KSemTimedWait)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemPost)
+	else if(aStepName == KSemPost)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemClose)
+	else if(aStepName == KSemClose)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemUnlink)
+	else if(aStepName == KSemUnlink)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemGetValue)
+	else if(aStepName == KSemGetValue)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemMicroSleepwaitNP)
+	else if(aStepName == KSemMicroSleepwaitNP)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KSemPostMultiple)
+	else if(aStepName == KSemPostMultiple)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondAttrInit)
+	else if(aStepName == KPThreadCondAttrInit)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondAttrDestroy)
+	else if(aStepName == KPThreadCondAttrDestroy)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondInit)
+	else if(aStepName == KPThreadCondInit)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondDestroy)
+	else if(aStepName == KPThreadCondDestroy)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondTimedwait)
+	else if(aStepName == KPThreadCondTimedwait)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondWait)
+	else if(aStepName == KPThreadCondWait)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondSignal)
+	else if(aStepName == KPThreadCondSignal)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadCondBroadcast)
+	else if(aStepName == KPThreadCondBroadcast)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KDelay)
+	else if(aStepName == KDelay)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadAttrStaticInitL)
+	else if(aStepName == KPThreadAttrStaticInitL)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadAttrStaticInitTimedLockL)
+	else if(aStepName == KPThreadAttrStaticInitTimedLockL)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadAttrStaticInitTryLockL)
+	else if(aStepName == KPThreadAttrStaticInitTryLockL)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KPThreadAttrStaticInitUnlockL)
+	else if(aStepName == KPThreadAttrStaticInitUnlockL)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest1)
+	else if(aStepName == KIntgTest1)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest2)
+	else if(aStepName == KIntgTest2)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest3)
+	else if(aStepName == KIntgTest3)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest4)
+	else if(aStepName == KIntgTest4)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest5)
+	else if(aStepName == KIntgTest5)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest6)
+	else if(aStepName == KIntgTest6)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest7)
+	else if(aStepName == KIntgTest7)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest8)
+	else if(aStepName == KIntgTest8)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest9)
+	else if(aStepName == KIntgTest9)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest10)
+	else if(aStepName == KIntgTest10)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest11)
+	else if(aStepName == KIntgTest11)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest12)
+	else if(aStepName == KIntgTest12)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest13)
+	else if(aStepName == KIntgTest13)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest14)
+	else if(aStepName == KIntgTest14)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest15)
+	else if(aStepName == KIntgTest15)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest16)
+	else if(aStepName == KIntgTest16)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest17)
+	else if(aStepName == KIntgTest17)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest18)
+	else if(aStepName == KIntgTest18)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest19)
+	else if(aStepName == KIntgTest19)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest20)
+	else if(aStepName == KIntgTest20)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest21)
+	else if(aStepName == KIntgTest21)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest22)
+	else if(aStepName == KIntgTest22)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest23)
+	else if(aStepName == KIntgTest23)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest24)
+	else if(aStepName == KIntgTest24)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest25)
+	else if(aStepName == KIntgTest25)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest26)
+	else if(aStepName == KIntgTest26)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest27)
+	else if(aStepName == KIntgTest27)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest28)
+	else if(aStepName == KIntgTest28)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest29)
+	else if(aStepName == KIntgTest29)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest30)
+	else if(aStepName == KIntgTest30)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest31)
+	else if(aStepName == KIntgTest31)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest32)
+	else if(aStepName == KIntgTest32)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest33)
+	else if(aStepName == KIntgTest33)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest34)
+	else if(aStepName == KIntgTest34)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest35)
+	else if(aStepName == KIntgTest35)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest36)
+	else if(aStepName == KIntgTest36)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest37)
+	else if(aStepName == KIntgTest37)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest38)
+	else if(aStepName == KIntgTest38)
 		{
 		testStep = new CTestMutex(aStepName);
 		}
-	if(aStepName == KIntgTest39)
+	else if(aStepName == KIntgTest39)
+		{
+		testStep = new CTestMutex(aStepName);
+		}
+	else if(aStepName == KPThreadMutexTryLockWait1)
+	    {
+	    testStep = new CTestMutex(aStepName);
+	    }
+	else if(aStepName == KPThreadMutexTryLockWait2)
 		{
 		testStep = new CTestMutex(aStepName);
 		}

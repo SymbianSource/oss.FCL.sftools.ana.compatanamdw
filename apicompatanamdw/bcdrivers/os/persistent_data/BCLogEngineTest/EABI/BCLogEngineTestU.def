@@ -1,0 +1,10 @@
+EXPORTS
+	_Z9LibEntryLv @ 1 NONAME
+	_Z15SetRequirementsRP16CTestModuleParamRm @ 2 NONAME
+	_ZTI16CActiveLogEngine @ 3 NONAME ; #<TI>#
+	_ZTV16CActiveLogEngine @ 4 NONAME ; #<VT>#
+	_ZTI12CMyLogActive @ 5 NONAME ; #<TI>#
+	_ZTI12CMyLogClient @ 6 NONAME ; #<TI>#
+	_ZTV12CMyLogActive @ 7 NONAME ; #<VT>#
+	_ZTV12CMyLogClient @ 8 NONAME ; #<VT>#
+

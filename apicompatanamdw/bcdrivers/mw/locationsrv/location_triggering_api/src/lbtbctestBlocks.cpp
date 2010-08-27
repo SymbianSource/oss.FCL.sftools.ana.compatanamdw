@@ -23,7 +23,7 @@
 #include <Stiftestinterface.h>
 #include "AsynOperationAO.h"
 #include <centralrepository.h>
-#include <SimulationPSYInternalCRKeys.h>
+
 
 
 #include <lbtcommon.h>
@@ -1090,8 +1090,8 @@ TInt Clbtbctest::TestRlbtDeleteTriggerL( CStifItemParser& /*aItem*/ )
     
     lbt.DeleteTriggerL(trigId);
     
-    CLbtTriggerInfo* trigEntry=NULL;
-    TRAPD(error,trigEntry=lbt.GetTriggerLC(trigId);CleanupStack::PopAndDestroy(););
+    //CLbtTriggerInfo* trigEntry=NULL;
+    TRAPD(error,lbt.GetTriggerLC(trigId);CleanupStack::PopAndDestroy(););
     CleanupStack::PopAndDestroy( notifier );
     CleanupStack::PopAndDestroy( trig );   
     CleanupStack::PopAndDestroy( &lbt );
@@ -1248,8 +1248,8 @@ TInt Clbtbctest::TestRlbtDeleteTriggers2L( CStifItemParser& /*aItem*/ )
       
     notifier->DeleteFilteredTriggers(lbt,areaFilter,wait);
     wait->Start();
-    CLbtTriggerInfo* trigEntry=NULL;
-    trigEntry=lbt.GetTriggerLC(trigId1);
+    //CLbtTriggerInfo* trigEntry=NULL;
+    lbt.GetTriggerLC(trigId1);
            
     CleanupStack::PopAndDestroy( areaFilter );
     CleanupStack::PopAndDestroy( notifier );
@@ -1467,9 +1467,9 @@ TInt Clbtbctest::TestRlbtDeleteTriggers4L( CStifItemParser& /*aItem*/ )
     
     lbt.DeleteTriggersL(filter);
     CleanupStack::PopAndDestroy( filter );
-    CLbtTriggerInfo* Triginfo;
+    //CLbtTriggerInfo* Triginfo;
     
-    TRAPD(error, Triginfo= lbt.GetTriggerLC(trigId1);CleanupStack::PopAndDestroy( ););
+    TRAPD(error, lbt.GetTriggerLC(trigId1);CleanupStack::PopAndDestroy( ););
    
     if(error==KErrNotFound)
     {
@@ -1663,8 +1663,8 @@ TInt Clbtbctest::TestRlbtDeleteTriggers4L( CStifItemParser& /*aItem*/ )
     
     AssertTrueL( KErrNone==notifier->GetError(),_L("wrong error code"));
     
-    CLbtTriggerInfo* trigEntry=NULL;
-    TRAPD(err,trigEntry=lbt.GetTriggerLC(trigId1);CleanupStack::Pop(););
+    //CLbtTriggerInfo* trigEntry=NULL;
+    TRAPD(err,lbt.GetTriggerLC(trigId1);CleanupStack::Pop(););
     if(err==KErrNotFound)
     	{
    // CleanupStack::PopAndDestroy( observer );
@@ -6094,7 +6094,7 @@ TInt Clbtbctest::TestRlbtCancelDeleteTriggersL( CStifItemParser& /*aItem*/ )
   TInt Clbtbctest::TestRlbtGetFiredTriggersL( CStifItemParser& /*aItem*/ )
    {
 	 
-    _LIT( KSimulationFile,"c:\\system\\data\\simu_move1.sps" );
+    //_LIT( KSimulationFile,"c:\\system\\data\\simu_move1.sps" );
  
  	RLbtServer lbtserver;
  	RLbt lbt;
@@ -6103,12 +6103,7 @@ TInt Clbtbctest::TestRlbtCancelDeleteTriggersL( CStifItemParser& /*aItem*/ )
     CleanupClosePushL( lbtserver );
     User::LeaveIfError( lbt.Open(lbtserver));
 	CleanupClosePushL( lbt );
- 	CRepository* repository = CRepository::NewLC(KCRUidSimulationPSY);
- 	
-	User::LeaveIfError(repository->Set(KCRKeySimPSYSimulationFile, KSimulationFile));
-	iLog->Log(_L("Simulation input file set "));
-	CleanupStack::PopAndDestroy(repository);
-	 
+ 	 
 	  //Construct a startup trigger
     CLbtStartupTrigger* trig = CLbtStartupTrigger::NewL();
     

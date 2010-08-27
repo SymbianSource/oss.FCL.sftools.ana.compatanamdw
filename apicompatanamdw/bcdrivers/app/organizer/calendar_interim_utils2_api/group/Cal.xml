@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCTestCalendar2.dll" module="App/Organizer">Calendar API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Organizer Calendar API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>c:\TestFramework\TestFramework_PIMCalendar.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcBCTestCalendar2.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Calendar API">
+ <Info>
+  <TCCount start_version="51" end_version="52">7</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Organizer_Calendar.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

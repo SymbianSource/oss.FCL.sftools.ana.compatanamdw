@@ -1,0 +1,20 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="LocAquisition.dll" module="Os/Lbs">Location Acquisition API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Location Acquisition API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_locaqu.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="del">C:\Private\101f97b2\LastKnownPos.dat</Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\testlbslocacquisition.cfg</Execute>
+<Component name="Location Acquisition API">
+ <Info>
+  <TCCount start_version="51" end_version="52">199</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Lbs_LocAquisition.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

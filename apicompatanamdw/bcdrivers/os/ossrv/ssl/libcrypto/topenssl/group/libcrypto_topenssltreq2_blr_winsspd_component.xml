@@ -1,0 +1,41 @@
+
+<!--
+-->
+<component>
+		<name>libcrypto_topenssltreq2_blr_winsspd_component</name>
+		
+		<testset>
+				<id>libcrypto_topenssltreq2_blr</id>
+				<priority>High</priority>
+		
+		<install type="binary">
+				<src>openssl.exe</src>
+				<dst>z:\sys\bin\openssl.exe</dst>
+		</install>
+		<install type="data">
+                		<src>testreq2.pem</src>
+                		<dst>c:\testreq2.pem </dst>
+    </install>
+		
+		<install type="data">
+                		<src>openssl.cnf</src>
+                		<dst>c:\openssl.cnf</dst>
+    </install>
+    
+   <install type="data">
+                		<src>treq2.txt</src>
+                		<dst>c:\treq2.txt</dst>
+    </install>
+    		
+		<execute>
+				<file>Z:\sys\bin\openssl.exe</file>
+				<parameters>c:/treq2.txt</parameters>
+        <result type="common">
+            <file>c:\spd_logs\xml\treq2(3_50_2_6738).xml</file>
+        </result>
+        <timeout>600</timeout>
+		</execute>
+		
+		</testset>
+		
+</component>

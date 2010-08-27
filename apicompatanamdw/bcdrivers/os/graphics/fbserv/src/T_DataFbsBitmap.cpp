@@ -25,6 +25,7 @@ This contains CT_DataFbsBitmap
 //	User includes
 #include "T_DataFbsBitmap.h"
 #include "T_GraphicsUtil.h"
+#include "bitmapuid.h"
 
 
 /*@{*/
