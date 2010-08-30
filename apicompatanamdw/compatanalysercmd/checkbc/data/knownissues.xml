@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-08-16</listversion>
+  <listversion>2010-08-30</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
 	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk31</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk33</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -4589,6 +4589,10 @@
       <status>OK</status>
       <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
     </version>
+    <version checksum="6+vJWplAGIGuB">
+      <status>OK</status>
+      <comment>1. change of size of class TLocalDriveCapsV7 has been approved.2. TPasswordStore::EMaxPasswordLength intialization value changed, it is ok.3. removal of macro won't be any bc break.3. Public data field TLocalDriveCaps::iBattery removed.It is a bc break.Studied and Approved.</comment>
+    </version>
   </headerfile>
   <headerfile name="datastor.h">
     <version checksum="C3+w9ZZDs7Sid">
@@ -5380,6 +5384,10 @@
       <comment>Build version information.</comment>
     </version>
     <version checksum="muLMZ8HB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mtr2vxzB9a-Pp">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
@@ -6760,6 +6768,10 @@
       <comment>Build version information.</comment>
     </version>
      <version checksum="KkHAepNAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KkD9DpwAGdXEK">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
@@ -9057,6 +9069,10 @@
       <status>OK</status>
       <comment>1. Guard macro changed. 2.TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added., in both classes(TOpenFontMetrics,TOpenFontCharMetrics, reserved data member has been used, thus alignment of class changed.3.enum TOpenFontAttachment is marked as internal component. 4.KUidShaperFactoryPlunginInterface,KUidOpenFontRasterizerPlunginInterface,KReplacementCharacter,KFillCharacterOffset are marked as internalcomponent. 5. Class COpenFontRasterizer moved to openfontrasterizer.h 6.Data member iGlyphCache is marked as internalcomponent. 7.Data type of COpenFont::iMetrics is still the same.8. Removal of private data member iSessionCacheList is allowed, since no inline funciton is using this. 9. Removal of data member iFile is not allowed, used by 2 inline function. It is a bc break. This break is studied and approved.</comment>
     </version>
+    <version checksum="R5L1v3qD5WlXt">
+      <status>OK</status>
+      <comment>1. Guard macro changed. 2.TOpenFontCharMetrics::iGlyphBitmapType added,TOpenFontMetrics::iBaselineCorrection added., in both classes(TOpenFontMetrics,TOpenFontCharMetrics, reserved data member has been used, thus alignment of class changed.3.enum TOpenFontAttachment is marked as internal component. 4.KUidShaperFactoryPlunginInterface,KUidOpenFontRasterizerPlunginInterface,KReplacementCharacter,KFillCharacterOffset are marked as internalcomponent. 5. Class COpenFontRasterizer moved to openfontrasterizer.h 6.Data member iGlyphCache is marked as internalcomponent. 7.Data type of COpenFont::iMetrics is still the same.8. Removal of private data member iSessionCacheList is allowed, since no inline funciton is using this. 9. Removal of data member iFile is not allowed, used by 2 inline function. It is a bc break. This break is studied and approved.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="pkcs10attr.h">
@@ -10121,6 +10137,10 @@
       <status>OK</status>
       <comment>Addition of an overloaded funtion is not a bc break.</comment>
     </version>
+    <version checksum="4OfsXPfClAX1C">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
   </headerfile> 
   <headerfile name="senservicemanager.h">
     <version checksum="fujt1boCP1-Yl">
@@ -10619,6 +10639,10 @@
    </headerfile>
    <headerfile name="app\vtoken.h">
      <version checksum="RuLt8A4CXMELf">
+      <status>OK</status>
+      <comment>Constant removed.3rd party code won't be affected.</comment>
+    </version>
+    <version checksum="UeZJx5yCXMELf">
       <status>OK</status>
       <comment>Constant removed.3rd party code won't be affected.</comment>
     </version>
@@ -12001,7 +12025,7 @@
       <status>NOK</status>
       <comment>Virtual function ordering changed..</comment>
     </version>
-    </headerfile>
+   </headerfile>
     <headerfile name="networking\qos3gpp_subconparams.h">
     <version checksum="v+OlconAgHUhb">
       <status>OK</status>
