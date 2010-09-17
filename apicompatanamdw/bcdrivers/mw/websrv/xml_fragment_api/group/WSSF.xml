@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="SenFragmentBCTest.dll" module="Mw/WebSrv">Web Service Fragment API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the  Web Service Fragment API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>c:\TestFramework\TestFramework_senfragment.ini</src><dst>c:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule SenFragmentBCTest -engineini c:\TestFramework\TestFramework.ini </Execute>
+<Component name="Web Service Fragment API">
+ <Info>
+  <TCCount start_version="51" end_version="52">82</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\WebSrv_SenFragment.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

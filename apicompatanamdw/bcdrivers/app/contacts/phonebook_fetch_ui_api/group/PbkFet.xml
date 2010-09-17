@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="App/Contacts">Phonebook Fetch UI API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Contacts Phonebook Fetch UI API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_Pbkfetch.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcBCTestPbkfetch.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Phonebook Fetch UI API">
+ <Info>
+  <TCCount start_version="51" end_version="52">157</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Contacts_Pbkfetch.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

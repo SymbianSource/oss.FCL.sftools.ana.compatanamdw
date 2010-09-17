@@ -25,11 +25,7 @@
 #include <s32mem.h>
 #include "AsynOperationAO.h"
 #include <centralrepository.h>
-#include <SimulationPSYInternalCRKeys.h>
-#include <EPos_MPosModulesObserver.h> 
-#include <EPos_CPosModuleIdList.h>
-#include <EPos_CPosModules.h>
-#include <EPos_CPosModuleUpdate.h> // CPosModuleUpdate
+
 // Constant Declarations
 
     
@@ -63,43 +59,7 @@ void TTestlbtclasses::AssertTrueL( TBool aCondition,const TDesC& aMessage )
          }
     
     }
-void TTestlbtclasses::EnableSimPSYL() 
-    {
-    CPosModules* db = CPosModules::OpenL();
-	CleanupStack::PushL( db );
-
-	// List entries
-	CPosModuleIdList* idList = db->ModuleIdListLC();
-	CPosModuleUpdate* updateParams = CPosModuleUpdate::NewLC();
-
-	// Get the display name and status of each installed positioning plug-in
-	for (TInt i = 0; i < idList->Count(); i++)
-    {
-    // get PSY info
-    TPositionModuleInfo moduleInfo;
-    db->GetModuleInfoL( (*idList)[i], moduleInfo );
-	
-    if ( moduleInfo.IsAvailable() )
-        {
-        // read PSY’s name
-        TBuf<KPositionMaxModuleName> moduleName;
-        moduleInfo.GetModuleName( moduleName );
-        TPositionModuleId id = moduleInfo.ModuleId();
-        
-		updateParams->SetUpdateAvailability( EFalse );
-		db->UpdateModuleL( id, *updateParams );
-
-        }
-    }
-    TPositionModuleId id2 = {0x101F7A81};
-	updateParams->SetUpdateAvailability( ETrue );
-	db->UpdateModuleL( id2, *updateParams );
-
-    CleanupStack::PopAndDestroy( updateParams );
-
-    CleanupStack::PopAndDestroy( idList );
-	CleanupStack::PopAndDestroy( db );
-    }    
+    
     
 // ---------------------------------------------------------------------------
 // Test case for setting & getting requestor
@@ -3321,7 +3281,7 @@ TInt TTestlbtclasses ::TestCLbtGeoCell1L(CStifItemParser& /*aItem*/)
     {
   	iLog->Log(_L("Entering Test1"));
  
- 		EnableSimPSYL();
+ 		//EnableSimPSYL();
 //    _LIT( KSimulationFile,"c:\\system\\data\\simu_move2.sps" );
 	
 	 	RLbtServer lbtserver;

@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="extendedconnpref.dll" module="Mw/IpConnMgmt">ExtendedConnPref API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the IpConnection Extended Conn Pref API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="ATSInterface.exe"> -testmodule econnprefbc </Execute>
+<Component name="Extended Conn Pref API">
+ <Info>
+  <TCCount start_version="52" end_version="52">9</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\IpConnMgmt_ConnPref.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

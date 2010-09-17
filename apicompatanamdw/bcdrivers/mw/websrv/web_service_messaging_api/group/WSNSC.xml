@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="NewSoapClassesBCTest.dll" module="Mw/WebSrv">Web Service Messaging API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the  Web Service Messaging API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_newsoapclasses.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule NewSoapClassesBCTest -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Web Service Messaging API">
+ <Info>
+  <TCCount start_version="51" end_version="52">84</TCCount>
+  <Execute command="copylog"><src>C:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\WebSrv_NewSoapClasses.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

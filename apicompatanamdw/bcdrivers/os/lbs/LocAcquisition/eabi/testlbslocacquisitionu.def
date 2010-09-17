@@ -1,0 +1,13 @@
+EXPORTS
+	_Z9LibEntryLR13CTestModuleIf @ 1 NONAME
+	_ZTI15CTestPositioner @ 2 NONAME ; #<TI>#
+	_ZTI17CTestPositionInfo @ 3 NONAME ; #<TI>#
+	_ZTI19CTestPositionServer @ 4 NONAME ; #<TI>#
+	_ZTI23CTestPositionCourseInfo @ 5 NONAME ; #<TI>#
+	_ZTI24CTestPositionGenericInfo @ 6 NONAME ; #<TI>#
+	_ZTV15CTestPositioner @ 7 NONAME ; #<VT>#
+	_ZTV17CTestPositionInfo @ 8 NONAME ; #<VT>#
+	_ZTV19CTestPositionServer @ 9 NONAME ; #<VT>#
+	_ZTV23CTestPositionCourseInfo @ 10 NONAME ; #<VT>#
+	_ZTV24CTestPositionGenericInfo @ 11 NONAME ; #<VT>#
+

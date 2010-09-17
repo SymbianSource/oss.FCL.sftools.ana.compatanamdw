@@ -17,5 +17,4 @@
 md e:\bctest
 
 md e:\bctest\results
-
 copy c:\logs\BrCtlBCTest\BrCtlBCTest.log e:\bctest\results\Web_BrowserControl.log

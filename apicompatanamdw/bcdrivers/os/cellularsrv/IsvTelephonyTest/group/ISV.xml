@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Os/CellularSrv">Telephony ISV API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the RTC-Core Telephony ISV API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="ATSInterface.exe"> -testmodule IsvTelephonyTest -moduleini c:\TestFramework\IsvTelephonyTest.ini </Execute>
+<Component name="Telephony ISV API">
+ <Info>
+  <TCCount start_version="51" end_version="52">38</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\CellularSrv_IsvTelephony.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

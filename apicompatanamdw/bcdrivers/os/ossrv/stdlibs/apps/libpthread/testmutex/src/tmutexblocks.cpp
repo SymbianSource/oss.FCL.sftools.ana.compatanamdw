@@ -32,6 +32,11 @@
 #define WITHOUT_ERROR 0
 #define WITH_ERROR 0
 
+
+#define CHECK(a) if (!(a)) INFO_PRINTF2(_L("Unexpected failure at line %d\n"), __LINE__);
+pthread_t myThread,myThread1,myThread2,myThread3;
+pthread_mutex_t myMutex1,myMutex2;
+
 TInt CTestMutex::PThreadAttrStaticInitUnlockL(TInt val, TInt errVal )
     {
     _LIT(KFunc, "In PThreadAttrStaticInitUnlockL");
@@ -369,7 +374,7 @@ void* CTestMutex::ThreadEntryFunction1063L(void* arg)
     
     CTestMutex *self = static_cast<CTestMutex*> (arg);
     TInt err = pthread_mutex_unlock (&(self->iMutex));
-    if ( err)
+    if ( err != EPERM )
         {
         self->iErroCode = 1;
         self->ERR_PRINTF2( _L("pthread_mutex_unlock returned %d"), err);
@@ -614,11 +619,12 @@ void* CTestMutex::ThreadEntryFunction339L(void* arg)
     
     CTestMutex *self = static_cast<CTestMutex*> (arg);
     TInt err = pthread_mutex_unlock (&(self->iMutex));
-    if ( err )
-        {
-        self->iErroCode = 1;
-        self->ERR_PRINTF2( _L("pthread_mutex_unlock returned %d"), err);
-        }
+    
+    if ( err != EPERM  )
+    {
+       self->iErroCode = 1;
+       self->ERR_PRINTF2( _L("pthread_mutex_unlock returned %d"), err);
+    }  
     else
         {
         while (!(self->iExitValueL))
@@ -5033,6 +5039,148 @@ TInt CTestMutex::IntgTest39()
 		}
 		return err;
 	}
+
+void* thread_entry_func(void * /*arg*/)
+{
+    int ret = pthread_mutex_lock(&myMutex1);
+    User::After(TTimeIntervalMicroSeconds32(2000000));
+    ret = pthread_mutex_unlock(&myMutex1);
+    ret = pthread_mutex_trylock(&myMutex1); // waits here forever if deadlock occurs
+    if (ret == EBUSY) 
+    {
+   	 // Process continue processing the part of the problem that we can without the lock. We do not want to waste time blocking. 
+     printf("Lock is acquired by the other thread , so the message displayed is EBUSY\n");
+    }
+   printf("Out of trylock\n");
+   return 0;
+}
+
+ LOCAL_C void MainL1()
+{
+    printf("Starting mutex test\n");
+    int ret = pthread_mutex_init(&myMutex1, NULL);
+    if ( !ret )
+    	printf("Unexpected failure at line %d\n", __LINE__);
+    ret = pthread_mutex_init(&myMutex1, NULL);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    ret = pthread_create(&myThread, NULL, &thread_entry_func, NULL);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    User::After(TTimeIntervalMicroSeconds32(1000000));
+    ret = pthread_mutex_lock(&myMutex1);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    printf("Got Mutex\n");
+    pthread_join(myThread, 0);
+}
+
+ // Checking pthread_mutex_trylock() for waiting indefinitely leading to deadlock
+ TInt CTestMutex::PThreadMutexTryLockWait1(void)
+
+{
+    INFO_PRINTF1(_L("Hello Open C!\n")) ;
+    MainL1();
+    INFO_PRINTF1(_L("Out of Trylock!!\n")) ;
+    return 0;
+}
+ 
+ 
+ void* thread_entry_func3(void* /*arg*/)
+ {
+    int ret = pthread_mutex_lock(&myMutex2); 
+    // This lock will get semaphore but might wait for mutex in case of deadlock situation
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    printf("out of Lock within third thread \n") ;
+    User::After(TTimeIntervalMicroSeconds32(2000000));
+    return 0;
+ }
+
+ void* thread_entry_func2(void* /*arg*/)
+ {
+    int ret = pthread_mutex_lock(&myMutex2);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    printf("out of Lock within second thread \n");
+    User::After(TTimeIntervalMicroSeconds32(3000000));
+    
+    ret = pthread_mutex_unlock(&myMutex2);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    
+    ret = pthread_mutex_trylock(&myMutex2); // This trylock will get mutex but might wait for semaphore in case of deadlock situation 
+    if (ret == EBUSY) 
+        {
+          // Process continue processing the part of the problem that we can without the lock. We do not want to waste time blocking. 
+         printf("Lock is acquired by the other thread , so the message displayed is EBUSY\n");
+        }
+    printf("Out of second trylock\n");
+    return 0;
+ }
+
+ void* thread_entry_func1(void* /*arg*/)
+ {
+    int ret = pthread_mutex_lock(&myMutex2);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    User::After(TTimeIntervalMicroSeconds32(2000000));
+    
+    ret = pthread_mutex_trylock(&myMutex2);
+    if (ret == EBUSY) 
+        {
+       	 // Process continue processing the part of the problem that we can without the lock. We do not want to waste time blocking. 
+          printf("Lock is acquired by the other thread , so the message displayed is EBUSY\n") ;
+        }
+    printf("Out of first trylock\n") ;
+    User::After(TTimeIntervalMicroSeconds32(1000000));
+    
+    ret = pthread_mutex_unlock(&myMutex2);
+    if ( !ret )
+        	printf("Unexpected failure at line %d\n", __LINE__);
+    User::After(TTimeIntervalMicroSeconds32(1000000));
+    return 0;
+ }
+
+ LOCAL_C void MainL2()
+ {
+     printf("Starting mutex test\n") ;
+     int ret =  pthread_mutex_init(&myMutex2, NULL);
+     if ( !ret )
+         	printf("Unexpected failure at line %d\n", __LINE__);
+     ret = pthread_create(&myThread1, NULL, &thread_entry_func1, NULL);
+     if ( !ret )
+         	printf("Unexpected failure at line %d\n", __LINE__);
+     User::After(TTimeIntervalMicroSeconds32(1000000));
+     
+     ret = pthread_create(&myThread2, NULL, &thread_entry_func2, NULL);
+     if ( !ret )
+         	printf("Unexpected failure at line %d\n", __LINE__);
+     User::After(TTimeIntervalMicroSeconds32(1500000));
+     
+     ret = pthread_create(&myThread3, NULL, &thread_entry_func3, NULL);
+     if ( !ret )
+         	printf("Unexpected failure at line %d\n", __LINE__);
+     User::After(TTimeIntervalMicroSeconds32(2000000));
+     //INFO_PRINTF1(_L("Got Mutex\n")) ;
+     pthread_join(myThread3, 0);
+     pthread_join(myThread2, 0);
+     pthread_join(myThread1, 0);
+ }
+
+ // Checking pthread_mutex_trylock() for waiting indefinitely leading to deadlock
+ TInt CTestMutex::PThreadMutexTryLockWait2(void)
+ {
+     INFO_PRINTF1(_L("Hello Open C!\n")) ;
+     MainL2();
+     INFO_PRINTF1(_L("Out of both the Trylocks!!\n")) ;
+     return 0;
+ }
+
+
+
+
+
 // ========================== OTHER EXPORTED FUNCTIONS =========================
 // None
 

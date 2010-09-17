@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="MMSClientMTMBCTester.dll" module="App/Messaging">MMS Client MTM API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Messaging MMS Client MTM API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>c:\TestFramework\TestFramework_MMSClientMTMBCTester.ini</src><dst>c:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule MMSClientMTMBCTester  -moduleini c:\TestFramework\MMSClientMTMBCTester.ini -engineini c:\TestFramework\TestFramework.ini </Execute>
+<Component name="MMS Client MTM API">
+ <Info>
+  <TCCount start_version="51" end_version="52">70</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Messaging_MMSClientMTM.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

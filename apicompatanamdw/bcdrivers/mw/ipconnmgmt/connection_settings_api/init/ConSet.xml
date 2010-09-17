@@ -1,0 +1,20 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BcCMManagerEngineTester.dll" module="Mw/IpConnMgmt">Connection Settings API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the IpConnection Connection Settings API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="del">C:\private\10202be9\persists\cccccc00.cre</Execute>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_connset.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule cmmgrbc -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Connection Settings API">
+ <Info>
+  <TCCount start_version="51" end_version="52">34</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\IPConnMgmt_ConnectionSettings.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

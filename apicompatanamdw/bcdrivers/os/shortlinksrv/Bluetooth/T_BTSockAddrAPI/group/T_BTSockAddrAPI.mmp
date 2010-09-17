@@ -48,6 +48,7 @@ USERINCLUDE		../../t_btsockapi/inc
 
 SYSTEMINCLUDE	/epoc32/include
 SYSTEMINCLUDE	/epoc32/include/test
+SYSTEMINCLUDE	/epoc32/include/platform/test
 APP_LAYER_SYSTEMINCLUDE
 
 LIBRARY			euser.lib

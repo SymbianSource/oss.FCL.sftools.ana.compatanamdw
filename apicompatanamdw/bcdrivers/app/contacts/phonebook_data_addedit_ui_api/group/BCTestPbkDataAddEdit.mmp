@@ -59,6 +59,7 @@ DEFFILE         BCTestPbkDataAddEdit.def
 #endif // SBSV2
 
 SYSTEMINCLUDE /epoc32/include	
+SYSTEMINCLUDE /epoc32/include/Platform
 SYSTEMINCLUDE	/epoc32/include/middleware 	
 SYSTEMINCLUDE	/epoc32/include/domain/middleware 	
 SYSTEMINCLUDE	/epoc32/include/osextensions 	

@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="CSenServiceConnectionBCTest.dll" module="Mw/WebSrv">WS_Connec_SenServConn_API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the  Web Service Connection API/SenServConn</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_connection.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule CSenServiceConnectionBCTest -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="WS Connection API/SenServConn API">
+ <Info>
+  <TCCount start_version="51" end_version="52">55</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\WebSrv_ServiceConnection.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

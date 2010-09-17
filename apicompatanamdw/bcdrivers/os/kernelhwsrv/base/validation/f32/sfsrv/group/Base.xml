@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Os/KernelhwSrv">Base API</API>
+<TestFramework type="">TEF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the KernelSrv Base</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="testexecute.exe"> \base\PBASE-F32-RFS-PublicApi </Execute>
+<Component name="Base API">
+ <Info>
+  <TCCount start_version="51" end_version="52">281</TCCount>
+  <Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\BCTest\results\KernelhwSrv_Base.htm</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

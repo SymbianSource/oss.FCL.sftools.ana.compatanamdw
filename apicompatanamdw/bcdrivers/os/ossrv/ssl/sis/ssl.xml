@@ -1,0 +1,256 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="crypto_test.dll;openssl.exe;ssltest.exe" module="Os/OsSrv">SSL</API>
+<TestFramework type="testscripter">ConsoleApp</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the MRT SSL</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="del">c:\spd_logs\xml\*.xml</Execute>
+<Execute command="openssl.exe"> c:\tpkcs7d.txt </Execute>
+<Execute command="openssl.exe"> c:\treq2.txt </Execute>
+<Execute command="openssl.exe"> c:\treq.txt </Execute>
+<Execute command="openssl.exe"> c:\trsa.txt </Execute>
+<Execute command="openssl.exe"> c:\tsid.txt </Execute>
+<Execute command="openssl.exe"> c:\tx5091.txt </Execute>
+<Execute command="openssl.exe"> c:\tx5092.txt </Execute>
+<Execute command="openssl.exe"> c:\tx509.txt </Execute>
+<Execute command="openssl.exe"> c:\tcrl.txt </Execute>
+<Execute command="openssl.exe"> c:\testenc.txt </Execute>
+<Execute command="openssl.exe"> c:\testgen.txt </Execute>
+<Execute command="openssl.exe"> c:\testss.txt </Execute>
+<Execute command="openssl.exe"> c:\test_verify.txt </Execute>
+<Execute command="openssl.exe"> c:\tpkcs7.txt </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6669) -test_cipherlist </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6670) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6671) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 -server_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6672) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6673) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 -server_auth -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6674) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6675) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 -server_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6676) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6677) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -ssl2 -server_auth -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6678) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6679) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -server_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6680) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6681) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -server_auth -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6682) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6683) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 -server_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6684) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6685) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 -server_auth -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6686) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6687) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6688) -key C:/keyU.ss -cert C:/certU.ss -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6689) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -ssl2 </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6690) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6691) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -no_dhe </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6692) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -dhe1024dsa -v </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6693) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -server_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6694) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6695) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -server_auth -client_auth -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6696) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -bio_pair -server_auth -client_auth -app_verify -CAfile C:/certCA.ss </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6697) -key C:/keyU.ss -cert C:/certU.ss -c_key C:/keyU.ss -c_cert C:/certU.ss -v -bio_pair -tls1 -cipher ADH -dhe1024dsa -num 10 -f -time </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6698) -v -bio_pair -tls1 -cert C:/server2.pem -no_dhe -num 10-f -time </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6699) -v -bio_pair -tls1 -cert c:/server2.pem -dhe1024dsa -num 10 -f -time </Execute>
+<Execute command="ssltest.exe"> ssltest(3_19_2_6773) -symstore </Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\testframework\crypto_test.cfg </Execute>
+<Execute command="copylog"><src>c:\spd_logs\xml\*.xml</src><dst>e:\BCTest\results\ssl\*.xml</dst></Execute>
+<Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\ssl\crypto_test.txt</dst></Execute>
+<Component name="ssl">
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6669).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6669).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6670).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6670).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6671).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6671).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6672).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6672).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6673).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6673).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6674).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6674).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6675).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6675).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6676).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6676).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6677).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6677).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6678).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6678).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6679).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6679).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6680).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6680).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6681).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6681).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6682).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6682).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6683).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6683).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6684).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6684).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6685).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6685).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6686).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6686).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6687).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6687).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6688).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6688).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6689).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6689).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6690).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6690).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6691).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6691).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6692).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6692).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6693).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6693).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6694).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6694).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6695).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6695).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6696).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6696).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6697).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6697).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6698).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6698).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6699).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6699).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\ssltest(3_19_2_6773).xml</src><dst>e:\BCTest\results\ssl\ssltest(3_19_2_6773).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tcrl(3_50_2_6744).xml</src><dst>e:\BCTest\results\ssl\tcrl(3_50_2_6744).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testenc(3_50_2_6732).xml</src><dst>e:\BCTest\results\ssl\testenc(3_50_2_6732).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testgen(3_50_2_6733).xml</src><dst>e:\BCTest\results\ssl\testgen(3_50_2_6733).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testss(3_50_2_6735).xml</src><dst>e:\BCTest\results\ssl\testss(3_50_2_6735).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\test_verify(3_50_2_6745).xml</src><dst>e:\BCTest\results\ssl\test_verify(3_50_2_6745).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tpkcs7(3_50_2_6734).xml</src><dst>e:\BCTest\results\ssl\tpkcs7(3_50_2_6734).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tpkcs7d(3_50_2_6736).xml</src><dst>e:\BCTest\results\ssl\tpkcs7d(3_50_2_6736).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\treq(3_50_2_6737).xml</src><dst>e:\BCTest\results\ssl\treq(3_50_2_6737).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\treq2(3_50_2_6738).xml</src><dst>e:\BCTest\results\ssl\treq2(3_50_2_6738).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\trsa(3_50_2_6739).xml</src><dst>e:\BCTest\results\ssl\trsa(3_50_2_6739).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tsid(3_50_2_6740).xml</src><dst>e:\BCTest\results\ssl\tsid(3_50_2_6740).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tx509(3_50_2_6741).xml</src><dst>e:\BCTest\results\ssl\tx509(3_50_2_6741).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tx509_1(3_50_2_6742).xml</src><dst>e:\BCTest\results\ssl\tx509_1(3_50_2_6742).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\tx509_2(3_50_2_6743).xml</src><dst>e:\BCTest\results\ssl\tx509_2(3_50_2_6743).xml</dst></Execute2>
+ </Info>
+ <Info>
+  <TCCount start_version="51" end_version="52">16</TCCount>
+  <Execute2 command="copylog"><src>c:\spd_logs\xml\testscripter.xml</src><dst>e:\BCTest\results\ssl\testscripter.xml</dst></Execute2>
+ </Info>
+<TestFramework type="testscripter">STIF</TestFramework>
+ <Info>
+  <TCCount start_version="51" end_version="52">16</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\ssl\crypto_test.txt</dst></Execute2>
+ </Info>
+</Component>
+</CommandSet>
+</test>

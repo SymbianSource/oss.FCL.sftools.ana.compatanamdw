@@ -1,0 +1,3 @@
+EXPORTS
+	?LibEntryL@@YAPAVCfeaturemanagertest@@XZ @ 1 NONAME ; class Cfeaturemanagertest * LibEntryL(void)
+

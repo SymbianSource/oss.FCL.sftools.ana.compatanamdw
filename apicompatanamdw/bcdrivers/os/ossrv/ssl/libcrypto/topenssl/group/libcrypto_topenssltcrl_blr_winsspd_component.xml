@@ -1,0 +1,36 @@
+
+<!--
+-->
+<component>
+		<name>libcrypto_topenssltcrl_blr_winsspd_component</name>
+		
+		<testset>
+				<id>libcrypto_topenssltcrl_blr</id>
+				<priority>High</priority>
+		
+		<install type="binary">
+				<src>openssl.exe</src>
+				<dst>z:\sys\bin\openssl.exe</dst>
+		</install>	
+		<install type="data">
+                		<src>testcrl.pem</src>
+                		<dst>c:\testcrl.pem</dst>
+    </install>
+    	
+   <install type="data">
+                		<src>tcrl.txt</src>
+                		<dst>c:\tcrl.txt</dst>
+    </install>
+    		
+		<execute>
+				<file>Z:\sys\bin\openssl.exe</file>
+				<parameters>c:/tcrl.txt</parameters>
+        <result type="common">
+            <file>c:\spd_logs\xml\tcrl(3_50_2_6744).xml</file>
+        </result>
+        <timeout>600</timeout>
+		</execute>
+		
+		</testset>
+		
+</component>

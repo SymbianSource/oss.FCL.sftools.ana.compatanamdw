@@ -1,0 +1,376 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Os/OsSrv">Stdlibs</API>
+<TestFramework type="">TEF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Symbian Stdlibs</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="testexecute.exe"> \tstdapis\tcomport.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tcomport.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tctype.script </Execute> 
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tctype.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tdb_blr.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdb_blr.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tftw.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tftw.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tglob_test.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tglob_test.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tlibcwchar.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tlibcwchar.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tlink.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tlink.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tloc_blr.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tloc_blr.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tmkfifo.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tmkfifo.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tmmap.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tmmap.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tprogname.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tprogname.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tregex.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tregex.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tselect.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tselect.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemaphore.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsemaphore.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tshm.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tshm.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tstdio_auto.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tstdio_auto.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tstdio_fileop.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tstdio_fileop.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tstring.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tstring.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsyscalls.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyscalls.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsyscalls1.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyscalls1.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsyscalls2.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyscalls2.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsyssim.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyssim.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsysunistd.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsysunistd.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\twchar.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twchar.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\twcharapi.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twcharapi.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\twctype.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twctype.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\twideapis.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twideapis.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\ttime_blr.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_testtime_blr.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tdl.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_dl.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tdouble_blr.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdouble_blr.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tdouble_pow.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdouble_pow.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tdouble_misc.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdouble_misc.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tldouble_blr.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tldouble_blr.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tldouble_pow.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tldouble_pow.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tldouble_misc.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tldouble_misc.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tfloat_blr.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tfloat_blr.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tcondbroadcast.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondbroadcast.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tconddestroy.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tconddestroy.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tcondinit.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondinit.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tcondsignal.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondsignal.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tcondwait.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondwait.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tmutex.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tmutex.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tpthread.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tpthread.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tpthreadonce.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tpthreadonce.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemdestroy.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemdestroy.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemgetvalue.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemgetvalue.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tseminit.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tseminit.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemopen.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemopen.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsempost.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsempost.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemtimedwait.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemtimedwait.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemtrywait.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemtrywait.htm</dst></Execute>
+<Execute command="testexecute.exe"> \tstdapis\tsemwait.script </Execute>
+<Execute command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemwait.htm</dst></Execute>
+<Component name="stdLibs API">
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tcomport.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tctype.script </Execute2>                     
+ <Info>
+  <TCCount start_version="51" end_version="52">54</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tctype.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tdb_blr.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">16</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdb_blr.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tftw.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">7</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tftw.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tglob_test.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">6</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tglob_test.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tlibcwchar.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">590</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tlibcwchar.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tlink.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">19</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tlink.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tloc_blr.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">489</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tloc_blr.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tmkfifo.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">15</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tmkfifo.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tmmap.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">18</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tmmap.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tprogname.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">18</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tprogname.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tregex.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">21</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tregex.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tselect.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">10</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tselect.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemaphore.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">81</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsemaphore.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tshm.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">40</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tshm.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tstdio_auto.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">1036</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tstdio_auto.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tstdio_fileop.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">6</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tstdio_fileop.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tstring.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">204</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tstring.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsyscalls.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">148</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyscalls.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsyscalls1.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">58</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyscalls1.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsyscalls2.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">55</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyscalls2.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsyssim.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">23</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsyssim.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsysunistd.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">32</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tsysunistd.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\twchar.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">60</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twchar.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\twcharapi.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">30</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twcharapi.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\twctype.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">294</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twctype.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\twideapis.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">18</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_twideapis.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\ttime_blr.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">36</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_testtime_blr.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tdl.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">8</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_dl.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tdouble_blr.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">920</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdouble_blr.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tdouble_pow.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">69</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdouble_pow.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tdouble_misc.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">10</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tdouble_misc.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tldouble_blr.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">907</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tldouble_blr.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tldouble_pow.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">69</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tldouble_pow.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tldouble_misc.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">10</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tldouble_misc.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tfloat_blr.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">974</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_tfloat_blr.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tcondbroadcast.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">10</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondbroadcast.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tconddestroy.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">2</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tconddestroy.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tcondinit.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">3</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondinit.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tcondsignal.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">10</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondsignal.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tcondwait.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">8</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tcondwait.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tmutex.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">50</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tmutex.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tpthread.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">39</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tpthread.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tpthreadonce.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">8</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tpthreadonce.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemdestroy.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">2</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemdestroy.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemgetvalue.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">5</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemgetvalue.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tseminit.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">5</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tseminit.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemopen.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemopen.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsempost.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">7</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsempost.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemtimedwait.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">7</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemtimedwait.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemtrywait.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">5</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemtrywait.htm</dst></Execute2>
+ </Info>
+<Execute2 command="testexecute.exe"> \tstdapis\tsemwait.script </Execute2>
+ <Info>
+  <TCCount start_version="51" end_version="52">4</TCCount>
+  <Execute2 command="copylog"><src>c:\Logs\Testexecute\TestResults.htm</src><dst>e:\bctest\results\OsSrv_Stdlibs_pthread_tsemwait.htm</dst></Execute2>
+ </Info>
+</Component>
+</CommandSet>
+</test>

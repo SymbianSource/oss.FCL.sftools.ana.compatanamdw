@@ -445,6 +445,18 @@ TVerdict CTestMutex::doTestStepL()
    	   	err = IntgTest39();
    	   	SetTestStepResult(err ? static_cast<TVerdict>(err) : EPass);
    	   	}
+	else if(TestStepName() == KPThreadMutexTryLockWait1)
+	   		{
+	   	   	INFO_PRINTF1(_L("PThreadMutexTryLockWait1():"));
+	   	   	err = PThreadMutexTryLockWait1();
+	   	   	SetTestStepResult(err ? static_cast<TVerdict>(err) : EPass);
+	   	   	}
+	else if(TestStepName() == KPThreadMutexTryLockWait2)
+	   		{
+	   	   	INFO_PRINTF1(_L("PThreadMutexTryLockWait2():"));
+	   	   	err = PThreadMutexTryLockWait2();
+	   	   	SetTestStepResult(err ? static_cast<TVerdict>(err) : EPass);
+	   	   	}
 
    	return TestStepResult(); 
 

@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="FavouritesBCTest.dll" module="Mw/Web">Favourites API</API>
+<TestFramework type="">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Browser Favourites API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="ATSInterface.exe"> -testmodule FavouritesBCTest </Execute>
+<Component name="Favourites API">
+ <Info>
+  <TCCount start_version="51" end_version="52">102</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Web_FavouritesEngineAPI.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

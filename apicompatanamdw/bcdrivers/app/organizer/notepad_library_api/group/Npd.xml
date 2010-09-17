@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="TestNpdApi.dll" module="App/Organizer">Notepad API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Organizer Notepad API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>c:\TestFramework\TestFramework_npd.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\TestNpdApi.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Notepad Library API">
+ <Info>
+  <TCCount start_version="51" end_version="52">9</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Organizer_NotepadLibrary.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

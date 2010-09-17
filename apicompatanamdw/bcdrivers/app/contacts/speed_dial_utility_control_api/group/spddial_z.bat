@@ -1,5 +1,5 @@
 @rem
-@rem Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+@rem Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
 @rem All rights reserved.
 @rem This component and the accompanying materials are made available
 @rem under the terms of "Eclipse Public License v1.0"
@@ -18,8 +18,8 @@ copy z:\TestFramework\TestFramework_Spdial.ini C:\TestFramework\TestFramework.in
 md e:\bctest
 md e:\bctest\Results
 
-ATSINTERFACE.EXE -testmodule testcombiner -config C:\TestFramework\tcSpeeddial.cfg
-copy c:\Logs\TestFramework\TestReport.txt e:\bctest\results\Contacts_SpeedDial.txt
+ATSINTERFACE.EXE -testmodule testcombiner -config C:\TestFramework\tcSpeeddial.cfg -engineini C:\TestFramework\TestFramework.ini
+copy c:\Logs\TestFramework\TestReport.txt e:\bctest\results\Contacts_speeddial.txt
 
 
 

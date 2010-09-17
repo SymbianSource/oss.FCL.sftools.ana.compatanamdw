@@ -1,0 +1,96 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="XeDomBCTester.dll" module="Os/XmlSrv">XML Engine DOM API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the ASP XML Engine DOM API </desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_xmleng.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomBinCont.cfg </Execute>
+<Component name="XMLEngDOM_BinCont">
+ <Info>
+  <TCCount start_version="52" end_version="52">67</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_BinCont.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomFileCont.cfg </Execute>
+<Component name="XMLEngDOM_FileCont">
+ <Info>
+  <TCCount start_version="52" end_version="52">25</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_FileCont.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomChunkCont.cfg </Execute>
+<Component name="XMLEngDOM_ChunkCont">
+ <Info>
+  <TCCount start_version="52" end_version="52">26</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_ChunkCont.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomNotWF.cfg </Execute>
+<Component name="XMLEngDOM_NotWF">
+ <Info>
+  <TCCount start_version="52" end_version="52">187</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_NotWF.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomChunkparser.cfg </Execute>
+<Component name="XMLEngDOM_DomChunkparser">
+ <Info>
+  <TCCount start_version="52" end_version="52">24</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomChunkparser.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomElem.cfg </Execute>
+<Component name="XMLEngDOM_DomElem">
+ <Info>
+  <TCCount start_version="52" end_version="52">6</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomElem.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomEncoding.cfg </Execute>
+<Component name="XMLEngDOM_DomEncoding">
+ <Info>
+  <TCCount start_version="52" end_version="52">10</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomEncoding.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomModif.cfg </Execute>
+<Component name="XMLEngDOM_DomModif">
+ <Info>
+  <TCCount start_version="52" end_version="52">47</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomModif.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomWF.cfg </Execute>
+<Component name="XMLEngDOM_WF">
+ <Info>
+  <TCCount start_version="52" end_version="52">115</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_WF.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomXmlId.cfg </Execute>
+<Component name="XMLEngDOM_DomXmlId">
+ <Info>
+  <TCCount start_version="52" end_version="52">9</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomXmlId.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\DomNodeFilter.cfg </Execute>
+<Component name="XMLEngDOM_DomNodeFilter">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomNodeFilter.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule testScripter -config c:\testframework\DomXPath.cfg </Execute>
+<Component name="XMLEngDOM_DomXPath">
+ <Info>
+  <TCCount start_version="52" end_version="52">11</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\XmlSrv_XMLEngDOM_DomXPath.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

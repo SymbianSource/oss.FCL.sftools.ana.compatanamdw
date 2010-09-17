@@ -1,0 +1,11 @@
+EXPORTS
+	_Z24ImplementationGroupProxyRi @ 1 NONAME
+	_Z12NPP_GetValuePv11NPPVariableS_ @ 2 NONAME
+	_Z12NPP_Shutdownv @ 3 NONAME
+	_Z15InitializeFuncsP14_NPPluginFuncs @ 4 NONAME
+	_Z22NPP_GetMIMEDescriptionv @ 5 NONAME
+	_ZTI14CPluginAPIInst @ 6 NONAME ; #<TI>#
+	_ZTI18CPluginAPIEcomMain @ 7 NONAME ; #<TI>#
+	_ZTV14CPluginAPIInst @ 8 NONAME ; #<VT>#
+	_ZTV18CPluginAPIEcomMain @ 9 NONAME ; #<VT>#
+

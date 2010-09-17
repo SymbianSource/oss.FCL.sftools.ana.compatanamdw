@@ -36,6 +36,8 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <sys/time.h>
+#include <e32std.h>
+#include <stdio.h>
 
 _LIT(KPThreadMutexDestroy, "PThreadMutexDestroy");
 _LIT(KPThreadMutexLock, "PThreadMutexLock");
@@ -82,6 +84,7 @@ _LIT(KPThreadAttrStaticInitTryLockL, "PThreadAttrStaticInitTryLockL");
 _LIT(KPThreadAttrStaticInitUnlockL, "PThreadAttrStaticInitUnlockL");
 _LIT(KWaitForThreadCompleteL, "WaitForThreadCompleteL");
 
+
 _LIT(KIntgTest1, "IntgTest1");
 _LIT(KIntgTest2, "IntgTest2");
 _LIT(KIntgTest3, "IntgTest3");
@@ -121,6 +124,8 @@ _LIT(KIntgTest36, "IntgTest36");
 _LIT(KIntgTest37, "IntgTest37");
 _LIT(KIntgTest38, "IntgTest38");
 _LIT(KIntgTest39, "IntgTest39");
+_LIT(KPThreadMutexTryLockWait1, "PThreadMutexTryLockWait1");
+_LIT(KPThreadMutexTryLockWait2, "PThreadMutexTryLockWait2");
 
 class CTestMutex : public CTestStep
 	{
@@ -541,6 +546,8 @@ private:
 		TInt IntgTest37();
 		TInt IntgTest38();	
 		TInt IntgTest39();	
+		TInt PThreadMutexTryLockWait1();
+		TInt PThreadMutexTryLockWait2();
 		
 	};
 #endif 

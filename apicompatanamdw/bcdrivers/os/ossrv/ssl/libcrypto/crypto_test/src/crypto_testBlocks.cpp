@@ -119,7 +119,8 @@ TInt Ccrypto_test::RunMethodL(
         ENTRY( "RSATest", Ccrypto_test::RsaTest ),
         ENTRY( "SHATest", Ccrypto_test::ShaTest ),
         ENTRY( "SHA1Test", Ccrypto_test::Sha1Test ),
-
+		ENTRY( "SHA256Test", Ccrypto_test::Sha256Test ),
+		ENTRY( "SHA512Test", Ccrypto_test::Sha512Test ),
 
         };
 
@@ -555,8 +556,44 @@ TInt Ccrypto_test::Sha1Test( CStifItemParser& /*aItem */)
 
     }                                         
     
+TInt Ccrypto_test::Sha256Test( CStifItemParser& /*aItem */)
+    {
+    TInt ret=1;
+
+    if(!cryptotest_init("sha256"))
+    {
+    ret = sha256_main(0,NULL);
+    cryptotest_deinit();
+    	
+    }
+
+    if(ret==1&&errno==ENOMEM)
+    {
+    	return KErrNoMemory;
+    }
+    return ret;
+
+    }       
     
-    
+TInt Ccrypto_test::Sha512Test( CStifItemParser& /*aItem */)
+    {
+    TInt ret=1;
+
+    if(!cryptotest_init("sha512"))
+    {
+    ret = sha512_main(0,NULL);
+    cryptotest_deinit();
+    	
+    }
+
+    if(ret==1&&errno==ENOMEM)
+    {
+    	return KErrNoMemory;
+    }
+    return ret;
+
+    }   
+
                                        
 // -----------------------------------------------------------------------------
 // Ccrypto_test::?member_function

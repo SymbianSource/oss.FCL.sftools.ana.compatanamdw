@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="HostletConnectionBCTest.dll" module="Mw/WebSrv">WS Hostlet Connection API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the  Web Service Hostlet Connection API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_hostlet.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule HostletConnectionBCTest -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="WS Hostlet Connection API">
+ <Info>
+  <TCCount start_version="51" end_version="52">25</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\WebSrv_HostConn.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

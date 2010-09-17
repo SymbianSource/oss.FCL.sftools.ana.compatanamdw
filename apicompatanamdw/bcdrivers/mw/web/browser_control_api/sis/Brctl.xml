@@ -1,0 +1,17 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Mw/Web">Browser Control API</API>
+<TestFramework type="">BrowserCtrl</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Browser Control API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Component name="Browser Control API">
+ <Info>
+  <TCCount start_version="51" end_version="52">66</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Web_BrowserControl.log</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

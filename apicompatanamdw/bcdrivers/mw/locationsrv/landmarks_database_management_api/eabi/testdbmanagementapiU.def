@@ -1,0 +1,7 @@
+EXPORTS
+	_Z9LibEntryLR13CTestModuleIf @ 1 NONAME
+	_ZTI22CTestPosLmDatabaseInfo @ 2 NONAME
+	_ZTI25CTestPosLmDatabaseManager @ 3 NONAME
+	_ZTV22CTestPosLmDatabaseInfo @ 4 NONAME
+	_ZTV25CTestPosLmDatabaseManager @ 5 NONAME
+

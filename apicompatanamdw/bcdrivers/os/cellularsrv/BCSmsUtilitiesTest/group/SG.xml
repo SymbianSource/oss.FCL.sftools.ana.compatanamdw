@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCSmsUtilitiesTest.dll" module="Os/CellularSrv">SDK SMS GSM Utilities API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the RTC-Core Telephony SDK SMS GSM Utilities</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="ATSInterface.exe"> -testmodule BCSmsUtilitiesTest </Execute>
+<Component name="SDK SMS GSM Utilities API">
+ <Info>
+  <TCCount start_version="51" end_version="52">13</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\CellularSrv_SmsGsm.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

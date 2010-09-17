@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="testdbmanagementapi.dll" module="Mw/LocationSrv">Landmarks Database Management API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Location Landmarks Database Management API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_lmdbmanagement.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\testdbmanagementapi.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Landmarks Database Management API">
+ <Info>
+  <TCCount start_version="51" end_version="52">36</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\LocationSrv_LandmarksDBManagement.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

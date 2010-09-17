@@ -1,0 +1,17 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="SenXml.DLL" module="Mw/WebSrv">XML Extensions API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the WebSrv XML Extensions API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Component name="XML Extensions API">
+ <Info>
+  <TCCount start_version="51" end_version="52">220</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Websrv_XMLExtensions.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

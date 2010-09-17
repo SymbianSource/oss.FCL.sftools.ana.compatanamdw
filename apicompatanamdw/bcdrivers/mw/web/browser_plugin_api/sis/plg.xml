@@ -1,0 +1,17 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Mw/Web">Browser Plugin API</API>
+<TestFramework type="">BrowserPlugin</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Browser Plugin API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Component name="Browser Plugin API">
+ <Info>
+  <TCCount start_version="51" end_version="52">28</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\Browser_PluginAPI.log</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

@@ -1,0 +1,9 @@
+EXPORTS
+	?LibEntryL@@YAPAVCScriptBase@@AAVCTestModuleIf@@@Z @ 1 NONAME ; class CScriptBase * LibEntryL(class CTestModuleIf &)
+	??0?$basic_string@DV?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBDABV?$allocator@D@1@@Z @ 2 NONAME ; std::basic_string<char, class std::char_traits<char>, class std::allocator<char> >::basic_string<char, class std::char_traits<char>, class std::allocator<char> >(char const *, class std::allocator<char> const &)
+	??0?$basic_string@DV?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ @ 3 NONAME ; std::basic_string<char, class std::char_traits<char>, class std::allocator<char> >::basic_string<char, class std::char_traits<char>, class std::allocator<char> >(void)
+	??0?$basic_string@_WV?$char_traits@_W@std@@V?$allocator@_W@2@@std@@QAE@PB_WABV?$allocator@_W@1@@Z @ 4 NONAME ; std::basic_string<wchar_t, class std::char_traits<wchar_t>, class std::allocator<wchar_t> >::basic_string<wchar_t, class std::char_traits<wchar_t>, class std::allocator<wchar_t> >(wchar_t const *, class std::allocator<wchar_t> const &)
+	??0facet@locale@std@@AAE@ABV012@@Z @ 5 NONAME ; std::locale::facet::facet(class std::locale::facet const &)
+	??0facet@locale@std@@IAE@I@Z @ 6 NONAME ; std::locale::facet::facet(unsigned int)
+	??_Efacet@locale@std@@UAE@I@Z @ 7 NONAME ; std::locale::facet::~facet(unsigned int)
+	?getloc@ios_base@std@@QBE?AVlocale@2@XZ @ 8 NONAME ; class std::locale std::ios_base::getloc(void) const

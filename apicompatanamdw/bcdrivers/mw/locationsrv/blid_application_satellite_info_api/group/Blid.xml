@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCBlidTest.dll" module="Mw/LocationSrv">Blid App Satellite Info API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Location Blid Application Satellite Info API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_locblid.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config C:\TestFramework\tcLmkBlid.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Blid App Satellite Info API">
+ <Info>
+  <TCCount start_version="51" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\LocationSrv_Blid.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="testlmksearchapi.dll" module="Mw/LocationSrv">Landmarks Search API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Location Landmarks Search API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_lmsearch.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config c:\testframework\testlmksearchapi.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Landmarks Search API">
+ <Info>
+  <TCCount start_version="51" end_version="52">102</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\LocationSrv_LandmarksSearch.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

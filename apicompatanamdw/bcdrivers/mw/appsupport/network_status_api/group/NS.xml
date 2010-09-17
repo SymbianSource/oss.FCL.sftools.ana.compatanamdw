@@ -1,0 +1,18 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Mw/AppSupport">Network Status API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the AppSup Network Status API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="ATSInterface.exe"> -testmodule NetworkStatusTest </Execute>
+<Component name="Network Status API">
+ <Info>
+  <TCCount start_version="51" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\AppSupport_NetworkStatus.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

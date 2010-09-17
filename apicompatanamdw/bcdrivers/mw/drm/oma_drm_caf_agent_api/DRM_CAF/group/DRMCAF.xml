@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="DRM_CAF.dll" module="Mw/DRM">DRM CAF API</API>
+<TestFramework type="testcombiner">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the DRM Content Access Framework API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_DRMCAF.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testscripter -config C:\TestFramework\DRM_CAF.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="DRM CAF API">
+ <Info>
+  <TCCount start_version="51" end_version="52">53</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\BCTest\results\Drm_CAF.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

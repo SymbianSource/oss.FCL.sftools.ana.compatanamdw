@@ -16,6 +16,5 @@
 
 md e:\bctest
 
-md e:\bctest\results\
-
+md e:\bctest\results\     
 copy c:\logs\PluginAPI\PluginAPI.log e:\bctest\results\Web_BrowserPluginAPI.log

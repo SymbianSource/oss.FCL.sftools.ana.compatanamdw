@@ -1,0 +1,36 @@
+
+<!--
+-->
+<component>
+		<name>libcrypto_topenssltrsa_blr_winsspd_component</name>
+		
+		<testset>
+				<id>libcrypto_topenssltrsa_blr</id>
+				<priority>High</priority>
+		
+		<install type="binary">
+				<src>openssl.exe</src>
+				<dst>z:\sys\bin\openssl.exe</dst>
+		</install>
+		<install type="data">
+                		<src>testrsa.pem</src>
+                		<dst>c:\testrsa.pem </dst>
+    </install>
+    
+   <install type="data">
+                		<src>trsa.txt</src>
+                		<dst>c:\trsa.txt</dst>
+    </install>
+    		
+		<execute>
+				<file>Z:\sys\bin\openssl.exe</file>
+				<parameters>c:/trsa.txt</parameters>
+        <result type="common">
+            <file>c:\spd_logs\xml\trsa(3_50_2_6739).xml</file>
+        </result>
+        <timeout>600</timeout>
+		</execute>
+		
+		</testset>
+		
+</component>

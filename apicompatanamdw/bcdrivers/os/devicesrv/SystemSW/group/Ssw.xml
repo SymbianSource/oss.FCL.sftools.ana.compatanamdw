@@ -1,0 +1,118 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="" module="Os/DeviceSrv">System Software API</API>
+<TestFramework type="hardcoded">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the DeviceSrv System Software</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="vibration.exe"> </Execute>
+<Execute command="ATSInterface.exe"> -testmodule featuremanagertest </Execute>
+<Component name="SysSw FeatureManager">
+ <Info>
+  <TCCount start_version="52" end_version="52">3</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_FeatureManager.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule finditemenginetest </Execute>
+<Component name="SysSw FindItemEngine">
+ <Info>
+  <TCCount start_version="52" end_version="52">6</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_FindItemEngine.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule light </Execute>
+<Component name="SysSw Light">
+ <Info>
+  <TCCount start_version="52" end_version="52">7</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_Light.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule PhoneParserTest </Execute>
+<Component name="SysSw PhoneParser">
+ <Info>
+  <TCCount start_version="52" end_version="52">9</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_PhoneParser.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule PlatformEnvTest </Execute>
+<Component name="SysSw PlatformEnv">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_PlatformEnv.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule PowerStateTest </Execute>
+<Component name="SysSw PowerState">
+ <Info>
+  <TCCount start_version="52" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_PowerState.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule sysutiltest </Execute>
+<Component name="SysSw SysUtil">
+ <Info>
+  <TCCount start_version="52" end_version="52">7</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_SysUtil.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule stiftextresolvertest </Execute>
+<Component name="SysSw StifTextResolver">
+ <Info>
+  <TCCount start_version="52" end_version="52">8</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_StifTextResolver.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule HwResManTest </Execute>
+<Component name="SysSw HwResMan">
+ <Info>
+  <TCCount start_version="52" end_version="52">10</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_HwResMan.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule vibractrltest </Execute>
+<Component name="SysSw VibraCtrl">
+ <Info>
+  <TCCount start_version="52" end_version="52">20</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_VibraCtrl.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="copy"><src>c:\6edcba99.txt</src><dst>c:\private\10202be9\6edcba99.txt</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule cenrepnotifyhandlertest </Execute>
+<Component name="SysSw CenRepNotifyHandler">
+ <Info>
+  <TCCount start_version="52" end_version="52">10</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_CenRepNotifyHandler.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule PlatformVerTest </Execute>
+<Component name="SysSw PlatformVer">
+ <Info>
+  <TCCount start_version="52" end_version="52">1</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_PlatformVer.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule AccMonAPIBCTests </Execute>
+<Component name="SysSw Accmonitoring">
+ <Info>
+  <TCCount start_version="52" end_version="52">17</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_accmonitoring.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule SystemSWMisc50Test </Execute>
+<Component name="SysSw SystemSWMisc50Test">
+ <Info>
+  <TCCount start_version="52" end_version="52">7</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_SystemSWMisc50Test.txt</dst></Execute>
+ </Info>
+</Component>
+<Execute command="ATSInterface.exe"> -testmodule SystemSWMisc52Test </Execute>
+<Component name="SysSw SystemSWMisc52Test">
+ <Info>
+  <TCCount start_version="52" end_version="52">26</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\DeviceSrv_SystemSoftware_SystemSWMisc52Test.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

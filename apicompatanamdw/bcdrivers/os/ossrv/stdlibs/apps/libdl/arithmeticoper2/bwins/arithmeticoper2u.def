@@ -1,0 +1,33 @@
+EXPORTS
+	mult @ 1 NONAME
+	?uid@@3UTEmulatorImageHeader@@A @ 2 NONAME ; struct TEmulatorImageHeader uid
+	??2@YAPAXI@Z @ 3 NONAME ; void * operator new(unsigned int)
+	??2@YAPAXII@Z @ 4 NONAME ; void * operator new(unsigned int, unsigned int)
+	??_U@YAPAXI@Z @ 5 NONAME ; void * operator new[](unsigned int)
+	?CleanupCWRuntime@@YAHXZ @ 6 NONAME ; int CleanupCWRuntime(void)
+	?InitCWRuntime@@YAHXZ @ 7 NONAME ; int InitCWRuntime(void)
+	UDiv64 @ 8 NONAME
+	_Win32DllMain@12 @ 9 NONAME
+	__xp_a @ 10 NONAME
+	_alldiv @ 11 NONAME
+	_alldvrm @ 12 NONAME
+	_allmul @ 13 NONAME
+	_allrem @ 14 NONAME
+	_allshl @ 15 NONAME
+	_allshr @ 16 NONAME
+	_aulldiv @ 17 NONAME
+	_aulldvrm @ 18 NONAME
+	_aullrem @ 19 NONAME
+	_aullshr @ 20 NONAME
+	_purecall @ 21 NONAME
+	udiv64_divby0 @ 22 NONAME
+	?__xi_a@@3PAP6AXXZA @ 23 NONAME ; void (* *__xi_a)(void)
+	?__xt_a@@3PAP6AXXZA @ 24 NONAME ; void (* *__xt_a)(void)
+	?__xc_a@@3PAP6AXXZA @ 25 NONAME ; void (* *__xc_a)(void)
+	?__xi_z@@3PAP6AXXZA @ 26 NONAME ; void (* *__xi_z)(void)
+	?__xp_a@@3PAP6AXXZA @ 27 NONAME ; void (* *__xp_a)(void)
+	?DEListHead@@3PAUSDestructorEntry@@A @ 28 NONAME ; struct SDestructorEntry * DEListHead
+	?__xt_z@@3PAP6AXXZA @ 29 NONAME ; void (* *__xt_z)(void)
+	?__xc_z@@3PAP6AXXZA @ 30 NONAME ; void (* *__xc_z)(void)
+	?__xp_z@@3PAP6AXXZA @ 31 NONAME ; void (* *__xp_z)(void)
+

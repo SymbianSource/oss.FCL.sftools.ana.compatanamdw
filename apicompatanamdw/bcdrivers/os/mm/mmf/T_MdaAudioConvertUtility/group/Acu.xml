@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="T_MdaAudioConvertUtility.exe" module="Os/MM">Audio Convert Utility API</API>
+<TestFramework type="">TEF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the Multimedia Media Client Audio API Audio Convert Utility</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\data\t_multimedia.ini</src><dst>C:\multimedia\t_multimedia.ini</dst></Execute>
+<Execute command="testexecute.exe"> \multimedia\MM-MMF-ACLNT-CNVRT-PublicAPI </Execute>
+<Component name="Media Client Audio API">
+ <Info>
+  <TCCount start_version="51" end_version="52">118</TCCount>
+  <Execute command="copylog"><src>c:\logs\testexecute\testresults.htm</src><dst>e:\bctest\results\MM_MMFAudioConvertUtility.htm</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

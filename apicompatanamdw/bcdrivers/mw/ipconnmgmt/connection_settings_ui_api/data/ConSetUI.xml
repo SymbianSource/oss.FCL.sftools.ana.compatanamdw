@@ -1,0 +1,19 @@
+<test>
+<!--The test name for OSD and binary for verification-->
+<API binary="BCConnSettingsUITest.dll" module="Mw/IpConnMgmt">Connection Settings UI API</API>
+<TestFramework type="testscripter">STIF</TestFramework>
+<!--Some description of the API under test-->
+<desc>The tests involve the IpConnection Connection Settings UI API</desc>
+
+<!--commands to be executed-->
+<CommandSet>
+<Execute command="copy"><src>C:\TestFramework\TestFramework_connsetui.ini</src><dst>C:\TestFramework\TestFramework.ini</dst></Execute>
+<Execute command="ATSInterface.exe"> -testmodule testcombiner -config c:\testframework\tcConnSet.cfg -engineini C:\TestFramework\TestFramework.ini </Execute>
+<Component name="Connection Settings UI API">
+ <Info>
+  <TCCount start_version="51" end_version="52">4</TCCount>
+  <Execute command="copylog"><src>c:\Logs\TestFramework\TestReport.txt</src><dst>e:\bctest\results\IPConnMgmt_ConnectionSettingsUI.txt</dst></Execute>
+ </Info>
+</Component>
+</CommandSet>
+</test>

@@ -157,8 +157,8 @@ NONSHARABLE_CLASS(Ccrypto_test) : public CScriptBase
         virtual TInt RsaTest( CStifItemParser& aItem );
         virtual TInt ShaTest( CStifItemParser& aItem );
         virtual TInt Sha1Test( CStifItemParser& aItem );
-
-
+        virtual TInt Sha256Test( CStifItemParser& aItem );
+        virtual TInt Sha512Test( CStifItemParser& aItem );
 
     public:     // Data
         // ?one_line_short_description_of_data

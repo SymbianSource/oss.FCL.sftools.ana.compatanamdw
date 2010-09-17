@@ -750,9 +750,13 @@ TInt CTestPosLandmarkDatabase::ImportLandmarksL( CStifItemParser& aItem )
 	// Set Input file
 	parser->SetInputFileL( importFilePtr );
 	// Import landmarks to DB	
+	iLog->Log(_L("Before ImportLandmarks "));
 	CPosLmOperation* operation = lmkDatabase->ImportLandmarksL( *parser, CPosLandmarkDatabase::EDefaultOptions );
+		iLog->Log(_L("After ImportLandmarks "));
 	CleanupStack::PushL( operation );
-	operation->ExecuteL();
+		iLog->Log(_L("Before ExecuteL "));
+	TRAPD(error,operation->ExecuteL());
+	iLog->Log(_L("After ExecuteL "));
 	iLog->Log(_L("ImportLandmarks successful")); 
 	CleanupStack::PopAndDestroy( 3, lmkDatabase );
 	ReleaseLandmarkResources();
@@ -787,7 +791,7 @@ TInt CTestPosLandmarkDatabase::ImportSelectedLandmarksL( CStifItemParser& aItem 
 	indexArray.AppendL( 1 );	
 	CPosLmOperation* operation = lmkDatabase->ImportLandmarksL( *parser, indexArray, CPosLandmarkDatabase::EDefaultOptions );
 	CleanupStack::PushL( operation );
-	operation->ExecuteL();
+	TRAPD(error,operation->ExecuteL());
 	iLog->Log(_L("ImportSelectedLandmarks successful")); 
 	CleanupStack::PopAndDestroy( 3, lmkDatabase );
 	ReleaseLandmarkResources();
@@ -817,7 +821,7 @@ TInt CTestPosLandmarkDatabase::ImportedLmkIteratorL( CStifItemParser& aItem )
 	// Import landmarks to DB	
 	CPosLmOperation* operation = lmkDatabase->ImportLandmarksL( *parser, CPosLandmarkDatabase::EDefaultOptions );
 	CleanupStack::PushL( operation );
-	operation->ExecuteL();
+	TRAPD(error,operation->ExecuteL());
 	// Get iterator for imported landmarks
 	CPosLmItemIterator* iterator = lmkDatabase->ImportedLandmarksIteratorL( operation );
 	CleanupStack::PushL( iterator );

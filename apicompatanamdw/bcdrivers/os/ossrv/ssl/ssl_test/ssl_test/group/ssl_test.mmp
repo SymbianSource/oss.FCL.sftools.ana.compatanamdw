@@ -64,3 +64,5 @@ STATICLIBRARY libcrt0.lib
 //START RESOURCE	helloworld_reg.rss
 //TARGETPATH	\private\10003a3f\apps
 //END
+
+SMPSAFE
