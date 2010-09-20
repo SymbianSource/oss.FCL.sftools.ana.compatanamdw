@@ -12901,6 +12901,10 @@
   </headerfile>
   
   <headerfile name="variant\symbian_os.hrh">
+    <version checksum="NfICtmBDSDevB">
+      <status>OK</status>
+      <comment>Macro SYMBIAN_NETWORKING_WIFI present in other header. It's not a BC break. It may be a source break.</comment>
+    </version>
     <version checksum="HpE2aDjDSDevB">
       <status>OK</status>
       <comment>Macro SYMBIAN_NETWORKING_WIFI present in other header. It's not a BC break. It may be a source break.</comment>
