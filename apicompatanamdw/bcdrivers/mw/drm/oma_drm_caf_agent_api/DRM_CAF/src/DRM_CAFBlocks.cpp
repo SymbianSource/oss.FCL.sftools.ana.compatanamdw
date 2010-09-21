@@ -1811,7 +1811,7 @@ TInt  CDRM_CAF::CContent_CancelNotifyStatusChangeL()
         r = status;
         }
         
-    STIF_ASSERT_EQUALS( KErrCANotSupported,r);
+    STIF_ASSERT_EQUALS( KErrNone,r);
     CleanupStack::PopAndDestroy();
     return KErrNone;
     }
