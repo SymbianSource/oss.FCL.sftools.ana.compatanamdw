@@ -1803,12 +1803,12 @@ TInt  CDRM_CAF::CContent_CancelNotifyStatusChangeL()
     TInt r;
     content = CContent::NewLC(KOma2Content);
     STIF_ASSERT_NOT_NULL(content);
-    TInt r = content->CancelNotifyStatusChange(status);
+    r = content->CancelNotifyStatusChange(status);
     
     if (r != KErrCANotSupported)
     {
         User::WaitForRequest(status);
-        r = status;
+        r = status.Int();
         }
         
     STIF_ASSERT_EQUALS( KErrNone,r);
