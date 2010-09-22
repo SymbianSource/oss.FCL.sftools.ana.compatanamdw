@@ -92,6 +92,8 @@ SYSTEMINCLUDE	/epoc32/include/test
 SYSTEMINCLUDE   /epoc32/include/ecom
 SYSTEMINCLUDE   /epoc32/include/libc/
 
+MW_LAYER_SYSTEMINCLUDE
+
 LIBRARY			euser.lib
 LIBRARY			efsrv.lib
 LIBRARY			bafl.lib

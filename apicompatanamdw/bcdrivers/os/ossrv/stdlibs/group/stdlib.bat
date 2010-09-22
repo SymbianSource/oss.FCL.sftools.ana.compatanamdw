@@ -37,6 +37,7 @@ testexecute \tstdapis\tmkfifo.script
 copy c:\Logs\Testexecute\TestResults.htm e:\BCTest\results\OsSrv_Stdlibs_tmkfifo.htm
 testexecute \tstdapis\tmmap.script
 copy c:\Logs\Testexecute\TestResults.htm e:\BCTest\results\OsSrv_Stdlibs_tmmap.htm
+testexecute \tstdapis\tprogname.script
 copy c:\Logs\Testexecute\TestResults.htm e:\BCTest\results\OsSrv_Stdlibs_tprogname.htm
 testexecute \tstdapis\tregex.script
 copy c:\Logs\Testexecute\TestResults.htm e:\BCTest\results\OsSrv_Stdlibs_tregex.htm

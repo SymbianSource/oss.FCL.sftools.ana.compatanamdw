@@ -20,7 +20,7 @@
 
     #ifndef __SERIES60_30__
         // To get the APP_LAYER_SYSTEMINCLUDE-definition
-        //#include <domain/osextensions/platform_paths.hrh>
+        #include <platform_paths.hrh>
     #endif
 
 #endif

@@ -29,6 +29,8 @@ USERINCLUDE 	..\Inc
 
 SYSTEMINCLUDE 	\epoc32\include \epoc32\include\ecom
 
+MW_LAYER_SYSTEMINCLUDE
+
 START RESOURCE  ..\Data\20003713.rss
 TARGET          SIPClientResolverPlugin.rsc                                          
 END

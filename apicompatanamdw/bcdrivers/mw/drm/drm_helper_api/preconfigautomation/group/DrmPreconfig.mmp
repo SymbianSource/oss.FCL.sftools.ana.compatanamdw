@@ -22,6 +22,7 @@
 //
 
 // using relative paths for sourcepath and user includes
+#include <platform_paths.hrh>
 
 TARGET        DrmPreconfig.exe
 TARGETTYPE    exe
@@ -39,6 +40,7 @@ SYSTEMINCLUDE /Epoc32/include/mw
 SYSTEMINCLUDE /Epoc32/include/platform/mw
 SYSTEMINCLUDE /Epoc32/include/osextensions
 SYSTEMINCLUDE /Epoc32/include/libc
+MW_LAYER_SYSTEMINCLUDE
 
 LIBRARY       euser.lib
 LIBRARY       estlib.lib

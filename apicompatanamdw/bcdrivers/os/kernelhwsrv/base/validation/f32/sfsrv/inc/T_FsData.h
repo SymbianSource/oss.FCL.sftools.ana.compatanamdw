@@ -31,6 +31,7 @@ This contains CT_FsData
 //	EPOC includes
 #include <e32std.h>
 #include <f32file.h>
+#include <f32file_private.h>
 #include <TestExecuteServerUtils.h>
 #include <TestExecuteStepBase.h>
 

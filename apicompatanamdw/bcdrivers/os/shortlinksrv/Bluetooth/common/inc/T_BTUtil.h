@@ -23,6 +23,7 @@
 #include <datawrapper.h>
 #include <btsdp.h>
 #include <es_sock.h>
+#include <es_sock_partner.h>
 
 class CT_BTUtil : public CBase
 	{

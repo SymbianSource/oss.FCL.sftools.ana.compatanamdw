@@ -31,8 +31,8 @@ PRJ_EXPORTS
 // copy will be used to copy the source file to its destination
 // If there's no destination then the source file will be copied
 // to the same name in /epoc32/include
-./TestSD.bat		/epoc32/winscw/c/TestSD.bat
-./testframework.ini		/epoc32/winscw/c/testframework/testframework_senservdesc.ini
+../sis/TestSD.bat		/epoc32/winscw/c/TestSD.bat
+../sis/testframework.ini		/epoc32/winscw/c/testframework/testframework_senservdesc.ini
 /*
 /agnmodel/inc/AGMCOMON.H
 */
