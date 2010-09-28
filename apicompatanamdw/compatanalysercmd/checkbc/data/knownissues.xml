@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-08-30</listversion>
+  <listversion>2010-09-27</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
 	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk33</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk37</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -54,7 +54,7 @@
    <headerfile name="platform\mw\obex\internal\obextransportconstants.h">
        <version checksum="ci-sIZjDmQPUA">
       	<status>OK</status>
-      	<comment>file is marked as internal tech.</comment>
+      	<comment>file is marked as internal tech </comment>
       </version>
    </headerfile>
    <headerfile name="imcvcodc.h">
@@ -74,7 +74,11 @@
       </version>
    </headerfile>
    <headerfile name="mw\apselect.h">
-   <version checksum="D5mhWHjC7BgFl">
+   		<version checksum="D5mhWHjC7BgFl">
+      	<status>OK</status>
+      	<comment>File itself is marked as deprecated..</comment>
+      </version>
+      <version checksum="HVyulEfC7BgFl">
       	<status>OK</status>
       	<comment>File itself is marked as deprecated..</comment>
       </version>
@@ -1018,6 +1022,12 @@
       <comment>1.Spare member has been changed. 2.Virtual function has been overridden, since public constructor is not allowed to use , this won't be a problem</comment>
     </version>
   </headerfile>
+  <headerfile name="ptilanguage.h">
+    <version checksum="o-J6SbTDc57p9">
+      <status>OK</status>
+      <comment>Class size is not changed, removed data members are not used in any inline function.</comment>
+    </version>
+  </headerfile>
 
   <headerfile name="middleware\ptilanguage.h">
     <version checksum="o-J6SbTDc57p9">
@@ -1379,6 +1389,10 @@
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
     <version checksum="YnyCVR0Chv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
+    <version checksum="fSZZdF6Chv9Aq">
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
@@ -1947,6 +1961,10 @@
      <version checksum="5AbKKQvBg8JMw">
       <status>OK</status>
       <comment>1.All Enum members are marked as internal component. 2.typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok 3. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
+    <version checksum="hZZPPbQDbiqNa">
+      <status>OK</status>
+      <comment>1.All Enum members are marked as internal component. 2.. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
    </headerfile>
    
@@ -2572,6 +2590,10 @@
       <status>OK</status>
       <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
     </version>
+    <version checksum="ui9b4shBG9pRn">
+      <status>OK</status>
+      <comment>Some macro defintions get changed(/ is changed to \), it is ok.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\avkon.hrh">
@@ -2790,6 +2812,10 @@
       <status>OK</status>
       <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
     </version>
+    <version checksum="UAXpMGtC302ux">
+      <status>OK</status>
+      <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
+    </version>
    </headerfile>
  
    <headerfile name="mw\brctldefs.h">
@@ -2822,6 +2848,10 @@
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
     <version checksum="UAXpMGtC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="aVdjD+AC302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
@@ -3148,7 +3178,7 @@
     </version>
   </headerfile>  
   
-   <headerfile name="brctlinterface.h">
+  <headerfile name="brctlinterface.h">
      <version checksum="g66ayXVA3ENPt">
       <status>OK</status>
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
@@ -3157,11 +3187,15 @@
       	<status>OK</status>
       	<comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
       </version>
-       <version checksum="g6mVBduA3ENPt">
+    <version checksum="g6mVBduA3ENPt">
       	<status>OK</status>
       	<comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
-      </version>
-    </headerfile>
+    </version>
+    <version checksum="kKKaAR5A-w4PZ">
+      	<status>OK</status>
+      	<comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+    </version>
+   </headerfile>
     
     <headerfile name="oem\brctlinterface.h">
     <version checksum="+EwhTvrCd7dnT">
@@ -3207,6 +3241,10 @@
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
     <version checksum="kKKaAR5BLX16n">
+      <status>OK</status>
+      <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+    </version>
+    <version checksum="kITldYRBLX16n">
       <status>OK</status>
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
@@ -3355,8 +3393,12 @@
     <version checksum="olYC2koACttDB">
       <status>OK</status>
       <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h</comment>
-    </version>    
-  </headerfile>
+    </version>   
+     <version checksum="qthBUNjDNBprT">
+      <status>OK</status>
+      <comment>1). TACLPort,class TACLSockAddr, const KSockBluetoothTypeRawBroadcast and const KSockBluetoothTypeACL are part of internalcompoent. 2)Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version> 
+   </headerfile>
 
   <headerfile name="btsdp.h">
     <version checksum="*******AzjGwh">
@@ -4952,6 +4994,10 @@
       <status>NOK</status>
       <comment>The removed enum TCdtPanic::ETEventNotKeyRepeatType is a panic raised by the exported function TRawEvent::Repeats().  The function TRawEvent::Repeats() is removed and this itself is a break.Needs to be checked after 5.0 Rnd SDk</comment>
     </version>
+    <version checksum="ghKwugtA0yLkq">
+      <status>NOK</status>
+      <comment>The removed enum TCdtPanic::ETEventNotKeyRepeatType is a panic raised by the exported function TRawEvent::Repeats().  The function TRawEvent::Repeats() is removed and this itself is a break.Needs to be checked after 5.0 Rnd SDk</comment>
+    </version>
   </headerfile>
   <headerfile name="libc\netinet\ip_icmp.h">
     <version checksum="DBcuJVJA3rv8H">
@@ -5388,6 +5434,10 @@
       <comment>Build version information.</comment>
     </version>
     <version checksum="mtr2vxzB9a-Pp">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="mvt2i7LB9a-Pp">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
@@ -5960,6 +6010,10 @@
       <comment>Previous enum-values are intact. so no break .</comment>
     </version>
     <version checksum="fQ9EM5FCw5aGM">
+      <status>OK</status>
+      <comment>Previous enum-values are intact. so no break .</comment>
+    </version>
+    <version checksum="IOPMB4yCw5aGM">
       <status>OK</status>
       <comment>Previous enum-values are intact. so no break .</comment>
     </version>
@@ -6772,6 +6826,10 @@
       <comment>Build version information.</comment>
     </version>
     <version checksum="KkD9DpwAGdXEK">
+      <status>OK</status>
+      <comment>Build version information.</comment>
+    </version>
+    <version checksum="KnPZJX3AGdXEK">
       <status>OK</status>
       <comment>Build version information.</comment>
     </version>
@@ -9166,6 +9224,10 @@
       <status>OK</status>
       <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
     </version>
+     <version checksum="aKlBoc3DWwxNJ">
+      <status>OK</status>
+      <comment>The enum value indicating the maximum number of supported enum values has increased. This is fine.</comment>
+    </version>
   </headerfile>
   
  <headerfile name="middleware\ptidefs.h">
@@ -9252,6 +9314,10 @@
       <status>OK</status>
       <comment>Enum member added at last..</comment>
     </version>
+    <version checksum="sRx3MN8DsboMH">
+      <status>OK</status>
+      <comment>Enum member added at last..</comment>
+    </version>
   </headerfile>
   
   <headerfile name="middleware\ptikeymappings.h">
@@ -9264,7 +9330,12 @@
       <comment>Removing the data member which is used in inline function. But the removal of inline functions is already approved.Finally there is no change in class size of CPtiMappings and CPtiQwertyKeyMappings </comment>
     </version>
   </headerfile>
-  
+   <headerfile name="ptikeymappings.h">
+   <version checksum="Okjrwv6C8ssTu">
+      <status>OK</status>
+      <comment>Removing the data member which is used in inline function. But the removal of inline functions is already approved.Finally there is no change in class size of CPtiMappings and CPtiQwertyKeyMappings </comment>
+    </version>
+  </headerfile>
   <headerfile name="mw\ptikeymappings.h">
     <version checksum="O2DGpahAXSDvz">
       <status>NOK</status>
@@ -9373,7 +9444,12 @@
       <comment>"Reserved" private data member replaced with a real one. "Reserved" data member is of course not used in any inline functions.</comment>
     </version>
   </headerfile>
-
+ <headerfile name="ptiuids.hrh">
+ 		<version checksum="s2k1i3JB4ILJw">
+      <status>OK</status>
+      <comment>Removal of macro EPtiLangImplUidMarathi is not a break. Not used by anybody . </comment>
+    </version>
+ </headerfile>
   <headerfile name="middleware\ptiuids.hrh">
     <version checksum="fLX+luRAxetVp">
       <status>OK</status>
@@ -10141,6 +10217,10 @@
       <status>OK</status>
       <comment>Addition of an overloaded funtion is not a bc break.</comment>
     </version>
+    <version checksum="7SRK4piClAX1C">
+      <status>OK</status>
+      <comment>Addition of an overloaded funtion is not a bc break.</comment>
+    </version>
   </headerfile> 
   <headerfile name="senservicemanager.h">
     <version checksum="fujt1boCP1-Yl">
@@ -10174,6 +10254,12 @@
       <comment>Inline function is changed to generic function. It is ok. Overloaded funtion addition is not a bc break.</comment>
     </version>
   </headerfile>
+   <headerfile name="ptiengine.h">
+   		<version checksum="BJH2MwAAaUn+4">
+      <status>OK</status>
+      <comment>Inline function is changed to generic function. It is ok.</comment>
+    	</version>
+    </headerfile>
   <headerfile name="mw\ptiengine.h">
     <version checksum="BMBi+JoAZZBtQ">
       <status>OK</status>
@@ -10612,6 +10698,10 @@
       <comment>Extra member added to union member of structure ifr_ifru.</comment>
     </version>
     <version checksum="YsRiz9TA-CiU-">
+      <status>OK</status>
+      <comment>Extra member added to union member of structure ifr_ifru.</comment>
+    </version>
+    <version checksum="wIL7+2zA-CiU-">
       <status>OK</status>
       <comment>Extra member added to union member of structure ifr_ifru.</comment>
     </version>
@@ -12022,8 +12112,8 @@
     </headerfile>
     <headerfile name="platform\app\obexservermtm.h">
      <version checksum="41LLSOoBLIjcH">
-      <status>NOK</status>
-      <comment>Virtual function ordering changed..</comment>
+      <status>OK</status>
+      <comment>Virtual function ordering changed.CObexSrvMtm is marked as internal class.</comment>
     </version>
    </headerfile>
     <headerfile name="networking\qos3gpp_subconparams.h">
@@ -12787,6 +12877,11 @@
       <status>OK</status>
       <comment>Removed components moved to BTExtNotifiersPartner.h </comment>
     </version>
+     <version checksum="AJWL5ksCOzrms">
+      <status>OK</status>
+      <comment>Removed components moved to BTExtNotifiersPartner.h </comment>
+    </version>
+    
   </headerfile>
   
   <headerfile name="middleware\eikcapc.h">
@@ -12795,7 +12890,12 @@
       <comment>Data field changed from const  CEikDialogPage* to CEikDialogPage*. It's not a BC break.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="platform\mw\uikon\eiknfysv.h">
+    <version checksum="ltzZ-P9DGRP+9">
+      <status>OK</status>
+      <comment>File is marked as internal</comment>
+    </version>
+  </headerfile>
   <headerfile name="bt_subscribe.h">
     <version checksum="ukGXlgMCnGpFT">
       <status>OK</status>
