@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-09-27</listversion>
+  <listversion>2010-10-11</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
 	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk37</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk38</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -1793,11 +1793,26 @@
       <comment>File has compilation issues.</comment>
     </version>
  </headerfile>
-
+ <headerfile name="rvct\rvct.h">
+    <version checksum="BjhvMzTCjeWRZ">
+      <status>OK</status>
+      <comment>There is no change in the file</comment>
+    </version>
+ </headerfile>
+ <headerfile name="mw\schedulebaseservermtm.h">
+    <version checksum="kKpiE5VBXmsp5">
+      <status>OK</status>
+      <comment>There is no change in the file. V-table ordering change due to change in the base class's v-table.Need to fix the base class.</comment>
+    </version>
+ </headerfile>
 <headerfile name="stdapis\stlport\iostream.h">
     <version checksum="x+KyITlA2c321">
       <status>OK</status>
       <comment>File has compilation issues.</comment>
+    </version>
+    <version checksum="x+KyITlANo+CU">
+      <status>OK</status>
+      <comment>There is no change in two versions of files.</comment>
     </version>
  </headerfile>
 
@@ -1963,6 +1978,10 @@
       <comment>1.All Enum members are marked as internal component. 2.typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok 3. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
     <version checksum="hZZPPbQDbiqNa">
+      <status>OK</status>
+      <comment>1.All Enum members are marked as internal component. 2.. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
+     <version checksum="hZZPPbQDxCBag">
       <status>OK</status>
       <comment>1.All Enum members are marked as internal component. 2.. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
@@ -3245,6 +3264,10 @@
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
     <version checksum="kITldYRBLX16n">
+      <status>OK</status>
+      <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
+    </version>
+    <version checksum="kITldYRAe4vM6">
       <status>OK</status>
       <comment>Instances of CBrCtlInterface are created through the global function CreateBrowserControlL(); the class is of no use when derived from. So adding new virtuals to the end of the class is fine.</comment>
     </version>
@@ -6420,6 +6443,10 @@
       <status>OK</status>
       <comment>1.TSockIO,TSockIOBufC, TSockOpen,TSockOpenBufC,SOCKET_SERVER_NAME are marked as internal component 2..Addition of an overloaded funtion is not a bc break. 3.Internally subobject RSessionBase,RSubSessionBase are intact 4..Connection build number,Major connection version number, KInternalIoctlBit and minor version number constants are internal component.5.KCommsNetworkLayerId is moved into es_sock_partner.h.6.CSubConParameterBundle is moved to included header es_sock_partner.h.7.There is no difference between SMetaDataECom and XParameterSetBase</comment>
     </version>
+     <version checksum="bVFYFXdDQ1MIV">
+      <status>OK</status>
+      <comment>There is no change in two version of files.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="etelmm.h">
@@ -7098,6 +7125,10 @@
       <status>OK</status>
       <comment>Exported functions removed. But removal is approved.</comment>
     </version>
+    <version checksum="jbrDkaSCW0MR2">
+      <status>OK</status>
+      <comment>Reserved data member used.</comment>
+    </version>
   </headerfile>
 
   <headerfile name="frmtlay.h">
@@ -7195,6 +7226,18 @@
       <comment>void * changed to CSmsMessageAdditionalAttributes* .</comment>
     </version>
   </headerfile>
+  <headerfile name="lbs\lbsipc.hrh">
+    <version checksum="SrWIvqEBjkvJIG">
+      <status>OK</status>
+      <comment>Guard macro changed.</comment>
+    </version>
+   </headerfile>
+   <headerfile name="mmf\common\mmfbase.hrh">
+    <version checksum="acxVZhvBmQ62g">
+      <status>OK</status>
+      <comment>File is marked as internal</comment>
+    </version>
+   </headerfile>
   
   <headerfile name="graphicsaccelerator.h">
     <version checksum="1MvCdEzCU+eHG">
@@ -8792,7 +8835,31 @@
       <comment>Enums added at the end. Only the value of max enum(first free control enum) has changed. This is ok.</comment>
     </version>
   </headerfile>
-
+   <headerfile name="app\msgeditor.hrh">
+    <version checksum="637CfNfDq05pO">
+      <status>OK</status>
+      <comment>Enum TMsgFindItemKeyCommands is marked as internal component.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="bldpublic.hrh">
+    <version checksum="tMiHTYzCXL2Rq">
+      <status>OK</status>
+      <comment>Macro removal might cause SC break.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="drivers\usbc.h">
+    <version checksum="je3tPJBBjN2IV">
+      <status>OK</status>
+      <comment>Macro used for version control.</comment>
+    </version>
+  </headerfile>
+  
+  <headerfile name="drivers\usbcsc.h">
+    <version checksum="JH2US9OCqfuhg">
+      <status>OK</status>
+      <comment>Macro used for version control.</comment>
+    </version>
+  </headerfile>
   <headerfile name="msvapi.h">
     <version checksum="*******DiXuMp">
       <status>OK</status>
@@ -12158,6 +12225,10 @@
       <status>OK</status>
       <comment>Class CBaseServerMtm internal..</comment>
     </version>
+    <version checksum="C-s3GfNB5Deux">
+      <status>NOK</status>
+      <comment>v-table ordering changed.It's a bc break...</comment>
+    </version>
    </headerfile>
    <headerfile name="schinfo.h">
     <version checksum="GNI7cFeA9GKD5">
@@ -12209,6 +12280,12 @@
     <version checksum="rEY4O4pA8l0OL">
       <status>OK</status>
       <comment>Constant is marked as internal tech.</comment>
+    </version>
+    </headerfile>
+    <headerfile name="mw\eiklbi.h">
+    <version checksum="JO4QKsdBSNobl">
+      <status>OK</status>
+      <comment>Spare member removed..</comment>
     </version>
     </headerfile>
     <headerfile name="app\smutsimparam.h">
@@ -12972,6 +13049,10 @@
       <status>OK</status>
      <comment>1.TWhichEars removed.Private member. 2. All removed fields are private access. None of them is used in any inline function. There is no change in class size.3.Data field changed from const  CEikDialogPage* to CEikDialogPage*. It's not a BC break.</comment>
     </version>
+    <version checksum="9kIG2vuDAy9fq">
+      <status>OK</status>
+     <comment>1.TWhichEars has private access. 2.  private member fields removed. Replaced with spare fields.</comment>
+    </version>
   </headerfile>
   
   <headerfile name="libc\netinet\ip.h">
@@ -13001,10 +13082,6 @@
   </headerfile>
   
   <headerfile name="variant\symbian_os.hrh">
-    <version checksum="NfICtmBDSDevB">
-      <status>OK</status>
-      <comment>Macro SYMBIAN_NETWORKING_WIFI present in other header. It's not a BC break. It may be a source break.</comment>
-    </version>
     <version checksum="HpE2aDjDSDevB">
       <status>OK</status>
       <comment>Macro SYMBIAN_NETWORKING_WIFI present in other header. It's not a BC break. It may be a source break.</comment>
@@ -13245,6 +13322,48 @@
 				    <comment>CR approved</comment>
 			</issue>
    </library>
+    <library name="customapi">
+    	<issue>
+				    <typeid>6</typeid>
+				    <funcname>RMmCustomAPI::ActivateSimLock(TRequestStatus&amp;, TBuf&lt;15&gt; const&amp;, RMmCustomAPI::TLockNumber) const</funcname>
+				    <newfuncname>RMmCustomAPI::ActivateSimLock(TRequestStatus&amp;, TBuf&lt;30&gt; const&amp;, RMmCustomAPI::TLockNumber) const</newfuncname>
+				    <funcpos>67</funcpos>
+				    <bc_severity>Possible BBC Break</bc_severity>
+				    <sc_severity>Possible SC Break</sc_severity>
+				     <status>OK</status>
+				    <comment>In method parameter,  TBuf&lt;15&gt; const&amp; is changed to TBuf&lt;30&gt; const&amp;.It's not a bc break.</comment>
+			</issue>
+			  <issue>
+				    <typeid>6</typeid>
+				    <funcname>RMmCustomAPI::ActivateSimLock(TBuf&lt;15&gt; const&amp;, RMmCustomAPI::TLockNumber) const</funcname>
+				    <newfuncname>RMmCustomAPI::ActivateSimLock(TBuf&lt;30&gt; const&amp;, RMmCustomAPI::TLockNumber) const</newfuncname>
+				    <funcpos>68</funcpos>
+				    <bc_severity>Possible BBC Break</bc_severity>
+				    <sc_severity>Possible SC Break</sc_severity>
+				     <status>OK</status>
+				    <comment>In method parameter,  TBuf&lt;15&gt; const&amp; is changed to TBuf&lt;30&gt; const&amp;.It's not a bc break.</comment>
+			</issue>
+			  <issue>
+				    <typeid>6</typeid>
+				    <funcname>RMmCustomAPI::DeActivateSimLock(TRequestStatus&amp;, TBuf&lt;15&gt; const&amp;, RMmCustomAPI::TLockNumber) const</funcname>
+				    <newfuncname>RMmCustomAPI::DeActivateSimLock(TRequestStatus&amp;, TBuf&lt;30&gt; const&amp;, RMmCustomAPI::TLockNumber) const</newfuncname>
+				    <funcpos>72</funcpos>
+				    <bc_severity>Possible BBC Break</bc_severity>
+				    <sc_severity>Possible SC Break</sc_severity>
+				     <status>OK</status>
+				    <comment>In method parameter,  TBuf&lt;15&gt; const&amp; is changed to TBuf&lt;30&gt; const&amp;.It's not a bc break.</comment>
+			</issue>
+			  <issue>
+				    <typeid>6</typeid>
+				    <funcname>RMmCustomAPI::DeActivateSimLock(TBuf&lt;15&gt; const&amp;, RMmCustomAPI::TLockNumber) const</funcname>
+				    <newfuncname>RMmCustomAPI::DeActivateSimLock(TBuf&lt;30&gt; const&amp;, RMmCustomAPI::TLockNumber) const</newfuncname>
+				    <funcpos>73</funcpos>
+				    <bc_severity>Possible BBC Break</bc_severity>
+				    <sc_severity>Possible SC Break</sc_severity>
+				     <status>OK</status>
+				    <comment>In method parameter,  TBuf&lt;15&gt; const&amp; is changed to TBuf&lt;30&gt; const&amp;.It's not a bc break.</comment>
+			</issue>
+    </library>
    <library name="worldclient">
     	<issue>
 				    <typeid>1</typeid>
