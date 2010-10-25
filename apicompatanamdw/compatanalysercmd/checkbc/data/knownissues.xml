@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-10-11</listversion>
+  <listversion>2010-10-25</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
 	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk38</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk40</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -1130,7 +1130,7 @@
   </headerfile>
   
   <headerfile name="aknsconstants.hrh">
-	<version checksum="BJ4NyJRChv9Aq">
+	  <version checksum="BJ4NyJRChv9Aq">
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
@@ -1993,6 +1993,10 @@
       <status>OK</status>
       <comment>1.All Enum members are marked as internal component. 2.. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
+    <version checksum="+ldTk8bAYECTX">
+      <status>OK</status>
+      <comment>1.All Enum members are marked as internal component. 2.. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change 3.Inheritance of CEikEdwinExtension has been changed.But it is a private member.</comment>
+    </version>
    </headerfile>
    
    <headerfile name="pdrstore.h">
@@ -2037,6 +2041,10 @@
    </headerfile>
     <headerfile name="remconclient.h">
 	    <version checksum="TzvZF2rASzxrq">
+	      <status>OK</status>
+	      <comment>File has been marked as internal component</comment>
+	    </version>
+	     <version checksum="TzvZF2rCip1om">
 	      <status>OK</status>
 	      <comment>File has been marked as internal component</comment>
 	    </version>
@@ -2850,7 +2858,7 @@
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
-   <version checksum="uk4vykIC302ux">
+    <version checksum="uk4vykIC302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
@@ -7540,8 +7548,20 @@
       <comment>File removed. But it does not have any impact on third party developers</comment>
     </version>
   </headerfile>
+  <headerfile name="app\imconnection.h">  
+  	<version checksum="A58G+dWCip1om">
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
+    </version>
+  </headerfile>
   <headerfile name="imerrors.h">  
   	<version checksum="uW0uN-sCip1om">
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\imerrors.h">  
+  	<version checksum="ufOy8G2Cip1om">
       <status>OK</status>
       <comment>File removed. But it does not have any impact on third party developers</comment>
     </version>
@@ -7556,9 +7576,69 @@
       <comment>File removed. But it does not have any impact on third party developers</comment>
     </version>
   </headerfile>
+  <headerfile name="app\imlauncherplugin.h">  
+  <version checksum="hQpDWwSCip1om">
+      <status>OK</status>
+      <comment>File removed. But it does not have any impact on third party developers</comment>
+    </version>
+  </headerfile>
   
   <headerfile name="imclient.h">  
   	<version checksum="oqS+NCGCip1om">
+      <status>OK</status>
+      <comment>File removed. But it does not pose a problem since its not use by third party developers</comment>
+    </version>
+  </headerfile>
+  <headerfile name="senatomentry.h">  
+  	<version checksum="2vQZb-JCip1om">
+      <status>NOK</status>
+      <comment>File removed.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="senatommessage.h">  
+  	<version checksum="6bcr7asCip1om">
+      <status>NOK</status>
+      <comment>File removed. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="senatomfeed.h">  
+  	<version checksum="gEn1hDxCip1om">
+      <status>NOK</status>
+      <comment>File removed. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="msgtypes.h">  
+  	<version checksum="dOvZ-yHCip1om">
+      <status>NOK</status>
+      <comment>File removed. </comment>
+    </version>
+  </headerfile>
+   <headerfile name="msgsession.h">  
+  	<version checksum="D3tc1O0Cip1om">
+      <status>NOK</status>
+      <comment>File removed. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="msgrelay.h">  
+  	<version checksum="UP0Ow-JCip1om">
+      <status>NOK</status>
+      <comment>File removed. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="f32notification.h">  
+  	<version checksum="aoQPO6yCip1om">
+      <status>NOK</status>
+      <comment>File removed. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="featureuids.h">  
+  	<version checksum="g0CBvNYB5ZmjC">
+      <status>NOK</status>
+      <comment>Many constants removed or changed their values.It is a bc break. </comment>
+    </version>
+  </headerfile>
+  <headerfile name="app\imclient.h">  
+  	<version checksum="ovD-KoxCip1om">
       <status>OK</status>
       <comment>File removed. But it does not pose a problem since its not use by third party developers</comment>
     </version>
@@ -8853,10 +8933,26 @@
       <comment>Enum TMsgFindItemKeyCommands is marked as internal component.</comment>
     </version>
   </headerfile>
+  <headerfile name="bldprivate.hrh">
+  <version checksum="J+Sy73bDvBaV6">
+      <status>OK</status>
+      <comment>File contains only #define.</comment>
+    </version>
+  </headerfile>
+   <headerfile name="bldcodeline.hrh">
+  <version checksum="b6jzy9ABLOVBU">
+      <status>OK</status>
+      <comment>Macro removal might cause sc break.</comment>
+    </version>
+  </headerfile>
   <headerfile name="bldpublic.hrh">
     <version checksum="tMiHTYzCXL2Rq">
       <status>OK</status>
       <comment>Macro removal might cause SC break.</comment>
+    </version>
+    <version checksum="23Fytl3B+KUjT">
+      <status>OK</status>
+      <comment>File contains only #define.</comment>
     </version>
   </headerfile>
   <headerfile name="drivers\usbc.h">
@@ -9613,7 +9709,18 @@
       <comment>File contents are moved to file rvct.h.</comment>
     </version>
   </headerfile>
-
+  <headerfile name="rvct2_2.h">
+    <version checksum="M3eMrpFCip1om">
+      <status>NOK</status>
+      <comment>File removed..</comment>
+    </version>
+  </headerfile>
+  <headerfile name="rvct2_1.h">
+    <version checksum="l+QlRPQCip1om">
+      <status>NOK</status>
+      <comment>File removed..</comment>
+    </version>
+  </headerfile>
   <headerfile name="wngdoor.h">
     <version checksum="RybCqP4Cip1om">
       <status>OK</status>
@@ -10918,7 +11025,18 @@
       <comment>File contains only #defines.</comment>
     </version>
   </headerfile>
-  
+  <headerfile name="publicruntimeids.hrh">
+    <version checksum="UcylodmDV1BL9">
+      <status>OK</status>
+      <comment>Macro removal might be a source break.</comment>
+    </version>
+  </headerfile>
+  <headerfile name="platform_paths.hrh">
+    <version checksum="ImPXLNmC3aXOE">
+      <status>OK</status>
+      <comment>Macro removal might be a source break.</comment>
+    </version>
+  </headerfile>
   <headerfile name="stdapis\openssl\ssl.h">
     <version checksum="*******A2c321">
       <status>OK</status>
@@ -10931,6 +11049,10 @@
     <version checksum="gEox5XpD4h8-W">
       <status>OK</status>
       <comment>size of struct changed:-Due to addition of some data fields, size of struct ssl_ctx_st,ssl_session_st,ssl_st has been changed..</comment>
+    </version>
+    <version checksum="gFl9I5gDuD133">
+      <status>OK</status>
+      <comment>1.Struct SSL,SSL_CTX and SSL_SESSION get changed their size due to removal of some data member.There is no difference b/w 5.0 public header and TB10.1 header.No issue. .2.Macros are removed. It might be a source break..</comment>
     </version>
   </headerfile>
   
@@ -11704,7 +11826,19 @@
       <comment>File is marked as internal component..</comment>
     </version>
   </headerfile>
+  <headerfile name="remconserver.h">
+   <version checksum="tmgP1jqCip1om">
+      <status>OK</status>
+      <comment>File is marked as internal component..</comment>
+    </version>
+  </headerfile>
    <headerfile name="remcon\operationinformation.h">
+   <version checksum="N5rykr8Cip1om">
+      <status>OK</status>
+      <comment>File is marked as internal component..</comment>
+    </version>
+  </headerfile>
+   <headerfile name="operationinformation.h">
    <version checksum="N5rykr8Cip1om">
       <status>OK</status>
       <comment>File is marked as internal component..</comment>
@@ -42074,18 +42208,18 @@
 			  
   </library>
    <library name="egldisplayproperty">
-      <issue>
+      <issue>        
+        <typeid>1</typeid>
         <bc_severity>BBC Break</bc_severity>
         <sc_severity>SC Break</sc_severity>
-        <typeid>1</typeid>
         <status>OK</status>
         <comment>Resolved WONTFIX.</comment>
       </issue>
-      <issue>
+      <issue>      
+        <typeid>14</typeid>
+         <typeinfo>Baseline DLL is not available for analysis</typeinfo>
         <bc_severity>Informative</bc_severity>
         <sc_severity>None</sc_severity>
-        <typeid>14</typeid>
-        <typeinfo>Baseline DLL is not available for analysis</typeinfo>
         <status>OK</status>
         <comment>File was not contributed. It is an accepted break.</comment>
       </issue>
