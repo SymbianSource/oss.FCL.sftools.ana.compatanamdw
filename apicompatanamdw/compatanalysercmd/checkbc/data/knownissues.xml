@@ -1977,6 +1977,10 @@
       <status>OK</status>
       <comment>All Enum members are marked as internal component. </comment>
     </version>
+     <version checksum="7oTI2lRBg8JMw">
+      <status>OK</status>
+      <comment>1.All Enum members are marked as internal component. 2.typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok 3. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
+    </version>
      <version checksum="V+jtQVvCrjIcT">
       <status>OK</status>
       <comment>1.All Enum members are marked as internal component. 2.typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok 3. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
@@ -2854,6 +2858,10 @@
    </headerfile>
  
    <headerfile name="mw\brctldefs.h">
+    <version checksum="Xv9wGPVC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
     <version checksum="VCJq4VcC302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
@@ -3349,6 +3357,10 @@
 
   
   <headerfile name="bt_sock.h">
+    <version checksum="qthBUNjACttDB">
+      <status>OK</status>
+      <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
+    </version>
     <version checksum="h9XOc8KACttDB">
       <status>OK</status>
       <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
