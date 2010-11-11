@@ -31,13 +31,13 @@
 <!ELEMENT comment (#PCDATA)>
 ]>
 <issuelist>
-  <listversion>2010-10-25</listversion>
+  <listversion>2010-11-09</listversion>
 	<os><osversion>3.0</osversion><buildweek>2007wk07</buildweek></os>
 	<os><osversion>3.1</osversion><buildweek>2008wk07</buildweek></os>
 	<os><osversion>3.2</osversion><buildweek>2010wk24</buildweek></os>
 	<os><osversion>5.0</osversion><buildweek>2010wk12</buildweek></os>
   <os><osversion>5.1</osversion><buildweek>2009wk24</buildweek></os>
-  <os><osversion>5.2</osversion><buildweek>2010wk40</buildweek></os>
+  <os><osversion>5.2</osversion><buildweek>2010wk43</buildweek></os>
   
     <headerfile name="stdapis\stlport\stl_user_config.h">
        <version checksum="AAAAAAAAxetVp">
@@ -1218,6 +1218,10 @@
       <status>OK</status>
       <comment>Enum values added without changing any of the existing enum values.</comment>
     </version>
+    <version checksum="4rVtBmiChv9Aq">
+      <status>OK</status>
+      <comment>Enum values added without changing any of the existing enum values.</comment>
+    </version>
     </headerfile>	
     
     <headerfile name="sqldb.h">
@@ -1976,10 +1980,6 @@
      <version checksum="5AbKKQvAjnezF">
       <status>OK</status>
       <comment>All Enum members are marked as internal component. </comment>
-    </version>
-     <version checksum="7oTI2lRBg8JMw">
-      <status>OK</status>
-      <comment>1.All Enum members are marked as internal component. 2.typedef of CEikEdwin::CEikEdwinExtension::iDrawInvoked is changed from TBool to TInt, it is ok 3. Class size of CEikEdwinExtension(private member of class CEikEdwin) also has been changed, but it would be used as reference and thus CEikEdwin class size won't change</comment>
     </version>
      <version checksum="V+jtQVvCrjIcT">
       <status>OK</status>
@@ -2858,10 +2858,6 @@
    </headerfile>
  
    <headerfile name="mw\brctldefs.h">
-    <version checksum="Xv9wGPVC302ux">
-      <status>OK</status>
-      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
-    </version>
     <version checksum="VCJq4VcC302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
@@ -2899,6 +2895,10 @@
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
     <version checksum="aVdjD+AC302ux">
+      <status>OK</status>
+      <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
+    </version>
+    <version checksum="iyviyf5C302ux">
       <status>OK</status>
       <comment>Enums are added at the end. Only max Enum value has changed. This is ok.</comment>
     </version>
@@ -3357,10 +3357,6 @@
 
   
   <headerfile name="bt_sock.h">
-    <version checksum="qthBUNjACttDB">
-      <status>OK</status>
-      <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
-    </version>
     <version checksum="h9XOc8KACttDB">
       <status>OK</status>
       <comment>1) Except for macro KBasebandSlotTime, other constants and classes are marked as internal tech. KBasebandSlotTime moved to included header btbasebandpolicy.h. 2) Classes RBluetoothPowerSwitch and RHCIDirectAccess moved to bthci.h.</comment>
@@ -6072,6 +6068,10 @@
       <status>OK</status>
       <comment>Previous enum-values are intact. so no break .</comment>
     </version>
+    <version checksum="NaGQc3XCw5aGM">
+      <status>OK</status>
+      <comment>All enum members added to the end.</comment>
+    </version>
    </headerfile>
    <headerfile name="coever.h">
     <version checksum="KLNcWtkCip1om">
@@ -7260,6 +7260,10 @@
   </headerfile>
   <headerfile name="lbs\lbsipc.hrh">
     <version checksum="SrWIvqEBjkvJIG">
+      <status>OK</status>
+      <comment>Guard macro changed.</comment>
+    </version>
+     <version checksum="SrWIvqEBjkvJI">
       <status>OK</status>
       <comment>Guard macro changed.</comment>
     </version>
@@ -8965,6 +8969,10 @@
     <version checksum="23Fytl3B+KUjT">
       <status>OK</status>
       <comment>File contains only #define.</comment>
+    </version>
+    <version checksum="7mPqBq7CXL2Rq">
+      <status>OK</status>
+      <comment>Macro removal might cause SC break.</comment>
     </version>
   </headerfile>
   <headerfile name="drivers\usbc.h">
@@ -11039,6 +11047,10 @@
   </headerfile>
   <headerfile name="publicruntimeids.hrh">
     <version checksum="UcylodmDV1BL9">
+      <status>OK</status>
+      <comment>Macro removal might be a source break.</comment>
+    </version>
+    <version checksum="ahKzhGODV1BL9">
       <status>OK</status>
       <comment>Macro removal might be a source break.</comment>
     </version>
@@ -13292,6 +13304,20 @@
     </version>
   </headerfile>    
   
+   <library name = "serverden">
+  	 <issue>
+				    <typeid>6</typeid>
+				    <funcname>Den::CCommonWorkerThread::MaybeCompleteUnbinding(unsigned short)</funcname>
+				    <newfuncname>Den::CCommonWorkerThread::MaybeCompleteUnbinding(unsigned short, int)</newfuncname>
+				    <funcpos>151</funcpos>
+				    <bc_severity>Possible BBC Break</bc_severity>
+				    <sc_severity>SC Break</sc_severity>
+				    <status>OK</status>
+				    <comment>Internal component. Modification is ok</comment>
+			</issue>
+			</library>
+			
+		
   
   <library name = "libstdcpp">
   	<issue>
@@ -29556,6 +29582,2448 @@
 	    			<comment>Already approved.</comment>
 			</issue>
   </library>
+  	<library name = "pbk2uicontrols">
+  	  <issue>
+				    <typeid>5</typeid>
+				    <newfuncname>CPbk2FetchDlg::DenyDelayedFetchL(TDesC8 const&amp;)</newfuncname>
+				    <newfuncpos>1</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FetchDlg::AcceptDelayedFetchL(TDesC8 const&amp;)</funcname>
+				    <funcpos>1</funcpos>
+				    <newfuncpos>2</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FetchDlg::NewL(CPbk2FetchDlg::TParams, MPbk2FetchDlgObserver&amp;)</funcname>
+				    <funcpos>2</funcpos>
+				    <newfuncpos>3</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FetchDlg::TParams::TParams()</funcname>
+				    <funcpos>3</funcpos>
+				    <newfuncpos>4</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FetchDlg::TParams::TParams()</funcname>
+				    <funcpos>3</funcpos>
+				    <newfuncpos>5</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API</comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FetchDlg::TParams::operator TCleanupItem()</funcname>
+				    <funcpos>5</funcpos>
+				    <newfuncpos>6</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FetchDlg::ExecuteLD()</funcname>
+				    <funcpos>6</funcpos>
+				    <newfuncpos>7</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API. </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2PrependDlg::NewL(TDes16&amp;)</funcname>
+				    <funcpos>7</funcpos>
+				    <newfuncpos>8</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::AttemptExitL(int)</funcname>
+				    <funcpos>8</funcpos>
+				    <newfuncpos>20</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::Pbk2ControlKeyEventL(TKeyEvent const&amp;, TEventCode)</funcname>
+				    <funcpos>9</funcpos>
+				    <newfuncpos>21</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::NewL(TPbk2AddressSelectParams&amp;)</funcname>
+				    <funcpos>10</funcpos>
+				    <newfuncpos>22</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::SetCba(int)</funcname>
+				    <funcpos>11</funcpos>
+				    <newfuncpos>24</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::ExecuteLD()</funcname>
+				    <funcpos>12</funcpos>
+				    <newfuncpos>25</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>13</funcpos>
+				    <newfuncpos>26</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>13</funcpos>
+				    <newfuncpos>27</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>13</funcpos>
+				    <newfuncpos>28</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>14</funcpos>
+				    <newfuncpos>26</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>14</funcpos>
+				    <newfuncpos>27</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>14</funcpos>
+				    <newfuncpos>28</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>15</funcpos>
+				    <newfuncpos>26</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>15</funcpos>
+				    <newfuncpos>27</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::~CPbk2AddressSelect()</funcname>
+				    <funcpos>15</funcpos>
+				    <newfuncpos>28</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2InputAbsorber::SetCommandObserver(MEikCommandObserver*)</funcname>
+				    <funcpos>16</funcpos>
+				    <newfuncpos>29</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2InputAbsorber::NewL(int)</funcname>
+				    <funcpos>17</funcpos>
+				    <newfuncpos>30</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2InputAbsorber::Wait()</funcname>
+				    <funcpos>18</funcpos>
+				    <newfuncpos>31</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2InputAbsorber::NewLC(int)</funcname>
+				    <funcpos>19</funcpos>
+				    <newfuncpos>32</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2InputAbsorber::StopWait()</funcname>
+				    <funcpos>20</funcpos>
+				    <newfuncpos>33</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FieldFormatter::SetTimeFormatL(TDesC16 const&amp;)</funcname>
+				    <funcpos>21</funcpos>
+				    <newfuncpos>34</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FieldFormatter::FormatFieldContentL(MVPbkBaseContactField const&amp;, MVPbkFieldType const&amp;)</funcname>
+				    <funcpos>22</funcpos>
+				    <newfuncpos>35</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2FieldFormatter::NewL(MPbk2FieldPropertyArray const&amp;, MVPbkFieldTypeList const&amp;)</funcname>
+				    <funcpos>23</funcpos>
+				    <newfuncpos>36</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2StoreListQuery::SetAllItemTextL(TDesC16 const&amp;, int)</funcname>
+				    <funcpos>24</funcpos>
+				    <newfuncpos>37</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2StoreListQuery::NewL()</funcname>
+				    <funcpos>25</funcpos>
+				    <newfuncpos>38</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2StoreListQuery::ExecuteLD(TDesC16 const&amp;, CVPbkContactStoreUriArray&amp;)</funcname>
+				    <funcpos>26</funcpos>
+				    <newfuncpos>39</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(MPbk2FieldProperty const&amp;)</funcname>
+				    <funcpos>27</funcpos>
+				    <newfuncpos>40</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(MPbk2FieldProperty const&amp;)</funcname>
+				    <funcpos>27</funcpos>
+				    <newfuncpos>42</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(CPbk2FieldPropertyGroup const&amp;)</funcname>
+				    <funcpos>28</funcpos>
+				    <newfuncpos>41</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(CPbk2FieldPropertyGroup const&amp;)</funcname>
+				    <funcpos>28</funcpos>
+				    <newfuncpos>43</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(MPbk2FieldProperty const&amp;)</funcname>
+				    <funcpos>29</funcpos>
+				    <newfuncpos>40</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(MPbk2FieldProperty const&amp;)</funcname>
+				    <funcpos>29</funcpos>
+				    <newfuncpos>42</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(CPbk2FieldPropertyGroup const&amp;)</funcname>
+				    <funcpos>30</funcpos>
+				    <newfuncpos>41</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::TPbk2AddItemWrapper(CPbk2FieldPropertyGroup const&amp;)</funcname>
+				    <funcpos>30</funcpos>
+				    <newfuncpos>43</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailLoader::HideThumbnail()</funcname>
+				    <funcpos>31</funcpos>
+				    <newfuncpos>44</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailLoader::LoadThumbnail(MVPbkStoreContact*, CEikListBox const*, TPbk2ThumbnailLocation)</funcname>
+				    <funcpos>32</funcpos>
+				    <newfuncpos>45</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				    <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailLoader::LoadThumbnailL(MVPbkContactLink*, CEikListBox const*, TPbk2ThumbnailLocation)</funcname>
+				    <funcpos>33</funcpos>
+				    <newfuncpos>46</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailLoader::NewL(CVPbkContactManager&amp;)</funcname>
+				    <funcpos>34</funcpos>
+				    <newfuncpos>47</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailLoader::Reset()</funcname>
+				    <funcpos>35</funcpos>
+				    <newfuncpos>48</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailLoader::Refresh()</funcname>
+				    <funcpos>36</funcpos>
+				    <newfuncpos>49</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorDlg::NewL(TPbk2ContactEditorParams&amp;, MVPbkStoreContact*, MPbk2EditedContactObserver&amp;)</funcname>
+				    <funcpos>37</funcpos>
+				    <newfuncpos>50</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorDlg::ExecuteLD()</funcname>
+				    <funcpos>38</funcpos>
+				    <newfuncpos>52</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::AddObserverL(MPbk2ControlObserver&amp;)</funcname>
+				    <funcpos>39</funcpos>
+				    <newfuncpos>53</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::RemoveObserver(MPbk2ControlObserver&amp;)</funcname>
+				    <funcpos>40</funcpos>
+				    <newfuncpos>55</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::NewL(int, CCoeControl const*, CVPbkContactManager&amp;, MVPbkContactViewBase&amp;, MPbk2ContactNameFormatter&amp;, CPbk2StorePropertyArray&amp;)</funcname>
+				    <funcpos>41</funcpos>
+				    <newfuncpos>60</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::Reset()</funcname>
+				    <funcpos>42</funcpos>
+				    <newfuncpos>62</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::SetViewL(MVPbkContactViewBase&amp;)</funcname>
+				    <funcpos>43</funcpos>
+				    <newfuncpos>63</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::CPbk2NamesListControl(CCoeControl const*, CVPbkContactManager&amp;, MVPbkContactViewBase&amp;, MPbk2ContactNameFormatter&amp;, CPbk2StorePropertyArray&amp;)</funcname>
+				    <funcpos>44</funcpos>
+				    <newfuncpos>65</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::CPbk2NamesListControl(CCoeControl const*, CVPbkContactManager&amp;, MVPbkContactViewBase&amp;, MPbk2ContactNameFormatter&amp;, CPbk2StorePropertyArray&amp;)</funcname>
+				    <funcpos>44</funcpos>
+				    <newfuncpos>66</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::CPbk2NamesListControl(CCoeControl const*, CVPbkContactManager&amp;, MVPbkContactViewBase&amp;, MPbk2ContactNameFormatter&amp;, CPbk2StorePropertyArray&amp;)</funcname>
+				    <funcpos>45</funcpos>
+				    <newfuncpos>65</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::CPbk2NamesListControl(CCoeControl const*, CVPbkContactManager&amp;, MVPbkContactViewBase&amp;, MPbk2ContactNameFormatter&amp;, CPbk2StorePropertyArray&amp;)</funcname>
+				    <funcpos>45</funcpos>
+				    <newfuncpos>66</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2PhonebookInfoDlg::NewL()</funcname>
+				    <funcpos>46</funcpos>
+				    <newfuncpos>67</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2PhonebookInfoDlg::ExecuteLD(CVPbkContactStoreUriArray&amp;)</funcname>
+				    <funcpos>47</funcpos>
+				    <newfuncpos>68</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactInfoControl::AddObserverL(MPbk2ControlObserver&amp;)</funcname>
+				    <funcpos>48</funcpos>
+				    <newfuncpos>73</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactInfoControl::RemoveObserver(MPbk2ControlObserver&amp;)</funcname>
+				    <funcpos>49</funcpos>
+				    <newfuncpos>74</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactInfoControl::NewL(CCoeControl const*, CVPbkContactManager&amp;, MPbk2ContactNameFormatter&amp;, MPbk2FieldPropertyArray&amp;, CPbk2StorePropertyArray&amp;, MPbk2ContactNavigation*)</funcname>
+				    <funcpos>50</funcpos>
+				    <newfuncpos>75</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddItemToContactDlg::NewL()</funcname>
+				    <funcpos>51</funcpos>
+				    <newfuncpos>77</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddItemToContactDlg::ExecuteLD(RArray&lt;TPbk2AddItemWrapper&gt;&amp;, TPbk2AddItemDialogParams const*)</funcname>
+				    <funcpos>52</funcpos>
+				    <newfuncpos>78</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2SettingsListControl::CommitSettingsL()</funcname>
+				    <funcpos>53</funcpos>
+				    <newfuncpos>79</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2SettingsListControl::NewL(CCoeControl const*, CPbk2SortOrderManager&amp;, MPbk2SettingsControlExtension&amp;)</funcname>
+				    <funcpos>54</funcpos>
+				    <newfuncpos>80</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::SetQueryAlways(int)</funcname>
+				    <funcpos>55</funcpos>
+				    <newfuncpos>81</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::SetFocusedField(MVPbkStoreContactField const*)</funcname>
+				    <funcpos>56</funcpos>
+				    <newfuncpos>82</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::SetDefaultPriorities(RVPbkContactFieldDefaultPriorities const&amp;)</funcname>
+				    <funcpos>57</funcpos>
+				    <newfuncpos>84</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::SetUseDefaultDirectly(int)</funcname>
+				    <funcpos>58</funcpos>
+				    <newfuncpos>85</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::TPbk2AddressSelectParams(MVPbkStoreContact&amp;, CVPbkContactManager const&amp;, MPbk2ContactNameFormatter&amp;, CPbk2FieldPropertyArray const&amp;, TResourceReader&amp;, int)</funcname>
+				    <funcpos>59</funcpos>
+				    <newfuncpos>87</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::TPbk2AddressSelectParams(MVPbkStoreContact&amp;, CVPbkContactManager const&amp;, MPbk2ContactNameFormatter&amp;, CPbk2FieldPropertyArray const&amp;, TResourceReader&amp;, int)</funcname>
+				    <funcpos>59</funcpos>
+				    <newfuncpos>88</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::TPbk2AddressSelectParams(MVPbkStoreContact&amp;, CVPbkContactManager const&amp;, MPbk2ContactNameFormatter&amp;, CPbk2FieldPropertyArray const&amp;, TResourceReader&amp;, int)</funcname>
+				    <funcpos>60</funcpos>
+				    <newfuncpos>87</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::TPbk2AddressSelectParams(MVPbkStoreContact&amp;, CVPbkContactManager const&amp;, MPbk2ContactNameFormatter&amp;, CPbk2FieldPropertyArray const&amp;, TResourceReader&amp;, int)</funcname>
+				    <funcpos>60</funcpos>
+				    <newfuncpos>88</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2MemoryEntryDefaultsDlg::NewL(CPbk2PresentationContact&amp;, CVPbkContactManager&amp;)</funcname>
+				    <funcpos>61</funcpos>
+				    <newfuncpos>90</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2MemoryEntryDefaultsDlg::ExecuteLD()</funcname>
+				    <funcpos>62</funcpos>
+				    <newfuncpos>91</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2GeneralConfirmationQuery::NewL()</funcname>
+				    <funcpos>63</funcpos>
+				    <newfuncpos>108</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2GeneralConfirmationQuery::ExecuteLD(MVPbkBaseContact const&amp;, int)</funcname>
+				    <funcpos>64</funcpos>
+				    <newfuncpos>109</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2GeneralConfirmationQuery::ExecuteLD(int, int)</funcname>
+				    <funcpos>65</funcpos>
+				    <newfuncpos>111</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::SetFocusedField(MVPbkBaseContactField const&amp;)</funcname>
+				    <funcpos>66</funcpos>
+				    <newfuncpos>115</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::SetSelectedStore(MVPbkContactStore&amp;)</funcname>
+				    <funcpos>67</funcpos>
+				    <newfuncpos>116</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::SetParentUiControl(MPbk2ContactUiControl&amp;)</funcname>
+				    <funcpos>68</funcpos>
+				    <newfuncpos>117</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::SetFocusedFieldIndex(int)</funcname>
+				    <funcpos>69</funcpos>
+				    <newfuncpos>118</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::SetFocusedStoreContact(MVPbkStoreContact const&amp;)</funcname>
+				    <funcpos>70</funcpos>
+				    <newfuncpos>119</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::NewL()</funcname>
+				    <funcpos>71</funcpos>
+				    <newfuncpos>120</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>72</funcpos>
+				    <newfuncpos>121</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>72</funcpos>
+				    <newfuncpos>122</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>72</funcpos>
+				    <newfuncpos>123</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>73</funcpos>
+				    <newfuncpos>121</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>73</funcpos>
+				    <newfuncpos>122</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>73</funcpos>
+				    <newfuncpos>123</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>74</funcpos>
+				    <newfuncpos>121</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>74</funcpos>
+				    <newfuncpos>122</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>74</funcpos>
+				    <newfuncpos>123</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2PhoneNumberFormatterFactory::CreatePhoneNumberFormatterL(int)</funcname>
+				    <funcpos>75</funcpos>
+				    <newfuncpos>124</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2MemoryEntryDefaultsAssignDlg::NewL()</funcname>
+				    <funcpos>76</funcpos>
+				    <newfuncpos>125</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2MemoryEntryDefaultsAssignDlg::ExecuteLD(CPbk2PresentationContactFieldCollection const&amp;, CVPbkContactManager const&amp;, MPbk2FieldPropertyArray const&amp;, VPbkFieldTypeSelectorFactory::TVPbkContactActionTypeSelector)</funcname>
+				    <funcpos>77</funcpos>
+				    <newfuncpos>126</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2InputAbsorber::IsWaiting() const</funcname>
+				    <funcpos>78</funcpos>
+				    <newfuncpos>127</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::PropertyAt(int) const</funcname>
+				    <funcpos>79</funcpos>
+				    <newfuncpos>128</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddItemWrapper::PropertyCount() const</funcname>
+				    <funcpos>80</funcpos>
+				    <newfuncpos>129</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2FetchDlg</funcname>
+				    <funcpos>81</funcpos>
+				    <newfuncpos>135</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2PrependDlg</funcname>
+				    <funcpos>82</funcpos>
+				    <newfuncpos>136</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2AddressSelect</funcname>
+				    <funcpos>83</funcpos>
+				    <newfuncpos>138</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2InputAbsorber</funcname>
+				    <funcpos>84</funcpos>
+				    <newfuncpos>139</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2StoreListQuery</funcname>
+				    <funcpos>85</funcpos>
+				    <newfuncpos>140</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ThumbnailPopup</funcname>
+				    <funcpos>86</funcpos>
+				    <newfuncpos>141</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactEditorDlg</funcname>
+				    <funcpos>87</funcpos>
+				    <newfuncpos>142</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2NamesListControl</funcname>
+				    <funcpos>88</funcpos>
+				    <newfuncpos>143</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2PhonebookInfoDlg</funcname>
+				    <funcpos>89</funcpos>
+				    <newfuncpos>144</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactInfoControl</funcname>
+				    <funcpos>90</funcpos>
+				    <newfuncpos>146</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2AddItemToContactDlg</funcname>
+				    <funcpos>91</funcpos>
+				    <newfuncpos>147</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2SettingsListControl</funcname>
+				    <funcpos>92</funcpos>
+				    <newfuncpos>148</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactEditorDlgImpl</funcname>
+				    <funcpos>93</funcpos>
+				    <newfuncpos>149</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2StoreInfoItemBuilder</funcname>
+				    <funcpos>94</funcpos>
+				    <newfuncpos>150</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2MemoryEntryDefaultsDlg</funcname>
+				    <funcpos>95</funcpos>
+				    <newfuncpos>152</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2GeneralConfirmationQuery</funcname>
+				    <funcpos>96</funcpos>
+				    <newfuncpos>154</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactUiControlSubstitute</funcname>
+				    <funcpos>97</funcpos>
+				    <newfuncpos>158</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2FetchDlg</funcname>
+				    <funcpos>98</funcpos>
+				    <newfuncpos>163</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2PrependDlg</funcname>
+				    <funcpos>99</funcpos>
+				    <newfuncpos>164</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2AddressSelect</funcname>
+				    <funcpos>100</funcpos>
+				    <newfuncpos>166</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2InputAbsorber</funcname>
+				    <funcpos>101</funcpos>
+				    <newfuncpos>167</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2StoreListQuery</funcname>
+				    <funcpos>102</funcpos>
+				    <newfuncpos>168</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ThumbnailPopup</funcname>
+				    <funcpos>103</funcpos>
+				    <newfuncpos>169</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactEditorDlg</funcname>
+				    <funcpos>104</funcpos>
+				    <newfuncpos>170</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2NamesListControl</funcname>
+				    <funcpos>105</funcpos>
+				    <newfuncpos>171</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2PhonebookInfoDlg</funcname>
+				    <funcpos>106</funcpos>
+				    <newfuncpos>172</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactInfoControl</funcname>
+				    <funcpos>107</funcpos>
+				    <newfuncpos>174</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2AddItemToContactDlg</funcname>
+				    <funcpos>108</funcpos>
+				    <newfuncpos>175</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2SettingsListControl</funcname>
+				    <funcpos>109</funcpos>
+				    <newfuncpos>176</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactEditorDlgImpl</funcname>
+				    <funcpos>110</funcpos>
+				    <newfuncpos>177</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2StoreInfoItemBuilder</funcname>
+				    <funcpos>111</funcpos>
+				    <newfuncpos>178</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2MemoryEntryDefaultsDlg</funcname>
+				    <funcpos>112</funcpos>
+				    <newfuncpos>180</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2GeneralConfirmationQuery</funcname>
+				    <funcpos>113</funcpos>
+				    <newfuncpos>182</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactUiControlSubstitute</funcname>
+				    <funcpos>114</funcpos>
+				    <newfuncpos>186</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::SetFocusedFieldIndex(int)</funcname>
+				    <funcpos>115</funcpos>
+				    <newfuncpos>201</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>116</funcpos>
+				    <newfuncpos>202</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>116</funcpos>
+				    <newfuncpos>203</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>116</funcpos>
+				    <newfuncpos>204</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>116</funcpos>
+				    <newfuncpos>205</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>117</funcpos>
+				    <newfuncpos>202</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>117</funcpos>
+				    <newfuncpos>203</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>117</funcpos>
+				    <newfuncpos>204</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>117</funcpos>
+				    <newfuncpos>205</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2TitlePanePictureFactory::CreateTitlePanePictureLC(MVPbkStoreContact const*, CPbk2StorePropertyArray&amp;)</funcname>
+				    <funcpos>118</funcpos>
+				    <newfuncpos>92</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2DefaultAttributeProcess::SetDefaultL(TVPbkDefaultType, MVPbkStoreContactField&amp;)</funcname>
+				    <funcpos>119</funcpos>
+				    <newfuncpos>93</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2DefaultAttributeProcess::SetDefaultsL(CArrayFixFlat&lt;TVPbkDefaultType&gt;*, MVPbkStoreContactField&amp;)</funcname>
+				    <funcpos>120</funcpos>
+				    <newfuncpos>94</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2DefaultAttributeProcess::RemoveDefaultL(TVPbkDefaultType)</funcname>
+				    <funcpos>121</funcpos>
+				    <newfuncpos>95</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2DefaultAttributeProcess::RemoveDefaultsL(CArrayFixFlat&lt;TVPbkDefaultType&gt;*)</funcname>
+				    <funcpos>122</funcpos>
+				    <newfuncpos>96</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2DefaultAttributeProcess::NewL(CVPbkContactManager&amp;, MVPbkStoreContact&amp;, MPbk2DefaultAttributeProcessObserver&amp;)</funcname>
+				    <funcpos>123</funcpos>
+				    <newfuncpos>97</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::SetTitleToIncludeContactName(int)</funcname>
+				    <funcpos>124</funcpos>
+				    <newfuncpos>86</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::GiveViewL(MVPbkContactViewBase*)</funcname>
+				    <funcpos>125</funcpos>
+				    <newfuncpos>64</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>TPbk2AddressSelectParams::SetSuppressWarnings(int)</funcname>
+				    <funcpos>126</funcpos>
+				    <newfuncpos>83</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::AllowPointerEvents(int)</funcname>
+				    <funcpos>127</funcpos>
+				    <newfuncpos>56</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactIconsUtils::CreateListboxIconArrayL(int)</funcname>
+				    <funcpos>128</funcpos>
+				    <newfuncpos>70</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactIconsUtils::NewL(CPbk2StorePropertyArray&amp;, MPbk2ContactUiControlExtension*)</funcname>
+				    <funcpos>129</funcpos>
+				    <newfuncpos>71</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactIconsUtils</funcname>
+				    <funcpos>131</funcpos>
+				    <newfuncpos>145</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactIconsUtils</funcname>
+				    <funcpos>132</funcpos>
+				    <newfuncpos>173</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddressSelect::NewL(TPbk2AddressSelectParams&amp;, CVPbkFieldTypeSelector&amp;, TArray&lt;MVPbkStoreContact*&gt; const*, TArray&lt;CPbk2PresenceIconInfo*&gt; const*)</funcname>
+				    <funcpos>133</funcpos>
+				    <newfuncpos>23</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2FetchResults::CFRConatactOperation</funcname>
+				    <funcpos>134</funcpos>
+				    <newfuncpos>161</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2FetchResults::CFRConatactOperation</funcname>
+				    <funcpos>135</funcpos>
+				    <newfuncpos>189</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>136</funcpos>
+				    <newfuncpos>202</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>136</funcpos>
+				    <newfuncpos>203</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>136</funcpos>
+				    <newfuncpos>204</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>136</funcpos>
+				    <newfuncpos>205</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>137</funcpos>
+				    <newfuncpos>202</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>137</funcpos>
+				    <newfuncpos>203</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>137</funcpos>
+				    <newfuncpos>204</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactUiControlSubstitute::~CPbk2ContactUiControlSubstitute()</funcname>
+				    <funcpos>137</funcpos>
+				    <newfuncpos>205</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::GetAddressFieldsLC(MVPbkStoreContact&amp;, TPbk2FieldGroupId, RHashMap&lt;int, TPtrC16&gt;&amp;)</funcname>
+				    <funcpos>138</funcpos>
+				    <newfuncpos>9</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::GetAddressPreviewLC(MVPbkStoreContact&amp;, TPbk2FieldGroupId, RBuf16&amp;)</funcname>
+				    <funcpos>139</funcpos>
+				    <newfuncpos>10</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::MapAddressToOrdering(TPbk2FieldGroupId)</funcname>
+				    <funcpos>140</funcpos>
+				    <newfuncpos>11</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::MapCtrlTypeToAddress(int)</funcname>
+				    <funcpos>141</funcpos>
+				    <newfuncpos>12</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::MapViewTypeToAddress(TPbk2ContactEditorParams::TActiveView)</funcname>
+				    <funcpos>142</funcpos>
+				    <newfuncpos>13</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::MapCtrlTypeToViewType(int)</funcname>
+				    <funcpos>143</funcpos>
+				    <newfuncpos>14</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::MapAddressToVersitParam(TPbk2FieldGroupId)</funcname>
+				    <funcpos>144</funcpos>
+				    <newfuncpos>16</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::GetAddressShortPreviewLC(MVPbkStoreContact&amp;, TPbk2FieldGroupId, RBuf16&amp;)</funcname>
+				    <funcpos>145</funcpos>
+				    <newfuncpos>17</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2UIFieldArray::NewL(TDesC16 const&amp;, RFs&amp;, MPbk2UIFieldFactory&amp;)</funcname>
+				    <funcpos>146</funcpos>
+				    <newfuncpos>19</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::SetFieldLabelL(TDesC16 const&amp;)</funcname>
+				    <funcpos>147</funcpos>
+				    <newfuncpos>98</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::ConsumesKeyEvent(TKeyEvent const&amp;, TEventCode)</funcname>
+				    <funcpos>148</funcpos>
+				    <newfuncpos>99</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::LoadBitmapToFieldL(TPbk2IconId const&amp;)</funcname>
+				    <funcpos>149</funcpos>
+				    <newfuncpos>100</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::HandleCustomFieldCommandL(int)</funcname>
+				    <funcpos>150</funcpos>
+				    <newfuncpos>101</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::SetFocus()</funcname>
+				    <funcpos>151</funcpos>
+				    <newfuncpos>102</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::ControlId()</funcname>
+				    <funcpos>152</funcpos>
+				    <newfuncpos>103</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::CPbk2ContactEditorUIFieldBase(MPbk2UIField*, MPbk2ContactEditorUiBuilder&amp;, CPbk2IconInfoContainer&amp;, int)</funcname>
+				    <funcpos>153</funcpos>
+				    <newfuncpos>104</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>154</funcpos>
+				    <newfuncpos>105</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>154</funcpos>
+				    <newfuncpos>106</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>154</funcpos>
+				    <newfuncpos>107</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>155</funcpos>
+				    <newfuncpos>105</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>155</funcpos>
+				    <newfuncpos>106</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>155</funcpos>
+				    <newfuncpos>107</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>156</funcpos>
+				    <newfuncpos>105</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>156</funcpos>
+				    <newfuncpos>106</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>156</funcpos>
+				    <newfuncpos>107</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorReadonlyField::InitializeL(MPbk2ContactEditorUIField*)</funcname>
+				    <funcpos>157</funcpos>
+				    <newfuncpos>113</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorReadonlyField::SetTextL(TDesC16 const*)</funcname>
+				    <funcpos>158</funcpos>
+				    <newfuncpos>114</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::FieldLabel() const</funcname>
+				    <funcpos>159</funcpos>
+				    <newfuncpos>131</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::ControlText() const</funcname>
+				    <funcpos>160</funcpos>
+				    <newfuncpos>132</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorUIFieldBase::UIField() const</funcname>
+				    <funcpos>161</funcpos>
+				    <newfuncpos>133</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2UIField</funcname>
+				    <funcpos>162</funcpos>
+				    <newfuncpos>134</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2UIFieldArray</funcname>
+				    <funcpos>163</funcpos>
+				    <newfuncpos>137</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactEditorArrayItem</funcname>
+				    <funcpos>164</funcpos>
+				    <newfuncpos>151</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactEditorUIFieldBase</funcname>
+				    <funcpos>165</funcpos>
+				    <newfuncpos>153</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactEditorFieldFactory</funcname>
+				    <funcpos>166</funcpos>
+				    <newfuncpos>155</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactEditorReadonlyField</funcname>
+				    <funcpos>167</funcpos>
+				    <newfuncpos>157</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2UIField</funcname>
+				    <funcpos>168</funcpos>
+				    <newfuncpos>162</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2UIFieldArray</funcname>
+				    <funcpos>169</funcpos>
+				    <newfuncpos>165</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactEditorArrayItem</funcname>
+				    <funcpos>170</funcpos>
+				    <newfuncpos>179</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactEditorUIFieldBase</funcname>
+				    <funcpos>171</funcpos>
+				    <newfuncpos>181</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactEditorFieldFactory</funcname>
+				    <funcpos>172</funcpos>
+				    <newfuncpos>183</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactEditorReadonlyField</funcname>
+				    <funcpos>173</funcpos>
+				    <newfuncpos>185</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::SetFieldLabelL(TDesC16 const&amp;)</funcname>
+				    <funcpos>174</funcpos>
+				    <newfuncpos>190</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::ConsumesKeyEvent(TKeyEvent const&amp;, TEventCode)</funcname>
+				    <funcpos>175</funcpos>
+				    <newfuncpos>191</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::LoadBitmapToFieldL(TPbk2IconId const&amp;)</funcname>
+				    <funcpos>176</funcpos>
+				    <newfuncpos>192</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::HandleCustomFieldCommandL(int)</funcname>
+				    <funcpos>177</funcpos>
+				    <newfuncpos>193</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::SetFocus()</funcname>
+				    <funcpos>178</funcpos>
+				    <newfuncpos>194</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::ControlId()</funcname>
+				    <funcpos>179</funcpos>
+				    <newfuncpos>195</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>180</funcpos>
+				    <newfuncpos>196</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>180</funcpos>
+				    <newfuncpos>197</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>181</funcpos>
+				    <newfuncpos>196</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::~CPbk2ContactEditorUIFieldBase()</funcname>
+				    <funcpos>181</funcpos>
+				    <newfuncpos>197</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::FieldLabel() const</funcname>
+				    <funcpos>182</funcpos>
+				    <newfuncpos>198</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::ControlText() const</funcname>
+				    <funcpos>183</funcpos>
+				    <newfuncpos>199</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>non-virtual thunk to CPbk2ContactEditorUIFieldBase::UIField() const</funcname>
+				    <funcpos>184</funcpos>
+				    <newfuncpos>200</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2FilteredViewStackObserver</funcname>
+				    <funcpos>185</funcpos>
+				    <newfuncpos>156</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2FilteredViewStackObserver</funcname>
+				    <funcpos>186</funcpos>
+				    <newfuncpos>184</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2GeneralConfirmationQuery::ExecuteLD(MVPbkBaseContact const&amp;, int, int)</funcname>
+				    <funcpos>187</funcpos>
+				    <newfuncpos>110</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactViewCustomListBoxData</funcname>
+				    <funcpos>188</funcpos>
+				    <newfuncpos>159</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>typeinfo for CPbk2ContactViewCustomListBoxItemDrawer</funcname>
+				    <funcpos>189</funcpos>
+				    <newfuncpos>160</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactViewCustomListBoxData</funcname>
+				    <funcpos>190</funcpos>
+				    <newfuncpos>187</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>vtable for CPbk2ContactViewCustomListBoxItemDrawer</funcname>
+				    <funcpos>191</funcpos>
+				    <newfuncpos>188</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::SetCurrentGroupLinkL(MVPbkContactLink*)</funcname>
+				    <funcpos>192</funcpos>
+				    <newfuncpos>57</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::NewL(int, CCoeControl const*, CVPbkContactManager&amp;, MVPbkContactViewBase&amp;, MPbk2ContactNameFormatter&amp;, CPbk2StorePropertyArray&amp;, CPbk2ThumbnailManager*)</funcname>
+				    <funcpos>193</funcpos>
+				    <newfuncpos>61</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ThumbnailManager::NewL(CVPbkContactManager&amp;)</funcname>
+				    <funcpos>194</funcpos>
+				    <newfuncpos>69</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2ContactEditorDlg::NewL(TPbk2ContactEditorParams&amp;, MVPbkStoreContact*, MPbk2EditedContactObserver&amp;, MPbk2ApplicationServices*, HBufC16*, int)</funcname>
+				    <funcpos>195</funcpos>
+				    <newfuncpos>51</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2AddItemToContactDlg::NewL(MPbk2ApplicationServices*)</funcname>
+				    <funcpos>196</funcpos>
+				    <newfuncpos>76</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2MergeConflictsDlg::NewL(MPbk2MergeResolver*, int)</funcname>
+				    <funcpos>197</funcpos>
+				    <newfuncpos>72</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2MergePhotoConflictDlg::NewL(MVPbkBaseContact*, MVPbkBaseContact*, int*)</funcname>
+				    <funcpos>198</funcpos>
+				    <newfuncpos>89</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2GeneralConfirmationQuery::StopQuery()</funcname>
+				    <funcpos>199</funcpos>
+				    <newfuncpos>112</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::HandleViewForegroundEventL(int)</funcname>
+				    <funcpos>200</funcpos>
+				    <newfuncpos>58</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::IsAddressPreviewEmptyL(MVPbkStoreContact&amp;, TPbk2FieldGroupId)</funcname>
+				    <funcpos>201</funcpos>
+				    <newfuncpos>15</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>Pbk2AddressTools::MapVPbkFieldTypeToAddressGroupId(MVPbkFieldType const*)</funcname>
+				    <funcpos>202</funcpos>
+				    <newfuncpos>18</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::MassUpdateSkipProgressNote(int)</funcname>
+				    <funcpos>203</funcpos>
+				    <newfuncpos>59</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+			</issue>
+			  <issue>
+				    <typeid>3</typeid>
+				    <funcname>CPbk2NamesListControl::SetOpeningCca(int)</funcname>
+				    <funcpos>204</funcpos>
+				    <newfuncpos>54</newfuncpos>
+				    <bc_severity>BBC Break</bc_severity>
+				    <sc_severity>None</sc_severity>
+				     <status>OK</status>
+				    <comment>Part of platform API </comment>
+				    </issue>
+			</library>
+			
   <library name="commsdat">
 <issue>
 				    <typeid>5</typeid>
